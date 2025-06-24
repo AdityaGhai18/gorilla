@@ -253,39 +253,38 @@ def main():
     pipeline = SpeechNoisePipeline(config)
     
     # BFCL data
-    data_path = "data/BFCL_v3_live_simple.json"
+    data_path = "../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
     
-    test_subset = bfcl_data[:15] # examples number
+    test_subset = bfcl_data[:15] #you can edit the number of test cases here will add a terminal argument support later
     transformed_data = []
     
     for i, test_case in enumerate(test_subset):
         print(f"\n{'='*50}")
         print(f"Processing test case {i+1}/{len(test_subset)}")
         print(f"ID: {test_case['id']}")
-        
-        # Extract the user question from the bfcl data file
         user_content = test_case['question'][0][0]['content']
-        
         transformation_results = pipeline.transform_text(user_content)
-        
-        transformed_case = {
-            "id": f"{test_case['id']}_spoken",
-            "original_id": test_case['id'],
-            "original_question": user_content,
-            "transformed_question": transformation_results["final"],
-            "transformation_stages": transformation_results,
-            "function": test_case['function']  # Keep the same function definition
+        stages = {
+            "stage_1_conversationalize": transformation_results["conversational"],
+            "stage_2_degrade_syntax": transformation_results["syntax_degraded"],
+            "stage_3_semantic_simplification": transformation_results["semantic_simplified"],
+            "stage_4_domain_specific_alterations": transformation_results["domain_noise"]
         }
-        
+        transformed_case = {
+            "original": user_content,
+            "transformed": transformation_results["domain_noise"],
+            "stages": stages
+        }
+        if pipeline.config.include_asr_noise:
+            transformed_case["final_asr"] = transformation_results["final"]
         transformed_data.append(transformed_case)
-        
         print(f"Transformation complete for {test_case['id']}")
     
     # results
-    output_path = "data/BFCL_v3_live_simple_spoken2.json"
+    output_path = "BFCL_v3_live_simple_spoken.json"
     save_transformed_data(transformed_data, output_path)
     print(f"\nSaved {len(transformed_data)} transformed test cases to {output_path}")
     
@@ -294,9 +293,9 @@ def main():
     print("TRANSFORMATION SUMMARY")
     print(f"{'='*50}")
     for i, case in enumerate(transformed_data):
-        print(f"\n{i+1}. {case['original_id']}")
-        print(f"   Original: {case['original_question']}")
-        print(f"   Transformed: {case['transformed_question']}")
+        print(f"\n{i+1}. {case['original']}")
+        print(f"   Original: {case['original']}")
+        print(f"   Transformed: {case['transformed']}")
 
 if __name__ == "__main__":
     main() 

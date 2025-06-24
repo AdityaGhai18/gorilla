@@ -1,0 +1,179 @@
+  {
+    "original": "Can you retrieve the details for the user with the ID 7890, who has black as their special request?",
+    "transformed": "\"\"Hey, could you snag the info for user ID 7890? I'm pretty sure it's that one black listed special request or something like that?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe pull up the info for the user with the ID 7890, you know, the one who's got black listed as their special request?\"",
+      "stage_2_degrade_syntax": "\"Hey, can you pull up info, user ID 7890? Y'know, one black listed special request?\"",
+      "stage_3_semantic_simplification": "\"Hey, can you grab the details for user ID 7890? I think it's that one black listed special request or something?\"",
+      "stage_4_domain_specific_alterations": "\"\"Hey, could you snag the info for user ID 7890? I'm pretty sure it's that one black listed special request or something like that?\""
+    },
+    "final_asr": "\"\"\"hey could you snag the info for user id 7890 I'm pretty sure it's that one black listed special um request or something like that\"\"\""
+  }
+
+  {
+    "original": "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases.",
+    "transformed": "\"Hey, can you help me view the star history for ShishirPatil/gorilla and gorilla-llm/gorilla-cli? Also, can you align the timelines? I'm interested in seeing the pace of changes since they were first launched.\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you show me the star history for ShishirPatil/gorilla and gorilla-llm/gorilla-cli? And, uh, could you align the timelines for me? I'm trying to get a clear picture of how fast things changed since they first came out.\"",
+      "stage_2_degrade_syntax": "\"Hey, can ya show me star history, ShishirPatil/gorilla, gorilla-llm/gorilla-cli? Uh, align timelines for me? Need clear picture, how fast things changed since first out.\"",
+      "stage_3_semantic_simplification": "\"Hey, could you kinda show me the star history for that ShishirPatil/gorilla, gorilla-llm/gorilla-cli thing? And like, line up the timelines or something? I just wanna get a good look at how quick stuff changed since it first came out.\"",
+      "stage_4_domain_specific_alterations": "\"Hey, can you help me view the star history for ShishirPatil/gorilla and gorilla-llm/gorilla-cli? Also, can you align the timelines? I'm interested in seeing the pace of changes since they were first launched.\""
+    },
+    "final_asr": "\"\"hey can you help me view the star history for shishirpatil/gorilla and gorillallm/gorilla-cli also can you like align the timelines i'm interested in seeing the pace of changes since they were first launched\""
+  }
+
+  {
+    "original": "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it.",
+    "transformed": "\"Hey, can you snag a comfy Uber for me? I need it for 2020 Addison Street, Berkeley, CA, USA. I can chill for about 10 minutes.\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe get me a Comfort Uber from 2020 Addison Street, Berkeley, CA, USA? I guess I can hang tight for about 600 seconds.\"",
+      "stage_2_degrade_syntax": "\"Hey, can ya get me a Comfort Uber? 2020 Addison Street, Berkeley, CA, USA. Can wait 'bout 600 seconds.\"",
+      "stage_3_semantic_simplification": "\"Hey, could you grab me a Comfort Uber? It's for 2020 Addison Street, Berkeley, CA, USA. I can hang around for, like, 10 minutes or so.\"",
+      "stage_4_domain_specific_alterations": "\"Hey, can you snag a comfy Uber for me? I need it for 2020 Addison Street, Berkeley, CA, USA. I can chill for about 10 minutes.\""
+    },
+    "final_asr": "\"\"hey can you snag a come uber for me i need it for 2020 addison street berkeley ca usa I can chill for about 10 minutes.\"\""
+  }
+
+  {
+    "original": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
+    "transformed": "\"\"Alright, I need a 'Plus' Uber to pick me up from 221B Baker Street in Berkeley, CA. I'm cool with waiting about 10 minutes for it.\"\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you get me a 'Plus' Uber from 221B Baker Street in Berkeley, CA? I'm cool with waiting up to, like, 10 minutes for it.\"",
+      "stage_2_degrade_syntax": "\"Hey, need a 'Plus' Uber, 221B Baker Street, Berkeley, CA. Cool waitin' 10 minutes.\"",
+      "stage_3_semantic_simplification": "\"Hey, I need like a 'Plus' Uber from that 221B Baker Street place in Berkeley, CA. It's all good if I gotta wait around 10 minutes or so.\"",
+      "stage_4_domain_specific_alterations": "\"\"Alright, I need a 'Plus' Uber to pick me up from 221B Baker Street in Berkeley, CA. I'm cool with waiting about 10 minutes for it.\"\""
+    },
+    "final_asr": "\"\"\"alright, i need a 'plus' uber to pick me up from 221b baker street in berkeley, CA. I'm cool with waiting about 10 minutes for it.\"\"\""
+  }
+
+  {
+    "original": "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?",
+    "transformed": "\"Hey, can you tell me what the current weather is like in Tel Aviv? And, can you provide it in Fahrenheit?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe tell me what's the weather like in Tel Aviv right now? And, uh, could you give that to me in Fahrenheit?\"",
+      "stage_2_degrade_syntax": "\"Hey, can ya tell me weather in Tel Aviv now? And, uh, in Fahrenheit?\"",
+      "stage_3_semantic_simplification": "\"Hey, could you let me know what's up with the weather in Tel Aviv at the moment? And, uh, can you give it to me in Fahrenheit?\"",
+      "stage_4_domain_specific_alterations": "\"Hey, can you tell me what the current weather is like in Tel Aviv? And, can you provide it in Fahrenheit?\""
+    },
+    "final_asr": "\"hey can you tell me what the current whether is like in tell a vive and can you provide it in fair in height\""
+  }
+
+  {
+    "original": "Qual a temperatura atual em Divinópolis, MG? fahrenheit",
+    "transformed": "\"\"How hot is it getting in Divinópolis, MG? That's in Fahrenheit, correct?\"\"",
+    "stages": {
+      "stage_1_conversationalize": "\"What's the current temperature in Divinópolis, MG? And uh, could you give that to me in Fahrenheit?\"",
+      "stage_2_degrade_syntax": "\"Current temp in Divinópolis, MG? And, uh, in Fahrenheit?\"",
+      "stage_3_semantic_simplification": "\"What's the temp over in Divinópolis, MG? And, like, in Fahrenheit, right?\"",
+      "stage_4_domain_specific_alterations": "\"\"How hot is it getting in Divinópolis, MG? That's in Fahrenheit, correct?\"\""
+    },
+    "final_asr": "\"\"\"how hot is it getting in divinopolis, mg? thats in farenheit, correct?\"\"\""
+  }
+
+  {
+    "original": "Can you tell me the weather in fahrenheit so that I decide if I need to wear a jacket today? San Francisco",
+    "transformed": "\"So, how's the weather in San Francisco today? What's the temperature in Fahrenheit? I'm just trying to figure out if I need to take a jacket or not, you understand?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe tell me what the weather's like in San Francisco today, but in Fahrenheit? Just need to figure out if I gotta wear a jacket, you know?\"",
+      "stage_2_degrade_syntax": "\"Hey, weather in San Francisco today? Fahrenheit? Just need to know if I need a jacket, y'know?\"",
+      "stage_3_semantic_simplification": "\"\"So, what's the temp like in San Francisco today? In Fahrenheit? Just wanna know if I should grab a jacket or something, y'know?\"",
+      "stage_4_domain_specific_alterations": "\"So, how's the weather in San Francisco today? What's the temperature in Fahrenheit? I'm just trying to figure out if I need to take a jacket or not, you understand?\""
+    },
+    "final_asr": "\"\"so house the weather in san francisco today what's the temperature in farenheit i'm just trying to figure out if i need to take a jack it or not you understand\"\""
+  }
+
+  {
+    "original": "Im at Riga, Latvia, Can you tell me the current temperature?",
+    "transformed": "\"\"Hey, I'm currently chilling in Riga, Latvia. Do you know what the weather's like here?\"\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, I'm in Riga, Latvia right now. Could you maybe let me know what the temperature's like here?\"",
+      "stage_2_degrade_syntax": "\"Hey, in Riga, Latvia now. Can ya tell me the temp here?\"",
+      "stage_3_semantic_simplification": "\"Hey, I'm hanging out in Riga, Latvia at the moment. You got any idea what the temperature is here?\"",
+      "stage_4_domain_specific_alterations": "\"\"Hey, I'm currently chilling in Riga, Latvia. Do you know what the weather's like here?\"\""
+    },
+    "final_asr": "\"\"\"hey i'm currently chilling in riga latvia do you no what the weathers like here\"\"\""
+  }
+
+  {
+    "original": "I want to know weather conditions? I'm at London, UK in fahr",
+    "transformed": "\"Hey, how's the weather looking in London, UK? Could you tell me in Fahrenheit?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe tell me what's the weather like in London, UK? And, uh, give it to me in Fahrenheit, please.\"",
+      "stage_2_degrade_syntax": "\"Hey, weather in London, UK? And, uh, in Fahrenheit, please.\"",
+      "stage_3_semantic_simplification": "\"Uh, what's the weather like in London, UK? And can you give it to me in Fahrenheit?\"",
+      "stage_4_domain_specific_alterations": "\"Hey, how's the weather looking in London, UK? Could you tell me in Fahrenheit?\""
+    },
+    "final_asr": "\"hey hows the weather looking in lundon uk could you tell me in farenheit\""
+  }
+
+  {
+    "original": "What's weather in Hyderabad in Fahrenheit",
+    "transformed": "\"Hey, can you tell me the temperature in Hyderabad? Just make sure it's in Fahrenheit, okay?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you tell me what the weather's like in Hyderabad, but give it to me in Fahrenheit, will ya?\"",
+      "stage_2_degrade_syntax": "\"Hey, weather in Hyderabad? But in Fahrenheit, okay?\"",
+      "stage_3_semantic_simplification": "\"Hey, what's the temp in Hyderabad? But like, in Fahrenheit, alright?\"",
+      "stage_4_domain_specific_alterations": "\"Hey, can you tell me the temperature in Hyderabad? Just make sure it's in Fahrenheit, okay?\""
+    },
+    "final_asr": "\"hey can you tell me the temperature in hyderabad just make sure it's in fahrenheit okay\""
+  }
+
+  {
+    "original": "Could you tell me the current weather in Yosemite National Park which locates at Mariposa, CA, and make sure to give me the temperature in Celsius?",
+    "transformed": "\"Hey, can you tell me the current weather in Yosemite National Park, Mariposa, CA? And could you give me the temperature in Celsius, please?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe let me know what's the weather like over at Yosemite National Park in Mariposa, CA? Oh, and make sure to tell me the temperature in Celsius, okay?\"",
+      "stage_2_degrade_syntax": "\"Hey, need to know weather, Yosemite National Park, Mariposa, CA. Tell me temp in Celsius, yeah?\"",
+      "stage_3_semantic_simplification": "\"Yo, what's the weather like in Yosemite National Park, Mariposa, CA? Gimme the temp in Celsius, alright?\"",
+      "stage_4_domain_specific_alterations": "\"Hey, can you tell me the current weather in Yosemite National Park, Mariposa, CA? And could you give me the temperature in Celsius, please?\""
+    },
+    "final_asr": "\"hey can you tell me the current weather in yosemite national park mariposa ca and could you give me the temperature in celsius um please\""
+  }
+
+  {
+    "original": "Could you tell me the current weather conditions in Naples, Florida?",
+    "transformed": "\"\"Hey, can you tell me the current weather in Naples, Florida?\"\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, what's the weather like in Naples, Florida right now?\"",
+      "stage_2_degrade_syntax": "\"Hey, weather in Naples, Florida now?\"",
+      "stage_3_semantic_simplification": "\"Hey, what's the weather like in Naples, Florida right now?\"",
+      "stage_4_domain_specific_alterations": "\"\"Hey, can you tell me the current weather in Naples, Florida?\"\""
+    },
+    "final_asr": "\"\"\"hey can you tell me the current weather in naples uh florida\"\"\""
+  }
+
+  {
+    "original": "I'm planning a trip to New York, NY in December and will be staying for 5 days. Could you tell me the current weather conditions, and provide the temperature in Celsius?",
+    "transformed": "\"\"Hey, thinking about heading to New York for about five days in December. Do you have any idea what the current weather's like there? Also, could you give me the temperature in Celsius?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, I'm thinkin' about heading to New York for like, five days in December. Can you give me a heads up about the current weather there? And uh, could you maybe give me the temp in Celsius?\"",
+      "stage_2_degrade_syntax": "\"Hey, thinkin' of goin' to New York, like five days in December. Can ya tell me current weather there? And, uh, give me temp in Celsius?\"",
+      "stage_3_semantic_simplification": "\"Hey, got plans to hit up New York, around five days or so in December. You know what's the weather like there now? Oh, and can ya throw me the temp in Celsius?\"",
+      "stage_4_domain_specific_alterations": "\"\"Hey, thinking about heading to New York for about five days in December. Do you have any idea what the current weather's like there? Also, could you give me the temperature in Celsius?\""
+    },
+    "final_asr": "\"\"\"hey thinking about heading to New York for about five days in December. Do you have any idea with the current weathers like their? Also could you give me the temperature in celsius?\"\"\""
+  }
+
+  {
+    "original": "我想知道上海目前的天气状况，可以帮我查询吗？顺便使用摄氏度来显示温度。",
+    "transformed": "\"\"Hey, could you look up the current weather in Shanghai for me? And let me know the temperature, but make sure it's in Celsius, okay?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, could you maybe look up what the weather's like in Shanghai right now? And, uh, could you give me the temperature in Celsius?\"",
+      "stage_2_degrade_syntax": "\"Hey, can ya look up weather in Shanghai now? And, um, gimme temperature in Celsius?\"",
+      "stage_3_semantic_simplification": "\"Hey, can you check what's the weather like in Shanghai right now? Oh, and tell me the temperature, but like, in Celsius?\"",
+      "stage_4_domain_specific_alterations": "\"\"Hey, could you look up the current weather in Shanghai for me? And let me know the temperature, but make sure it's in Celsius, okay?\""
+    },
+    "final_asr": "\"\"\"hey could you look up the current weather in shanghai for me and let me no the temperature but make sure its in celsius okay\"\"\""
+  }
+
+  {
+    "original": "I have a busy day today. Can you tell me what the temperature is going to be in Bangkok, Thailand. I prefer the fahrenheit unit.",
+    "transformed": "\"Hey, you're swamped, right? Could you tell me what the weather's doing in Bangkok, Thailand? And make sure it's in Fahrenheit, okay?\"",
+    "stages": {
+      "stage_1_conversationalize": "\"Hey, I got a packed schedule today. Could you maybe tell me what the weather's gonna be like in Bangkok, Thailand? Oh, and I'd prefer if you gave it to me in Fahrenheit.\"",
+      "stage_2_degrade_syntax": "\"Hey, packed day. Can ya tell me weather in Bangkok, Thailand? And, uh, in Fahrenheit, please.\"",
+      "stage_3_semantic_simplification": "\"Hey, busy day huh? Can you let me know what's the weather like in Bangkok, Thailand? Oh, and give it to me in Fahrenheit, will ya?\"",
+      "stage_4_domain_specific_alterations": "\"Hey, you're swamped, right? Could you tell me what the weather's doing in Bangkok, Thailand? And make sure it's in Fahrenheit, okay?\""
+    },
+    "final_asr": "\"hey, your swamped right could you tell me what the weathers doing in bangkok thailand and make sure its in fahrenheit okay\""
+  }
