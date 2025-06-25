@@ -1013,7 +1013,7 @@ def main():
     data_path = "../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
-    test_subset = bfcl_data[:15] #you can edit the number of test cases here will add a terminal argument support later
+    test_subset = bfcl_data[:30] #you can edit the number of test cases here will add a terminal argument support later
     transformed_data = []
     for i, test_case in enumerate(test_subset):
         print(f"\n{'='*50}")
