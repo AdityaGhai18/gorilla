@@ -49,14 +49,15 @@ class FeatureSelection:
 @dataclass
 class PipelineConfig:
     """Configuration for the granular speech pipeline."""
-    max_features: int = 10
-    confidence_threshold: float = 0.7
+    max_features: int = 8
+    confidence_threshold: float = 0.5
     temperature: float = 0.7
     max_retries: int = 3
     retry_delay: float = 1.0
     asr: bool = False
 
 DEFAULT_FEATURE_ORDER = [
+    "sentence_restructuring",
     "disfluencies",
     "repetitions",
     "self_corrections",
@@ -80,7 +81,6 @@ DEFAULT_FEATURE_ORDER = [
     "vague_references",
     "approximate_quantifiers",
     "simplified_verbs",
-    "polite_hedges",
     "confidence_markers",
     "contextual_references"
 ]
@@ -95,54 +95,130 @@ class GranularSpeechPipeline:
         """LLM analyzes text and selects applicable features with confidence scores."""
         contains_number = bool(re.search(r"\d", text))
         prompt = f"""
-        You are a speech scientist. Select up to 10 features from the list below that would make the input sound like a real person speaking out loud, not a parody or a robot. Only use a feature if a real person would naturally do so in this context. If in doubt, do less. If the input contains any numbers or alphanumeric identifiers, always include 'numbers_noise' feature.
+        You are a speech scientist analyzing how to convert written text into natural spoken dialogue. Your job is to select the most appropriate speech features to make the input sound like a real person speaking to a voice assistant (like Siri, Alexa, or Google Home).
 
         Input: "{text}"
 
-        Features:
-        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses, hesitations, and natural speech pauses. Use sparingly and only where it sounds natural.
-        - repetitions: Repeat words or phrases
+        IMPORTANT: People talking to voice assistants are typically direct, casual, and don't use excessive politeness. They want quick answers and don't waste time with formal language.
+
+        FEATURE GROUPINGS - You MUST select at least 1 feature from each group:
+
+        GROUP 1 - BASIC SPEECH PATTERNS (always include 1-2):
+        - contractions: Use wanna, gonna, lemme, gimme, etc.
+        - simplified_verbs: get instead of retrieve, check instead of verify
+        - casual_pronouns: ya, em, imma
+        - slang_terms: grab, check out, look up
+
+        GROUP 2 - DISFLUENCIES & HESITATIONS (always include 1-2):
+        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses
+        - thinking_aloud: Express thinking or searching for words, e.g., 'let me see'
+        - false_starts: Start to say something, then restart, e.g., 'I want to—wait, can you...'
+        - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
+
+        GROUP 3 - CONVERSATIONAL MARKERS (include 1):
+        - backchanneling: Conversational markers (yeah, so, right, okay)
+        - emotional_markers: Emotion or attitude (oh, right, seriously)
+        - confidence_markers: I think, probably, should be
+
+        GROUP 4 - STRUCTURAL CHANGES (include 1-2):
+        - fragment_sentences: Break into shorter fragments
+        - word_reordering: Slightly reorder words naturally
+        - article_dropping: Drop the, a, an where natural
+        - preposition_dropping: Drop in, on, at, for where natural
+        - subject_dropping: Drop subject pronouns where natural
+
+        GROUP 5 - CONTENT MODIFICATIONS (include 1-2):
+        - spelling_noise: Spell out names/terms that might be misunderstood
+        - symbol_pronunciation: Say symbols out loud (slash, dash, at)
+        - vague_references: Use that thing, the stuff, some info
+        - approximate_quantifiers: like 10 minutes when something like 600 seconds is used
+        - contextual_references: the one we talked about, that repo, that day
+
+        OTHER FEATURES (optional):
+        - repetitions: Repeat words or phrases naturally
+        - restarts_repairs: Restart or repair a sentence, e.g., 'what I mean is...'
+        - ellipsis_proforms: Use ellipsis or pro-forms (do it, get it, that thing)
+
+        Features to choose from:
+        - sentence_restructuring: Completely rephrase written instructions into natural spoken language. Change sentence structure, word order, and phrasing to sound like someone actually speaking rather than reading written text.
+        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses. Use VERY sparingly - only 1-2 per sentence maximum.
+        - repetitions: Repeat words or phrases naturally
         - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
         - false_starts: Start to say something, then restart or change direction, e.g., 'I want to—wait, can you...'
-        - thinking_aloud: Express thinking or searching for words, e.g., 'let me see', use sparingly in realistic context where person could forget word
-        - backchanneling: Conversational markers (yeah, so, right, okay), use sparingly in realistic context where person could forget word
-        - emotional_markers: Emotion or attitude (ugh, wow, oh, right, seriously), use sparingly in realistic context where person could forget word
+        - thinking_aloud: Express thinking or searching for words, e.g., 'let me see', use sparingly
+        - backchanneling: Conversational markers (yeah, so, right, okay), use sparingly
+        - emotional_markers: Emotion or attitude (ugh, wow, oh, right, seriously), use sparingly
         - restarts_repairs: Restart or repair a sentence, e.g., 'what I mean is...', 'sorry, let me rephrase'
-        - ellipsis_proforms: Use ellipsis or pro-forms (do it, get it, that thing), use sparingly in realistic context
+        - ellipsis_proforms: Use ellipsis or pro-forms (do it, get it, that thing), use sparingly
         - spelling_noise: Spell out names/terms that might be misunderstood, e.g., 'that's S-H-I-S-H-I-R-P-A-T-I-L, ShishirPatil'
-        - numbers_noise: Say numbers/addresses as a real person would (always include if any numbers/alphanumerics)
-        - contractions: Use wanna, gonna, lemme, use sparingly in realistic context
-        - casual_pronouns: ya, em, imma, use sparingly in realistic context
-        - slang_terms: grab, check out, look up, use sparingly in realistic context
-        - symbol_pronunciation: Say symbols out loud (slash, dash, at), 
-        - article_dropping: Drop the, a, an where natural, use sparingly in realistic context
-        - preposition_dropping: Drop in, on, at, for where natural and realistic
+        - numbers_noise: Say numbers/addresses as a real person would (ALWAYS include if any numbers/alphanumerics)
+        - contractions: Use wanna, gonna, lemme, use moderately
+        - casual_pronouns: ya, em, imma, use sparingly
+        - slang_terms: grab, check out, look up, use sparingly
+        - symbol_pronunciation: Say symbols out loud (slash, dash, at)
+        - article_dropping: Drop the, a, an where natural, use sparingly
+        - preposition_dropping: Drop in, on, at, for where natural
         - subject_dropping: Drop subject pronouns where natural
         - fragment_sentences: Break into shorter fragments (for long/complex sentences)
         - word_reordering: Slightly reorder words naturally
         - vague_references: Use that thing, the stuff, some info
-        - approximate_quantifiers: like 10 minutes, around 5 files
+        - approximate_quantifiers: like 10 minutes when something like 600 seconds is used, around 5 files
         - simplified_verbs: get instead of retrieve, check instead of verify
-        - polite_hedges: maybe, could you, if possible, would you
         - confidence_markers: I think, probably, should be
         - contextual_references: the one we talked about, that repo, that day, that file
 
-        Guidelines:
-        - Sound like a real person, not a parody or caricature.
-        - Use features wherever they could plausibly occur in real speech, even if not strictly necessary.
-        - Err on the side of including more features, as long as the result is still plausible and natural.
-        - Be creative and generous in your feature selection, but keep it natural and realistic do not make paradoic it should still sound like spoken speech.
-        - If the input has numbers or alphanumerics, always include 'numbers_noise'.
-        - Do not stack too many messy features (disfluencies, self_corrections, thinking_aloud, false_starts, restarts_repairs) in one utterance.
-        - Output a JSON object with a "features" key, whose value is an array of objects. Each object should have: feature_name, intensity (light/moderate/heavy), confidence (0.0-1.0).
-        - No extra text, markdown, or comments.
-        - Max 10 features.
-        - You MUST select at least 3 features. Always select at least 3 features unless the input is already very speech-like.
+        EXAMPLES BY INPUT TYPE:
+
+        CALENDAR SCHEDULING:
+        Written: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
+        Spoken: "Um, I need to... schedule a meeting with marketing, Tuesday at two-thirty. And uh, send invites to everyone."
+        Features: disfluencies, numbers_noise, contractions, simplified_verbs, backchanneling
+
+        DOCUMENT EDITING:
+        Written: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
+        Spoken: "Can you... update the quarterly report with Q3 data? And uh, remove the old stats."
+        Features: disfluencies, simplified_verbs, contractions, thinking_aloud
+
+        MUSIC PLAYBACK:
+        Written: "I would like to play the album 'Midnight Dreams' by the artist 'Stellar Echo' and set the volume to 75% while enabling shuffle mode."
+        Spoken: "Play Midnight Dreams by Stellar Echo. That's S-T-E-L-L-A-R E-C-H-O. Volume at... seventy-five. And turn shuffle on."
+        Features: numbers_noise, simplified_verbs, disfluencies, spelling_noise
+
+        EMAIL COMPOSITION:
+        Written: "Please compose a new email message addressed to john.smith@company.com with the subject line 'Project Update - Phase 2 Completion' and include the following content in the body."
+        Spoken: "Write an email to john dot smith at company dot com. Subject is... Project Update Phase 2. And add the content."
+        Features: symbol_pronunciation, simplified_verbs, disfluencies, contractions, casual_pronouns
+
+        FILE MANAGEMENT:
+        Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
+        Spoken: "I want to... get the quarterly report from shared drive. No, wait, the folder. And uh, make a backup in my directory."
+        Features: disfluencies, self_corrections, simplified_verbs, contractions, thinking_aloud
+
+        SOCIAL MEDIA:
+        Written: "Please post a status update on my social media account with the message 'Excited to announce our new product launch!' and include the hashtag #innovation."
+        Spoken: "Post a status... excited to announce our new product launch! And add hashtag innovation."
+        Features: disfluencies, simplified_verbs, contractions, emotional_markers, fragment_sentences
+
+        SELECTION GUIDELINES:
+        - sentence_restructuring is ALWAYS applied automatically (don't select it)
+        - ALWAYS include numbers_noise if input has numbers/alphanumerics
+        - You MUST select at least 1 feature from each of the 5 groups above
+        - Total of 6-8 features maximum (sentence_restructuring + your selections)
+        - Be conservative with disfluencies - people don't say "um" that much to voice assistants
+        - Focus on making it sound direct and efficient, not overly polite or formal
+        - Choose features that make speech sound natural, not robotic or forced
+        - Prioritize features that improve flow and naturalness over adding complexity
+        - Avoid over-fragmentation - don't break sentences unnecessarily
+        - Focus on natural conversational flow rather than artificial speech patterns
+        - Ensure diversity across groups - don't stack too many features from the same group
+        - With 8 features total, you can select 2 features from some groups for richer speech patterns
+
+        Output a JSON object with a "features" key, whose value is an array of objects. Each object should have: feature_name, intensity (light/moderate/heavy), confidence (0.0-1.0).
 
         Example:
         {{
           "features": [
-            {{"feature_name": "contractions", "intensity": "moderate", "confidence": 0.9}},
+            {{"feature_name": "contractions", "intensity": "moderate", "confidence": 0.8}},
             {{"feature_name": "numbers_noise", "intensity": "moderate", "confidence": 1.0}}
           ]
         }}
@@ -179,7 +255,16 @@ class GranularSpeechPipeline:
                     confidence=1.0
                 ))
             features = [f for f in features if f.confidence >= 0.6]
-            return features[:7]
+            
+            # Always include sentence_restructuring as the first feature
+            if not any(f.feature_name == "sentence_restructuring" for f in features):
+                features.insert(0, FeatureSelection(
+                    feature_name="sentence_restructuring",
+                    intensity="moderate",
+                    confidence=1.0
+                ))
+            
+            return features[:8]
         except Exception as e:
             features = []
             if contains_number:
@@ -190,21 +275,86 @@ class GranularSpeechPipeline:
                 ))
             return features
 
+    def apply_sentence_restructuring(self, text: str, intensity: str) -> str:
+        """Completely rephrase written instructions into natural spoken language."""
+        intensity_prompts = {
+            "light": "Make minor adjustments to sound more spoken",
+            "moderate": "Significantly rephrase to sound like natural speech",
+            "heavy": "Completely restructure the sentence to sound like someone actually speaking"
+        }
+        
+        prompt = f"""
+        You are converting written instructions into natural spoken dialogue. Your job is to COMPLETELY restructure the input to sound like someone actually speaking to a voice assistant, not reading written text.
+
+        {intensity_prompts[intensity]}
+
+        CRITICAL: Do NOT just add periods or break sentences. You must completely rephrase and restructure the content to sound natural.
+
+        KEY PRINCIPLES:
+        - Completely change the sentence structure and word order
+        - Use natural conversational flow and rhythm
+        - Be direct and casual - people want quick answers
+        - Remove ALL formal language and politeness
+        - Use natural speech patterns and word choices
+        - Make it flow like someone thinking out loud
+        - Be aggressive with restructuring - don't be timid
+        - Change the entire approach to how the request is made
+
+        EXAMPLES:
+        Written: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
+        Spoken: "Schedule a meeting with marketing Tuesday at two-thirty. Send invites to everyone."
+
+        Written: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
+        Spoken: "Update the quarterly report with Q3 data. Remove the old stats."
+
+        Written: "I would like to play the album 'Midnight Dreams' by the artist 'Stellar Echo' and set the volume to 75% while enabling shuffle mode."
+        Spoken: "Play Midnight Dreams by Stellar Echo. Volume at seventy-five. Turn shuffle on."
+
+        Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
+        Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
+
+        Written: "Can you retrieve the details for the user with the ID 7890, who has black as their special request?"
+        Spoken: "Get user details for seven eight nine zero. Special request is black."
+
+        Written: "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases."
+        Spoken: "Show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start."
+
+        Written: "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it."
+        Spoken: "Get me a Comfort Uber from twenty-twenty Addison Street Berkeley. I can wait ten minutes."
+
+        Written: "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?"
+        Spoken: "What's the weather in Tel Aviv? In Fahrenheit."
+
+        Input: "{text}"
+        Output:
+        """
+        result = self._call_openai(prompt)
+        if not result.strip():
+            return text
+        return result
+
     def apply_disfluencies(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Add 1-2 light disfluencies (filler words, hesitations, or pauses) naturally",
-            "moderate": "Add 2-3 moderate disfluencies (filler words, hesitations, or pauses) naturally",
-            "heavy": "Add 3-4 heavy disfluencies (filler words, hesitations, or pauses) naturally"
+            "light": "Add 1 light disfluency (filler word or hesitation) naturally",
+            "moderate": "Add 1-2 moderate disfluencies (filler words or hesitations) naturally",
+            "heavy": "Add 2 moderate disfluencies (filler words or hesitations) naturally"
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='disfluencies')}
         {intensity_prompts[intensity]}
         
-        Add disfluencies to make it sound like real speech:
+        Add disfluencies to make it sound like real speech, but be VERY conservative:
         - Filler words: "um", "uh", "like", "you know", "I mean"
         - Hesitations: trailing off ("I..."), incomplete thoughts, natural pauses
-        - Use sparingly and only where it sounds natural, not in every sentence
-        - Do NOT overdo it
+        - Use VERY sparingly - people don't say "um" that much to voice assistants
+        - Maximum 1-2 disfluencies per sentence
+        - Do NOT overdo it - this should sound natural, not like someone struggling to speak
+        - Place them where people naturally hesitate (before important words, when thinking)
+        
+        Examples:
+        - "Get me... a Comfort Uber from twenty-twenty Addison Street"
+        - "What's the weather in... Tel Aviv?"
+        - "I need to... get the details for user ID seventy-eight ninety"
         
         Input: "{text}"
         Output:
@@ -276,6 +426,8 @@ class GranularSpeechPipeline:
         - "give me" → "gimme", "can not" → "can't", "do not" → "don't"
         
         Real speech often uses contractions. Make it sound casual and natural but dont over do it
+        
+        IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
         
         Input: "{text}"
         Output:
@@ -422,6 +574,13 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Break long sentences into shorter fragments where it sounds natural in spoken English.
+        Only break sentences that are actually long or complex. Do NOT over-fragment short sentences.
+        Make it sound natural, not choppy.
+        
+        Examples:
+        - "Get the details for user ID seven eight nine zero. There's a special request. It's black." (good)
+        - "Get. The details. For user. ID seven. Eight nine. Zero." (bad - too choppy)
+        
         Input: "{text}"
         Output:
         """
@@ -442,6 +601,9 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Slightly reorder words or phrases where it sounds natural in spoken English.
+        
+        IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
+        
         Input: "{text}"
         Output:
         """
@@ -453,8 +615,6 @@ class GranularSpeechPipeline:
     def apply_vague_references(self, text: str, intensity: str) -> str:
         intensity_prompts = {
             "light": "Add 1 vague reference naturally",
-            "moderate": "Add 1-2 vague references naturally",
-            "heavy": "Add 2-3 vague references naturally"
         }
         
         prompt = f"""
@@ -484,7 +644,7 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Use approximate quantifiers like: "about 10 minutes", "around 5 files"
-        
+        Ensure changing units that are used in speech, for example 600 seconds should be 10 minutes.
         Input: "{text}"
         Output:
         """
@@ -507,27 +667,7 @@ class GranularSpeechPipeline:
         Use simpler verbs like: "get" instead of "retrieve", "check" instead of "verify"
         Keep the meaning intact.
         
-        Input: "{text}"
-        Output:
-        """
-        result = self._call_openai(prompt)
-        if not result.strip():
-            return text
-        return result
-
-    def apply_polite_hedges(self, text: str, intensity: str) -> str:
-        intensity_prompts = {
-            "light": "Add 1 polite hedge naturally",
-            "moderate": "Add 1-2 polite hedges naturally",
-            "heavy": "Add 2-3 polite hedges naturally"
-        }
-        
-        prompt = f"""
-        {INSTRUCTION_TEMPLATE.format(feature='polite hedges')}
-        {intensity_prompts[intensity]}
-        
-        Use polite hedges like: "maybe", "could you", "if possible"
-        Keep the meaning intact.
+        IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
         
         Input: "{text}"
         Output:
@@ -614,8 +754,14 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='thinking out aloud')}
         {intensity_prompts[intensity]}
         
-        Use thinking aloud phrases like: "let me see", "what's the word..."
-        Keep the meaning intact.
+        Use natural thinking aloud phrases that people actually use:
+        - "let me see", "what's the word...", "I think", "maybe"
+        - Use sparingly and only where it sounds natural
+        - Don't overdo it - people don't constantly think out loud to voice assistants
+        
+        Examples:
+        - "Let me see... get the details for user ID seventy-eight ninety"
+        - "What's the weather in Tel Aviv? I think... in Fahrenheit"
         
         Input: "{text}"
         Output:
@@ -636,8 +782,10 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='backchanneling')}
         {intensity_prompts[intensity]}
         
-        Use backchanneling markers like: "yeah", "so", "right", "okay"
-        Keep the meaning intact.
+        Use natural backchanneling markers that people actually use with voice assistants:
+        - "okay", "right", "yeah", "sure"
+        - Use sparingly and only where it sounds natural
+        - Don't overdo it - people don't constantly say "yeah" to voice assistants
         
         Input: "{text}"
         Output:
@@ -658,8 +806,11 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='emotional markers')}
         {intensity_prompts[intensity]}
         
-        Use emotional markers like: "ugh", "wow", "oh", "right", "seriously"
-        Keep the meaning intact.
+        Use natural emotional markers that people actually use with voice assistants:
+        - "oh" (realization), "right" (agreement), "yeah" (confirmation)
+        - "okay" (acknowledgment), "sure" (agreement)
+        - Use sparingly and only where it sounds natural
+        - Avoid forced emotions like "seriously", "ugh", "wow" unless contextually appropriate
         
         Input: "{text}"
         Output:
@@ -744,7 +895,16 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='numbers noise')}
         {intensity_prompts[intensity]}
         
-        Say numbers or alphanumerics as a real person would, e.g., "seventy-eight ninety" for 7890
+        Say numbers or alphanumerics as a real person would, e.g., "seventy-eight ninety" for 7890, "twenty-twenty" for 2020
+        ONLY convert actual numbers, addresses, or alphanumeric identifiers. Do NOT convert words like "Fahrenheit", "Celsius", etc.
+        
+        Examples:
+        - "7890" → "seventy-eight ninety"
+        - "2020" → "twenty-twenty" 
+        - "221B" → "two twenty-one B"
+        - "600 seconds" → "ten minutes"
+        - "Fahrenheit" → "Fahrenheit" (keep as is)
+        
         Input: "{text}"
         Output:
         """
@@ -862,11 +1022,36 @@ class GranularSpeechPipeline:
             else:
                 print(f"Skipping unknown feature: {feature.feature_name}")
         
+        # Post-processing: clean up quotes and fix spacing
+        current_text = self._post_process_text(current_text)
+        
         results["final"] = current_text
         print(f"\n{'='*50}")
         print(f"FINAL RESULT: {current_text}")
         print(f"{'='*50}")
         return results
+
+    def _post_process_text(self, text: str) -> str:
+        """Clean up the final text by removing quotes and fixing spacing."""
+        # Remove surrounding quotes if they exist
+        text = text.strip()
+        if text.startswith('"') and text.endswith('"'):
+            text = text[1:-1]
+        if text.startswith("'") and text.endswith("'"):
+            text = text[1:-1]
+        
+        # Fix spacing around punctuation
+        text = re.sub(r'\s+([,.!?])', r'\1', text)  # Remove spaces before punctuation
+        text = re.sub(r'([,.!?])\s*([,.!?])', r'\1\2', text)  # Fix double punctuation
+        
+        # Fix spacing around dashes and slashes
+        text = re.sub(r'\s*-\s*', '-', text)  # Remove spaces around single dashes
+        text = re.sub(r'\s*/\s*', '/', text)  # Remove spaces around slashes
+        
+        # Fix multiple spaces
+        text = re.sub(r'\s+', ' ', text)
+        
+        return text.strip()
 
 
 class ASRErrors:
@@ -1002,8 +1187,8 @@ def save_transformed_data(data: List[Dict], output_path: str):
 
 def main():
     config = PipelineConfig(
-        max_features=10,
-        confidence_threshold=0.4,
+        max_features=8,
+        confidence_threshold=0.5,
         temperature=0.8,
         max_retries=3,
         retry_delay=1.0, 
@@ -1013,7 +1198,7 @@ def main():
     data_path = "../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
-    test_subset = bfcl_data[:30] #you can edit the number of test cases here will add a terminal argument support later
+    test_subset = bfcl_data[:10] #you can edit the number of test cases here will add a terminal argument support later
     transformed_data = []
     for i, test_case in enumerate(test_subset):
         print(f"\n{'='*50}")

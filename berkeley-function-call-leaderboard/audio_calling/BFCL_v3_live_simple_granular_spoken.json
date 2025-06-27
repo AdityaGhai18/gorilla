@@ -1,542 +1,250 @@
 [
   {
     "original": "Can you retrieve the details for the user with the ID 7890, who has black as their special request?",
-    "transformed": "\"Uh, could you, maybe, get the details for, um, the user with, uh, the ID seventy-eight ninety, who's got black as, like, their special request?\"",
+    "transformed": "Get the details for user ID seven-eight-nine-zero, you know, the one we talked about. There's a special request; it's the black one.",
     "noise_functions": [
+      "sentence_restructuring",
       "disfluencies",
+      "backchanneling",
       "numbers_noise",
       "contractions",
+      "fragment_sentences",
       "simplified_verbs",
-      "polite_hedges"
+      "contextual_references"
     ],
     "stages": {
-      "disfluencies": "\"Uh, can you, like, retrieve the details for, um, the user with, uh, the ID 7890, who has black as, like, their special request?\"",
-      "numbers_noise": "\"Uh, can you, like, retrieve the details for, um, the user with, uh, the ID seventy-eight ninety, who has black as, like, their special request?\"",
-      "contractions": "\"Uh, can you, like, retrieve the details for, um, the user with, uh, the ID seventy-eight ninety, who's got black as, like, their special request?\"",
-      "simplified_verbs": "\"Uh, can you, like, get the details for, um, the user with, uh, the ID seventy-eight ninety, who's got black as, like, their special request?\"",
-      "polite_hedges": "\"Uh, could you, maybe, get the details for, um, the user with, uh, the ID seventy-eight ninety, who's got black as, like, their special request?\""
+      "sentence_restructuring": "\"Get user details for seven eight nine zero. Special request: black.\"",
+      "disfluencies": "\"Get user details for, um, seven eight nine zero. Special request: black.\"",
+      "backchanneling": "\"Get user details for, um, seven eight nine zero. Okay, special request: black.\"",
+      "numbers_noise": "\"Get user details for, um, seventy-eight ninety. Okay, special request: black.\"",
+      "contractions": "\"Get user details for, um, seventy-eight ninety. Okay, special request: black.\"",
+      "fragment_sentences": "\"Get the details for user ID seventy-eight ninety. There's a special request. It's black.\"",
+      "simplified_verbs": "\"Get the details for user ID seventy-eight ninety. There's a special request. It's black.\"",
+      "contextual_references": "\"Get the details for user ID seven-eight-nine-zero, you know, the one we talked about. There's a special request; it's the black one.\""
     },
-    "final_asr": "\"Uh, could you, maybe, get the details for, um, the user with, uh, the ID seventy-eight ninety, who's got block as, like, their special request?\""
+    "final_asr": "\"Get the details for user ID seven-eight-nine-oh, you know, the one we talked about. There's a special request; it's the back one.\""
   },
   {
     "original": "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases.",
-    "transformed": "Let me see, I want to check out the star history for ShishirPatil slash gorilla and gorilla dash LLM slash gorilla dash C, L, I, and have their timelines aligned. This way, I can, you know, observe the rate of change from their initial releases more clearly.",
+    "transformed": "Alright, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. Align those timelines and observe how they've evolved from the beginning.",
     "noise_functions": [
+      "sentence_restructuring",
       "disfluencies",
-      "thinking_aloud",
-      "numbers_noise",
+      "backchanneling",
       "contractions",
-      "symbol_pronunciation"
+      "slang_terms",
+      "symbol_pronunciation",
+      "fragment_sentences",
+      "contextual_references"
     ],
     "stages": {
-      "disfluencies": "I, uh, want to see the star history of ShishirPatil/gorilla and, like, gorilla-llm/gorilla-cli with their timelines, um, aligned, so that I can, you know, more clearly observe the rate of change from their initial releases.",
-      "thinking_aloud": "Let me see, I want to check out the star history for ShishirPatil/gorilla and gorilla-llm/gorilla-cli, and have their timelines aligned. This way, I can, you know, observe the rate of change from their initial releases more clearly.",
-      "numbers_noise": "Let me see, I want to check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash c, l, i, and have their timelines aligned. This way, I can, you know, observe the rate of change from their initial releases more clearly.",
-      "contractions": "Lemme see, I wanna check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash c, l, i, and have their timelines aligned. This way, I can, y'know, observe the rate of change from their initial releases more clearly.",
-      "symbol_pronunciation": "Let me see, I want to check out the star history for ShishirPatil slash gorilla and gorilla dash LLM slash gorilla dash C, L, I, and have their timelines aligned. This way, I can, you know, observe the rate of change from their initial releases more clearly."
+      "sentence_restructuring": "\"Show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
+      "disfluencies": "\"Show star history for ShishirPatil slash gorilla and, uh, gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
+      "backchanneling": "\"Okay, show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
+      "contractions": "\"Okay, show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they've changed from the start.\"",
+      "slang_terms": "\"Alright, check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align those timelines to see how they\u2019ve changed from the jump.\"",
+      "symbol_pronunciation": "\"Alright, check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align those timelines to see how they\u2019ve changed from the jump.\"",
+      "fragment_sentences": "\"Okay, take a look at the star history for ShishirPatil slash gorilla, and also for gorilla dash llm slash gorilla dash cli. Align those timelines. See how they've changed from the start.\"",
+      "contextual_references": "\"Alright, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. Align those timelines and observe how they've evolved from the beginning.\""
     },
-    "final_asr": "Let me sea, I want to checkout the star history for ShishirPatil slash gorilla and gorilla dash L, L, M slash gorilla dash see, L, I, and half their timelines aligned. This weigh, I can, you no, observe the rate of change from there initial releases more clearly."
+    "final_asr": "\"All right, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. A line those timelines and observe how they've evolved from the beginning.\""
   },
   {
     "original": "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it.",
-    "transformed": "I, uh, need a Comfort Uber ride from twenty-twenty Addison Street, Berkeley, CA, USA, and, ya know, I can wait up to six hundred seconds for it.",
+    "transformed": "Hey, can you, um, get me a Comfort Uber from around twenty-twenty Addison Street, Berkeley? Okay. I'm fine with waiting about 10 minutes.",
     "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "casual_pronouns",
-      "symbol_pronunciation"
-    ],
-    "stages": {
-      "disfluencies": "I, um, need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and, uh, I can wait up to 600 seconds for it.",
-      "numbers_noise": "I, um, need a Comfort Uber ride from twenty twenty Addison Street, Berkeley, CA, USA, and, uh, I can wait up to six hundred seconds for it.",
-      "contractions": "I, um, need a Comfort Uber ride from twenty twenty Addison Street, Berkeley, CA, USA, and, uh, I can wait up to six hundred seconds for it.",
-      "casual_pronouns": "I, uh, need a Comfort Uber ride from twenty twenty Addison Street, Berkeley, CA, USA, and, ya know, I can wait up to six hundred seconds for it.",
-      "symbol_pronunciation": "I, uh, need a Comfort Uber ride from twenty-twenty Addison Street, Berkeley, CA, USA, and, ya know, I can wait up to six hundred seconds for it."
-    },
-    "final_asr": "\"I, uh, need a Comfort Hoover ride from twenty-twenty Madison Street, Berkeley, CA, USA, and, ya know, I can weight up to six hundred seconds for it.\""
-  },
-  {
-    "original": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
-    "transformed": "I need a 'Plus' type Uber. From 221B Baker Street, Berkeley, California, U-S-A. I can wait up to 600 seconds for it. Okay?",
-    "noise_functions": [
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "symbol_pronunciation",
-      "article_dropping",
-      "fragment_sentences"
-    ],
-    "stages": {
-      "backchanneling": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it, okay?",
-      "numbers_noise": "I need a 'Plus' type Uber from two hundred twenty-one B Baker Street, Berkeley, CA, USA, and I can wait up to six hundred seconds for it, okay?",
-      "contractions": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it, okay?",
-      "symbol_pronunciation": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, California, U-S-A, and I can wait up to 600 seconds for it, okay?",
-      "article_dropping": "I need 'Plus' type Uber from 221B Baker Street, Berkeley, California, U-S-A, and I can wait up to 600 seconds for it, okay?",
-      "fragment_sentences": "I need a 'Plus' type Uber. From 221B Baker Street, Berkeley, California, U-S-A. I can wait up to 600 seconds for it. Okay?"
-    },
-    "final_asr": "I knead a 'Plush' type Uber. From 221B Baker Streak, Berkeley, California, U-S-A. Eye can weight up to 600 seconds four it. Okay?"
-  },
-  {
-    "original": "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?",
-    "transformed": "\"Uh, could you maybe tell me the current weather conditions in Tel Aviv, and, like, could you provide that in Fahrenheit, please?\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, what are the current weather conditions in Tel Aviv, and, like, could you provide that in Fahrenheit, please?\"",
-      "numbers_noise": "\"Uh, what are the current weather conditions in Tel Aviv, and, like, could you provide that in Fahrenheit, please?\"",
-      "contractions": "\"Uh, what're the current weather conditions in Tel Aviv, and, like, could you provide that in Fahrenheit, please?\"",
-      "polite_hedges": "\"Uh, could you maybe tell me the current weather conditions in Tel Aviv, and, like, could you provide that in Fahrenheit, please?\""
-    },
-    "final_asr": "\"Uh, could you maybe tell me the curent whether conditions in Tel Aviv, and, like, could you provide that in Fairenheit, please?\""
-  },
-  {
-    "original": "Qual a temperatura atual em Divin\u00f3polis, MG? fahrenheit",
-    "transformed": "\"Uh, what's the, like, current temperature in Divinopolis, M G? In Fahrenheit, I mean.\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, what's the, like, current temperature in Divin\u00f3polis, MG? In fahrenheit, I mean.\"",
-      "numbers_noise": "\"Uh, what's the, like, current temperature in Divinopolis, M G? In Fahrenheit, I mean.\"",
-      "contractions": "\"Uh, what's the, like, current temperature in Divinopolis, M G? In Fahrenheit, I mean.\""
-    },
-    "final_asr": "\"Uh, what's the, like, current temperature in Divine-opolis, MG? In Fair-in-height, I mean.\""
-  },
-  {
-    "original": "Can you tell me the weather in fahrenheit so that I decide if I need to wear a jacket today? San Francisco",
-    "transformed": "\"Uh, lemme see, can you, like, tell me the weather in Fahrenheit, right? I mean, so I can decide if I needta wear a jacket today... in San Francisco?\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "backchanneling",
-      "restarts_repairs",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, can you, like, tell me the weather in Fahrenheit? I mean, so I can decide if I need to wear a jacket today... in San Francisco?\"",
-      "thinking_aloud": "\"Uh, let me see, can you, like, tell me the weather in Fahrenheit? I mean, so I can decide if I need to wear a jacket today... in San Francisco?\"",
-      "backchanneling": "\"Uh, let me see, can you, like, tell me the weather in Fahrenheit, right? I mean, so I can decide if I need to wear a jacket today... in San Francisco?\"",
-      "contractions": "\"Uh, lemme see, can you, like, tell me the weather in Fahrenheit, right? I mean, so I can decide if I needta wear a jacket today... in San Francisco?\""
-    },
-    "final_asr": "\"Uh, lemme see, can ewe, like, tell me the whether in Fahrenheit, write? Eye mean, sew I can decide if I need to where a jacket today... in San Francisco?\""
-  },
-  {
-    "original": "Im at Riga, Latvia, Can you tell me the current temperature?",
-    "transformed": "\"Um, I'm in Riga, Latvia... Could you, perhaps, tell me the current temperature?\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "preposition_dropping",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Um, I'm at Riga, Latvia... Can you, like, tell me the current temperature?\"",
-      "numbers_noise": "\"Um, I'm at Riga, Latvia... Can you, like, tell me the current temperature?\"",
-      "contractions": "\"Um, I'm at Riga, Latvia... Can you, like, tell me the current temperature?\"",
-      "preposition_dropping": "\"Um, I'm Riga, Latvia... Can you, like, tell me the current temperature?\"",
-      "polite_hedges": "\"Um, I'm in Riga, Latvia... Could you, perhaps, tell me the current temperature?\""
-    },
-    "final_asr": "\"Um, I'm in Rega, Latvia... Could you, per chance, tell me the current temperature?\""
-  },
-  {
-    "original": "I want to know weather conditions? I'm at London, UK in fahr",
-    "transformed": "\"Uh, I wanna\u2014wait, can you tell me the, um, weather conditions at, like, London dash United Kingdom, in Fahrenheit?\"",
-    "noise_functions": [
-      "disfluencies",
-      "false_starts",
-      "numbers_noise",
-      "contractions",
-      "symbol_pronunciation"
-    ],
-    "stages": {
-      "disfluencies": "Uh, I want to know the, um, weather conditions? I'm in, like, London, UK, in fahr.",
-      "false_starts": "\"Uh, I want to\u2014wait, can you tell me the, um, weather conditions? I'm in, like, London, UK, in fahr.\"",
-      "numbers_noise": "\"Uh, I want to\u2014wait, can you tell me the, um, weather conditions? I'm in, like, London, United Kingdom, in Fahrenheit.\"",
-      "contractions": "\"Uh, I wanna\u2014wait, can you tell me the, um, weather conditions? I'm in, like, London, United Kingdom, in Fahrenheit.\"",
-      "symbol_pronunciation": "\"Uh, I wanna\u2014wait, can you tell me the, um, weather conditions at, like, London dash United Kingdom, in Fahrenheit?\""
-    },
-    "final_asr": "\"Uh, I wanna\u2014wait, can you tell me the, um, whether conditions at, like, London dash United Kingdom, in Fair and height?\""
-  },
-  {
-    "original": "What's weather in Hyderabad in Fahrenheit",
-    "transformed": "\"What's the weather in Hyderabad in Fahrenheit, I think?\"",
-    "noise_functions": [
-      "contractions",
-      "casual_pronouns",
-      "article_dropping",
-      "preposition_dropping",
-      "confidence_markers"
-    ],
-    "stages": {
-      "contractions": "\"What's the weather in Hyderabad in Fahrenheit?\"",
-      "casual_pronouns": "\"What's the weather in Hyderabad in Fahrenheit, ya know?\"",
-      "article_dropping": "\"What's weather in Hyderabad in Fahrenheit, ya know?\"",
-      "preposition_dropping": "\"What's weather Hyderabad in Fahrenheit, ya know?\"",
-      "confidence_markers": "\"What's the weather in Hyderabad in Fahrenheit, I think?\""
-    },
-    "final_asr": "\"What's the whether in Hyderabad in Fahrenheit, eye think?\""
-  },
-  {
-    "original": "Could you tell me the current weather in Yosemite National Park which locates at Mariposa, CA, and make sure to give me the temperature in Celsius?",
-    "transformed": "Hi, um, if possible, could you please tell me what the current weather is in Yosemite National Park, which is in Mariposa, California? And, oh, right, could you also make sure to give me the temperature in Celsius?",
-    "noise_functions": [
+      "sentence_restructuring",
       "disfluencies",
       "backchanneling",
       "numbers_noise",
       "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, could you, like, tell me what the current weather is in Yosemite National Park, which is, you know, at Mariposa, CA? And, um, make sure to give me the temperature in Celsius?\"",
-      "backchanneling": "\"Uh, could you, like, tell me what the current weather is in Yosemite National Park, which is, you know, at Mariposa, CA? And, um, right, make sure to give me the temperature in Celsius?\"",
-      "numbers_noise": "Uh, could you, like, tell me what the current weather is in Yosemite National Park, which is, you know, at Mariposa, California? And, um, right, make sure to give me the temperature in Celsius?",
-      "contractions": "Uh, could you, like, tell me what's the current weather in Yosemite National Park, which's, you know, at Mariposa, California? And, um, right, make sure to gimme the temperature in Celsius?",
-      "polite_hedges": "Hi, um, if possible, could you please tell me what the current weather is in Yosemite National Park, which is in Mariposa, California? And, oh, right, could you also make sure to give me the temperature in Celsius?"
-    },
-    "final_asr": "Hi, uh, if possible, could you please tell me what the current whether is in Yosemite National Bark, which is in Mariposa, California? And, oh, rite, could you also make shore to give me the temperature in Celsius?"
-  },
-  {
-    "original": "Could you tell me the current weather conditions in Naples, Florida?",
-    "transformed": "\"Uh, if possible, could you, like, tell me the current weather conditions in Naples, Florida?\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, could you, like, tell me the current weather conditions in Naples, Florida?\"",
-      "numbers_noise": "\"Uh, could you, like, tell me the current weather conditions in Naples, Florida?\"",
-      "contractions": "\"Uh, could you, like, tell me the current weather conditions in Naples, Florida?\"",
-      "polite_hedges": "\"Uh, if possible, could you, like, tell me the current weather conditions in Naples, Florida?\""
-    },
-    "final_asr": "\"Uh, if passable, could you, like, tell me the current whether conditions in Naples, Florida?\""
-  },
-  {
-    "original": "I'm planning a trip to New York, NY in December and will be staying for 5 days. Could you tell me the current weather conditions, and provide the temperature in Celsius?",
-    "transformed": "\"Well, let's see, I'm, like, planning a trip to New York in December, and I'll be staying for, uh, five days. If possible, could you, you know, tell me the current weather and, perhaps, provide me with the temperature in Celsius - dash?\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "numbers_noise",
-      "contractions",
-      "symbol_pronunciation",
-      "simplified_verbs",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, I'm, like, planning a trip to New York, NY in December and, um, I'll be staying for, uh, 5 days. Could you, you know, tell me the current weather conditions and, I mean, provide the temperature in Celsius?\"",
-      "thinking_aloud": "Let me see, I'm, like, planning a trip to New York, NY in December and, um, I'll be staying for, uh, 5 days. Could you, you know, tell me the current weather conditions and, I mean, provide the temperature in Celsius?",
-      "numbers_noise": "Let me see, I'm, like, planning a trip to New York, NY in December and, um, I'll be staying for, uh, five days. Could you, you know, tell me the current weather conditions and, I mean, provide the temperature in Celsius?",
-      "contractions": "Lemme see, I'm, like, planning a trip to New York in December, and I'll be staying for, uh, five days. Could you, you know, tell me the current weather conditions and, I mean, provide the temperature in Celsius?",
-      "symbol_pronunciation": "\"Lemme see, I'm, like, planning a trip to New York in December, and I'll be staying for, uh, five days. Could you, you know, tell me the current weather conditions and, I mean, provide the temperature in Celsius - dash?\"",
-      "simplified_verbs": "\"Lemme see, I'm, like, planning a trip to New York in December, and I'll be staying for, uh, five days. Could you, you know, tell me the current weather and, I mean, give me the temperature in Celsius - dash?\"",
-      "polite_hedges": "\"Well, let's see, I'm, like, planning a trip to New York in December, and I'll be staying for, uh, five days. If possible, could you, you know, tell me the current weather and, perhaps, provide me with the temperature in Celsius - dash?\""
-    },
-    "final_asr": "\"Well, let's sea, I'm, like, planning a trip to New York in December, and isle be staying for, uh, five dais. If possible, could ewe, you no, tell me the current whether and, perhaps, provide me with the temperature in Celsius - dash?\""
-  },
-  {
-    "original": "\u6211\u60f3\u77e5\u9053\u4e0a\u6d77\u76ee\u524d\u7684\u5929\u6c14\u72b6\u51b5\uff0c\u53ef\u4ee5\u5e2e\u6211\u67e5\u8be2\u5417\uff1f\u987a\u4fbf\u4f7f\u7528\u6444\u6c0f\u5ea6\u6765\u663e\u793a\u6e29\u5ea6\u3002",
-    "transformed": "\"Could you perhaps let me know the current weather status in Shanghai? Hmm, let me think for a moment. Can you help me get it? Oh, by the way, if possible, please show the temperature in Celsius.\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "numbers_noise",
-      "simplified_verbs",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\u6211\u60f3\u77e5\u9053\u4e0a\u6d77\u76ee\u524d\u7684\u5929\u6c14\u72b6\u51b5\uff0c\u5443\uff0c\u53ef\u4ee5\u5e2e\u6211\u67e5\u8be2\u5417\uff1f\u987a\u4fbf\u7528\u6444\u6c0f\u5ea6\u6765\u663e\u793a\u6e29\u5ea6\u3002",
-      "thinking_aloud": "\u6211\u60f3\u77e5\u9053\u4e0a\u6d77\u76ee\u524d\u7684\u5929\u6c14\u72b6\u51b5\uff0c\u55ef\uff0c\u5148\u8ba9\u6211\u60f3\u60f3\uff0c\u53ef\u4ee5\u5e2e\u6211\u67e5\u8be2\u5417\uff1f\u54e6\uff0c\u5bf9\u4e86\uff0c\u987a\u4fbf\u7528\u6444\u6c0f\u5ea6\u6765\u663e\u793a\u6e29\u5ea6\u3002",
-      "numbers_noise": "\"I want to know the current weather status in Shanghai, hmm, let me think for a moment. Can you help me check it? Oh, by the way, please display the temperature in Celsius.\"",
-      "simplified_verbs": "\"I want to know the current weather status in Shanghai, hmm, let me think for a moment. Can you help me get it? Oh, by the way, please show the temperature in Celsius.\"",
-      "polite_hedges": "\"Could you perhaps let me know the current weather status in Shanghai? Hmm, let me think for a moment. Can you help me get it? Oh, by the way, if possible, please show the temperature in Celsius.\""
-    },
-    "final_asr": "\"Could you per haps let me know the currant whether status in Shanghai? Hmm, let me thing for a moment. Can you help me get it? Oh, by the weigh, if possible, please show the temperature in Celsius.\""
-  },
-  {
-    "original": "I have a busy day today. Can you tell me what the temperature is going to be in Bangkok, Thailand. I prefer the fahrenheit unit.",
-    "transformed": "\"Let's see, I might have a busy day today. If possible, could you, um, let me know what the temperature's going to be in Bangkok, Thailand? I'd prefer it in Fahrenheit, if you don't mind.\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "I have, um, a busy day today. Can you, like, tell me what the temperature is gonna be in Bangkok, Thailand? I mean, I prefer the Fahrenheit unit.",
-      "thinking_aloud": "Let's see, I have a busy day today. Could you, um, tell me what the temperature is going to be in Bangkok, Thailand? I prefer the Fahrenheit unit, you know.",
-      "backchanneling": "Let's see, I have a busy day today. Could you, um, tell me what the temperature is going to be in Bangkok, Thailand? Yeah, I prefer the Fahrenheit unit, you know.",
-      "numbers_noise": "\"Let's see, I have a busy day today. Could you, um, tell me what the temperature's gonna be in Bangkok, Thailand? Yeah, I prefer the Fahrenheit unit, you know.\"",
-      "contractions": "\"Let's see, I've got a busy day today. Could you, um, tell me what the temperature's gonna be in Bangkok, Thailand? Yeah, I'd prefer the Fahrenheit unit, you know.\"",
-      "polite_hedges": "\"Let's see, I might have a busy day today. If possible, could you, um, let me know what the temperature's going to be in Bangkok, Thailand? I'd prefer it in Fahrenheit, if you don't mind.\""
-    },
-    "final_asr": "\"Let's sea, I mite have a busy day today. If possible, could you, um, let me no what the temperatures going to be in Bangkok, Thailand? I'd prefer it in Fahrenheit, if you don't mind.\""
-  },
-  {
-    "original": "I'm at Bengaluru. Tell me the current weather conditions in Chennai, Tamil Nadu in fahrenheit?",
-    "transformed": "\"Lemme see, I'm at Bengaluru, and I'm wondering if you could, yeah, tell me the current weather conditions in Chennai, Tamil Nadu, in Fahrenheit?\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "backchanneling",
-      "numbers_noise",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "I'm, uh, at Bengaluru. Could you, like, tell me the current weather conditions in Chennai, Tamil Nadu in, um, Fahrenheit?",
-      "thinking_aloud": "\"Let me see, I'm at Bengaluru, and I'm wondering if you could tell me the current weather conditions in Chennai, Tamil Nadu, in Fahrenheit?\"",
-      "backchanneling": "\"Let me see, I'm at Bengaluru, and I'm wondering if you could, yeah, tell me the current weather conditions in Chennai, Tamil Nadu, in Fahrenheit?\"",
-      "numbers_noise": "\"Let me see, I'm at Bengaluru, and I'm wondering if you could, yeah, tell me the current weather conditions in Chennai, Tamil Nadu, in Fahrenheit?\"",
-      "contractions": "\"Lemme see, I'm at Bengaluru, and I'm wondering if you could, yeah, tell me the current weather conditions in Chennai, Tamil Nadu, in Fahrenheit?\""
-    },
-    "final_asr": "\"Lemme sea, I'm at Bengaluru, and I'm wondering if you could, yeah, tell me the current whether conditions in Chennai, Tamil Nadu, in Fahrenheit?\""
-  },
-  {
-    "original": "Could you tell me the current weather in Lang Son in fahrenheit?",
-    "transformed": "\"Uh, if possible, could you, like, tell me the current weather in Lang Son in Fahrenheit?\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, could you, like, tell me the current weather in Lang Son in fahrenheit?\"",
-      "numbers_noise": "\"Uh, could you, like, tell me the current weather in Lang Son in fahrenheit?\"",
-      "contractions": "\"Uh, could you, like, tell me the current weather in Lang Son in Fahrenheit?\"",
-      "polite_hedges": "\"Uh, if possible, could you, like, tell me the current weather in Lang Son in Fahrenheit?\""
-    },
-    "final_asr": "\"Uh, if possible, cud you, like, tell me the currant whether in Lang Son in Fahrenheit?\""
-  },
-  {
-    "original": "weather today in Boston in fahrenheit?",
-    "transformed": "\"Uh, what's the weather like today in Boston, in Fahrenheit, seriously?\"",
-    "noise_functions": [
-      "disfluencies",
-      "emotional_markers",
-      "numbers_noise",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, what's the weather like today in Boston, in Fahrenheit?\"",
-      "emotional_markers": "\"Uh, what's the weather like today in Boston, in Fahrenheit, seriously?\"",
-      "numbers_noise": "\"Uh, what's the weather like today in Boston, in Fahrenheit, seriously?\"",
-      "contractions": "\"Uh, what's the weather like today in Boston, in Fahrenheit, seriously?\""
-    },
-    "final_asr": "\"Uh, what's the whether like today in Boston, in fair in height, seriously?\""
-  },
-  {
-    "original": "Can you tell me the current weather in Moscow, specifying the temperature in Celsius?",
-    "transformed": "\"Could you, perhaps, tell me the current weather in Moscow, you know, specifying the temperature in Celsius? Lemme see...\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "numbers_noise",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "\"Can you, um, tell me the current weather in Moscow, like, specifying the temperature in Celsius?\"",
-      "thinking_aloud": "\"Can you, um, tell me the current weather in Moscow, like, specifying the temperature in Celsius? Let me see...\"",
-      "numbers_noise": "\"Can you, um, tell me the current weather in Moscow, like, specifying the temperature in Celsius? Let me see...\"",
-      "contractions": "\"Can you, uh, tell me the current weather in Moscow, like, specifying the temperature in Celsius? Lemme see...\"",
-      "polite_hedges": "\"Could you, perhaps, tell me the current weather in Moscow, you know, specifying the temperature in Celsius? Lemme see...\""
-    },
-    "final_asr": "\"Could you, maybe, tell me the current whether in Moscow, you know, specifying the temperature in Celsius? Lemme sea...\""
-  },
-  {
-    "original": "What's the weather in Quintana Roo, Mexico. Please tell me the answer in the superior units of temperature, by that I mean Celsius.",
-    "transformed": "\"Uh, I think you want to know what the weather's like in Quintana Roo, Mexico? Could you, you know, gimme the answer, uh, in Celsius?\"",
-    "noise_functions": [
-      "disfluencies",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "confidence_markers"
-    ],
-    "stages": {
-      "disfluencies": "\"Uh, what's the weather like, um, in Quintana Roo, Mexico? Could you, you know, give me the answer in the, I mean, in Celsius?\"",
-      "backchanneling": "\"Uh, what's the weather like, um, in Quintana Roo, Mexico? Could you, you know, right, give me the answer in the, I mean, in Celsius?\"",
-      "numbers_noise": "\"Uh, what's the weather like, um, in Quintana Roo, Mexico? Could you, you know, right, give me the answer in, uh, I mean, in Celsius?\"",
-      "contractions": "\"Uh, what's the weather like, um, in Quintana Roo, Mexico? Could you, you know, gimme the answer in, uh, I mean, in Celsius?\"",
-      "confidence_markers": "\"Uh, I think you want to know what the weather's like in Quintana Roo, Mexico? Could you, you know, gimme the answer, uh, in Celsius?\""
-    },
-    "final_asr": "\"Uh, I think you won\u2019t to no what the whether's like in Kintana Roo, Mexico? Could you, you no, gimme the ansir, uh, in Celsius?\""
-  },
-  {
-    "original": "I would like to order a burger with the following modification verbatim: no onions, extra cheese",
-    "transformed": "\"Imma order a burger with, sorry, lemme rephrase, the following modification: no onions, extra cheese.\"",
-    "noise_functions": [
-      "disfluencies",
-      "restarts_repairs",
-      "contractions",
-      "casual_pronouns"
-    ],
-    "stages": {
-      "disfluencies": "I would, um, like to order a burger with the following modification, you know, verbatim: no onions, extra cheese.",
-      "restarts_repairs": "\"I would like to order a burger with, sorry, let me rephrase, the following modification: no onions, extra cheese.\"",
-      "contractions": "\"I'd like to order a burger with, sorry, lemme rephrase, the following modification: no onions, extra cheese.\"",
-      "casual_pronouns": "\"Imma order a burger with, sorry, lemme rephrase, the following modification: no onions, extra cheese.\""
-    },
-    "final_asr": "\"I'mma order a burger with, sorry, let me rephrase, the following modification: know onions, extra cheese.\""
-  },
-  {
-    "original": "I'd like to modify my order by making the dish called 'chicken dish' to a new spice level 'extra spicy', please.",
-    "transformed": "\"Let me see... If possible, I'd like to modify my order by changing the dish called 'chicken dish' to a new spice level: 'extra spicy', please.\"",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "contractions",
-      "polite_hedges"
-    ],
-    "stages": {
-      "disfluencies": "Um, I'd like to, uh, modify my order... by making the dish called 'chicken dish' to, like, a new spice level, 'extra spicy', please.",
-      "thinking_aloud": "Let me see... I'd like to modify my order by changing the dish called 'chicken dish' to a new spice level: 'extra spicy', please.",
-      "contractions": "Lemme see... I'd like to modify my order by changing the dish called 'chicken dish' to a new spice level: 'extra spicy', please.",
-      "polite_hedges": "\"Let me see... If possible, I'd like to modify my order by changing the dish called 'chicken dish' to a new spice level: 'extra spicy', please.\""
-    },
-    "final_asr": "\"Let me sea... If possible, I'd like to modify my order by changing the dish called 'chicken dish' to a new spice level: 'extra spiced', pleas.\""
-  },
-  {
-    "original": "I need Whopper also known old folks as the burger.",
-    "transformed": "\"I need the Whopper, or as some old folks call it, the burger.\"",
-    "noise_functions": [
-      "contractions",
-      "article_dropping",
+      "fragment_sentences",
+      "approximate_quantifiers",
       "simplified_verbs"
     ],
     "stages": {
-      "contractions": "\"I need a Whopper, also known by the old folks as the burger.\"",
-      "article_dropping": "\"I need Whopper, also known by old folks as the burger.\"",
-      "simplified_verbs": "\"I need the Whopper, or as some old folks call it, the burger.\""
+      "sentence_restructuring": "\"Get me a Comfort Uber from twenty-twenty Addison Street Berkeley. I'm good to wait ten minutes.\"",
+      "disfluencies": "\"Get me, uh, a Comfort Uber from twenty-twenty Addison Street Berkeley. I'm good to wait ten minutes.\"",
+      "backchanneling": "\"Get me, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.\"",
+      "numbers_noise": "Get me, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.",
+      "contractions": "Gimme, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.",
+      "fragment_sentences": "\"Gimme, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay. I'm good to wait ten minutes.\"",
+      "approximate_quantifiers": "\"Gimme, uh, a Comfort Uber from roughly twenty-twenty Addison Street, Berkeley. Okay. I'm good to wait about 10 minutes.\"",
+      "simplified_verbs": "\"Hey, can you, um, get me a Comfort Uber from around twenty-twenty Addison Street, Berkeley? Okay. I'm fine with waiting about 10 minutes.\""
     },
-    "final_asr": "\"I kneed the Whopper, or as sum old folks call it, the burger.\""
+    "final_asr": "\"Hey, can you, um, get me a Comfort Hoober from around twenty-twenty Adamson Street, Berkeley? Okay. I'm find with weighting about 10 minutes.\""
   },
   {
-    "original": "Order me pizza",
-    "transformed": "\"Hey, can grab me some pizza?\"",
+    "original": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
+    "transformed": "Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.",
     "noise_functions": [
+      "sentence_restructuring",
+      "disfluencies",
+      "backchanneling",
+      "numbers_noise",
       "contractions",
-      "casual_pronouns",
+      "fragment_sentences",
+      "approximate_quantifiers",
+      "simplified_verbs"
+    ],
+    "stages": {
+      "sentence_restructuring": "\"Get me a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "disfluencies": "\"Get me, um, a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "backchanneling": "\"Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "numbers_noise": "\"Okay, get me a Plus Uber from two twenty-one B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "contractions": "\"Okay, gimme a Plus Uber from two twenty-one B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "fragment_sentences": "\"Okay, gimme a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
+      "approximate_quantifiers": "\"Okay, gimme a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.\"",
+      "simplified_verbs": "\"Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.\""
+    },
+    "final_asr": "\"Okay, get me a Plus Hoober from 221B Baker Street in Berkley. I've got about ten minutest to weight.\""
+  },
+  {
+    "original": "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?",
+    "transformed": "What's the weather in Tel Aviv? Could you tell me in Fahrenheit, please?",
+    "noise_functions": [
+      "sentence_restructuring",
+      "disfluencies",
+      "backchanneling",
+      "numbers_noise",
+      "contractions",
+      "subject_dropping",
+      "fragment_sentences",
+      "simplified_verbs"
+    ],
+    "stages": {
+      "sentence_restructuring": "\"What's the weather in Tel Aviv? Give it to me in Fahrenheit.\"",
+      "disfluencies": "\"What's the weather in, uh, Tel Aviv? Give it to me in Fahrenheit.\"",
+      "backchanneling": "\"What's the weather in, uh, Tel Aviv? Okay, give it to me in Fahrenheit.\"",
+      "numbers_noise": "\"What's the weather in, uh, Tel Aviv? Okay, give it to me in Fahrenheit.\"",
+      "contractions": "\"What's the weather in, uh, Tel Aviv? Okay, gimme it in Fahrenheit.\"",
+      "subject_dropping": "\"What's the weather in, uh, Tel Aviv? Okay, gimme it in Fahrenheit.\"",
+      "fragment_sentences": "\"What's the weather in Tel Aviv? Could you give it to me in Fahrenheit, please?\"",
+      "simplified_verbs": "\"What's the weather in Tel Aviv? Could you tell me in Fahrenheit, please?\""
+    },
+    "final_asr": "\"What's the whether in Tell Aviv? Could you tell me in Fair and Height, please?\""
+  },
+  {
+    "original": "Qual a temperatura atual em Divin\u00f3polis, MG? fahrenheit",
+    "transformed": "Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?",
+    "noise_functions": [
+      "sentence_restructuring",
+      "disfluencies",
+      "backchanneling",
+      "contractions",
       "slang_terms",
-      "subject_dropping"
-    ],
-    "stages": {
-      "contractions": "Order me some pizza, will ya?",
-      "casual_pronouns": "\"Order me some pizza, will ya?\"",
-      "slang_terms": "\"Hey, can you grab me some pizza?\"",
-      "subject_dropping": "\"Hey, can grab me some pizza?\""
-    },
-    "final_asr": "\"Hey, can you grab me some piece of?\""
-  },
-  {
-    "original": "I would like to switch my order from pizza to a BURGER.",
-    "transformed": "\"I'd like to, uh, change my order from pizza to, um, I mean, a burger, no, oh, a cheeseburger.\"",
-    "noise_functions": [
-      "disfluencies",
-      "self_corrections",
-      "emotional_markers",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "I would, um, like to switch my order from pizza to a, uh, burger.",
-      "self_corrections": "\"I would, uh, like to change my order from pizza to, um, I mean, a burger, no, a cheeseburger.\"",
-      "emotional_markers": "\"I would, uh, like to change my order from pizza to, um, I mean, a burger, no, oh, a cheeseburger.\"",
-      "contractions": "\"I'd like to, uh, change my order from pizza to, um, I mean, a burger, no, oh, a cheeseburger.\""
-    },
-    "final_asr": "\"I'd like too, uh, change my odor from pizza two, um, I mean, a burger, know, oh, a cheeseburger.\""
-  },
-  {
-    "original": "I've changed my mind, can I get a greens instead of what I previously ordered?",
-    "transformed": "\"Hey, I've flipped the script\u2014can I grab a salad instead of what I ordered before?\"",
-    "noise_functions": [
-      "disfluencies",
-      "self_corrections",
-      "thinking_aloud",
-      "contractions",
-      "slang_terms"
-    ],
-    "stages": {
-      "disfluencies": "Um, I've changed my mind, could I, like, get a greens instead of, uh, what I previously ordered?",
-      "self_corrections": "\"Um, I've changed my mind, could I, like, get a salad instead of, uh, what I previously ordered?\"",
-      "contractions": "\"Um, I've changed my mind, could I, like, get a salad instead of what I, uh, previously ordered?\"",
-      "slang_terms": "\"Hey, I've flipped the script\u2014can I grab a salad instead of what I ordered before?\""
-    },
-    "final_asr": "\"Hey, I've flipped the script\u2014can I grab a solid instead of what I ordered before?\""
-  },
-  {
-    "original": "T\u00f4i c\u1ea7n m\u1ed9t chuy\u1ebfn Uber lo\u1ea1i 'Plus' t\u1eeb \u0111\u1ecba ch\u1ec9 123 \u0110\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc, Berkeley, CA 94704 v\u00e0 t\u00f4i kh\u00f4ng mu\u1ed1n ch\u1edd qu\u00e1 10 ph\u00fat.",
-    "transformed": "\"I need, um, an Uber 'Plus' from, uh, one two three University Avenue, Berkeley, CA nine four seven oh four, and I... I don't wanna wait more than ten minutes.\"",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions"
-    ],
-    "stages": {
-      "disfluencies": "T\u00f4i c\u1ea7n, um, m\u1ed9t chuy\u1ebfn Uber lo\u1ea1i 'Plus' t\u1eeb, uh, \u0111\u1ecba ch\u1ec9 123 \u0110\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc, Berkeley, CA 94704, v\u00e0 t\u00f4i... t\u00f4i kh\u00f4ng mu\u1ed1n ch\u1edd qu\u00e1 10 ph\u00fat.",
-      "numbers_noise": "\"T\u00f4i c\u1ea7n, um, m\u1ed9t chuy\u1ebfn Uber lo\u1ea1i 'Plus' t\u1eeb, uh, \u0111\u1ecba ch\u1ec9 m\u1ed9t hai ba \u0110\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc, Berkeley, CA ch\u00edn b\u1ed1n b\u1ea3y kh\u00f4ng b\u1ed1n, v\u00e0 t\u00f4i... t\u00f4i kh\u00f4ng mu\u1ed1n ch\u1edd qu\u00e1 m\u01b0\u1eddi ph\u00fat.\"",
-      "contractions": "\"I need, um, an Uber 'Plus' from, uh, one two three University Avenue, Berkeley, CA nine four seven oh four, and I... I don't wanna wait more than ten minutes.\""
-    },
-    "final_asr": "\"I knead, um, an Uber 'Plus' from, uh, won too three University Avenue, Berkeley, CA nigh for seven oh four, and I... I don't wanna weight more then ten minutes.\""
-  },
-  {
-    "original": "I want to order five 'burgers' and six 'chicken wings' from uber pitada",
-    "transformed": "Yo, I'm tryna grab five 'burgers' and six 'chicken wings' from Uber Pitada.",
-    "noise_functions": [
-      "disfluencies",
-      "numbers_noise",
-      "contractions",
-      "slang_terms"
-    ],
-    "stages": {
-      "disfluencies": "\"I, um, want to order, like, five 'burgers' and, uh, six 'chicken wings' from Uber Pitada.\"",
-      "numbers_noise": "\"I, um, want to order, like, five 'burgers' and, uh, six 'chicken wings' from Uber Pitada.\"",
-      "contractions": "\"I, um, wanna order, like, five 'burgers' and, uh, six 'chicken wings' from Uber Pitada.\"",
-      "slang_terms": "Yo, I'm tryna grab five 'burgers' and six 'chicken wings' from Uber Pitada."
-    },
-    "final_asr": "\"Yo, I'm tryna grab five 'burglars' and six 'chick in' wings from Uber Pita.\""
-  },
-  {
-    "original": "\u6211\u60f3\u5728\u80af\u5fb7\u57fa\u4e7010\u4e2a\u9ea6\u8fa3\u9e21\u817f\u5821\uff0c50\u676f\u53ef\u53e3\u53ef\u4e50\uff0c30\u4e2a\u6cb9\u70b8\u9e21\u7fc5\uff0c90\u6839\u85af\u6761",
-    "transformed": "Let's see. I want to buy ten, uh, Spicy Chicken Burgers at KFC. Around fifty cups of Coca-Cola. Um, also thirty fried chicken wings. And ninety fries.",
-    "noise_functions": [
-      "disfluencies",
-      "thinking_aloud",
-      "numbers_noise",
+      "symbol_pronunciation",
+      "subject_dropping",
       "fragment_sentences"
     ],
     "stages": {
-      "disfluencies": "\u5443\uff0c\u6211\u60f3\u5728\u80af\u5fb7\u57fa\u4e7010\u4e2a\uff0c\u5443\uff0c\u9ea6\u8fa3\u9e21\u817f\u5821\uff0c\u7136\u540e\u5927\u698250\u676f\u53ef\u53e3\u53ef\u4e50\uff0c\u55ef\uff0c\u8fd8\u670930\u4e2a\u6cb9\u70b8\u9e21\u7fc5\u548c90\u6839\u85af\u6761\u3002",
-      "thinking_aloud": "\u5443\uff0c\u8ba9\u6211\u770b\u770b\uff0c\u6211\u60f3\u5728\u80af\u5fb7\u57fa\u4e7010\u4e2a\uff0c\u5443\uff0c\u9ea6\u8fa3\u9e21\u817f\u5821\uff0c\u5927\u7ea650\u676f\u53ef\u53e3\u53ef\u4e50\uff0c\u55ef\uff0c\u8fd8\u670930\u4e2a\u6cb9\u70b8\u9e21\u7fc5\u548c90\u6839\u85af\u6761\u3002",
-      "numbers_noise": "\u5443\uff0c\u8ba9\u6211\u770b\u770b\uff0c\u6211\u60f3\u5728\u80af\u5fb7\u57fa\u4e70\u5341\u4e2a\uff0c\u5443\uff0c\u9ea6\u8fa3\u9e21\u817f\u5821\uff0c\u5927\u7ea6\u4e94\u5341\u676f\u53ef\u53e3\u53ef\u4e50\uff0c\u55ef\uff0c\u8fd8\u6709\u4e09\u5341\u4e2a\u6cb9\u70b8\u9e21\u7fc5\u548c\u4e5d\u5341\u6839\u85af\u6761\u3002",
-      "fragment_sentences": "Let's see. I want to buy ten, uh, Spicy Chicken Burgers at KFC. Around fifty cups of Coca-Cola. Um, also thirty fried chicken wings. And ninety fries."
+      "sentence_restructuring": "\"What's the current temperature in Divin\u00f3polis, MG? In Fahrenheit.\"",
+      "disfluencies": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit.\"",
+      "backchanneling": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit, okay?\"",
+      "contractions": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit, okay?\"",
+      "slang_terms": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?\"",
+      "symbol_pronunciation": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG, dash in Fahrenheit, yeah?\"",
+      "subject_dropping": "\"Hey, can check out what the current temperature is in Divin\u00f3polis, MG, dash in Fahrenheit, yeah?\"",
+      "fragment_sentences": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?\""
     },
-    "final_asr": "\"Let's sea. Eye want to by ten, uh, Spicy Chicken Burgers at KFC. Around fifty cuffs of Coca-Cola. Um, also thirty fried chicken rings. And ninety prize.\""
+    "final_asr": "\"Hey, can ewe check out what the current tempature is in Divin\u00f3polis, MG? In Fahrenheit, yes?\""
   },
   {
-    "original": "I want to go to McDonald's and buy a pizza.",
-    "transformed": "\"I'm thinking I'll grab a trip to McDonald's and snag a pizza.\"",
+    "original": "Can you tell me the weather in fahrenheit so that I decide if I need to wear a jacket today? San Francisco",
+    "transformed": "Hey, what's the weather like in San Francisco, in Fahrenheit? I need to see if I, um, should get a jacket.",
     "noise_functions": [
+      "sentence_restructuring",
       "disfluencies",
+      "backchanneling",
       "contractions",
-      "slang_terms"
+      "symbol_pronunciation",
+      "fragment_sentences",
+      "word_reordering",
+      "simplified_verbs"
     ],
     "stages": {
-      "disfluencies": "\"I, um, want to go to McDonald's and, like, buy a pizza.\"",
-      "contractions": "\"I, um, wanna go to McDonald's and, like, buy a pizza.\"",
-      "slang_terms": "\"I'm thinking I'll grab a trip to McDonald's and snag a pizza.\""
+      "sentence_restructuring": "\"What's the weather in San Francisco? In Fahrenheit. Need to know if I need a jacket.\"",
+      "disfluencies": "\"What's the weather in, um, San Francisco? In Fahrenheit. Need to know if I, uh, need a jacket.\"",
+      "backchanneling": "\"What's the weather in, um, San Francisco, in Fahrenheit? Yeah, need to know if I, uh, need a jacket.\"",
+      "contractions": "\"What's the weather in, um, San Francisco, in Fahrenheit? Yeah, need to know if I, uh, need a jacket.\"",
+      "symbol_pronunciation": "\"What's the weather like in, um, San Francisco slash in Fahrenheit? Yeah, need to know if I dash uh dash need a jacket.\"",
+      "fragment_sentences": "\"What's the weather like in, um, San Francisco in Fahrenheit? Yeah, I need to know if, uh, I need a jacket.\"",
+      "word_reordering": "\"Hey, what's the weather like in San Francisco, in Fahrenheit? I need to know if I, uh, need a jacket.\"",
+      "simplified_verbs": "\"Hey, what's the weather like in San Francisco, in Fahrenheit? I need to see if I, um, should get a jacket.\""
     },
-    "final_asr": "\"I'm thinking I'll grab a treat to McDonald's and snag a piece.\""
+    "final_asr": "Hey, what's the whether like in San Francisco, in Fahrenheit? I need to sea if I, um, should get a jacket."
+  },
+  {
+    "original": "Im at Riga, Latvia, Can you tell me the current temperature?",
+    "transformed": "Hey, what's the temp in Riga, Latvia, you know, like we mentioned last time?",
+    "noise_functions": [
+      "sentence_restructuring",
+      "disfluencies",
+      "backchanneling",
+      "contractions",
+      "slang_terms",
+      "preposition_dropping",
+      "fragment_sentences",
+      "contextual_references"
+    ],
+    "stages": {
+      "sentence_restructuring": "\"What's the temperature in Riga, Latvia?\"",
+      "disfluencies": "\"What's, uh, the temperature in Riga, Latvia?\"",
+      "backchanneling": "\"What's, uh, the temperature in Riga, Latvia, okay?\"",
+      "contractions": "\"What's, uh, the temperature in Riga, Latvia, okay?\"",
+      "slang_terms": "\"Hey, what's the temp in Riga, Latvia, ya know?\"",
+      "preposition_dropping": "\"Hey, what's the temp Riga, Latvia, ya know?\"",
+      "fragment_sentences": "\"Hey, what's the temp in Riga, Latvia, you know?\"",
+      "contextual_references": "\"Hey, what's the temp in Riga, Latvia, you know, like we mentioned last time?\""
+    },
+    "final_asr": "\"Hey, what's the temp in Regal, Latvia, you know, like we mentioned last thyme?\""
+  },
+  {
+    "original": "I want to know weather conditions? I'm at London, UK in fahr",
+    "transformed": "So, how's the situation with the weather in that big city called London? Alright, I guess... it's like Fahrenheit-something degrees.",
+    "noise_functions": [
+      "sentence_restructuring",
+      "thinking_aloud",
+      "backchanneling",
+      "contractions",
+      "symbol_pronunciation",
+      "preposition_dropping",
+      "vague_references",
+      "simplified_verbs"
+    ],
+    "stages": {
+      "sentence_restructuring": "\"What's the weather like in London? In Fahrenheit.\"",
+      "thinking_aloud": "\"What's the weather like in London? I think... in Fahrenheit.\"",
+      "backchanneling": "\"What's the weather like in London? Okay, I think... in Fahrenheit.\"",
+      "contractions": "\"What's the weather like in London? Okay, I think... in Fahrenheit.\"",
+      "symbol_pronunciation": "\"What's the weather like in London? Okay, I think... in Fahrenheit dash degrees.\"",
+      "preposition_dropping": "\"What's the weather like London? Okay, I think... Fahrenheit dash degrees.\"",
+      "vague_references": "\"So, how's the situation with the weather in that big city called London? Alright, I reckon... it's like Fahrenheit-something degrees.\"",
+      "simplified_verbs": "\"So, how's the situation with the weather in that big city called London? Alright, I guess... it's like Fahrenheit-something degrees.\""
+    },
+    "final_asr": "\"So, how's the situation with the whether in that big city cold London? All right, I guess... it's like fair and height-something degrees.\""
+  },
+  {
+    "original": "What's weather in Hyderabad in Fahrenheit",
+    "transformed": "Okay, what\u2019s the weather in Hyderabad in Fahrenheit, you know, like we checked last week?",
+    "noise_functions": [
+      "sentence_restructuring",
+      "disfluencies",
+      "backchanneling",
+      "contractions",
+      "article_dropping",
+      "preposition_dropping",
+      "contextual_references"
+    ],
+    "stages": {
+      "sentence_restructuring": "\"Weather in Hyderabad, Fahrenheit.\"",
+      "disfluencies": "\"What's the, um, weather in Hyderabad, in Fahrenheit?\"",
+      "backchanneling": "\"Okay, what's the, um, weather in Hyderabad, in Fahrenheit?\"",
+      "contractions": "\"Okay, what's the, um, weather in Hyderabad, in Fahrenheit?\"",
+      "article_dropping": "\"Okay, what's, um, weather in Hyderabad, in Fahrenheit?\"",
+      "preposition_dropping": "\"Okay, what's, um, weather Hyderabad, in Fahrenheit?\"",
+      "contextual_references": "\"Okay, what\u2019s the weather in Hyderabad in Fahrenheit, you know, like we checked last week?\""
+    },
+    "final_asr": "\u201cOkay, what's the whether in Hyderabad in Fahrenheit, you know, like we checked last weak?\u201d"
   }
 ]
