@@ -30,9 +30,7 @@ SPEECH NOISE FEATURES (26 total):
     21. vague_references: Use that thing, the stuff, some info
     22. approximate_quantifiers: like 10 minutes, around 5 files
     23. simplified_verbs: get instead of retrieve, check instead of verify
-    24. polite_hedges: maybe, could you, if possible, would you
-    25. confidence_markers: I think, probably, should be
-    26. contextual_references: the one we talked about, that repo, that day, that file
+    24. detail_dropping: Drop details or specific information
 
 ASR ERROR TYPES (5 total):
     These simulate common Automatic Speech Recognition errors:
@@ -65,9 +63,11 @@ USAGE:
 """
 
 import json
+import random
 from typing import Dict, List, Optional, Union
 from dataclasses import dataclass
 from granular_speech_pipe import GranularSpeechPipeline, ASRErrors, PipelineConfig, FeatureSelection
+import datetime
 
 
 @dataclass
@@ -105,7 +105,14 @@ class ManualSpeechPipeline:
             "casual_pronouns", "slang_terms", "symbol_pronunciation", "article_dropping",
             "preposition_dropping", "subject_dropping", "fragment_sentences",
             "word_reordering", "vague_references", "approximate_quantifiers",
-            "simplified_verbs", "polite_hedges", "confidence_markers", "contextual_references"
+            "simplified_verbs", "detail_dropping"
+        ]
+        
+        # Voice assistant specific features (more direct, command-like)
+        self.voice_assistant_features = [
+            "contractions", "numbers_noise", "symbol_pronunciation", "article_dropping",
+            "preposition_dropping", "subject_dropping", "fragment_sentences",
+            "word_reordering", "simplified_verbs", "detail_dropping", "disfluencies", "repetitions"
         ]
         
         # Available ASR error types
@@ -150,6 +157,39 @@ class ManualSpeechPipeline:
             elif self.config.verbose:
                 print(f"Warning: Unknown ASR error type '{error}' - skipping")
         return valid_errors
+    
+    def is_english_text(self, text: str, threshold: float = 0.9) -> bool:
+        """
+        Check if text is in English using ASCII value verification and common non-English patterns.
+        
+        Args:
+            text: Text to check
+            threshold: Minimum percentage of ASCII characters required (default: 0.9)
+            
+        Returns:
+            True if text is likely English, False otherwise
+        """
+        return self.speech_pipeline.is_english_text(text, threshold)
+    
+    def filter_english_test_cases(self, test_cases: List[Dict], threshold: float = 0.9) -> List[Dict]:
+        """
+        Filter test cases to keep only those with English text.
+        
+        Args:
+            test_cases: List of test case dictionaries
+            threshold: Minimum percentage of ASCII characters required
+            
+        Returns:
+            List of test cases with English text only
+        """
+        english_cases = []
+        for test_case in test_cases:
+            user_content = test_case['question'][0][0]['content']
+            if self.is_english_text(user_content, threshold):
+                english_cases.append(test_case)
+            elif self.config.verbose:
+                print(f"Skipping non-English text: {user_content[:100]}...")
+        return english_cases
     
     def apply_speech_features(
         self, 
@@ -264,35 +304,103 @@ class ManualSpeechPipeline:
 
 def demo():
     """
-    Demonstration of the manual pipeline usage. just apply the 2 functions. 
-    Apply speech features and apply asr errors
+    Demonstration of the manual pipeline usage.
+    Randomly applies 5-10 speech features and 1 ASR error per test case.
+    Saves results to a JSON file in the audio_calling folder.
+    Filters out non-English texts before processing.
     """
-    # init pipeline
     pipeline = ManualSpeechPipeline(ManualConfig(verbose=False, track_stages=True))
-    # Load BFCL data
     data_path = "../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
-    num_cases = 5  # Change this to process a different number of test cases
-    # For each test case, apply speech features and ASR errors
-    for i, test_case in enumerate(bfcl_data[:num_cases]):
+    
+    # Filter for English texts only
+    english_test_cases = []
+    for test_case in bfcl_data:
+        user_content = test_case['question'][0][0]['content']
+        if pipeline.is_english_text(user_content):
+            english_test_cases.append(test_case)
+        else:
+            print(f"Skipping non-English text: {user_content[:100]}...")
+    
+    print(f"Found {len(english_test_cases)} English test cases out of {len(bfcl_data)} total")
+    
+    num_cases = 25  # Change this to process a different number of test cases
+    if num_cases == 0:
+        print("No English test cases found. Exiting.")
+        return
+
+    print(f"Processing {num_cases} English test cases...")
+    results = []
+    
+    for i, test_case in enumerate(english_test_cases[:num_cases]):
         print(f"\n{'='*60}")
-        print(f"Test case {i+1}/{min(num_cases, len(bfcl_data))}")
-        # Extract user content (assuming same structure as granular_speech_pipe)
+        print(f"Test case {i+1}/{min(num_cases, len(english_test_cases))}")
         user_content = test_case['question'][0][0]['content']
         print(f"Original text: {user_content}")
-        # Apply speech features
+
+        # Randomly sample 5-10 speech features from voice assistant features
+        num_features = random.randint(5, 10)
+        features = random.sample(pipeline.voice_assistant_features, num_features)
+        print(f"Applying voice assistant features: {features}")
+
         result1 = pipeline.apply_speech_features(
             text=user_content,
-            features=["contractions", "numbers_noise", "casual_pronouns"] # specify features here
+            features=features
         )
         print(f"Speech-like result: {result1['transformed']}")
-        # Apply ASR errors to the speech-like output
+
+        # Randomly sample 1 ASR error
+        asr_error = random.choice(pipeline.asr_errors)
+        print(f"Applying ASR error: {asr_error}")
+
         result2 = pipeline.apply_asr_errors(
             text=result1["transformed"],
-            error_types=["word_substitution", "punctuation_error"] # specify asr errors here
+            error_types=[asr_error]
         )
         print(f"Final_result_ASR: {result2['transformed']}")
+        
+        # Store results for saving
+        case_result = {
+            "test_case_id": i,
+            "original_text": user_content,
+            "speech_features_applied": features,
+            "speech_result": result1["transformed"],
+            "asr_error_applied": asr_error,
+            "final_result": result2["transformed"],
+            "stages": result2.get("stages", {})
+        }
+        results.append(case_result)
+    
+    # Save results to JSON file
+    output_file = "BFCL_v3_live_simple_granular_manual.json"
+    save_results_to_file(results, output_file)
+    print(f"\nResults saved to: {output_file}")
+    print(f"Successfully processed {len(results)} English test cases")
+
+def save_results_to_file(results: List[Dict], filename: str):
+    """
+    Save the pipeline results to a JSON file.
+    
+    Args:
+        results: List of result dictionaries to save
+        filename: Name of the output file
+    """
+    output_data = {
+        "metadata": {
+            "pipeline_type": "manual_speech_pipeline",
+            "total_cases_processed": len(results),
+            "timestamp": str(datetime.datetime.now()),
+            "speech_features_available": len(results[0]["speech_features_applied"]) if results else 0,
+            "asr_errors_available": 1  # We apply 1 ASR error per case
+        },
+        "results": results
+    }
+    
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
+    
+    print(f"Successfully saved {len(results)} test cases to {filename}")
 
 def load_bfcl_data(file_path: str) -> list:
     """
@@ -307,5 +415,46 @@ def load_bfcl_data(file_path: str) -> list:
         else:
             return [json.loads(line) for line in f if line.strip()]
 
+def test_language_detection():
+    """
+    Interim function to test language detection on all test cases.
+    Loops through all tests and outputs whether each is English or not.
+    """
+    pipeline = ManualSpeechPipeline(ManualConfig(verbose=False, track_stages=True))
+    data_path = "../data/BFCL_v3_live_simple.json"
+    bfcl_data = load_bfcl_data(data_path)
+    print(f"Testing language detection on {len(bfcl_data)} test cases...")
+    
+    results = []
+    
+    for i, test_case in enumerate(bfcl_data):
+        user_content = test_case['question'][0][0]['content']
+        is_english = pipeline.is_english_text(user_content)
+        
+        result = {
+            "index": i,
+            "text": user_content,
+            "is_english": is_english
+        }
+        results.append(result)
+        
+        print(f"Test {i}: {'ENGLISH' if is_english else 'NOT ENGLISH'} - {user_content[:100]}...")
+    
+    # Save results to file
+    output_file = "language_detection_results.json"
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    
+    # Print summary
+    english_count = sum(1 for r in results if r['is_english'])
+    non_english_count = len(results) - english_count
+    
+    print(f"\n{'='*60}")
+    print(f"LANGUAGE DETECTION SUMMARY:")
+    print(f"Total test cases: {len(results)}")
+    print(f"English: {english_count}")
+    print(f"Not English: {non_english_count}")
+    print(f"Results saved to: {output_file}")
+
 if __name__ == "__main__":
-    demo() 
+    demo()

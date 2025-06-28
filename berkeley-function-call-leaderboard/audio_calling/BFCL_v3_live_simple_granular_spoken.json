@@ -1,250 +1,1354 @@
 [
   {
     "original": "Can you retrieve the details for the user with the ID 7890, who has black as their special request?",
-    "transformed": "Get the details for user ID seven-eight-nine-zero, you know, the one we talked about. There's a special request; it's the black one.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "fragment_sentences",
-      "simplified_verbs",
-      "contextual_references"
+    "transformed": "Alright, get the specifics for user ID seventy-eight ninety. You know, there's some info about a special request. It's that black thing.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "casual_pronouns",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "vague_references",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"Get user details for seven eight nine zero. Special request: black.\"",
-      "disfluencies": "\"Get user details for, um, seven eight nine zero. Special request: black.\"",
-      "backchanneling": "\"Get user details for, um, seven eight nine zero. Okay, special request: black.\"",
-      "numbers_noise": "\"Get user details for, um, seventy-eight ninety. Okay, special request: black.\"",
-      "contractions": "\"Get user details for, um, seventy-eight ninety. Okay, special request: black.\"",
-      "fragment_sentences": "\"Get the details for user ID seventy-eight ninety. There's a special request. It's black.\"",
-      "simplified_verbs": "\"Get the details for user ID seventy-eight ninety. There's a special request. It's black.\"",
-      "contextual_references": "\"Get the details for user ID seven-eight-nine-zero, you know, the one we talked about. There's a special request; it's the black one.\""
-    },
-    "final_asr": "\"Get the details for user ID seven-eight-nine-oh, you know, the one we talked about. There's a special request; it's the back one.\""
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.8,
+      0.6,
+      0.8,
+      0.7,
+      0.9
+    ]
   },
   {
     "original": "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases.",
-    "transformed": "Alright, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. Align those timelines and observe how they've evolved from the beginning.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "contractions",
-      "slang_terms",
-      "symbol_pronunciation",
-      "fragment_sentences",
-      "contextual_references"
+    "transformed": "Alright, I get it... show me the star history for S-H-I-S-H-I-R-P-A-T-I-L slash gorilla, and ShishirPatil slash gorilla. Also for gorilla dash L-L-M slash gorilla dash C-L-I, and gorilla-llm slash gorilla-cli. Line up the timelines, so I can check how their star counts have been changing since they launched.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"Show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
-      "disfluencies": "\"Show star history for ShishirPatil slash gorilla and, uh, gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
-      "backchanneling": "\"Okay, show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start.\"",
-      "contractions": "\"Okay, show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they've changed from the start.\"",
-      "slang_terms": "\"Alright, check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align those timelines to see how they\u2019ve changed from the jump.\"",
-      "symbol_pronunciation": "\"Alright, check out the star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align those timelines to see how they\u2019ve changed from the jump.\"",
-      "fragment_sentences": "\"Okay, take a look at the star history for ShishirPatil slash gorilla, and also for gorilla dash llm slash gorilla dash cli. Align those timelines. See how they've changed from the start.\"",
-      "contextual_references": "\"Alright, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. Align those timelines and observe how they've evolved from the beginning.\""
-    },
-    "final_asr": "\"All right, have a glance at the star history for ShishirPatil slash gorilla, you know, the one we talked about, and also for gorilla dash llm slash gorilla dash cli. A line those timelines and observe how they've evolved from the beginning.\""
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      1.0,
+      0.9,
+      0.6,
+      0.7,
+      0.9
+    ]
   },
   {
     "original": "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it.",
-    "transformed": "Hey, can you, um, get me a Comfort Uber from around twenty-twenty Addison Street, Berkeley? Okay. I'm fine with waiting about 10 minutes.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "fragment_sentences",
-      "approximate_quantifiers",
-      "simplified_verbs"
+    "transformed": "Okay, get a Comfort Uber from around 2020 Addison Street in Berkeley. I can wait about 10 minutes.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "approximate_quantifiers",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"Get me a Comfort Uber from twenty-twenty Addison Street Berkeley. I'm good to wait ten minutes.\"",
-      "disfluencies": "\"Get me, uh, a Comfort Uber from twenty-twenty Addison Street Berkeley. I'm good to wait ten minutes.\"",
-      "backchanneling": "\"Get me, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.\"",
-      "numbers_noise": "Get me, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.",
-      "contractions": "Gimme, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay, I'm good to wait ten minutes.",
-      "fragment_sentences": "\"Gimme, uh, a Comfort Uber from twenty-twenty Addison Street, Berkeley. Okay. I'm good to wait ten minutes.\"",
-      "approximate_quantifiers": "\"Gimme, uh, a Comfort Uber from roughly twenty-twenty Addison Street, Berkeley. Okay. I'm good to wait about 10 minutes.\"",
-      "simplified_verbs": "\"Hey, can you, um, get me a Comfort Uber from around twenty-twenty Addison Street, Berkeley? Okay. I'm fine with waiting about 10 minutes.\""
-    },
-    "final_asr": "\"Hey, can you, um, get me a Comfort Hoober from around twenty-twenty Adamson Street, Berkeley? Okay. I'm find with weighting about 10 minutes.\""
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.9,
+      0.7,
+      0.75,
+      0.8,
+      0.8
+    ]
   },
   {
     "original": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
-    "transformed": "Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "fragment_sentences",
-      "approximate_quantifiers",
-      "simplified_verbs"
+    "transformed": "Okay, get me a Plus Uber from two-twenty-one B Baker Street in Berkeley. I'll wait for ten minutes.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "heavy",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"Get me a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "disfluencies": "\"Get me, um, a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "backchanneling": "\"Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "numbers_noise": "\"Okay, get me a Plus Uber from two twenty-one B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "contractions": "\"Okay, gimme a Plus Uber from two twenty-one B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "fragment_sentences": "\"Okay, gimme a Plus Uber from 221B Baker Street in Berkeley. I've got ten minutes to wait.\"",
-      "approximate_quantifiers": "\"Okay, gimme a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.\"",
-      "simplified_verbs": "\"Okay, get me a Plus Uber from 221B Baker Street in Berkeley. I've got about ten minutes to wait.\""
-    },
-    "final_asr": "\"Okay, get me a Plus Hoober from 221B Baker Street in Berkley. I've got about ten minutest to weight.\""
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.8,
+      0.8,
+      0.9,
+      0.8
+    ]
   },
   {
     "original": "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?",
-    "transformed": "What's the weather in Tel Aviv? Could you tell me in Fahrenheit, please?",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "numbers_noise",
-      "contractions",
-      "subject_dropping",
-      "fragment_sentences",
-      "simplified_verbs"
+    "transformed": "Hey, what's the weather like in Tel Aviv? In Fahrenheit, please.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "false_starts",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"What's the weather in Tel Aviv? Give it to me in Fahrenheit.\"",
-      "disfluencies": "\"What's the weather in, uh, Tel Aviv? Give it to me in Fahrenheit.\"",
-      "backchanneling": "\"What's the weather in, uh, Tel Aviv? Okay, give it to me in Fahrenheit.\"",
-      "numbers_noise": "\"What's the weather in, uh, Tel Aviv? Okay, give it to me in Fahrenheit.\"",
-      "contractions": "\"What's the weather in, uh, Tel Aviv? Okay, gimme it in Fahrenheit.\"",
-      "subject_dropping": "\"What's the weather in, uh, Tel Aviv? Okay, gimme it in Fahrenheit.\"",
-      "fragment_sentences": "\"What's the weather in Tel Aviv? Could you give it to me in Fahrenheit, please?\"",
-      "simplified_verbs": "\"What's the weather in Tel Aviv? Could you tell me in Fahrenheit, please?\""
-    },
-    "final_asr": "\"What's the whether in Tell Aviv? Could you tell me in Fair and Height, please?\""
-  },
-  {
-    "original": "Qual a temperatura atual em Divin\u00f3polis, MG? fahrenheit",
-    "transformed": "Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "contractions",
-      "slang_terms",
-      "symbol_pronunciation",
-      "subject_dropping",
-      "fragment_sentences"
-    ],
-    "stages": {
-      "sentence_restructuring": "\"What's the current temperature in Divin\u00f3polis, MG? In Fahrenheit.\"",
-      "disfluencies": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit.\"",
-      "backchanneling": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit, okay?\"",
-      "contractions": "\"What's the current temperature in, uh, Divin\u00f3polis, MG? In Fahrenheit, okay?\"",
-      "slang_terms": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?\"",
-      "symbol_pronunciation": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG, dash in Fahrenheit, yeah?\"",
-      "subject_dropping": "\"Hey, can check out what the current temperature is in Divin\u00f3polis, MG, dash in Fahrenheit, yeah?\"",
-      "fragment_sentences": "\"Hey, can you check out what the current temperature is in Divin\u00f3polis, MG? In Fahrenheit, yeah?\""
-    },
-    "final_asr": "\"Hey, can ewe check out what the current tempature is in Divin\u00f3polis, MG? In Fahrenheit, yes?\""
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.9,
+      0.9,
+      0.7,
+      0.8,
+      0.85
+    ]
   },
   {
     "original": "Can you tell me the weather in fahrenheit so that I decide if I need to wear a jacket today? San Francisco",
-    "transformed": "Hey, what's the weather like in San Francisco, in Fahrenheit? I need to see if I, um, should get a jacket.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "contractions",
-      "symbol_pronunciation",
-      "fragment_sentences",
-      "word_reordering",
-      "simplified_verbs"
+    "transformed": "Okay, what's the weather in San Francisco in Fahrenheit? Let me check... Do I need a jacket?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"What's the weather in San Francisco? In Fahrenheit. Need to know if I need a jacket.\"",
-      "disfluencies": "\"What's the weather in, um, San Francisco? In Fahrenheit. Need to know if I, uh, need a jacket.\"",
-      "backchanneling": "\"What's the weather in, um, San Francisco, in Fahrenheit? Yeah, need to know if I, uh, need a jacket.\"",
-      "contractions": "\"What's the weather in, um, San Francisco, in Fahrenheit? Yeah, need to know if I, uh, need a jacket.\"",
-      "symbol_pronunciation": "\"What's the weather like in, um, San Francisco slash in Fahrenheit? Yeah, need to know if I dash uh dash need a jacket.\"",
-      "fragment_sentences": "\"What's the weather like in, um, San Francisco in Fahrenheit? Yeah, I need to know if, uh, I need a jacket.\"",
-      "word_reordering": "\"Hey, what's the weather like in San Francisco, in Fahrenheit? I need to know if I, uh, need a jacket.\"",
-      "simplified_verbs": "\"Hey, what's the weather like in San Francisco, in Fahrenheit? I need to see if I, um, should get a jacket.\""
-    },
-    "final_asr": "Hey, what's the whether like in San Francisco, in Fahrenheit? I need to sea if I, um, should get a jacket."
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.8,
+      0.7,
+      0.9,
+      0.8
+    ]
   },
   {
     "original": "Im at Riga, Latvia, Can you tell me the current temperature?",
-    "transformed": "Hey, what's the temp in Riga, Latvia, you know, like we mentioned last time?",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "contractions",
-      "slang_terms",
-      "preposition_dropping",
-      "fragment_sentences",
-      "contextual_references"
+    "transformed": "Okay, what's the temperature in Riga, Latvia, now?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"What's the temperature in Riga, Latvia?\"",
-      "disfluencies": "\"What's, uh, the temperature in Riga, Latvia?\"",
-      "backchanneling": "\"What's, uh, the temperature in Riga, Latvia, okay?\"",
-      "contractions": "\"What's, uh, the temperature in Riga, Latvia, okay?\"",
-      "slang_terms": "\"Hey, what's the temp in Riga, Latvia, ya know?\"",
-      "preposition_dropping": "\"Hey, what's the temp Riga, Latvia, ya know?\"",
-      "fragment_sentences": "\"Hey, what's the temp in Riga, Latvia, you know?\"",
-      "contextual_references": "\"Hey, what's the temp in Riga, Latvia, you know, like we mentioned last time?\""
-    },
-    "final_asr": "\"Hey, what's the temp in Regal, Latvia, you know, like we mentioned last thyme?\""
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.9,
+      0.8,
+      0.9,
+      0.85
+    ]
   },
   {
     "original": "I want to know weather conditions? I'm at London, UK in fahr",
-    "transformed": "So, how's the situation with the weather in that big city called London? Alright, I guess... it's like Fahrenheit-something degrees.",
-    "noise_functions": [
-      "sentence_restructuring",
-      "thinking_aloud",
-      "backchanneling",
-      "contractions",
-      "symbol_pronunciation",
-      "preposition_dropping",
-      "vague_references",
-      "simplified_verbs"
+    "transformed": "OK, what's the weather in London, UK? Let me check... give it to me in Fahrenheit.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.85
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"What's the weather like in London? In Fahrenheit.\"",
-      "thinking_aloud": "\"What's the weather like in London? I think... in Fahrenheit.\"",
-      "backchanneling": "\"What's the weather like in London? Okay, I think... in Fahrenheit.\"",
-      "contractions": "\"What's the weather like in London? Okay, I think... in Fahrenheit.\"",
-      "symbol_pronunciation": "\"What's the weather like in London? Okay, I think... in Fahrenheit dash degrees.\"",
-      "preposition_dropping": "\"What's the weather like London? Okay, I think... Fahrenheit dash degrees.\"",
-      "vague_references": "\"So, how's the situation with the weather in that big city called London? Alright, I reckon... it's like Fahrenheit-something degrees.\"",
-      "simplified_verbs": "\"So, how's the situation with the weather in that big city called London? Alright, I guess... it's like Fahrenheit-something degrees.\""
-    },
-    "final_asr": "\"So, how's the situation with the whether in that big city cold London? All right, I guess... it's like fair and height-something degrees.\""
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.9,
+      1.0,
+      0.85,
+      0.75,
+      0.9
+    ]
   },
   {
     "original": "What's weather in Hyderabad in Fahrenheit",
-    "transformed": "Okay, what\u2019s the weather in Hyderabad in Fahrenheit, you know, like we checked last week?",
-    "noise_functions": [
-      "sentence_restructuring",
-      "disfluencies",
-      "backchanneling",
-      "contractions",
-      "article_dropping",
-      "preposition_dropping",
-      "contextual_references"
+    "transformed": "What's the temperature in Celsius? Oh wait, no. I mean, what is it in Fahrenheit in Hyderabad?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "self_corrections",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "preposition_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
     ],
-    "stages": {
-      "sentence_restructuring": "\"Weather in Hyderabad, Fahrenheit.\"",
-      "disfluencies": "\"What's the, um, weather in Hyderabad, in Fahrenheit?\"",
-      "backchanneling": "\"Okay, what's the, um, weather in Hyderabad, in Fahrenheit?\"",
-      "contractions": "\"Okay, what's the, um, weather in Hyderabad, in Fahrenheit?\"",
-      "article_dropping": "\"Okay, what's, um, weather in Hyderabad, in Fahrenheit?\"",
-      "preposition_dropping": "\"Okay, what's, um, weather Hyderabad, in Fahrenheit?\"",
-      "contextual_references": "\"Okay, what\u2019s the weather in Hyderabad in Fahrenheit, you know, like we checked last week?\""
-    },
-    "final_asr": "\u201cOkay, what's the whether in Hyderabad in Fahrenheit, you know, like we checked last weak?\u201d"
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.9,
+      0.7,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "Could you tell me the current weather in Yosemite National Park which locates at Mariposa, CA, and make sure to give me the temperature in Celsius?",
+    "transformed": "Okay, what's the weather like in Yosemite National Park, Mariposa, California? Let me see... just give me the temperature in Celsius.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "heavy",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.9,
+      1.0,
+      0.9,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "Could you tell me the current weather conditions in Naples, Florida?",
+    "transformed": "Okay, what's the weather like in Naples, Florida right now? Let me check...",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.85
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.65
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.75,
+      0.85,
+      0.65,
+      0.6,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "I'm planning a trip to New York, NY in December and will be staying for 5 days. Could you tell me the current weather conditions, and provide the temperature in Celsius?",
+    "transformed": "Planning a December trip to New York for five days. How's the weather right now? Temperature in Celsius, please.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.9,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "I have a busy day today. Can you tell me what the temperature is going to be in Bangkok, Thailand. I prefer the fahrenheit unit.",
+    "transformed": "Okay, what's the temperature in Bangkok today?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.85
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.75,
+      1.0,
+      0.85,
+      0.8,
+      0.9,
+      0.7
+    ]
+  },
+  {
+    "original": "I'm at Bengaluru. Tell me the current weather conditions in Chennai, Tamil Nadu in fahrenheit?",
+    "transformed": "Okay, what's weather like in Chennai, spelled C-H-E-N-N-A-I, Chennai, Tamil Nadu, T-A-M-I-L N-A-D-U, Tamil Nadu, right now in Fahrenheit, ya?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "casual_pronouns",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.75
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      1.0,
+      1.0,
+      0.9,
+      0.6,
+      0.75
+    ]
+  },
+  {
+    "original": "Could you tell me the current weather in Lang Son in fahrenheit?",
+    "transformed": "Okay, what's the weather like in Lang Son right now in Fahrenheit?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.95
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.8,
+      1.0,
+      0.9,
+      0.7,
+      0.95,
+      0.85
+    ]
+  },
+  {
+    "original": "weather today in Boston in fahrenheit?",
+    "transformed": "Okay, what's the weather like in Boston today? In Fahrenheit?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.8
+    ]
+  },
+  {
+    "original": "Can you tell me the current weather in Moscow, specifying the temperature in Celsius?",
+    "transformed": "What's the weather in Moscow right now? Okay, let me check... I need the temperature in Celsius.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.7,
+      1.0,
+      0.8,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "What's the weather in Quintana Roo, Mexico. Please tell me the answer in the superior units of temperature, by that I mean Celsius.",
+    "transformed": "Okay, what's the weather like in Quintana Roo, Mexico? Can you tell me in Celsius?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "moderate",
+        "confidence": 0.75
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.9,
+      0.75,
+      0.8,
+      0.85
+    ]
+  },
+  {
+    "original": "I would like to order a burger with the following modification verbatim: no onions, extra cheese",
+    "transformed": "Let's grab a burger. Hold the onions. And extra cheese.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "self_corrections",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      1.0,
+      0.9,
+      0.75,
+      0.8,
+      0.85
+    ]
+  },
+  {
+    "original": "I'd like to modify my order by making the dish called 'chicken dish' to a new spice level 'extra spicy', please.",
+    "transformed": "Alright, get that chicken thing extra fiery with the spice.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "vague_references",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.8,
+      0.6,
+      0.6,
+      0.7,
+      0.7
+    ]
+  },
+  {
+    "original": "I need Whopper also known old folks as the burger.",
+    "transformed": "Alright, I'll get that thing, the Whopper, you know, the one folks call the burger.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.85
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "vague_references",
+        "intensity": "light",
+        "confidence": 0.65
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.75,
+      0.7,
+      0.85,
+      0.8,
+      0.65,
+      0.9
+    ]
+  },
+  {
+    "original": "Order me pizza",
+    "transformed": "Alright, how about grabbing me, um, a pizza?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.9,
+      0.8,
+      0.8,
+      0.7
+    ]
+  },
+  {
+    "original": "I would like to switch my order from pizza to a BURGER.",
+    "transformed": "Um, okay. Switch my order from pizza to a burger.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "fragment_sentences",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.9,
+      0.8,
+      0.75,
+      0.85
+    ]
+  },
+  {
+    "original": "I've changed my mind, can I get a greens instead of what I previously ordered?",
+    "transformed": "Hey, can you change my—oh, wait, yeah, switch my order to that green stuff instead?",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "false_starts",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "preposition_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "vague_references",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.8,
+      0.9,
+      0.8,
+      0.7,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "I want to order five 'burgers' and six 'chicken wings' from uber pitada",
+    "transformed": "Order, okay, get five burgers and six chicken wings from Uber Pitada, that's spelled P-I-T-A-D-A, Pitada.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.95
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.95,
+      1.0,
+      0.9,
+      0.6,
+      0.85
+    ]
   }
 ]

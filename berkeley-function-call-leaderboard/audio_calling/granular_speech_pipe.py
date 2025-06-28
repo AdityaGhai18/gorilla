@@ -81,6 +81,7 @@ DEFAULT_FEATURE_ORDER = [
     "vague_references",
     "approximate_quantifiers",
     "simplified_verbs",
+    "detail_dropping",
     "confidence_markers",
     "contextual_references"
 ]
@@ -91,6 +92,78 @@ class GranularSpeechPipeline:
         self.config = config
         self.client = openai.OpenAI(api_key=OPENAI_API_KEY)
         
+    def is_english_text(self, text: str, threshold: float = 0.9) -> bool:
+        """
+        Check if text is in English using character-based script detection.
+            
+        Returns:
+            True if text is likely English, False otherwise
+        """
+        if not text or not text.strip():
+            return False
+        
+        for char in text:
+            if char.isspace():  #
+                continue
+            
+            char_code = ord(char)
+            
+            # Chinese characters (CJK Unified Ideographs)
+            if (0x4E00 <= char_code <= 0x9FFF or  # CJK Unified Ideographs
+                0x3400 <= char_code <= 0x4DBF or  # CJK Unified Ideographs Extension A
+                0x20000 <= char_code <= 0x2A6DF or  # CJK Unified Ideographs Extension B
+                0x2A700 <= char_code <= 0x2B73F or  # CJK Unified Ideographs Extension C
+                0x2B740 <= char_code <= 0x2B81F or  # CJK Unified Ideographs Extension D
+                0x2B820 <= char_code <= 0x2CEAF):   # CJK Unified Ideographs Extension E
+                return False
+            
+            # Korean Hangul
+            if (0xAC00 <= char_code <= 0xD7AF or  # Hangul Syllables
+                0x1100 <= char_code <= 0x11FF or  # Hangul Jamo
+                0x3130 <= char_code <= 0x318F):   # Hangul Compatibility Jamo
+                return False
+            
+            # Japanese Hiragana and Katakana
+            if (0x3040 <= char_code <= 0x309F or  # Hiragana
+                0x30A0 <= char_code <= 0x30FF):   # Katakana
+                return False
+            
+            # Arabic
+            if (0x0600 <= char_code <= 0x06FF or  # Arabic
+                0x0750 <= char_code <= 0x077F or  # Arabic Supplement
+                0x08A0 <= char_code <= 0x08FF or  # Arabic Extended-A
+                0xFB50 <= char_code <= 0xFDFF or  # Arabic Presentation Forms-A
+                0xFE70 <= char_code <= 0xFEFF):   # Arabic Presentation Forms-B
+                return False
+            
+            # Thai
+            if 0x0E00 <= char_code <= 0x0E7F:
+                return False
+            
+            # Vietnamese diacritics (Latin characters with diacritics)
+            if char in 'àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ':
+                return False
+        
+        # If no non-Latin scripts found, assume it's English
+        return True
+    
+    def filter_english_texts(self, texts: List[str], threshold: float = 0.9) -> List[str]:
+        """
+        Filter a list of texts to keep only English ones.
+        
+        Args:
+            texts: List of texts to filter
+            threshold: Minimum percentage of ASCII characters required
+            
+        Returns:
+            List of English texts only
+        """
+        english_texts = []
+        for text in texts:
+            if self.is_english_text(text, threshold):
+                english_texts.append(text)
+        return english_texts
+        
     def analyze_text_for_features(self, text: str) -> List[FeatureSelection]:
         """LLM analyzes text and selects applicable features with confidence scores."""
         contains_number = bool(re.search(r"\d", text))
@@ -99,7 +172,36 @@ class GranularSpeechPipeline:
 
         Input: "{text}"
 
-        IMPORTANT: People talking to voice assistants are typically direct, casual, and don't use excessive politeness. They want quick answers and don't waste time with formal language.
+        IMPORTANT: People talking to voice assistants are typically DIRECT, CASUAL, and COMMAND-LIKE. They want quick answers and don't waste time with formal language or excessive politeness. Think of how people actually talk to Siri / Alexa - they're direct and to the point.
+
+        PRIORITY FEATURES (select 4-6 from these):
+        - contractions: Use wanna, gonna, lemme, gimme, etc.
+        - simplified_verbs: get instead of retrieve, check instead of verify
+        - casual_pronouns: ya, em, imma
+        - slang_terms: grab, check out, look up
+        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses
+        - thinking_aloud: Express thinking or searching for words, e.g., 'let me see'
+        - false_starts: Start to say something, then restart, e.g., 'I want to—wait, can you...'
+        - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
+        - backchanneling: Conversational markers (yeah, so, right, okay)
+        - emotional_markers: Emotion or attitude (oh, right, seriously)
+        - article_dropping: Drop articles where natural
+        - preposition_dropping: Drop prepositions where natural
+        - subject_dropping: Drop subjects where natural
+        - fragment_sentences: Use incomplete sentences
+        - word_reordering: Natural word order changes
+        - vague_references: Use pronouns and references
+        - approximate_quantifiers: Use approximate numbers
+        - symbol_pronunciation: Say symbols out loud
+        - spelling_noise: ALWAYS include if there are names, usernames, or complex terms
+        - numbers_noise: Say numbers naturally
+        - detail_dropping: Drop unnecessary formal details (state abbreviations, titles, etc.)
+
+        AVOID THESE FEATURES (they make speech too polite/formal):
+        - confidence_markers: "I think", "probably", "should be" (too hedging)
+        - restarts_repairs: "what I mean is...", "sorry, let me rephrase" (too apologetic)
+        - contextual_references: "the one we talked about" (too conversational)
+        - ellipsis_proforms: "do it", "get it" (too vague)
 
         FEATURE GROUPINGS - You MUST select at least 1 feature from each group:
 
@@ -118,26 +220,22 @@ class GranularSpeechPipeline:
         GROUP 3 - CONVERSATIONAL MARKERS (include 1):
         - backchanneling: Conversational markers (yeah, so, right, okay)
         - emotional_markers: Emotion or attitude (oh, right, seriously)
-        - confidence_markers: I think, probably, should be
+        - repetitions: Repeat words or phrases naturally
 
         GROUP 4 - STRUCTURAL CHANGES (include 1-2):
-        - fragment_sentences: Break into shorter fragments
-        - word_reordering: Slightly reorder words naturally
-        - article_dropping: Drop the, a, an where natural
-        - preposition_dropping: Drop in, on, at, for where natural
-        - subject_dropping: Drop subject pronouns where natural
+        - fragment_sentences: Use incomplete sentences
+        - word_reordering: Natural word order changes
+        - article_dropping: Drop articles where natural
+        - preposition_dropping: Drop prepositions where natural
+        - subject_dropping: Drop subjects where natural
+        - detail_dropping: Drop unnecessary formal details (state in the address, titles, etc.)
 
         GROUP 5 - CONTENT MODIFICATIONS (include 1-2):
         - spelling_noise: Spell out names/terms that might be misunderstood
         - symbol_pronunciation: Say symbols out loud (slash, dash, at)
         - vague_references: Use that thing, the stuff, some info
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used
-        - contextual_references: the one we talked about, that repo, that day
 
-        OTHER FEATURES (optional):
-        - repetitions: Repeat words or phrases naturally
-        - restarts_repairs: Restart or repair a sentence, e.g., 'what I mean is...'
-        - ellipsis_proforms: Use ellipsis or pro-forms (do it, get it, that thing)
 
         Features to choose from:
         - sentence_restructuring: Completely rephrase written instructions into natural spoken language. Change sentence structure, word order, and phrasing to sound like someone actually speaking rather than reading written text.
@@ -147,9 +245,7 @@ class GranularSpeechPipeline:
         - false_starts: Start to say something, then restart or change direction, e.g., 'I want to—wait, can you...'
         - thinking_aloud: Express thinking or searching for words, e.g., 'let me see', use sparingly
         - backchanneling: Conversational markers (yeah, so, right, okay), use sparingly
-        - emotional_markers: Emotion or attitude (ugh, wow, oh, right, seriously), use sparingly
-        - restarts_repairs: Restart or repair a sentence, e.g., 'what I mean is...', 'sorry, let me rephrase'
-        - ellipsis_proforms: Use ellipsis or pro-forms (do it, get it, that thing), use sparingly
+        - emotional_markers: Emotion or attitude (oh, right, seriously), use sparingly
         - spelling_noise: Spell out names/terms that might be misunderstood, e.g., 'that's S-H-I-S-H-I-R-P-A-T-I-L, ShishirPatil'
         - numbers_noise: Say numbers/addresses as a real person would (ALWAYS include if any numbers/alphanumerics)
         - contractions: Use wanna, gonna, lemme, use moderately
@@ -164,44 +260,44 @@ class GranularSpeechPipeline:
         - vague_references: Use that thing, the stuff, some info
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used, around 5 files
         - simplified_verbs: get instead of retrieve, check instead of verify
-        - confidence_markers: I think, probably, should be
-        - contextual_references: the one we talked about, that repo, that day, that file
+        - detail_dropping: Drop unnecessary formal details (state abbreviations, titles, company suffixes)
 
         EXAMPLES BY INPUT TYPE:
 
         CALENDAR SCHEDULING:
         Written: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
-        Spoken: "Um, I need to... schedule a meeting with marketing, Tuesday at two-thirty. And uh, send invites to everyone."
+        Spoken: "Schedule a meeting with marketing Tuesday at two-thirty. Send invites to everyone."
         Features: disfluencies, numbers_noise, contractions, simplified_verbs, backchanneling
 
         DOCUMENT EDITING:
         Written: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
-        Spoken: "Can you... update the quarterly report with Q3 data? And uh, remove the old stats."
+        Spoken: "Update the quarterly report with Q3 data. Remove the old stats."
         Features: disfluencies, simplified_verbs, contractions, thinking_aloud
 
         MUSIC PLAYBACK:
         Written: "I would like to play the album 'Midnight Dreams' by the artist 'Stellar Echo' and set the volume to 75% while enabling shuffle mode."
-        Spoken: "Play Midnight Dreams by Stellar Echo. That's S-T-E-L-L-A-R E-C-H-O. Volume at... seventy-five. And turn shuffle on."
+        Spoken: "Play Midnight Dreams by Stellar Echo. That's S-T-E-L-L-A-R E-C-H-O. Volume at seventy-five. Turn shuffle on."
         Features: numbers_noise, simplified_verbs, disfluencies, spelling_noise
 
         EMAIL COMPOSITION:
         Written: "Please compose a new email message addressed to john.smith@company.com with the subject line 'Project Update - Phase 2 Completion' and include the following content in the body."
-        Spoken: "Write an email to john dot smith at company dot com. Subject is... Project Update Phase 2. And add the content."
+        Spoken: "Write an email to john dot smith at company dot com. Subject is Project Update Phase 2. Add the content."
         Features: symbol_pronunciation, simplified_verbs, disfluencies, contractions, casual_pronouns
 
         FILE MANAGEMENT:
         Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
-        Spoken: "I want to... get the quarterly report from shared drive. No, wait, the folder. And uh, make a backup in my directory."
+        Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
         Features: disfluencies, self_corrections, simplified_verbs, contractions, thinking_aloud
 
         SOCIAL MEDIA:
         Written: "Please post a status update on my social media account with the message 'Excited to announce our new product launch!' and include the hashtag #innovation."
-        Spoken: "Post a status... excited to announce our new product launch! And add hashtag innovation."
+        Spoken: "Post a status excited to announce our new product launch. Add hashtag innovation."
         Features: disfluencies, simplified_verbs, contractions, emotional_markers, fragment_sentences
 
         SELECTION GUIDELINES:
         - sentence_restructuring is ALWAYS applied automatically (don't select it)
         - ALWAYS include numbers_noise if input has numbers/alphanumerics
+        - ALWAYS include spelling_noise if input has names, usernames, or complex terms (like GitHub repos, technical names)
         - You MUST select at least 1 feature from each of the 5 groups above
         - Total of 6-8 features maximum (sentence_restructuring + your selections)
         - Be conservative with disfluencies - people don't say "um" that much to voice assistants
@@ -254,6 +350,7 @@ class GranularSpeechPipeline:
                     intensity="moderate",
                     confidence=1.0
                 ))
+            
             features = [f for f in features if f.confidence >= 0.6]
             
             # Always include sentence_restructuring as the first feature
@@ -313,18 +410,7 @@ class GranularSpeechPipeline:
         Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
         Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
 
-        Written: "Can you retrieve the details for the user with the ID 7890, who has black as their special request?"
-        Spoken: "Get user details for seven eight nine zero. Special request is black."
-
-        Written: "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases."
-        Spoken: "Show star history for ShishirPatil slash gorilla and gorilla dash llm slash gorilla dash cli. Align timelines to see how they changed from the start."
-
-        Written: "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it."
-        Spoken: "Get me a Comfort Uber from twenty-twenty Addison Street Berkeley. I can wait ten minutes."
-
-        Written: "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?"
-        Spoken: "What's the weather in Tel Aviv? In Fahrenheit."
-
+        
         Input: "{text}"
         Output:
         """
@@ -615,6 +701,8 @@ class GranularSpeechPipeline:
     def apply_vague_references(self, text: str, intensity: str) -> str:
         intensity_prompts = {
             "light": "Add 1 vague reference naturally",
+            "moderate": "that thing, the stuff, some info",  # <-- Add this line if missing
+            "heavy": "that thing, the stuff, some info, whatever"
         }
         
         prompt = f"""
@@ -875,7 +963,19 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='spelling noise')}
         {intensity_prompts[intensity]}
         
-        Spell out names or terms that might be misunderstood, e.g., "that's S-H-I-S-H-I-R-P-A-T-I-L, ShishirPatil"
+        Spell out names, usernames, or complex terms that might be misunderstood:
+        - GitHub usernames or repository names: "JohnDoe" → "JohnDoe, thats spelt J-O-H-N-D-O-E, JohnDoe¬"
+        - Complex names: "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
+        - Technical terms: "api-client" → "api dash client"
+        - Any name that's not immediately obvious how to pronounce
+        
+        Examples:
+        - "User123/repo" → "U-S-E-R-1-2-3 slash repo, User123 slash repo"
+        - "my-app/client" → "my dash app slash client"
+        - "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
+        
+        Be aggressive about spelling out names - people do this when talking to voice assistants to avoid confusion.
+        
         Input: "{text}"
         Output:
         """
@@ -904,6 +1004,37 @@ class GranularSpeechPipeline:
         - "221B" → "two twenty-one B"
         - "600 seconds" → "ten minutes"
         - "Fahrenheit" → "Fahrenheit" (keep as is)
+        
+        Input: "{text}"
+        Output:
+        """
+        result = self._call_openai(prompt)
+        if not result.strip():
+            return text
+        return result
+
+    def apply_detail_dropping(self, text: str, intensity: str) -> str:
+        intensity_prompts = {
+            "light": "Drop 1 unnecessary detail naturally",
+            "moderate": "Drop 1-2 unnecessary details naturally",
+            "heavy": "Drop 2-3 unnecessary details naturally"
+        }
+        
+        prompt = f"""
+        {INSTRUCTION_TEMPLATE.format(feature='detail dropping')}
+        {intensity_prompts[intensity]}
+        
+        Drop unnecessary formal details that people skip when speaking:
+        - State abbreviations: "CA", "NY", "TX" → just skip it when you say an address
+        - Formal titles: "Dr.", "Mr.", "Ms.", "Prof." → skip them
+        - Company suffixes: "Inc.", "LLC", "Corp." → skip them
+        
+        Examples:
+        - "Yosemite National Park, Mariposa, CA" → "Yosemite National Park, Mariposa"
+        - "Dr. John Smith" → "John Smith"
+        - "Apple Inc." → "Apple"
+        
+        Only drop details that don't change the core meaning and that people naturally skip when speaking.
         
         Input: "{text}"
         Output:
@@ -1198,47 +1329,52 @@ def main():
     data_path = "../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
-    test_subset = bfcl_data[:10] #you can edit the number of test cases here will add a terminal argument support later
-    transformed_data = []
-    for i, test_case in enumerate(test_subset):
-        print(f"\n{'='*50}")
-        print(f"Processing test case {i+1}/{len(test_subset)}")
-        print(f"ID: {test_case['id']}")
+    
+    # Filter for English texts only
+    english_test_cases = []
+    for test_case in bfcl_data:
         user_content = test_case['question'][0][0]['content']
-        transformation_results = pipeline.transform_text(user_content)
-        stages = {k.replace('after_', ''): v for k, v in transformation_results.items() if k.startswith('after_')}
-        transformed_case = {
-            "original": user_content,
-            "transformed": transformation_results["final"],
-            "noise_functions": [f["name"] for f in transformation_results["selected_features"]],
-            "stages": stages
-        }
-        # If ASR error simulation is enabled, apply ASR errors to the transformed text
-        if pipeline.config.asr:
-            asr = ASRErrors()
-            asr_result = asr.execute_noise(transformed_case["transformed"])
-            # Print/log each ASR error stage
-            print("ASR Error Stages:")
-            prev = asr_result["original"]
-            for error in [k for k in asr_result.keys() if k not in ("original", "final")]:
-                print(f"  After {error}: {asr_result[error]}")
-                prev = asr_result[error]
-            print(f"  Final ASR: {asr_result['final']}")
-            # Only add the final ASR result to the output JSON
-            transformed_case["final_asr"] = asr_result["final"]
-        transformed_data.append(transformed_case)
-        print(f"Transformation complete for {test_case['id']}")
-    output_path = "BFCL_v3_live_simple_granular_spoken.json"
-    save_transformed_data(transformed_data, output_path)
-    print(f"\nSaved {len(transformed_data)} transformed test cases to {output_path}")
-    print(f"\n{'='*50}")
-    print("TRANSFORMATION SUMMARY")
-    print(f"{'='*50}")
-    for i, case in enumerate(transformed_data):
-        print(f"\n{i+1}. {case['original']}")
-        print(f"   Original: {case['original']}")
-        print(f"   Transformed: {case['transformed']}")
-        print(f"   Features applied: {case['noise_functions']}")
+        if pipeline.is_english_text(user_content):
+            english_test_cases.append(test_case)
+        else:
+            print(f"Skipping non-English text: {user_content[:100]}...")
+    
+    print(f"Found {len(english_test_cases)} English test cases out of {len(bfcl_data)} total")
+    
+    test_subset = english_test_cases[:25] #you can edit the number of test cases here will add a terminal argument support later
+    if len(test_subset) == 0:
+        print("No English test cases found. Exiting.")
+        return
+    
+    print(f"Processing {len(test_subset)} English test cases...")
+    
+    results = []
+    for i, test_case in enumerate(test_subset):
+        print(f"\n{'='*60}")
+        print(f"Test case {i+1}/{len(test_subset)}")
+        user_content = test_case['question'][0][0]['content']
+        print(f"Original text: {user_content}")
+        
+        try:
+            result = pipeline.transform_text(user_content)
+            print(f"Transformed text: {result['final']}")
+            results.append({
+                'original': user_content,
+                'transformed': result['final'],
+                'features_applied': result['selected_features'],
+                'confidence_scores': [f['confidence'] for f in result['selected_features']]
+            })
+        except Exception as e:
+            print(f"Error processing test case {i+1}: {e}")
+            continue
+    
+    # Save results
+    output_file = "BFCL_v3_live_simple_granular_spoken.json"
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    
+    print(f"\nResults saved to: {output_file}")
+    print(f"Successfully processed {len(results)} English test cases")
 
 if __name__ == "__main__":
-    main() 
+    main()
