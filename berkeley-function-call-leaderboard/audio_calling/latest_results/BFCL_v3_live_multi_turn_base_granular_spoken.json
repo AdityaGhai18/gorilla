@@ -1,0 +1,2066 @@
+[
+  [
+    {
+      "original": "Imagine planning a trip and you're curious about the flight costs between various airports. Opt to fly from the first airport to the second one in the system's list. Could you provide the expected fare for an economy class ticket on the date 2024-11-15?",
+      "transformed": "Check out flight prices between the first and second listed airports. What's the economy fare for November fifteenth, twenty-twenty-four?",
+      "final_asr": "\"Check out flight prizes between the first and second listed air ports. What's the economy fair for November fifteen, twenty twenty-four?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.6
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        0.7,
+        0.6
+      ]
+    },
+    {
+      "original": "Good news! You've discovered a fare that won't break the bank. Next, let's arrange a flight from San Francisco International (SFO) to Los Angeles International (LAX). Utilize a distinctive access token 'abc123xyz', the credit card with id 'card_3456', and the traveler details of our intrepid voyager, Elizabeth Montgomery.",
+      "transformed": "Okay, get a cheap flight from SFO to LAX. Use access token abc one two-three xyz and put it on card three four-five six. Elizabeth Montgomery's the traveler.",
+      "final_asr": "Okay, git a cheap flight from SFO to LAX. Use access token abc won too-three xyz and put it on card tree four-five six. Elizabeth Montgomery's the traveler.",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.75,
+        1.0,
+        0.9,
+        0.7,
+        0.85
+      ]
+    },
+    {
+      "original": "Finally, Elizabeth seeks some tranquility during her adventure. Please acquire travel insurance for this booked flight, selecting a plan that offers up to $500 coverage. You are welcome to use the same credit card and access token for this purchase.",
+      "transformed": "Alright, grab travel insurance for Elizabeth's flight. Choose a plan with $500 coverage and use the same credit card and access token.",
+      "final_asr": "\"All right, grab travel ensureance for Elizabeth's flight. Choose a plan with $500 coverage and use the same credit cart and access tooken.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.65
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.85
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.65,
+        0.85,
+        0.75,
+        0.8
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Imagine I just embarked on a lovely road trip and had to make a stop at the gas station. Would you be so kind as to assist me in filling up my car with 15 liters of gasoline? Fill with the second decimal digit precision in gallon. Once that's done, it would be fantastic if you could check the tire pressures as well—I'd love to share my impressive car maintenance skills with my Twitter followers with the message 'Just filled up the tank and checked the tire pressures. Ready for the next adventure!'. If you could also start up the engine and let me know the battery voltage and fuel level, that would be incredibly helpful.",
+      "transformed": "Okay, put fifteen liters of gas in the car, rounding to two decimal places in gallons. Check the tire pressures too. Tweet 'Just got the tank full and checked the tire pressures. Ready for the next adventure!' Start the engine. What's the battery voltage and fuel level?",
+      "final_asr": "\"Okay, put fifteen leaders of gas in the car, rounding to two decimal places in gallons. Check the tire pressures to. Tweet 'Just got the tank full in checked the tire pressures. Ready for the next adventure!' Start the engine. What's the battery volts and fuel level?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.75
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.9,
+        0.85,
+        0.75
+      ]
+    },
+    {
+      "original": "I've shared the details about my tire pressures and engine's stellar condition on Twitter, but I'd like to give that tweet a bit more visibility. Could you possibly amplify its reach by retweeting it? And if you could add a comment saying, 'Ready for the next adventure!' that would be splendid.",
+      "transformed": "Okay, share my tweet about tire pressure and engine condition. And put 'Ready for the next adventure!' in the comment.",
+      "final_asr": "\"Okay, share my tweet about tire pressure and engine condition. And put 'Ready for the next adventure!' in the comet.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.95
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.75,
+        0.9,
+        0.95,
+        0.85
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Planning an incredible journey from NYC to Tokyo on December 24th 2024 in first class! I have my credit card ready with the id card_5678, which is expiring soon, and I'd like to allocate business expenses wisely. The cardholder's name matches mine, Michael Thompson, and I can provide the CVV when needed, which is 456. Could you make the booking using access token 'abc123xyz'?",
+      "transformed": "Get me a first-class flight from NYC to Tokyo for December twenty-fourth, twenty twenty-four, okay? Use my card, ID card five six seven eight, which is expiring soon. It's a business expense. The cardholder's Michael Thompson. I'll gimme the CVV, it's four five six. Use access token a b c one two three x y z.",
+      "final_asr": "\"Get me a first-class flight from NYC to Tokyo for December twenty-fourth, twenty twenty-four, okay? Use my card, I.D. card five six seven eight, which is expiring soon. It's a business expanse. The cardholder's Michael Thomson. Oh, gimme the CV, it's four five six. Use access toke in a b c one two three x y z.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.6,
+        1.0,
+        0.9,
+        0.8
+      ]
+    },
+    {
+      "original": "After sorting out my travel plans, draft a tweet about how flexible and adaptable my itinerary turned out to be, including a tag to my favorite travel blog '#TravelBlog' and mention my adventure-loving friend '@Spontaneity'. You may use my account with username 'john' and password 'john1234'. The tweet should read 'Flexibility is key! Plans changed, but the adventure continues.'",
+      "transformed": "Alright, once I've got my travel plans sorted, tweet about how flexible and adaptable they are. Tag 'hashtag TravelBlog' and mention 'at Spontaneity'. Use my account 'john' with the password 'john one two three four'. The tweet should say: 'Flexibility's key! Plans changed, slash the adventure continues.'",
+      "final_asr": "\"All right, once I've got my travel plants sorted, twee about how flex able and adaptable they are. Tag 'hashtag TravelBlog' and mention 'at Spontaneity.' Use my account 'john' with the pass word 'john won too three for.' The tweet should say: 'Flexibility's key! Plans changed, slash the adventure continues.'\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "symbol_pronunciation",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        0.7,
+        1.0,
+        0.9
+      ]
+    },
+    {
+      "original": "Can you amplify the message by retweeting my recent post about the itinerary that you just posted, highlighting our spontaneity with travel plans to reach a larger audience?",
+      "transformed": "Alright, go ahead and share my latest post about our trip plans to show off our spontaneous travel and reach more people.",
+      "final_asr": "\"All right, go a head and chair my latest post about our trip plants to show off our spontaneous travel and reach more people.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "word_reordering",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.75,
+        0.9,
+        0.8,
+        0.7,
+        0.85
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Hi, I am Kelly. I'm sweating. What's the temp outside right now? Would you be able to update Michael on today's outdoor temperature with message 'It is hot outside.'? He should know whether to bundle up or dress down for the weather.",
+      "transformed": "Hey, I'm Kelly and sweating a bit. What's the current temp out there? Go ahead and get a message to Michael: 'It's hot outside.' He should check if he needs to bundle up or just go with the usual stuff.",
+      "final_asr": "\"Hey, I'm Kelly and sweating a bit. What's the currant tamp out there? Go ahead and get a message to Michael: 'It's hot out side.' He should cheque if he needs to bundle up or just go with the usual stuff.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "vague_references",
+          "intensity": "light",
+          "confidence": 0.65
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        0.6,
+        0.65,
+        0.85
+      ]
+    },
+    {
+      "original": "Let's review all the messages I have send so far.",
+      "transformed": "Uh, okay, show me all messages I sent.",
+      "final_asr": "\"Uh, okay, show me all massages I sent.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        0.9,
+        0.7,
+        0.9
+      ]
+    }
+  ],
+  [
+    {
+      "original": "I'm planning a business class trip from JFK in New York to LAX in Los Angeles on December 15, 2024. Alex Johnson will be my traveling companion. I intend to use my credit card with label 'id_1234' to cover the $4500 trip cost. I've got my access token here: ABCD1234. Once booked, I'll need to cancel the trip immediately due to unexpected changes in my schedule.",
+      "transformed": "Alright, grab a business class ticket from JFK to LAX for December 15th, 2024, with Alex Johnson. Use my credit card ID 1234 for $4,500. Access token A-B-C-D 1234. After you book it, cancel the trip right away.",
+      "final_asr": "\"Alright, grab a business class ticket from JFK to LAX for December 15th, 2024, with Alex Johnston. Use my credit card I.D. 1234 for $4,500. Access token A-B-C-D 1234. After you book it, cancel the trip write away.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.9,
+        0.7,
+        0.8
+      ]
+    },
+    {
+      "original": "Additionally, I must file a priority 5 support ticket concerning the flight cancellation, labeled 'Urgent Flight Cancellation'. The ticket should thoroughly explain the abrupt changes leading to the cancellation and put description as Due to unexpected changes in schedule, the flight from JFK to LAX on December 15, 2023, needs to be canceled immediately.",
+      "transformed": "Okay, make priority 5 support ticket for an urgent flight cancellation. Say it's 'cause of sudden schedule changes. The flight from JFK to LAX on December 15, 2023, needs to be canceled now.",
+      "final_asr": "\"Okay, make priority 5 support ticket for an urgent flight cancellation. Say it's 'cause of sudden schedule changes. The flight from JFK to LAX on December fifteenth, twenty twenty-three, kneads to be canceled now.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.8,
+        0.7,
+        0.9
+      ]
+    }
+  ],
+  [
+    {
+      "original": "I'm setting sail on an adventure from Crescent Hollow to Rivermist and need the scoop on flight costs for my journey. My takeoff is scheduled for 2022-07-15, and luxury's the name of the game, so I'll be in business class.",
+      "transformed": "Lemme see... okay, check flight prices from Crescent Hollow to Rivermist for July 15, 2022. I'm flyin' business class.",
+      "final_asr": "\"Lemme sea... okay, check flight prizes from Crescent Hollow to Rivermist for July 15, 2022. I'm flyin' business class.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "light",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7,
+        0.9,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "original": "Before diving into booking details, I need to establish my spending limits. Utilizing my access token 'access_token_abc123', I'll cap my budget at 2000 USD for the impending journey.",
+      "transformed": "Okay, put budget at two thousand dollars for the trip using access token A B C one twenty-three.",
+      "final_asr": "\"Okay, put the budget at two thousand dollars for the trip using access token A B C won twenty-three.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.6,
+        1.0,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "original": "With the budget firmly in place, let's seal the deal! Employing my access token, book the flight using my credit card, identified with card7320, covering all associated flight expenses. I'll be traveling under Samuel Fisher, using my seasoned traveler number.",
+      "transformed": "The budget's ready—okay, book the flight! Use my access token and put it on card seventy-three twenty for all expenses. Traveling as Samuel Fisher with seasoned traveler number.",
+      "final_asr": "\"The budget's ready—okay, book the flight! Use my axis token and put it on card seventy-three twenty for all expenses. Traveling as Samuel Fisher with seasoned traveler numb her.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        1.0,
+        0.7,
+        0.75,
+        0.85
+      ]
+    },
+    {
+      "original": "Once everything's set, I'd appreciate an invoice reflecting my recent flight procurement, giving me peace of mind about the particulars and expense.",
+      "transformed": "Alright, send over the invoice for my recent flight, so I can check the details and all that stuff.",
+      "final_asr": "\"Alright, send over the in voice for my recent flight, so I can check the details and all that stuff.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "vague_references",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.9,
+        0.7,
+        0.6,
+        0.8
+      ]
+    },
+    {
+      "original": "I've hit a snag with the reservation process and would appreciate if you contacted customer support. Use my booking ID to express my 'Concerns regarding seating arrangements'.",
+      "transformed": "Okay, get in touch with customer support 'bout my reservation issue. Use my booking ID and talk about seating arrangement concerns.",
+      "final_asr": "\"Okay, get in touch with customer sport 'bout my reservation issue. Use my booking ID and talk about seeding arrangement concerns.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.9,
+        0.75,
+        0.85
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Integrate Zeta Corp’s stock into my watchlist and subsequently display the current contents of that watchlist.",
+      "transformed": "Okay, put Zeta Corp stock on my watchlist. Check what's on it now.",
+      "final_asr": "\"Okay, put Zeta Core stock on my watchlist. Check what's on it know.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "moderate",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.8,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "original": "Bring up information on 'NVDA', check the Technology sector for reference.",
+      "transformed": "Get the info on NVDA and check the Technology sector too.",
+      "final_asr": "\"Get the inpho on NVDA and check the Technology sector to.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.9,
+        0.8
+      ]
+    },
+    {
+      "original": "After comparison, I observed some promising fluctuations earlier and wish to place a purchase order for Zeta Corp shares at $120 each for 100 units.",
+      "transformed": "Get hundred shares of Zeta Corp at one twenty dollars each, okay? Saw some promising changes.",
+      "final_asr": "\"Get hundred chairs of Zeta Corp at one twenty dollars each, okay? Saw some promising changes.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.9,
+        0.6,
+        0.8
+      ]
+    },
+    {
+      "original": "After completing the transaction, share the specifics of this newly placed order with me.",
+      "transformed": "Okay, once the transaction's finished, send me the details of the new order.",
+      "final_asr": "\"Okay, once the transactions finished, send me the details of the knew order.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "moderate",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        0.8
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Directly open the academic_venture folder and employ precise commands to generate a new directory for our upcoming academic venture, ensuring its exact placement in our present work directory. It's name should be academic_hub",
+      "transformed": "Open academic_venture folder. Okay, create a new directory called academic_hub right here in our current work directory.",
+      "final_asr": "\"Open academic_venture folder. Okay, create a new directory called academic_hub right hear in our current work directory.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.6,
+        0.9
+      ]
+    },
+    {
+      "original": "Within academic_venture, meticulously list every project that has goal in its file name, ensuring comprehensive coverage.",
+      "transformed": "Okay, let me check... show all projects in academic_venture with 'goal' in the file name.",
+      "final_asr": "Okay, let me check... show all projects in academic_adventure with 'goal' in the file name.",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.6,
+        0.7,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "original": "For clarity, output the complete content of the first file you fine on the terminal.",
+      "transformed": "Alright, get full content of the first file you find on the terminal.",
+      "final_asr": "\"All right, get full contents of the furst file you fine on the terminal.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.65
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.65,
+        0.9,
+        0.75,
+        0.85
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Could you provide me with the latest stock information for Zeta Corp, including its current price and the performance metrics?",
+      "transformed": "Okay, get me the latest stock info for Zeta Corp, including current price and how it's doing.",
+      "final_asr": "\"Okay, get me the latest stock info for Zeta Corp, including current price and how it's doing.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        1.0,
+        0.7,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "original": "Since I'm evaluating a more comprehensive investment approach, please list all the Technology sector-related companies I should consider.",
+      "transformed": "Okay, list all tech companies I should look up for investment.",
+      "final_asr": "Okay, list all tech companies eye should look up for invest meant.",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.6,
+        0.7,
+        0.6
+      ]
+    },
+    {
+      "original": "Incidentally, I've realized I made an error in a previous transaction. Could you cancel my pending order with id 12446 promptly to prevent it from completing?",
+      "transformed": "Okay, stop order twelve four-forty-six before it gets processed.",
+      "final_asr": "\"Okay, stop order twelve four-forty-six before it gets processed.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.65
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.9,
+        0.65,
+        0.85
+      ]
+    },
+    {
+      "original": "I've decided to discontinue with my current brokerage service. Could you go ahead and close the outstanding ticket with id 3 I submitted earlier this week?",
+      "transformed": "Okay, shut ticket three for me. Done with my brokerage service.",
+      "final_asr": "\"Okay, shut ticket free for me. Done with my brokering service.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        0.8,
+        0.7,
+        0.9
+      ]
+    }
+  ],
+  [
+    {
+      "original": "I'd like to arrange a first-class ticket for a trip from San Francisco to Los Angeles on December 25th this year 2024. Please make sure it processes through my credit account using the ID '6789' and access token 'abc123token'. The booking should be made under the name Carlina Yates, so ensure all details align with this information.\n\nHowever, I just realized I'm unable to travel on that specified date anymore. I need the booking for that flight to be canceled.\n\nLastly, given that the trip to Los Angeles can't happen, I'd like to share a tweet expressing disappointment over the canceled plans, content can be 'Disappointed over my canceled plans.' authenticate using username 'john' and password 'john1234'. Also, add the hashtag #TravelWoes and tag @CarlinaYates. Could you prepare that for me?",
+      "transformed": "Okay, book a first-class ticket from San Francisco to Los Angeles for December twenty-fifth, twenty twenty-four, using credit account I D \"six seven eight nine\" and access token \"A B C one two three token.\" Put it under Carlina Yates. Oh, wait, I can't travel then. Cancel the flight. Since I can't go, tweet: \"Disappointed over my canceled plans.\" Log in with username \"john\" and password \"john twelve thirty-four.\" Add hashtag TravelWoes and tag at Carlina Yates. Set that up for me.",
+      "final_asr": "\"Okay, book a first-class ticket from San Francisco to Los Angeles for December twenty-fifth, twenty twenty-four, using credit account I D 'six seven eight nine' and access token 'A B C won too tree token.' Put it under Carline Yates. Oh, weight, I can't travel then. Cancel the flight. Since I can't go, tweet: 'Disappointed over my cancelled plans.' Log in with username 'John' and pass word 'jon twelve thirty-four.' Add hashtag TravelWoes and tag at Carline Yates. Set that up for me.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "emotional_markers",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "symbol_pronunciation",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7,
+        1.0,
+        0.9,
+        0.8
+      ]
+    }
+  ],
+  [
+    {
+      "original": "I require assistance in determining the quantity of gasoline necessary for an extensive journey across California. I currently anticipate needing around 166 liters. How much is that in gallon?",
+      "transformed": "How many gallons is, um, one hundred sixty-six liters of gas for long trip in California, okay?",
+      "final_asr": "\"How many talons is, um, one hundred sixty-six leaders of gas for a long trip in California, okay?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        1.0,
+        0.9,
+        0.8
+      ]
+    },
+    {
+      "original": "Prior to commencing the drive, kindly initiate the engine, ensuring all doors are securely closed and the parking brake is engaged. I am keen to avoid any mishaps on the highway due to an unfilled tank so round it to nearest hundredth and fill that in.",
+      "transformed": "Okay, start the engine, check all the doors are shut, and get the parking brake on. Before hitting the highway, I'm going to fill the tank to the nearest hundredth.",
+      "final_asr": "\"Okay, star the engine, check all the doors are shot, and get the parking break on. Before hitting the high way, I'm going to fill the tank to the nearest hundred.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "casual_pronouns",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "word_reordering",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        0.7,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "original": "Could you provide me with the approximate distance between San Francisco and Rivermist? This information is crucial for my travel planning notes. Will I be able to get there?",
+      "transformed": "What's distance from San Francisco to Rivermist? Yeah, I need it for travel planning. Can I go there?",
+      "final_asr": "\"What's the distance from San Francisco to Rivermist? Yeah, I need it for travel planning. Can I go their?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.8,
+        1.0,
+        0.9,
+        0.7,
+        0.9
+      ]
+    }
+  ],
+  [
+    {
+      "original": "In documents directory, there's a file that piques my curiosity regarding its contents. It's alphabetically first file in that directory. Could you display the last line of that file for me?",
+      "transformed": "Let me see... okay, get the last line of the first file in the documents directory.",
+      "final_asr": "\"Let me sea... okay, git the last line of the first file in the documents directory.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7,
+        0.8,
+        0.6,
+        0.8
+      ]
+    },
+    {
+      "original": "I've lately stored some work that parallels another document on my system. Might you review both files in this directory and articulate the distinctions",
+      "transformed": "Okay, um, look at two files in this directory and tell me what’s different between them.",
+      "final_asr": "\"Okay, um, look at too files in this directory and tell me what’s different between them.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.95
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.6,
+        0.9,
+        0.8,
+        0.95
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Arrange a complete listing of all files and directories presently located here, making sure you don't overlook the hidden ones too.",
+      "transformed": "Alright, check out all files and directories here, even hidden ones.",
+      "final_asr": "\"Alright, check out all files and dairies here, even hidden ones.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "moderate",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.6,
+        0.9,
+        0.7,
+        0.8
+      ]
+    },
+    {
+      "original": "Transfer the 'annual_report.txt' in Documents directory to the 'Reports' directory that's in Documents directory, but also make sure it remains available in its current spot.",
+      "transformed": "Get annual underscore report dot txt from Documents and put it in the Reports folder. Okay, keep it in both places, slash Reports and slash Documents.",
+      "final_asr": "Get annual understand report dot text from Documents and put it in the Reports folder. Okay, keep it in both places, slash Reports and slash Documents.",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "symbol_pronunciation",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "word_reordering",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.8,
+        1.0,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "original": "Reveal the last lines of 'Q4_summary.doc' so we can ascertain how the report wraps up.",
+      "transformed": "Let me see... okay, show me the ending of 'Q4_summary.doc' to check how it finishes.",
+      "final_asr": "\"Let me sea... okay, show me the ending of 'Q4_summary.doc' to check how it finishes.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "subject_dropping",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "light",
+          "confidence": 0.8
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7,
+        0.9,
+        0.6,
+        0.8
+      ]
+    },
+    {
+      "original": "Attempt to relay a message to the individual with ID 'USR002' by logging in as USR001, updating them on the finalization of the report saying 'The report has been finalized.'.",
+      "transformed": "Okay, log in as USR zero-zero-one and send message to USR zero-zero-two: 'The report's finalized.'",
+      "final_asr": "\"Okay, log in as USER zero-zero-one and send massage to USER zero-zero-two: 'The report's finalized.'\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        1.0,
+        0.8,
+        0.7
+      ]
+    }
+  ],
+  [
+    {
+      "original": "Where is my analysis? Locate any file with analysis in it.",
+      "transformed": "Okay, look up any file with 'analysis' in name. Where's my analysis?",
+      "final_asr": "\"Okay, look up any file with 'analyst' in the name. Where's my analyst?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.85
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.75
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.65
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.85,
+        0.75,
+        0.65
+      ]
+    },
+    {
+      "original": "Naviagte to that first analysis and identify any line with error in it.",
+      "transformed": "Lemme see... okay, go to first check and get lines with errors.",
+      "final_asr": "\"Lemme sea... okay, go too first cheque and get lines with heirs.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "thinking_aloud",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7,
+        0.9,
+        0.8,
+        0.9
+      ]
+    },
+    {
+      "original": "Let's bring some order to the project documents. I want to human readible log the storage usage of the entire current directory to usage.txt file. The content of the file should be the number follwed by the word bytes and nothing else.",
+      "transformed": "Okay, write down the storage use of the current directory in usage.txt. Make it easy to read, just number followed by 'bytes.'",
+      "final_asr": "\"Okay, right down the storage use of the current directory in usage.txt. Make it easy to read, just number followed by 'bites.'\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.9
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        1.0,
+        0.8,
+        0.7,
+        0.9
+      ]
+    }
+  ],
+  [
+    {
+      "original": "I've just secured all doors and engaged the parking brake in my vehicle, please start the engine with the ignition on START mode.",
+      "transformed": "Okay, engine's on, ignition to START. Doors're locked, parking brake's on.",
+      "final_asr": "\"Okay, engines on, ignition to START. Doors are locked, barking brakes on.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.75
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.7,
+        1.0,
+        0.9,
+        0.75
+      ]
+    },
+    {
+      "original": "What is the postal code for the area called Rivermist?",
+      "transformed": "Okay, what's the postal code for Rivermist?",
+      "final_asr": "\"Okay, what's the coastal code for Rivermist?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "detail_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.8,
+        0.9,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "original": "I would like to determine the distance from Rivermist to San Francisco.",
+      "transformed": "What's distance if you check out Rivermist and San Francisco?",
+      "final_asr": "\"What's the distance if you check out Rivermiss and San Francisco?\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.9
+        },
+        {
+          "name": "slang_terms",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.7
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.9,
+        0.7,
+        0.7
+      ]
+    },
+    {
+      "original": "Please relay the estimated distance from Rivermist to San Francisco to my colleague Emma. If it helps, my id is 'USR005'. The message should be in the format 'The estimated distance from Rivermist to San Francisco is X miles.', where X is replaced by the actual integer value you computed earlier.",
+      "transformed": "Okay, tell Emma how far it is from Rivermist to San Francisco. Use my ID, USR zero zero five. Say 'The estimated distance is X miles,' and put in the number.",
+      "final_asr": "Okay, tell Emma how far it is from Rivermist to San Francisco. Use my ID, USR zero zero five. Say 'The estimated distance is X miles,' and put in the numb her.",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "disfluencies",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "numbers_noise",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "contractions",
+          "intensity": "moderate",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.7
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.6,
+        1.0,
+        0.8,
+        0.7
+      ]
+    },
+    {
+      "original": "Since we’ve organized those details, display all the messages we have send.",
+      "transformed": "Okay, show all messages we sent, ya.",
+      "final_asr": "\"Okay, show all massages we sent, yeah.\"",
+      "features_applied": [
+        {
+          "name": "sentence_restructuring",
+          "intensity": "moderate",
+          "confidence": 1.0
+        },
+        {
+          "name": "backchanneling",
+          "intensity": "light",
+          "confidence": 0.6
+        },
+        {
+          "name": "contractions",
+          "intensity": "light",
+          "confidence": 0.9
+        },
+        {
+          "name": "casual_pronouns",
+          "intensity": "light",
+          "confidence": 0.7
+        },
+        {
+          "name": "article_dropping",
+          "intensity": "light",
+          "confidence": 0.8
+        },
+        {
+          "name": "simplified_verbs",
+          "intensity": "moderate",
+          "confidence": 0.85
+        }
+      ],
+      "confidence_scores": [
+        1.0,
+        0.6,
+        0.9,
+        0.7,
+        0.8,
+        0.85
+      ]
+    }
+  ]
+]

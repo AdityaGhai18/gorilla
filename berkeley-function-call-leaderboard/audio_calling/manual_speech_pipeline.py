@@ -103,16 +103,15 @@ class ManualSpeechPipeline:
             "thinking_aloud", "backchanneling", "emotional_markers", "restarts_repairs",
             "ellipsis_proforms", "spelling_noise", "numbers_noise", "contractions",
             "casual_pronouns", "slang_terms", "symbol_pronunciation", "article_dropping",
-            "preposition_dropping", "subject_dropping", "fragment_sentences",
-            "word_reordering", "vague_references", "approximate_quantifiers",
-            "simplified_verbs", "detail_dropping"
+            "preposition_dropping", "subject_dropping", "word_reordering",
+            "vague_references", "approximate_quantifiers", "simplified_verbs", "detail_dropping"
         ]
         
         # Voice assistant specific features (more direct, command-like)
         self.voice_assistant_features = [
             "contractions", "numbers_noise", "symbol_pronunciation", "article_dropping",
-            "preposition_dropping", "subject_dropping", "fragment_sentences",
-            "word_reordering", "simplified_verbs", "detail_dropping", "disfluencies", "repetitions"
+            "preposition_dropping", "subject_dropping", "word_reordering",
+            "simplified_verbs", "detail_dropping", "disfluencies", "repetitions"
         ]
         
         # Available ASR error types

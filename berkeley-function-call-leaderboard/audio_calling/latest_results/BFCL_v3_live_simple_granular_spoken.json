@@ -1,0 +1,1268 @@
+[
+  {
+    "original": "I need to know the current time on my machine, using the command echo %time%",
+    "transformed": "Okay, what's the current time on my computer with echo %time%?",
+    "final_asr": "\"Okay, what’s the currant thyme on my computer with echo %time%?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.9,
+      0.8,
+      0.8
+    ]
+  },
+  {
+    "original": "How have millennials views of Apple changed since July 2022?'",
+    "transformed": "What's changed in how you view Apple since that time in July 2022?",
+    "final_asr": "\"What's changed in how you view Apple since that thyme in July 2022?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "casual_pronouns",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "vague_references",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.7,
+      0.6,
+      0.7
+    ]
+  },
+  {
+    "original": "Could you tell me the weather forecast for Marshall, MN on March 5th 2023?",
+    "transformed": "Okay, what's the weather in Marshall on March fifth, twenty-twenty-three?",
+    "final_asr": "\"Okay, what's the whether in Marshal on March fifth, twenty-twenty-three?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "Could you tell me the current weather conditions in El Gastor, Andalusia?",
+    "transformed": "Okay, what's the weather like in El Gastor?",
+    "final_asr": "\"Okay, what's the whether like in El Gastro?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.8,
+      0.9,
+      0.7
+    ]
+  },
+  {
+    "original": "Find me a list of Offbeat genre movies directed by Tim Burton?",
+    "transformed": "Grab list of offbeat movies directed by Tim Burton dash the visionary filmmaker.",
+    "final_asr": "\"Grab list of offbeat movies directed by Tim Burton - the visionary film maker.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "symbol_pronunciation",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.8,
+      0.6
+    ]
+  },
+  {
+    "original": "Help find a housekeeper who provides ironing services in Chonburi Province. with a review score of 4.5 stars or more, available on 12/03/2024 16:00 - 18:00.",
+    "transformed": "Get a housekeeper in Chonburi for ironing, rated four point five stars or higher, okay? I need 'em on March twelfth, twenty-twenty-four, between four and six PM.",
+    "final_asr": "\"Get a housekeeper in Chonburi for ironing, rated four point five stars or hire, okay? I need them on March 12th, twenty-twenty-four, between four and six P.M.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "I have some leisure time so that i could watch a movie. Will you find me a movie directed by Kirill Mikhanovsky and find something like Comedy-drama genre?",
+    "transformed": "Okay, get me a comedy-drama movie directed by Kirill Mikhanovsky.",
+    "final_asr": "Okay, get me a comedy trauma movie directed by Carol McAnuffsky.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.95
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.85
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.75
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.95,
+      0.9,
+      0.85,
+      0.75
+    ]
+  },
+  {
+    "original": "Get the list of active mandates for the user with ID U123456?",
+    "transformed": "Okay, show active mandates for user ID U one twenty-three four fifty-six.",
+    "final_asr": "\"Okay, show active mandates for user ID U won twenty-tree for fifties-six.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.8,
+      1.0,
+      0.9,
+      0.7
+    ]
+  },
+  {
+    "original": "open calculator app using the command called start calc",
+    "transformed": "Check out the calculator by using start calc.",
+    "final_asr": "\"Check out the calculator by using start call.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6
+    ]
+  },
+  {
+    "original": "Give me the application version.",
+    "transformed": "What's the app version, okay?",
+    "final_asr": "\"What's the apt version, OK?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.9,
+      0.8,
+      0.9
+    ]
+  },
+  {
+    "original": "list file in desktop using dir Desktop",
+    "transformed": "Okay, get the files on my desktop.",
+    "final_asr": "\"Okay, get the files on my desk top.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.85
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.9,
+      0.8,
+      0.85
+    ]
+  },
+  {
+    "original": "I want to know weather conditions? I'm at London, UK in fahr",
+    "transformed": "What's the weather like in London, UK in Fahrenheit, alright?",
+    "final_asr": "\"What's the whether like in London, UK in Farrenheit, all right?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.9,
+      0.7,
+      0.8
+    ]
+  },
+  {
+    "original": "Hi, I am Karan. Could you tell me the current status of my Indigo flight 6E123? My ticket number is IND4567.",
+    "transformed": "Hey, okay, what's happening with Indigo flight six E twelve three? My ticket number's IND forty-five sixty-seven.",
+    "final_asr": "\"Hey, okay, what's happening with Indigo flight sixty twelve three? My ticket numbers IND forty-five sixty-seven.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      1.0,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "Can you retrieve the status information for the Ethernet interface on fabric 'Global-Fabric', node 1200, and pod 3?",
+    "transformed": "Okay, grab Ethernet interface status Global-Fabric, node twelve hundred, pod three.",
+    "final_asr": "\"Okay, grab Ethernet interface status Global-Fabric, note twelve hundred, pot three.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "preposition_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "I want to find a good film to watch with Duane Whitaker and I want something directed by Quentin Tarantino.",
+    "transformed": "Okay, find good movie with Duane Whitaker directed by Quentin Tarantino, that's Quentin spelt Q-U-E-N-T-I-N T-A-R-A-N-T-I-N-O.",
+    "final_asr": "\"Okay, fine good movie with Dwayne Whittaker directed by Quentin Tarantino, that's Quentin spelled Q-U-I-N-T-I-N T-A-R-E-N-T-I-N-O.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.8,
+      0.9,
+      0.7
+    ]
+  },
+  {
+    "original": "I need to review the sequence of events for a vulnerability in our system. Can you retrieve the analysis for project with UUID SUPERFANCY, component AB1010CD, and vulnerability ef903ac-893-f00?",
+    "transformed": "Okay, get the analysis for project S-U-P-E-R-F-A-N-C-Y, pronounced SUPERFANCY, component A-B-ten-ten-C-D, or AB1010CD, vulnerability E-F-nine-zero-three-A-C dash eighty-nine-three dash F-zero-zero. I need to check the event sequence.",
+    "final_asr": "\"Okay, get the analysis for project S-U-P-E-R-F-A-N-C-Y, pronounced SUPERFANCY, component A-B-ten-ten-C-D, or AB1010CD, vulnerability E-F-nine-oh-three-A-C dash eighty-nine-three dash F-zero-zero. I need to check the invent sequence.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "symbol_pronunciation",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      0.9
+    ]
+  },
+  {
+    "original": "Hey bunny, How are you doing",
+    "transformed": "Bunny, oh, how's it goin', ya?",
+    "final_asr": "\"Bunny, oh, house it goin', ya?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "casual_pronouns",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.8,
+      0.7
+    ]
+  },
+  {
+    "original": "I'm at Bengaluru. Tell me the current weather conditions in Chennai, Tamil Nadu in fahrenheit?",
+    "transformed": "Okay, what's the weather like in Chennai, in Fahrenheit, ya?",
+    "final_asr": "\"OK, what's the whether like in Chennai, in Fairenheit, ya?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "casual_pronouns",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.9,
+      0.7,
+      0.8
+    ]
+  },
+  {
+    "original": "It's sooo hot. set the air conditioner to 'COOL' mode, temp to 20 degrees oC, while air cleaning on?",
+    "transformed": "It's boiling in here. Okay, put the AC on cool mode, set it to twenty degrees, and make sure air cleaning's on.",
+    "final_asr": "\"It's broiling in here. Okay, put the AC on coal mode, set it to twenty agrees, and make sure heir cleaning's on.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.7,
+      0.7
+    ]
+  },
+  {
+    "original": "Sure, here is the answer to the question:\\n\\n**Logistic regression is not present in the text, therefore I cannot answer this question.**",
+    "transformed": "Lemme see... oh, I can't answer 'cause logistic regression isn't talked about.",
+    "final_asr": "\"Lemme sea... oh, I can't answer 'cause logic stick regression isn't talked about.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "emotional_markers",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.6,
+      0.8,
+      0.9,
+      0.8
+    ]
+  },
+  {
+    "original": "I'm trying to connect to a new Wi-Fi network but I forgot the name. Could you ask me for the SSID with a message saying 'Please enter the Wi-Fi network name you wish to connect to:'?",
+    "transformed": "Okay, what's, um, Wi-Fi name? I forgot SSID. Could you, like, ask me with 'Enter Wi-Fi network name you wanna connect to?'",
+    "final_asr": "\"Okay, what's, um, why-fry name? I forgot SSD. Could you, like, ask me with 'Enter why-fry network name you wanna connect to?'\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "contractions",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.75
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.95
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      0.7,
+      0.9,
+      0.75,
+      0.95
+    ]
+  },
+  {
+    "original": "Can you retrieve the status information for an ethernet interface in the fabric named 'test-de', on node 5, pod 1?",
+    "transformed": "Okay, get the ethernet status for fabric 'test-de', node five, pod one.",
+    "final_asr": "\"Okay, get the Ethernet status for fabric 'test-de', note five, pod won.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.8,
+      0.9
+    ]
+  },
+  {
+    "original": "Can you book a flight for me departing from Paris, France, on the 12th of March 2023 at 3 in the afternoon?",
+    "transformed": "Okay, grab me flight from Paris on March twelfth at three PM.",
+    "final_asr": "\"Okay, grab me a flight from Paris on March twelfth at tree PM.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "slang_terms",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.9,
+      0.7,
+      0.6
+    ]
+  },
+  {
+    "original": "Make the volume 20",
+    "transformed": "Okay, set volume to twenty.",
+    "final_asr": "\"Okay, set volume to 20.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      1.0,
+      0.7,
+      0.6
+    ]
+  },
+  {
+    "original": "I purchased a new laptop for $999 in California, but I'm not sure how much tax I need to pay. What's the total amount including tax?",
+    "transformed": "I got a new laptop for nine ninety-nine in California. How much's the tax, and what's the total?",
+    "final_asr": "\"I got a knew lap top for nine ninety-nine in California. How much is the tacks, and what's the total?\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "disfluencies",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.9,
+      0.8,
+      0.6
+    ]
+  },
+  {
+    "original": "open huggingface using the start command and through the link: https://huggingface.co",
+    "transformed": "Okay, start Hugging Face with go command using this link: h-t-t-p-s colon slash slash huggingface dot co.",
+    "final_asr": "\"Okay, start Hugging Phase with go command using this link: h-t-t-p-s colon slash slash huggingface dot co.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "symbol_pronunciation",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      1.0,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "Could you help me retrieve the list of exports for my bot using the identifier 'my-bot-id' and focusing on version 'v2' sort in ascending? I want max 50 results",
+    "transformed": "Get export list for my bot with ID 'M-Y hyphen B-O-T hyphen I-D', my-bot-id, for version 'V-two'. Sort it upward and limit it to fifty results.",
+    "final_asr": "Get expert list for my bought with ID 'M-Y hyphen B-O-T hyphen I-D', my-bought-id, for version 'V-too'. Sort it upwards and limit it to fifty results.",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "spelling_noise",
+        "intensity": "moderate",
+        "confidence": 0.95
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.8
+      },
+      {
+        "name": "article_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "moderate",
+        "confidence": 0.9
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.95,
+      1.0,
+      0.8,
+      0.7,
+      0.9
+    ]
+  },
+  {
+    "original": "remove shortcut of putty from desktop, using the instruction del \"%userprofile%\\Desktop\\putty.lnk\"",
+    "transformed": "Lemme see... delete the Putty shortcut from the desktop.",
+    "final_asr": "\"Lemme sea... delete the Putty short cut from the desk top.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "thinking_aloud",
+        "intensity": "light",
+        "confidence": 0.6
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "symbol_pronunciation",
+        "intensity": "moderate",
+        "confidence": 0.9
+      },
+      {
+        "name": "subject_dropping",
+        "intensity": "light",
+        "confidence": 0.6
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.6,
+      0.7,
+      0.9,
+      0.6
+    ]
+  },
+  {
+    "original": "Can you arrange a flight for me from New York, NY to Paris with a departure on the 20th of June 2022 at 5 in the afternoon?",
+    "transformed": "Get a flight from New York to Paris, leaving June twentieth at five PM.",
+    "final_asr": "\"Get a flight from New York to Paris, leaving June 20th at five PM.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "simplified_verbs",
+        "intensity": "light",
+        "confidence": 0.85
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "light",
+        "confidence": 0.7
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      1.0,
+      0.9,
+      0.85,
+      0.7
+    ]
+  },
+  {
+    "original": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
+    "transformed": "Okay, can you get me an Uber Plus from around two twenty-one B Baker Street, Berkeley? I can probably wait about 10 minutes.",
+    "final_asr": "\"Okay, can you get me an Uber Plus from around two twenty-one B Baker Street, Berkeley? I can probably weight about 10 minutes.\"",
+    "features_applied": [
+      {
+        "name": "sentence_restructuring",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "backchanneling",
+        "intensity": "light",
+        "confidence": 0.7
+      },
+      {
+        "name": "numbers_noise",
+        "intensity": "moderate",
+        "confidence": 1.0
+      },
+      {
+        "name": "contractions",
+        "intensity": "light",
+        "confidence": 0.9
+      },
+      {
+        "name": "approximate_quantifiers",
+        "intensity": "moderate",
+        "confidence": 0.8
+      },
+      {
+        "name": "detail_dropping",
+        "intensity": "moderate",
+        "confidence": 0.8
+      }
+    ],
+    "confidence_scores": [
+      1.0,
+      0.7,
+      1.0,
+      0.9,
+      0.8,
+      0.8
+    ]
+  }
+]

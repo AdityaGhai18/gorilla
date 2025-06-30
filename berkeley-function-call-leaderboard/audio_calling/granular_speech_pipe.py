@@ -49,7 +49,7 @@ class FeatureSelection:
 @dataclass
 class PipelineConfig:
     """Configuration for the granular speech pipeline."""
-    max_features: int = 8
+    max_features: int = 6
     confidence_threshold: float = 0.5
     temperature: float = 0.7
     max_retries: int = 3
@@ -76,7 +76,6 @@ DEFAULT_FEATURE_ORDER = [
     "article_dropping",
     "preposition_dropping",
     "subject_dropping",
-    "fragment_sentences",
     "word_reordering",
     "vague_references",
     "approximate_quantifiers",
@@ -174,6 +173,8 @@ class GranularSpeechPipeline:
 
         IMPORTANT: People talking to voice assistants are typically DIRECT, CASUAL, and COMMAND-LIKE. They want quick answers and don't waste time with formal language or excessive politeness. Think of how people actually talk to Siri / Alexa - they're direct and to the point.
 
+        CRITICAL RULE: BE CONSERVATIVE: If input is already speech-like, apply minimal changes
+
         PRIORITY FEATURES (select 4-6 from these):
         - contractions: Use wanna, gonna, lemme, gimme, etc.
         - simplified_verbs: get instead of retrieve, check instead of verify
@@ -203,6 +204,18 @@ class GranularSpeechPipeline:
         - contextual_references: "the one we talked about" (too conversational)
         - ellipsis_proforms: "do it", "get it" (too vague)
 
+        ULTRA-CONSERVATIVE RULE: If input is already direct and speech-like, apply MAXIMUM 2-3 features
+        Examples of already speech-like inputs that need minimal changes:
+        - "Reverse say hi" → apply 1-2 features max
+        - "Play music" → apply 1 feature
+        - "Get weather" → apply 1-2 features max
+        - "Turn on lights" → apply 1-2 features max
+        - "Call mom" → apply 1-2 features max
+        
+        For already speech-like inputs, prefer these minimal features:
+        - contractions (light)
+        - disfluencies 
+
         FEATURE GROUPINGS - You MUST select at least 1 feature from each group:
 
         GROUP 1 - BASIC SPEECH PATTERNS (always include 1-2):
@@ -223,7 +236,6 @@ class GranularSpeechPipeline:
         - repetitions: Repeat words or phrases naturally
 
         GROUP 4 - STRUCTURAL CHANGES (include 1-2):
-        - fragment_sentences: Use incomplete sentences
         - word_reordering: Natural word order changes
         - article_dropping: Drop articles where natural
         - preposition_dropping: Drop prepositions where natural
@@ -231,7 +243,7 @@ class GranularSpeechPipeline:
         - detail_dropping: Drop unnecessary formal details (state in the address, titles, etc.)
 
         GROUP 5 - CONTENT MODIFICATIONS (include 1-2):
-        - spelling_noise: Spell out names/terms that might be misunderstood
+        - spelling_noise: Spell out ONLY truly ambiguous or complex terms (unusual usernames, complex technical names, non-obvious abbreviations)
         - symbol_pronunciation: Say symbols out loud (slash, dash, at)
         - vague_references: Use that thing, the stuff, some info
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used
@@ -255,7 +267,6 @@ class GranularSpeechPipeline:
         - article_dropping: Drop the, a, an where natural, use sparingly
         - preposition_dropping: Drop in, on, at, for where natural
         - subject_dropping: Drop subject pronouns where natural
-        - fragment_sentences: Break into shorter fragments (for long/complex sentences)
         - word_reordering: Slightly reorder words naturally
         - vague_references: Use that thing, the stuff, some info
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used, around 5 files
@@ -292,22 +303,26 @@ class GranularSpeechPipeline:
         SOCIAL MEDIA:
         Written: "Please post a status update on my social media account with the message 'Excited to announce our new product launch!' and include the hashtag #innovation."
         Spoken: "Post a status excited to announce our new product launch. Add hashtag innovation."
-        Features: disfluencies, simplified_verbs, contractions, emotional_markers, fragment_sentences
+        Features: disfluencies, simplified_verbs, contractions, emotional_markers
 
         SELECTION GUIDELINES:
         - sentence_restructuring is ALWAYS applied automatically (don't select it)
         - ALWAYS include numbers_noise if input has numbers/alphanumerics
-        - ALWAYS include spelling_noise if input has names, usernames, or complex terms (like GitHub repos, technical names)
+        - ONLY include spelling_noise if input has TRULY ambiguous or complex terms (unusual usernames, complex technical names, non-obvious abbreviations)
+        - DO NOT include spelling_noise for common English words, standard terms
         - You MUST select at least 1 feature from each of the 5 groups above
-        - Total of 6-8 features maximum (sentence_restructuring + your selections)
+        - Total of 4-6 features maximum (sentence_restructuring + your selections) - BE CONSERVATIVE IN CASES SIMILAR TO SPEECH
         - Be conservative with disfluencies - people don't say "um" that much to voice assistants
         - Focus on making it sound direct and efficient, not overly polite or formal
         - Choose features that make speech sound natural, not robotic or forced
         - Prioritize features that improve flow and naturalness over adding complexity
-        - Avoid over-fragmentation - don't break sentences unnecessarily
         - Focus on natural conversational flow rather than artificial speech patterns
         - Ensure diversity across groups - don't stack too many features from the same group
-        - With 8 features total, you can select 2 features from some groups for richer speech patterns
+        - IMPORTANT: Only apply changes when needed. If the input is already speech-like, apply minimal changes
+        - Preserve all function-calling content completely unchanged
+        - Use proper English - some informal is okay but maintain good grammar
+        - DO NOT add unnecessary filler like "let me check" after commands
+        - DO NOT make technical terms vague - keep them specific and clear
 
         Output a JSON object with a "features" key, whose value is an array of objects. Each object should have: feature_name, intensity (light/moderate/heavy), confidence (0.0-1.0).
 
@@ -361,7 +376,7 @@ class GranularSpeechPipeline:
                     confidence=1.0
                 ))
             
-            return features[:8]
+            return features[:6] #first x features being taken
         except Exception as e:
             features = []
             if contains_number:
@@ -556,7 +571,24 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Use slang terms like: "grab", "check out", "look up"
-        Keep the meaning intact.
+        
+        CRITICAL: Do NOT make the content unclear or overly casual
+        - Keep technical terms clear and specific
+        - Do NOT use slang that makes the meaning unclear
+        - Prefer simple, clear slang over complex or obscure terms
+        - Maintain the professional/technical nature of the request
+        
+        Examples of GOOD slang usage:
+        - "get" instead of "retrieve"
+        - "check out" instead of "examine"
+        - "look up" instead of "search for"
+        
+        Examples of BAD slang usage (DO NOT DO):
+        - "what's deal with app version" (unclear)
+        - "give me the lowdown" (too casual for technical requests)
+        - "vibes with" (too casual for technical content)
+        
+        Keep the meaning intact and clear.
         
         Input: "{text}"
         Output:
@@ -600,6 +632,21 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Drop articles (the, a, an) where it sounds natural in spoken English.
+        
+        CRITICAL GRAMMAR RULES:
+        - Maintain proper English grammar and sentence structure
+        - Do NOT create ungrammatical sentences
+        - Only drop articles where it sounds natural and doesn't break flow
+        - If dropping an article makes the sentence unclear, do NOT apply the change
+        - Output must be proper, understandable English
+        
+        Examples of GOOD article dropping:
+        - "Show me the C drive" → "Show me C drive"
+        - "Get the weather" → "Get weather"
+        
+        Examples of BAD article dropping (DO NOT DO):
+        - "Let me do a a quick check" → "Let me quick check" (if it sounds unnatural or breaks sentence)
+        
         Input: "{text}"
         Output:
         """
@@ -640,32 +687,26 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Drop subject pronouns where it sounds natural in spoken English.
-        Input: "{text}"
-        Output:
-        """
-        result = self._call_openai(prompt)
-        if not result.strip():
-            return text
-        return result
-
-    def apply_fragment_sentences(self, text: str, intensity: str) -> str:
-        intensity_prompts = {
-            "light": "Break 1 long sentence into fragments naturally",
-            "moderate": "Break 1-2 long sentences into fragments naturally",
-            "heavy": "Break 2-3 long sentences into fragments naturally"
-        }
         
-        prompt = f"""
-        {INSTRUCTION_TEMPLATE.format(feature='fragment sentences')}
-        {intensity_prompts[intensity]}
+        CRITICAL GRAMMAR RULES:
+        - Maintain proper English grammar and sentence structure
+        - Do NOT create ungrammatical or incomplete sentences
+        - Do NOT change the meaning of conditional clauses
+        - Do NOT drop subjects from complex sentences where it breaks flow
+        - Only drop subjects where it sounds natural and doesn't break flow
+        - If dropping the subject makes the sentence unclear, do NOT apply the change
+        - Output must be proper, understandable English
         
-        Break long sentences into shorter fragments where it sounds natural in spoken English.
-        Only break sentences that are actually long or complex. Do NOT over-fragment short sentences.
-        Make it sound natural, not choppy.
+        Examples of GOOD subject dropping:
+        - "I can't answer that" → "Can't answer that"
+        - "I need to check" → "Need to check"
+        - "I want to go" → "Want to go"
         
-        Examples:
-        - "Get the details for user ID seven eight nine zero. There's a special request. It's black." (good)
-        - "Get. The details. For user. ID seven. Eight nine. Zero." (bad - too choppy)
+        Examples of BAD subject dropping (DO NOT DO):
+        - "if a user asks a question" → "if asked question" (changes meaning and breaks grammar)
+        - "when the system starts" → "when start" (breaks grammar)
+        - "if you need help" → "if help" (breaks grammar)
+        - "while the process runs" → "while runs" (breaks grammar)
         
         Input: "{text}"
         Output:
@@ -688,7 +729,21 @@ class GranularSpeechPipeline:
         
         Slightly reorder words or phrases where it sounds natural in spoken English.
         
+        CRITICAL GRAMMAR RULES:
+        - Maintain proper English grammar and sentence structure
+        - Do NOT break subject-verb agreement
+        - Do NOT create ungrammatical sentences
+        - If reordering breaks grammar, do NOT apply the change
+        - Output must be proper, understandable English
+        
         IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
+
+        
+        Examples of BAD reordering (DO NOT DO):
+        - "Logistic regression wasn't mentioned" → "Logistic regression didn't mention" (breaks grammar)
+        - "I can't answer" → "Can't answer that, I" (incomplete)
+        - "I can't answer that" → "Can't answer that, I can't" (repetition)
+        - "Logistic regression isn't mentioned" → "Isn't mentioned, logistic regression" (weird flow, incorrect meaning and grammar)
         
         Input: "{text}"
         Output:
@@ -710,7 +765,25 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Use vague references like: "that thing", "the stuff", "some info"
-        Keep the meaning intact.
+        
+        CRITICAL RULES:
+        - Do NOT make technical terms, names, or specific content vague
+        - Do NOT make important specifications or requirements vague
+        - Keep specific terms like "ATM location", "customer query", "API endpoint" as they are key to the user instruction
+        - Only use vague references for general concepts, not specific technical content
+        - Preserve all function-calling content completely unchanged
+        
+        Examples of GOOD vague references:
+        - "Get the stuff from the folder" (good - folder is general)
+        - "Check that thing in the settings" (good - settings is general)
+        
+        Examples of BAD vague references (DO NOT DO):
+        - "Where do I put that ATM location thing?" (bad - ATM location is specific technical content)
+        - "Classify that customer question thing" (bad - customer query is specific technical content)
+        - "Check that API endpoint thing" (bad - API endpoint is specific technical content)
+        - "Get that weather thing in Fahrenheit" (bad - weather in Fahrenheit is specific requirement)
+        
+        Keep the meaning intact and preserve all specific key content.
         
         Input: "{text}"
         Output:
@@ -846,10 +919,15 @@ class GranularSpeechPipeline:
         - "let me see", "what's the word...", "I think", "maybe"
         - Use sparingly and only where it sounds natural
         - Don't overdo it - people don't constantly think out loud to voice assistants
+        - DO NOT add thinking phrases after commands - only before or during the command
         
         Examples:
         - "Let me see... get the details for user ID seventy-eight ninety"
         - "What's the weather in Tel Aviv? I think... in Fahrenheit"
+        
+        BAD EXAMPLES (DO NOT DO):
+        - "Get the weather in Tel Aviv. Let me see..." (don't add after command)
+        - "List C drive. Let me check..." (don't add after command)
         
         Input: "{text}"
         Output:
@@ -954,9 +1032,9 @@ class GranularSpeechPipeline:
 
     def apply_spelling_noise(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Spell out 1 name or term that might be misunderstood",
-            "moderate": "Spell out 1-2 names or terms that might be misunderstood",
-            "heavy": "Spell out 2-3 names or terms that might be misunderstood"
+            "light": "Spell out 1 truly ambiguous or complex term that might be misunderstood",
+            "moderate": "Spell out 1-2 truly ambiguous or complex terms that might be misunderstood",
+            "heavy": "Spell out 2-3 truly ambiguous or complex terms that might be misunderstood"
         }
         
         prompt = f"""
@@ -966,15 +1044,19 @@ class GranularSpeechPipeline:
         Spell out names, usernames, or complex terms that might be misunderstood:
         - GitHub usernames or repository names: "JohnDoe" → "JohnDoe, thats spelt J-O-H-N-D-O-E, JohnDoe¬"
         - Complex names: "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
-        - Technical terms: "api-client" → "api dash client"
-        - Any name that's not immediately obvious how to pronounce
+        - Any name that's not immediately obvious how to pronounce or spell
         
         Examples:
         - "User123/repo" → "U-S-E-R-1-2-3 slash repo, User123 slash repo"
         - "my-app/client" → "my dash app slash client"
         - "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
         
-        Be aggressive about spelling out names - people do this when talking to voice assistants to avoid confusion.
+        DO NOT SPELL OUT:
+        - Common English words: "user", "data", "project", "database", "connection"
+        - Simple names: "John", "Mary", "Smith"
+        - Standard technical terms: "Postgres", "MySQL", "HTTP", "JSON"
+        - Obvious abbreviations: "DB" (database), "API" (in most contexts)
+        - Numbers or simple alphanumeric: "12345", "user1"
         
         Input: "{text}"
         Output:
@@ -1024,15 +1106,27 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='detail dropping')}
         {intensity_prompts[intensity]}
         
-        Drop unnecessary formal details that people skip when speaking:
-        - State abbreviations: "CA", "NY", "TX" → just skip it when you say an address
+        Drop ONLY unnecessary formal/administrative details that people skip when speaking:
+        - State/province names when city is clear: "New York, NY" → "New York"
         - Formal titles: "Dr.", "Mr.", "Ms.", "Prof." → skip them
         - Company suffixes: "Inc.", "LLC", "Corp." → skip them
         
-        Examples:
+        CRITICAL: NEVER drop important technical specifications or units:
+        - Temperature units: "Fahrenheit", "Celsius", "Kelvin" → KEEP THESE
+        - Measurement units: "miles", "kilometers", "pounds" → KEEP THESE
+        - Technical terms: "API", "JSON", "HTTP" → KEEP THESE
+        - Specific requirements: "in Fahrenheit", "in Celsius" → KEEP THESE
+        - ANY unit specification: "in fahrenheit", "in celsius", "in miles" → KEEP THESE
+        
+        Examples of GOOD detail dropping:
         - "Yosemite National Park, Mariposa, CA" → "Yosemite National Park, Mariposa"
         - "Dr. John Smith" → "John Smith"
         - "Apple Inc." → "Apple"
+        - "123 Main Street" → "123 Main"
+        
+        Examples of BAD detail dropping (DO NOT DO):
+        - "length in Centimeters" → "length" (removes important unit specification)
+        - "API endpoint" → "endpoint" (removes important technical context)
         
         Only drop details that don't change the core meaning and that people naturally skip when speaking.
         
@@ -1318,7 +1412,7 @@ def save_transformed_data(data: List[Dict], output_path: str):
 
 def main():
     config = PipelineConfig(
-        max_features=8,
+        max_features=6,
         confidence_threshold=0.5,
         temperature=0.8,
         max_retries=3,
@@ -1326,55 +1420,72 @@ def main():
         asr=True
     )
     pipeline = GranularSpeechPipeline(config)
-    data_path = "../data/BFCL_v3_live_simple.json"
+    data_path = "../data/BFCL_v3_multi_turn_base.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
-    
-    # Filter for English texts only
+
+    # Filter for English texts only (keep test cases where all turns are English)
     english_test_cases = []
     for test_case in bfcl_data:
-        user_content = test_case['question'][0][0]['content']
-        if pipeline.is_english_text(user_content):
+        all_english = True
+        for turn in test_case['question']:
+            user_content = turn[0]['content']
+            if not pipeline.is_english_text(user_content):
+                all_english = False
+                print(f"Skipping non-English text: {user_content[:100]}...")
+                break
+        if all_english:
             english_test_cases.append(test_case)
-        else:
-            print(f"Skipping non-English text: {user_content[:100]}...")
-    
+
     print(f"Found {len(english_test_cases)} English test cases out of {len(bfcl_data)} total")
-    
-    test_subset = english_test_cases[:25] #you can edit the number of test cases here will add a terminal argument support later
+
+    # Randomly sample 30 test cases for better variety
+    import random
+    random.seed(5)  # Changed seed for new randomization
+    test_subset = random.sample(english_test_cases, min(15, len(english_test_cases)))
     if len(test_subset) == 0:
         print("No English test cases found. Exiting.")
         return
-    
-    print(f"Processing {len(test_subset)} English test cases...")
-    
-    results = []
+
+    print(f"Processing {len(test_subset)} randomly sampled English test cases...")
+
+    all_results = []
     for i, test_case in enumerate(test_subset):
         print(f"\n{'='*60}")
         print(f"Test case {i+1}/{len(test_subset)}")
-        user_content = test_case['question'][0][0]['content']
-        print(f"Original text: {user_content}")
-        
-        try:
-            result = pipeline.transform_text(user_content)
-            print(f"Transformed text: {result['final']}")
-            results.append({
-                'original': user_content,
-                'transformed': result['final'],
-                'features_applied': result['selected_features'],
-                'confidence_scores': [f['confidence'] for f in result['selected_features']]
-            })
-        except Exception as e:
-            print(f"Error processing test case {i+1}: {e}")
-            continue
-    
+        per_turn_results = []
+        for turn_idx, turn in enumerate(test_case['question']):
+            user_content = turn[0]['content']
+            print(f"Turn {turn_idx+1}: {user_content}")
+            try:
+                result = pipeline.transform_text(user_content)
+                print(f"Transformed text: {result['final']}")
+
+                # Apply ASR error simulation
+                asr_pipeline = ASRErrors()
+                asr_result = asr_pipeline.execute_noise(result['final'])
+                final_asr_text = asr_result.get("final", result['final'])
+                print(f"ASR processed text: {final_asr_text}")
+
+                per_turn_results.append({
+                    'original': user_content,
+                    'transformed': result['final'],
+                    'final_asr': final_asr_text,
+                    'features_applied': result['selected_features'],
+                    'confidence_scores': [f['confidence'] for f in result['selected_features']]
+                })
+            except Exception as e:
+                print(f"Error processing turn {turn_idx+1} in test case {i+1}: {e}")
+                continue
+        all_results.append(per_turn_results)
+
     # Save results
-    output_file = "BFCL_v3_live_simple_granular_spoken.json"
+    output_file = "BFCL_v3_live_multi_turn_base_granular_spoken.json"
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
-    
+        json.dump(all_results, f, indent=2, ensure_ascii=False)
+
     print(f"\nResults saved to: {output_file}")
-    print(f"Successfully processed {len(results)} English test cases")
+    print(f"Successfully processed {len(all_results)} English test cases")
 
 if __name__ == "__main__":
     main()
