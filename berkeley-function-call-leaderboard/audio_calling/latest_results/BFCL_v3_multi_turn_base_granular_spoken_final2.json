@@ -1,0 +1,4658 @@
+[
+  {
+    "id": "multi_turn_base_159",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Imagine planning a trip and you're curious about the flight costs between various airports. Opt to fly from the first airport to the second one in the system's list. Could you provide the expected fare for an economy class ticket on the date 2024-11-15?",
+          "transformed_content": "Uh, can you check, um, flight costs from first to, like, the second airport on your list? Uh, what's the, I mean, economy fare for November 15, 2024?",
+          "asr": "Uh, can you check, um, flight cost from thirst to, like, the second airport on your list? Uh, what's the, I mean, economy fair for November 15, 2024?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Good news! You've discovered a fare that won't break the bank. Next, let's arrange a flight from San Francisco International (SFO) to Los Angeles International (LAX). Utilize a distinctive access token 'abc123xyz', the credit card with id 'card_3456', and the traveler details of our intrepid voyager, Elizabeth Montgomery.",
+          "transformed_content": "Hey, I found a cheap fare! Could you book a flight from SFO to LAX? Oh, use access token abc one two three x y z, all lowercase, no spaces, credit card with ID card underscore three four five six, and traveler details for Elizabeth Montgomery, that's M-O-N-T-G-O-M-E-R-Y, Elizabeth Montgomery.",
+          "asr": "Hey, I found a cheap fair! Could you book a flight from SFO to LAX? Oh, use access token A, B, C, 1, 2, 3, X, Y, Z, all lowercase, no spaces, credit card with ID card underscore three, four, five, six, and traveler details for Elisabeth Montgomery, that's M-O-N-T-G-O-M-E-R-Y, Elisabeth Montgomery.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.6,
+              1.0,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Finally, Elizabeth seeks some tranquility during her adventure. Please acquire travel insurance for this booked flight, selecting a plan that offers up to $500 coverage. You are welcome to use the same credit card and access token for this purchase.",
+          "transformed_content": "Uh, get travel insurance for Elizabeth's flight with, like, five hundred dollars coverage. Oh, use the same card and token.",
+          "asr": "Uh, get travel assurance for Elizabeth's flight with, like, five hundred dollars coverage. Oh, use the same cart and token.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "card_3456": {
+            "card_number": "6754 9823 6519 3456",
+            "cardholder_name": "Elizabeth Montgomery",
+            "expiry_date": "12/25",
+            "cvv": 123,
+            "balance": 15000.0
+          }
+        },
+        "booking_record": {},
+        "access_token": "abc123xyz",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "read_write",
+        "user_first_name": "Theodore",
+        "user_last_name": "Collins",
+        "budget_limit": 5000.0
+      }
+    },
+    "path": [
+      "TravelAPI.list_all_airports",
+      "TravelAPI.get_flight_cost",
+      "TravelAPI.book_flight",
+      "TravelAPI.purchase_insurance"
+    ],
+    "involved_classes": [
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_65",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Imagine I just embarked on a lovely road trip and had to make a stop at the gas station. Would you be so kind as to assist me in filling up my car with 15 liters of gasoline? Fill with the second decimal digit precision in gallon. Once that's done, it would be fantastic if you could check the tire pressures as well—I'd love to share my impressive car maintenance skills with my Twitter followers with the message 'Just filled up the tank and checked the tire pressures. Ready for the next adventure!'. If you could also start up the engine and let me know the battery voltage and fuel level, that would be incredibly helpful.",
+          "transformed_content": "Hey, I'm on a road trip and need to grab about fifteen liters of gas, converted precisely to gallons. Can you do that? Also, check out the tire pressures for me. I wanna tweet about it: \"Tank's filled, tires checked. Next adventure ready!\" After that, fire up the engine and tell me the battery voltage and fuel level. Thanks!",
+          "asr": "Hey, I'm on a rode trip and need to grab about fifteen leaders of gas, converted precisely to gallons. Can you due that? Also, check out the tire pressers for me. I wanna tweet about it: 'Tank's filled, tires checked. Next adventure ready!' After that, fire up the engine and tell me the battery voltage and fuel level. Thanks!",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "slang_terms"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "heavy",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              1.0,
+              0.9,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I've shared the details about my tire pressures and engine's stellar condition on Twitter, but I'd like to give that tweet a bit more visibility. Could you possibly amplify its reach by retweeting it? And if you could add a comment saying, 'Ready for the next adventure!' that would be splendid.",
+          "transformed_content": "Share my tweet about tire pressures and engine condition. Add a comment: 'Ready for the next adventure!'",
+          "asr": "Share my tweet about tire pressures and in-gin condition. Add a comet: 'Ready for the next adventure!'",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.7,
+              0.9,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "fuelLevel": 10.0,
+        "batteryVoltage": 12.6,
+        "engineState": "stopped",
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "parkingBrakeForce": 0.0,
+        "slopeAngle": 0.0,
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0
+      },
+      "TwitterAPI": {
+        "authenticated": true,
+        "tweet_counter": 5,
+        "tweets": {
+          "0": {
+            "id": 0,
+            "username": "roadtripper_123",
+            "content": "Just filled up the tank and checked the tire pressures. Ready for the next adventure!",
+            "tags": [
+              "#RoadTrip",
+              "#CarMaintenance",
+              "#Adventure"
+            ],
+            "mentions": []
+          },
+          "1": {
+            "id": 1,
+            "username": "roadtripper_123",
+            "content": "tweet2",
+            "tags": [],
+            "mentions": []
+          },
+          "2": {
+            "id": 2,
+            "username": "roadtripper_123",
+            "content": "tweet3",
+            "tags": [],
+            "mentions": []
+          },
+          "3": {
+            "id": 3,
+            "username": "roadtripper_123",
+            "content": "tweet4",
+            "tags": [],
+            "mentions": []
+          },
+          "4": {
+            "id": 4,
+            "username": "roadtripper_123",
+            "content": "tweet5",
+            "tags": [],
+            "mentions": []
+          }
+        },
+        "username": "roadtripper_123",
+        "password": "Tr@ff1cJ@m2023"
+      }
+    },
+    "path": [
+      "VehicleControlAPI.liter_to_gallon",
+      "VehicleControlAPI.fillFuelTank",
+      "VehicleControlAPI.startEngine",
+      "VehicleControlAPI.check_tire_pressure",
+      "TwitterAPI.post_tweet",
+      "TwitterAPI.retweet",
+      "TwitterAPI.comment"
+    ],
+    "involved_classes": [
+      "TwitterAPI",
+      "VehicleControlAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_189",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Planning an incredible journey from NYC to Tokyo on December 24th 2024 in first class! I have my credit card ready with the id card_5678, which is expiring soon, and I'd like to allocate business expenses wisely. The cardholder's name matches mine, Michael Thompson, and I can provide the CVV when needed, which is 456. Could you make the booking using access token 'abc123xyz'?",
+          "transformed_content": "\"Book a first-class flight from NYC, that's N-Y-C, to Tokyo for December twenty-fourth, twenty-twenty-four. Use my credit card, the one with id card underscore five-six-seven-eight, expiring soon. It's a business expense, name's Michael Thompson, that's T-H-O-M-P-S-O-N, Michael Thompson. CVV is four five six if you need it. Use access token 'abc123xyz' for the booking.\" Okay.",
+          "asr": "Book a first-class flight from N-Y-C, that's N I C, to Tokyo for December twenty-fourth, twenty twenty-four. Use my credit card, the one with I D card underscore five-six-seven-eight, expiring soon. It's a business expanse, name's Michael Thompson, that's T-H-O-M-S-O-N, Michel Thompson. CVV is four fife six if you need it. Use axis token 'abc123X Y Z' for the booking.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "backchanneling",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.9,
+              1.0,
+              0.9,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After sorting out my travel plans, draft a tweet about how flexible and adaptable my itinerary turned out to be, including a tag to my favorite travel blog '#TravelBlog' and mention my adventure-loving friend '@Spontaneity'. You may use my account with username 'john' and password 'john1234'. The tweet should read 'Flexibility is key! Plans changed, but the adventure continues.'",
+          "transformed_content": "\"Uh, sort my travel plans and then, like, tweet about how flexible they are. Tag 'hashtag TravelBlog' and 'at Spontaneity'. Use 'john', 'john one two three four' to log in. Tweet: 'Flexibility is key! Plans changed, but the adventure continues.'\" O-K, let's get started!",
+          "asr": "Uh, sort my travel plans and then, like, tweet about how flexible they are. Tag 'hashtag TravelBlog' and 'at Spontaneity'. Use 'john', 'john won too three for' to log in. Tweet: 'Flexibility is key! Plans changed, but the adventure continues.' Oh kay, let's get started!",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "spelling_noise",
+              "contractions",
+              "symbol_pronunciation"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.65,
+              0.7,
+              0.85,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Can you amplify the message by retweeting my recent post about the itinerary that you just posted, highlighting our spontaneity with travel plans to reach a larger audience?",
+          "transformed_content": "\"Um, could you, uh, share my latest post about the itinerary? Mean, show our spontaneous travel plans to, like, reach more people.\" Okay.",
+          "asr": "Um, could you, uh, share my latest post about the itinerary? Mean, show our spontaneous travel plants to, like, reach more people.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "subject_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.65,
+              0.85
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "card_5678": {
+            "card_number": "4321-5678-9876-5678",
+            "balance": 50000.0,
+            "cardholder_name": "Michael Thompson",
+            "expiry_date": "12/23",
+            "cvv": 456,
+            "type": "business"
+          }
+        },
+        "booking_record": {},
+        "access_token": "abc123xyz",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "booking",
+        "user_first_name": "Michael",
+        "user_last_name": "Thompson",
+        "budget_limit": 10000.0
+      },
+      "TwitterAPI": {
+        "tweet_counter": 10,
+        "tweets": {
+          "0": {
+            "id": 0,
+            "username": "john",
+            "content": "Just booked an amazing trip from NYC to Tokyo! #TravelGoals",
+            "tags": [
+              "#TravelGoals"
+            ],
+            "mentions": []
+          },
+          "1": {
+            "id": 1,
+            "username": "john",
+            "content": "Flexibility is key! Plans changed, but the adventure continues. @TravelBlog #Spontaneity",
+            "tags": [
+              "#Spontaneity"
+            ],
+            "mentions": [
+              "@TravelBlog"
+            ]
+          },
+          "2": {
+            "id": 2,
+            "username": "john",
+            "content": "Retweeting my latest travel adventure! #TravelLovers",
+            "tags": [
+              "#TravelLovers"
+            ],
+            "mentions": []
+          }
+        },
+        "username": "john",
+        "password": "john1234"
+      }
+    },
+    "path": [
+      "TravelAPI.register_credit_card",
+      "TravelAPI.book_flight",
+      "TravelAPI.cancel_booking",
+      "TwitterAPI.post_tweet",
+      "TwitterAPI.retweet"
+    ],
+    "involved_classes": [
+      "TwitterAPI",
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_91",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Hi, I am Kelly. I'm sweating. What's the temp outside right now? Would you be able to update Michael on today's outdoor temperature with message 'It is hot outside.'? He should know whether to bundle up or dress down for the weather.",
+          "transformed_content": "Hey, I'm Kelly. Uh, I'm sweating here. What's temp outside? Right, tell Michael it's, like, hot out. He needs to know if he should, um, wear layers or keep it light.",
+          "asr": "Hey, I'm Kelly. Uh, I'm sweeting hear. What's the temp outside? Write, tell Michael it's, like, hot out. He kneads to know if he should, um, where layers or keep it lite.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.8,
+              0.9,
+              0.9,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Let's review all the messages I have send so far.",
+          "transformed_content": "\"Show me, uh, all my sent messages.\" Okay.",
+          "asr": "\"Show me, uh, all mice scent messages.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.9,
+              0.75,
+              0.85
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "fuelLevel": 15.5,
+        "batteryVoltage": 12.8,
+        "engineState": "running",
+        "doorStatus": {
+          "driver": "locked",
+          "passenger": "unlocked",
+          "rear_left": "locked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 22.0,
+        "fanSpeed": 70,
+        "acMode": "cool",
+        "humidityLevel": 45.0,
+        "headLightStatus": "on",
+        "parkingBrakeStatus": "released",
+        "parkingBrakeForce": 0.0,
+        "slopeAngle": 5.0,
+        "distanceToNextVehicle": 30.0,
+        "cruiseStatus": "active",
+        "destination": "Central Park",
+        "frontLeftTirePressure": 33.0,
+        "frontRightTirePressure": 33.0,
+        "rearLeftTirePressure": 31.0,
+        "rearRightTirePressure": 31.0
+      },
+      "MessageAPI": {
+        "user_count": 5,
+        "current_user": "USR005",
+        "user_map": {
+          "Kelly": "USR005",
+          "Michael": "USR006",
+          "Sarah": "USR007",
+          "David": "USR008"
+        },
+        "inbox": [
+          {
+            "USR008": [
+              "Can you send the report?"
+            ]
+          },
+          {
+            "USR005": [
+              "The meeting is at 3 PM."
+            ]
+          },
+          {
+            "USR006": [
+              "Please review the document."
+            ]
+          },
+          {
+            "USR007": [
+              "Let's catch up later."
+            ]
+          }
+        ],
+        "message_count": 10
+      }
+    },
+    "path": [
+      "VehicleControlAPI.get_outside_temperature_from_google",
+      "MessageAPI.send_message",
+      "MessageAPI.view_messages_received"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "VehicleControlAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_176",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I'm planning a business class trip from JFK in New York to LAX in Los Angeles on December 15, 2024. Alex Johnson will be my traveling companion. I intend to use my credit card with label 'id_1234' to cover the $4500 trip cost. I've got my access token here: ABCD1234. Once booked, I'll need to cancel the trip immediately due to unexpected changes in my schedule.",
+          "transformed_content": "Um, could you book a, uh, business class flight from J-F-K to L-A-X for, like, December fifteenth, twenty-twenty-four? Alex Johnson's coming with me. Use credit card i-d underscore one-two-three-four for the four thousand five hundred dollars. Access token is 'ABCD1234', all uppercase, no spaces. Oh, and right after, uh, cancel the booking 'cause my schedule changed.\" Sure.",
+          "asr": "Um, could you book a, uh, business class flight from J-F-K to L-A-X for, like, December fifteen, twenty-twenty-four? Alec Johnson's coming with me. Use credit card i-d underscore one-two-three-four for the four thousand five hundred dollars. Access token is 'ABCD1234', all uppercase, no spaces. Oh, and right after, um, cancel the booking 'cause my schedule changed.\" Shore.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              1.0,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Additionally, I must file a priority 5 support ticket concerning the flight cancellation, labeled 'Urgent Flight Cancellation'. The ticket should thoroughly explain the abrupt changes leading to the cancellation and put description as Due to unexpected changes in schedule, the flight from JFK to LAX on December 15, 2023, needs to be canceled immediately.",
+          "transformed_content": "Make a priority 5 support ticket for the urgent flight cancellation. Show the sudden schedule changes and note: Cancel the JFK to LAX flight on December 15, 2023, ASAP.",
+          "asr": "Make a priority 5 support ticket for the urgent flight cancellation. Show the sudden schedule changes and note: Cancel the JFK to LAX flight on December 15, 2023, A-S-A-P.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.8,
+              0.8
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "id_1234": {
+            "card_number": "4587123498761234",
+            "cardholder_name": "Alex Johnson",
+            "expiry_date": "12/25",
+            "cvv": 123,
+            "balance": 7000.0
+          }
+        },
+        "booking_record": {
+          "JFK-LAX-20241215": {
+            "passenger_name": "Alex Johnson",
+            "flight_class": "Business",
+            "departure": "JFK",
+            "arrival": "LAX",
+            "date": "2024-12-15",
+            "cost": 4500.0
+          }
+        },
+        "access_token": "ABCD1234",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "booking",
+        "user_first_name": "Alex",
+        "user_last_name": "Johnson",
+        "budget_limit": 5000.0
+      },
+      "TicketAPI": {
+        "current_user": "john",
+        "ticket_queue": [
+          {
+            "ticket_001": {
+              "priority": 5,
+              "subject": "Urgent Flight Cancellation",
+              "description": "Due to unexpected changes in schedule, the flight from JFK to LAX on December 15, 2024, needs to be canceled immediately.",
+              "status": "Open"
+            }
+          }
+        ]
+      }
+    },
+    "path": [
+      "TravelAPI.register_credit_card",
+      "TravelAPI.book_flight",
+      "TravelAPI.cancel_booking",
+      "TicketAPI.create_ticket",
+      "TicketAPI.close_ticket"
+    ],
+    "involved_classes": [
+      "TicketAPI",
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_197",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I have a fabulous universal travel credit card that I want to register. The number is 1432-7890-6543-9876 with a CVV of 321 and expiration date '12/25'. Oh, and save the name under 'Michael Thompson'. Register with access token 'abc123xyz456'. Additionally, I need you to set it up and then procure travel insurance worth $2000 for my family vacation, which should comprehensively cover the journey from Munich all the way to Guangzhou. We start off at the remarkable Munich Massive Megatrip on December 24, 2024. Fingers crossed for a seamless experience! booking id is insurance_12345",
+          "transformed_content": "Uh, can you sign up my universal travel credit card? The number is one-four-three-two dash seventy-eight ninety dash six-five-four-three dash nine-eight-seven-six, and, um, the CVV is three-two-one. It expires twelve-slash-twenty-five. Save it under Michael Thompson, and, like, use access token abc one two three x y z, all lowercase, no spaces. Then set it up and, uh, get two thousand dollars travel insurance for my, uh, family vacation from Munich to Guangzhou, that's G-U-A-N-G-Z-H-O-U, Guangzhou. The trip starts December twenty-four, twenty-twenty-four, at Munich Massive Megatrip, that's M-U-N-I-C-H Massive M-E-G-A-T-R-I-P, Munich Massive Megatrip. The booking ID is insurance_one two three four five.",
+          "asr": "Uh, can you sign up my universal travel credit cart? The number is one-four-three-two dash seventy-eight ninety dash six-five-four-three dash nine-eight-seven-six, and, um, the CVV is three-two-one. It expires twelve-slash-twenty-five. Save it under Michael Thompson, and, like, use excess token a-b-c won too three x y z, all lowercase, no spaces. Then set it up and, uh, get two thousand dollars travel insure ants for my, uh, family vacation from Munich to Guangzhou, that's G-U-A-N-G-Z-H-O-U, Guangzhou. The trip starts December twenty-four, twenty twenty-four, at Munich Massive Megatrip, that's M-U-N-I-C-H Massive M-E-G-A-T-R-I-P, Munich Massive Megatrip. The booking ID is insurance_one too three four five.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.9,
+              1.0,
+              0.8,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Once the travel insurance is successfully procured, I am at a loss remembering the aggregated expense involved. Could you retrieve an invoice for this insurance to ensure my financial records are precise?",
+          "transformed_content": "Um, after, you know, gettin' the travel insurance, can't, like, remember the total cost. Uh, okay, get the invoice for it so my records are, you know, accurate.",
+          "asr": "Um, after, you know, getting the travel ensure ants, can't, like, remember the total cast. Uh, okay, get the invoice four it so my records are, you know, accurate.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "subject_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.8,
+              0.75,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "During this adventure, an unexpected hiccup arose. Kindly notify the customer support service about this incident to guarantee that our case receives immediate attention, ahead of others.",
+          "transformed_content": "Uh, hey, there was, um, a problem on the adventure. Let customer support know so we get priority on this case.",
+          "asr": "Uh, hay, their was, um, a problem on the adventure. Let customer support no so we get priority on this case.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.85,
+              0.8,
+              0.75
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {},
+        "booking_record": {
+          "insurance_12345": {
+            "travel_cost": 9500.0,
+            "travel_date": "2024-12-24",
+            "travel_from": "SFO",
+            "travel_to": "LAX",
+            "travel_class": "economy",
+            "transaction_id": "12345"
+          }
+        },
+        "access_token": "abc123xyz456",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "full_access",
+        "user_first_name": "Michael",
+        "user_last_name": "Thompson",
+        "budget_limit": 5000.0
+      }
+    },
+    "path": [
+      "TravelAPI.register_credit_card",
+      "TravelAPI.purchase_insurance",
+      "TravelAPI.retrieve_invoice",
+      "TravelAPI.contact_customer_support",
+      "TravelAPI.book_flight",
+      "MessageAPI.send_message",
+      "MessageAPI.delete_message"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_166",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I'm setting sail on an adventure from Crescent Hollow to Rivermist and need the scoop on flight costs for my journey. My takeoff is scheduled for 2022-07-15, and luxury's the name of the game, so I'll be in business class.",
+          "transformed_content": "Uh, grab the flight prices from, um, Crescent Hollow to Rivermist, leaving July fifteenth, twenty-twenty two. I'm flying business class.\" Okay.",
+          "asr": "Uh, grab the flight prizes from, um, Crescent Hallow to Rivermist, leaving July fifteenth, twenty-twenty two. I'm flying business class.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "slang_terms"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.9,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Before diving into booking details, I need to establish my spending limits. Utilizing my access token 'access_token_abc123', I'll cap my budget at 2000 USD for the impending journey.",
+          "transformed_content": "Uh, set my budget to, um, two thousand dollars for the trip using access token abc one two three, all lowercase, no spaces.",
+          "asr": "Uh, set my budget too, um, two thousand dollars four the trip using access token abc won two three, all lowercase, no spaces.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "moderate",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              1.0,
+              1.0,
+              0.7,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "With the budget firmly in place, let's seal the deal! Employing my access token, book the flight using my credit card, identified with card7320, covering all associated flight expenses. I'll be traveling under Samuel Fisher, using my seasoned traveler number.",
+          "transformed_content": "Alright, the budget's all set. Just grab my access token and card ending in seventy-three twenty to book the flight. Make sure to cover all the flight expenses. Name's Samuel Fisher, and remember to use my seasoned traveler number.",
+          "asr": "Alright, the budge it's all set. Just grab my axis token and card ending in seventy-three twenty to book the flight. Make sure to cover all the flight expenses. Name's Samuel Fischer, and remember to use my seasoned traveler number.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "slang_terms"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              1.0,
+              0.8,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Once everything's set, I'd appreciate an invoice reflecting my recent flight procurement, giving me peace of mind about the particulars and expense.",
+          "transformed_content": "Oh, um, after it's all set, could you send me, like, an invoice for my recent flight purchase? I, uh, need to look at details and cost.",
+          "asr": "Oh, um, after it's all set, could you send me, like, an in voice for my recent flight perchess? I, uh, need to look at details and cost.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.6,
+              0.7,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I've hit a snag with the reservation process and would appreciate if you contacted customer support. Use my booking ID to express my 'Concerns regarding seating arrangements'.",
+          "transformed_content": "Um, okay, talk to customer support with my booking ID and, uh, let 'em know about my seating arrangement issue.",
+          "asr": "Um, okay, talk to customer sport with my booking ID and, uh, let 'em know about my seating arrangement tissue.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "card7320": {
+            "card_number": "4916735048297320",
+            "cardholder_name": "Samuel Fisher",
+            "expiry_date": "2025-12",
+            "cvv": 123,
+            "balance": 14000.0
+          }
+        },
+        "booking_record": {},
+        "access_token": "access_token_abc123",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "booking",
+        "user_first_name": "Samuel",
+        "user_last_name": "Fisher",
+        "budget_limit": 2000.0
+      }
+    },
+    "path": [
+      "TravelAPI.get_nearest_airport_by_city",
+      "TravelAPI.get_flight_cost",
+      "TravelAPI.set_budget_limit",
+      "TravelAPI.book_flight",
+      "TravelAPI.retrieve_invoice",
+      "TravelAPI.contact_customer_support",
+      "MessageAPI.send_message"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_135",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Integrate Zeta Corp’s stock into my watchlist and subsequently display the current contents of that watchlist.",
+          "transformed_content": "Um, add Zeta Corp, that's Z-E-T-A C-O-R-P, Zeta Corp's stock to my watchlist. Uh, okay, show me what's in it now.",
+          "asr": "Um, add Zeta Corp, that's Z-E-A-T-A K-O-R-P, Zeeta Corp's stock to my watchlist. Uh, okay, show me what's in it know.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.75,
+              0.7,
+              1.0,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Bring up information on 'NVDA', check the Technology sector for reference.",
+          "transformed_content": "\"Um, show me details on NVDA. Uh, check Technology sector too.\" Um, alright?",
+          "asr": "\"Um, show me details on NVIDIA. Uh, Czech technology sector two.\" Um, alright?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              0.7,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After comparison, I observed some promising fluctuations earlier and wish to place a purchase order for Zeta Corp shares at $120 each for 100 units.",
+          "transformed_content": "Uh, buy one hundred shares of Zeta at one twenty dollars each. I, uh, noticed some good changes earlier.",
+          "asr": "Uh, by one hundred shares of Zeta at one twenty dollars each. Eye, uh, noticed some good changes earlier.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              1.0,
+              0.7,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After completing the transaction, share the specifics of this newly placed order with me.",
+          "transformed_content": "Um, once transaction's done, uh, shoot me order details.\" Okay.",
+          "asr": "Um, once the transaction's done, uh, shoot me order detales.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "preposition_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.7,
+              0.8,
+              0.7,
+              0.6
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TradingBot": {
+        "orders": {
+          "12345": {
+            "symbol": "AAPL",
+            "price": 210.65,
+            "num_shares": 10,
+            "status": "Completed"
+          },
+          "order_type": "Buy"
+        },
+        "account_info": {
+          "account_id": 12345,
+          "balance": 10000.0,
+          "binding_card": 1974202140965533
+        },
+        "authenticated": true,
+        "market_status": "Open",
+        "order_counter": 12446,
+        "stocks": {
+          "AAPL": {
+            "price": 227.16,
+            "percent_change": 0.17,
+            "volume": 2.552,
+            "MA(5)": 227.11,
+            "MA(20)": 227.09
+          },
+          "GOOG": {
+            "price": 2840.34,
+            "percent_change": 0.24,
+            "volume": 1.123,
+            "MA(5)": 2835.67,
+            "MA(20)": 2842.15
+          },
+          "TSLA": {
+            "price": 667.92,
+            "percent_change": -0.12,
+            "volume": 1.654,
+            "MA(5)": 671.15,
+            "MA(20)": 668.2
+          },
+          "MSFT": {
+            "price": 310.23,
+            "percent_change": 0.09,
+            "volume": 3.234,
+            "MA(5)": 309.88,
+            "MA(20)": 310.11
+          },
+          "NVDA": {
+            "price": 220.34,
+            "percent_change": 0.34,
+            "volume": 1.234,
+            "MA(5)": 220.45,
+            "MA(20)": 220.67
+          },
+          "ALPH": {
+            "price": 1320.45,
+            "percent_change": -0.08,
+            "volume": 1.567,
+            "MA(5)": 1321.12,
+            "MA(20)": 1325.78
+          },
+          "OMEG": {
+            "price": 457.23,
+            "percent_change": 0.12,
+            "volume": 2.345,
+            "MA(5)": 456.78,
+            "MA(20)": 458.12
+          },
+          "QUAS": {
+            "price": 725.89,
+            "percent_change": -0.03,
+            "volume": 1.789,
+            "MA(5)": 726.45,
+            "MA(20)": 728.0
+          },
+          "NEPT": {
+            "price": 88.34,
+            "percent_change": 0.19,
+            "volume": 0.654,
+            "MA(5)": 88.21,
+            "MA(20)": 88.67
+          },
+          "SYNX": {
+            "price": 345.67,
+            "percent_change": 0.11,
+            "volume": 2.112,
+            "MA(5)": 345.34,
+            "MA(20)": 346.12
+          },
+          "ZETA": {
+            "price": 120.0,
+            "percent_change": 0.05,
+            "volume": 1.0,
+            "MA(5)": 119.5,
+            "MA(20)": 118.75
+          }
+        },
+        "watch_list": [
+          "NVDA",
+          "ZETA"
+        ],
+        "transaction_history": []
+      }
+    },
+    "path": [
+      "TradingBot.get_symbol_by_name",
+      "TradingBot.add_stock_to_watchlist",
+      "TradingBot.get_watchlist",
+      "TradingBot.get_stock_info",
+      "TradingBot.get_available_stocks",
+      "TradingBot.place_order",
+      "TradingBot.get_order_details"
+    ],
+    "involved_classes": [
+      "TradingBot"
+    ]
+  },
+  {
+    "id": "multi_turn_base_7",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Directly open the academic_venture folder and employ precise commands to generate a new directory for our upcoming academic venture, ensuring its exact placement in our present work directory. It's name should be academic_hub",
+          "transformed_content": "Uh, open A-C-A-D-E-M-I-C underscore V-E-N-T-U-R-E, academic_venture folder. Okay, then, um, make new directory called A-C-A-D-E-M-I-C underscore H-U-B, academic_hub right there in our current work folder.",
+          "asr": "Uh, open A-C-A-D-E-M-I-C underscore V-E-N-T-U-R-E, academic_venture folder. Okay, then, um, make new directory called A-C-A-D-E-M-I-C underscore H-U-B, academic_hub right there in our current work holder.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Within academic_venture, meticulously list every project that has goal in its file name, ensuring comprehensive coverage.",
+          "transformed_content": "Uh, show all projects in academic_venture with 'goal' in filename.",
+          "asr": "Uh, show all projects in academic_venture with 'golf' in file name.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              0.7,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "For clarity, output the complete content of the first file you fine on the terminal.",
+          "transformed_content": "\"Show, uh, all the stuff from that first file you spot on the terminal.\" Okay.",
+          "asr": "\"Show, uh, all the stuff from that first file you spot on the terminal.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "article_dropping",
+              "vague_references",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.7,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "workspace": {
+            "type": "directory",
+            "contents": {
+              "academic_venture": {
+                "type": "directory",
+                "contents": {
+                  "goals.txt": {
+                    "type": "file",
+                    "content": "Research topic selection Literature review Data collection Data analysis Draft writing Final submission"
+                  }
+                }
+              },
+              "reference_goals.txt": {
+                "type": "file",
+                "content": "Data analysis Data collection Draft writing Final submission Literature review Research topic selection"
+              }
+            }
+          }
+        }
+      },
+      "TwitterAPI": {
+        "tweet_counter": 3,
+        "tweets": {
+          "0": {
+            "id": 0,
+            "username": "academic_researcher",
+            "content": "Excited to start our new academic venture! #AcademicProject #ResearchGoals",
+            "tags": [
+              "#AcademicProject",
+              "#ResearchGoals"
+            ],
+            "mentions": []
+          },
+          "1": {
+            "id": 1,
+            "username": "academic_researcher",
+            "content": "Just completed the literature review. #ResearchProgress #AcademicGoals",
+            "tags": [
+              "#ResearchProgress",
+              "#AcademicGoals"
+            ],
+            "mentions": []
+          },
+          "2": {
+            "id": 2,
+            "username": "academic_researcher",
+            "content": "Final submission done! #Success #AcademicAchievement",
+            "tags": [
+              "#Success",
+              "#AcademicAchievement"
+            ],
+            "mentions": []
+          }
+        },
+        "username": "academic_researcher",
+        "password": "Kj8#mP2$vL9"
+      }
+    },
+    "path": [
+      "GorillaFileSystem.mkdir",
+      "GorillaFileSystem.cd",
+      "GorillaFileSystem.echo",
+      "GorillaFileSystem.cat",
+      "GorillaFileSystem.sort",
+      "GorillaFileSystem.diff",
+      "TwitterAPI.post_tweet"
+    ],
+    "involved_classes": [
+      "TwitterAPI",
+      "GorillaFileSystem"
+    ]
+  },
+  {
+    "id": "multi_turn_base_119",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Could you provide me with the latest stock information for Zeta Corp, including its current price and the performance metrics?",
+          "transformed_content": "Um, gimme the latest stock info for Z-E-T-A C-O-R-P, Zeta. What's the current price and, uh, performance metrics?",
+          "asr": "Um, gimme the latest stalk info for Z-E-T-A C-O-R-P, Zeta. What's the current prize and, uh, performance matrix?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "spelling_noise",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              1.0,
+              0.7,
+              0.8,
+              0.6
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Since I'm evaluating a more comprehensive investment approach, please list all the Technology sector-related companies I should consider.",
+          "transformed_content": "\"List all tech companies I should, uh, check out for a wider investment strategy.\" Alright.",
+          "asr": "\"List all tech companies I should, uh, check out for a wider investment strategy.\" Alright.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "word_reordering"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.9,
+              0.6,
+              0.7,
+              0.8,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Incidentally, I've realized I made an error in a previous transaction. Could you cancel my pending order with id 12446 promptly to prevent it from completing?",
+          "transformed_content": "\"Okay, stop order twelve four four six before it goes through.\"",
+          "asr": "Okay, stop order twelve for four six before it goes threw.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              1.0,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I've decided to discontinue with my current brokerage service. Could you go ahead and close the outstanding ticket with id 3 I submitted earlier this week?",
+          "transformed_content": "Uh, okay, close ticket ID three from earlier this week. I'm done with my brokerage service.",
+          "asr": "Uh, okay, close ticket I.D. three from earlier this weak. I'm done with my broke rage service.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.85,
+              0.75
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TradingBot": {
+        "account_info": {
+          "account_id": 12345,
+          "balance": 10000.0,
+          "binding_card": 1974202140965533
+        },
+        "authenticated": true,
+        "market_status": "Open",
+        "order_counter": 12446,
+        "stocks": {
+          "AAPL": {
+            "price": 227.16,
+            "percent_change": 0.17,
+            "volume": 2.552,
+            "MA(5)": 227.11,
+            "MA(20)": 227.09
+          },
+          "GOOG": {
+            "price": 2840.34,
+            "percent_change": 0.24,
+            "volume": 1.123,
+            "MA(5)": 2835.67,
+            "MA(20)": 2842.15
+          },
+          "TSLA": {
+            "price": 667.92,
+            "percent_change": -0.12,
+            "volume": 1.654,
+            "MA(5)": 671.15,
+            "MA(20)": 668.2
+          },
+          "MSFT": {
+            "price": 310.23,
+            "percent_change": 0.09,
+            "volume": 3.234,
+            "MA(5)": 309.88,
+            "MA(20)": 310.11
+          },
+          "NVDA": {
+            "price": 220.34,
+            "percent_change": 0.34,
+            "volume": 1.234,
+            "MA(5)": 220.45,
+            "MA(20)": 220.67
+          },
+          "ALPH": {
+            "price": 1320.45,
+            "percent_change": -0.08,
+            "volume": 1.567,
+            "MA(5)": 1321.12,
+            "MA(20)": 1325.78
+          },
+          "OMEG": {
+            "price": 457.23,
+            "percent_change": 0.12,
+            "volume": 2.345,
+            "MA(5)": 456.78,
+            "MA(20)": 458.12
+          },
+          "QUAS": {
+            "price": 725.89,
+            "percent_change": -0.03,
+            "volume": 1.789,
+            "MA(5)": 726.45,
+            "MA(20)": 728.0
+          },
+          "NEPT": {
+            "price": 88.34,
+            "percent_change": 0.19,
+            "volume": 0.654,
+            "MA(5)": 88.21,
+            "MA(20)": 88.67
+          },
+          "SYNX": {
+            "price": 345.67,
+            "percent_change": 0.11,
+            "volume": 2.112,
+            "MA(5)": 345.34,
+            "MA(20)": 346.12
+          },
+          "ZETA": {
+            "price": 150.45,
+            "percent_change": 0.05,
+            "volume": 1.789,
+            "MA(5)": 150.0,
+            "MA(20)": 149.5
+          }
+        },
+        "watch_list": [
+          "NVDA",
+          "ZETA"
+        ],
+        "transaction_history": [
+          {
+            "order_id": 12346,
+            "symbol": "GOOG",
+            "price": 2840.34,
+            "num_shares": 5,
+            "status": "Pending",
+            "timestamp": "2024-10-27 14:10:53"
+          }
+        ]
+      },
+      "TicketAPI": {
+        "ticket_counter": 3,
+        "ticket_queue": [
+          {
+            "id": 1,
+            "status": "Open",
+            "description": "Issue with account balance"
+          },
+          {
+            "id": 2,
+            "status": "Closed",
+            "description": "Request for account statement"
+          },
+          {
+            "id": 3,
+            "status": "Open",
+            "description": "Discontinue brokerage service"
+          }
+        ]
+      }
+    },
+    "path": [
+      "TradingBot.get_symbol_by_name",
+      "TradingBot.get_stock_info",
+      "TradingBot.get_available_stocks",
+      "TradingBot.cancel_order",
+      "TradingBot.get_account_info",
+      "TicketAPI.create_ticket",
+      "TicketAPI.close_ticket"
+    ],
+    "involved_classes": [
+      "TradingBot",
+      "TicketAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_63",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I require assistance in determining the quantity of gasoline necessary for an extensive journey across California. I currently anticipate needing around 166 liters. How much is that in gallon?",
+          "transformed_content": "How many gallons is one sixty-six liters of gas? I need it for a long trip across California.",
+          "asr": "How many gallons is one sixty-six leaders of gas? I knead it for a long trip across California.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "heavy",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Prior to commencing the drive, kindly initiate the engine, ensuring all doors are securely closed and the parking brake is engaged. I am keen to avoid any mishaps on the highway due to an unfilled tank so round it to nearest hundredth and fill that in.",
+          "transformed_content": "Uh, start the engine and, um, check that all doors're locked and the parking brake's on before we drive. Okay, I mean, fill the tank to the nearest hundredth to avoid runnin' out on the highway.",
+          "asr": "Uh, start the injun and, um, check that all doors're locked and the barking brakes on before we drive. Okay, I mean, fill the tank to the nearest hundred to avoid runnin' out on the hiway.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.75,
+              1.0,
+              0.85,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Could you provide me with the approximate distance between San Francisco and Rivermist? This information is crucial for my travel planning notes. Will I be able to get there?",
+          "transformed_content": "Uh, what's distance between, um, San Francisco and Rivermist? I need it for, you know, travel planning. Can I... can I reach there? Okay.",
+          "asr": "Uh, what's the distance between, um, San Francisco and Rivermist? I need it for, you know, travel planning. Can eye... can eye reach their? Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.9,
+              0.6,
+              0.8,
+              0.65,
+              0.7
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "fuelLevel": 0.0,
+        "batteryVoltage": 12.6,
+        "engineState": "stopped",
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "parkingBrakeForce": 0.0,
+        "slopeAngle": 0.0,
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0
+      }
+    },
+    "path": [
+      "VehicleControlAPI.gallon_to_liter",
+      "VehicleControlAPI.fillFuelTank",
+      "VehicleControlAPI.lockDoors",
+      "VehicleControlAPI.activateParkingBrake",
+      "VehicleControlAPI.startEngine",
+      "VehicleControlAPI.get_zipcode_based_on_city",
+      "VehicleControlAPI.estimate_distance"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "VehicleControlAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_193",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Imagine you've meticulously planned a surprise getaway to the Maldives, brimming with excitement to ensure each detail unfolds seamlessly. Your first step is securing your travel account access; kindly authenticate with your credentials. My access token of abc123xyz, a client ID of my_client_id, a client secret of my_client_secret, and a refresh token of my_refresh_token. The grant type should be set to read_write, and the user's first name is Michael, with the last name being Thompson",
+          "transformed_content": "Uh, get access to, you know, the travel account for the Maldives trip. Use my credentials: access token abc one two three x y z, all lowercase, no spaces, client ID my underscore client underscore id, client secret my underscore client underscore secret, and, um, refresh token my underscore refresh underscore token. Set grant type to read underscore write. Name's Michael Thompson, okay.",
+          "asr": "Uh, jet access to, you know, the travel account for the Maldives trip. Use my credentials: excess token abc one to three x y z, all lowercase, no spaces, client ID my under score client under score id, client secret my under score client under score secret, and, um, refresh token my under score refresh under score token. Set grant type to reed under score write. Name's Michael Thomson, okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              1.0,
+              0.7,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Fantastic! Now that authentication is successfully completed, let's move forward with booking your idyllic escape. You opt for your trusted credit card, bearing the id credit_9988, to cover all logistical costs. Book your journey from JFK to MPC for December 25th, 2024, travelling first class, at a cost of 3000.50 dollars.",
+          "transformed_content": "Authentication's done, so let's book your escape. Use credit card credit nine nine eight eight for everything. Book first class from JFK to MPC on December twenty-fifth, twenty twenty-four, for three thousand dollars and fifty cents.",
+          "asr": "Authentication's done, so let's book your escape. Use credit card debit nine nine ate ate for everything. Book first-class from JFK to MBC on December twenty-fifth, twenty twenty-four, for tree thousand dollars and fifty cents.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "numbers_noise",
+              "contractions",
+              "symbol_pronunciation",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              1.0,
+              0.9,
+              0.7,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Oh dear! Unexpected changes have arisen. Could you please cancel your recent booking as a more urgent matter needs your attention?",
+          "transformed_content": "Uh, cancel your recent booking. There's, um, something urgent need to handle.",
+          "asr": "Uh, cancel your recent booking. There's, um, something urgent need to hand off.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "subject_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.8,
+              0.6,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "In light of these new developments, you'd prefer to formally notify your travel agent about the abrupt change in your itinerary. Would you be kind enough to generate a ticket titled 'Urgent Change in Travel Plans’ with a detailed explanation outlining the necessity for these adjustments? Details write 'An unexpected change has arisen, and I need to cancel my booking for the trip to the Maldives.', priority be level 4",
+          "transformed_content": "Uh, let my travel agent know about, you know, itinerary change. Make a ticket called 'Urgent Change in Travel Plans.' Write: 'Unexpected change, need to cancel Maldives trip.' Okay, and, uh, make priority level 4.",
+          "asr": "Uh, let my travel agent no about, you know, itinerary change. Make a ticket called 'Urgent Change in Travel Plans.' Right: 'Unexpected change, knead to cancel Maldives trip.' Okay, and, uh, make priority level fore.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.8,
+              0.9,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "credit_9988": {
+            "card_number": "5522-5433-6677-9988",
+            "expiration_date": "12/25",
+            "cvv": 123,
+            "cardholder_name": "Michael Thompson",
+            "balance": 10000.0
+          }
+        },
+        "booking_record": {},
+        "access_token": "abc123xyz",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "full_access",
+        "user_first_name": "Michael",
+        "user_last_name": "Thompson",
+        "budget_limit": 5000.0
+      },
+      "TicketAPI": {
+        "ticket_queue": [],
+        "current_user": "John",
+        "ticket_counter": 1001
+      }
+    },
+    "path": [
+      "TravelAPI.authenticate",
+      "TravelAPI.register_credit_card",
+      "TravelAPI.book_flight",
+      "TravelAPI.cancel_booking",
+      "TicketAPI.create_ticket",
+      "TicketAPI.edit_ticket"
+    ],
+    "involved_classes": [
+      "TicketAPI",
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_13",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "In documents directory, there's a file that piques my curiosity regarding its contents. It's alphabetically first file in that directory. Could you display the last line of that file for me?",
+          "transformed_content": "\"Show me, um, last line of the first file in the documents directory.\" Okay.",
+          "asr": "Show me, um, last lime of the first file in the documents direct tree.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.8,
+              0.95
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I've lately stored some work that parallels another document on my system. Might you review both files in this directory and articulate the distinctions",
+          "transformed_content": "\"Check files in this directory. Uh, tell me the differences.\" Okay.",
+          "asr": "Check vials in this directory. Uh, tell me the different sizes.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "alex": {
+            "type": "directory",
+            "contents": {
+              "documents": {
+                "type": "directory",
+                "contents": {
+                  "report.txt": {
+                    "type": "file",
+                    "content": "Zebra Apple Orange"
+                  },
+                  "summary.txt": {
+                    "type": "file",
+                    "content": "Banana Grape Lemon"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "TwitterAPI": {
+        "tweet_counter": 3,
+        "tweets": {
+          "0": {
+            "id": 0,
+            "username": "techpro_dev",
+            "content": "Exciting news about our latest project!",
+            "tags": [
+              "#exciting",
+              "#project",
+              "#news"
+            ],
+            "mentions": []
+          },
+          "1": {
+            "id": 1,
+            "username": "techpro_dev",
+            "content": "Check out this amazing comparison!",
+            "tags": [
+              "#amazing",
+              "#comparison"
+            ],
+            "mentions": []
+          },
+          "2": {
+            "id": 2,
+            "username": "techpro_dev",
+            "content": "Retweeting to spread the word!",
+            "tags": [
+              "#retweet",
+              "#spreadtheword"
+            ],
+            "mentions": []
+          }
+        },
+        "username": "techpro_dev",
+        "password": "Kj8#mP9$vL2"
+      }
+    },
+    "path": [
+      "GorillaFileSystem.cat",
+      "GorillaFileSystem.sort",
+      "GorillaFileSystem.diff",
+      "TwitterAPI.post_tweet",
+      "TwitterAPI.retweet",
+      "TwitterAPI.comment"
+    ],
+    "involved_classes": [
+      "TwitterAPI",
+      "GorillaFileSystem"
+    ]
+  },
+  {
+    "id": "multi_turn_base_40",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Arrange a complete listing of all files and directories presently located here, making sure you don't overlook the hidden ones too.",
+          "transformed_content": "Um, alright, go ahead and, um, show all the files and directories, you know, including the hidden stuff.",
+          "asr": "Um, all right, go a head and, um, show all the files in directories, you know, including the hidden stuff.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "article_dropping",
+              "vague_references",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Transfer the 'annual_report.txt' in Documents directory to the 'Reports' directory that's in Documents directory, but also make sure it remains available in its current spot.",
+          "transformed_content": "Uh, get the annual underscore report dot t x t from, you know, Documents slash to the Reports directory, okay, and, um, keep it in Documents too.",
+          "asr": "Uh, get the annual underscore rapport dot t x t from, you know, Documents slash to the Reports directory, okay, and, um, keep it in Dock u mints too.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "symbol_pronunciation",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.7,
+              1.0,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Reveal the last lines of 'Q4_summary.doc' so we can ascertain how the report wraps up.",
+          "transformed_content": "Uh, grab last part of Q4_summary.doc to, um, see how it ends.",
+          "asr": "Uh, grab last part of Q4_summary.doc too, um, sea how it ends.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "slang_terms",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              0.8,
+              0.7,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Attempt to relay a message to the individual with ID 'USR002' by logging in as USR001, updating them on the finalization of the report saying 'The report has been finalized.'.",
+          "transformed_content": "Okay, log in as U-S-R-zero-zero-one and send a message to U-S-R-zero-zero-two, right? Tell 'em the report's finalized.",
+          "asr": "Okay, log in as U-S-R-0-0-1 and send a massage to U-S-R-0-0-2, right? Tell 'em the reports finalized.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "backchanneling",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "heavy",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              1.0,
+              1.0,
+              0.85,
+              0.75
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "alex": {
+            "type": "directory",
+            "contents": {
+              "Documents": {
+                "type": "directory",
+                "contents": {
+                  "annual_report.txt": {
+                    "type": "file",
+                    "content": "Annual report content with Q4 results."
+                  },
+                  "Q4_summary.doc": {
+                    "type": "file",
+                    "content": "Summary of Q4 results. Conclusion: Profits increased."
+                  },
+                  "Reports": {
+                    "type": "directory",
+                    "contents": {
+                      "Archives": {
+                        "type": "directory",
+                        "contents": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "path": [
+      "GorillaFileSystem.ls",
+      "GorillaFileSystem.find",
+      "GorillaFileSystem.cp",
+      "GorillaFileSystem.mv",
+      "GorillaFileSystem.grep",
+      "GorillaFileSystem.tail",
+      "MessageAPI.send_message"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "GorillaFileSystem"
+    ]
+  },
+  {
+    "id": "multi_turn_base_28",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Where is my analysis? Locate any file with analysis in it.",
+          "transformed_content": "Uh, look up any file with analysis in it.",
+          "asr": "Uh, look up any file with analyses in it.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.7,
+              0.8,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Naviagte to that first analysis and identify any line with error in it.",
+          "transformed_content": "Um, okay, go to first analysis and, uh, get any lines with errors.",
+          "asr": "Um, okay, go to first analysis and, uh, get any lions with heirs.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Let's bring some order to the project documents. I want to human readible log the storage usage of the entire current directory to usage.txt file. The content of the file should be the number follwed by the word bytes and nothing else.",
+          "transformed_content": "Um, save the storage use of the current directory in, uh, usage.txt as a human-readable format. Okay, uh, just numbers and 'bytes,' nothing else.",
+          "asr": "Um, save the storage use of the current directory in, uh, usage.txt as a human-readable format. Okay, uh, just numbers and 'bites,' nothing else.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "subject_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.7,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "workspace": {
+            "type": "directory",
+            "contents": {
+              "data": {
+                "type": "directory",
+                "contents": {
+                  "analysis_report.txt": {
+                    "type": "file",
+                    "content": "Line 1: No error Line 2: Minor error detected Line 3: All systems operational Line 4: Critical error found"
+                  },
+                  "project_summary.txt": {
+                    "type": "file",
+                    "content": "Summary line 1 Summary line 2 Summary line 3 Summary line 4 Summary line 5"
+                  },
+                  "file3.txt": {
+                    "type": "file",
+                    "content": "Zebra Apple Monkey Banana"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "MathAPI": {}
+    },
+    "path": [
+      "GorillaFileSystem.mkdir",
+      "GorillaFileSystem.find",
+      "GorillaFileSystem.grep",
+      "GorillaFileSystem.sort",
+      "GorillaFileSystem.tail",
+      "GorillaFileSystem.wc",
+      "MathAPI.logarithm"
+    ],
+    "involved_classes": [
+      "GorillaFileSystem",
+      "MathAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_95",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I've just secured all doors and engaged the parking brake in my vehicle, please start the engine with the ignition on START mode.",
+          "transformed_content": "Uh, doors're locked and parking brake's on. Okay, start engine.",
+          "asr": "Uh, doors are locked and parking breaks on. Okay, start engine.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "What is the postal code for the area called Rivermist?",
+          "transformed_content": "Um, what's postal code for Rivermist?",
+          "asr": "Um, what's the postal cold for Rivermist?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              1.0,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I would like to determine the distance from Rivermist to San Francisco.",
+          "transformed_content": "What's, uh, distance from Rivermist to San Francisco?",
+          "asr": "What's, uh, the distance from Rivermist to San Francisco?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.9,
+              0.7,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Please relay the estimated distance from Rivermist to San Francisco to my colleague Emma. If it helps, my id is 'USR005'. The message should be in the format 'The estimated distance from Rivermist to San Francisco is X miles.', where X is replaced by the actual integer value you computed earlier.",
+          "transformed_content": "\"Uh, tell Emma the distance from Rivermist, that's R-I-V-E-R-M-I-S-T, Rivermist to, uh, San Francisco. Use my ID U-S-R-0-0-5. And say, 'The distance is X miles,' with X being the number you figured out before.\" Right.",
+          "asr": "Uh, tell Emma the distance from Rivermist, that's R-I-V-E-R-M-I-S-T, Rivermist to, uh, San Francisco. Use my ID U-S-A-R-0-0-5. And say, 'The distance is X miles,' with X being the number you figured out before.\" Write.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.7,
+              1.0,
+              0.85,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Since we’ve organized those details, display all the messages we have send.",
+          "transformed_content": "Uh, show all sent messages.",
+          "asr": "Uh, show all scent massages.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.7,
+              0.9,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "remainingUnlockedDoors": 0,
+        "fuelLevel": 15.5,
+        "batteryVoltage": 12.8,
+        "engineState": "stopped",
+        "doorStatus": {
+          "driver": "locked",
+          "passenger": "locked",
+          "rear_left": "locked",
+          "rear_right": "locked"
+        },
+        "acTemperature": 22.0,
+        "fanSpeed": 60,
+        "acMode": "auto",
+        "humidityLevel": 45.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "engaged",
+        "parkingBrakeForce": 100.0,
+        "slopeAngle": 20.0,
+        "distanceToNextVehicle": 100.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0
+      },
+      "MessageAPI": {
+        "user_count": 4,
+        "user_map": {
+          "Michael": "USR005",
+          "Sarah": "USR006",
+          "David": "USR007",
+          "Emma": "USR008"
+        },
+        "inbox": [
+          {
+            "USR006": [
+              "Got it, thanks!"
+            ]
+          },
+          {
+            "USR007": [
+              "Sure, see you then."
+            ]
+          },
+          {
+            "USR005": [
+              "Please review the attached document."
+            ]
+          }
+        ],
+        "message_count": 0,
+        "current_user": "USR005"
+      }
+    },
+    "path": [
+      "VehicleControlAPI.startEngine",
+      "VehicleControlAPI.get_zipcode_based_on_city",
+      "VehicleControlAPI.estimate_distance",
+      "MessageAPI.send_message",
+      "MessageAPI.view_messages_received",
+      "MessageAPI.delete_message"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "VehicleControlAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_120",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Stay updated on the current market status on my behalf.",
+          "transformed_content": "Keep me, uh, updated on market status.",
+          "asr": "Keep me, uh, up-to-date on market status.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.65,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After confirming the market's operational status, proceed to purchase 100 Apple shares at the prevailing market price.",
+          "transformed_content": "\"Uh, check if the market's open, then, um, get 100 Apple shares at the current price.\" Okay.",
+          "asr": "Uh, check if the market's open, then, um, get 100 Apple shears at the current price.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.9,
+              0.8,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Review the AAPL order details to ensure it's error-free and accurately executed.",
+          "transformed_content": "Uh, look at the AAPL order for, um, mistakes. Make sure it's done right.",
+          "asr": "Uh, look at the Apple order for, um, misstakes. Make sure it's done write.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.7,
+              0.9,
+              0.95,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Cancel the previously placed order immediately and manage the procedure for me.",
+          "transformed_content": "Okay, stop my order now and, uh, deal with it.",
+          "asr": "Okay, stop my odor now and, uh, deal with it.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "subject_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.65,
+              0.75,
+              0.7,
+              0.85
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TradingBot": {
+        "orders": {
+          "12345": {
+            "symbol": "AAPL",
+            "price": 210.65,
+            "num_shares": 10,
+            "status": "Completed"
+          },
+          "order_type": "Buy"
+        },
+        "account_info": {
+          "account_id": 12345,
+          "balance": 10000.0,
+          "binding_card": 1974202140965533
+        },
+        "authenticated": true,
+        "market_status": "Open",
+        "order_counter": 12446,
+        "stocks": {
+          "AAPL": {
+            "price": 227.16,
+            "percent_change": 0.17,
+            "volume": 2.552,
+            "MA(5)": 227.11,
+            "MA(20)": 227.09
+          },
+          "GOOG": {
+            "price": 2840.34,
+            "percent_change": 0.24,
+            "volume": 1.123,
+            "MA(5)": 2835.67,
+            "MA(20)": 2842.15
+          },
+          "TSLA": {
+            "price": 667.92,
+            "percent_change": -0.12,
+            "volume": 1.654,
+            "MA(5)": 671.15,
+            "MA(20)": 668.2
+          },
+          "MSFT": {
+            "price": 310.23,
+            "percent_change": 0.09,
+            "volume": 3.234,
+            "MA(5)": 309.88,
+            "MA(20)": 310.11
+          },
+          "NVDA": {
+            "price": 220.34,
+            "percent_change": 0.34,
+            "volume": 1.234,
+            "MA(5)": 220.45,
+            "MA(20)": 220.67
+          },
+          "ALPH": {
+            "price": 1320.45,
+            "percent_change": -0.08,
+            "volume": 1.567,
+            "MA(5)": 1321.12,
+            "MA(20)": 1325.78
+          },
+          "OMEG": {
+            "price": 457.23,
+            "percent_change": 0.12,
+            "volume": 2.345,
+            "MA(5)": 456.78,
+            "MA(20)": 458.12
+          },
+          "QUAS": {
+            "price": 725.89,
+            "percent_change": -0.03,
+            "volume": 1.789,
+            "MA(5)": 726.45,
+            "MA(20)": 728.0
+          },
+          "NEPT": {
+            "price": 88.34,
+            "percent_change": 0.19,
+            "volume": 0.654,
+            "MA(5)": 88.21,
+            "MA(20)": 88.67
+          },
+          "SYNX": {
+            "price": 345.67,
+            "percent_change": 0.11,
+            "volume": 2.112,
+            "MA(5)": 345.34,
+            "MA(20)": 346.12
+          }
+        },
+        "watch_list": [
+          "NVDA"
+        ],
+        "transaction_history": []
+      }
+    },
+    "path": [
+      "TradingBot.get_current_time",
+      "TradingBot.update_market_status",
+      "TradingBot.get_stock_info",
+      "TradingBot.place_order",
+      "TradingBot.get_order_details",
+      "TradingBot.cancel_order",
+      "TradingBot.get_account_info"
+    ],
+    "involved_classes": [
+      "TradingBot"
+    ]
+  },
+  {
+    "id": "multi_turn_base_194",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I need to schedule a flight soon on booking id 1234 and want to examine different alternatives. Calculate the cost of a business class ticket for the first airport on the available list to the last airport on the same list, on the last day of October 2024. Provide the estimated total payable amount for me.",
+          "transformed_content": "Uh, check flight options with booking ID twelve thirty-four. Okay, I mean, find a business class ticket price from the first to the last airport on the list for, um, October thirty-first, twenty twenty-four. Tell me the total price.",
+          "asr": "Uh, check flight auctions with booking ID twelve thirsty-four. Okay, I mean, find a business glass ticket price from the first to the last air port on the list for, um, October thirty-first, twenty twenty-four. Tell me the total prize.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.75,
+              0.7,
+              1.0,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After determining the flight prices, arrange to reserve a business class seat with those specifics using my card with id main1234 and authorization token 'abc123xyz', once you've gotten full approval.",
+          "transformed_content": "Uh, check flight prices, and, um, reserve a business class seat. Use my card main1234, token abc one two three x y z, all lowercase, no spaces. Okay, uh, do this after you've, like, got full approval.",
+          "asr": "Uh, check flight prizes, and, um, reserve a business glass seat. Use my cart main1234, token abc won two tree x y z, all lowercase, no spaces. Okay, uh, do this after you've, like, got full approval.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "numbers_noise",
+              "contractions"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.9,
+              0.6,
+              0.8,
+              1.0,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Security matters to me, therefore purchase a comprehensive $769 travel insurance policy for this trip using my card immediately after the booking is confirmed.",
+          "transformed_content": "Okay, uh, buy a seven hundred sixty-nine dollar travel insurance policy for this trip with my card right after booking's confirmed. Security's key.",
+          "asr": "Okay, uh, by a seven hundred sixty-nine dollar travel insurance policy for this trip with my cart right after bookings' confirmed. Security's key.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "symbol_pronunciation"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              1.0,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Following the insurance purchase, send me a detailed bill for this reservation and outline its incurred charges.",
+          "transformed_content": "\"Uh, after getting insurance, can you, like, send me a detailed bill for this reservation with all the charges?\" Okay.",
+          "asr": "\"Uh, after getting in-churns, can you, like, send me a detail bill for this reservation with all the charge is?\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.75,
+              0.65,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "There's an urgent matter I need solved. Reach out to customer service for me and relay my booking-related query.",
+          "transformed_content": "Uh, hit up customer service about my, um, booking issue. It's, like, urgent.",
+          "asr": "Uh, hid up customer service about my, um, cooking issue. It's, like, urgent.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "slang_terms",
+              "subject_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.7,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "However, I've opted to annul the trip. Conduct the requisite steps to cancel the booking and make sure my card receives a refund.",
+          "transformed_content": "Cancel trip. Okay, take care of the booking cancellation and, uhm, get my refund processed.",
+          "asr": "Cancel trip. Okay, take car of the booking cancelation and, um, get my refund processed.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.75,
+              0.85
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "main1234": {
+            "card_number": "7812-3451-5678-1234",
+            "balance": 20000.0,
+            "budget_limit": 2000.0,
+            "cardholder_name": "Michael Thompson",
+            "expiry_date": "12/25",
+            "cvv": 123
+          }
+        },
+        "booking_record": {},
+        "access_token": "abc123xyz",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "read write",
+        "user_first_name": "Michael",
+        "user_last_name": "Thompson",
+        "budget_limit": 5000.0
+      }
+    },
+    "path": [
+      "TravelAPI.list_all_airports",
+      "TravelAPI.get_flight_cost",
+      "TravelAPI.book_flight",
+      "TravelAPI.purchase_insurance",
+      "TravelAPI.retrieve_invoice",
+      "TravelAPI.contact_customer_support",
+      "TravelAPI.cancel_booking"
+    ],
+    "involved_classes": [
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_97",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "I've heard a friend of mine in Rivermist recently visited Stonebrook, and she mentioned the journey felt quite extensive. I'm curious, do you happen to have an idea about the actual distance between the two places?",
+          "transformed_content": "Hey, um, how far is it from Rivermist to, you know, Stonebrook?",
+          "asr": "Hey, um, how far is it from Rivermist too, you no, Stonebrook?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.7,
+              0.9,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Covering the distance from Rivermist to Stonebrook sure seems like a long trip. I'm a bit worried if my vehicle can endure the journey with the current fuel level. I'm not entirely sure how far my car can travel on the remaining fuel. What do you think?",
+          "transformed_content": "Is drive from Rivermist to Stonebrook too far for my car with the fuel I've got? Lemme see, not sure if it'll make it. What's your take?",
+          "asr": "Is drive from Rivermist to Stonebrook too far for my car with the few I've got? Lemme see, not sure if it'll make it. What's your take?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "thinking_aloud",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.8,
+              0.6,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Thanks a lot! Before I embark on this journey, it makes sense to ensure I won't be left stranded due to an empty tank. Just add to the tank fully.",
+          "transformed_content": "Uh, fill up the tank before I, um, hit the road.",
+          "asr": "Uh, feel up the tank before I, um, hid the road.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "preposition_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.7,
+              1.0
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Great, with my tank now full, let's embark on this journey. Once I'm set to go, I'd appreciate it if you could start the car for me.",
+          "transformed_content": "Uh, tank's full, ready for this trip. Okay, fire up the car once, um, I'm set to go.",
+          "asr": "Uh, tanks full, ready for this trip. Okay, fire up the car once, um, I'm set to go.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "subject_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "By the way, as I travel, there are some updates I need to communicate to my friend Michael. Would you be able to send message 'I am on my way'?",
+          "transformed_content": "Uh, alright, send Michael, that's M-I-C-H-A-E-L, Michael a message: 'I'm on my way.'",
+          "asr": "Uh, alright, sin Michael, that's M-I-C-H-A-E-L, Michael a massage: 'I'm on my weigh.'",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.7,
+              1.0,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Lastly, while I'm on the road, I want to make sure I have informed everyone that should be aware. Could you display what messages I've send thus far?",
+          "transformed_content": "Uh, show me the messages I've sent so far, okay? And, um, while I'm on the road, let everyone know.",
+          "asr": "Uh, show me the massages I've sent so far, okay? And, um, while I'm on the rode, let everyone know.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "word_reordering",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.7,
+              0.9,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "fuelLevel": 5.0,
+        "batteryVoltage": 12.6,
+        "engineState": "stopped",
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "parkingBrakeForce": 0.0,
+        "slopeAngle": 0.0,
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "Stonebrook",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0
+      },
+      "MessageAPI": {
+        "user_count": 4,
+        "user_map": {
+          "Michael": "BD732D1888B94DAA",
+          "Sarah": "USR002",
+          "David": "USR003",
+          "Emma": "USR004"
+        },
+        "inbox": [
+          {
+            "USR002": "Safe travels!"
+          }
+        ],
+        "message_count": 1,
+        "current_user": "USR003"
+      }
+    },
+    "path": [
+      "VehicleControlAPI.get_zipcode_based_on_city",
+      "VehicleControlAPI.estimate_distance",
+      "VehicleControlAPI.estimate_drive_feasibility_by_mileage",
+      "VehicleControlAPI.fillFuelTank",
+      "VehicleControlAPI.startEngine",
+      "MessageAPI.send_message",
+      "MessageAPI.view_messages_received"
+    ],
+    "involved_classes": [
+      "MessageAPI",
+      "VehicleControlAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_139",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "It'd be great if you could pop Zeta Corp's stock onto my watchlist. I've come across some fascinating insights into their recent performance that I want to monitor.",
+          "transformed_content": "\"Uh, can you, um, put Zeta's stock on my watchlist? I, like, wanna keep an eye on their recent performance.\" Okay.",
+          "asr": "\"Uh, can you, um, put Zeta's dock on my watchlist? I, like, wanna keep an eye on their recent performance.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.8,
+              0.9,
+              0.85,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "With Zeta Corp's stock now on my radar, let's pull up the complete list of stocks I'm watching. I want to double-check that all my chosen stocks are properly listed for my review.",
+          "transformed_content": "Uh, show me my watchlist with Zeta Corp added. Yeah, I've gotta make sure, um, all my stocks are listed.",
+          "asr": "Uh, show me my watch list with Data Corp added. Yeah, I've gotta make sure, um, all my stocks are listed.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "word_reordering"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.9,
+              0.6,
+              0.8,
+              0.7,
+              0.7
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TradingBot": {
+        "orders": {
+          "12345": {
+            "symbol": "AAPL",
+            "price": 210.65,
+            "num_shares": 10,
+            "status": "Completed"
+          },
+          "order_type": "Buy"
+        },
+        "account_info": {
+          "account_id": 12345,
+          "balance": 10000.0,
+          "binding_card": 1974202140965533
+        },
+        "authenticated": true,
+        "market_status": "Closed",
+        "order_counter": 12446,
+        "stocks": {
+          "AAPL": {
+            "price": 227.16,
+            "percent_change": 0.17,
+            "volume": 2.552,
+            "MA(5)": 227.11,
+            "MA(20)": 227.09
+          },
+          "GOOG": {
+            "price": 2840.34,
+            "percent_change": 0.24,
+            "volume": 1.123,
+            "MA(5)": 2835.67,
+            "MA(20)": 2842.15
+          },
+          "TSLA": {
+            "price": 667.92,
+            "percent_change": -0.12,
+            "volume": 1.654,
+            "MA(5)": 671.15,
+            "MA(20)": 668.2
+          },
+          "MSFT": {
+            "price": 310.23,
+            "percent_change": 0.09,
+            "volume": 3.234,
+            "MA(5)": 309.88,
+            "MA(20)": 310.11
+          },
+          "NVDA": {
+            "price": 220.34,
+            "percent_change": 0.34,
+            "volume": 1.234,
+            "MA(5)": 220.45,
+            "MA(20)": 220.67
+          },
+          "ALPH": {
+            "price": 1320.45,
+            "percent_change": -0.08,
+            "volume": 1.567,
+            "MA(5)": 1321.12,
+            "MA(20)": 1325.78
+          },
+          "OMEG": {
+            "price": 457.23,
+            "percent_change": 0.12,
+            "volume": 2.345,
+            "MA(5)": 456.78,
+            "MA(20)": 458.12
+          },
+          "QUAS": {
+            "price": 725.89,
+            "percent_change": -0.03,
+            "volume": 1.789,
+            "MA(5)": 726.45,
+            "MA(20)": 728.0
+          },
+          "NEPT": {
+            "price": 88.34,
+            "percent_change": 0.19,
+            "volume": 0.654,
+            "MA(5)": 88.21,
+            "MA(20)": 88.67
+          },
+          "SYNX": {
+            "price": 345.67,
+            "percent_change": 0.11,
+            "volume": 2.112,
+            "MA(5)": 345.34,
+            "MA(20)": 346.12
+          },
+          "ZETA": {
+            "price": 150.0,
+            "percent_change": 0.1,
+            "volume": 1.5,
+            "MA(5)": 149.5,
+            "MA(20)": 150.2
+          }
+        },
+        "watch_list": [
+          "NVDA",
+          "ZETA"
+        ],
+        "transaction_history": []
+      }
+    },
+    "path": [
+      "TradingBot.get_symbol_by_name",
+      "TradingBot.add_stock_to_watchlist",
+      "TradingBot.get_watchlist",
+      "TwitterAPI.post_tweet"
+    ],
+    "involved_classes": [
+      "TwitterAPI",
+      "TradingBot"
+    ]
+  },
+  {
+    "id": "multi_turn_base_26",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Could you kindly navigate to the temporary directory and list all the files available there right in the terminal for me? I would like to quickly skim through them and all the hidden files.",
+          "transformed_content": "\"Uh, go to temporary directory and, um, show all files in terminal, including hidden ones.\" Okay.",
+          "asr": "Uh, go to temporary direct and, um, show all files in terminal, including hidden once.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.75,
+              0.6,
+              0.9,
+              0.7,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "What's inside the last file displayed?",
+          "transformed_content": "Uh, open last file shown. What's, um, in it?",
+          "asr": "Uh, open last vial shown. What's, um, in it?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Create a docx file with the same name as the previosu file but changing the format, they should also have the same content.",
+          "transformed_content": "Uh, can you make new docx file, okay, like, with the same name as the previous file, and just switch the format? I mean, keep the content identical.",
+          "asr": "Uh, can you make new docks file, okay, like, with the same name as the previous vial, and just switch the format? I mean, keep the content identical.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.8,
+              0.6
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "alex": {
+            "type": "directory",
+            "contents": {
+              "tmp": {
+                "type": "directory",
+                "contents": {
+                  "file1.txt": {
+                    "type": "file",
+                    "content": "This is some important data. Another line of text."
+                  },
+                  "file2.txt": {
+                    "type": "file",
+                    "content": "Just some random text. More important data here."
+                  },
+                  "file3.txt": {
+                    "type": "file",
+                    "content": "Nothing important here. Yet another line."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "path": [
+      "GorillaFileSystem.cd",
+      "GorillaFileSystem.echo",
+      "GorillaFileSystem.grep",
+      "GorillaFileSystem.sort"
+    ],
+    "involved_classes": [
+      "GorillaFileSystem"
+    ]
+  },
+  {
+    "id": "multi_turn_base_146",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Hey there! Could you help me by identifying the stocks currently present on my watchlist?",
+          "transformed_content": "Uh, look at my watchlist for, uh, current stocks.",
+          "asr": "Uh, look at my watch list for, uh, current storks.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.65,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Could you kindly remove 'Zeta Corp' from the list?",
+          "transformed_content": "Okay, 'Take Zeta Corp off the list.'",
+          "asr": "Okay, 'Take Beta Corp off the list.'",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "spelling_noise",
+              "contractions",
+              "article_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.75,
+              0.9,
+              0.85,
+              0.65
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "I am interested in purchasing 50 shares of 'Apple' at the present market price. Please proceed with the transaction.",
+          "transformed_content": "Uh, grab fifty Apple shares at, um, the current market price.",
+          "asr": "Uh, grab fifty April shares at, um, the current market price.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "numbers_noise",
+              "contractions",
+              "slang_terms",
+              "word_reordering"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "moderate",
+              "light",
+              "light",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              1.0,
+              0.8,
+              0.7,
+              0.7
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Would you be able to show me the details of my most recent order when you have a moment?",
+          "transformed_content": "Alright, go ahead and look at my latest order details.",
+          "asr": "All right, go a head and look at my latest order detales.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.9,
+              0.7,
+              0.8
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TradingBot": {
+        "orders": {
+          "12345": {
+            "symbol": "AAPL",
+            "price": 210.65,
+            "num_shares": 10,
+            "status": "Completed"
+          },
+          "order_type": "Buy"
+        },
+        "account_info": {
+          "account_id": 12345,
+          "balance": 10000.0,
+          "binding_card": 1974202140965533
+        },
+        "authenticated": true,
+        "market_status": "Open",
+        "order_counter": 12446,
+        "stocks": {
+          "AAPL": {
+            "price": 227.16,
+            "percent_change": 0.17,
+            "volume": 2.552,
+            "MA(5)": 227.11,
+            "MA(20)": 227.09
+          },
+          "GOOG": {
+            "price": 2840.34,
+            "percent_change": 0.24,
+            "volume": 1.123,
+            "MA(5)": 2835.67,
+            "MA(20)": 2842.15
+          },
+          "TSLA": {
+            "price": 667.92,
+            "percent_change": -0.12,
+            "volume": 1.654,
+            "MA(5)": 671.15,
+            "MA(20)": 668.2
+          },
+          "MSFT": {
+            "price": 310.23,
+            "percent_change": 0.09,
+            "volume": 3.234,
+            "MA(5)": 309.88,
+            "MA(20)": 310.11
+          },
+          "NVDA": {
+            "price": 220.34,
+            "percent_change": 0.34,
+            "volume": 1.234,
+            "MA(5)": 220.45,
+            "MA(20)": 220.67
+          },
+          "ALPH": {
+            "price": 1320.45,
+            "percent_change": -0.08,
+            "volume": 1.567,
+            "MA(5)": 1321.12,
+            "MA(20)": 1325.78
+          },
+          "OMEG": {
+            "price": 457.23,
+            "percent_change": 0.12,
+            "volume": 2.345,
+            "MA(5)": 456.78,
+            "MA(20)": 458.12
+          },
+          "QUAS": {
+            "price": 725.89,
+            "percent_change": -0.03,
+            "volume": 1.789,
+            "MA(5)": 726.45,
+            "MA(20)": 728.0
+          },
+          "NEPT": {
+            "price": 88.34,
+            "percent_change": 0.19,
+            "volume": 0.654,
+            "MA(5)": 88.21,
+            "MA(20)": 88.67
+          },
+          "SYNX": {
+            "price": 345.67,
+            "percent_change": 0.11,
+            "volume": 2.112,
+            "MA(5)": 345.34,
+            "MA(20)": 346.12
+          }
+        },
+        "watch_list": [
+          "NVDA",
+          "AAPL",
+          "GOOG",
+          "ZETA"
+        ],
+        "transaction_history": []
+      }
+    },
+    "path": [
+      "TradingBot.get_symbol_by_name",
+      "TradingBot.remove_stock_from_watchlist",
+      "TradingBot.get_watchlist",
+      "TradingBot.get_stock_info",
+      "TradingBot.place_order",
+      "TradingBot.get_order_details"
+    ],
+    "involved_classes": [
+      "TradingBot"
+    ]
+  },
+  {
+    "id": "multi_turn_base_182",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "As I'm in the process of planning an upcoming journey, I have specific departure and arrival cities in mind. Could you assist in estimating the airfare between ORD and SVP from the comprehensive list available through the system? Please note, I am considering traveling next weekend July 14th, 2024 with a preference for a business class seat.",
+          "transformed_content": "Uh, check airfare for business class, from O R D to, like, S V P for next weekend, July fourteenth, twenty twenty-four.",
+          "asr": "Uh, check air fair for business class, from O R D to, like, S V P for next weekend, July fourteenth, twenty twenty-four.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "symbol_pronunciation",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.65,
+              0.85,
+              1.0,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "In pursuit of a cost-effective travel experience, I seek your guidance to manage my expenditure effectively. Could you help establish a budget limit of 20,000 USD using my currently active account? The access token is 'abc123xyz456'.",
+          "transformed_content": "\"Uh, make a travel budget of, um, twenty thousand using my active account. Access token is abc one two three x y z, all lowercase, no spaces.\" Okay.",
+          "asr": "Uh, make a travel budge it of, um, twenty thousand using my active account. Axis token is ABC one two tree ex why zee, all lower case, no spaces.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              1.0,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "TravelAPI": {
+        "credit_card_list": {
+          "card123": {
+            "card_number": "1234-5678-9012-3456",
+            "expiry_date": "12/25",
+            "cardholder_name": "Michael Smith",
+            "balance": 50000.0
+          }
+        },
+        "booking_record": {
+          "booking001": {
+            "departure_city": "New York",
+            "arrival_city": "London",
+            "class": "Business",
+            "cost": 1500.0
+          }
+        },
+        "access_token": "abc123xyz456",
+        "token_type": "Bearer",
+        "token_expires_in": 3600,
+        "token_scope": "read_write",
+        "user_first_name": "Michael",
+        "user_last_name": "Smith",
+        "budget_limit": 20000.0
+      }
+    },
+    "path": [
+      "TravelAPI.list_all_airports",
+      "TravelAPI.get_flight_cost",
+      "TravelAPI.compute_exchange_rate",
+      "TravelAPI.set_budget_limit"
+    ],
+    "involved_classes": [
+      "TravelAPI"
+    ]
+  },
+  {
+    "id": "multi_turn_base_3",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "As part of my latest photography project, I need to gather files that have 'test' in their name from any folder in my current directory. Could you help me locate those?",
+          "transformed_content": "Uh, find all files with 'test' in name, um, in my current directory.",
+          "asr": "Uh, find all files with 'test' in the name, um, in my currant directory.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "emotional_markers",
+              "slang_terms",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.6,
+              0.7,
+              0.6,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "After identifying them, the next step is to ensure the images and text files are safely copied into a 'backup_tests' folder right within the same directory. Could that be arranged?",
+          "transformed_content": "\"Uh, put images and text files into a 'backup_tests' folder in the same, uh, directory.\" Okay.",
+          "asr": "Uh, put imagines and text files into a 'backup_test' folder in the same, uh, directory.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "article_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.7,
+              0.9,
+              0.8,
+              0.9
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "GorillaFileSystem": {
+        "root": {
+          "alex": {
+            "type": "directory",
+            "contents": {
+              "projects": {
+                "type": "directory",
+                "contents": {
+                  "photography": {
+                    "type": "directory",
+                    "contents": {
+                      "test_image1.jpg": {
+                        "type": "file",
+                        "content": "Image data 1"
+                      },
+                      "test_document.txt": {
+                        "type": "file",
+                        "content": "Document data"
+                      },
+                      "backup_tests": {
+                        "type": "directory",
+                        "contents": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "path": [
+      "GorillaFileSystem.cd",
+      "GorillaFileSystem.find",
+      "GorillaFileSystem.cp"
+    ],
+    "involved_classes": [
+      "GorillaFileSystem"
+    ]
+  },
+  {
+    "id": "multi_turn_base_55",
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "If the fuel level is lower than 10, then go ahead and add double that amount. Let's assume I will also head out right after, so feel free to start the engine using the necessary mode.",
+          "transformed_content": "\"If fuel's below ten, put in twice as much. I'm heading out, so uh, start the engine with the right mode.\" Okay.",
+          "asr": "If fuels bellow ten, put in twice as much. I'm heading out, sew uh, start the engine with the write mode.\" Okay.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "numbers_noise",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "moderate",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.8,
+              0.6,
+              1.0,
+              0.9,
+              0.85
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Since we are all set to go, could you quickly check the pressure of all the tires to ensure everything is safe for our journey?",
+          "transformed_content": "Uh, check all the tire pressures real quick, you know, okay. Make sure everything's, um, safe for the trip.",
+          "asr": "Uh, check all the tire pressures real quick, you know, okay. Make sure everything's, um, safe for the trip.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "slang_terms",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "The pressure seemed lower than expected. Let's open a ticket for 'Tire Pressure Issue', and detail it 'Urgent tire pressure issue.'. Given the urgency, classify this as the top priority to issue, where a higher score has more priority.",
+          "transformed_content": "Pressure's lower than expected. Could you open a ticket 'Tire Pressure Issue' and mark it urgent? Make it top priority, okay?",
+          "asr": "Pressure's lower then excepted. Could you open a ticket \"Tire Pressure Issue\" and mark it urgent? Make it top priority, okay?",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "preposition_dropping",
+              "detail_dropping"
+            ],
+            "intensity": [
+              "moderate",
+              "moderate",
+              "light",
+              "light",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.9,
+              0.7,
+              0.8,
+              0.7,
+              0.9
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Apparently, I never got feedback on the tire pressure ticket I created. Can you fetch that ticket for me so I can review the current status?",
+          "transformed_content": "Uh, find my tire pressure ticket. I, um, need to check its status.",
+          "asr": "Uh, find my tire pressure ticket. I, um, knead to check its status.",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "preposition_dropping",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light",
+              "moderate"
+            ],
+            "confidence": [
+              1.0,
+              0.7,
+              0.6,
+              0.9,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      ],
+      [
+        {
+          "role": "user",
+          "content": "Great! They just gave me a call back. Now that I've checked the details, let's resolve the tire pressure ticket with an update stating 'Issue resolved!'.",
+          "transformed_content": "They called back. Uh, checked everything. Okay, change the tire pressure ticket: 'Issue resolved!'",
+          "asr": "They called back. Uh, checked everything. Okay, change the tire pressure ticket: 'Issuer resolved!'",
+          "speech_features": {
+            "name": [
+              "sentence_restructuring",
+              "disfluencies",
+              "backchanneling",
+              "contractions",
+              "simplified_verbs"
+            ],
+            "intensity": [
+              "moderate",
+              "light",
+              "light",
+              "moderate",
+              "light"
+            ],
+            "confidence": [
+              1.0,
+              0.6,
+              0.6,
+              0.8,
+              0.6
+            ]
+          }
+        }
+      ]
+    ],
+    "initial_config": {
+      "VehicleControlAPI": {
+        "fuelLevel": 7.5,
+        "batteryVoltage": 12.6,
+        "engineState": "stopped",
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "parkingBrakeForce": 0.0,
+        "slopeAngle": 0.0,
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 28.0,
+        "frontRightTirePressure": 28.0,
+        "rearLeftTirePressure": 26.0,
+        "rearRightTirePressure": 26.0
+      },
+      "TicketAPI": {
+        "ticket_queue": [
+          {
+            "id": 1,
+            "title": "tire pressure issue",
+            "description": "Front left: 28.0, Front right: 28.0, Rear left: 26.0, Rear right: 26.0",
+            "priority": "high",
+            "status": "open"
+          }
+        ],
+        "ticket_counter": 2,
+        "current_user": "Michael Thompson"
+      }
+    },
+    "path": [
+      "VehicleControlAPI.displayCarStatus",
+      "VehicleControlAPI.fillFuelTank",
+      "VehicleControlAPI.startEngine",
+      "VehicleControlAPI.check_tire_pressure",
+      "TicketAPI.create_ticket",
+      "TicketAPI.get_ticket",
+      "TicketAPI.resolve_ticket"
+    ],
+    "involved_classes": [
+      "TicketAPI",
+      "VehicleControlAPI"
+    ]
+  }
+]

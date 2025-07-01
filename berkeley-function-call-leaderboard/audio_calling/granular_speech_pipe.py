@@ -36,7 +36,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 MODEL_NAME = "gpt-4o"
 
-INSTRUCTION_TEMPLATE = "You are a clean text to spoken dialogue translation engine gear, and your specific job is to rewrite the input status applying {feature} to the input text. Just rewrite the input, adding the noise feature, preserving all essential information, just spoken out aloud."
+INSTRUCTION_TEMPLATE = "You are a clean text to spoken dialogue translation engine gear, and your specific job is to rewrite the input status applying {feature} to the input text. Just rewrite the input, adding the noise feature, preserving all essential information, just spoken out aloud. CRITICAL: NEVER modify content within quotes - keep quoted text EXACTLY as it is, including punctuation and spacing. CRITICAL: NEVER modify access tokens, passwords, or key function arguments - if you need to spell them out, add formatting info like 'access token abc one two three x y z, all lowercase, no spaces'."
 
 @dataclass
 class FeatureSelection:
@@ -225,7 +225,7 @@ class GranularSpeechPipeline:
         - slang_terms: grab, check out, look up
 
         GROUP 2 - DISFLUENCIES & HESITATIONS (always include 1-2):
-        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses
+        - disfluencies: Filler words (um, uh, like), hesitations, natural pauses (INCREASE FREQUENCY - 60% of cases should have disfluencies)
         - thinking_aloud: Express thinking or searching for words, e.g., 'let me see'
         - false_starts: Start to say something, then restart, e.g., 'I want to—wait, can you...'
         - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
@@ -243,7 +243,7 @@ class GranularSpeechPipeline:
         - detail_dropping: Drop unnecessary formal details (state in the address, titles, etc.)
 
         GROUP 5 - CONTENT MODIFICATIONS (include 1-2):
-        - spelling_noise: Spell out ONLY truly ambiguous or complex terms (unusual usernames, complex technical names, non-obvious abbreviations)
+        - spelling_noise: Spell out names, usernames, or complex terms that might be misunderstood (ALWAYS include for names, usernames, complex terms)
         - symbol_pronunciation: Say symbols out loud (slash, dash, at)
         - vague_references: Use that thing, the stuff, some info
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used
@@ -295,6 +295,16 @@ class GranularSpeechPipeline:
         Spoken: "Write an email to john dot smith at company dot com. Subject is Project Update Phase 2. Add the content."
         Features: symbol_pronunciation, simplified_verbs, disfluencies, contractions, casual_pronouns
 
+        ACCESS TOKEN EXAMPLE:
+        Written: "Utilizing my access token 'access_token_abc123', I'll cap my budget at 2000 USD for the impending journey."
+        Spoken: "Use access token abc one two three, all lowercase, no spaces. Set budget at two thousand dollars for the trip."
+        Features: numbers_noise, simplified_verbs, disfluencies, contractions
+
+        QUOTED CONTENT EXAMPLE:
+        Written: "Post a status update with the message 'Just filled up the tank and checked the tire pressures. Ready for the next adventure!'"
+        Spoken: "Post a status with the message 'Just filled up the tank and checked the tire pressures. Ready for the next adventure!'"
+        Features: simplified_verbs, disfluencies, contractions
+
         FILE MANAGEMENT:
         Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
         Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
@@ -308,11 +318,11 @@ class GranularSpeechPipeline:
         SELECTION GUIDELINES:
         - sentence_restructuring is ALWAYS applied automatically (don't select it)
         - ALWAYS include numbers_noise if input has numbers/alphanumerics
-        - ONLY include spelling_noise if input has TRULY ambiguous or complex terms (unusual usernames, complex technical names, non-obvious abbreviations)
+        - ALWAYS include spelling_noise if input has names, usernames, or complex terms (60% of cases should have spelling_noise)
         - DO NOT include spelling_noise for common English words, standard terms
         - You MUST select at least 1 feature from each of the 5 groups above
         - Total of 4-6 features maximum (sentence_restructuring + your selections) - BE CONSERVATIVE IN CASES SIMILAR TO SPEECH
-        - Be conservative with disfluencies - people don't say "um" that much to voice assistants
+        - INCREASE disfluencies frequency - 60% of cases should have disfluencies (um, uh, like, pauses ...)
         - Focus on making it sound direct and efficient, not overly polite or formal
         - Choose features that make speech sound natural, not robotic or forced
         - Prioritize features that improve flow and naturalness over adding complexity
@@ -320,6 +330,8 @@ class GranularSpeechPipeline:
         - Ensure diversity across groups - don't stack too many features from the same group
         - IMPORTANT: Only apply changes when needed. If the input is already speech-like, apply minimal changes
         - Preserve all function-calling content completely unchanged
+        - CRITICAL: NEVER modify content within quotes - keep quoted text EXACTLY as it is, including punctuation and spacing
+        - CRITICAL: NEVER modify access tokens, passwords, or key information that could act as arguments for downstream function calling task - if you need to spell them out, add formatting info like "access token abc one two three x y z, all lowercase, no spaces"
         - Use proper English - some informal is okay but maintain good grammar
         - DO NOT add unnecessary filler like "let me check" after commands
         - DO NOT make technical terms vague - keep them specific and clear
@@ -436,19 +448,19 @@ class GranularSpeechPipeline:
 
     def apply_disfluencies(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Add 1 light disfluency (filler word or hesitation) naturally",
-            "moderate": "Add 1-2 moderate disfluencies (filler words or hesitations) naturally",
-            "heavy": "Add 2 moderate disfluencies (filler words or hesitations) naturally"
+            "light": "Add 1-2 light disfluencies (filler words or hesitations) naturally",
+            "moderate": "Add 2-3 moderate disfluencies (filler words or hesitations) naturally",
+            "heavy": "Add 3-4 moderate disfluencies (filler words or hesitations) naturally"
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='disfluencies')}
         {intensity_prompts[intensity]}
         
-        Add disfluencies to make it sound like real speech, but be VERY conservative:
+        Add disfluencies to make it sound like real speech:
         - Filler words: "um", "uh", "like", "you know", "I mean"
         - Hesitations: trailing off ("I..."), incomplete thoughts, natural pauses
-        - Use VERY sparingly - people don't say "um" that much to voice assistants
-        - Maximum 1-2 disfluencies per sentence
+        - Use naturally - people do use disfluencies when speaking to voice assistants
+        - 1-2 disfluencies per sentence is normal
         - Do NOT overdo it - this should sound natural, not like someone struggling to speak
         - Place them where people naturally hesitate (before important words, when thinking)
         
@@ -1042,21 +1054,25 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Spell out names, usernames, or complex terms that might be misunderstood:
-        - GitHub usernames or repository names: "JohnDoe" → "JohnDoe, thats spelt J-O-H-N-D-O-E, JohnDoe¬"
+        - Personal names: "Montgomery" → "Montgomery, that's M-O-N-T-G-O-M-E-R-Y, Montgomery"
+        - GitHub usernames or repository names: "JohnDoe" → "JohnDoe, that's J-O-H-N-D-O-E, JohnDoe"
         - Complex names: "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
         - Any name that's not immediately obvious how to pronounce or spell
         
         Examples:
+        - "Elizabeth Montgomery" → "Elizabeth Montgomery, that's M-O-N-T-G-O-M-E-R-Y, Elizabeth Montgomery"
         - "User123/repo" → "U-S-E-R-1-2-3 slash repo, User123 slash repo"
         - "my-app/client" → "my dash app slash client"
         - "TechCorp" → "T-E-C-H-C-O-R-P, TechCorp"
         
         DO NOT SPELL OUT:
         - Common English words: "user", "data", "project", "database", "connection"
-        - Simple names: "John", "Mary", "Smith"
+        - Very simple names: "John", "Mary", "Smith" (only if they're clearly simple)
         - Standard technical terms: "Postgres", "MySQL", "HTTP", "JSON"
         - Obvious abbreviations: "DB" (database), "API" (in most contexts)
         - Numbers or simple alphanumeric: "12345", "user1"
+        
+        CRITICAL: Be more aggressive with spelling out names and complex terms. If in doubt, spell it out.
         
         Input: "{text}"
         Output:
@@ -1420,72 +1436,97 @@ def main():
         asr=True
     )
     pipeline = GranularSpeechPipeline(config)
+    
+    # Use the multi-turn data file
     data_path = "../data/BFCL_v3_multi_turn_base.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
 
-    # Filter for English texts only (keep test cases where all turns are English)
+    # Detect if this is multi-turn data (auto-detect logic remains)
+    is_multi_turn = False
+    if bfcl_data and 'question' in bfcl_data[0]:
+        first_question = bfcl_data[0]['question']
+        if isinstance(first_question, list) and len(first_question) > 0:
+            if isinstance(first_question[0], list) and len(first_question[0]) > 1:
+                is_multi_turn = True
+    
+    print(f"Detected data format: {'Multi-turn' if is_multi_turn else 'Simple'}")
+
+    # Filter for English texts only
     english_test_cases = []
     for test_case in bfcl_data:
-        all_english = True
-        for turn in test_case['question']:
-            user_content = turn[0]['content']
-            if not pipeline.is_english_text(user_content):
-                all_english = False
+        if is_multi_turn:
+            # Multi-turn: check all turns
+            all_english = True
+            for turn in test_case['question']:
+                user_content = turn[0]['content']
+                if not pipeline.is_english_text(user_content):
+                    all_english = False
+                    print(f"Skipping non-English text: {user_content[:100]}...")
+                    break
+            if all_english:
+                english_test_cases.append(test_case)
+        else:
+            # Simple: check single turn
+            user_content = test_case['question'][0][0]['content']
+            if pipeline.is_english_text(user_content):
+                english_test_cases.append(test_case)
+            else:
                 print(f"Skipping non-English text: {user_content[:100]}...")
-                break
-        if all_english:
-            english_test_cases.append(test_case)
 
     print(f"Found {len(english_test_cases)} English test cases out of {len(bfcl_data)} total")
 
-    # Randomly sample 30 test cases for better variety
+    # Randomly sample 25 test cases
     import random
-    random.seed(5)  # Changed seed for new randomization
-    test_subset = random.sample(english_test_cases, min(15, len(english_test_cases)))
+    random.seed(5)
+    test_subset = random.sample(english_test_cases, min(25, len(english_test_cases)))
     if len(test_subset) == 0:
         print("No English test cases found. Exiting.")
         return
 
     print(f"Processing {len(test_subset)} randomly sampled English test cases...")
 
-    all_results = []
+    processed_results = []
     for i, test_case in enumerate(test_subset):
         print(f"\n{'='*60}")
         print(f"Test case {i+1}/{len(test_subset)}")
-        per_turn_results = []
+        new_test_case = test_case.copy()
+        new_test_case['question'] = []
         for turn_idx, turn in enumerate(test_case['question']):
             user_content = turn[0]['content']
-            print(f"Turn {turn_idx+1}: {user_content}")
+            print(f"  Turn {turn_idx+1}: {user_content}")
             try:
                 result = pipeline.transform_text(user_content)
-                print(f"Transformed text: {result['final']}")
-
-                # Apply ASR error simulation
+                print(f"    Transformed text: {result['final']}")
                 asr_pipeline = ASRErrors()
                 asr_result = asr_pipeline.execute_noise(result['final'])
                 final_asr_text = asr_result.get("final", result['final'])
-                print(f"ASR processed text: {final_asr_text}")
-
-                per_turn_results.append({
-                    'original': user_content,
-                    'transformed': result['final'],
-                    'final_asr': final_asr_text,
-                    'features_applied': result['selected_features'],
-                    'confidence_scores': [f['confidence'] for f in result['selected_features']]
-                })
+                if final_asr_text.startswith('"') and final_asr_text.endswith('"'):
+                    final_asr_text = final_asr_text[1:-1]
+                final_asr_text = final_asr_text.replace('\\"', '"').replace("\\'", "'")
+                print(f"    ASR processed text: {final_asr_text}")
+                features_applied = result['selected_features']
+                feature_names = [f['name'] for f in features_applied]
+                feature_intensities = [f['intensity'] for f in features_applied]
+                feature_confidences = [f['confidence'] for f in features_applied]
+                new_turn = turn.copy()
+                new_turn[0]['transformed_content'] = result['final']
+                new_turn[0]['asr'] = final_asr_text
+                new_turn[0]['speech_features'] = {
+                    'name': feature_names,
+                    'intensity': feature_intensities,
+                    'confidence': feature_confidences
+                }
+                new_test_case['question'].append(new_turn)
             except Exception as e:
-                print(f"Error processing turn {turn_idx+1} in test case {i+1}: {e}")
+                print(f"    Error processing turn {turn_idx+1} in test case {i+1}: {e}")
                 continue
-        all_results.append(per_turn_results)
-
-    # Save results
-    output_file = "BFCL_v3_live_multi_turn_base_granular_spoken.json"
+        processed_results.append(new_test_case)
+    output_file = "BFCL_v3_multi_turn_base_granular_spoken_final2.json"
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(all_results, f, indent=2, ensure_ascii=False)
-
+        json.dump(processed_results, f, indent=2, ensure_ascii=False)
     print(f"\nResults saved to: {output_file}")
-    print(f"Successfully processed {len(all_results)} English test cases")
+    print(f"Successfully processed {len(processed_results)} English test cases")
 
 if __name__ == "__main__":
     main()
