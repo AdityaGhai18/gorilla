@@ -11,9 +11,9 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-from TTS_Scripts.tts_generator_elevenlabs import ElevenLabsTTSGenerator
-from TTS_Scripts.tts_generator_cartesia import CartesiaTTSGenerator
-from TTS_Scripts.tts_generator_qwen import QwenTTSGenerator
+from tts_generator_elevenlabs import ElevenLabsTTSGenerator
+from tts_generator_cartesia import CartesiaTTSGenerator
+from tts_generator_qwen import QwenTTSGenerator
 
 def get_api_key(varname):
     api_key = os.getenv(varname)
