@@ -1,6 +1,6 @@
 import os
 from elevenlabs.client import ElevenLabs
-from .tts_generator_base import TTSGeneratorBase
+from tts_generator_base import TTSGeneratorBase
 
 class ElevenLabsTTSGenerator(TTSGeneratorBase):
     """ElevenLabs TTS Generator implementation."""
@@ -22,10 +22,12 @@ class ElevenLabsTTSGenerator(TTSGeneratorBase):
             audio = self.client.text_to_speech.convert(
                 text=text,
                 voice_id="JBFqnCBsd6RMkjVDRZzb",  # Josh voice ID
-                model_id="eleven_multilingual_v2",
+                model_id="eleven_v3", #use eleven_multilingual_v2 insatead because v3 not available for public use
                 output_format="mp3_44100_128",
             )
             
+            #v3 still not available for public use
+
             # Convert generator to bytes by iterating through chunks
             audio_chunks = []
             for chunk in audio:

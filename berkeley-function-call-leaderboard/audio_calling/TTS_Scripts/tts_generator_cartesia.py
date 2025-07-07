@@ -1,6 +1,6 @@
 import os
 from cartesia import Cartesia
-from .tts_generator_base import TTSGeneratorBase
+from tts_generator_base import TTSGeneratorBase
 
 class CartesiaTTSGenerator(TTSGeneratorBase):
     """Cartesia TTS Generator implementation."""

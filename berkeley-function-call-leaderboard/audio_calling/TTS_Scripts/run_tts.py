@@ -23,10 +23,10 @@ def get_api_key(varname):
 
 def main():
     # Configuration - modify these as needed
-    PROVIDER = "cartesia"  # Options: "elevenlabs", "cartesia", "qwen"
+    PROVIDER = "elevenlabs"  # Options: "elevenlabs", "cartesia", "qwen"
     INPUT_FILE = "latest_results/BFCL_v3_live_simple_granular_spoken_final2.json"
-    NUM_CASES = 15
-    OUTPUT_ROOT = None # Or None for default
+    NUM_CASES = 1
+    OUTPUT_ROOT = "single_test_output"  # Specific directory for this single test
 
     # Provider mapping
     providers = {
