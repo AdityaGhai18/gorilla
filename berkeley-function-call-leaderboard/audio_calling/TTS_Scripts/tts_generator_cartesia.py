@@ -18,7 +18,7 @@ class CartesiaTTSGenerator(TTSGeneratorBase):
     def _generate_audio(self, text: str) -> bytes:
         """Generate audio using Cartesia API."""
         try:
-            # Generate audio using Cartesia - exactly like the working example
+            # Generate audio using Cartesia
             data_gen = self.client.tts.bytes(
                 model_id="sonic-2",
                 transcript=text,

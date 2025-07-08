@@ -1,0 +1,122 @@
+[
+  {
+    "id": "live_simple_37-14-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "FAIL"
+  },
+  {
+    "id": "live_simple_2-2-0",
+    "should_match": false,
+    "bi_encoder": "FAIL",
+    "contextual_bi_encoder": "FAIL",
+    "cross_encoder": "FAIL",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_257-137-1",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_257-137-1",
+    "should_match": false,
+    "bi_encoder": "FAIL",
+    "contextual_bi_encoder": "FAIL",
+    "cross_encoder": "FAIL",
+    "llm_context_rich": "FAIL",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_256-137-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "FAIL",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_256-137-0",
+    "should_match": false,
+    "bi_encoder": "FAIL",
+    "contextual_bi_encoder": "FAIL",
+    "cross_encoder": "FAIL",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_108-65-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_108-65-0",
+    "should_match": false,
+    "bi_encoder": "FAIL",
+    "contextual_bi_encoder": "FAIL",
+    "cross_encoder": "FAIL",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_108-65-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "FAIL",
+    "llm_minimal": "FAIL",
+    "llm_generalized": "FAIL"
+  },
+  {
+    "id": "live_simple_108-65-0",
+    "should_match": false,
+    "bi_encoder": "FAIL",
+    "contextual_bi_encoder": "FAIL",
+    "cross_encoder": "FAIL",
+    "llm_context_rich": "PASS",
+    "llm_minimal": "PASS",
+    "llm_generalized": "PASS"
+  },
+  {
+    "id": "live_simple_107-64-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "FAIL",
+    "llm_minimal": "FAIL",
+    "llm_generalized": "FAIL"
+  },
+  {
+    "id": "live_simple_107-64-0",
+    "should_match": true,
+    "bi_encoder": "PASS",
+    "contextual_bi_encoder": "PASS",
+    "cross_encoder": "PASS",
+    "llm_context_rich": "FAIL",
+    "llm_minimal": "FAIL",
+    "llm_generalized": "FAIL"
+  }
+]
