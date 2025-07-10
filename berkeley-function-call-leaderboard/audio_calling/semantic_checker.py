@@ -6,9 +6,7 @@ import os
 from typing import List, Dict, Any
 from openai import OpenAI
 from dotenv import load_dotenv
-from sentence_transformers import CrossEncoder, SentenceTransformer
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import CrossEncoder
 
 # Gemini integration for google-genai SDK
 try:
@@ -18,9 +16,6 @@ except ImportError:
     GEMINI_AVAILABLE = False
 
 load_dotenv()
-
-print("OPENAI_API_KEY loaded:", bool(os.getenv("OPENAI_API_KEY")))
-print("GOOGLE_API_KEY loaded:", bool(os.getenv("GOOGLE_API_KEY")))
 
 def normalize_text(text: str) -> str:
     text = str(text)
@@ -132,8 +127,8 @@ def compute_contextual_similarities_and_embeddings(candidate: str, possible_answ
 
 def cross_encoder_similarity(candidate: str, possible_answer: str, function_name: str, arg_name: str) -> float:
     """
-    the architecture is a transformer model that takes in two strings and outputs a similarity score.
-    the score is a number between 0 and 1, where 1 means the two strings are exactly the same, and 0 means they are completely different.
+    Uses a transformer model to compute similarity between two strings.
+    Returns a score between 0 and 1.
     """
 
     # Load a cross-encoder model
@@ -178,156 +173,171 @@ def is_semantically_similar_from_similarities(similarities, threshold: float = 0
     """
     return any(sim >= threshold for sim in similarities)
 
-def test_semantic_checker_from_json(
-    json_path: str,
-    test_case_id: str,
-    function_arg: str,
-    candidate: str,
-    threshold: float = 0.82
-):
-    """
-    Loads a possible answer JSON, finds the test case by id, extracts the possible answers for the given argument,
-    and compares the candidate string to those answers using the semantic checker.
-    """
-    # Load JSON file (assume one object per line or a list of objects)
-    with open(json_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-    # Try to parse as list or as objects per line
-    try:
-        data = json.loads(''.join(lines))
-        if isinstance(data, dict):
-            data = [data]
-    except Exception:
-        data = [json.loads(line) for line in lines if line.strip()]
 
-    # Find the test case
-    entry = next((item for item in data if item.get('id') == test_case_id), None)
-    if not entry:
-        print(f"Test case id '{test_case_id}' not found in {json_path}.")
-        return
-    gt = entry.get('ground_truth', [])
-    if not gt or not isinstance(gt, list) or not isinstance(gt[0], dict):
-        print(f"No valid ground_truth for id '{test_case_id}'.")
-        return
-    func_dict = gt[0]
-    if not func_dict:
-        print(f"No function call found in ground_truth for id '{test_case_id}'.")
-        return
-    # Get the first function call
-    func_args = list(func_dict.values())[0]
-    if function_arg not in func_args:
-        print(f"Argument '{function_arg}' not found in function call for id '{test_case_id}'.")
-        return
-    possible_answers = func_args[function_arg]
-    function_name = list(func_dict.keys())[0]
-    
-    print(f"Candidate: {candidate}")
-    print(f"Possible Answers: {possible_answers}")
-    print(f"Function: {function_name}")
-    print(f"Argument: {function_arg}")
-    print(f"Threshold: {threshold}")
 
-    # Test 1: Basic bi-encoder
-    print("\n=== BASIC BI-ENCODER ===")
-    candidate_norm, answers_norm, cand_emb, answers_emb, similarities = compute_similarities_and_embeddings(candidate, possible_answers)
-    for ans, sim in zip(possible_answers, similarities):
-        print(f"Similarity to '{ans}': {sim:.4f}")
-    result = is_semantically_similar_from_similarities(similarities, threshold)
-    print(f"Basic Bi-Encoder Match: {result}")
-
-    # Test 2: Contextual bi-encoder
-    print("\n=== CONTEXTUAL BI-ENCODER ===")
-    try:
-        function_context = get_function_context(function_name, function_arg)
-        print(f"Function Context: {function_context}")
-        candidate_norm, answers_norm, cand_emb, answers_emb, contextual_similarities = compute_contextual_similarities_and_embeddings(candidate, possible_answers, function_name, function_arg)
-        for ans, sim in zip(possible_answers, contextual_similarities):
-            print(f"Contextual similarity to '{ans}': {sim:.4f}")
-        contextual_result = is_semantically_similar_from_similarities(contextual_similarities, threshold)
-        print(f"Contextual Bi-Encoder Match: {contextual_result}")
-    except Exception as e:
-        print(f"Contextual bi-encoder failed: {e}")
-
-    # Test 3: Cross-encoder
-    print("\n=== CROSS-ENCODER ===")
-    try:
-        cross_similarities = compute_cross_encoder_similarities(candidate, possible_answers, function_name, function_arg)
-        for ans, sim in zip(possible_answers, cross_similarities):
-            print(f"Cross-encoder similarity to '{ans}': {sim:.4f}")
-        cross_result = is_semantically_similar_from_similarities(cross_similarities, threshold)
-        print(f"Cross-Encoder Match: {cross_result}")
-    except Exception as e:
-        print(f"Cross-encoder failed: {e}")
-
-def build_llm_judge_prompt(
+def build_llm_judge_prompt_context(
     function_name: str,
     function_description: str,
     argument_name: str,
     argument_description: str,
-    expected_value: str,
+    expected_values: list,
     candidate_value: str
 ) -> str:
     """
-    Build a structured, context-rich prompt for LLM-as-a-judge evaluation.
+    Build a comprehensive, research-backed prompt for LLM-as-a-judge evaluation with full context.
+    Combines structured component analysis with clear functional equivalence criteria.
     """
     prompt = f"""
-You are an expert judge of semantic equivalence for function call arguments.
+You are an impartial expert judge evaluating semantic equivalence for function call arguments. Your task is to determine if a candidate argument value would produce the same function behavior as an expected value.
 
-Your task is to decide if the candidate argument value is functionally equivalent to the expected value, given the function and argument descriptions.
-
-- Focus on whether the candidate would work the same as the expected value for the function, not on grammar, spelling, or politeness, unless those are critical for the function to work.
-- If the argument is free text, focus on the intended meaning.
-- If the argument is structured (like an address), focus on whether all critical components are present and correct.
-- If the candidate value is missing critical information, it is NOT equivalent.
-- If the candidate value is less formal or contains errors but would still work in the function, it IS equivalent.
-
-**Step-by-step:**
-1. List the critical components of the argument, based on the argument description.
-2. Compare the expected and candidate values for each component.
-3. Decide: Equivalent, Not Equivalent, or Partial (if some but not all critical parts are present).
-4. Output in JSON:
-{{
-  "judgment": "Equivalent | Not Equivalent | Partial",
-  "confidence": 0.0-1.0,
-  "explanation": "Step-by-step reasoning referencing argument criticality and function requirements."
-}}
+CRITICAL PRINCIPLES:
+- Focus on FUNCTIONAL EQUIVALENCE: Would both values cause identical function behavior and output?
+- Use ONLY the provided function and argument documentation to decide what details and information are critical and what level of specificity is required in the argument value
+- Do NOT assume unspecified behavior or fill in missing information
+- DISTINGUISH between format requirements (how the data should be presented) and functional requirements (what the function needs to work correctly)
+- If a function can work correctly with either format, they are functionally equivalent
+- MOST IMPORTANT: If the function would produce the same result with either value, they are equivalent regardless of formatting differences
 
 Function: {function_name}
 Function Description: {function_description}
 Argument: {argument_name}
 Argument Description: {argument_description}
-Expected Value: "{expected_value}"
+Expected Values: {expected_values}
 Candidate Value: "{candidate_value}"
+
+CONTEXT-AWARE STRICTNESS GUIDANCE:
+Based on the function documentation above, determine the appropriate strictness level:
+
+If the function requires a specific format for technical or operational reasons, enforce that format strictly.
+
+Otherwise, focus on whether the candidate and expected value would cause the function to behave identically, regardless of phrasing, abbreviations, or omitted non-essential details.
+
+Allow differences in formatting, abbreviations, or omissions if and only if they do not introduce ambiguity or change the function's output.
+
+When in doubt, prioritize functional equivalence over presentational differences.
+
+INTENT VS DETAIL GUIDANCE:
+- For logging/classification/transfer-to-human functions: Only the intent of the query matters for equivalence. Minor differences in phrasing or grammar, do not affect equivalence.
+- For quantities, measurements, and precise data (addresses, dates, IDs, numbers, coordinates): Core components must match exactly, but minor formatting differences (abbreviations, missing optional parts) are acceptable if the core meaning is preserved.
+- If both values would lead to the same function output (e.g., same category, same escalation, same location), they are equivalent.
+
+MATCHING LOGIC:
+- If there are multiple expected values, the candidate should be considered equivalent if it matches ANY ONE of the expected values
+- Do not require the candidate to match all expected values (in the case of multiple expected values), only one needs to match to return equivalent
+- Compare the candidate to each expected value individually using the strictness level determined for this function
+
+STEP-BY-STEP ANALYSIS (Chain-of-Thought Reasoning):
+
+Step 1: STRICTNESS ASSESSMENT
+- Question: Based on the function documentation, what level of strictness and specificity is appropriate for this function?
+- Reasoning: Analyze what the function cares about (intent vs. exact details vs. format). Default to "medium_strictness" unless the function documentation explicitly requires exact format for technical or operational reasons.
+- Decision: "high_strictness" / "medium_strictness" / "low_strictness" with reasoning
+
+Step 2: INDIVIDUAL COMPARISON ANALYSIS
+For each expected value, compare it to the candidate value INDIVIDUALLY. You must check each expected value separately:
+
+Step 2a: SEMANTIC INTENT ANALYSIS
+- Question: Do the candidate and this expected value express the same core meaning and purpose?
+- Reasoning: Consider what the function does and whether both values serve the same purpose
+- Decision: true/false with specific reasoning
+
+Step 2b: FORMAT VS FUNCTION ANALYSIS
+- Question: Are the format differences between the values functionally significant, or are they just presentational differences that don't affect the function's ability to work correctly?
+- Reasoning: Analyze whether the function would behave identically with either format, or if the differences would cause different behavior
+- Decision: true/false with specific reasoning
+
+Step 2c: CRITICAL DETAILS ANALYSIS  
+- Question: Do all function-critical components match at the appropriate strictness and specificity level?
+- Reasoning: Check each critical detail against the function's requirements using the determined strictness level. Allow abbreviations and omissions if they do not introduce ambiguity or change the function's output. Focus on whether the differences would cause the function to behave differently.
+- Decision: true/false with specific reasoning
+
+Step 2d: SPECIFICITY LEVEL ANALYSIS
+- Question: Are both values detailed enough for the function to perform identically at the determined strictness level?
+- Reasoning: Assess whether the level of detail is sufficient and consistent
+- Decision: true/false with specific reasoning
+
+Step 2e: INDIVIDUAL MATCH RESULT
+- If ALL components (intent, format-function, details, specificity) are true for this expected value, this comparison = true
+- Otherwise, this comparison = false
+
+Step 3: FINAL JUDGMENT
+- Check each individual comparison result from Step 2e
+- If ANY expected value comparison resulted in true, the overall judgment is true
+- If ALL expected value comparisons resulted in false, the overall judgment is false
+- IMPORTANT: You only need ONE match to return true
+
+DECISION CRITERIA:
+- true: Both values would cause exactly the same function behavior and output (regardless of formatting differences)
+- false: Values would cause different function behavior or output
+- REMEMBER: If the function would find the same ride, return the same data, or produce identical results with either value, they are equivalent
+
+IMPORTANT: Output ONLY valid JSON. Do not include any reasoning or explanation outside the JSON block. If you cannot fit all reasoning, prioritize completing the JSON.
+
+Output in JSON:
+{{
+  "strictness_level": "high_strictness|medium_strictness|low_strictness",
+  "should_match": true/false,
+  "confidence": 0.0-1.0,
+  "explanation": "Step 3 summary: [concise final reasoning based on the strictness level and individual comparisons]"
+}}
 """
     return prompt.strip()
 
 def parse_llm_judge_response(response_text: str):
     """
-    Parse the LLM's JSON output robustly. Always try to extract 'explanation'.
+    Parse the LLM's JSON output robustly with fallback for truncated responses.
     """
     try:
+        # Try to find and parse complete JSON
         start = response_text.find('{')
         end = response_text.rfind('}') + 1
+        if start == -1 or end == 0:
+            raise ValueError("No JSON found in response")
+        
         json_str = response_text[start:end]
         parsed = json.loads(json_str)
+        
+        # Ensure required fields exist
+        if 'should_match' not in parsed:
+            raise ValueError("Missing 'should_match' field")
+        if 'confidence' not in parsed:
+            parsed['confidence'] = 0.5  # Default confidence
         if 'explanation' not in parsed:
-            print('[Warning] LLM response missing explanation. Raw output:')
-            print(response_text)
             parsed['explanation'] = response_text
         return parsed
     except Exception as e:
-        print(f'[Warning] Failed to parse LLM output: {e}\nRaw output: {response_text}')
+        # Fallback: try to extract should_match and confidence from raw text
+        print(f'[Warning] Failed to parse LLM output: {e}')
+        print(f'Raw output: {response_text}')
+        import re
+        def extract_json_field(text, field):
+            match = re.search(rf'"{field}"\s*:\s*(true|false|[0-9.]+)', text)
+            if match:
+                val = match.group(1)
+                if val in ['true', 'false']:
+                    return val == 'true'
+                try:
+                    return float(val)
+                except:
+                    return val
+            return None
+        should_match = extract_json_field(response_text, 'should_match')
+        confidence = extract_json_field(response_text, 'confidence')
+        if should_match is None:
+            should_match = False
+        if confidence is None:
+            confidence = 0.5
         return {
-            "judgment": "Error",
-            "confidence": 0.0,
-            "explanation": f"Failed to parse LLM output: {e}\nRaw output: {response_text}"
+            "should_match": should_match,
+            "confidence": confidence,
+            "explanation": f"Parsed from truncated output. Original error: {e}\nRaw output: {response_text}"
         }
 
 def llm_judge_openai(
     prompt: str,
     model: str = "gpt-4-turbo",
     temperature: float = 0.0,
-    max_tokens: int = 512
+    max_tokens: int = 1024
 ):
     """
     Query OpenAI LLM as a judge (compatible with openai>=1.0.0).
@@ -349,7 +359,7 @@ def llm_judge_gemini(
     prompt: str,
     model: str = "gemini-1.5-pro",
     temperature: float = 0.0,
-    max_tokens: int = 512
+    max_tokens: int = 1024
 ):
     """
     Query Google Gemini as a judge (using the google-genai SDK).
@@ -391,21 +401,40 @@ def ensemble_llm_judges(
 ):
     """
     Run multiple LLM judges and aggregate their decisions.
-    Majority voting: 'Equivalent' or 'Partial' = True, 'Not Equivalent' = False. Tie = False.
+    Majority voting: true = True, false = False. Tie = False.
     """
     results = []
+    provider_names = []
+    
     for judge_fn in judge_functions:
         result = judge_fn(prompt)
         results.append(result)
+        
+        # Determine provider name based on function
+        if judge_fn.__name__ == 'llm_judge_openai':
+            provider_names.append('OpenAI')
+        elif judge_fn.__name__ == 'llm_judge_gemini':
+            provider_names.append('Google')
+        else:
+            provider_names.append('Unknown')
 
-    judgments = [r['judgment'] for r in results]
+    should_matches = [r.get('should_match', False) for r in results]
     confidence_scores = [float(r.get('confidence', 0)) for r in results]
-    explanations = [r['explanation'] for r in results]
-    majority = Counter(judgments).most_common(1)[0][0]
+    explanations = [r.get('explanation', '') for r in results]
+    
+    # Create provider-specific results
+    provider_results = {}
+    for i, (provider, should_match, confidence) in enumerate(zip(provider_names, should_matches, confidence_scores)):
+        provider_results[provider] = {
+            'should_match': should_match,
+            'confidence': confidence,
+            'explanation': explanations[i]
+        }
 
-    # Pass/fail logic
-    true_count = sum(j in ('Equivalent', 'Partial') for j in judgments)
-    false_count = sum(j == 'Not Equivalent' for j in judgments)
+    # Majority voting logic
+    true_count = sum(should_matches)
+    false_count = len(should_matches) - true_count
+    
     if true_count > false_count:
         final_bool = True
     elif false_count > true_count:
@@ -422,38 +451,43 @@ def ensemble_llm_judges(
     agg_explanation = "\n---\n".join(explanations)
 
     return {
-        "final_judgment": majority,
+        "final_should_match": final_bool,
         "ensemble_confidence": weighted_conf,
-        "all_judgments": judgments,
+        "all_should_matches": should_matches,
         "all_confidences": confidence_scores,
         "explanations": explanations,
         "aggregate_explanation": agg_explanation,
-        "final_bool": final_bool
+        "final_bool": final_bool,
+        "provider_results": provider_results
     }
 
 # Example usage function for the checker:
-def llm_as_judge_semantic_check(
+def _get_default_judge_functions():
+    """Get default judge functions (OpenAI + Gemini if available)."""
+    judge_functions = [llm_judge_openai]
+    if GEMINI_AVAILABLE:
+        judge_functions.append(llm_judge_gemini)
+    return judge_functions
+
+def llm_as_judge_semantic_check_context(
     function_name: str,
     function_description: str,
     argument_name: str,
     argument_description: str,
-    expected_value: str,
+    expected_values: list,
     candidate_value: str
 ) -> Dict[str, Any]:
     """
-    Use LLM(s) as a judge for function call argument equivalence.
+    Use LLM(s) as a judge for function call argument equivalence with full context.
     Returns the ensemble result.
     """
-    prompt = build_llm_judge_prompt(
+    prompt = build_llm_judge_prompt_context(
         function_name, function_description, argument_name, argument_description,
-        expected_value, candidate_value
+        expected_values, candidate_value
     )
-    judge_functions = [llm_judge_openai]
-    if GEMINI_AVAILABLE:
-        judge_functions.append(llm_judge_gemini)
-    return ensemble_llm_judges(prompt, judge_functions)
+    return ensemble_llm_judges(prompt, _get_default_judge_functions())
 
-def build_llm_judge_prompt_minimal(
+def build_llm_judge_prompt_no_context(
     argument_name: str,
     expected_value: str,
     candidate_value: str
@@ -468,251 +502,25 @@ Candidate Value: "{candidate_value}"
 
 Task: Are these two values functionally equivalent for their use as an argument in a function call? If not, explain the key differences. Output in JSON:
 {{
-  "judgment": "Equivalent | Not Equivalent | Partial",
+  "should_match": true/false,
   "confidence": 0.0-1.0,
   "explanation": "Step-by-step reasoning."
 }}
 """
     return prompt.strip()
 
-def llm_as_judge_semantic_check_minimal(
+def llm_as_judge_semantic_check_no_context(
     argument_name: str,
     expected_value: str,
     candidate_value: str
 ) -> Dict[str, Any]:
     """
-    Use LLM(s) as a judge for function call argument equivalence (minimal prompt).
+    Use LLM(s) as a judge for function call argument equivalence without context.
     Returns the ensemble result.
     """
-    prompt = build_llm_judge_prompt_minimal(
+    prompt = build_llm_judge_prompt_no_context(
         argument_name,
         expected_value,
         candidate_value
     )
-    judge_functions = [llm_judge_openai]
-    if GEMINI_AVAILABLE:
-        judge_functions.append(llm_judge_gemini)
-    return ensemble_llm_judges(prompt, judge_functions)
-
-def build_llm_judge_prompt_general(
-    function_name: str,
-    function_description: str,
-    argument_name: str,
-    argument_description: str,
-    expected_value: str,
-    candidate_value: str
-) -> str:
-    prompt = f"""
-Function: {function_name}
-Function Description: {function_description}
-Argument: {argument_name}
-Argument Description: {argument_description}
-Expected Value: "{expected_value}"
-Candidate Value: "{candidate_value}"
-
-Task:
-1. Based on the argument description, break down the argument value into its logical components (e.g., fields, attributes, or key elements).
-2. For each component, state:
-   - Whether it matches, is missing, or is different in the candidate compared to the expected value.
-   - Whether this component is critical for the function's correct operation, based on the function and argument descriptions.
-3. If any critical component is missing or different, return "Not Equivalent".
-4. If all critical components match, but there are minor differences in non-critical components, return "Partial".
-5. If all components match, return "Equivalent".
-6. Provide a confidence score (0.0–1.0) and a step-by-step explanation referencing the function and argument descriptions.
-
-Output (in JSON):
-{{
-  "components": [
-    {{
-      "name": "component_name",
-      "match": true/false,
-      "critical": true/false,
-      "notes": "explanation of this component"
-    }},
-    ...
-  ],
-  "judgment": "Equivalent | Partial | Not Equivalent",
-  "confidence": 0.0–1.0,
-  "explanation": "Step-by-step reasoning."
-}}
-"""
-    return prompt.strip()
-
-def llm_as_judge_semantic_check_general(
-    function_name: str,
-    function_description: str,
-    argument_name: str,
-    argument_description: str,
-    expected_value: str,
-    candidate_value: str
-) -> dict:
-    prompt = build_llm_judge_prompt_general(
-        function_name,
-        function_description,
-        argument_name,
-        argument_description,
-        expected_value,
-        candidate_value
-    )
-    judge_functions = [llm_judge_openai]
-    if GEMINI_AVAILABLE:
-        judge_functions.append(llm_judge_gemini)
-    return ensemble_llm_judges(prompt, judge_functions)
-
-if __name__ == "__main__":
-    print("\n=== Function Call Argument Evaluation: All Approaches ===\n")
-
-    # Load test case from possible answers JSON file
-    json_path = "../data/possible_answer/BFCL_v3_live_simple.json"
-    test_case_id = "live_simple_2-2-0"
-    function_arg = "loc"
-    candidate = "2021 Addison St, Berkeley"  # Only this is set here for testing
-    threshold = 0.82
-
-    # Load JSON file (assume one object per line or a list of objects)
-    with open(json_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-    try:
-        data = json.loads(''.join(lines))
-        if isinstance(data, dict):
-            data = [data]
-    except Exception:
-        data = [json.loads(line) for line in lines if line.strip()]
-
-    # Find the test case
-    entry = next((item for item in data if item.get('id') == test_case_id), None)
-    if not entry:
-        print(f"Test case id '{test_case_id}' not found in {json_path}.")
-        exit(1)
-    gt = entry.get('ground_truth', [])
-    if not gt or not isinstance(gt, list) or not isinstance(gt[0], dict):
-        print(f"No valid ground_truth for id '{test_case_id}'.")
-        exit(1)
-    func_dict = gt[0]
-    if not func_dict:
-        print(f"No function call found in ground_truth for id '{test_case_id}'.")
-        exit(1)
-    # Get the first function call
-    func_args = list(func_dict.values())[0]
-    if function_arg not in func_args:
-        print(f"Argument '{function_arg}' not found in function call for id '{test_case_id}'.")
-        exit(1)
-    possible_answers = func_args[function_arg]
-    function_name = list(func_dict.keys())[0]
-
-    # Use get_function_context to robustly fetch function and argument descriptions
-    function_context = get_function_context(function_name, function_arg)
-    # Parse out function and argument descriptions from the context string
-    # Expected format: 'Function: {desc}. Parameter {arg_name}: {arg_desc}'
-    if function_context.startswith("Function:"):
-        try:
-            func_desc_part = function_context.split(". Parameter ")[0]
-            function_description = func_desc_part[len("Function: "):].strip()
-            if ". Parameter " in function_context:
-                arg_desc_part = function_context.split(". Parameter ")[1]
-                argument_description = arg_desc_part.strip()
-            else:
-                argument_description = f"Argument: {function_arg} (description not found)"
-        except Exception:
-            function_description = function_context
-            argument_description = f"Argument: {function_arg} (description not found)"
-    else:
-        function_description = function_context
-        argument_description = f"Argument: {function_arg} (description not found)"
-
-    print(f"Test Case ID: {test_case_id}")
-    print(f"Function: {function_name}")
-    print(f"Function Description: {function_description}")
-    print(f"Argument: {function_arg}")
-    print(f"Argument Description: {argument_description}")
-    print(f"Possible Answers: {possible_answers}")
-    print(f"Candidate: {candidate}")
-    print(f"Threshold: {threshold}\n")
-
-    # 1. Basic bi-encoder (no context)
-    print("=== BASIC BI-ENCODER (NO CONTEXT) ===")
-    candidate_norm, answers_norm, cand_emb, answers_emb, similarities = compute_similarities_and_embeddings(candidate, possible_answers)
-    for ans, sim in zip(possible_answers, similarities):
-        print(f"Similarity to '{ans}': {sim:.4f}")
-    result = is_semantically_similar_from_similarities(similarities, threshold)
-    print(f"Basic Bi-Encoder Match: {result}\n")
-
-    # 2. Contextual bi-encoder
-    print("=== CONTEXTUAL BI-ENCODER ===")
-    try:
-        candidate_norm, answers_norm, cand_emb, answers_emb, contextual_similarities = compute_contextual_similarities_and_embeddings(candidate, possible_answers, function_name, function_arg)
-        for ans, sim in zip(possible_answers, contextual_similarities):
-            print(f"Contextual similarity to '{ans}': {sim:.4f}")
-        contextual_result = is_semantically_similar_from_similarities(contextual_similarities, threshold)
-        print(f"Contextual Bi-Encoder Match: {contextual_result}\n")
-    except Exception as e:
-        print(f"Contextual bi-encoder failed: {e}\n")
-
-    # 3. Cross-encoder
-    print("=== CROSS-ENCODER ===")
-    try:
-        cross_similarities = compute_cross_encoder_similarities(candidate, possible_answers, function_name, function_arg)
-        for ans, sim in zip(possible_answers, cross_similarities):
-            print(f"Cross-encoder similarity to '{ans}': {sim:.4f}")
-        cross_result = is_semantically_similar_from_similarities(cross_similarities, threshold)
-        print(f"Cross-Encoder Match: {cross_result}\n")
-    except Exception as e:
-        print(f"Cross-encoder failed: {e}\n")
-
-    # 4. LLM-as-a-Judge (context-rich)
-    print("=== LLM-AS-A-JUDGE (CONTEXT-RICH, LLM INFERS CRITICALITY) ===")
-    if not GEMINI_AVAILABLE:
-        print("[Warning] Google Gemini API not available. Only OpenAI will be used.\n")
-    result_context = llm_as_judge_semantic_check(
-        function_name=function_name,
-        function_description=function_description,
-        argument_name=function_arg,
-        argument_description=argument_description,
-        expected_value=possible_answers[0],  # Use the first possible answer for LLM judge
-        candidate_value=candidate
-    )
-    print(f"Final Judgment: {result_context['final_judgment']}")
-    print(f"Ensemble Confidence: {result_context['ensemble_confidence']:.2f}")
-    print("\nAll Judgments:")
-    for i, (judgment, conf) in enumerate(zip(result_context['all_judgments'], result_context['all_confidences'])):
-        print(f"  Model {i+1}: {judgment} (Confidence: {conf:.2f})")
-    print("\nExplanations:")
-    for i, explanation in enumerate(result_context['explanations']):
-        print(f"--- Model {i+1} Explanation ---\n{explanation}\n")
-
-    # 5. LLM-as-a-Judge (minimal prompt)
-    print("=== LLM-AS-A-JUDGE (MINIMAL PROMPT, NO CONTEXT) ===")
-    result_minimal = llm_as_judge_semantic_check_minimal(
-        argument_name=function_arg,
-        expected_value=possible_answers[0],
-        candidate_value=candidate
-    )
-    print(f"Final Judgment: {result_minimal['final_judgment']}")
-    print(f"Ensemble Confidence: {result_minimal['ensemble_confidence']:.2f}")
-    print("\nAll Judgments:")
-    for i, (judgment, conf) in enumerate(zip(result_minimal['all_judgments'], result_minimal['all_confidences'])):
-        print(f"  Model {i+1}: {judgment} (Confidence: {conf:.2f})")
-    print("\nExplanations:")
-    for i, explanation in enumerate(result_minimal['explanations']):
-        print(f"--- Model {i+1} Explanation ---\n{explanation}\n")
-
-    # 6. LLM-as-a-Judge (generalized, component analysis)
-    print("=== LLM-AS-A-JUDGE (GENERALIZED, COMPONENT ANALYSIS) ===")
-    result_general = llm_as_judge_semantic_check_general(
-        function_name=function_name,
-        function_description=function_description,
-        argument_name=function_arg,
-        argument_description=argument_description,
-        expected_value=possible_answers[0],
-        candidate_value=candidate
-    )
-    # Print per-component analysis if present
-    components = result_general.get("components")
-    if components:
-        print("Components:")
-        for comp in components:
-            print(f"  - name: {comp.get('name')}, match: {comp.get('match')}, critical: {comp.get('critical')}, notes: {comp.get('notes')}")
-    print(f"Final Judgment: {result_general.get('final_judgment', result_general.get('judgment'))}")
-    print(f"Confidence: {result_general.get('ensemble_confidence', result_general.get('confidence', 0.0))}")
-    print(f"Explanation: {result_general.get('explanation', '')}")
-    print("=== End of Evaluation ===\n")
+    return ensemble_llm_judges(prompt, _get_default_judge_functions())

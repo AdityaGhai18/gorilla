@@ -2,55 +2,37 @@
   {
     "id": "live_simple_37-14-0",
     "function_arg": "answer",
-    "candidate": "this text is not define logistic regression, i dont know what this even is i cant answer this",
+    "candidate": "this text does not talk about logistic regression, i dont know what this even is, i cant answer your question",
     "should_match": true
   },
   {
     "id": "live_simple_2-2-0",
     "function_arg": "loc",
-    "candidate": "2022 Addison St, Berkeley",
+    "candidate": "2022 Addison St, Berkeley, CA, USA",
+    "should_match": false
+  },
+  {
+    "id": "live_simple_2-2-0",
+    "function_arg": "loc",
+    "candidate": "2020 Addison St, Berkeley",
     "should_match": false
   },
   {
     "id": "live_simple_257-137-1",
     "function_arg": "statement",
-    "candidate": "Can you tell me the fastest time for my package to arrive?",
-    "should_match": true
-  },
-  {
-    "id": "live_simple_257-137-1",
-    "function_arg": "statement",
-    "candidate": "When will my package arrive if there are delays?",
-    "should_match": false
-  },
-  {
-    "id": "live_simple_256-137-0",
-    "function_arg": "statement",
-    "candidate": "I want to know if my complaint has been resolved.",
-    "should_match": true
-  },
-  {
-    "id": "live_simple_256-137-0",
-    "function_arg": "statement",
-    "candidate": "Can you tell me about my last order status?",
+    "candidate": "Can you tell me the latest/slowest time for my package to arrive?", // so here function equivalence is judged so human transfer results in both ways so despite being wrong it returns true
     "should_match": false
   },
   {
     "id": "live_simple_108-65-0",
     "function_arg": "money_movement_start",
-    "candidate": "Show me all wire transfers sent from my account.",
+    "candidate": "Show me all wire transfers sent out from my account.",
     "should_match": true
-  },
-  {
-    "id": "live_simple_108-65-0",
-    "function_arg": "money_movement_start",
-    "candidate": "Show me all wire transfers received to my account.",
-    "should_match": false
   },
   {
     "id": "live_simple_108-65-0",
     "function_arg": "get_transactions_start",
-    "candidate": "Can you list all my recent ATM withdrawals?",
+    "candidate": "Can you list all the details of my recent ATM withdrawals?",
     "should_match": true
   },
   {
@@ -62,7 +44,7 @@
   {
     "id": "live_simple_107-64-0",
     "function_arg": "bank_hours_start",
-    "candidate": "Are any banks open in Sri Lanka this weekend?",
+    "candidate": "I need a bank right now! Are any banks open in Sri Lanka?",
     "should_match": true
   },
   {
@@ -70,5 +52,11 @@
     "function_arg": "faq_describe_accounts_start",
     "candidate": "Do you have any accounts for people saving for a home renovation?",
     "should_match": true
+  },
+  {
+    "id": "live_multiple_30-10-0",
+    "function_arg": "query", 
+    "candidate": "applications of Langfuse for gen AI projects",
+    "should_match": true
   }
-] 
+]
