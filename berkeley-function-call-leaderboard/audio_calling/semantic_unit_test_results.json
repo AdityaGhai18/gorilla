@@ -28,11 +28,11 @@
   },
   {
     "id": "live_simple_257-137-1",
-    "should_match": false,
+    "should_match": true,
     "bi_encoder": null,
     "contextual_bi_encoder": null,
     "cross_encoder": null,
-    "llm_context_rich": "FAIL",
+    "llm_context_rich": "PASS",
     "llm_minimal": null
   },
   {
@@ -50,7 +50,7 @@
     "bi_encoder": null,
     "contextual_bi_encoder": null,
     "cross_encoder": null,
-    "llm_context_rich": "ERROR",
+    "llm_context_rich": "PASS",
     "llm_minimal": null
   },
   {
@@ -83,6 +83,78 @@
   {
     "id": "live_multiple_30-10-0",
     "should_match": true,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_2-1-0",
+    "should_match": false,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_4-2-1",
+    "should_match": false,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_8-4-0",
+    "should_match": true,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_15-4-7",
+    "should_match": true,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_36-12-0",
+    "should_match": true,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_37-13-0",
+    "should_match": false,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_66-27-0",
+    "should_match": false,
+    "bi_encoder": null,
+    "contextual_bi_encoder": null,
+    "cross_encoder": null,
+    "llm_context_rich": "PASS",
+    "llm_minimal": null
+  },
+  {
+    "id": "live_multiple_36-12-0",
+    "should_match": false,
     "bi_encoder": null,
     "contextual_bi_encoder": null,
     "cross_encoder": null,

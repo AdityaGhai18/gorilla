@@ -1,5 +1,10 @@
-[
-  {
+{
+  "_comment": "test case: live_simple_257-137-1. Function equivalence is judged so human transfer results in both ways so despite being wrong it returns true",
+  "_comment2": "test case: live_simple_2-2-0. so the dropping california, (ca) and USA to the address preseves semantic meaning but since function docs require format with state and country it returns false",
+  "_comment3": "TODO DELETE vs ADD distinction: todo_delete (live_multiple_37-13-0) should require exact string matching since you need to identify specific items in a list. todo_add (live_multiple_36-12-0) can use semantic similarity since you're just adding new content. Consider using AST evaluation for todo_delete functions.",
+  "_comment4": "Database host format: live_multiple_66-27-0 tests whether dropping 'http://' from host should match. This depends on function documentation requirements - if full URL is required, then dropping protocol should be false.",
+  "test_cases": [
+    {
     "id": "live_simple_37-14-0",
     "function_arg": "answer",
     "candidate": "this text does not talk about logistic regression, i dont know what this even is, i cant answer your question",
@@ -20,8 +25,8 @@
   {
     "id": "live_simple_257-137-1",
     "function_arg": "statement",
-    "candidate": "Can you tell me the latest/slowest time for my package to arrive?", // so here function equivalence is judged so human transfer results in both ways so despite being wrong it returns true
-    "should_match": false
+    "candidate": "Can you tell me the latest/slowest time for my package to arrive?", 
+    "should_match": true
   },
   {
     "id": "live_simple_108-65-0",
@@ -58,5 +63,54 @@
     "function_arg": "query", 
     "candidate": "applications of Langfuse for gen AI projects",
     "should_match": true
+  },
+  {
+    "id": "live_multiple_2-1-0",
+    "function_arg": "loc",
+    "candidate": "2150 Shattuck Ave, Berkeley",
+    "should_match": false
+  },
+  {
+    "id": "live_multiple_4-2-1",
+    "function_arg": "loc",
+    "candidate": "123 Hanoi St",
+    "should_match": false
+  },
+  {
+    "id": "live_multiple_8-4-0",
+    "function_arg": "keyword",
+    "candidate": "beef steak",
+    "should_match": true
+  },
+  {
+    "id": "live_multiple_15-4-7",
+    "function_arg": "keyword",
+    "candidate": "Son Heung-min's recent goal in the most latest game",
+    "should_match": true
+  },
+  {
+    "id": "live_multiple_36-12-0",
+    "function_arg": "content",
+    "candidate": "go on shopping trip at 21:00",
+    "should_match": true
+  },
+  {
+    "id": "live_multiple_37-13-0",
+    "function_arg": "content",
+    "candidate": "go shopping at 9 pm",
+    "should_match": false
+  },
+  {
+    "id": "live_multiple_66-27-0",
+    "function_arg": "host",
+    "candidate": "plgah.ca",
+    "should_match": false
+  },
+  {
+    "id": "live_multiple_36-12-0",
+    "function_arg": "content",
+    "candidate": "go for shopping at 10 pm",
+    "should_match": false
   }
-]
+  ]
+}

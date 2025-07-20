@@ -88,7 +88,11 @@ def main():
     RUN_LLM_MINIMAL = False
     
     with open(UNIT_TEST_PATH, 'r') as f:
-        test_cases = json.load(f)
+        data = json.load(f)
+        test_cases = data.get('test_cases', data)  # Handle both new structure and old array format
+
+    # Run all test cases
+    print(f"Running all {len(test_cases)} test cases.")
 
     possible_answers_data = load_possible_answers(POSSIBLE_ANSWER_PATHS)
     all_results = []

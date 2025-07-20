@@ -43,7 +43,8 @@ def get_function_context(function_name: str, arg_name: str) -> str:
     doc_paths = [
         "../data/multi_turn_func_doc/",
         "../data/",
-        "../data/BFCL_v3_live_simple.json"
+        "../data/BFCL_v3_live_simple.json",
+        "../data/BFCL_v3_live_multiple.json"
     ]
     
     for base_path in doc_paths:
@@ -215,6 +216,14 @@ Otherwise, focus on whether the candidate and expected value would cause the fun
 Allow differences in formatting, abbreviations, or omissions if and only if they do not introduce ambiguity or change the function's output.
 
 When in doubt, prioritize functional equivalence over presentational differences.
+
+WHEN FUNCTION DOCUMENTATION IS LIMITED:
+If the function documentation is minimal or not found, default to "medium_strictness" and focus on whether the values would produce the same functional outcome. Consider the function name and argument name for context clues about the expected behavior.
+
+SEARCH FUNCTION GUIDANCE:
+For search functions (search, find, query), focus on whether the search terms would return the same type of results. Descriptive variations of the same concept should be considered equivalent if they would lead to the same search results.
+
+IMPORTANT: For search functions, additional descriptive words that don't change the core concept should be considered equivalent. Focus on semantic meaning, not exact keyword matching.
 
 INTENT VS DETAIL GUIDANCE:
 - For logging/classification/transfer-to-human functions: Only the intent of the query matters for equivalence. Minor differences in phrasing or grammar, do not affect equivalence.
