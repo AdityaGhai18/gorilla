@@ -124,7 +124,7 @@ class TTSGeneratorBase(ABC):
                             audio_path = output_dir / audio_filename
                             
                             # Generate audio using provider-specific method
-                            audio_bytes = self._generate_audio(transformed_content)
+                            audio_bytes = self._generate_audio(transformed_content, data[i])
                             
                             # Save audio file
                             self.save_audio(audio_bytes, audio_path)
@@ -143,7 +143,7 @@ class TTSGeneratorBase(ABC):
                     audio_path = output_dir / audio_filename
                     
                     # Generate audio using provider-specific method
-                    audio_bytes = self._generate_audio(transformed_content)
+                    audio_bytes = self._generate_audio(transformed_content, data[i])
                     
                     # Save audio file
                     self.save_audio(audio_bytes, audio_path)
