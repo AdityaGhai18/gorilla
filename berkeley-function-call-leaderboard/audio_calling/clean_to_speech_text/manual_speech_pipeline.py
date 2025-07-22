@@ -66,7 +66,7 @@ import json
 import random
 from typing import Dict, List, Optional, Union
 from dataclasses import dataclass
-from granular_speech_pipe import GranularSpeechPipeline, ASRErrors, PipelineConfig, FeatureSelection
+from audio_calling.clean_to_speech_text.granular_speech_pipeline import GranularSpeechPipeline, ASRErrors, PipelineConfig, FeatureSelection
 import datetime
 
 

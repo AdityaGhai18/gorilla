@@ -30,6 +30,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import re
 import inspect
+from bfcl.model_handler.utils import combine_consecutive_user_prompts
 
 load_dotenv()
 
@@ -84,6 +85,7 @@ DEFAULT_FEATURE_ORDER = [
     "confidence_markers",
     "contextual_references"
 ]
+
 
 class GranularSpeechPipeline:
     """Main class for applying granular speech features to text."""
@@ -1256,6 +1258,8 @@ class GranularSpeechPipeline:
             if feature_func:
                 print(f"Stage {i+1}: Applying {feature.feature_name} ({feature.intensity})...")
                 current_text = feature_func(current_text, feature.intensity)
+                # Post-process after each feature application
+                current_text = self._post_process_text(current_text)
                 results[f"after_{feature.feature_name}"] = current_text
                 print(f"  Result: {current_text}")
                 if feature.feature_name in messy_features:
@@ -1272,27 +1276,88 @@ class GranularSpeechPipeline:
         print(f"{'='*50}")
         return results
 
+    def transform_dataset_for_clean_output(self, test_cases, sample_count=None):
+        """
+        Processes a list of test cases, applying the pipeline to each user turn with role 'user', and returns a new list
+        with only the original structure and 'transcript' added to user turns. Removes asr and speech_features.
+        If sample_count is provided, only that many random samples are processed.
+        If a turn group contains multiple user turns, they are combined into one before transformation.
+        """
+        import random
+        if sample_count is not None:
+            test_cases = random.sample(test_cases, min(sample_count, len(test_cases)))
+        processed_results = []
+        for test_case in test_cases:
+            new_test_case = test_case.copy()
+            new_test_case['question'] = []
+            for turn_group in test_case['question']:
+                # Combine consecutive user prompts if more than one user in the group
+                user_count = sum(1 for turn in turn_group if turn.get('role') == 'user')
+                new_turn_group = turn_group
+                if user_count > 1:
+                    new_turn_group = combine_consecutive_user_prompts(turn_group)
+                # Now process as before
+                processed_turn_group = []
+                for turn in new_turn_group:
+                    new_turn = turn.copy()
+                    if new_turn.get('role') == 'user':
+                        result = self.transform_text(new_turn['content'])
+                        new_turn['transcript'] = result['final']
+                        new_turn.pop('asr', None)
+                        new_turn.pop('speech_features', None)
+                    processed_turn_group.append(new_turn)
+                new_test_case['question'].append(processed_turn_group)
+            processed_results.append(new_test_case)
+        return processed_results
+
     def _post_process_text(self, text: str) -> str:
         """Clean up the final text by removing quotes and fixing spacing."""
-        # Remove surrounding quotes if they exist
         text = text.strip()
-        if text.startswith('"') and text.endswith('"'):
-            text = text[1:-1]
-        if text.startswith("'") and text.endswith("'"):
-            text = text[1:-1]
-        
+        # Remove all leading/trailing quotes (single or double, even if repeated)
+        while (text.startswith('"') and text.endswith('"')) or (text.startswith("'") and text.endswith("'")):
+            text = text[1:-1].strip()
+        # Unescape any escaped quotes
+        text = text.replace('\\"', '"').replace("\\'", "'")
+        # After unescaping, remove quotes again if present
+        if (text.startswith('"') and text.endswith('"')) or (text.startswith("'") and text.endswith("'")):
+            text = text[1:-1].strip()
         # Fix spacing around punctuation
         text = re.sub(r'\s+([,.!?])', r'\1', text)  # Remove spaces before punctuation
         text = re.sub(r'([,.!?])\s*([,.!?])', r'\1\2', text)  # Fix double punctuation
-        
         # Fix spacing around dashes and slashes
         text = re.sub(r'\s*-\s*', '-', text)  # Remove spaces around single dashes
         text = re.sub(r'\s*/\s*', '/', text)  # Remove spaces around slashes
-        
         # Fix multiple spaces
         text = re.sub(r'\s+', ' ', text)
-        
         return text.strip()
+
+    @staticmethod
+    def filter_english_test_cases(pipeline, test_cases):
+        """
+        Filters out non-English test cases. Handles both multi-turn and single-turn data.
+        """
+        english_test_cases = []
+        for test_case in test_cases:
+            is_multi_turn = (
+                'question' in test_case and
+                isinstance(test_case['question'], list) and
+                len(test_case['question']) > 0 and
+                isinstance(test_case['question'][0], list)
+            )
+            if is_multi_turn:
+                all_english = True
+                for turn in test_case['question']:
+                    user_content = turn[0]['content']
+                    if not pipeline.is_english_text(user_content):
+                        all_english = False
+                        break
+                if all_english:
+                    english_test_cases.append(test_case)
+            else:
+                user_content = test_case['question'][0][0]['content']
+                if pipeline.is_english_text(user_content):
+                    english_test_cases.append(test_case)
+        return english_test_cases
 
 
 class ASRErrors:
@@ -1433,12 +1498,12 @@ def main():
         temperature=0.8,
         max_retries=3,
         retry_delay=1.0, 
-        asr=True
+        asr=False  # Set ASR to False as requested
     )
     pipeline = GranularSpeechPipeline(config)
     
-    # Use the multi-turn data file
-    data_path = "../data/BFCL_v3_multi_turn_base.json"
+    # Use the data file (path is relative to the current working directory)
+    data_path = "../../data/BFCL_v3_live_simple.json"
     bfcl_data = load_bfcl_data(data_path)
     print(f"Loaded {len(bfcl_data)} test cases from {data_path}")
 
@@ -1479,7 +1544,7 @@ def main():
     # Randomly sample 25 test cases
     import random
     random.seed(5)
-    test_subset = random.sample(english_test_cases, min(25, len(english_test_cases)))
+    test_subset = random.sample(english_test_cases, min(3, len(english_test_cases)))
     if len(test_subset) == 0:
         print("No English test cases found. Exiting.")
         return
@@ -1522,7 +1587,9 @@ def main():
                 print(f"    Error processing turn {turn_idx+1} in test case {i+1}: {e}")
                 continue
         processed_results.append(new_test_case)
-    output_file = "BFCL_v3_multi_turn_base_granular_spoken_final2.json"
+    output_file = "new_results/BFCL_v3_multi_turn_base_granular_spoken.json"
+    import os
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(processed_results, f, indent=2, ensure_ascii=False)
     print(f"\nResults saved to: {output_file}")

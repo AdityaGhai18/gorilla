@@ -15,25 +15,25 @@ def generate_tts_instruction_from_text(
     Calls an LLM to generate a 1-2 line instruction for OpenAI TTS, given the text to be spoken and function context.
     The function context is provided to help the LLM understand the purpose of the speech and generate a more natural, context-aware instruction.
     """
-    prompt_old = (
+    prompt = (
         "You are helping to generate instructions for a text-to-speech model. "
         "Given the following text that will be spoken out-loud by the TTS model, write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
         "MOST IMPORTANTLY: Focus on making it sound like real world speech as though you were just talking to or giving instructions to an assistant.\n\n"
         f"Text: {transformed_content}\n\n"
         "Instruction:"
     )
-    prompt = (
-        "You are helping to generate instructions for a text-to-speech model. "
-        "Given the following text that will be spoken out-loud by the TTS model, and the function context below, "
-        "write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
-        "MOST IMPORTANTLY: Focus on making it sound like real world speech as though you were just talking to or giving instructions to an assistant. "
-        "The function context describes the purpose of the action or command that this speech is associated with. "
-        "Use this to help you choose the most natural and appropriate speaking style.\n\n"
-        f"Text: {transformed_content}\n"
-        f"Function: {function_name}\n"
-        f"Function Description: {function_description}\n\n"
-        "Instruction:"
-    )
+    # prompt = (
+    #     "You are helping to generate instructions for a text-to-speech model. "
+    #     "Given the following text that will be spoken out-loud by the TTS model, and the function context below, "
+    #     "write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
+    #     "MOST IMPORTANTLY: Focus on making it sound like real world speech as though you were just talking to or giving instructions to an assistant. "
+    #     "The function context describes the purpose of the action or command that this speech is associated with. "
+    #     "Use this to help you choose the most natural and appropriate speaking style.\n\n"
+    #     f"Text: {transformed_content}\n"
+    #     f"Function: {function_name}\n"
+    #     f"Function Description: {function_description}\n\n"
+    #     "Instruction:"
+    # )
     print("[TTS Prompt Context]")
     print(f"Transformed Content: {transformed_content}")
     print(f"Function: {function_name}")
