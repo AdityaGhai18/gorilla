@@ -1,6 +1,6 @@
 import os
 from elevenlabs.client import ElevenLabs
-from tts_generator_base import TTSGeneratorBase
+from audio_calling.TTS.scripts.tts_generator_base import TTSGeneratorBase
 
 class ElevenLabsTTSGenerator(TTSGeneratorBase):
     """ElevenLabs TTS Generator implementation."""

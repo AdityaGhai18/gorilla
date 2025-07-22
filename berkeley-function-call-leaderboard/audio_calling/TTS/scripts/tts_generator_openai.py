@@ -1,6 +1,6 @@
 import os
 from openai import OpenAI
-from tts_generator_base import TTSGeneratorBase
+from audio_calling.TTS.scripts.tts_generator_base import TTSGeneratorBase
 import openai
 from typing import Optional, Dict, Any
 
@@ -18,7 +18,7 @@ def generate_tts_instruction_from_text(
     prompt = (
         "You are helping to generate instructions for a text-to-speech model. "
         "Given the following text that will be spoken out-loud by the TTS model, write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
-        "MOST IMPORTANTLY: Focus on making it sound like real world speech as though you were just talking to or giving instructions to an assistant.\n\n"
+        "MOST IMPORTANTLY: Focus on making it sound like real world speech by incporating little features like pauses, intonation, and other natural speech patterns as though you were just talking to or giving instructions to an assistant.\n\n"
         f"Text: {transformed_content}\n\n"
         "Instruction:"
     )

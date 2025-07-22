@@ -13,10 +13,10 @@ load_dotenv()
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-from tts_generator_elevenlabs import ElevenLabsTTSGenerator
-from tts_generator_cartesia import CartesiaTTSGenerator
-from tts_generator_qwen import QwenTTSGenerator
-from tts_generator_openai import OpenAITTSGenerator
+from audio_calling.TTS.scripts.tts_generator_elevenlabs import ElevenLabsTTSGenerator
+from audio_calling.TTS.scripts.tts_generator_cartesia import CartesiaTTSGenerator
+from audio_calling.TTS.scripts.tts_generator_qwen import QwenTTSGenerator
+from audio_calling.TTS.scripts.tts_generator_openai import OpenAITTSGenerator
 
 def get_api_key(varname):
     api_key = os.getenv(varname)
@@ -27,9 +27,9 @@ def get_api_key(varname):
 def main():
     # Configuration - modify these as needed
     PROVIDER = "openai"  # Options: "elevenlabs", "cartesia", "qwen"
-    INPUT_FILE = os.path.join(SCRIPT_DIR, "../latest_results/BFCL_v3_live_simple_granular_spoken_final2.json")
-    NUM_CASES = 10
-    OUTPUT_ROOT = "single_test_output/openai_prompted_text_function_context"  # Specific directory for this single test
+    INPUT_FILE = "audio_calling/clean_to_speech_text/new_results/BFCL_v3_live_simple.json"
+    NUM_CASES = 3
+    OUTPUT_ROOT = "audio_calling/clean_to_speech_text/new_results/audio/BFCL_v3_live_simple.json"  # Output directory for this run
 
     # Provider mapping
     providers = {

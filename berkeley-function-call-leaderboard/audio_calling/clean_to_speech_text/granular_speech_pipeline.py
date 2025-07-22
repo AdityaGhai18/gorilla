@@ -30,7 +30,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import re
 import inspect
-from bfcl.model_handler.utils import combine_consecutive_user_prompts
+from bfcl_eval.model_handler.utils import combine_consecutive_user_prompts
 
 load_dotenv()
 
@@ -410,11 +410,12 @@ class GranularSpeechPipeline:
         }
         
         prompt = f"""
-        You are converting written instructions into natural spoken dialogue. Your job is to COMPLETELY restructure the input to sound like someone actually speaking to a voice assistant, not reading written text.
+        You are converting written instructions into natural spoken dialogue. Your job is to restructure the input to sound like someone actually speaking to a voice assistant, not reading written text.
 
         {intensity_prompts[intensity]}
+        
 
-        CRITICAL: Do NOT just add periods or break sentences. You must completely rephrase and restructure the content to sound natural.
+        CRITICAL: Do NOT just add periods or break sentences. You must completely rephrase and restructure the content to sound natural DO NOT CHANGE THE CONTENT ITSELF.
 
         KEY PRINCIPLES:
         - Completely change the sentence structure and word order
@@ -583,27 +584,22 @@ class GranularSpeechPipeline:
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='slang terms')}
         {intensity_prompts[intensity]}
-        
-        Use slang terms like: "grab", "check out", "look up"
-        
-        CRITICAL: Do NOT make the content unclear or overly casual
-        - Keep technical terms clear and specific
-        - Do NOT use slang that makes the meaning unclear
-        - Prefer simple, clear slang over complex or obscure terms
-        - Maintain the professional/technical nature of the request
-        
+
+        Use slang terms like: "grab", "check out", "look up" ONLY if the request is for something casual, like reminders, food, or informal tasks. 
+        DO NOT use slang for technical, search, or music requests, or when the request is for a specific named entity (like a song, app, or person).
+        If in doubt, do not apply slang.
+
+        CRITICAL: If the request is to search, play, or find a song, app, or specific item, do NOT use slang like 'grab' or 'check out'—just keep the request direct and natural.
+
         Examples of GOOD slang usage:
-        - "get" instead of "retrieve"
-        - "check out" instead of "examine"
-        - "look up" instead of "search for"
-        
+        - "Remind me to buy lunch with a friend today" → "Remind me to grab lunch with my mate today"
+        - "Check out this new app" → "Check out this cool app"
+
         Examples of BAD slang usage (DO NOT DO):
-        - "what's deal with app version" (unclear)
-        - "give me the lowdown" (too casual for technical requests)
-        - "vibes with" (too casual for technical content)
-        
-        Keep the meaning intact and clear.
-        
+        - "Search for 'Baby Shark'" → "Grab 'Baby Shark'" (bad)
+        - "Find the weather" → "Grab the weather" (bad)
+        - "Play 'Despacito'" → "Grab 'Despacito'" (bad)
+
         Input: "{text}"
         Output:
         """

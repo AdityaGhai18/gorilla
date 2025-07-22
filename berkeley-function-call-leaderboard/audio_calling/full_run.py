@@ -16,9 +16,12 @@ def save_transformed_data(data, output_path):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-data_path = "data/BFCL_v3_live_simple.json"  # Set your input file here
-output_file = "audio_calling/clean_to_speech_text/new_results/FCL_v3_live_simple.json"  # Set your output file here
-sample_count = 1  # Set to an integer for a random sample, or None for all
+data_path = "bfcl_eval/data/BFCL_v3_live_multiple.json"  
+output_file = "audio_calling/clean_to_speech_text/new_results/BFCL_v3_live_multiple.json" 
+sample_count = 7  
+
+# === Clean text to speech-like text ===
+
 
 config = PipelineConfig(
     max_features=6,
@@ -34,8 +37,8 @@ print(f"Loading data from: {data_path}")
 data = load_bfcl_data(data_path)
 print(f"Loaded {len(data)} test cases.")
 
-# --- Uncomment to filter for a specific test case by ID ---
-# specific_id = "live_simple_183-108-0"
+# # --- Uncomment to filter for a specific test case by ID ---
+# specific_id = "live_simple_240-125-3"
 # data = [case for case in data if case["id"] == specific_id]
 # print(f"Filtered to {len(data)} test case(s) with id {specific_id}.")
 
@@ -55,4 +58,34 @@ processed = pipeline.transform_dataset_for_clean_output(filtered_data, sample_co
 
 print(f"Saving results to: {output_file}")
 save_transformed_data(processed, output_file)
-print("Done!") 
+print("Done!")
+
+# Post-process and print the transcript of the first test case for inspection
+if processed and processed[0]['question'][0][0].get('transcript'):
+    text = processed[0]['question'][0][0]['transcript']
+    if text.startswith('"') and text.endswith('"'):
+        text = text[1:-1]
+    print("First transcript (post-processed):")
+    print(text)
+
+# === TTS with Openai ===
+from audio_calling.TTS.scripts.tts_generator_openai import OpenAITTSGenerator
+import os
+
+def get_api_key(varname):
+    api_key = os.getenv(varname)
+    if not api_key:
+        raise EnvironmentError(f"{varname} environment variable not set.")
+    return api_key
+
+PROVIDER = "openai"
+NUM_CASES = sample_count if sample_count is not None else len(processed)
+OUTPUT_ROOT = "audio_calling/clean_to_speech_text/new_results/audio/BFCL_v3_live_multiple.json"
+
+voice = os.getenv("OPENAI_TTS_VOICE", "coral")
+model = os.getenv("OPENAI_TTS_MODEL", "gpt-4o-mini-tts")
+instructions = os.getenv("OPENAI_TTS_INSTRUCTIONS", "Speak in a natural, clear tone.")
+api_key = get_api_key("OPENAI_API_KEY")
+generator = OpenAITTSGenerator(api_key, output_root=OUTPUT_ROOT, model=model, voice=voice, instructions=instructions)
+generator.run(output_file, NUM_CASES)
+print("TTS audio generation complete!") 

@@ -1,7 +1,7 @@
 import os
 import requests
 import dashscope
-from tts_generator_base import TTSGeneratorBase
+from audio_calling.TTS.scripts.tts_generator_base import TTSGeneratorBase
 
 class QwenTTSGenerator(TTSGeneratorBase):
     """Qwen TTS Generator implementation using working dashscope.audio.qwen_tts.SpeechSynthesizer.call approach."""

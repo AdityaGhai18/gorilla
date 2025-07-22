@@ -14,12 +14,7 @@ class TTSGeneratorBase(ABC):
         else:
             # Default to audio_calling/audio/provider_name for output
             self.output_root = Path(__file__).parent.parent / 'audio' / provider_name
-        self.folder_map = {
-            'simple': self.output_root / 'simple',
-            'multiple': self.output_root / 'multiple',
-            'multi_turn': self.output_root / 'multi_turn',
-        }
-        self.setup_output_directories()
+        self.output_root.mkdir(parents=True, exist_ok=True)
     
     @abstractmethod
     def _initialize_client(self):
@@ -38,14 +33,17 @@ class TTSGeneratorBase(ABC):
     
     def load_json_data(self, file_path: str) -> List[dict]:
         """Load and parse JSON data from file."""
-        # Try relative to audio_calling directory first (for latest_results/)
-        input_path = Path(__file__).parent.parent / file_path
-        if not input_path.exists():
-            # If not found, try relative to current file
-            input_path = Path(__file__).parent / file_path
-        if not input_path.exists():
-            raise FileNotFoundError(f"File not found: {file_path}")
-        
+        input_path = Path(file_path)
+        if input_path.exists():
+            pass  # use as is
+        else:
+            # Try relative to audio_calling directory first (for latest_results/)
+            input_path = Path(__file__).parent.parent / file_path
+            if not input_path.exists():
+                # If not found, try relative to current file
+                input_path = Path(__file__).parent / file_path
+            if not input_path.exists():
+                raise FileNotFoundError(f"File not found: {file_path}")
         with open(input_path, 'r') as f:
             return json.load(f)
     
@@ -63,27 +61,25 @@ class TTSGeneratorBase(ABC):
             raise ValueError("Could not determine data format")
     
     def extract_transformed_content(self, data: List[dict], test_index: int, turn_index: int = 0) -> str:
-        """Extract transformed_content from JSON structure."""
+        """Extract transcript (preferred) or transformed_content from JSON structure."""
         if test_index >= len(data):
             raise IndexError(f"Test index {test_index} out of range")
-        
         test_case = data[test_index]
         if 'question' not in test_case:
             raise ValueError(f"Test case {test_index} missing 'question' field")
-        
         question = test_case['question']
         if not isinstance(question, list) or len(question) <= turn_index:
             raise IndexError(f"Turn index {turn_index} out of range")
-        
         turn = question[turn_index]
         if not isinstance(turn, list) or len(turn) == 0:
             raise ValueError(f"Invalid turn structure at index {turn_index}")
-        
         utterance = turn[0]
-        if 'transformed_content' not in utterance:
-            raise ValueError(f"Missing 'transformed_content' in utterance")
-        
-        return utterance['transformed_content']
+        if 'transcript' in utterance:
+            return utterance['transcript']
+        elif 'transformed_content' in utterance:
+            return utterance['transformed_content']
+        else:
+            raise ValueError(f"Missing 'transcript' and 'transformed_content' in utterance")
     
     def save_audio(self, audio_bytes: bytes, file_path: Path):
         """Save audio bytes to file."""
@@ -92,62 +88,35 @@ class TTSGeneratorBase(ABC):
         print(f"Saved: {file_path}")
     
     def process_test_cases(self, data: List[dict], num_cases: int = 1, input_filename: str = ""):
-        """Process test cases and generate audio files."""
-        format_type = self.detect_format(data)
-        
-        # Refine format detection for simple vs multiple
-        if format_type == 'simple' and 'multiple' in input_filename:
-            format_type = 'multiple'
-        
-        print(f"Detected format: {format_type}")
-        output_dir = self.folder_map[format_type]
-        
-        # Determine file extension based on provider
+        """Process test cases and generate audio files. All audio files go directly in output_root."""
         file_extension = "mp3" if self.provider_name == "cartesia" else "wav"
-        
         for i in range(min(num_cases, len(data))):
             test_id = data[i].get('id', f'test_case_{i}')
-            
             try:
-                if format_type == 'multi_turn':
-                    # Process ALL turns for this test case before moving to the next
-                    question = data[i]['question']
+                # Try to process all turns for multi-turn, else just first turn
+                question = data[i]['question']
+                if isinstance(question, list) and len(question) > 1:
                     for turn_idx in range(len(question)):
                         try:
-                            transformed_content = self.extract_transformed_content(data, i, turn_idx)
+                            content = self.extract_transformed_content(data, i, turn_idx)
                             audio_filename = f"{test_id}_turn{turn_idx+1}.{file_extension}"
-                            
-                            if not transformed_content:
-                                print(f"No transformed_content found in test case {i+1}, turn {turn_idx+1}.")
+                            if not content:
+                                print(f"No transcript/transformed_content found in test case {i+1}, turn {turn_idx+1}.")
                                 continue
-                            
-                            audio_path = output_dir / audio_filename
-                            
-                            # Generate audio using provider-specific method
-                            audio_bytes = self._generate_audio(transformed_content, data[i])
-                            
-                            # Save audio file
+                            audio_path = self.output_root / audio_filename
+                            audio_bytes = self._generate_audio(content, data[i])
                             self.save_audio(audio_bytes, audio_path)
-                            
                         except Exception as e:
                             print(f"Error processing test case {i+1}, turn {turn_idx+1}: {e}")
                 else:
-                    # Process single turn for simple/multiple
-                    transformed_content = self.extract_transformed_content(data, i, 0)
+                    content = self.extract_transformed_content(data, i, 0)
                     audio_filename = f"{test_id}.{file_extension}"
-                    
-                    if not transformed_content:
-                        print(f"No transformed_content found in test case {i+1}.")
+                    if not content:
+                        print(f"No transcript/transformed_content found in test case {i+1}.")
                         continue
-                    
-                    audio_path = output_dir / audio_filename
-                    
-                    # Generate audio using provider-specific method
-                    audio_bytes = self._generate_audio(transformed_content, data[i])
-                    
-                    # Save audio file
+                    audio_path = self.output_root / audio_filename
+                    audio_bytes = self._generate_audio(content, data[i])
                     self.save_audio(audio_bytes, audio_path)
-                
             except Exception as e:
                 print(f"Error processing test case {i+1}: {e}")
     
