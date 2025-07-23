@@ -64,7 +64,6 @@ DEFAULT_FEATURE_ORDER = [
     "self_corrections",
     "false_starts",
     "thinking_aloud",
-    "backchanneling",
     "emotional_markers",
     "restarts_repairs",
     "ellipsis_proforms",
@@ -186,8 +185,7 @@ class GranularSpeechPipeline:
         - thinking_aloud: Express thinking or searching for words, e.g., 'let me see'
         - false_starts: Start to say something, then restart, e.g., 'I want to—wait, can you...'
         - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
-        - backchanneling: Conversational markers (yeah, so, right, okay)
-        - emotional_markers: Emotion or attitude (oh, right, seriously)
+        - emotional_markers: Emotion, attitude, or conversational cues (okay, right, yeah, oh, wow, seriously, etc.)
         - article_dropping: Drop articles where natural
         - preposition_dropping: Drop prepositions where natural
         - subject_dropping: Drop subjects where natural
@@ -233,7 +231,6 @@ class GranularSpeechPipeline:
         - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
 
         GROUP 3 - CONVERSATIONAL MARKERS (include 1):
-        - backchanneling: Conversational markers (yeah, so, right, okay)
         - emotional_markers: Emotion or attitude (oh, right, seriously)
         - repetitions: Repeat words or phrases naturally
 
@@ -258,7 +255,6 @@ class GranularSpeechPipeline:
         - self_corrections: Correct oneself with an actual correction, e.g., 'the file... no, the folder'
         - false_starts: Start to say something, then restart or change direction, e.g., 'I want to—wait, can you...'
         - thinking_aloud: Express thinking or searching for words, e.g., 'let me see', use sparingly
-        - backchanneling: Conversational markers (yeah, so, right, okay), use sparingly
         - emotional_markers: Emotion or attitude (oh, right, seriously), use sparingly
         - spelling_noise: Spell out names/terms that might be misunderstood, e.g., 'that's S-H-I-S-H-I-R-P-A-T-I-L, ShishirPatil'
         - numbers_noise: Say numbers/addresses as a real person would (ALWAYS include if any numbers/alphanumerics)
@@ -280,12 +276,12 @@ class GranularSpeechPipeline:
         CALENDAR SCHEDULING:
         Written: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
         Spoken: "Schedule a meeting with marketing Tuesday at two-thirty. Send invites to everyone."
-        Features: disfluencies, numbers_noise, contractions, simplified_verbs, backchanneling
+        Features: disfluencies, numbers_noise, contractions, simplified_verbs, emotional_markers
 
         DOCUMENT EDITING:
         Written: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
         Spoken: "Update the quarterly report with Q3 data. Remove the old stats."
-        Features: disfluencies, simplified_verbs, contractions, thinking_aloud
+        Features: disfluencies, simplified_verbs, thinking_aloud
 
         MUSIC PLAYBACK:
         Written: "I would like to play the album 'Midnight Dreams' by the artist 'Stellar Echo' and set the volume to 75% while enabling shuffle mode."
@@ -310,12 +306,12 @@ class GranularSpeechPipeline:
         FILE MANAGEMENT:
         Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
         Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
-        Features: disfluencies, self_corrections, simplified_verbs, contractions, thinking_aloud
+        Features: disfluencies, self_corrections, simplified_verbs, thinking_aloud
 
         SOCIAL MEDIA:
         Written: "Please post a status update on my social media account with the message 'Excited to announce our new product launch!' and include the hashtag #innovation."
         Spoken: "Post a status excited to announce our new product launch. Add hashtag innovation."
-        Features: disfluencies, simplified_verbs, contractions, emotional_markers
+        Features: disfluencies, simplified_verbs, emotional_markers
 
         SELECTION GUIDELINES:
         - sentence_restructuring is ALWAYS applied automatically (don't select it)
@@ -337,6 +333,8 @@ class GranularSpeechPipeline:
         - Use proper English - some informal is okay but maintain good grammar
         - DO NOT add unnecessary filler like "let me check" after commands
         - DO NOT make technical terms vague - keep them specific and clear
+        - Do NOT select both disfluencies and emotional_markers for the same utterance unless it is extremely natural. In most cases, only one conversational marker (like "uh", "oh", "okay", etc.) should appear at the start of a sentence. If the input already sounds hesitant or emotional, do not add another marker.
+        - Be very conservative with conversational and emotional markers—avoid making the speech sound overly hesitant or artificial/comical by stacking multiple markers.
 
         Output a JSON object with a "features" key, whose value is an array of objects. Each object should have: feature_name, intensity (light/moderate/heavy), confidence (0.0-1.0).
 
@@ -416,6 +414,7 @@ class GranularSpeechPipeline:
         
 
         CRITICAL: Do NOT just add periods or break sentences. You must completely rephrase and restructure the content to sound natural DO NOT CHANGE THE CONTENT ITSELF.
+        DO NOT CHANGE THE MEANING OF THE SENTENCE, IF IN DOUBT DO LESS RESTRUCTURING RATHER THAN CHANGE MEANING
 
         KEY PRINCIPLES:
         - Completely change the sentence structure and word order
@@ -424,7 +423,7 @@ class GranularSpeechPipeline:
         - Remove ALL formal language and politeness
         - Use natural speech patterns and word choices
         - Make it flow like someone thinking out loud
-        - Be aggressive with restructuring - don't be timid
+        - Be relativelt aggressive with restructuring - don't be timid - BUT DO NOT CHANGE THE MEANING OF THE INSTRUCTION
         - Change the entire approach to how the request is made
 
         EXAMPLES:
@@ -439,7 +438,6 @@ class GranularSpeechPipeline:
 
         Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
         Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
-
         
         Input: "{text}"
         Output:
@@ -451,9 +449,9 @@ class GranularSpeechPipeline:
 
     def apply_disfluencies(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Add 1-2 light disfluencies (filler words or hesitations) naturally",
-            "moderate": "Add 2-3 moderate disfluencies (filler words or hesitations) naturally",
-            "heavy": "Add 3-4 moderate disfluencies (filler words or hesitations) naturally"
+            "light": "Add 1 light disfluency (filler word or hesitation) naturally.",
+            "moderate": "Add 1 light disfluency (filler word or hesitation) naturally.",
+            "heavy": "Add 1 light disfluency (filler word or hesitation) naturally."
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='disfluencies')}
@@ -463,9 +461,9 @@ class GranularSpeechPipeline:
         - Filler words: "um", "uh", "like", "you know", "I mean"
         - Hesitations: trailing off ("I..."), incomplete thoughts, natural pauses
         - Use naturally - people do use disfluencies when speaking to voice assistants
-        - 1-2 disfluencies per sentence is normal
+        - 1- disfluency per sentence is normal - sometimes 2 is okay if it sounds natural
         - Do NOT overdo it - this should sound natural, not like someone struggling to speak
-        - Place them where people naturally hesitate (before important words, when thinking)
+        - Place them where people naturally hesitate (before important words, when thinking not just randomly and definitely not at the end of the sentence)
         
         Examples:
         - "Get me... a Comfort Uber from twenty-twenty Addison Street"
@@ -677,6 +675,29 @@ class GranularSpeechPipeline:
         {intensity_prompts[intensity]}
         
         Drop prepositions (in, on, at, for) where it sounds natural in spoken English.
+
+        CRITICAL GUIDELINES:
+        - Only drop prepositions if the sentence remains clear, natural, and grammatically correct.
+        - Do NOT drop prepositions if it makes the sentence sound awkward, incomplete, or confusing.
+        - Do NOT drop prepositions that are required for location, time, or other essential information (e.g., "in the kitchen", "at 5pm", "on the table").
+        - If dropping a preposition makes the sentence ambiguous or changes the meaning, do NOT apply the change.
+        - If in doubt, do NOT drop the preposition.
+        - Never drop prepositions from common phrases or idioms where they are required for natural English.
+
+        Examples of GOOD preposition dropping:
+        - "Get the weather in New York" → "Get weather in New York"
+        - "Check the status on my order" → "Check status on my order"
+        - "Turn on the lights in the living room" → "Turn on lights in the living room"
+
+
+        Examples of BAD preposition dropping (DO NOT DO):
+        - "Play music in the kitchen" → "Play music kitchen" (bad)
+        - "Set alarm for 7am" → "Set alarm 7am" (bad)
+        - "Put it on the table" → "Put it table" (bad)
+        - "Meet me at the park" → "Meet me park" (bad)
+        - "I'll be in San Ramon and want to go to a salon." →  "look up salon in San Ramon." (dont remove the a, CHANGES SHOULD NOT IMPACT MEANING)
+
+
         Input: "{text}"
         Output:
         """
@@ -745,6 +766,7 @@ class GranularSpeechPipeline:
         - Do NOT create ungrammatical sentences
         - If reordering breaks grammar, do NOT apply the change
         - Output must be proper, understandable English
+        - DO NOT REORDER IN A WAY THAT BREAKS THE FLOW OF THE SENTENCE AND SOUNDS UNNATURAL
         
         IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
 
@@ -754,6 +776,8 @@ class GranularSpeechPipeline:
         - "I can't answer" → "Can't answer that, I" (incomplete)
         - "I can't answer that" → "Can't answer that, I can't" (repetition)
         - "Logistic regression isn't mentioned" → "Isn't mentioned, logistic regression" (weird flow, incorrect meaning and grammar)
+        - "Oh, find a reasonably-priced coffeehouse in New York." → "Find in New York, oh, a reasonably-priced coffeehouse."
+
         
         Input: "{text}"
         Output:
@@ -947,30 +971,6 @@ class GranularSpeechPipeline:
             return text
         return result
 
-    def apply_backchanneling(self, text: str, intensity: str) -> str:
-        intensity_prompts = {
-            "light": "Add 1 backchanneling marker naturally",
-            "moderate": "Add 1-2 backchanneling markers naturally",
-            "heavy": "Add 2-3 backchanneling markers naturally"
-        }
-        
-        prompt = f"""
-        {INSTRUCTION_TEMPLATE.format(feature='backchanneling')}
-        {intensity_prompts[intensity]}
-        
-        Use natural backchanneling markers that people actually use with voice assistants:
-        - "okay", "right", "yeah", "sure"
-        - Use sparingly and only where it sounds natural
-        - Don't overdo it - people don't constantly say "yeah" to voice assistants
-        
-        Input: "{text}"
-        Output:
-        """
-        result = self._call_openai(prompt)
-        if not result.strip():
-            return text
-        return result
-
     def apply_emotional_markers(self, text: str, intensity: str) -> str:
         intensity_prompts = {
             "light": "Add 1 emotional marker naturally",
@@ -984,9 +984,28 @@ class GranularSpeechPipeline:
         
         Use natural emotional markers that people actually use with voice assistants:
         - "oh" (realization), "right" (agreement), "yeah" (confirmation)
-        - "okay" (acknowledgment), "sure" (agreement)
+        - "okay" (acknowledgment), "sure" (agreement), "thanks" (at the end)
         - Use sparingly and only where it sounds natural
         - Avoid forced emotions like "seriously", "ugh", "wow" unless contextually appropriate
+        - Be careful at what part of the sentence you add the emotional marker...DO NOT BREAK THE FLOW OF THE SENTENCE. EXAMPLE: DO NOT ADD OKAY TO THE END OF SENTENCES
+        - Don't overdo it—people don't constantly use these markers with voice assistants.
+        - Do NOT remove or replace existing disfluencies (like "uh", "um", "er", "like") when adding emotional/conversational markers.
+
+        Examples of GOOD usage:
+        - "Okay, find a coffeehouse in New York."
+        - "Oh, I forgot to mention, add milk."
+        - "Right, play some music."
+        - "Find me some movies with Brad Pitt in them, thanks."
+        - "You know, I could use a coffee right now. Find a coffeehouse in New York."
+
+        Examples of BAD usage (DO NOT DO):
+        - "Find a coffeehouse in New York, okay."
+        - "Play some music, right."
+        - "Add milk to my list, sure"
+        - "Find a coffeehouse in New York, you know."
+
+
+
         
         Input: "{text}"
         Output:
