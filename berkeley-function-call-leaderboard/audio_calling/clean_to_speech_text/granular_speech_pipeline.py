@@ -76,13 +76,11 @@ DEFAULT_FEATURE_ORDER = [
     "article_dropping",
     "preposition_dropping",
     "subject_dropping",
-    "word_reordering",
-    "vague_references",
-    "approximate_quantifiers",
-    "simplified_verbs",
+    "label_naturalization",
     "detail_dropping",
-    "confidence_markers",
-    "contextual_references"
+    "word_reordering",
+    "simplified_verbs",
+    "filepath_verbalization"
 ]
 
 
@@ -175,6 +173,7 @@ class GranularSpeechPipeline:
         IMPORTANT: People talking to voice assistants are typically DIRECT, CASUAL, and COMMAND-LIKE. They want quick answers and don't waste time with formal language or excessive politeness. Think of how people actually talk to Siri / Alexa - they're direct and to the point.
 
         CRITICAL RULE: BE CONSERVATIVE: If input is already speech-like, apply minimal changes
+        CRITICAL: NEVER modify, remove, or paraphrase away links/URLs, file paths, or similar technical references. Always preserve them in the output, either verbalized or as-is.
 
         PRIORITY FEATURES (select 4-6 from these):
         - contractions: Use wanna, gonna, lemme, gimme, etc.
@@ -270,6 +269,8 @@ class GranularSpeechPipeline:
         - approximate_quantifiers: like 10 minutes when something like 600 seconds is used, around 5 files
         - simplified_verbs: get instead of retrieve, check instead of verify
         - detail_dropping: Drop unnecessary formal details (state abbreviations, titles, company suffixes)
+        - label_naturalization: When a colon is used to introduce a label, field, or quoted value, insert a natural filler like 'named', 'called', or 'titled' after the colon or before the value to make the speech sound more natural. For example, "Create a to-do: 'Go for shopping at 9 PM.'" should become "Create a to-do named 'Go for shopping at 9 PM.'". Only do this when it improves the conversational flow.
+        - filepath_verbalization: For any file path, verbalize it in the most natural and context-appropriate way. For short/simple paths (like 'image.png' or 'vikhyatk/moondream2'), spell out or say as-is. For long/complex paths (like 'd:/playground/pc_contoller/env/Scripts/python.exe'), use a hierarchical, natural spoken description (e.g., 'in the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe'). CRITICAL: NEVER combine this with symbol_pronunciation or spelling_noise for the same file path. Only verbalize file paths ONCE, using the most natural method. Avoid duplication and messy outputs with any other verbalization selected.
 
         EXAMPLES BY INPUT TYPE:
 
@@ -319,7 +320,9 @@ class GranularSpeechPipeline:
         - ALWAYS include spelling_noise if input has names, usernames, or complex terms (60% of cases should have spelling_noise)
         - DO NOT include spelling_noise for common English words, standard terms
         - You MUST select at least 1 feature from each of the 5 groups above
-        - Total of 4-6 features maximum (sentence_restructuring + your selections) - BE CONSERVATIVE IN CASES SIMILAR TO SPEECH
+        - Total of 4-6 features maximum (sentence_restructuring + 3-5 others)
+        - If the input is very short (e.g., 1-3 words) or a simple direct command, apply zero or at most one minimal feature (preferably none). Example: 'Order pizza.'
+        - For direct, confident, or blunt commands where the user clearly knows what they want, do NOT add disfluencies (e.g., 'uh', 'um') in most cases. Only a small proportion (e.g., 30%) of such commands should have any disfluency, and the majority (70%) should be clean and direct. Example: 'Turn off the lights.' should usually remain without disfluencies.
         - INCREASE disfluencies frequency - 60% of cases should have disfluencies (um, uh, like, pauses ...)
         - Focus on making it sound direct and efficient, not overly polite or formal
         - Choose features that make speech sound natural, not robotic or forced
@@ -327,6 +330,7 @@ class GranularSpeechPipeline:
         - Focus on natural conversational flow rather than artificial speech patterns
         - Ensure diversity across groups - don't stack too many features from the same group
         - IMPORTANT: Only apply changes when needed. If the input is already speech-like, apply minimal changes
+        - If the input is very short or a super simple direct command (like 'Order pizza', 'Play music', 'Get weather'), apply zero or at most one minimal feature (preferably none). Do not add emotional markers or unnecessary changes to these utterances. Leave them as-is unless absolutely necessary.
         - Preserve all function-calling content completely unchanged
         - CRITICAL: NEVER modify content within quotes - keep quoted text EXACTLY as it is, including punctuation and spacing
         - CRITICAL: NEVER modify access tokens, passwords, or key information that could act as arguments for downstream function calling task - if you need to spell them out, add formatting info like "access token abc one two three x y z, all lowercase, no spaces"
@@ -335,6 +339,7 @@ class GranularSpeechPipeline:
         - DO NOT make technical terms vague - keep them specific and clear
         - Do NOT select both disfluencies and emotional_markers for the same utterance unless it is extremely natural. In most cases, only one conversational marker (like "uh", "oh", "okay", etc.) should appear at the start of a sentence. If the input already sounds hesitant or emotional, do not add another marker.
         - Be very conservative with conversational and emotional markers—avoid making the speech sound overly hesitant or artificial/comical by stacking multiple markers.
+        - Select label_naturalization whenever a label, event, or item is referenced by name (especially after a colon, in quotes, or with a unique identifier). For example: 'move the event named Alice-One-one-One...'.
 
         Output a JSON object with a "features" key, whose value is an array of objects. Each object should have: feature_name, intensity (light/moderate/heavy), confidence (0.0-1.0).
 
@@ -412,32 +417,26 @@ class GranularSpeechPipeline:
 
         {intensity_prompts[intensity]}
         
+        CRITICAL:
+        - Do NOT change the meaning of the sentence. If in doubt, do less restructuring.
+        - Do not remove the context of any order, request, or command if it is essential for the meaning.
+        - NEVER modify, remove, or paraphrase away links/URLs, file paths, or similar technical references. Always preserve them in the output, either verbalized or as-is.
 
-        CRITICAL: Do NOT just add periods or break sentences. You must completely rephrase and restructure the content to sound natural DO NOT CHANGE THE CONTENT ITSELF.
-        DO NOT CHANGE THE MEANING OF THE SENTENCE, IF IN DOUBT DO LESS RESTRUCTURING RATHER THAN CHANGE MEANING
+        GOOD Examples:
+        - Original: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
+          Spoken: "Schedule a meeting with marketing Tuesday at two-thirty. Send invites to everyone."
+        - Original: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
+          Spoken: "Update the quarterly report with Q3 data. Remove the old stats."
+        - Original: "add todo with content go to sleep at 9 pm"
+          Spoken: "Uh, add a to-do: sleep at nine PM."
+        - Original: "Could you help me classify the following customer queries into the appropriate categories?"
+          Spoken: "Sure, could you sort these customer questions into categories: ..."
 
-        KEY PRINCIPLES:
-        - Completely change the sentence structure and word order
-        - Use natural conversational flow and rhythm
-        - Be direct and casual - people want quick answers
-        - Remove ALL formal language and politeness
-        - Use natural speech patterns and word choices
-        - Make it flow like someone thinking out loud
-        - Be relativelt aggressive with restructuring - don't be timid - BUT DO NOT CHANGE THE MEANING OF THE INSTRUCTION
-        - Change the entire approach to how the request is made
-
-        EXAMPLES:
-        Written: "I would like to schedule a meeting with the marketing team for next Tuesday at 2:30 PM in the conference room, and could you please send out calendar invitations to all participants?"
-        Spoken: "Schedule a meeting with marketing Tuesday at two-thirty. Send invites to everyone."
-
-        Written: "Please modify the quarterly report document by adding the financial data from Q3 and removing the outdated statistics from the previous version."
-        Spoken: "Update the quarterly report with Q3 data. Remove the old stats."
-
-        Written: "I would like to play the album 'Midnight Dreams' by the artist 'Stellar Echo' and set the volume to 75% while enabling shuffle mode."
-        Spoken: "Play Midnight Dreams by Stellar Echo. Volume at seventy-five. Turn shuffle on."
-
-        Written: "I would like to access the quarterly report document located in the shared drive folder and create a backup copy in my personal directory."
-        Spoken: "Get the quarterly report from shared drive. Make a backup in my directory."
+        BAD Examples (DO NOT DO):
+        - Original: "I'd like to modify my order by making the dish called 'chicken dish' to a new spice level 'extra spicy', please."
+          Bad: "Change the chicken dish to extra spicy." (Loses the 'order' context)
+        - Original: "I have a list of numerical values: [2.5, 3.6, 4.1, 5.2], and I need to apply normalization to them."
+          Bad: "Make these numbers normal: two point five, three point six, four point one, five point two." (Vague, loses the technical meaning of 'normalize')
         
         Input: "{text}"
         Output:
@@ -461,14 +460,31 @@ class GranularSpeechPipeline:
         - Filler words: "um", "uh", "like", "you know", "I mean"
         - Hesitations: trailing off ("I..."), incomplete thoughts, natural pauses
         - Use naturally - people do use disfluencies when speaking to voice assistants
-        - 1- disfluency per sentence is normal - sometimes 2 is okay if it sounds natural
+        - 1 disfluency per sentence is normal - sometimes 2 is okay if it sounds natural
         - Do NOT overdo it - this should sound natural, not like someone struggling to speak
-        - Place them where people naturally hesitate (before important words, when thinking not just randomly and definitely not at the end of the sentence)
+        - Place them where people naturally hesitate (before important words, when thinking, not just randomly and definitely not at the end of the sentence)
+        - It is natural to use "um" at the start of a sentence when the speaker is thinking, hesitating, or formulating a question or complex command.
+        - Only place "um" at the start if the sentence is a question, a complex/uncertain request, or if the speaker is likely to be thinking.
+        - Avoid stacking "um" with "oh" or "uh" at the start.
+        - For direct, confident commands, avoid "um" at the start.
+        - Prefer to insert "uh" instead of "um" between different ideas or clauses, especially where the speaker might pause to think.
         
-        Examples:
+        GOOD Examples:
         - "Get me... a Comfort Uber from twenty-twenty Addison Street"
+        - "Um, what's the weather in Tel Aviv?" 
         - "What's the weather in... Tel Aviv?"
         - "I need to... get the details for user ID seventy-eight ninety"
+        - "Um, get user details for ID seventy-eight ninety with black as special request."
+        - "Uh, change my profile with a new email, uh, john dot doe at example dot com, and, um, age, thirty. User ID's one two three four five, one two three four five." (listing multiple changes, and might naturally hesitate)
+        - "Order five burgers and, um, six chicken wings from Uber Pitada, that's U-B-E-R P-I-T-A-D-A, Uber Pitada." (perfect placement between 2 things trying to recall / think next item)
+
+
+
+        BAD Examples (DO NOT DO):
+        - "Um, uh, what's the weather in Tel Aviv?" (clustering at the start is bad)
+        - "Oh, uh, what's the weather in Tel Aviv?" (clustering at the start is bad)
+        - "What's the, uh, weather today in Boston in Fahrenheit?" (poorly placed: The user doesnt need to think this is not that complex a request and it is not between two ideas)
+        - "Uh, just grab me a Whopper, ya know, burger." (uncomfortable, awkward, unnatural with poor flow of speech)
         
         Input: "{text}"
         Output:
@@ -539,7 +555,7 @@ class GranularSpeechPipeline:
         - "want to" → "wanna", "going to" → "gonna", "let me" → "lemme"
         - "give me" → "gimme", "can not" → "can't", "do not" → "don't"
         
-        Real speech often uses contractions. Make it sound casual and natural but dont over do it
+        Real speech often uses contractions. Make it sound casual and natural but dont over do it especially if it impacts meaning or ruins flow of speech
         
         IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
         
@@ -608,9 +624,9 @@ class GranularSpeechPipeline:
 
     def apply_symbol_pronunciation(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Add 1 light symbol pronunciation naturally",
-            "moderate": "Add 1-2 moderate symbol pronunciations naturally",
-            "heavy": "Add 2-3 heavy symbol pronunciations naturally"
+            "light": "Pronounce 1-2 symbols (like slash, dash, dot, at) in a natural way",
+            "moderate": "Pronounce several symbols (like slash, dash, dot, at) in a natural way",
+            "high": "Pronounce many symbols (like slash, dash, dot, at) in a natural way"
         }
         
         prompt = f"""
@@ -619,6 +635,27 @@ class GranularSpeechPipeline:
         
         Use symbol pronunciations like: "slash", "dash", "at"
         Keep the meaning intact.
+        
+        IMPORTANT:
+        - For decimal numbers, always say "point" (e.g., "two point five"), never "dot".
+        - Use "dot" only for URLs, emails, or file names (e.g., "gmail dot com", "file dot txt").
+        - For links/URLs: If the link is short (e.g., a YouTube link), spelling it out is acceptable. If the link is long, do NOT spell it out—just include it as-is. NEVER double spell or verbalize a link if another feature has already done so.
+        - For other symbols, use "slash", "dash", etc., only when it makes sense in context.
+        
+        GOOD Examples:
+        - "2.5" → "two point five"
+        - "3.6" → "three point six"
+        - "gmail.com" → "gmail dot com"
+        - "file.txt" → "file dot txt"
+        - 'using this link: h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.'
+        
+        BAD Examples (DO NOT DO):
+        - "2.5" → "two dot five" (wrong for numbers)
+        - "3.6" → "three dot six" (wrong for numbers)
+        - "gmail.com" → "gmail point com" (wrong for URLs)
+        - "file.txt" → "file point txt" (wrong for file names)
+        - 'using this link: h t t p s colon slash slash w w w dot example dot com slash a slash very slash long slash path slash with slash lots slash of slash segments question mark query equals long.' (do NOT spell out long links)
+        - 'using this link: h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q. h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.' (never double spell)
         
         Input: "{text}"
         Output:
@@ -859,10 +896,23 @@ class GranularSpeechPipeline:
         {INSTRUCTION_TEMPLATE.format(feature='simplified verbs')}
         {intensity_prompts[intensity]}
         
-        Use simpler verbs like: "get" instead of "retrieve", "check" instead of "verify"
-        Keep the meaning intact.
-        
-        IMPORTANT: Do NOT change any numbers or alphanumeric identifiers that are already in spoken form (like "seventy-eight ninety", "twenty-twenty", etc.). Keep them exactly as they are.
+        CRITICAL:
+        - Only simplify verbs if it does NOT change the core meaning or make the sentence awkward.
+        - Never replace 'make' or 'change' with 'do' unless it is natural in spoken English.
+        - Do NOT use 'do' for food orders or modifications (e.g., never say 'do the chicken dish extra spicy').
+        - If in doubt, keep the original verb.
+
+        GOOD Examples:
+        - "retrieve" → "get"
+        - "verify" → "check"
+        - "purchase" → "buy"
+        - "classify" → "sort" (if context is casual and meaning is preserved)
+
+        BAD Examples (DO NOT DO):
+        - "make the chicken dish extra spicy" → "do the chicken dish extra spicy" (unnatural)
+        - "change the chicken dish to extra spicy" → "do the chicken dish extra spicy" (unnatural)
+        - "normalize these numbers" → "make these numbers normal" (vague, loses technical meaning)
+        - "classify these queries" → "sort these queries" (if context requires technical precision)
         
         Input: "{text}"
         Output:
@@ -990,22 +1040,25 @@ class GranularSpeechPipeline:
         - Be careful at what part of the sentence you add the emotional marker...DO NOT BREAK THE FLOW OF THE SENTENCE. EXAMPLE: DO NOT ADD OKAY TO THE END OF SENTENCES
         - Don't overdo it—people don't constantly use these markers with voice assistants.
         - Do NOT remove or replace existing disfluencies (like "uh", "um", "er", "like") when adding emotional/conversational markers.
-
+        - Only use 'oh' when the speaker is expressing realization, surprise, or correcting themselves.
+        - Do NOT use 'oh' as a generic sentence starter for commands or direct requests.
+        - Avoid stacking 'oh' and any other emotional markers with disfluencies (e.g., do not use 'Oh, uh,' or 'Um, oh,').
+        - If the sentence is a direct command, do not add 'oh' at the start.
+        
         Examples of GOOD usage:
         - "Okay, find a coffeehouse in New York."
         - "Oh, I forgot to mention, add milk."
         - "Right, play some music."
         - "Find me some movies with Brad Pitt in them, thanks."
         - "You know, I could use a coffee right now. Find a coffeehouse in New York."
-
+        
         Examples of BAD usage (DO NOT DO):
         - "Find a coffeehouse in New York, okay."
         - "Play some music, right."
         - "Add milk to my list, sure"
         - "Find a coffeehouse in New York, you know."
-
-
-
+        - "Oh, order pizza." (bad, simple request no realization)
+        - "Oh, uh, what's the weather?" (bad, simple request no realization and stacking emotional markers with disfluencies)
         
         Input: "{text}"
         Output:
@@ -1101,9 +1154,9 @@ class GranularSpeechPipeline:
 
     def apply_numbers_noise(self, text: str, intensity: str) -> str:
         intensity_prompts = {
-            "light": "Say 1 number or alphanumeric as a real person would",
-            "moderate": "Say 1-2 numbers or alphanumerics as a real person would",
-            "heavy": "Say 2-3 numbers or alphanumerics as a real person would"
+            "light": "Add a small amount of number noise (e.g., say numbers in a more casual or spoken way)",
+            "moderate": "Add moderate number noise (e.g., say numbers in a more casual or spoken way, or spell out a few digits)",
+            "high": "Add heavy number noise (e.g., say numbers in a more casual or spoken way, or spell out several digits)"
         }
         
         prompt = f"""
@@ -1120,8 +1173,20 @@ class GranularSpeechPipeline:
         - "600 seconds" → "ten minutes"
         - "Fahrenheit" → "Fahrenheit" (keep as is)
         
+                
+        IF the input contains a link/URL:
+        - If the link/URL is short (e.g., a YouTube link), spelling it out is acceptable. Example: 'h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.'
+        - If the link/URL is long (many path segments or long query), do NOT spell it out—just include it as-is in the output. Example: 'https://www.example.com/very/long/path/with/lots/of/segments?query=long'.
+        - NEVER spell out or verbalize a link/URL if another feature has already done so (avoid double spelling/verbalization).
+        GOOD Example:
+        - 'start h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.'
+        BAD Example:
+        - 'start h t t p s colon slash slash w w w dot example dot com slash a slash very slash long slash path slash with slash lots slash of slash segments question mark query equals long.' (do NOT spell out long links)
+        - 'start h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q. h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.' (never double spell)
+        
         Input: "{text}"
         Output:
+
         """
         result = self._call_openai(prompt)
         if not result.strip():
@@ -1143,6 +1208,8 @@ class GranularSpeechPipeline:
         - State/province names when city is clear: "New York, NY" → "New York"
         - Formal titles: "Dr.", "Mr.", "Ms.", "Prof." → skip them
         - Company suffixes: "Inc.", "LLC", "Corp." → skip them
+        
+        CRITICAL: NEVER drop, modify, or paraphrase away links/URLs, file paths, or similar technical references. Always preserve them in the output, either verbalized or as-is.
         
         CRITICAL: NEVER drop important technical specifications or units:
         - Temperature units: "Fahrenheit", "Celsius", "Kelvin" → KEEP THESE
@@ -1373,6 +1440,87 @@ class GranularSpeechPipeline:
                 if pipeline.is_english_text(user_content):
                     english_test_cases.append(test_case)
         return english_test_cases
+
+    def apply_label_naturalization(self, text: str, intensity: str) -> str:
+        """
+        LLM-based function to insert a natural filler (like 'named', 'called', or 'titled') after a colon or before a quoted/named value to make the speech sound more natural.
+        Only do this when a colon is used to introduce a label, field, or quoted value.
+        """
+        intensity_prompts = {
+            "light": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate.",
+            "moderate": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate.",
+            "heavy": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate."
+        }
+        prompt = f"""
+        You are converting written instructions into natural spoken dialogue. Your job is to insert a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value to make the speech sound more natural and conversational. Only do this when a colon is used to introduce a label, field, or quoted value.
+        {intensity_prompts[intensity]}
+        
+        GOOD Examples:
+        - "Create a to-do: 'Go for shopping at 9 PM.'" → "Create a to-do named 'Go for shopping at 9 PM.'"
+        - "Add a to-do: crash at nine P M." → "Add a to-do called 'crash at nine P M.'"
+        - "Draft an email to Andy. Subject: 'Sales Forecast Request'. Message: 'Where's the latest sales forecast?'" → "Draft an email to Andy. Subject named 'Sales Forecast Request'. Message called 'Where's the latest sales forecast?'"
+        - "Add a NewsItem: 'Julian is testing one two' to Sitefinity CMS." → "Add a NewsItem titled 'Julian is testing one two' to Sitefinity CMS."
+        - "Hey, can you move the event named 'Alice-One-one-One' to November first, twenty twenty-three, for ten P M Central European Summer Time?"
+        
+        BAD Examples (DO NOT DO):
+        - "Create a to-do named: 'Go for shopping at 9 PM.'" (don't add 'named:' after a colon)
+        - "Add a to-do called: crash at nine P M." (don't add 'called:' after a colon)
+        - "Subject: named 'Sales Forecast Request'." (don't use both colon and 'named')
+        - "Create a to-do named called 'Go for shopping at 9 PM.'" (never stack multiple fillers)
+        - "Create a to-do: 'named Go for shopping at 9 PM.'" (don't put the filler inside the quotes)
+        - "Add a to-do: 'crash at nine P M. called.'" (don't put the filler at the end)
+        
+        Input: "{text}"
+        Output:
+        """
+        result = self._call_openai(prompt)
+        if not result.strip():
+            return text
+        return result
+
+    def apply_filepath_verbalization(self, text: str, intensity: str) -> str:
+        """
+        LLM-based function to verbalize file paths in the most natural and context-appropriate way.
+        For short/simple paths (like 'image.png' or 'vikhyatk/moondream2'), spell out or say as-is.
+        For long/complex paths (like 'd:/playground/pc_contoller/env/Scripts/python.exe'), use a hierarchical, natural spoken description (e.g., 'in the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe').
+        CRITICAL: NEVER combine this with symbol_pronunciation or spelling_noise for the same file path. Only verbalize file paths ONCE, using the most natural method. Avoid duplication and messy outputs.
+        """
+        intensity_prompts = {
+            "light": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once.",
+            "moderate": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, even if there are multiple in the text.",
+            "heavy": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, and never repeat or spell out every character for long paths."
+        }
+        prompt = f"""
+        You are converting written instructions into natural spoken dialogue. Your job is to verbalize file paths in the most natural and context-appropriate way.
+        {intensity_prompts[intensity]}
+        
+        CRITICAL:
+        - NEVER combine this with symbol_pronunciation or spelling_noise for the same file path.
+        - Only verbalize file paths ONCE, using the most natural method.
+        - Avoid duplication and messy outputs with any other verbalization selected.
+        - NEVER use file path verbalization for links or URLs (e.g., anything starting with http, https, www, or ending in .com, .org, etc.). For links, only verbalize the symbols (slash, dot, colon, etc.) as appropriate, but do NOT use hierarchical or spelling approaches.
+        
+        GOOD Examples:
+        - 'image.png' → 'image dot p n g'
+        - 'vikhyatk/moondream2' → 'vikhyatk slash moondream two'
+        - 'd:/playground/pc_contoller/env/Scripts/python.exe' → 'in the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe'
+        - 'https://example.com/path/file.txt' → 'h t t p s colon slash slash example dot com slash path slash file dot t x t' (symbols only, not hierarchical)
+        
+        BAD Examples (DO NOT DO):
+        - 'd:/playground/pc_contoller/env/Scripts/python.exe' → 'D colon slash playground slash P-C underscore controller slash env slash Scripts slash python dot E-X-E' (spelling out every segment is unnatural)
+        - 'd:/playground/pc_contoller/env/Scripts/python.exe' → 'python dot e x e in d colon slash playground slash p c underscore controller slash env slash scripts' (duplication)
+        - 'image.png' → 'image dot p n g image dot p n g' (never repeat)
+        - 'vikhyatk/moondream2' → 'vikhyatk slash moondream two, that's v-i-k-h-y-a-t-k slash m-o-o-n-d-r-e-a-m two' (don't combine spelling and saying as-is unless the path is truly ambiguous)
+        - 'd:/playground/pc_contoller/env/Scripts/python.exe' → 'in the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe, d colon slash playground slash p c underscore controller slash env slash scripts slash python dot e x e' (messy, never combine both)
+        - 'https://example.com/path/file.txt' → 'in the file path h t t p s colon slash slash example dot com slash path slash file dot t x t' (never use hierarchical or spelling for links/URLs)
+        
+        Input: "{text}"
+        Output:
+        """
+        result = self._call_openai(prompt)
+        if not result.strip():
+            return text
+        return result
 
 
 class ASRErrors:

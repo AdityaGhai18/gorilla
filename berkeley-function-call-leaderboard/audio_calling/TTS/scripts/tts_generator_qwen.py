@@ -18,16 +18,19 @@ class QwenTTSGenerator(TTSGeneratorBase):
     def _generate_audio(self, text: str) -> bytes:
         """Generate audio using Qwen API and return audio bytes."""
         try:
+            print("[QWEN INPUT TEXT]", text)
             response = dashscope.audio.qwen_tts.SpeechSynthesizer.call(
                 model="qwen-tts-latest",
                 api_key=self.api_key,
                 text=text,
                 voice="Cherry",
             )
+            print("[QWEN RAW RESPONSE]", response)
             # Defensive checks as in your original code
             if response is None:
                 raise RuntimeError("API call returned None response")
             if response.output is None:
+                print("[QWEN ERROR] No output. Response:", response)
                 raise RuntimeError("API call failed: response.output is None")
             if not hasattr(response.output, 'audio') or response.output.audio is None:
                 raise RuntimeError("API call failed: response.output.audio is None or missing")
