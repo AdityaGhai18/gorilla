@@ -405,17 +405,17 @@ class GranularSpeechPipeline:
             return features
 
     def apply_sentence_restructuring(self, text: str, intensity: str) -> str:
-        """Completely rephrase written instructions into natural spoken language."""
         intensity_prompts = {
             "light": "Make minor adjustments to sound more spoken",
             "moderate": "Significantly rephrase to sound like natural speech",
-            "heavy": "Completely restructure the sentence to sound like someone actually speaking"
+            "heavy": "Completely restructure the sentence to sound like someone actually speaking",
+            "high": "Completely restructure the sentence to sound like someone actually speaking"
         }
         
         prompt = f"""
         You are converting written instructions into natural spoken dialogue. Your job is to restructure the input to sound like someone actually speaking to a voice assistant, not reading written text.
 
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         CRITICAL:
         - Do NOT change the meaning of the sentence. If in doubt, do less restructuring.
@@ -450,11 +450,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 light disfluency (filler word or hesitation) naturally.",
             "moderate": "Add 1 light disfluency (filler word or hesitation) naturally.",
-            "heavy": "Add 1 light disfluency (filler word or hesitation) naturally."
+            "heavy": "Add 1 light disfluency (filler word or hesitation) naturally.",
+            "high": "Add 1 light disfluency (filler word or hesitation) naturally."
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='disfluencies')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Add disfluencies to make it sound like real speech:
         - Filler words: "um", "uh", "like", "you know", "I mean"
@@ -498,11 +499,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 light repetition naturally",
             "moderate": "Add 1-2 moderate repetitions naturally",
-            "heavy": "Add 2-3 heavy repetitions naturally"
+            "heavy": "Add 2-3 heavy repetitions naturally",
+            "high": "Add 2-3 heavy repetitions naturally"
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='repetitions')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use repetitions like: "I want to, to get that", "check the, the status"
         Keep the meaning intact.
@@ -519,11 +521,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Make 1 real self-correction in the sentence, e.g., 'the file... no, the folder'.",
             "moderate": "Make 1-2 real self-corrections in the sentence, e.g., 'the file... no, the folder'.",
-            "heavy": "Make 2-3 real self-corrections in the sentence, e.g., 'the file... no, the folder'."
+            "heavy": "Make 2-3 real self-corrections in the sentence, e.g., 'the file... no, the folder'.",
+            "high": "Make 2-3 real self-corrections in the sentence, e.g., 'the file... no, the folder'."
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='self_corrections')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Apply a real self-correction: start to say one thing, then correct it to another, as in real speech. Example: 'the file... no, the folder'.
         Do NOT just add 'I mean' or 'no' as a filler. Actually change a word or phrase to another, as if the speaker changed their mind or realized a mistake.
@@ -541,11 +544,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1-2 light contractions naturally",
             "moderate": "Add 2-3 moderate contractions naturally",
-            "heavy": "Add 3-4 heavy contractions naturally"
+            "heavy": "Add 3-4 heavy contractions naturally",
+            "high": "Add 3-4 heavy contractions naturally"
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='contractions')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use contractions to make it sound more natural and spoken:
         - "I am" → "I'm", "you are" → "you're", "we are" → "we're"
@@ -571,11 +575,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 light casual pronoun naturally",
             "moderate": "Add 1-2 moderate casual pronouns naturally",
-            "heavy": "Add 2-3 heavy casual pronouns naturally"
+            "heavy": "Add 2-3 heavy casual pronouns naturally",
+            "high": "Add 2-3 heavy casual pronouns naturally"
         }
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='casual_pronouns')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use casual pronouns like: "ya", "em", "imma"
         Keep the meaning intact.
@@ -592,12 +597,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 light slang term naturally",
             "moderate": "Add 1-2 moderate slang terms naturally",
-            "heavy": "Add 2-3 heavy slang terms naturally"
+            "heavy": "Add 2-3 heavy slang terms naturally",
+            "high": "Add 2-3 heavy slang terms naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='slang terms')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
 
         Use slang terms like: "grab", "check out", "look up" ONLY if the request is for something casual, like reminders, food, or informal tasks. 
         DO NOT use slang for technical, search, or music requests, or when the request is for a specific named entity (like a song, app, or person).
@@ -626,12 +632,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Pronounce 1-2 symbols (like slash, dash, dot, at) in a natural way",
             "moderate": "Pronounce several symbols (like slash, dash, dot, at) in a natural way",
+            "heavy": "Pronounce many symbols (like slash, dash, dot, at) in a natural way",
             "high": "Pronounce many symbols (like slash, dash, dot, at) in a natural way"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='symbol pronunciation')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use symbol pronunciations like: "slash", "dash", "at"
         Keep the meaning intact.
@@ -669,12 +676,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Drop 1 article (the, a, an) naturally",
             "moderate": "Drop 1-2 articles (the, a, an) naturally",
-            "heavy": "Drop 2-3 articles (the, a, an) naturally"
+            "heavy": "Drop 2-3 articles (the, a, an) naturally",
+            "high": "Drop 2-3 articles (the, a, an) naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='article dropping')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Drop articles (the, a, an) where it sounds natural in spoken English.
         
@@ -704,12 +712,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Drop 1 preposition (in, on, at, for) naturally",
             "moderate": "Drop 1-2 prepositions (in, on, at, for) naturally",
-            "heavy": "Drop 2-3 prepositions (in, on, at, for) naturally"
+            "heavy": "Drop 2-3 prepositions (in, on, at, for) naturally",
+            "high": "Drop 2-3 prepositions (in, on, at, for) naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='preposition dropping')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Drop prepositions (in, on, at, for) where it sounds natural in spoken English.
 
@@ -747,12 +756,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Drop 1 subject pronoun naturally",
             "moderate": "Drop 1-2 subject pronouns naturally",
-            "heavy": "Drop 2-3 subject pronouns naturally"
+            "heavy": "Drop 2-3 subject pronouns naturally",
+            "high": "Drop 2-3 subject pronouns naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='subject dropping')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Drop subject pronouns where it sounds natural in spoken English.
         
@@ -788,12 +798,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Slightly reorder 1 phrase or clause naturally",
             "moderate": "Slightly reorder 1-2 phrases or clauses naturally",
-            "heavy": "Slightly reorder 2-3 phrases or clauses naturally"
+            "heavy": "Slightly reorder 2-3 phrases or clauses naturally",
+            "high": "Slightly reorder 2-3 phrases or clauses naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='word reordering')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Slightly reorder words or phrases where it sounds natural in spoken English.
         
@@ -827,13 +838,14 @@ class GranularSpeechPipeline:
     def apply_vague_references(self, text: str, intensity: str) -> str:
         intensity_prompts = {
             "light": "Add 1 vague reference naturally",
-            "moderate": "that thing, the stuff, some info",  # <-- Add this line if missing
-            "heavy": "that thing, the stuff, some info, whatever"
+            "moderate": "that thing, the stuff, some info",
+            "heavy": "that thing, the stuff, some info, whatever",
+            "high": "that thing, the stuff, some info, whatever"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='vague references')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use vague references like: "that thing", "the stuff", "some info"
         
@@ -868,12 +880,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 approximate quantifier naturally",
             "moderate": "Add 1-2 approximate quantifiers naturally",
-            "heavy": "Add 2-3 approximate quantifiers naturally"
+            "heavy": "Add 2-3 approximate quantifiers naturally",
+            "high": "Add 2-3 approximate quantifiers naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='approximate quantifiers')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use approximate quantifiers like: "about 10 minutes", "around 5 files"
         Ensure changing units that are used in speech, for example 600 seconds should be 10 minutes.
@@ -889,12 +902,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Replace 1 verb with a simpler one naturally",
             "moderate": "Replace 1-2 verbs with simpler ones naturally",
-            "heavy": "Replace 2-3 verbs with simpler ones naturally"
+            "heavy": "Replace 2-3 verbs with simpler ones naturally",
+            "high": "Replace 2-3 verbs with simpler ones naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='simplified verbs')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         CRITICAL:
         - Only simplify verbs if it does NOT change the core meaning or make the sentence awkward.
@@ -926,12 +940,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 confidence marker naturally",
             "moderate": "Add 1-2 confidence markers naturally",
-            "heavy": "Add 2-3 confidence markers naturally"
+            "heavy": "Add 2-3 confidence markers naturally",
+            "high": "Add 2-3 confidence markers naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='confidence markers')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use confidence markers like: "I think", "probably", "should be"
         Keep the meaning intact.
@@ -948,12 +963,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 contextual reference naturally",
             "moderate": "Add 1-2 contextual references naturally",
-            "heavy": "Add 2-3 contextual references naturally"
+            "heavy": "Add 2-3 contextual references naturally",
+            "high": "Add 2-3 contextual references naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='contextual references')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use contextual references like: "the one we talked about", "that repo"
         Keep the meaning intact.
@@ -970,12 +986,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 false start naturally",
             "moderate": "Add 1-2 false starts naturally",
-            "heavy": "Add 2-3 false starts naturally"
+            "heavy": "Add 2-3 false starts naturally",
+            "high": "Add 2-3 false starts naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='false_starts')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use false starts like: "I want to—wait, can you..."
         Keep the meaning intact.
@@ -992,12 +1009,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 thinking aloud phrase naturally",
             "moderate": "Add 1-2 thinking aloud phrases naturally",
-            "heavy": "Add 2-3 thinking aloud phrases naturally"
+            "heavy": "Add 2-3 thinking aloud phrases naturally",
+            "high": "Add 2-3 thinking aloud phrases naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='thinking out aloud')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use natural thinking aloud phrases that people actually use:
         - "let me see", "what's the word...", "I think", "maybe"
@@ -1025,12 +1043,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 emotional marker naturally",
             "moderate": "Add 1-2 emotional markers naturally",
-            "heavy": "Add 2-3 emotional markers naturally"
+            "heavy": "Add 2-3 emotional markers naturally",
+            "high": "Add 2-3 emotional markers naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='emotional markers')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use natural emotional markers that people actually use with voice assistants:
         - "oh" (realization), "right" (agreement), "yeah" (confirmation)
@@ -1072,12 +1091,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 restart or repair phrase naturally",
             "moderate": "Add 1-2 restart or repair phrases naturally",
-            "heavy": "Add 2-3 restart or repair phrases naturally"
+            "heavy": "Add 2-3 restart or repair phrases naturally",
+            "high": "Add 2-3 restart or repair phrases naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='restart repairs')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use restart or repair phrases like: "what I mean is...", "sorry, let me rephrase"
         Keep the meaning intact.
@@ -1094,12 +1114,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add 1 ellipsis or pro-form naturally",
             "moderate": "Add 1-2 ellipsis or pro-forms naturally",
-            "heavy": "Add 2-3 ellipsis or pro-forms naturally"
+            "heavy": "Add 2-3 ellipsis or pro-forms naturally",
+            "high": "Add 2-3 ellipsis or pro-forms naturally"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='ellipsis proforms')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Use ellipsis or pro-forms like: "do it", "get it", "that thing"
         Keep the meaning intact.
@@ -1116,12 +1137,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Spell out 1 truly ambiguous or complex term that might be misunderstood",
             "moderate": "Spell out 1-2 truly ambiguous or complex terms that might be misunderstood",
-            "heavy": "Spell out 2-3 truly ambiguous or complex terms that might be misunderstood"
+            "heavy": "Spell out 2-3 truly ambiguous or complex terms that might be misunderstood",
+            "high": "Spell out 2-3 truly ambiguous or complex terms that might be misunderstood"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='spelling noise')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Spell out names, usernames, or complex terms that might be misunderstood:
         - Personal names: "Montgomery" → "Montgomery, that's M-O-N-T-G-O-M-E-R-Y, Montgomery"
@@ -1156,12 +1178,13 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add a small amount of number noise (e.g., say numbers in a more casual or spoken way)",
             "moderate": "Add moderate number noise (e.g., say numbers in a more casual or spoken way, or spell out a few digits)",
+            "heavy": "Add heavy number noise (e.g., say numbers in a more casual or spoken way, or spell out several digits)",
             "high": "Add heavy number noise (e.g., say numbers in a more casual or spoken way, or spell out several digits)"
         }
         
         prompt = f"""
         {INSTRUCTION_TEMPLATE.format(feature='numbers noise')}
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         Say numbers or alphanumerics as a real person would, e.g., "seventy-eight ninety" for 7890, "twenty-twenty" for 2020
         ONLY convert actual numbers, addresses, or alphanumeric identifiers. Do NOT convert words like "Fahrenheit", "Celsius", etc.
@@ -1173,7 +1196,7 @@ class GranularSpeechPipeline:
         - "600 seconds" → "ten minutes"
         - "Fahrenheit" → "Fahrenheit" (keep as is)
         
-                
+        
         IF the input contains a link/URL:
         - If the link/URL is short (e.g., a YouTube link), spelling it out is acceptable. Example: 'h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q.'
         - If the link/URL is long (many path segments or long query), do NOT spell it out—just include it as-is in the output. Example: 'https://www.example.com/very/long/path/with/lots/of/segments?query=long'.
@@ -1186,7 +1209,6 @@ class GranularSpeechPipeline:
         
         Input: "{text}"
         Output:
-
         """
         result = self._call_openai(prompt)
         if not result.strip():
@@ -1449,11 +1471,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate.",
             "moderate": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate.",
-            "heavy": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate."
+            "heavy": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate.",
+            "high": "Add a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value, only when appropriate."
         }
         prompt = f"""
         You are converting written instructions into natural spoken dialogue. Your job is to insert a natural filler word (like 'named', 'called', or 'titled') after a colon or before a quoted/named value to make the speech sound more natural and conversational. Only do this when a colon is used to introduce a label, field, or quoted value.
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         GOOD Examples:
         - "Create a to-do: 'Go for shopping at 9 PM.'" → "Create a to-do named 'Go for shopping at 9 PM.'"
@@ -1488,11 +1511,12 @@ class GranularSpeechPipeline:
         intensity_prompts = {
             "light": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once.",
             "moderate": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, even if there are multiple in the text.",
-            "heavy": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, and never repeat or spell out every character for long paths."
+            "heavy": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, and never repeat or spell out every character for long paths.",
+            "high": "Verbalize file paths in the most natural way. For short/simple paths, spell out or say as-is. For long/complex paths, use a hierarchical spoken description. Do NOT combine with symbol_pronunciation or spelling_noise. Only verbalize file paths once, and never repeat or spell out every character for long paths."
         }
         prompt = f"""
         You are converting written instructions into natural spoken dialogue. Your job is to verbalize file paths in the most natural and context-appropriate way.
-        {intensity_prompts[intensity]}
+        {intensity_prompts.get(intensity, intensity_prompts['moderate'])}
         
         CRITICAL:
         - NEVER combine this with symbol_pronunciation or spelling_noise for the same file path.
