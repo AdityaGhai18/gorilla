@@ -7,7 +7,8 @@
           "role": "user",
           "content": "Can I find the dimensions and properties of a triangle, if I know its three sides are 5 units, 4 units and 3 units long?",
           "transcript": "Hey, um, can you help me get the dimensions and properties of a triangle if the sidesre five, four, and three units? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_0_openai.wav",
+          "asr_output": "Hey, um, can you help me get the dimensions and properties of a triangle if the sides are 5, 4, and 3 units? Thanks."
         }
       ]
     ],
@@ -94,7 +95,8 @@
           "role": "user",
           "content": "Calculate the area of a triangle, given the lengths of its three sides: 3, 4, and 5.",
           "transcript": "Hey, can you look up the area of a triangle with sides three, four, and five?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_1_openai.wav",
+          "asr_output": "Hey, can you look up the area of a triangle with sides 3, 4, and 5?"
         }
       ]
     ],
@@ -172,7 +174,8 @@
           "role": "user",
           "content": "What is the capital of Brazil?",
           "transcript": "Hey, um, whats the capital of Brazil?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_2_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_2_openai.wav",
+          "asr_output": "Hey, um, what's the capital of Brazil?"
         }
       ]
     ],
@@ -235,7 +238,8 @@
           "role": "user",
           "content": "Compute the Euclidean distance between two points A(3,4) and B(1,2).",
           "transcript": "Oh, calculate the Euclidean distance between point A at three-four and point B at two-one... no, ya mean one-two.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_3_openai.wav",
+          "asr_output": "Oh, calculate the Euclidean distance between point A at (3, 4) and point B at (2, 1)? No, you mean one-two."
         }
       ]
     ],
@@ -312,7 +316,8 @@
           "role": "user",
           "content": "Can you calculate the displacement of a car moving at an initial speed of 20 m/s and then accelerates at 10 m/s^2 for 5 seconds? (assuming a straight line motion)",
           "transcript": "Yeah, whats the displacement for a car starting at twenty meters per second, speeding up by ten meters per second squared, over five seconds, in a straight line?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_4_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_4_openai.wav",
+          "asr_output": "Yeah. What's the displacement for a car starting at 20 meters per second, speeding up by 10 meters per second squared, over five seconds, in a straight line?"
         }
       ]
     ],
@@ -389,7 +394,8 @@
           "role": "user",
           "content": "What is the wind speed and temperature in location given by coordinates 46.603354,1.8883340 on December 13, 2019?",
           "transcript": "Um, can you tell me the wind speed and temperature for the coordinates forty-six point six oh three three five four, uh, one point eight eight eight three three four oh on December thirteenth, twenty-nineteen?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_5_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_5_openai.wav",
+          "asr_output": "Can you tell me the wind speed and temperature for the coordinates 46.603354, 1.8883340 on December 13, 2019?"
         }
       ]
     ],
@@ -474,7 +480,8 @@
           "role": "user",
           "content": "Calculate the capacitance of a parallel plate capacitor where the area of the plate is 10 square meters, the distance between plates is 0.01 meters and the dielectric constant K is 1.0.",
           "transcript": "Um, can you figure out capacitance of a parallel plate capacitor with, uh, a plate area of ten square meters, a gap of zero point zero one meters, and a dielectric constant of one point zero?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_6_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_6_openai.wav",
+          "asr_output": "Um, can you figure out capacitance of a parallel plate capacitor with a plate area of 10 square meters, a gap of 0.01 meters, and a dielectric constant of 1.0?"
         }
       ]
     ],
@@ -502,7 +509,7 @@
       },
       {
         "name": "capacitance_calculator.calculate",
-        "description": "Calculate the capacitance of a parallel plate capacitor based on the area, distance and dielectric constant using the equation C = ε₀KA/d.",
+        "description": "Calculate the capacitance of a parallel plate capacitor based on the area, distance and dielectric constant using the equation C = \u03b5\u2080KA/d.",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -556,7 +563,8 @@
           "role": "user",
           "content": "How to assess the population growth in deer and their impact on woodland in Washington state over the past decade?",
           "transcript": "Um, how can I check, uh, deer population growth and their effects on woodlands in Washington state over the last decade or so, oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_7_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_7_openai.wav",
+          "asr_output": "Um, how can I check deer population growth and their effects on woodlands in Washington state over the last decade or so?"
         }
       ]
     ],
@@ -628,7 +636,8 @@
           "role": "user",
           "content": "Find a 3 bedroom villa for sale within $300,000 to $400,000 budget in San Diego.",
           "transcript": "Hey, can you find a three-bedroom villa for sale in San Diego with a budget between three hundred thousand dollars and four hundred thousand dollars, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_8_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_8_openai.wav",
+          "asr_output": "Hey, can you find a three-bedroom villa for sale in San Diego with a budget between $300,000 and $400,000?"
         }
       ]
     ],
@@ -715,7 +724,8 @@
           "role": "user",
           "content": "Calculate the average grade for student John who has these scores {'math':90, 'science':75, 'history':82, 'music':89} across different subjects.",
           "transcript": "Um, can ya work out Johns average grade with these scores: math ninety, science seventy-five, history eighty-two, and music eighty-nine?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_9_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_9_openai.wav",
+          "asr_output": "Tom, can you work out John's average grade with these scores: Math 90, Science 75, History 82, and Music 89?"
         }
       ]
     ],
@@ -778,7 +788,8 @@
           "role": "user",
           "content": "I need to delete some columns from my employees database on personal_data table. I want to remove their email addresses and social security numbers to respect privacy.",
           "transcript": "Please take out the email addresses and social security numbers from that table in the employees database for privacy reasons, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_10_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_10_openai.wav",
+          "asr_output": "Please take out the email addresses and social security numbers from that table in the employee's database for privacy reasons, okay?"
         }
       ]
     ],
@@ -853,7 +864,8 @@
           "role": "user",
           "content": "Calculate the roots of a quadratic equation with coefficients 5, 20, and -25",
           "transcript": "Um, can calculate the roots of a quadratic equation with coefficients: five, twenty, and minus twenty-five?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_11_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_11_openai.wav",
+          "asr_output": "Can calculate the roots of a quadratic equation with coefficients 5, 20, and -25?"
         }
       ]
     ],
@@ -947,8 +959,9 @@
         {
           "role": "user",
           "content": "What is the year over year growth rate for company 'Tech Inc' with revenues of $1M in 2019 and $1.2M in 2020?",
-          "transcript": "Um, for Tech Inc—T-E-C-H space I-N-C—whats the year-over-year growth rate, if they made one million dollars in twenty nineteen and, uh, one point two million in twenty-twenty?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_12_openai.wav"
+          "transcript": "Um, for Tech Inc\u2014T-E-C-H space I-N-C\u2014whats the year-over-year growth rate, if they made one million dollars in twenty nineteen and, uh, one point two million in twenty-twenty?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_12_openai.wav",
+          "asr_output": "Um, for Tech Inc. (T-E-C-H space I-N-C), what's the year-over-year growth rate if they made $1 million in 2019 and $1.2 million in 2020?"
         }
       ]
     ],
@@ -1041,7 +1054,8 @@
           "role": "user",
           "content": "How much revenue would company XYZ generate if we increase the sales units of product A by 10% while keeping the price the same?",
           "transcript": "Um, what revenue would company XYZ get if we, uh, boost product A sales by, like, ten percent without changing price? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_13_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_13_openai.wav",
+          "asr_output": "Um, what revenue would company XYZ get if we, uh, boost product A sales by like 10% without changing price? Thanks."
         }
       ]
     ],
@@ -1102,7 +1116,8 @@
           "role": "user",
           "content": "Calculate the depreciated value of a property costing $200,000 with an annual depreciation rate of 3% for 5 years.",
           "transcript": "Um, can you figure out the depreciated value for a property that costs, uh, two hundred thousand dollars, with a, you know, three percent annual depreciation rate over five years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_14_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_14_openai.wav",
+          "asr_output": "Can you figure out the depreciated value for a property that costs $200,000 with a 3% annual depreciation rate over five years?"
         }
       ]
     ],
@@ -1199,7 +1214,8 @@
           "role": "user",
           "content": "How much is the potential of the Solar farm at location with coordinates [43.653225, -79.383186] in December, given that it has a total solar panel area of 80000 sq ft?",
           "transcript": "Uh, whats the solar farms potential at, um, coordinates forty-three point six five three two two five, minus seventy-nine point three eight three one eight six in December, with an eighty thousand square foot panel area, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_15_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_15_openai.wav",
+          "asr_output": "What's the solar farm's potential at coordinates 43.653225, -79.383186 in December with an 8000 square foot panel area?"
         }
       ]
     ],
@@ -1272,7 +1288,8 @@
           "role": "user",
           "content": "What's the required minimum population size (Ne) for maintaining the genetic diversity of a wild tiger population for the next 100 generations with a probability of 0.95?",
           "transcript": "Hey, whats the smallest population size needed to keep the genetic diversity of wild tigers for one hundred generations with a ninety-five percent chance?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_16_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_16_openai.wav",
+          "asr_output": "Hey, what's the smallest population size needed to keep the genetic diversity of wild tigers for 100 generations, with a 95% chance?"
         }
       ]
     ],
@@ -1365,7 +1382,8 @@
           "role": "user",
           "content": "Find the conversion rate from Euro to Dollar at January 1, 2022",
           "transcript": "Um, whats Euro to Dollar conversion rate for, uh, January first, twenty-twenty-two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_17_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_17_openai.wav",
+          "asr_output": "Um, what's euro to dollar conversion rate for January 1, 2022?"
         }
       ]
     ],
@@ -1453,7 +1471,8 @@
           "role": "user",
           "content": "Who were the main participants and what was the location of the Battle of Stalingrad?",
           "transcript": "Hey, um, can you tell me who the main participants were and where the Battle of Stalingrad happened?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_18_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_18_openai.wav",
+          "asr_output": "Hey, um, can you tell me who the main participants were and where the Battle of Stalingrad happened?"
         }
       ]
     ],
@@ -1516,7 +1535,8 @@
           "role": "user",
           "content": "What are the three great Schism in Christianity history?",
           "transcript": "Um, right, whatre three major schisms in, uh, Christian history?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_19_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_19_openai.wav",
+          "asr_output": "Right, what are three major schisms in Christian history?"
         }
       ]
     ],
@@ -1596,7 +1616,8 @@
           "role": "user",
           "content": "What is the price to commission a sculpture made of marble with a size of 3 feet?",
           "transcript": "Hey, um, can you say how much it would cost to get a marble sculpture three feet tall?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_20_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_20_openai.wav",
+          "asr_output": "Hey, um, can you say how much it would cost to get a marble sculpture three feet tall?"
         }
       ]
     ],
@@ -1679,7 +1700,8 @@
           "role": "user",
           "content": "I want to generate a sound of 440Hz frequency for 5 seconds. What is the function and how can I use it?",
           "transcript": "Right, how do I make a sound at four forty-five, no, at four forty Hertz for five seconds? Whats the function for it and how do I use it?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_21_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_21_openai.wav",
+          "asr_output": "Right, how do I make a sound at 445 - no, at 440 hertz for five seconds? What's the function for it, and how do I use it?"
         }
       ]
     ],
@@ -1746,7 +1768,8 @@
           "role": "user",
           "content": "What is the record for the most points scored by a single player in an NBA game?",
           "transcript": "Hey, whats the highest score ever by a single player in an NBA game, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_22_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_22_openai.wav",
+          "asr_output": "Hey, what's the highest score ever by a single player in an NBA game, right?"
         }
       ]
     ],
@@ -1809,7 +1832,8 @@
           "role": "user",
           "content": "What are the current stats for basketball player LeBron James including points per game, assists, and minutes per game.",
           "transcript": "Hey, um, could you get me the latest stats for LeBron James? Im looking for, uh, his points per game, assists, and minutes per game.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_23_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_23_openai.wav",
+          "asr_output": "Hey, um, could you get me the latest stats for LeBron James? I'm looking for, uh, his points per game, assists, and minutes per game."
         }
       ]
     ],
@@ -1905,7 +1929,8 @@
           "role": "user",
           "content": "What is the fastest route from London to Edinburgh for playing a chess championship? Also provide an estimate of the distance.",
           "transcript": "Um, whats the fastest way to go from London to Edinburgh for the chess championship? And, uh, how far is it?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_24_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_24_openai.wav",
+          "asr_output": "Um, what's the fastest way to go from London to Edinburgh for the chess championship? And how far is it?"
         }
       ]
     ],
@@ -1977,7 +2002,8 @@
           "role": "user",
           "content": "What is the cheapest selling price for the game 'Assassins Creed Valhalla' in the PlayStation Store in the United States?",
           "transcript": "Hey, um, whats the cheapest price for Assassins Creed Valhalla in the U-S, PlayStation Store, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_25_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_25_openai.wav",
+          "asr_output": "Hey, um, what's the cheapest price for Assassin's Creed Valhalla in the US PlayStation Store, right?"
         }
       ]
     ],
@@ -2064,14 +2090,15 @@
           "role": "user",
           "content": "Find out the rewards for playing Fortnite on Playstation platform with different missions and trophies",
           "transcript": "Hey, can you, uh, tell me bout Fortnite rewards on the PlayStation? Like, what dyou get for different missions and trophies?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_26_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_26_openai.wav",
+          "asr_output": "Hey, can you, uh, tell me about Fortnite rewards on the PlayStation? Like, what do you get for different missions and trophies?"
         }
       ]
     ],
     "function": [
       {
         "name": "game_scores.get",
-        "description": "Retrieve scores and rankings based on player’s performance in a certain game.",
+        "description": "Retrieve scores and rankings based on player\u2019s performance in a certain game.",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -2157,7 +2184,8 @@
           "role": "user",
           "content": "What is the shortest path from Paris, France to Rome, Italy by using a public transportation?",
           "transcript": "Uh, can you get, like, the quickest route from Paris to Rome usin public transport?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_27_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_27_openai.wav",
+          "asr_output": "Can you get, like, the quickest route from Paris to Rome using public transport?"
         }
       ]
     ],
@@ -2219,7 +2247,8 @@
           "role": "user",
           "content": "What's the root of quadratic equation with coefficients 2, 3 and -4?",
           "transcript": "Uh, hey, could you get the roots of the quadratic equation with coefficients two, three, and negative four?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_28_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_28_openai.wav",
+          "asr_output": "Hey, could you get the roots of the quadratic equation with coefficients 2, 3, and -4?"
         }
       ]
     ],
@@ -2302,7 +2331,8 @@
           "role": "user",
           "content": "Find the intersection points of the functions y=3x+2 and y=2x+3.",
           "transcript": "Hey, can you see where the functions y equals three x plus two and y equals two x plus three intersect?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_29_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_29_openai.wav",
+          "asr_output": "Hey, can you see where the functions y = 3x + 2 and y = 2x + 3 intersect?"
         }
       ]
     ],
@@ -2354,7 +2384,8 @@
           "role": "user",
           "content": "What is the area of a rectangle with length 12 meters and width 5 meters?",
           "transcript": "Hey, um, can you say the area of a rectangle thats twelve meters long and five meters wide?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_30_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_30_openai.wav",
+          "asr_output": "Hey, um, can you say the area of a rectangle that's twelve meters long and five meters wide?"
         }
       ]
     ],
@@ -2432,7 +2463,8 @@
           "role": "user",
           "content": "What is the area and perimeter of a rectangle with width of 7 units and length of 10 units?",
           "transcript": "Hey, um, whats the area and perimeter of a rectangle if the width is, you know, seven units and the length is ten units?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_31_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_31_openai.wav",
+          "asr_output": "Hey, um, what's the area and perimeter of a rectangle if the width is, you know, 7 units and the length is 10 units?"
         }
       ]
     ],
@@ -2500,7 +2532,8 @@
           "role": "user",
           "content": "Calculate the volume of a cone with radius 4 and height 7.",
           "transcript": "Um, hey, can you figure out the volume of a cone with a radius of four and, uh, a height of seven?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_32_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_32_openai.wav",
+          "asr_output": "Um, hey, can you figure out the volume of a cone with a radius of 4 and a height of 7?"
         }
       ]
     ],
@@ -2566,7 +2599,8 @@
           "role": "user",
           "content": "Find the integral of the function f(x) = 3x^2 from 1 to 2.",
           "transcript": "Um, can you find the integral of f of x equals three x squared from one to two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_33_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_33_openai.wav",
+          "asr_output": "Om, can you find the integral of f of x equals 3x squared from 1 to 2?"
         }
       ]
     ],
@@ -2633,7 +2667,8 @@
           "role": "user",
           "content": "Calculate the Least Common Multiple (LCM) of 18 and 12.",
           "transcript": "Hey, can you find the greatest... oh, no, the least common multiple of eighteen and twelve?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_34_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_34_openai.wav",
+          "asr_output": "Hey, can you find the greatest\u2014oh, no, the least common multiple of 18 and 12?"
         }
       ]
     ],
@@ -2711,7 +2746,8 @@
           "role": "user",
           "content": "Calculate the greatest common divisor between 128 and 256.",
           "transcript": "Um, hey, whats the greatest common divisor of one twenty-eight and two fifty-six?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_35_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_35_openai.wav",
+          "asr_output": "Um, hey, what's the greatest common divisor of 128 and 256?"
         }
       ]
     ],
@@ -2780,7 +2816,8 @@
           "role": "user",
           "content": "Find out how fast an object was going if it started from rest and traveled a distance of 20 meters over 4 seconds due to a constant acceleration?",
           "transcript": "Um, can you calculate the speed of an object that started from rest, traveled twenty meters in four seconds, uh, with constant acceleration, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_36_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_36_openai.wav",
+          "asr_output": "Um, can you calculate the speed of an object that started from rest, traveled 20 meters in 4 seconds? With constant acceleration, right?"
         }
       ]
     ],
@@ -2852,7 +2889,8 @@
           "role": "user",
           "content": "Find the final velocity of an object thrown up at 40 m/s after 6 seconds.",
           "transcript": "Whats the final speed of an object thrown, uh, upwards at forty meters per second after six seconds?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_37_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_37_openai.wav",
+          "asr_output": "What's the final speed of an object thrown upwards at 40 meters per second after 6 seconds?"
         }
       ]
     ],
@@ -2938,7 +2976,8 @@
           "role": "user",
           "content": "Find a book 'The Alchemist' in the library branches within New York city.",
           "transcript": "Let me see... right, can you check for The Alchemist at library branches in New York City?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_38_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_38_openai.wav",
+          "asr_output": "Let me see. Right, can you check for The Alchemist at library branches in New York City?"
         }
       ]
     ],
@@ -3007,7 +3046,8 @@
           "role": "user",
           "content": "Find a ride from New York to Philadelphia with maximum cost of $50",
           "transcript": "Um, can you get a ride from New York to Philadelphia? Uh, make sure it doesnt cost more than fifty bucks, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_39_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_39_openai.wav",
+          "asr_output": "Um, can you get a ride from New York to Philadelphia? Make sure it doesn't cost more than fifty bucks. Thanks."
         }
       ]
     ],
@@ -3075,7 +3115,8 @@
           "role": "user",
           "content": "Calculate the strength of magnetic field given distance is 8 meters and current is 12 Amperes?",
           "transcript": "Hey, can you calculate the magnetic field strength... lemme see... if the distance is eight meters and the current is twelve Amperes?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_40_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_40_openai.wav",
+          "asr_output": "Hey, can you calculate the magnetic field strength? Let me see, if the distance is 8 meters and the current is 12 amperes."
         }
       ]
     ],
@@ -3138,9 +3179,10 @@
       [
         {
           "role": "user",
-          "content": "Calculate the magnetic field at point P using Ampere’s law where current I is 10 Amperes and r is 0.01 meter.",
-          "transcript": "Um, can you use Ampere’s law to get the magnetic field at point P? Oh, the current, uh, I is ten Amperes, and the distance r is zero point zero one meters.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_41_openai.wav"
+          "content": "Calculate the magnetic field at point P using Ampere\u2019s law where current I is 10 Amperes and r is 0.01 meter.",
+          "transcript": "Um, can you use Ampere\u2019s law to get the magnetic field at point P? Oh, the current, uh, I is ten Amperes, and the distance r is zero point zero one meters.",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_41_openai.wav",
+          "asr_output": "Um, can you use Ampere's Law to get the magnetic field at point P? Oh, the current I is 10 amperes, and the distance r is 0.01 meters."
         }
       ]
     ],
@@ -3168,7 +3210,7 @@
       },
       {
         "name": "magnetic_field.calculate",
-        "description": "Calculate the magnetic field based on the current flowing and the radial distance using Ampere’s law",
+        "description": "Calculate the magnetic field based on the current flowing and the radial distance using Ampere\u2019s law",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -3223,7 +3265,8 @@
           "role": "user",
           "content": "Calculate the final temperature when 2 moles of gas at 300 K are mixed with 3 moles of the same gas at 400 K.",
           "transcript": "Um, whats the final temperature when you mix, uh, maybe about two moles of gas at roughly three hundred Kelvin with around three moles of the same gas at approximately four hundred Kelvin, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_42_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_42_openai.wav",
+          "asr_output": "What's the final temperature when you mix maybe about two moles of gas at roughly 300 Kelvin with around three moles of the same gas at approximately 400 Kelvin, right?"
         }
       ]
     ],
@@ -3290,7 +3333,8 @@
           "role": "user",
           "content": "What is the energy produced by 5 mol of glucose (C6H12O6)?",
           "transcript": "Uh, how much energy does, uh, five moles of glucose make?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_43_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_43_openai.wav",
+          "asr_output": "How much energy does five moles of glucose make?"
         }
       ]
     ],
@@ -3373,7 +3417,8 @@
           "role": "user",
           "content": "How much will I weigh on Mars if my weight on Earth is 70 kg?",
           "transcript": "Um, if I weigh seventy kilos on Earth, how muchd I weigh on Mars, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_44_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_44_openai.wav",
+          "asr_output": "Um, if I weigh seventy kilos on Earth, how much do I weigh on Mars, right?"
         }
       ]
     ],
@@ -3461,7 +3506,8 @@
           "role": "user",
           "content": "Calculate how many years ago was the Ice age?",
           "transcript": "Hey, um, how many years ago did Ice Age happen, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_45_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_45_openai.wav",
+          "asr_output": "Hey, um, how many years ago did Ice Age happen, right?"
         }
       ]
     ],
@@ -3516,7 +3562,8 @@
           "role": "user",
           "content": "Sort this list of names in ascending order: ['Sam', 'Alice', 'Jack']",
           "transcript": "Uh, can sort this list of names in uh-cent-eh-ing, that is a-s-c-e-n-d-i-n-g, ascending order: Sam, Alice, Jack, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_46_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_46_openai.wav",
+          "asr_output": "Uh, can sort this list of names in, uh, ascending, that is A-S-C-E-N-D-I-N-G, ascending order. Sam, Alice, Jack, right?"
         }
       ]
     ],
@@ -3598,7 +3645,8 @@
           "role": "user",
           "content": "Calculate the cosine similarity between vector A [3, 2, 1] and vector B [1, 2, 3].",
           "transcript": "Hey, um, can you work out the cosine similarity between vector A, which is, uh, [three, two, one], and vector B, [one, two, three]?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_47_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_47_openai.wav",
+          "asr_output": "Hey, um, can you work out the cosine similarity between vector A, which is uh, (3, 2, 1) and vector B, (1, 2, 3)?"
         }
       ]
     ],
@@ -3679,7 +3727,8 @@
           "role": "user",
           "content": "Find me a pet-friendly library with facilities for disabled people in New York City.",
           "transcript": "Um, right, can find a pet-friendly library in New York City that also, uh, has facilities for disabled people?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_48_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_48_openai.wav",
+          "asr_output": "Um, right. Can find a pet-friendly library in New York City that also has facilities for disabled people?"
         }
       ]
     ],
@@ -3754,7 +3803,8 @@
           "role": "user",
           "content": "Calculate the compound interest for an amount of 1500 for a duration of 2 years with an annual interest rate of 2.5%.",
           "transcript": "Hey, um, can you work out the compound interest on fifteen hundred dollars for two years at an annual rate of two point five percent?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_49_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_49_openai.wav",
+          "asr_output": "Hey, um, can you work out the compound interest on $1500 for two years at an annual rate of 2.5%?"
         }
       ]
     ],
@@ -3857,7 +3907,8 @@
           "role": "user",
           "content": "Predict the house prices for the next month in New York.",
           "transcript": "Hey, um, can you predict house prices for next month in New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_50_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_50_openai.wav",
+          "asr_output": "Hey, um, can you predict house prices for next month in New York?"
         }
       ]
     ],
@@ -3949,7 +4000,8 @@
           "role": "user",
           "content": "Calculate the probability of rolling a sum of 7 on a roll of two dice.",
           "transcript": "Um, can you figure out, uh, odds of gettin a sum of seven when rollin two dice, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_51_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_51_openai.wav",
+          "asr_output": "Um, can you figure out, uh, odds of getting a sum of seven when rolling two dice, please?"
         }
       ]
     ],
@@ -4032,7 +4084,8 @@
           "role": "user",
           "content": "I have 100 euro. How much is it in USD?",
           "transcript": "Hey, Ive got one hundred euros. Oh, whats that in US dollars?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_52_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_52_openai.wav",
+          "asr_output": "Hey, I've got one hundred euros! Oh, what's that in US dollars?"
         }
       ]
     ],
@@ -4099,7 +4152,8 @@
           "role": "user",
           "content": "Predict the house prices for next 5 years based on interest rates and unemployment rates.",
           "transcript": "Let me see... right, can you forecast house prices for next five years, considering interest rates and unemployment rates?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_53_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_53_openai.wav",
+          "asr_output": "Let me see. Right, can you forecast house prices for next five years, considering interest rates and unemployment rates?"
         }
       ]
     ],
@@ -4177,7 +4231,8 @@
           "role": "user",
           "content": "Find out the historical dividend payments of Apple Inc for last five years.",
           "transcript": "Um, can you check, uh, Apples dividend payments over the past five years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_54_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_54_openai.wav",
+          "asr_output": "Um, can you check Apple's dividend payments over the past five years?"
         }
       ]
     ],
@@ -4241,8 +4296,9 @@
         {
           "role": "user",
           "content": "Predict the stock price for Google for the next 3 days.",
-          "transcript": "Um, hey, can you predict Google’s stock price for the next, uh, three days?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_55_openai.wav"
+          "transcript": "Um, hey, can you predict Google\u2019s stock price for the next, uh, three days?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_55_openai.wav",
+          "asr_output": "Um, hey, can you predict Google's stock price for the next, uh, three days?"
         }
       ]
     ],
@@ -4303,7 +4359,8 @@
           "role": "user",
           "content": "Find the average closing price of Apple stock in the past 60 days",
           "transcript": "Hey, uh, whats the average closing price for Apple stock over the last, um, sixty days?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_56_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_56_openai.wav",
+          "asr_output": "Hey, uh, what's the average closing price for Apple stock over the last, um, 60 days?"
         }
       ]
     ],
@@ -4393,7 +4450,8 @@
           "role": "user",
           "content": "Can you please calculate the compound interest for a principle of $1000, annual rate of 5% over 10 years with 4 compound per year.",
           "transcript": "Work out, uh, the compound interest for a one-thousand dollar principal at a, um, five percent annual rate over ten years, compounded quarterly.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_57_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_57_openai.wav",
+          "asr_output": "Work out the compound interest for a $1000 principal at a 5% annual rate over 10 years, compounded quarterly."
         }
       ]
     ],
@@ -4465,7 +4523,8 @@
           "role": "user",
           "content": "Search for divorce law specialists in Los Angeles",
           "transcript": "Uh, look for divorce law specialists in Los Angeles.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_58_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_58_openai.wav",
+          "asr_output": "Look for divorce law specialists in Los Angeles."
         }
       ]
     ],
@@ -4522,7 +4581,8 @@
           "role": "user",
           "content": "Find lawyers specializing in criminal law near me in New York.",
           "transcript": "Um, can you look for, uh, criminal law lawyers nearby in New York, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_59_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_59_openai.wav",
+          "asr_output": "Can you look for criminal law lawyers nearby in New York?"
         }
       ]
     ],
@@ -4593,7 +4653,8 @@
           "role": "user",
           "content": "What will be the humidity and temperature for New York City after 7 days?",
           "transcript": "Hey, um, whats the humidity and temperature forecast for New York City in a week, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_60_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_60_openai.wav",
+          "asr_output": "Hey, um, what's the humidity and temperature forecast for New York City in a week, right?"
         }
       ]
     ],
@@ -4671,7 +4732,8 @@
           "role": "user",
           "content": "Find a Landscape Architect who is experienced 5 years in small space garden design in Portland",
           "transcript": "Can, um, get a landscape architect with, like, five years of experience in small space garden design in Portland, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_61_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_61_openai.wav",
+          "asr_output": "Ken, um, get a landscape architect with like five years of experience in small-space garden design in Portland, right?"
         }
       ]
     ],
@@ -4738,7 +4800,8 @@
           "role": "user",
           "content": "Find me the closest nature park that allows camping and has scenic views in Boston, MA.",
           "transcript": "Hey, whats the nearest nature park in Boston where I can relax and enjoy scenic views?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_62_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_62_openai.wav",
+          "asr_output": "Hey, what's the nearest nature park in Boston where I can relax and enjoy scenic views?"
         }
       ]
     ],
@@ -4811,7 +4874,8 @@
           "role": "user",
           "content": "What will be the air quality index of New York for the next week?",
           "transcript": "Uh, can you tell me the air quality index for, like, New York next week?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_63_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_63_openai.wav",
+          "asr_output": "Can you tell me the air quality index for like New York next week?"
         }
       ]
     ],
@@ -4889,7 +4953,8 @@
           "role": "user",
           "content": "Give me the UV index for Tokyo for tomorrow, June01 2023.",
           "transcript": "Whats the UV index for, um, Tokyo tomorrow, June first, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_64_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_64_openai.wav",
+          "asr_output": "What's the UV index for, um, Tokyo tomorrow, June 1st, 2023?"
         }
       ]
     ],
@@ -4967,7 +5032,8 @@
           "role": "user",
           "content": "Find the distance between New York City and Los Angeles.",
           "transcript": "Hey, uh, how far is it from New York City to Los Angeles, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_65_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_65_openai.wav",
+          "asr_output": "Hey, uh, how far is it from New York City to Los Angeles, right?"
         }
       ]
     ],
@@ -5054,8 +5120,9 @@
         {
           "role": "user",
           "content": "How much traffic should I expect from Las Vegas to Los Angeles this weekend?",
-          "transcript": "What’s the traffic like from Las Vegas to Los Angeles this weekend?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_66_cartesia.mp3"
+          "transcript": "What\u2019s the traffic like from Las Vegas to Los Angeles this weekend?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_66_cartesia.mp3",
+          "asr_output": "What's the traffic like from Las Vegas to Los Angeles this weekend?"
         }
       ]
     ],
@@ -5137,7 +5204,8 @@
           "role": "user",
           "content": "Translate Hello, how are you? from English to French.",
           "transcript": "Translate Hello, how are you? from English to French, okay.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_67_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_67_cartesia.mp3",
+          "asr_output": "Translate hello, how are you? from English to French, OK."
         }
       ]
     ],
@@ -5210,7 +5278,8 @@
           "role": "user",
           "content": "Can I find a historical fiction book at the New York public library?",
           "transcript": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_68_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_68_cartesia.mp3",
+          "asr_output": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?"
         }
       ]
     ],
@@ -5290,7 +5359,8 @@
           "role": "user",
           "content": "Determine my personality type based on the five factor model with given information: I'm talkative, gets nervous easily, has few artistic interests, tend to be lazy and has a forgiving nature.",
           "transcript": "Um, can you find out my personality type using five-factor model? Heres some info: Im, uh, talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah, Im forgiving.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_69_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_69_cartesia.mp3",
+          "asr_output": "Um, can you find out my personality type using Five-Factor Model? Here's some info: I'm a talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah... I'm forgiving."
         }
       ]
     ],
@@ -5372,7 +5442,8 @@
           "role": "user",
           "content": "Who were the kings of France during the 18th century?",
           "transcript": "Um, hey, right, can tell me who the French kings were in the eighteenth century?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_70_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_70_cartesia.mp3",
+          "asr_output": "Um, hey, right, can tell me who the French kings were in the eighteenth century?"
         }
       ]
     ],
@@ -5458,7 +5529,8 @@
           "role": "user",
           "content": "How many veterans were there in the United States in the year 1954?",
           "transcript": "Hey, um, dyou know how many veterans were in U.S. back in nineteen fifty-four?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_71_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_71_cartesia.mp3",
+          "asr_output": "Hey, um, do you know how many veterans were in US back in 1954?"
         }
       ]
     ],
@@ -5536,7 +5608,8 @@
           "role": "user",
           "content": "What was the population of California in 1970?",
           "transcript": "Hey, um, dyou know how many people, uh, lived in California back in nineteen seventy?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_72_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_72_cartesia.mp3",
+          "asr_output": "Hey, um, dino how many people lived in California back in 1970?"
         }
       ]
     ],
@@ -5601,7 +5674,8 @@
           "role": "user",
           "content": "Who was the founder of Buddhism and where was it originated?",
           "transcript": "Um, whos the founder of Buddhism, and, uh, where did it begin, oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_73_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_73_cartesia.mp3",
+          "asr_output": "Who's the founder of Buddhism and where did it begin?"
         }
       ]
     ],
@@ -5648,7 +5722,8 @@
           "role": "user",
           "content": "Find the price of Van Gogh's painting 'Starry Night' on all auction platforms.",
           "transcript": "Uh, look at auction platforms for the price of Van Goghs Starry Night painting, right.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_74_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_74_cartesia.mp3",
+          "asr_output": "Look at auction platforms for the price of Van Gogh's Starry Night painting, right?"
         }
       ]
     ],
@@ -5715,7 +5790,8 @@
           "role": "user",
           "content": "Which paint color is currently most popular for living rooms?",
           "transcript": "Hey, um, what paint color is popular for living rooms right now, you know?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_75_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_75_cartesia.mp3",
+          "asr_output": "Hey, um, what paint color is popular for living rooms right now, you know?"
         }
       ]
     ],
@@ -5803,7 +5879,8 @@
           "role": "user",
           "content": "I want to order a custom bronze sculpture of a horse. What material options are available?",
           "transcript": "Id like to get, uh, a custom bronze horse sculpture. Oh, um, what materials can I pick from?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_76_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_76_cartesia.mp3",
+          "asr_output": "I'd like to get a custom bronze horse sculpture. Oh, what materials can I pick from?"
         }
       ]
     ],
@@ -5882,7 +5959,8 @@
           "role": "user",
           "content": "Search for famous contemporary sculptures in New York.",
           "transcript": "Um, hey, can you get some famous... contemporary sculptures in New York, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_77_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_77_cartesia.mp3",
+          "asr_output": "Um, hey, can you get some famous contemporary sculptures in New York? Thanks."
         }
       ]
     ],
@@ -5968,7 +6046,8 @@
           "role": "user",
           "content": "Get me information about Natural History Museum in London including timings, exhibitions, and accessibility.",
           "transcript": "Um, could you get the details on Londons Natural History Museum? Oh, Im, uh, lookin for the timings, exhibitions, and accessibility info.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_78_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_78_cartesia.mp3",
+          "asr_output": "Um, could you get the details on London's Natural History Museum?"
         }
       ]
     ],
@@ -6055,7 +6134,8 @@
           "role": "user",
           "content": "Find art exhibitions for the upcoming month in the Museum of Modern Art, New York.",
           "transcript": "What art exhibitions are happening next month at Museum of Modern Art, thats M-U-S-E-U-M of Modern Art, in New York, thats N-E-W Y-O-R-K, New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_79_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_79_cartesia.mp3",
+          "asr_output": "What art exhibitions are happening next month at Museum of Modern Art, that's M-U-S-E-U-M, of Modern Art in New York, that's N-E-W-Y-O-R-K New York."
         }
       ]
     ],
@@ -6116,7 +6196,8 @@
           "role": "user",
           "content": "Find a local guitar shop that also offers violin lessons in Nashville.",
           "transcript": "Hey, can you look for a guitar shop in Nashville that also offers violin lessons?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_80_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_80_cartesia.mp3",
+          "asr_output": "Hey, can you look for a guitar shop in Nashville that also offers violin lessons?"
         }
       ]
     ],
@@ -6215,7 +6296,8 @@
           "role": "user",
           "content": "Book a ticket for the upcoming Eminem concert in New York City, I would like to get the one with backstage access.",
           "transcript": "Uh, can book a ticket for the Eminem concert in New York City? Oh, wanna the, um, one with backstage access.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_81_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_81_cartesia.mp3",
+          "asr_output": "I can book a ticket for the Eminem concert in New York City?"
         }
       ]
     ],
@@ -6296,7 +6378,8 @@
           "role": "user",
           "content": "Play a song in C Major key at tempo 120 bpm.",
           "transcript": "Uh, play a song in the key of C major at one-twenty beats per minute, right.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_82_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_82_cartesia.mp3",
+          "asr_output": "\u30d7\u30ec\u30a4\u30a2\u30bd\u30f3\u30b0\u30a4\u30f3\u30b6\u30ad\u30fc\u30aa\u30d6C\u30e1\u30b8\u30e3\u30fc\u3001\u30a2\u30c3\u30c8120\u30d3\u30fc\u30c4\u30d1\u30fc\u30df\u30cb\u30c3\u30c8\u3001\u30e9\u30a4\u30c8?"
         }
       ]
     ],
@@ -6363,7 +6446,8 @@
           "role": "user",
           "content": "How many goals has Lionel Messi scored for Barcelona till date?",
           "transcript": "Uh, can you tell me how many goals Lionel Messis, um, scored for Barcelona up to now, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_83_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_83_cartesia.mp3",
+          "asr_output": "Can you tell me how many goals Lionel Messi scored for Barcelona up to now, right?"
         }
       ]
     ],
@@ -6443,7 +6527,8 @@
           "role": "user",
           "content": "Give me the top 10 goal scorers in the UEFA Champions League from Barcelona team.",
           "transcript": "Um, whore top ten goal scorers from Barcelona in UEFA Champions League, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_84_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_84_cartesia.mp3",
+          "asr_output": "Um, who are top ten goal scorers from Barcelona in UEFA Champions League, right?"
         }
       ]
     ],
@@ -6510,7 +6595,8 @@
           "role": "user",
           "content": "Get the soccer scores for Real Madrid games in La Liga for the last 5 rounds.",
           "transcript": "Um, can you pull up the Real Madrid scores from their last, uh, five La Liga matches?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_85_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_85_cartesia.mp3",
+          "asr_output": "Can you pull up the Real Madrid scores from their last five La Liga matches?"
         }
       ]
     ],
@@ -6577,7 +6663,8 @@
           "role": "user",
           "content": "What are some recommended board games for 2 players and strategy based from store BoardGameGeek?",
           "transcript": "Hey, could you, uh, find some strategy board games for two players recommended by BoardGameGeek, thats B-O-A-R-D-G-A-M-E-G-E-E-K, BoardGameGeek, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_86_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_86_cartesia.mp3",
+          "asr_output": "Hey, could you find some strategy board games for two players recommended by BoardGameGeek?"
         }
       ]
     ],
@@ -6642,7 +6729,8 @@
           "role": "user",
           "content": "Find the latest update or patch for the game 'Cyberpunk 2077' on Xbox platform.",
           "transcript": "Um, hey, can snag, uh, the latest update or patch for Cyberpunk twenty seventy-seven on Xbox?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_87_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_87_cartesia.mp3",
+          "asr_output": "Um, hey, can snag the latest update or patch for Cyberpunk 2077 on Xbox?"
         }
       ]
     ],
@@ -6722,8 +6810,9 @@
         {
           "role": "user",
           "content": "Find me the number of active players in the game 'World of Warcraft' in 2020.",
-          "transcript": "Uh, how many active players were, um, in World of Warcraft—spelled W-O-R-L-D of W-A-R-C-R-A-F-T—in twenty-twenty?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_88_cartesia.mp3"
+          "transcript": "Uh, how many active players were, um, in World of Warcraft\u2014spelled W-O-R-L-D of W-A-R-C-R-A-F-T\u2014in twenty-twenty?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_88_cartesia.mp3",
+          "asr_output": "How many active players were in World of Warcraft in 2020?"
         }
       ]
     ],
@@ -6790,7 +6879,8 @@
           "role": "user",
           "content": "Find a healthy lunch recipe under 500 calories that uses chicken and mushrooms.",
           "transcript": "Uh, can you get a recipe for a healthy lunch with chicken and, um, mushrooms thats under five hundred calories?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_89_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_89_cartesia.mp3",
+          "asr_output": "Can you get a recipe for a healthy lunch with chicken and mushrooms that's under 500 calories?"
         }
       ]
     ],
@@ -6887,7 +6977,8 @@
           "role": "user",
           "content": "I want a seafood restaurant in Seattle that can accommodate a group of 5.",
           "transcript": "Uh, get me a seafood restaurant in Seattle for a group of five, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_90_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_90_cartesia.mp3",
+          "asr_output": "Get me a seafood restaurant in Seattle for a group of five, right?"
         }
       ]
     ],
@@ -6970,7 +7061,8 @@
           "role": "user",
           "content": "Can I find a good cooking recipe for apple pie using less than 5 ingredients?",
           "transcript": "Um, hey, can you get a simple apple pie recipe with, uh, under five ingredients, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_91_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_91_cartesia.mp3",
+          "asr_output": "Hey, can you get a simple apple pie recipe with under five ingredients, right?"
         }
       ]
     ],
@@ -7029,7 +7121,8 @@
           "role": "user",
           "content": "Get me a list of available vegetarian and gluten-free foods at the Walmart near Denver.",
           "transcript": "Uh, can you, like, get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_92_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_92_cartesia.mp3",
+          "asr_output": "Can you like get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?"
         }
       ]
     ],
@@ -7125,7 +7218,8 @@
           "role": "user",
           "content": "Book a deluxe room for 2 nights at the Marriott hotel in New York and add breakfast as an extra service",
           "transcript": "Uh, can you get a deluxe room for two nights at the Marriott in New York, and, um, oh, add breakfast as an extra?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_93_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_93_cartesia.mp3",
+          "asr_output": "Can you get a deluxe room for two nights at the Marriott in New York, and oh, add breakfast as an extra?"
         }
       ]
     ],
@@ -7209,7 +7303,8 @@
           "role": "user",
           "content": "I want to book a suite with queen size bed for 3 nights in Hilton New York. Can you find the pricing for me?",
           "transcript": "Um, hey, can you look at prices for a suite with a queen bed for, uh, three nights at Hilton New York, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_94_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_94_cartesia.mp3",
+          "asr_output": "Um, hey, can you look at prices for a suite with a queen bed for three nights at Hilton New York, okay?"
         }
       ]
     ],
@@ -7302,7 +7397,8 @@
           "role": "user",
           "content": "Convert 200 euros to US dollars using current exchange rate.",
           "transcript": "Hey, um, whats the conversion from two hundred euros to US dollars at the current rate?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_95_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_95_cartesia.mp3",
+          "asr_output": "Hey, um, what's the conversion from 200 euros to US dollars at the current rate?"
         }
       ]
     ],
@@ -7373,7 +7469,8 @@
           "role": "user",
           "content": "Solve a quadratic equation where a=2, b=6, and c=5",
           "transcript": "Um, hey, can you solve this quadratic equation me? Right, the coefficients are: a equals two, uh, b equals six, and c equals five.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_96_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_96_cartesia.mp3",
+          "asr_output": "Um, hey can you solve this quadratic equation me? Right, the coefficients are -a equals two, b equals six, and c equals five."
         }
       ]
     ],
@@ -7470,7 +7567,8 @@
           "role": "user",
           "content": "What's the area of a circle with a radius of 10?",
           "transcript": "Hey, right, can you say the area of a circle with a radius of ten?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_97_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_97_cartesia.mp3",
+          "asr_output": "Hey Wright, can you say the area of a circle with a radius of ten?"
         }
       ]
     ],
@@ -7540,7 +7638,8 @@
           "role": "user",
           "content": "Calculate the circumference of a circle with radius 3",
           "transcript": "Hey, um, could you get the circumference of a circle with a radius of three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_98_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_98_cartesia.mp3",
+          "asr_output": "Hey um, could you get the circumference of a circle with a radius of three?"
         }
       ]
     ],
@@ -7654,7 +7753,8 @@
           "role": "user",
           "content": "Calculate the derivative of the function 2x^2 at x = 1.",
           "transcript": "Uh, could you find the derivative of the function two x squared at x equals one, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_99_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_99_cartesia.mp3",
+          "asr_output": "Could you find the derivative of the function 2x squared at x equals 1, please?"
         }
       ]
     ],
@@ -7721,7 +7821,8 @@
           "role": "user",
           "content": "Find the highest common factor of 36 and 24.",
           "transcript": "Hey, uh, whats the greatest common factor of thirty-six and twenty-four?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_100_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_100_cartesia.mp3",
+          "asr_output": "Hey, what's the greatest common factor of 36 and 24?"
         }
       ]
     ],
@@ -7788,7 +7889,8 @@
           "role": "user",
           "content": "Find the greatest common divisor (GCD) of 12 and 18",
           "transcript": "Um, whats the greatest common divisor of twelve, uh, and eighteen?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_101_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_101_cartesia.mp3",
+          "asr_output": "What's the greatest common divisor of 12 and 18?"
         }
       ]
     ],
@@ -7849,7 +7951,8 @@
           "role": "user",
           "content": "Calculate the displacement of a car given the initial velocity of 10 and acceleeration of 9.8 within 5 seconds.",
           "transcript": "Uh, can you get the cars displacement? Its got an initial velocity of ten, accelerates at nine point eight, and its, like, over five seconds.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_102_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_102_cartesia.mp3",
+          "asr_output": "Uh, can you get the car's displacement? It's got an initial velocity of 10, accelerates at 9.8, and it's like over 5 seconds."
         }
       ]
     ],
@@ -7939,7 +8042,8 @@
           "role": "user",
           "content": "Calculate the final speed of an object dropped from 100 m without air resistance.",
           "transcript": "Um, whats the final speed when an object is, uh, dropped from one hundred meters with no air resistance?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_103_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_103_cartesia.mp3",
+          "asr_output": "What's the final speed when an object is dropped from 100 meters with no air resistance?"
         }
       ]
     ],
@@ -8045,7 +8149,8 @@
           "role": "user",
           "content": "Find the shortest driving distance between New York City and Washington D.C.",
           "transcript": "Uh, whats the shortest driving distance between New York City and Washington D.C., right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_104_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_104_cartesia.mp3",
+          "asr_output": "Uh, what's the shortest driving distance between New York City and Washington D.C., right?"
         }
       ]
     ],
@@ -8153,7 +8258,8 @@
           "role": "user",
           "content": "Calculate the magnetic field produced at the center of a circular loop carrying current of 5 Ampere with a radius of 4 meters",
           "transcript": "Uh, find the magnetic field at the center of a circular loop. Its carrying a current of five Amps, and, um, the radius is four meters.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_105_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_105_cartesia.mp3",
+          "asr_output": "Find the magnetic field at the center of a circular loop. It's carrying a current of 5 amps, and the radius is 4 meters."
         }
       ]
     ],
@@ -8243,7 +8349,8 @@
           "role": "user",
           "content": "Calculate the electric field strength 4 meters away from a charge of 0.01 Coulombs.",
           "transcript": "Hey, um, can you work out the electric field strength, like, four meters from a zero point zero one Coulomb charge?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_106_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_106_cartesia.mp3",
+          "asr_output": "Hey, um, can you work out the electric field strength, like four meters from a 0.01 coulomb charge?"
         }
       ]
     ],
@@ -8363,9 +8470,10 @@
       [
         {
           "role": "user",
-          "content": "What is the density of a substance with a mass of 45 kg and a volume of 15 m³?",
+          "content": "What is the density of a substance with a mass of 45 kg and a volume of 15 m\u00b3?",
           "transcript": "Hey, um, can you tell me the density if something weighs forty-five kilograms and takes up fifteen cubic meters?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_107_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_107_cartesia.mp3",
+          "asr_output": "Hey um, can you tell me the density if something weighs 45 kilograms and takes up 15 cubic meters?"
         }
       ]
     ],
@@ -8411,7 +8519,7 @@
             },
             "unit": {
               "type": "string",
-              "description": "The unit of density. Default is kg/m³"
+              "description": "The unit of density. Default is kg/m\u00b3"
             }
           },
           "required": [
@@ -8430,7 +8538,8 @@
           "role": "user",
           "content": "Calculate the heat capacity at constant pressure for air, given its temperature is 298K and volume is 10 m^3.",
           "transcript": "Let me see... can you figure out the heat capacity at constant pressure for air with a temperature of two hundred ninety-eight Kelvin and a volume of ten cubic meters?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_108_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_108_cartesia.mp3",
+          "asr_output": "Let me see, can you figure out the heat capacity at constant pressure for air with a temperature of 298 Kelvin and a volume of 10 cubic meters?"
         }
       ]
     ],
@@ -8500,7 +8609,8 @@
           "role": "user",
           "content": "What are the names of proteins found in the plasma membrane?",
           "transcript": "Could you let me know what proteins are in the plasma membrane, plasma membrane?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_109_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_109_cartesia.mp3",
+          "asr_output": "Could you let me know what proteins are in the plasma membrane?"
         }
       ]
     ],
@@ -8590,7 +8700,8 @@
           "role": "user",
           "content": "Find the type of gene mutation based on SNP (Single Nucleotide Polymorphism) ID rs6034464.",
           "transcript": "Hey, uh, can you tell me the gene mutation type for S-N-P ID R-S-6-0-3-4-4-6-4, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_110_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_110_cartesia.mp3",
+          "asr_output": "Heya, can you tell me the gene mutation type for SNP ID rs6034464 please?"
         }
       ]
     ],
@@ -8650,7 +8761,8 @@
           "role": "user",
           "content": "What is the genotype frequency of AA genotype in a population, given that allele frequency of A is 0.3?",
           "transcript": "Hey, um, right, whats the genotype frequency for the AA genotype when the allele frequency of As zero point three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_111_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_111_cartesia.mp3",
+          "asr_output": "Hey, um, right, what's the genotype frequency for the AAA genotype when the allele frequency of A is 0.3?"
         }
       ]
     ],
@@ -8736,7 +8848,8 @@
           "role": "user",
           "content": "Predict the growth of forest in Yellowstone National Park for the next 5 years including human impact.",
           "transcript": "Um, can you forecast how the forest in Yellowstone will, uh, grow over the next five years, considerin human impact? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_112_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_112_cartesia.mp3",
+          "asr_output": "Can you forecast how the forest in Yellowstone will grow over the next five years, consider human impact? Thanks."
         }
       ]
     ],
@@ -8792,7 +8905,8 @@
           "role": "user",
           "content": "Calculate the expected evolutionary fitness of a creature, with trait A contributing to 40% of the fitness and trait B contributing 60%, if trait A has a value of 0.8 and trait B a value of 0.7.",
           "transcript": "Hey, lemme see... calculate the evolutionary fitness for a creature. Trait A makes up 40 percent with a value of 0.8, and trait Bs 60 percent at 0.7.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_113_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_113_cartesia.mp3",
+          "asr_output": "Hey Lensi, calculate the evolutionary fitness for a creature. Trait A makes up 40% with a value of 0.8, and trait B 60% at 0.7."
         }
       ]
     ],
@@ -8922,7 +9036,8 @@
           "role": "user",
           "content": "Get me the predictions of the evolutionary rate for Homo Sapiens for next 50 years using Darwin model",
           "transcript": "Um, can you give me the evolutionary rate predictions for Homo Sapiens over the next, uh, fifty years using the Darwin model?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_114_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_114_cartesia.mp3",
+          "asr_output": "Can you give me the evolutionary rate predictions for Homo sapiens over the next 50 years using the Darwin model?"
         }
       ]
     ],
@@ -9013,7 +9128,8 @@
           "role": "user",
           "content": "I want to find 5 restaurants nearby my location, Manhattan, offering Thai food and a vegan menu.",
           "transcript": "Uh, find me five Thai joints nearby in Manhattan with, you know, vegan options, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_115_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_115_cartesia.mp3",
+          "asr_output": "Find me five Thai joints nearby in Manhattan with, you know, vegan options, thanks."
         }
       ]
     ],
@@ -9137,7 +9253,8 @@
           "role": "user",
           "content": "Calculate the Body Mass Index (BMI) of a person with a weight of 85 kilograms and height of 180 cm.",
           "transcript": "Can you figure out BMI for someone weighing eighty-five kilograms and one hundred eighty centimeters tall, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_116_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_116_cartesia.mp3",
+          "asr_output": "Can you figure out BMI for someone weighing 85 kilograms and 180 centimeters tall, okay?"
         }
       ]
     ],
@@ -9197,8 +9314,9 @@
         {
           "role": "user",
           "content": "Calculate the BMI (Body Mass Index) of a person who weighs 70kg and is 1.75m tall.",
-          "transcript": "Uh, what’s the BMI for someone who’s seventy kilograms and, um, one point seventy-five meters tall, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_117_cartesia.mp3"
+          "transcript": "Uh, what\u2019s the BMI for someone who\u2019s seventy kilograms and, um, one point seventy-five meters tall, right?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_117_cartesia.mp3",
+          "asr_output": "What's the BMI for someone who's 70 kilograms and 1.75 meters tall, right?"
         }
       ]
     ],
@@ -9299,7 +9417,8 @@
           "role": "user",
           "content": "Find all movies starring Leonardo DiCaprio in the year 2010 from IMDB database.",
           "transcript": "Hey, can you find all the two zero one zero movies with Leonardo DiCaprio, thats L-E-O-N-A-R-D-O D-I-C-A-P-R-I-O, on I-M-D-B, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_118_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_118_cartesia.mp3",
+          "asr_output": "Hey, can you find all the 2010 movies with Leonardo DiCaprio (that's L-E-O-N-A-R-D-O D-I-C-A-P-R-I-O) on IMDb? Thanks!"
         }
       ]
     ],
@@ -9403,7 +9522,8 @@
           "role": "user",
           "content": "Find records in database in user table where age is greater than 25 and job is 'engineer'.",
           "transcript": "Hey, can you, uh, check records in the database, specifically in the user table, where the ages over twenty-five and the job title is engineer? Thanks!",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_119_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_119_cartesia.mp3",
+          "asr_output": "Hey, can you, uh, check records in the database, specifically in the user table, where the age is over 25 and the job title is engineer? Thanks."
         }
       ]
     ],
@@ -9544,7 +9664,8 @@
           "role": "user",
           "content": "How much time will it take for the light to reach earth from a star 4 light years away?",
           "transcript": "Um, how longs it take light to go from a star thats, uh, four light years away to Earth?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_120_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_120_cartesia.mp3",
+          "asr_output": "Um, how long's it take light to go from a star that's uh four light years away to Earth?"
         }
       ]
     ],
@@ -9677,7 +9798,8 @@
           "role": "user",
           "content": "Calculate the area of a triangle with base 6 and height 10.",
           "transcript": "Hey, could you find the area of a triangle with a base of six and a height of ten?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_121_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_121_cartesia.mp3",
+          "asr_output": "Hey, could you find the area of a triangle with a base of 6 and a height of 10?"
         }
       ]
     ],
@@ -9772,7 +9894,8 @@
           "role": "user",
           "content": "Run a linear regression model with predictor variables 'Age', 'Income' and 'Education' and a target variable 'Purchase_Amount'. Also apply standardization.",
           "transcript": "Right, uh, use a linear regression with Age, Income, and Education as predictors, and, um, Purchase underscore Amount as the target. And make sure to include standardization.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_122_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_122_cartesia.mp3",
+          "asr_output": "Write: Use a linear regression with age, income, and education as predictors and purchase_amount as the target, and make sure to include standardization."
         }
       ]
     ],
@@ -9904,7 +10027,8 @@
           "role": "user",
           "content": "Calculate the probability of drawing a king from a deck of cards.",
           "transcript": "Hey, um, whats the chance of, uh, drawing a king from a deck of cards, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_123_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_123_cartesia.mp3",
+          "asr_output": "Hey, um, what's the chance of, uh, drawing a king from a deck of cards, right?"
         }
       ]
     ],
@@ -10001,7 +10125,8 @@
           "role": "user",
           "content": "What's the probability of drawing a king from a well shuffled standard deck of 52 cards?",
           "transcript": "Hey, uh, right, whats the chance of getting a king from a standard fifty-two card deck thats well shuffled?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_124_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_124_cartesia.mp3",
+          "asr_output": "Hey, alright. What's the chance of getting a king from a standard 52-card deck that's well-shuffled?"
         }
       ]
     ],
@@ -10089,8 +10214,9 @@
         {
           "role": "user",
           "content": "Run a two sample T-test to compare the average of Group A [3, 4, 5, 6, 4] and Group B [7, 8, 9, 8, 7] assuming equal variance.",
-          "transcript": "Can you, uh, perform a two-sample T-test to compare the averages of Group A—values are three, four, five, six, four—and, um, Group B—values are seven, eight, nine, eight, seven—assuming equal variance, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_125_cartesia.mp3"
+          "transcript": "Can you, uh, perform a two-sample T-test to compare the averages of Group A\u2014values are three, four, five, six, four\u2014and, um, Group B\u2014values are seven, eight, nine, eight, seven\u2014assuming equal variance, okay?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_125_cartesia.mp3",
+          "asr_output": "Can you perform a two-sample t-test to compare the averages of Group A values are 3, 4, 5, 6, 4 and Group B values are 7, 8, 9, 8, 7, assuming equal variance, okay?"
         }
       ]
     ],
@@ -10190,8 +10316,9 @@
         {
           "role": "user",
           "content": "Find the statistical significance between two set of variables, dataset_A with the values 12, 24, 36 and dataset_B with the values 15, 30, 45.",
-          "transcript": "Uh, check the statistical significance between dataset_A—values are twelve, twenty-four, thirty-six—and dataset_B with, uh, values fifteen, thirty, forty-five, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_126_cartesia.mp3"
+          "transcript": "Uh, check the statistical significance between dataset_A\u2014values are twelve, twenty-four, thirty-six\u2014and dataset_B with, uh, values fifteen, thirty, forty-five, right?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_126_cartesia.mp3",
+          "asr_output": "Check the statistical significance between dataset_A (values are 12, 24, 36) and dataset_B with (values 15, 30, 45), right?"
         }
       ]
     ],
@@ -10288,7 +10415,8 @@
           "role": "user",
           "content": "What's the quarterly dividend per share of a company with 100 million outstanding shares and total dividend payout of 50 million USD?",
           "transcript": "So, like, whats the quarterly dividend per share for a company with a hundred million shares if they give out fifty million dollars in dividends?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_127_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_127_cartesia.mp3",
+          "asr_output": "So, like, what's the quarterly dividend per share for a company with a hundred million shares if they give out fifty million dollars in dividends?"
         }
       ]
     ],
@@ -10402,7 +10530,8 @@
           "role": "user",
           "content": "Calculate the company's return on equity given its net income of $2,000,000, shareholder's equity of $10,000,000, and dividends paid of $200,000.",
           "transcript": "Hey, can you figure out the companys return on equity with these numbers: net incomes two million dollars, shareholders equitys ten million dollars, and dividends paid are two hundred thousand dollars?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_128_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_128_cartesia.mp3",
+          "asr_output": "Hey, can you figure out the company's return on equity with these numbers? Net income's $2 million, shareholders' equity's $10 million, and dividends paid are $200,000."
         }
       ]
     ],
@@ -10531,7 +10660,8 @@
           "role": "user",
           "content": "Find the compound interest for an investment of $10000 with an annual interest rate of 5% compounded monthly for 5 years.",
           "transcript": "Hey, could you, uh, figure out the compound interest for a ten thousand dollar investment at a five percent yearly rate, compounded monthly for five years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_129_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_129_cartesia.mp3",
+          "asr_output": "Hey, could you figure out the compound interest for a $10,000 investment at a 5% yearly rate, compounded monthly for 5 years?"
         }
       ]
     ],
@@ -10612,7 +10742,8 @@
           "role": "user",
           "content": "Calculate the Compound Annual Growth Rate (CAGR) for an initial investment of $2000, final value of $3000 in a period of 4 years.",
           "transcript": "Uh, can you work out the CAGR for an investment starting at, uh, two thousand dollars and ending at three thousand dollars over 4 years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_130_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_130_cartesia.mp3",
+          "asr_output": "Can you work out the CGR for an investment starting at $2,000 and ending at $3,000 over four years?"
         }
       ]
     ],
@@ -10645,7 +10776,7 @@
           "properties": {
             "a": {
               "type": "integer",
-              "description": "Coefficient of x²."
+              "description": "Coefficient of x\u00b2."
             },
             "b": {
               "type": "integer",
@@ -10699,7 +10830,8 @@
           "role": "user",
           "content": "Find the market performance of the S&P 500 and the Dow Jones over the past 5 days.",
           "transcript": "Um, can you see how the S amp P five hundred and, uh, Dow Jones have done in the last five days, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_131_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_131_cartesia.mp3",
+          "asr_output": "Um, can you see how the S&P 500 and, uh, Dow Jones have done in the last five days, yeah?"
         }
       ]
     ],
@@ -10797,7 +10929,8 @@
           "role": "user",
           "content": "Calculate the future value of an investment with an annual rate of return of 8%, an initial investment of $20000, and a time frame of 5 years.",
           "transcript": "Um, hey, can you figure out, like, the future value of an investment if Ive got, uh, a twenty thousand dollars initial investment, an eight percent annual return, over five years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_132_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_132_elevenlabs.wav",
+          "asr_output": "Um, hey, can you figure out, like, the future value of an investment if I've got a $20,000 initial investment, an 8% annual return over 5 years?"
         }
       ]
     ],
@@ -10891,7 +11024,8 @@
           "role": "user",
           "content": "Calculate the balance of a mutual fund given a total investment of $50000 with a 5% annual yield after 3 years.",
           "transcript": "Hey, um, can you figure out the balance of a mutual fund if I invest fifty thousand dollars with a five percent annual yield for, uh, three years?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_133_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_133_elevenlabs.wav",
+          "asr_output": "Hey, can you figure out the balance of a mutual fund if I invest $50,000 with a 5% annual yield for 3 years?"
         }
       ]
     ],
@@ -10952,7 +11086,8 @@
           "role": "user",
           "content": "Look up details of a felony crime record for case number CA123456 in San Diego County",
           "transcript": "Uh, find details for felony case C A one two three four five six in San Diego County, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_134_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_134_elevenlabs.wav",
+          "asr_output": "Ah, fine details for felony case CA123456 in San Diego County, okay?"
         }
       ]
     ],
@@ -11078,7 +11213,8 @@
           "role": "user",
           "content": "Who was the victim in the case docket numbered 2022/AL2562 in California?",
           "transcript": "Hey, um, who was the victim in the case with docket number twenty twenty-two slash A L two five six two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_135_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_135_elevenlabs.wav",
+          "asr_output": "Hey, um, who was the victim in the case with docket number 2022/AL2562?"
         }
       ]
     ],
@@ -11144,7 +11280,8 @@
           "role": "user",
           "content": "Provide me the official crime rate of violent crime in San Francisco in 2020.",
           "transcript": "Whats the official violent crime rate for, um, San Francisco in twenty-twenty, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_136_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_136_elevenlabs.wav",
+          "asr_output": "What's the official violent crime rate for, um, San Francisco in 2020, right?"
         }
       ]
     ],
@@ -11216,7 +11353,8 @@
           "role": "user",
           "content": "Search for ongoing lawsuits related to the company 'Google' filed after January 1, 2021 in California.",
           "transcript": "Find current lawsuits against Google in California starting January first, 2021.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_137_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_137_elevenlabs.wav",
+          "asr_output": "Find current lawsuits against Google in California starting January 1, 2021."
         }
       ]
     ],
@@ -11323,7 +11461,8 @@
           "role": "user",
           "content": "How to obtain the detailed case information of the R vs Adams legal case?",
           "transcript": "Hey, uh, how can I get the detailed info on the R vs Adams legal case, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_138_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_138_elevenlabs.wav",
+          "asr_output": "Hey, uh, how can I get the detailed info on the R v Adams legal case, right?"
         }
       ]
     ],
@@ -11419,7 +11558,8 @@
           "role": "user",
           "content": "Find details of patent lawsuits involving the company 'Apple Inc.' from the year 2010.",
           "transcript": "Can you, um, give me the details of patent lawsuits involving Apple Inc. from 2010, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_139_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_139_elevenlabs.wav",
+          "asr_output": "Can you give me the details of patent lawsuits involving Apple Inc from 2010, thanks?"
         }
       ]
     ],
@@ -11535,7 +11675,8 @@
           "role": "user",
           "content": "Find the lawsuits filed against the company Google in California in the year 2020.",
           "transcript": "Um, could you check any, uh, lawsuits filed against Google in California from twenty-twenty?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_140_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_140_elevenlabs.wav",
+          "asr_output": "Could you check any lawsuits filed against Google in California from 2020?"
         }
       ]
     ],
@@ -11616,7 +11757,8 @@
           "role": "user",
           "content": "I need the details of the lawsuit case with case ID of 1234 and verify if it's already closed.",
           "transcript": "Can you, uh, check the details for lawsuit case ID twelve thirty-four and see if its closed, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_141_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_141_elevenlabs.wav",
+          "asr_output": "Can you check the details for lawsuit case ID 1234 and see if it's closed, yeah?"
         }
       ]
     ],
@@ -11701,7 +11843,8 @@
           "role": "user",
           "content": "What is the humidity level in Miami, Florida in the upcoming 7 days?",
           "transcript": "Hey, can you say the humidity forecast for Miami for the next seven days?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_142_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_142_elevenlabs.wav",
+          "asr_output": "Hey, can you say the humidity forecast for Miami for the next seven days?"
         }
       ]
     ],
@@ -11767,7 +11910,8 @@
           "role": "user",
           "content": "Calculate the slope gradient in degree between two points on a landscape with coordinates (40.7128, -74.0060) and (34.0522, -118.2437).",
           "transcript": "Um, can you figure out slope gradient in degrees between points at coordinates, uh, forty point seven one two eight, minus seventy-four point zero zero six zero, and thirty-four point zero five two two, minus one hundred eighteen point two four three seven, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_143_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_143_elevenlabs.wav",
+          "asr_output": "Can you figure out slope gradient in degrees between points at coordinates 40.7128, -74.0060 and 34.0522, -118.2437?"
         }
       ]
     ],
@@ -11886,7 +12030,8 @@
           "role": "user",
           "content": "What is the air quality index in London 2022/08/16?",
           "transcript": "Hey, whats the air quality index for London on August sixteenth, twenty twenty-two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_144_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_144_elevenlabs.wav",
+          "asr_output": "Hey, what's the air quality index for London on August 16, 2022?"
         }
       ]
     ],
@@ -11947,7 +12092,8 @@
           "role": "user",
           "content": "How much CO2 is produced annually by a gas-fueled car that travels 12,000 miles per year with fuel efficiency 20 mpg?",
           "transcript": "Whats the yearly CO2 output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_145_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_145_elevenlabs.wav",
+          "asr_output": "What's the yearly CO2 output of a gas car that drives 12,000 miles a year and gets 20 miles per gallon?"
         }
       ]
     ],
@@ -12045,7 +12191,8 @@
           "role": "user",
           "content": "Find restaurants near me within 10 miles that offer Chinese cuisine in Seattle.",
           "transcript": "Uh, look up Chinese restaurants within ten miles, uh, around me in Seattle.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_146_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_146_elevenlabs.wav",
+          "asr_output": "Look up Chinese restaurants within ten miles around me in Seattle."
         }
       ]
     ],
@@ -12111,7 +12258,8 @@
           "role": "user",
           "content": "Get me the directions from New York to Los Angeles avoiding highways and toll roads.",
           "transcript": "Uh, can find the route from New York to Los Angeles that, um, avoids highways and toll roads, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_147_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_147_elevenlabs.wav",
+          "asr_output": "can find the route from New York to Los Angeles that avoids highways and toll roads, okay?"
         }
       ]
     ],
@@ -12209,7 +12357,8 @@
           "role": "user",
           "content": "Give me detail information about stocks of Apple Inc.",
           "transcript": "Um, could you give me detailed info on Apple Inc. stocks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_148_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_148_elevenlabs.wav",
+          "asr_output": "Could you give me detailed info on Apple Inc stocks?"
         }
       ]
     ],
@@ -12274,7 +12423,8 @@
           "role": "user",
           "content": "Analyze the sentiment of a customer review 'I love the food here! It's always fresh and delicious.'.",
           "transcript": "Um, could scope out the sentiment on this customer review: I love the food here! Its always fresh and delicious.? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_149_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_149_elevenlabs.wav",
+          "asr_output": "Um, could scope out the sentiment on this customer review: I love the food here, it's always fresh and delicious."
         }
       ]
     ],
@@ -12392,7 +12542,8 @@
           "role": "user",
           "content": "Calculate the neuronal activity based on synaptic input rate of 200 and weight 0.5 and decay rate of 0.1.",
           "transcript": "Calculate, uh, neuronal activity using a synaptic input rate of two hundred, weight zero point five, and decay rate zero point one.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_150_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_150_elevenlabs.wav",
+          "asr_output": "Calculate a neuronal activity using a synaptic input rate of 200, weight 0.5, and decay rate 0.1."
         }
       ]
     ],
@@ -12518,8 +12669,9 @@
         {
           "role": "user",
           "content": "Find the most followed person on twitter who tweets about psychology related to behaviour and group dynamics.",
-          "transcript": "Um, who’s the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_151_elevenlabs.wav"
+          "transcript": "Um, who\u2019s the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_151_elevenlabs.wav",
+          "asr_output": "Who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?"
         }
       ]
     ],
@@ -12621,7 +12773,8 @@
           "role": "user",
           "content": "Provide key war events in German history from 1871 to 1945.",
           "transcript": "Um, can you give me a rundown of the major war events in, uh, German history between 1871 and 1945, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_152_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_152_elevenlabs.wav",
+          "asr_output": "Um, can you give me a rundown of the major war events in German history between 1871 and 1945, right?"
         }
       ]
     ],
@@ -12700,7 +12853,8 @@
           "role": "user",
           "content": "When was the signing of the Treaty of Lisbon?",
           "transcript": "Um, hey, dyou know when Treaty of Lisbon was signed?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_153_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_153_elevenlabs.wav",
+          "asr_output": "Um, hey, do you know when Treaty of Lisbon was signed?"
         }
       ]
     ],
@@ -12791,7 +12945,8 @@
           "role": "user",
           "content": "Who was the full name of the president of the United States in 1861?",
           "transcript": "Whats full name of the U.S. president in eighteen sixty-one, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_154_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_154_elevenlabs.wav",
+          "asr_output": "What's full name of the US President in 1861, right?"
         }
       ]
     ],
@@ -12919,7 +13074,8 @@
           "role": "user",
           "content": "Who discovered the neutron? Give me detail information.",
           "transcript": "Who found the neutron? Lemme think... right, can you give me more details about that?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_155_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_155_elevenlabs.wav",
+          "asr_output": "Who found the neutron? Let me think, right, can you give me more details about that?"
         }
       ]
     ],
@@ -13013,7 +13169,8 @@
           "role": "user",
           "content": "What was Albert Einstein's contribution to science on March 17, 1915?",
           "transcript": "Hey, um, whatd Albert Einstein contribute to science on March seventeenth, nineteen fifteen?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_156_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_156_elevenlabs.wav",
+          "asr_output": "Hey, um, what Albert Einstein contribute to science on March 17, 1915?"
         }
       ]
     ],
@@ -13099,7 +13256,8 @@
           "role": "user",
           "content": "What is the earliest reference of Jesus Christ in history from historical record?",
           "transcript": "When do historical records first talk about Jesus Christ?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_157_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_157_elevenlabs.wav",
+          "asr_output": "When do historical records first talk about Jesus Christ?"
         }
       ]
     ],
@@ -13163,7 +13321,8 @@
           "role": "user",
           "content": "Get the biography and main contributions of Pope Innocent III.",
           "transcript": "Um, can you give me the lowdown on the biography and, uh, main contributions of Pope Innocent III, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_158_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_158_elevenlabs.wav",
+          "asr_output": "Um, can you give me the lowdown on the biography and da main contributions of Pope Innocent III, thanks?"
         }
       ]
     ],
@@ -13287,7 +13446,8 @@
           "role": "user",
           "content": "Calculate the total quantity of paint needed to cover a wall of 30 feet by 12 feet using a specific brand that covers 400 square feet per gallon.",
           "transcript": "Uh, how much paint do I need for, yknow, a thirty by twelve-foot wall if one gallon covers four hundred square feet?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_159_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_159_elevenlabs.wav",
+          "asr_output": "How much paint do I need for, you know, a thirty by twelve foot wall if one gallon covers four hundred square feet?"
         }
       ]
     ],
@@ -13374,7 +13534,8 @@
           "role": "user",
           "content": "Find the top rated modern sculpture exhibition happening in New York in the upcoming month.",
           "transcript": "Lemme see... oh, can you find top-rated modern sculpture exhibitions in New York for next month?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_161_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_161_elevenlabs.wav",
+          "asr_output": "Let me see... oh, can you find top-rated modern sculpture exhibitions in New York for next month?"
         }
       ]
     ],
@@ -13473,7 +13634,8 @@
           "role": "user",
           "content": "What is the structural dynamic analysis of the building with building Id B1004 for 2nd, 3rd and 4th floors?",
           "transcript": "Can you, um, give me the structural dynamic check for building B ten-oh-fours second, third, and, uh, fourth floors?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_162_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_162_elevenlabs.wav",
+          "asr_output": "Can you give me the structural dynamic check for building B1004's 2nd, 3rd, and 4th floors?"
         }
       ]
     ],
@@ -13541,7 +13703,8 @@
           "role": "user",
           "content": "Get the list of top 5 popular artworks at the Metropolitan Museum of Art. Please sort by popularity.",
           "transcript": "Um, um, what are the top, top five popular artworks at the Metropolitan Museum of Art? Uh, sort em by, by popularity.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_163_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_163_elevenlabs.wav",
+          "asr_output": "Um, um, what are the top top five popular artworks at the Metropolitan Museum of Art? Sort them by popularity."
         }
       ]
     ],
@@ -13616,7 +13779,8 @@
           "role": "user",
           "content": "What's the retail price of a Fender American Professional II Stratocaster in Rosewood Finish?",
           "transcript": "Hey, um, can you give me the retail price for a Fender American Professional Two Stratocaster, uh, in Rosewood Finish?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_164_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_164_elevenlabs.wav",
+          "asr_output": "Hey, can you give me the retail price for a Fender American Professional II Stratocaster in rosewood finish?"
         }
       ]
     ],
@@ -13741,7 +13905,8 @@
           "role": "user",
           "content": "Find the price of a used Gibson Les Paul guitar in excellent condition in the Chicago area.",
           "transcript": "Hey, uh, can you find the price for a used Gibson Les Paul guitar in, like, excellent condition round Chicago?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_165_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_165_elevenlabs.wav",
+          "asr_output": "Hey, can you find the price for a used Gibson Les Paul guitar in like excellent condition round Chicago?"
         }
       ]
     ],
@@ -13833,7 +13998,8 @@
           "role": "user",
           "content": "Find me a classical concert this weekend in Los Angeles with cheap tickets.",
           "transcript": "Um, can find a classical concert in Los Angeles this weekend with affordable tickets, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_166_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_166_elevenlabs.wav",
+          "asr_output": "Um, can find a classical concert in Los Angeles this weekend with affordable tickets, thanks?"
         }
       ]
     ],
@@ -13931,7 +14097,8 @@
           "role": "user",
           "content": "Generate a melody in C major scale, starting with the note C4, 16 measures long, at 120 beats per minute.",
           "transcript": "Create a melody in the C major scale, startin on C four. Make it sixteen measures long, uh, at one hundred twenty beats per minute, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_167_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_167_elevenlabs.wav",
+          "asr_output": "Create a melody in the C major scale starting on C4. Make it 16 measures long at 120 beats per minute, okay?"
         }
       ]
     ],
@@ -14036,7 +14203,8 @@
           "role": "user",
           "content": "Find the lyrics to the song 'Bohemian Rhapsody' by Queen.",
           "transcript": "Hey, can pull up the lyrics for Bohemian Rhapsody by Queen, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_168_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_168_elevenlabs.wav",
+          "asr_output": "Hey, can pull up the lyrics for Bohemian Rhapsody by Queen, yeah?"
         }
       ]
     ],
@@ -14132,7 +14300,8 @@
           "role": "user",
           "content": "What is the musical scale associated with C sharp major?",
           "transcript": "Whats the music scale for, uh, C sharp major?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_169_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_169_elevenlabs.wav",
+          "asr_output": "What's the music scale for a C# major?"
         }
       ]
     ],
@@ -14199,7 +14368,8 @@
           "role": "user",
           "content": "Get the player stats of Cristiano Ronaldo in the 2019-2020 season",
           "transcript": "Uh, can you get me Cristiano Ronaldo, thats C-R-I-S-T-I-A-N-O R-O-N-A-L-D-O, Cristiano Ronaldos player stats for the twenty-nineteen to twenty-twenty season, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_170_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_170_elevenlabs.wav",
+          "asr_output": "Can you get me Cristiano Ronaldo's player stats for the 2019-2020 season please?"
         }
       ]
     ],
@@ -14315,7 +14485,8 @@
           "role": "user",
           "content": "Who won the basketball game between Lakers and Clippers on Jan 28, 2021?",
           "transcript": "Who won Lakers vs. Clippers game on January twenty-eighth, twenty twenty-one, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_171_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_171_elevenlabs.wav",
+          "asr_output": "Who won Lakers vs Clippers game on January 28, 2021, right?"
         }
       ]
     ],
@@ -14380,7 +14551,8 @@
           "role": "user",
           "content": "Find me the detailed profile of basketball player Lebron James",
           "transcript": "Uh, can you get Lebron James detailed player profile for me, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_172_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_172_elevenlabs.wav",
+          "asr_output": "Can you get LeBron James' detailed player profile for me, thanks?"
         }
       ]
     ],
@@ -14518,7 +14690,8 @@
           "role": "user",
           "content": "Get the NBA team's ranking with the best defence in the 2021 season.",
           "transcript": "Whats the NBA teams rank for, uh, the best defense in the twenty-twenty-one season?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_173_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_173_elevenlabs.wav",
+          "asr_output": "What's the NBA team's rank for are the best defense in the 2021 season?"
         }
       ]
     ],
@@ -14608,7 +14781,8 @@
           "role": "user",
           "content": "What is the ranking of Manchester United in Premier League?",
           "transcript": "Um, can you tell me where Manchester Uniteds at in the Premier League rankings?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_174_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_174_elevenlabs.wav",
+          "asr_output": "Can you tell me where Manchester United's at in the Premier League rankings?"
         }
       ]
     ],
@@ -14678,7 +14852,8 @@
           "role": "user",
           "content": "Who is ranked as the top player in woman tennis?",
           "transcript": "Hey, uh, whos top-ranked player in womens tennis, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_175_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_175_elevenlabs.wav",
+          "asr_output": "Hey, um, who's top-ranked player in women's tennis, right?"
         }
       ]
     ],
@@ -14795,7 +14970,8 @@
           "role": "user",
           "content": "Give me the schedule of Manchester United for the next 6 games in Premier League.",
           "transcript": "Whats Manchester Uniteds Premier League plan for the next six games?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_176_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_176_elevenlabs.wav",
+          "asr_output": "What's Manchester United's Premier League plan for the next six games?"
         }
       ]
     ],
@@ -14941,7 +15117,8 @@
           "role": "user",
           "content": "Find the top chess players in New York with a rating above 2300.",
           "transcript": "Uh, can you show me the top chess players in, um, New York who have ratings over twenty-three hundred, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_177_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_177_elevenlabs.wav",
+          "asr_output": "Can you show me the top chess players in New York who have ratings over 2300? Thanks."
         }
       ]
     ],
@@ -15033,7 +15210,8 @@
           "role": "user",
           "content": "Find a Card of rank 'Queen' and suit 'Hearts' in the deck.",
           "transcript": "Right, uh, can you, like, look for Queen of Hearts in deck?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_178_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_178_elevenlabs.wav",
+          "asr_output": "Right, can you like, look for queen of hearts in deck?"
         }
       ]
     ],
@@ -15172,7 +15350,8 @@
           "role": "user",
           "content": "What is the probability of getting a full house in poker?",
           "transcript": "Hey, lemme see... oh, whats the chance of getting a full house in poker?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_179_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_179_elevenlabs.wav",
+          "asr_output": "Hey, let me see. Oh, what's the chance of getting a full house in poker?"
         }
       ]
     ],
@@ -15266,7 +15445,8 @@
           "role": "user",
           "content": "Fetch player statistics of 'Zelda' on Switch for user 'Sam'.",
           "transcript": "Uh, for Sam, get the player stats for Zelda on the Switch. Thats S-A-M, Sam.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_180_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_180_elevenlabs.wav",
+          "asr_output": "For Sam, get the player stats for Zelda on the Switch. That's S-A-M, Sam."
         }
       ]
     ],
@@ -15383,7 +15563,8 @@
           "role": "user",
           "content": "Get me the details of the last game played by Liverpool F.C. Include its statistics.",
           "transcript": "Uh, can you give me the details and stats of Liverpool F.C.s last game, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_181_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_181_elevenlabs.wav",
+          "asr_output": "Can you give me the details and stats of Liverpool FC's last game, please?"
         }
       ]
     ],
@@ -15503,7 +15684,8 @@
           "role": "user",
           "content": "Find me a multiplayer game with rating above 4.5 and compatible with Windows 10.",
           "transcript": "Um, could you get a multiplayer game for me thats, uh, rated above four point five and works on Windows ten?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_182_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_182_elevenlabs.wav",
+          "asr_output": "Could you get a multiplayer game for me that's rated above 4.5 and works on Windows 10?"
         }
       ]
     ],
@@ -15637,7 +15819,8 @@
           "role": "user",
           "content": "How many calories in the Beef Lasagna Recipe from Foodnetwork.com?",
           "transcript": "Hey, um, could you, from Foodnetwork.com, tell me the calorie count for the Beef Lasagna recipe?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_183_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_183_elevenlabs.wav",
+          "asr_output": "Hey, um, could you, from foodnetwork.com, tell me the calorie count for the beef lasagna recipe?"
         }
       ]
     ],
@@ -15721,7 +15904,8 @@
           "role": "user",
           "content": "Give me a recipe for a vegetarian pasta with cheese for 2 servings.",
           "transcript": "Uh, can you gimme a vegetarian pasta with, um, cheese recipe two people, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_184_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_184_elevenlabs.wav",
+          "asr_output": "Can you give me a vegetarian pasta with um cheese recipe two people please?"
         }
       ]
     ],
@@ -15811,7 +15995,8 @@
           "role": "user",
           "content": "Find the closest sushi restaurant with a patio in Boston.",
           "transcript": "Um, can you locate the nearest sushi place with, uh, a patio in Boston?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_185_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_185_elevenlabs.wav",
+          "asr_output": "Um, can you locate the nearest sushi place with a patio in Boston?"
         }
       ]
     ],
@@ -15886,7 +16071,8 @@
           "role": "user",
           "content": "Find me a vegan recipe for brownies which prep time is under 30 minutes.",
           "transcript": "Im lookin for, uh, a vegan brownie recipe that takes less than half an hour to get ready.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_186_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_186_elevenlabs.wav",
+          "asr_output": "Im looking for a vegan brownie recipe that takes less than half an hour to get ready."
         }
       ]
     ],
@@ -15947,7 +16133,8 @@
           "role": "user",
           "content": "Check the price of tomatoes and lettuce at the Whole Foods in Los Angeles.",
           "transcript": "Hey, whats the price of, um, tomatoes and lettuce at Whole Foods in Los Angeles?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_187_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_187_elevenlabs.wav",
+          "asr_output": "Hey, what's the price of, um, tomatoes and lettuce at Whole Foods in Los Angeles?"
         }
       ]
     ],
@@ -16065,7 +16252,8 @@
           "role": "user",
           "content": "Find the grocery store closest to Berkeley that has at least a 4.5 star rating, selling tomatoes and also pet food.",
           "transcript": "Uh, can you locate a grocery store near Berkeley thats got, like, at least a 4.5-star rating that sells tomatoes and pet food, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_188_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_188_elevenlabs.wav",
+          "asr_output": "Can you locate a grocery store near Berkeley that's got like at least a 4.5-star rating that sells tomatoes and pet food, thanks?"
         }
       ]
     ],
@@ -16186,7 +16374,8 @@
           "role": "user",
           "content": "Convert time 3pm from New York time zone to London time zone.",
           "transcript": "Uh, can you convert three P M New York time to London time, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_189_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_189_elevenlabs.wav",
+          "asr_output": "Can you convert 3 p.m. New York time to London time, right?"
         }
       ]
     ],
@@ -16252,7 +16441,8 @@
           "role": "user",
           "content": "Book a single room for two nights at the Hilton Hotel in Chicago, starting from 10th December 2022.",
           "transcript": "Okay, can you get a single room at Hilton in Chicago for two nights, starting December tenth, twenty-twenty-two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_190_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_190_elevenlabs.wav",
+          "asr_output": "Okay, can you get a single room at Hilton in Chicago for two nights, starting December 10, 2022?"
         }
       ]
     ],
@@ -16348,7 +16538,8 @@
           "role": "user",
           "content": "Book a luxury room in Hotel Paradise, Las Vegas, with a city view for 3 days starting from May 12, 2022.",
           "transcript": "Um, can you book luxury room at Hotel Paradise in Las Vegas, uh, with a city view for three days startin May twelfth, twenty-twenty-two? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_191_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_191_elevenlabs.wav",
+          "asr_output": "Um, can you book luxury room at Hotel Paradise in Las Vegas, with a city view for three days starting May 12, 2022? Thanks."
         }
       ]
     ],
@@ -16478,7 +16669,8 @@
           "role": "user",
           "content": "Convert 150 Euros to Canadian dollars.",
           "transcript": "Hey, how much is one hundred fifty Euros in Canadian dollars?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_192_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_192_elevenlabs.wav",
+          "asr_output": "Hey, how much is 150 euros in Canadian dollars?"
         }
       ]
     ],
@@ -16565,7 +16757,8 @@
           "role": "user",
           "content": "Get me the travel distance and duration from the Eiffel Tower to the Louvre Museum",
           "transcript": "Um, can you tell me how far it is and, uh, how long it takes to get from Eiffel Tower to the Louvre Museum?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_193_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_193_elevenlabs.wav",
+          "asr_output": "Can you tell me how far it is and how long it takes to get from Eiffel Tower to the Louvre Museum?"
         }
       ]
     ],
@@ -16674,7 +16867,8 @@
           "role": "user",
           "content": "What are the opening hours of the Metropolitan Museum of Art on Saturday?",
           "transcript": "Um, hey, can you let me know when Metropolitan Museum of Art opens on Saturday, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_194_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_194_elevenlabs.wav",
+          "asr_output": "Hey, can you let me know when Metropolitan Museum of Art opens on Saturday please?"
         }
       ]
     ],
@@ -16790,7 +16984,8 @@
           "role": "user",
           "content": "Calculate the heat capacity at constant pressure for air, given its temperature is 298K and volume is 10 m^3.",
           "transcript": "Can you figure out the heat capacity at constant pressure for air if the temperatures two ninety-eight Kelvin and the volumes ten cubic meters? Lemme see...",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_195_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_195_elevenlabs.wav",
+          "asr_output": "Can you figure out the heat capacity at constant pressure for air if the temperature's 298 Kelvin and the volume's 10 cubic meters?"
         }
       ]
     ],
@@ -16900,7 +17095,8 @@
           "role": "user",
           "content": "What are the names of proteins found in the plasma membrane?",
           "transcript": "Um, can you say the names of proteins in, uh, the plasma membrane, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_196_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_196_elevenlabs.wav",
+          "asr_output": "Um, can you say the names of proteins in the plasma membrane, right?"
         }
       ]
     ],
@@ -17013,7 +17209,8 @@
           "role": "user",
           "content": "Find the type of gene mutation based on SNP (Single Nucleotide Polymorphism) ID rs6034464.",
           "transcript": "Hey, can ya find out what type of gene mutations associated with S-N-P I-D R-S-six-zero-three-four-four-six-four, S-N-P ID rs6034464?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_197_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_197_elevenlabs.wav",
+          "asr_output": "Hey, can you find out what type of gene mutations associated with SNP ID rs6034464?"
         }
       ]
     ],
@@ -17139,7 +17336,8 @@
           "role": "user",
           "content": "What is the genotype frequency of AA genotype in a population, given that allele frequency of A is 0.3?",
           "transcript": "Um, okay, whats frequency of the AA genotype if allele As frequency is zero point three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_198_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_198_openai.wav",
+          "asr_output": "Um, okay, what's frequency of the AA genotype if allele A's frequency is 0.3?"
         }
       ]
     ],
@@ -17263,7 +17461,8 @@
           "role": "user",
           "content": "Predict the growth of forest in Yellowstone for the next 5 years including human impact.",
           "transcript": "Um, can you, uh, predict Yellowstones forest growth over the next five years, yeah, considerin human impact?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_199_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_199_cartesia.mp3",
+          "asr_output": "Can you predict Yellowstone's forest growth over the next five years?"
         }
       ]
     ],

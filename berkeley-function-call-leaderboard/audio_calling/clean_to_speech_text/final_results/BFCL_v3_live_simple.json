@@ -7,7 +7,8 @@
           "role": "user",
           "content": "Can you retrieve the details for the user with the ID 7890, who has black as their special request?",
           "transcript": "Could you get details for user with ID seventy-eight ninety? Right, their special request is black.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_0-0-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_0-0-0_openai.wav",
+          "asr_output": "Could you get details for user with ID 7890? Right, their special request is black."
         }
       ]
     ],
@@ -43,7 +44,8 @@
           "role": "user",
           "content": "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli, with the timelines aligned, so that I can more clearly observe the rate of change from their initial releases.",
           "transcript": "Uh, show me the star history for ShishirPatil slash gorilla, thats S-H-I-S-H-I-R-P-A-T-I-L slash G-O-R-I-L-L-A, ShishirPatil slash gorilla, and gorilla dash L-L-M slash gorilla dash C-L-I, thats G-O-R-I-L-L-A dash L-L-M slash G-O-R-I-L-L-A dash C-L-I, gorilla dash L-L-M slash gorilla dash C-L-I. Align the timelines so I can, uh, see how their star ratesve gone from their first releases.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_1-1-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_1-1-0_openai.wav",
+          "asr_output": "Show me the star history for shishirpatil/gorilla. That's S-H-I-S-H-I-R-P-A-T-I-L slash G-O-R-I-L-L-A, shishirpatil/gorilla, and Gorilla-LLM/gorilla-cli. That's G-O-R-I-L-L-A dash L-L-M slash G-O-R-I-L-L-A dash C-L-I, Gorilla-LLM/gorilla-cli. Align the timeline so I can, uh, see how their star rates have gone from their first releases."
         }
       ]
     ],
@@ -79,7 +81,8 @@
           "role": "user",
           "content": "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it.",
           "transcript": "Let me get a Comfort Uber from twenty-twenty Addison Street in Berkeley, California. I can wait up to ten minutes.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_2-2-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_2-2-0_openai.wav",
+          "asr_output": "Let me get a Comfort Uber from 2020 Addison Street in Berkeley, California. I can wait up to 10 minutes."
         }
       ]
     ],
@@ -125,7 +128,8 @@
           "role": "user",
           "content": "I need a 'Plus' type Uber from 221B Baker Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it. ",
           "transcript": "I need an Uber Plus from two twenty-one B Baker Street, Berkeley. I can wait, like, ten minutes.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_3-2-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_3-2-1_openai.wav",
+          "asr_output": "I need an UberPlus from 221b Baker Street, Berkeley. I can wait like, 10 minutes."
         }
       ]
     ],
@@ -171,7 +175,8 @@
           "role": "user",
           "content": "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?",
           "transcript": "Hey, lemme see... whats the weather like in Tel Aviv right now? Can you gimme it in Fahrenheit?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_4-3-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_4-3-0_openai.wav",
+          "asr_output": "Hey, let me see. What's the weather like in Tel Aviv right now? Can you give me it in Fahrenheit?"
         }
       ]
     ],
@@ -211,7 +216,8 @@
           "role": "user",
           "content": "Can you tell me the weather in fahrenheit so that I decide if I need to wear a jacket today? San Francisco",
           "transcript": "Hey, um, in San Francisco, whats the weather in Fahrenheit? I gotta know if I, uh, should wear a jacket today, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_6-3-2_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_6-3-2_openai.wav",
+          "asr_output": "Hey, um, in San Francisco, what's the weather in Fahrenheit? I gotta know if I should wear a jacket today, right?"
         }
       ]
     ],
@@ -251,7 +257,8 @@
           "role": "user",
           "content": "Im at Riga, Latvia, Can you tell me the current temperature?",
           "transcript": "Hey, in Riga, Latvia. Uh, right, whats the current temperature?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_7-3-3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_7-3-3_openai.wav",
+          "asr_output": "Hey, in Riga, Latvia? Right, what's the current temperature?"
         }
       ]
     ],
@@ -291,7 +298,8 @@
           "role": "user",
           "content": "I want to know weather conditions? I'm at London, UK in fahr",
           "transcript": "Uh, whats the weather like in London, UK? Oh, uh, tell me it in Fahrenheit.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_8-3-4_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_8-3-4_openai.wav",
+          "asr_output": "Uh, what's the weather like in London, UK? Oh, tell me it in Fahrenheit."
         }
       ]
     ],
@@ -331,7 +339,8 @@
           "role": "user",
           "content": "Could you tell me the current weather in Yosemite National Park which locates at Mariposa, CA, and make sure to give me the temperature in Celsius?",
           "transcript": "Hey, uh, hows the weather in Yosemite National Park, Mariposa? And, um, yeah, check that the temperatures in Celsius.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_10-3-6_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_10-3-6_openai.wav",
+          "asr_output": "Hey, how's the weather in Yosemite National Park, Mariposa? And, um, yeah, check that the temperature's in Celsius."
         }
       ]
     ],
@@ -371,7 +380,8 @@
           "role": "user",
           "content": "Could you tell me the current weather conditions in Naples, Florida?",
           "transcript": "Um, hows the weather in Naples right now, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_11-3-7_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_11-3-7_openai.wav",
+          "asr_output": "Um, how's the weather in Naples right now, okay?"
         }
       ]
     ],
@@ -411,7 +421,8 @@
           "role": "user",
           "content": "I'm planning a trip to New York, NY in December and will be staying for 5 days. Could you tell me the current weather conditions, and provide the temperature in Celsius?",
           "transcript": "Hey, Im planning a trip to New York in December for five days. Whats the weather like there now? And, um, can you give me the temperature in Celsius?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_12-3-8_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_12-3-8_openai.wav",
+          "asr_output": "Hey, I'm planning a trip to New York in December for five days. What's the weather like there now? And, um, can you give me the temperature in Celsius?"
         }
       ]
     ],
@@ -451,7 +462,8 @@
           "role": "user",
           "content": "I have a busy day today. Can you tell me what the temperature is going to be in Bangkok, Thailand. I prefer the fahrenheit unit.",
           "transcript": "Uh, can you check the temperature in Bangkok today? Need it, um, in Fahrenheit, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_14-3-10_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_14-3-10_openai.wav",
+          "asr_output": "Can you check the temperature in Bangkok today? Need it in Fahrenheit. Thanks."
         }
       ]
     ],
@@ -491,7 +503,8 @@
           "role": "user",
           "content": "I'm at Bengaluru. Tell me the current weather conditions in Chennai, Tamil Nadu in fahrenheit?",
           "transcript": "Hey, um, whats the weather in Chennai in Fahrenheit right now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_15-3-11_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_15-3-11_openai.wav",
+          "asr_output": "Hey, what's the weather in Chennai in Fahrenheit right now?"
         }
       ]
     ],
@@ -531,7 +544,8 @@
           "role": "user",
           "content": "Could you tell me the current weather in Lang Son in fahrenheit?",
           "transcript": "Hey, uh, whats th weather like in Lang Son in Fahrenheit?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_16-3-12_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_16-3-12_openai.wav",
+          "asr_output": "Hey, what's the weather like in Lang Son in Fahrenheit?"
         }
       ]
     ],
@@ -571,7 +585,8 @@
           "role": "user",
           "content": "weather today in Boston in fahrenheit?",
           "transcript": "Hey, um, whats the weather like today in Boston in Fahrenheit?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_17-3-13_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_17-3-13_openai.wav",
+          "asr_output": "Hey, what's the weather like today in Boston in Fahrenheit?"
         }
       ]
     ],
@@ -611,7 +626,8 @@
           "role": "user",
           "content": "Can you tell me the current weather in Moscow, specifying the temperature in Celsius?",
           "transcript": "Uh, whats the weather in Moscow right now? I need the temperature in, um, Celsius, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_18-3-14_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_18-3-14_openai.wav",
+          "asr_output": "Uh, what's the weather in Moscow right now? I need the temperature in, um, Celsius? Thanks."
         }
       ]
     ],
@@ -651,7 +667,8 @@
           "role": "user",
           "content": "What's the weather in Quintana Roo, Mexico. Please tell me the answer in the superior units of temperature, by that I mean Celsius.",
           "transcript": "Hey, whats the weather like in Quintana Roo, Mexico? Could you tell me in Celsius, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_19-3-15_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_19-3-15_openai.wav",
+          "asr_output": "Hey, what's the weather like in Quintana Roo, Mexico? Could you tell me in Celsius? Thanks."
         }
       ]
     ],
@@ -691,7 +708,8 @@
           "role": "user",
           "content": "I would like to order a burger with the following modification verbatim: no onions, extra cheese",
           "transcript": "Hi, Id like to, uh, order a burger, please. Be sure there are no onions and, um, add extra cheese.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_20-4-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_20-4-0_openai.wav",
+          "asr_output": "Hi, I'd like to order a burger, please? Be sure there are no onions, and um, add extra cheese!"
         }
       ]
     ],
@@ -727,7 +745,8 @@
           "role": "user",
           "content": "I'd like to modify my order by making the dish called 'chicken dish' to a new spice level 'extra spicy', please.",
           "transcript": "Can you make my chicken dish extra spicy in the order, please? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_21-4-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_21-4-1_openai.wav",
+          "asr_output": "Can you make my chicken dish extra spicy in the order please? Thanks."
         }
       ]
     ],
@@ -763,7 +782,8 @@
           "role": "user",
           "content": "I need Whopper also known old folks as the burger.",
           "transcript": "Hey, could you grab me a Whopper, you know, the burger everyone talks about?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_22-5-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_22-5-0_openai.wav",
+          "asr_output": "Hey, could you grab me a Whopper? You know, the burger everyone talks about?"
         }
       ]
     ],
@@ -801,7 +821,8 @@
           "role": "user",
           "content": "Order me pizza",
           "transcript": "Hey, can you order a pizza for me?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_23-5-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_23-5-1_openai.wav",
+          "asr_output": "Hey, can you order a pizza for me?"
         }
       ]
     ],
@@ -839,7 +860,8 @@
           "role": "user",
           "content": "I would like to switch my order from pizza to a BURGER.",
           "transcript": "Can you change my order to a burger from pizza, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_24-5-2_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_24-5-2_openai.wav",
+          "asr_output": "Can you change my order to a burger from pizza, right?"
         }
       ]
     ],
@@ -877,7 +899,8 @@
           "role": "user",
           "content": "I've changed my mind, can I get a greens instead of what I previously ordered?",
           "transcript": "Hey, uh, Ive changed my mind. Right, can I get greens instead of what I ordered before?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_25-5-3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_25-5-3_openai.wav",
+          "asr_output": "Hey, I've changed my mind, right? Can I get greens instead of what I ordered before?"
         }
       ]
     ],
@@ -915,7 +938,8 @@
           "role": "user",
           "content": "I want to order five 'burgers' and six 'chicken wings' from uber pitada",
           "transcript": "Order five burgers and, uh, six chicken wings from Uber Pitada, thats U-B-E-R P-I-T-A-D-A, Uber Pitada.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_27-7-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_27-7-0_openai.wav",
+          "asr_output": "Order five burgers and six chicken wings from Uber Pitada. That's U-B-E-R P-I-T-A-D-A. Uber Pitada."
         }
       ]
     ],
@@ -962,7 +986,8 @@
           "role": "user",
           "content": "Could you help me retrieve the list of exports for my bot using the identifier 'my-bot-id' and focusing on version 'v2' sort in ascending? I want max 50 results",
           "transcript": "Uh, help me get the export list for my bot using my-bot-id and version v two. I need it sorted, um, ascending with a max of fifty results, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_30-8-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_30-8-0_openai.wav",
+          "asr_output": "Help me get the export list for my bot using myBotID and version v2. I need it sorted ascending with a max of 50 results, right?"
         }
       ]
     ],
@@ -1041,7 +1066,8 @@
           "role": "user",
           "content": "Could you retrieve the list of exports for my bot with ID 'B12345' and for version 'v1'? I'm interested in seeing them in descending order by the last updated date.",
           "transcript": "Uh, get the export list for my bot with ID B one two three four five, version v1, and, um, right, sort em by last updated date, going down.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_31-8-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_31-8-1_openai.wav",
+          "asr_output": "Uh, get the export list for my bot with ID B12345, version V1, and um, right, sort them by last updated date, going down."
         }
       ]
     ],
@@ -1120,7 +1146,8 @@
           "role": "user",
           "content": "Sure, here is the answer to the question:\\n\\n**Logistic regression is not present in the text, therefore I cannot answer this question.**",
           "transcript": "Hey, um, just letting you know, logistic regression isnt mentioned in the text, so cant answer that question, right.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_32-9-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_32-9-0_openai.wav",
+          "asr_output": "Hey, um, just letting you know, logistic regression isn't mentioned in the text, so can't answer that question, right?"
         }
       ]
     ],
@@ -1151,7 +1178,8 @@
           "role": "user",
           "content": "Sure, here is the answer to the question:\\n\\n**Logistic regression is not present in the text, therefore I cannot answer this question.**",
           "transcript": "Alright, heres the response: Logistic regression isnt mentioned in the text, so I cant answer that question, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_33-10-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_33-10-0_openai.wav",
+          "asr_output": "Alright, here's the response: Logistic regression isn't mentioned in the text, so I can't answer that question. Thanks!"
         }
       ]
     ],
@@ -1182,7 +1210,8 @@
           "role": "user",
           "content": "I asked my language model about logistic regression, and it replied with '**Logistic regression is not present in the text, therefore I cannot answer this question.**' Valid?",
           "transcript": "I asked that language thing about logistic regression, and it responded, Logistic regression isnt in the text, so I cant answer. Does that sound alright?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_34-11-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_34-11-0_openai.wav",
+          "asr_output": "I asked that language thing about logistic regression, and it responded, \"Logistic regression isn't in the text, so I can't answer.\" Does that sound all right?"
         }
       ]
     ],
@@ -1213,7 +1242,8 @@
           "role": "user",
           "content": "What is logistic regression? \\n Sure, here is the answer to the question:\\n\\n**Logistic regression is not present in the text, therefore I cannot answer this question.**",
           "transcript": "Hey, whats logistic regression? \\n Sure, but it looks like logistic regression isnt mentioned in the text, so cant answer that.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_35-12-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_35-12-0_openai.wav",
+          "asr_output": "Hey, what's logistic regression? Sure, but it looks like logistic regression isn't mentioned in the text, so can't answer that."
         }
       ]
     ],
@@ -1244,7 +1274,8 @@
           "role": "user",
           "content": "Sure, here is the answer to the question:\\n\\nThe text does not define logistic regression, therefore I cannot answer this question.",
           "transcript": "Sure, uh, heres the answer: the text doesnt cover logistic regression, so cant answer the question.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_36-13-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_36-13-0_openai.wav",
+          "asr_output": "Sure, uh, here's the answer: The text doesn't cover logistic regression, so can't answer the question."
         }
       ]
     ],
@@ -1275,7 +1306,8 @@
           "role": "user",
           "content": "Sure, here is the answer to the question:\\n\\nThe text does not define logistic regression, therefore I cannot answer this question.",
           "transcript": "Lemme see... Im sorry, but the text doesnt define logistic regression, so cant answer that, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_37-14-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_37-14-0_openai.wav",
+          "asr_output": "Let me see. I'm sorry, but the text doesn't define logistic regression, so can't answer that, right?"
         }
       ]
     ],
@@ -1306,7 +1338,8 @@
           "role": "user",
           "content": "Provide the current weather information for Yosemite National Park at Mariposa, CA, using the coordinates 37.8651 N, 119.5383 W, and tell me the temperature, wind speed, and precipitation? I would like the temperature in Fahrenheit.",
           "transcript": "Uh, whats the current weather in Yosemite National Park, Mariposa, CA? Uh, use coordinates thirty-seven point eight six five one north, one nineteen point five three eight three west, and, um, give me temperature in Fahrenheit, wind speed, and precipitation.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_38-15-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_38-15-0_openai.wav",
+          "asr_output": "What's the current weather in Yosemite National Park, Mariposa, California? Use coordinates 37.8651\u00b0 N, 119.5383\u00b0 W, and give me temperature in Fahrenheit, wind speed, and precipitation."
         }
       ]
     ],
@@ -1351,7 +1384,8 @@
           "role": "user",
           "content": "Could you provide me with the hourly forecast for temperature, wind speed, and precipitation for the next 10 days at the coordinates 37.8651 N, 119.5383 W?",
           "transcript": "Um, hey, can you get me an hourly forecast for the next ten days for, uh, temperature, wind speed, and precipitation at coordinates thirty-seven point eight six five one North, one nineteen point five three eight three West?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_39-16-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_39-16-0_openai.wav",
+          "asr_output": "Hey, can you get me an hourly forecast for the next ten days for temperature, wind speed, and precipitation at coordinates 37.8651\u00b0N, 119.5383\u00b0W?"
         }
       ]
     ],
@@ -1412,7 +1446,8 @@
           "role": "user",
           "content": "I'd like to start the air purifying function in my living room, please set the air conditioner to 'AIR_CLEAN' mode with strongest wind strength, with monitoring.",
           "transcript": "Hey, uh, start the air purifier in the living room? Oh, set the AC to AIR_CLEAN mode with the strongest wind and, um, keep it monitored.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_40-17-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_40-17-0_openai.wav",
+          "asr_output": "Hey, start the air purifier in the living room? Oh, set the AC to air clean mode with the strongest wind and keep it monitored."
         }
       ]
     ],
@@ -1494,7 +1529,8 @@
           "role": "user",
           "content": "Switch air conditioner to air dry mode with a medium wind strength",
           "transcript": "Put air conditioner on air dry mode with medium wind strength.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_41-17-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_41-17-1_openai.wav",
+          "asr_output": "Put air conditioner on air-dry mode with medium wind strength."
         }
       ]
     ],
@@ -1576,7 +1612,8 @@
           "role": "user",
           "content": "set cool mode with a temp of 24 oC and the high wind strength.",
           "transcript": "Set mode to, uh, cool with a temperature of twenty-four degrees Celsius and high wind strength, okay.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_43-17-3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_43-17-3_openai.wav",
+          "asr_output": "Set mode to, uh, cool, with a temperature of 24 degrees Celsius and high wind strength, okay?"
         }
       ]
     ],
@@ -1658,7 +1695,8 @@
           "role": "user",
           "content": "the air conditioner turned on with cool mode.",
           "transcript": "Turn on the air conditioner and put it, uh, to cool mode.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_44-18-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_44-18-0_openai.wav",
+          "asr_output": "Turn on the air conditioner and put it, uh, to cool mode."
         }
       ]
     ],
@@ -1749,7 +1787,8 @@
           "role": "user",
           "content": "It's sooo hot. set the air conditioner to 'COOL' mode, temp to 20 degrees oC, while air cleaning on?",
           "transcript": "Its so hot! Uh, put the air conditioner on COOL mode, twenty degrees Celsius, and, um, right, switch on air cleaning?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_45-18-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_45-18-1_openai.wav",
+          "asr_output": "It's so hot. Put the air conditioner on cool mode, 20 degrees Celsius, and, um, right, switch on air cleaning."
         }
       ]
     ],
@@ -1840,7 +1879,8 @@
           "role": "user",
           "content": "I've noticed that the current job mode of the air conditioner is set to clean, but I'd like to change it to cool mod, set the wind strength to medium, with quality monitoring. Now, start air cleaning, disable the power-saving mode, and adjust the temperature to 24 Celsius?",
           "transcript": "Switch the air conditioner to cool mode. Uh, set the wind strength to medium, and turn on quality monitoring. Right, start air cleaning, uh, turn off power-saving, and set the temperature to twenty-four degrees Celsius.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_46-19-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_46-19-0_openai.wav",
+          "asr_output": "Switch the air conditioner to cool mode, set the wind strength to medium, and turn on quality monitoring. Right, start air cleaning, turn off power saving, and set the temperature to twenty-four degrees Celsius."
         }
       ]
     ],
@@ -1919,7 +1959,8 @@
           "role": "user",
           "content": "What is the multiplication of 3 and 2",
           "transcript": "Hey, um, ya know, whats three times two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_47-20-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_47-20-0_openai.wav",
+          "asr_output": "Hey, um, you know, what's three times two?"
         }
       ]
     ],
@@ -1955,7 +1996,8 @@
           "role": "user",
           "content": "Could you recommend a lager that's bitter, has a hoppy aroma, and presents a pale color from Sierra Nevada brewery?",
           "transcript": "Um, can you recommend a lager from Sierra Nevada thats, uh, bitter, smells hoppy, ands pale in color, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_48-21-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_48-21-0_openai.wav",
+          "asr_output": "Um, can you recommend a lager from Sierra Nevada that's bitter, smells hoppy, and pale in color, right?"
         }
       ]
     ],
@@ -2034,7 +2076,8 @@
           "role": "user",
           "content": "Do you have any porters in stock? with a rich, chocolatey aroma and a slightly bitter taste. It should be dark in color, preferably from Creek brewery. All other preferences are the standard ones. Any recommendations?",
           "transcript": "Hey, um, dyou have any porters that, uh, ve rich chocolate aroma and bit of bitterness? Im searchin for somethin dark, ideally from Creek Brewery. Oh, rest can be standard. Any suggestions?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_49-21-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_49-21-1_openai.wav",
+          "asr_output": "Hey, um, do you have any porters that, uh, ve a rich chocolate aroma and bit of bitterness? Im searchin for something dark, ideally from Kreek Brewery. Oh, rest can be standard. Any suggestions?"
         }
       ]
     ],
@@ -2113,7 +2156,8 @@
           "role": "user",
           "content": "what is the live carbon intensity in Great Britain?",
           "transcript": "Hey, um, whats the current carbon intensity in Great Britain?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_50-22-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_50-22-0_openai.wav",
+          "asr_output": "Hey, um, what's the current carbon intensity in Great Britain?"
         }
       ]
     ],
@@ -2144,7 +2188,8 @@
           "role": "user",
           "content": "Change the settings of my air conditioner. Set it to cool mode with a target temperature of 22 degrees Celsius. Enable the power save mode and set the high wind strength. Start in 1 hour and 30 minutes from now? For everything else",
           "transcript": "Uh, adjust air conditioner settings: switch to cool mode, set the temperature to, um, twenty-two degrees Celsius, enable power save, and turn on high wind strength. Kick things off in one hour and thirty minutes, please.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_51-23-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_51-23-0_openai.wav",
+          "asr_output": "Adjust air conditioner settings: Switch to cool mode, set the temperature to 22 degrees Celsius, enable power save, and turn on high wind strength. Kick things off in 1 hour and 30 minutes, please."
         }
       ]
     ],
@@ -2250,7 +2295,8 @@
           "role": "user",
           "content": "It's extremely hot today and my air conditioner is currently turned off. Set it to start cooling at 20 degrees Celsius mid wind strength. power off after an hour",
           "transcript": "Uh, its really hot today, and, um, my ACs off. Okay, start it at twenty degrees Celsius on medium wind, and turn it off after, uh, sixty minutes.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_52-23-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_52-23-1_openai.wav",
+          "asr_output": "It's really hot today, and my AC's off. Okay, start it at 20\u00b0C on medium wind, and turn it off after 60 minutes."
         }
       ]
     ],
@@ -2356,7 +2402,8 @@
           "role": "user",
           "content": "can you create todo with the following words verbatim: go for shopping at 9 pm",
           "transcript": "Uh, could you add a to-do called go for shopping at nine P M, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_53-24-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_53-24-0_openai.wav",
+          "asr_output": "Could you add a to-do called go for shopping at 9 p.m.?"
         }
       ]
     ],
@@ -2387,7 +2434,8 @@
           "role": "user",
           "content": "Hi, my name is Charlie. Remove the 'todo random' item from my todo list",
           "transcript": "Hey, its Charlie, thats C-H-A-R-L-I-E, Charlie. Uh, can you, oh, delete todo random item from my list?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_54-25-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_54-25-0_openai.wav",
+          "asr_output": "Hey, it's Charlie. That's C-H-A-R-L-I-E, Charlie. Can you delete to-do random item from my list?"
         }
       ]
     ],
@@ -2428,7 +2476,8 @@
           "role": "user",
           "content": "can you create todo for 'go for shopping at 9 pm'",
           "transcript": "Hey, could you, uh, make to-do: go shopping at nine P M? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_55-25-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_55-25-1_openai.wav",
+          "asr_output": "Hey, could you make to-do \"Go shopping\" at 9PM? Thanks!"
         }
       ]
     ],
@@ -2469,7 +2518,8 @@
           "role": "user",
           "content": "delete todo with content - go to gym",
           "transcript": "Uh, delete the to-do: go to the gym.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_56-26-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_56-26-0_openai.wav",
+          "asr_output": "Uh, delete the to-do \"Go to the gym.\""
         }
       ]
     ],
@@ -2511,7 +2561,8 @@
           "role": "user",
           "content": "add todo with content go to sleep at 9 pm",
           "transcript": "Add a to-do, uh, sleep at nine P M.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_57-26-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_57-26-1_openai.wav",
+          "asr_output": "Add a to-do, uh, sleep at 9 PM."
         }
       ]
     ],
@@ -2557,7 +2608,8 @@
           "role": "user",
           "content": "list movies in Mumbai?",
           "transcript": "Um, right, could show me a list of movies playin in Mumbai?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_58-27-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_58-27-0_openai.wav",
+          "asr_output": "Right, could show me a list of movies playing in Mumbai?"
         }
       ]
     ],
@@ -2620,7 +2672,8 @@
           "role": "user",
           "content": "What movies are playing today in Mumbai?",
           "transcript": "Hey, uh, what moviesre showing in Mumbai today?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_59-28-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_59-28-0_openai.wav",
+          "asr_output": "Hey, what movies are showing in Mumbai today?"
         }
       ]
     ],
@@ -2676,7 +2729,8 @@
           "role": "user",
           "content": "I've completed the task 'Submit monthly financial report'. Mark it as completed on my to-do list?",
           "transcript": "Okay, mark Submit monthly financial report as completed on my task list.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_60-29-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_60-29-0_openai.wav",
+          "asr_output": "OK, mark \"Submit Monthly Financing Report\" as completed on my task list."
         }
       ]
     ],
@@ -2717,7 +2771,8 @@
           "role": "user",
           "content": "add a todo 'go to gym tomorrow.'",
           "transcript": "Hey, can you add to-do: go to gym tomorrow, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_61-29-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_61-29-1_openai.wav",
+          "asr_output": "Hey, can you add to-do: go to gym tomorrow? Thanks."
         }
       ]
     ],
@@ -2758,7 +2813,8 @@
           "role": "user",
           "content": "I need to remove the task with the content 'ravi' from my todo list.",
           "transcript": "Uh, right, imma delete to-do item titled ravi from my list.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_62-29-2_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_62-29-2_openai.wav",
+          "asr_output": "Uh, right. Emma delete to-do item titled Ravi from my list."
         }
       ]
     ],
@@ -2799,7 +2855,8 @@
           "role": "user",
           "content": "add todo with content go to sleep at 9 pm",
           "transcript": "Uh, add a reminder... no, a to-do: sleep at nine P M.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_63-29-3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_63-29-3_openai.wav",
+          "asr_output": "Uh, add a reminder... no, a to-do: Sleep at 9 PM."
         }
       ]
     ],
@@ -2840,7 +2897,8 @@
           "role": "user",
           "content": "I need to remember to 'go to Goa'",
           "transcript": "Hey, uh, remind me to head to Goa.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_64-29-4_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_64-29-4_openai.wav",
+          "asr_output": "Hey, uh, remind me to head to Goa."
         }
       ]
     ],
@@ -2881,7 +2939,8 @@
           "role": "user",
           "content": "I need to add 'Hi charlie' to my list of tasks.",
           "transcript": "Uh, add Hi Charlie to my to-do list, alright.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_65-29-5_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_65-29-5_openai.wav",
+          "asr_output": "Uh, add \"Hi Charlie\" to my to-do list, all right?"
         }
       ]
     ],
@@ -2926,7 +2985,8 @@
           "role": "user",
           "content": "I'm wondering inventory levels for item IDs 102 for size L and 103 for size M are below the minimum threshold of 20 units and let me know if they need to be restocked?",
           "transcript": "See if the inventory for item one oh two size L and item one oh three size M is under twenty units. Let me know if they need restocking.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_66-30-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_66-30-0_openai.wav",
+          "asr_output": "See if the inventory for item 102 size L and item 103 size M is under 20 units. Let me know if they need restocking."
         }
       ]
     ],
@@ -2970,7 +3030,8 @@
           "role": "user",
           "content": "Could you tell me what I get if I add 5.0 to 3.0?",
           "transcript": "Um, when I add five to three, uh, what do I get? Okay.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_68-32-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_68-32-0_openai.wav",
+          "asr_output": "Um, when I add five to three, what do I get?"
         }
       ]
     ],
@@ -3006,7 +3067,8 @@
           "role": "user",
           "content": "I need to review the sequence of events for a vulnerability in our system. Can you retrieve the analysis for project with UUID SUPERFANCY, component AB1010CD, and vulnerability ef903ac-893-f00?",
           "transcript": "Uh, can you get me the analysis for the project with U-U-I-D S-U-P-E-R-F-A-N-C-Y, Superfancy, component A-B-1-0-1-0-C-D, and vulnerability E-F-9-0-3-A-C dash eight nine three dash F-zero-zero? I need to look over, um, right, the event sequence for this vulnerability in our system.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_69-33-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_69-33-0_openai.wav",
+          "asr_output": "Can you get me the analysis for the project with UUID, SUPERFANCY component AB1010CD, and vulnerability EF903AC-893-F00? I need to look over, um, right, the event sequence for this vulnerability in our system."
         }
       ]
     ],
@@ -3047,7 +3109,8 @@
           "role": "user",
           "content": "Can you retrieve the list of today's alerts for the sensor with serial number Q3CC-CRT3-SZ2G, showing a maximum of 10 alerts per page?",
           "transcript": "Hey, um, can you get todays alerts for the sensor with serial number Q three C C dash C R T three dash S Z two G? Oh, and show up to ten alerts per page.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_70-34-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_70-34-0_openai.wav",
+          "asr_output": "Hey, can you get today's alerts for the sensor with serial number Q3CC-CRT3-SZ2G? Oh, and show up to 10 alerts per page."
         }
       ]
     ],
@@ -3139,7 +3202,8 @@
           "role": "user",
           "content": "How have millennials views of Apple changed since July 2022?'",
           "transcript": "Uh, can you say how millennials opinions about Apple have changed since July twenty-twenty-two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_71-35-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_71-35-0_openai.wav",
+          "asr_output": "Can you say how millennials' opinions about Apple have changed since July 2022?"
         }
       ]
     ],
@@ -3228,7 +3292,8 @@
           "role": "user",
           "content": "I have an audio file, and I would like to identify the significant beats. Can you analyze it and filter out the beats with a confidence level below 50%? Also, use a 0.5-second window to ensure the beats are distinct.",
           "transcript": "Uh, looking at this audio file for important beats and, um, taking out any with less than 50% confidence. Yeah, use a, uh, 0.5-second window to keep em distinct.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_72-36-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_72-36-0_openai.wav",
+          "asr_output": "Looking at this audio file for important beats and taking out any with less than 50% confidence. Yeah, use a .5 second window to keep 'em distinct."
         }
       ]
     ],
@@ -3264,7 +3329,8 @@
           "role": "user",
           "content": "Can you analyze this audio file to determine the timing of significant beats, using a capture percentage of 90 and a confidence window size of 0.25 seconds?",
           "transcript": "Uh, right, check this audio file for timing of major beats, with a ninety percent capture and a zero point two five-second confidence window.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_73-36-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_73-36-1_openai.wav",
+          "asr_output": "Uh, right, check this audio file for timing of major beats, with a 90% capture and a 0.25 second confidence window."
         }
       ]
     ],
@@ -3300,7 +3366,8 @@
           "role": "user",
           "content": "I have an audio file that I'd like to analyze. Could you identify significant beats for me if I set the capture percentage to 70 and the confidence window size to 0.8 seconds?",
           "transcript": "Hey, Ive got an audio file I, uh, wanna look at. Can you, oh, find the significant beats with a capture percentage of seventy and, um, a confidence window of zero point eight seconds?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_74-36-2_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_74-36-2_openai.wav",
+          "asr_output": "Hey, I've got an audio file I, uh, wanna look at. Can you, oh, find the significant beats with a capture percentage of seventy and, um, a confidence window of zero point eight seconds?"
         }
       ]
     ],
@@ -3336,7 +3403,8 @@
           "role": "user",
           "content": "Filter the beats to only include those above the 93rd percentile for confidence? Also, make sure to select the highest confidence beat within a 0.5-second window.",
           "transcript": "Uh, filter beats to keep only those above the 93rd percentile for confidence. And, right, um, imma pick the highest confidence beat in every 0.5-second window.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_75-36-3_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_75-36-3_openai.wav",
+          "asr_output": "Filter beats to keep only those above the 93rd percentile for confidence, and imma pick the highest confidence beat in every 0.5 second window."
         }
       ]
     ],
@@ -3372,7 +3440,8 @@
           "role": "user",
           "content": "Can you help me convert this sentence from English to French: 'What is your name?'",
           "transcript": "Um, could you translate this sentence to French for me called What is your name?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_76-37-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_76-37-0_openai.wav",
+          "asr_output": "Could you translate this sentence to French for me called, \"What is your name?\""
         }
       ]
     ],
@@ -3427,7 +3496,8 @@
           "role": "user",
           "content": "Could you tell me the current weather conditions, including the temperature, wind, and precipitation, for London in the UK?",
           "transcript": "Um, whats the weather like in London, UK? I... oh, need the temperature, uh, wind, and rain details.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_77-38-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_77-38-0_openai.wav",
+          "asr_output": "Um, what's the weather like in London, UK? I... oh, need the temperature, wind, and rain details."
         }
       ]
     ],
@@ -3481,7 +3551,8 @@
           "role": "user",
           "content": "Could you draft an email to Andy at andy@gorilla.ai with the subject 'Sales Forecast Request' and include a message \"where is the latest sales forecast spreadsheet?\"",
           "transcript": "Hey, um, draft an email to Andy at andy at gorilla dot ai, thats G-O-R-I-L-L-A dot A-I, Andy at Gorilla dot AI. The subject should be, uh, Sales Forecast Request and say, Wheres the latest sales forecast spreadsheet?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_78-39-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_78-39-0_openai.wav",
+          "asr_output": "Hey, draft an email to Andy at andy@gorilla.ai. That's G-O-R-I-L-L-A dot AI, andy@gorilla.ai. The subject should be 'Sales Forecast Request', and say \"Where's the latest sales forecast spreadsheet?\""
         }
       ]
     ],
@@ -3540,7 +3611,8 @@
           "role": "user",
           "content": "You are an AI programming assistant, utilizing the Gorilla LLM model, developed by Gorilla LLM, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer. <<question>>Find hotels in San Diego\n",
           "transcript": "Uh, as an AI assistant using the Gorilla LLM model, only handling computer science questions. So, like, cant help with finding hotels in San Diego.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_79-40-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_79-40-0_openai.wav",
+          "asr_output": "Uh, as an AI assistant using the Gorilla LLM model? Only handling computer science questions. So, like, can't help with finding hotels in San Diego."
         }
       ]
     ],
@@ -3570,8 +3642,9 @@
         {
           "role": "user",
           "content": "I need to add a news item about the latest advancements in AI. The title should be 'Breakthrough in Artificial Intelligence', and the content must cover the recent breakthroughs in machine learning algorithms. Can you set the meta title as 'AI Breakthrough Latest Developments in Machine Learning' and the meta description to 'An overview of the recent significant advancements in artificial intelligence and machine learning technology'? Also, the URL should be 'ai-breakthrough-latest-developments'.",
-          "transcript": "Alright, let’s see... Add a news item about the latest in AI. Title it Breakthrough in Artificial Intelligence, and ensure the content covers the latest in machine learning breakthroughs. Set the meta title to AI Breakthrough Latest Developments in Machine Learning and the meta description to An overview of the recent significant advancements in artificial intelligence and machine learning technology. The URL should be ai dash breakthrough dash latest dash developments.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_80-41-0_openai.wav"
+          "transcript": "Alright, let\u2019s see... Add a news item about the latest in AI. Title it Breakthrough in Artificial Intelligence, and ensure the content covers the latest in machine learning breakthroughs. Set the meta title to AI Breakthrough Latest Developments in Machine Learning and the meta description to An overview of the recent significant advancements in artificial intelligence and machine learning technology. The URL should be ai dash breakthrough dash latest dash developments.",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_80-41-0_openai.wav",
+          "asr_output": "All right, let's see. Add a news item about the latest in AI, title it \"Breakthrough in Artificial Intelligence,\" and ensure the content covers the latest in machine learning breakthroughs. Set the meta title to \"AI Breakthrough: Latest Developments in Machine Learning\" and the meta description to \"An overview of the recent significant advancements in artificial intelligence and machine learning technology.\" The URL should be ai-breakthrough-latest-developments."
         }
       ]
     ],
@@ -3622,7 +3695,8 @@
           "role": "user",
           "content": "I need to add a new article to our Sitefinity CMS. The article is a 'NewsItem' with the title 'Julian is testing12'. Can you set this up for me?",
           "transcript": "Sure, lets have a look... Put a new NewsItem in Sitefinity CMS. Title it Julian is testing12. Alright, can you handle that for me?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_81-42-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_81-42-0_openai.wav",
+          "asr_output": "Sure, let's have a look. Put a new news item in Sitefinity CMS, title it \"Julian is testing 12.\" All right, can you handle that for me?"
         }
       ]
     ],
@@ -3683,7 +3757,8 @@
           "role": "user",
           "content": "I need to add a news article titled 'Julian is testing' to our Sitefinity CMS. Could you help with that?",
           "transcript": "Uh, right, can add a news article called Julian is testing to our Sitefinity S-I-T-E-F-I-N-I-T-Y CMS?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_82-43-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_82-43-0_openai.wav",
+          "asr_output": "Uh, right. Can add a news article called Julian is testing to our Sitefinity, S-I-T-E-F-I-N-I-T-Y CMS?"
         }
       ]
     ],
@@ -3745,7 +3820,8 @@
           "role": "user",
           "content": "I want to publish a news article titled 'Julian is Testing' with 'a detailed analysis on the impact of sleep patterns on productivity' as content. Could you set up the meta title to be 'Productivity and Sleep Patterns' and the URL to 'julian-testing-productivity'? Let's also add a brief meta description saying 'Exploring how sleep affects work efficiency'.",
           "transcript": "Sure, heres the text with spelling noise added: Uh, put out a news article titled Julian is Testing with content about the impact of, you know, sleep patterns on productivity. Right, set the meta title as Productivity and Sleep Patterns and use the U-R-L J-U-L-I-A-N dash testing dash productivity, Julian dash testing dash productivity. Also, um, add a brief meta description: Exploring how sleep affects work efficiency.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_83-44-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_83-44-0_openai.wav",
+          "asr_output": "Sure, here's the text with spelling noise added: \"Put out a news article titled 'Julian is Testing,' with content about the impact of, you know, sleep patterns on productivity. Right, set the meta title as 'Productivity and Sleep Patterns,' and use the URL j-u-l-i-a-n-testing-productivity. Also, add a brief meta description exploring how sleep affects work efficiency."
         }
       ]
     ],
@@ -3806,7 +3882,8 @@
           "role": "user",
           "content": "Can you provide me with the latitude and longitude of Seattle, that city where Mr. Gates works in?",
           "transcript": "Hey, yknow, where Mr. Gates works, whats the latitude and longitude for Seattle?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_84-45-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_84-45-0_openai.wav",
+          "asr_output": "Hey, you know where Mr. Gates works? What's the latitude and longitude for Seattle?"
         }
       ]
     ],
@@ -3837,7 +3914,8 @@
           "role": "user",
           "content": "Could you tell me the current temperature in Berkeley using latitude 37.8715 and longitude -122.2730?",
           "transcript": "Hey, whats the current temperature in Berkeley at latitude thirty-seven point eight seven one five and longitude negative one twenty-two point two seven three zero?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_85-46-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_85-46-0_openai.wav",
+          "asr_output": "Hey, what's the current temperature in Berkeley at latitude 37.8715 and longitude -122.2730?"
         }
       ]
     ],
@@ -3881,7 +3959,8 @@
           "role": "user",
           "content": "I need the numbers [1, 54, 3, 1, 76, 2343, 21] arranged from the smallest to the largest.",
           "transcript": "Um, can you sort these numbers for me from smallest to largest: [one, fifty-four, three, one, seventy-six, two thousand three hundred forty-three, twenty-one]?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_86-47-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_86-47-0_openai.wav",
+          "asr_output": "Um, can you sort these numbers for me from smallest to largest? 1, 54, 3, 1, 76, 2,343, 21?"
         }
       ]
     ],
@@ -3919,8 +3998,9 @@
         {
           "role": "user",
           "content": "Can you tell me the current geographical coordinates of my device in DMS format, including altitude?",
-          "transcript": "Uh, what’s the DMS format for, like, my device’s current coordinates and altitude?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_87-48-0_openai.wav"
+          "transcript": "Uh, what\u2019s the DMS format for, like, my device\u2019s current coordinates and altitude?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_87-48-0_openai.wav",
+          "asr_output": "Uh, what's the DMS format for like my device's current coordinates and altitude?"
         }
       ]
     ],
@@ -3964,7 +4044,8 @@
           "role": "user",
           "content": "I just enjoyed a large cup of chai tea with half and half for my morning snack. Could you record that I drank 16 ounces of chai tea as a snack?",
           "transcript": "I had a large chai tea with, uh, half and half for my morning snack. Right, can you record, um, sixteen ounces of chai tea as a snack?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_88-49-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_88-49-0_cartesia.mp3",
+          "asr_output": "I had a large chai tea with half and half for my morning snack. Right, can you record, um, 16 ounces of chai tea as a snack?"
         }
       ]
     ],
@@ -4017,7 +4098,8 @@
           "role": "user",
           "content": "I'd like to start the process for creating an interior design report. My preferences include a modern style, a warm color scheme, and my budget is mid-range. Could we use data from our internal database and have the report in DOCX format, including visual outputs?",
           "transcript": "Um, can we start making the interior design report? Id, uh, prefer a modern style with a warm color scheme, and my budgets mid-range. Oh, lets use data from our internal database and check the reports in DOCX format with visual outputs.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_89-50-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_89-50-0_cartesia.mp3",
+          "asr_output": "Um, can we start making the interior design report? I'd prefer a modern style with a warm color scheme, and my budget's mid-range. Oh, let's use data from our internal database and check the reports in DOCX format with visual outputs."
         }
       ]
     ],
@@ -4073,7 +4155,8 @@
           "role": "user",
           "content": "Can you tell me the current temperature in Paris, France?",
           "transcript": "Whats the temperature in Paris now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_90-51-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_90-51-0_cartesia.mp3",
+          "asr_output": "What's the temperature in Paris now?"
         }
       ]
     ],
@@ -4119,7 +4202,8 @@
           "role": "user",
           "content": "Can you tell me the details of the individual who has the identifier number 4?",
           "transcript": "Hey, uh, can you give me the details for the person with ID number four, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_91-52-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_91-52-0_cartesia.mp3",
+          "asr_output": "Hey, can you give me the details for the person with ID number four, right?"
         }
       ]
     ],
@@ -4148,9 +4232,10 @@
       [
         {
           "role": "user",
-          "content": "I want to listen to music by Käärijä, can you start playing it?",
-          "transcript": "Hey, uh, could you play some music by Käärijä, thats K-A-A-R-I-J-A, Käärijä, for me?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_92-53-0_cartesia.mp3"
+          "content": "I want to listen to music by K\u00e4\u00e4rij\u00e4, can you start playing it?",
+          "transcript": "Hey, uh, could you play some music by K\u00e4\u00e4rij\u00e4, thats K-A-A-R-I-J-A, K\u00e4\u00e4rij\u00e4, for me?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_92-53-0_cartesia.mp3",
+          "asr_output": "Hey, could you play some music by Kaariija that's K-A-A-R-I-J-A Kaariija for me?"
         }
       ]
     ],
@@ -4179,9 +4264,10 @@
       [
         {
           "role": "user",
-          "content": "I'd like to listen to all tracks by Käärijä.",
-          "transcript": "Lemme see... right, play all songs by Käärijä, thats K-A with two dots over it, A-R-I-J-A, Käärijä.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_93-54-0_cartesia.mp3"
+          "content": "I'd like to listen to all tracks by K\u00e4\u00e4rij\u00e4.",
+          "transcript": "Lemme see... right, play all songs by K\u00e4\u00e4rij\u00e4, thats K-A with two dots over it, A-R-I-J-A, K\u00e4\u00e4rij\u00e4.",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_93-54-0_cartesia.mp3",
+          "asr_output": "lemme see... right, play all songs by Kariijee, that's k-a with two dots over it, a-r-i-j-a-a, Kariijee"
         }
       ]
     ],
@@ -4212,7 +4298,8 @@
           "role": "user",
           "content": "I have a list of numerical values: [2.5, 3.6, 4.1, 5.2], and I need to apply normalization to them. Also, I have these categories: ['red', 'blue', 'green'] that I'd like to be one-hot encoded. Could you process this data for me?",
           "transcript": "Let me see... Ive got these numbers: two point five, three point six, four point one, five point two. Can you normalize em? Oh, and Ive got categories: red, blue, green, and I need em one-hot encoded. Could you do that for me?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_95-56-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_95-56-0_cartesia.mp3",
+          "asr_output": "Let me see. I've got these numbers: 2.5, 3.6, 4.1, 5.2. Can you normalize them? Oh, and I've got categories red, blue, green, and I need them one-hot encoded. Could you do that for me?"
         }
       ]
     ],
@@ -4278,7 +4365,8 @@
           "role": "user",
           "content": "Could you tell me the current weather conditions in Boston, MA?",
           "transcript": "Hey, whats the weather like in Boston right now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_96-57-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_96-57-0_cartesia.mp3",
+          "asr_output": "Hey, what's the weather like in Boston right now?"
         }
       ]
     ],
@@ -4318,7 +4406,8 @@
           "role": "user",
           "content": "Could you tell me the current weather conditions in El Gastor, Andalusia?",
           "transcript": "Um, whats the weather like in El Gastor, Andalusia right now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_97-57-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_97-57-1_cartesia.mp3",
+          "asr_output": "Um, what's the weather like in El Gastor, Andalusia right now?"
         }
       ]
     ],
@@ -4358,7 +4447,8 @@
           "role": "user",
           "content": "Can you tell me the current weather in Chennai? I believe the latitude is around 13.0827 and the longitude is approximately 80.2707.",
           "transcript": "Hey, um, whats the weather like now, uh, in Chennai? Its around latitude thirteen point zero eight two seven and longitude eighty point two seven zero seven, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_98-58-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_98-58-0_cartesia.mp3",
+          "asr_output": "Hey, um, what's the weather like now, uh, in Chennai? It's around latitude 13.0827 and longitude 80.2707, right?"
         }
       ]
     ],
@@ -4399,7 +4489,8 @@
           "role": "user",
           "content": "Can you establish a connection to my Bluetooth speaker named 'ue boom'?",
           "transcript": "Hey, can you, uh, link to my ue boom Bluetooth speaker?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_99-59-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_99-59-0_cartesia.mp3",
+          "asr_output": "Hey, can you link to my Uboom Bluetooth speaker?"
         }
       ]
     ],
@@ -4440,7 +4531,8 @@
           "role": "user",
           "content": "I want to establish a connection with my Bluetooth speaker called 'JBL Flip 4'.",
           "transcript": "Uh, connect to my JBL Flip 4 Bluetooth speaker, okay.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_100-59-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_100-59-1_cartesia.mp3",
+          "asr_output": "Connect my JBL Flip 4 Bluetooth speaker, okay?"
         }
       ]
     ],
@@ -4481,7 +4573,8 @@
           "role": "user",
           "content": "I'm trying to connect to a new Wi-Fi network but I forgot the name. Could you ask me for the SSID with a message saying 'Please enter the Wi-Fi network name you wish to connect to:'?",
           "transcript": "Uh, hey, could you prompt me with a message called Please enter the Wi-Fi network name you wish to connect to:? Oh, I need to enter SSID.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_101-60-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_101-60-0_cartesia.mp3",
+          "asr_output": "Uh, hey, could you prompt me with a message called \"Please enter the Wi-Fi network name you wish to connect to\"?"
         }
       ]
     ],
@@ -4527,7 +4620,8 @@
           "role": "user",
           "content": "I've just made a purchase of $59.99 in San Francisco, California. How much the sales tax will be for this amount?",
           "transcript": "Hey, uh, I just bought something for fifty-nine ninety-nine dollars in San Francisco. Oh, whats the sales tax on that?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_102-61-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_102-61-0_cartesia.mp3",
+          "asr_output": "Hey, ah, I just bought something for $59.99 in San Francisco. Oh, what's the sales tax on that?"
         }
       ]
     ],
@@ -4588,7 +4682,8 @@
           "role": "user",
           "content": "I purchased a new laptop for $999 in California, but I'm not sure how much tax I need to pay. What's the total amount including tax?",
           "transcript": "Hey, I just got a new laptop for nine hundred ninety-nine dollars. Can you tell me how much tax I owe and whats the total cost gonna be, including that?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_103-61-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_103-61-1_cartesia.mp3",
+          "asr_output": "Hey, I just got a new laptop for $999. Can you tell me how much tax I owe and what's the total cost going to be including that?"
         }
       ]
     ],
@@ -4649,7 +4744,8 @@
           "role": "user",
           "content": "I made a purchase for $250 in New York. How much the sales tax will be?",
           "transcript": "I spent two hundred fifty dollars in New York. Oh, whats sales tax?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_104-61-2_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_104-61-2_cartesia.mp3",
+          "asr_output": "I spent $250 in New York. Oh, what's sales tax?"
         }
       ]
     ],
@@ -4710,7 +4806,8 @@
           "role": "user",
           "content": "classify these sentences\\nlink my account\\nconnect my accounts\\nhello",
           "transcript": "Um, hey, can ya sort these sentences? And, uh, also link my account and connect my accounts. Oh, and hello.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_105-62-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_105-62-0_cartesia.mp3",
+          "asr_output": "Um, hey, can y'all sort these sentences? And, uh, also link my account and connect my accounts? Oh, and hello."
         }
       ]
     ],
@@ -4752,7 +4849,8 @@
           "role": "user",
           "content": "Could you help me classify the following customer queries into the appropriate categories?\n- 'Please provide the routing number for my account.'\n- 'Which account number should I use for setting up eStatements?'\n- 'What rewards are offered for my card?'\n- 'Looking for the closest ATM for cash withdrawal, can you assist me in finding one?'\n- 'What rewards are available on my card?'\n- 'Locate ATM for immediate cash needs'\n- 'I urgently need to find an ATM for cash withdrawal, can you help me locate the nearest one?'\n- 'Activate my new card for loyalty program enrollment'\n- 'I want to cancel my card and ensure the safety of my account.'\n- 'Searching for ATM for money withdrawal'\n- 'Can you walk me through the activation process for my new bank card?'\n- 'What are the benefits of using my rewards points for entertainment?'\n- 'Find ATM for urgent cash needs'\n- 'Need to find ATM for quick cash emergency'\n- 'I'm done here. Goodbye!'\n- 'Please give me the account number for my business checking account.'\n- 'Can I purchase a cashier's check through this chat service?'\n- 'Thanks for your assistance. Goodbye!'\n- 'I need a cashier's check, how can I get one?'\n- 'You're amazing. Goodbye!'",
           "transcript": "Hey, uh, could you help put these customer queries into, like, the right categories? Okay, here they are:-Routing number for my account?-Account number needed for eStatements?-What card rewards do I have?-Need help finding the closest ATM for cash?-Rewards available for my card?-Find ATM for cash right now?-Urgent ATM needed for cash, wheres the nearest?-Activate my card for loyalty program?-Cancel my card and secure my account.-ATM search for cash withdrawal.-Activate a new bank card, how to?-Using rewards points for entertainment, benefits?-Urgent cash ATM needed.-Find ATM for quick cash fast.-All done, goodbye!-Business checking account number, please.-Buy cashiers check via chat?-Thanks, goodbye!-Need cashiers check, how to get one?-Youre awesome, goodbye!",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_106-63-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_106-63-0_cartesia.mp3",
+          "asr_output": "Heya, could you help put these customer queries into, like, the right categories? Okay, here they are colon routing number for my account? Account number needed for statements? What card rewards do I have? Need help finding the closest ATM for cash? Rewards available for my card? Find ATM for cash right now. Urgent ATM needed for cash? Where's the nearest? Activate my card for loyalty program? Cancel my card and secure my account dot ATM search for cash withdrawal dot activate a new bank card? How to? Using rewards points for entertainment, benefits? Urgent cash ATM needed dot find ATM for quick cash fast dot all done, goodbye. Business checking account number please dot buy cashier's check via chat? Thanks, goodbye, need cashier's check? How to get one? You're awesome, goodbye."
         }
       ]
     ],
@@ -4850,7 +4948,8 @@
           "role": "user",
           "content": "I have a list of customer queries and need to classify them into categories related to telephone banking services, bank working hours or locations, and descriptions of different types of bank accounts. Here are the queries:\n- 'How do I sign up for tele-banking services through the mobile app?'\n- 'Can I sign up for telephone banking services?'\n- 'Where can I find the application for telephone banking services?'\n- 'I'm interested in opening a long term savings account. What options do you have?'\n- 'Are any banks open in Sri Lanka right now?'\n- 'Do you offer any special accounts for children or minors?'\n- 'Do you offer any special accounts for individuals looking to save for a home purchase or renovation?'",
           "transcript": "Hey, um, Ive got to take care of some customer questions and need to sort them out. Could you put em into these categories: telephone banking services, bank working hours or locations, and, like, types of bank accounts? Oh, here are the queries: How do I sign up for tele-banking services through the mobile app?, Can I sign up for telephone banking services?, Where can I find the application for telephone banking services?, Im interested in opening long-term savings account. What options do you have?, Are any banks open in Sri Lanka right now?, Do you offer any special accounts for children or minors?, and Do you offer any special accounts for individuals looking to save for a home purchase or renovation?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_107-64-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_107-64-0_cartesia.mp3",
+          "asr_output": "Hey um, I've got to take care of some customer questions and need to sort them out. Could you put them into these categories: telephone banking services, bank working hours or locations, and, like, types of bank accounts? Oh, here are the queries. How do I sign up for telebanking services through the mobile app? Can I sign up for telephone banking services? Where can I find the application for telephone banking services? I'm interested in opening long-term savings account. What options do you have? Are any banks open in Sri Lanka right now? Do you offer any special accounts for children or minors? And do you offer any special accounts for individuals looking to save for a home purchase or renovation?"
         }
       ]
     ],
@@ -4900,7 +4999,8 @@
           "role": "user",
           "content": "Please classify the following customer service queries:\n- 'Can you show me all outgoing wire transfers?'\n- 'Can you assist me in combining my personal and savings accounts?'\n- 'I need my credit card limit raised.'\n- 'Can you assist me in getting a higher credit card limit?'\n- 'I need to view all transactions labeled as \"checks\" on my account.'\n- 'Please assist me in combining my accounts for a streamlined experience.'\n- 'Can you show me my recent Google Pay transactions?'\n- 'How can I link my auto loan and savings accounts?'\n- 'I would like to see the details of my most recent ATM withdrawal.'\n- 'Can you give me a summary of my recent debit card transactions?'",
           "transcript": "Okay, let me think... alright, sort these customer service questions into groups: 1. Show me all outgoing wire transfers. 2. Help me merge my personal and savings accounts. 3. Raise my credit card limit. 4. Help increase my credit card limit. 5. Show me transactions marked as checks on my account. 6. Assist me in merging my accounts for easier management. 7. Show my recent Google Pay transactions. 8. Link my auto loan with my savings account. 9. Show details of my last ATM withdrawal. 10. Summarize my recent debit card transactions.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_108-65-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_108-65-0_cartesia.mp3",
+          "asr_output": "Okay, let me think. Alright, sort these customer service questions into groups: 1. Show me all outgoing wire transfers. 2. Help me merge my personal and savings accounts. 3. Raise my credit card limit. 4. Help increase my credit card limit. 5. Show me transactions marked as checks on my account. 6. Assist me in merging my accounts for easier management. 7. Show my recent Google Pay transactions. 8. Link my auto loan with my savings account. 9. Show details of my last ATM withdrawal. 10. Summarize my recent debit card transactions."
         }
       ]
     ],
@@ -4958,7 +5058,8 @@
           "role": "user",
           "content": "Please classify the following queries:\n[\n  \"Can I use bonuses or commissions as part of my income for a loan application?\",\n  \"Can I schedule automatic withdrawals for different dates?\",\n  \"How much do I owe on my home equity loan?\",\n  \"Will my income be verified during the loan application process?\",\n  \"Is there a minimum income threshold for loan approval?\"\n]",
           "transcript": "Hey, can you, uh, sort these queries into categories? Here they are: Can bonuses or commissions count as income for a loan? Uh, can I set up different date automatic withdrawals? Whats balance on my home equity loan? Will my income be checked in the loan process? Is there a minimum income needed for loan approval?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_109-66-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_109-66-0_cartesia.mp3",
+          "asr_output": "Hey, can you sort these queries into categories? Here they are: Can bonuses or commissions count as income for a loan? Can I set up different date automatic withdrawals? What's balance on my home equity loan? Will my income be checked in the loan process? Is there a minimum income needed for loan approval?"
         }
       ]
     ],
@@ -5015,7 +5116,8 @@
           "role": "user",
           "content": "I have a customer query asking for 'Need ATM location'. Which category should it be classified under?",
           "transcript": "Hey, um, right, where should sort a customer query thats asking for Need ATM location?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_110-67-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_110-67-0_cartesia.mp3",
+          "asr_output": "Hey Amrine, where should sort a customer query that's asking for NEAD ATM location?"
         }
       ]
     ],
@@ -5088,7 +5190,8 @@
           "role": "user",
           "content": "I have a set of customer queries and I need to classify them according to their intent. Here they are:\n- 'What is my balance?'\n- 'Tell me my available balance, please'\n- 'What is my current available balance?'\n- 'Where is the closest ATM to my current location?'\n- 'Find ATM for immediate cash needs'\n- 'Please provide my current account balance'\n- 'Show me my balance information.'\n- 'What is the balance in my account at this moment?'\n- 'How much money is in my account?'\n- 'Tell me my available balance'",
           "transcript": "Hey, can you, um, help me sort these customer questions by their intent? Oh, theyre: What is my balance?, Tell me my available balance, please, What is my current available balance?, Where is closest ATM to my current location?, Find ATM for immediate cash needs, Please provide my current account balance, Show me my balance information., What is balance in my account at this moment?, How much money is in my account?, and Tell me my available balance.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_111-67-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_111-67-1_cartesia.mp3",
+          "asr_output": "Hey, can you, um, help me sort these customer questions by their intent? Oh, there. What is my balance? Tell me my available balance, please. What is my current available balance? Where is closest ATM to my current location? Find ATM for immediate cash needs. Please provide my current account balance. Show me my balance information. What is balance in my account at this moment? How much money is in my account? And tell me my available balance."
         }
       ]
     ],
@@ -5160,8 +5263,9 @@
         {
           "role": "user",
           "content": "I have a query: 'what is the weather like'. Could you classify it appropriately?",
-          "transcript": "Hey, um, can put this question—called whats the weather like?—into the right category?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_112-68-0_cartesia.mp3"
+          "transcript": "Hey, um, can put this question\u2014called whats the weather like?\u2014into the right category?",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_112-68-0_cartesia.mp3",
+          "asr_output": "Hey, um, can you put this question, called \"What's the weather like?\" into the right category?"
         }
       ]
     ],
@@ -5235,7 +5339,8 @@
           "role": "user",
           "content": "I'm trying to set up pricing for my SaaS product that offers a one-time form filing service and an annual subscription for unlimited updates and filings. Given that my competitor charges $99 for a one-time filing and $149 for an annual subscription, while another competitor charges $149 and $249 respectively, help me determine a competitive price for a customer located at 34.0522, -118.2437? Let's use a base price of $100 and ensure we don't go below $90.",
           "transcript": "Hey, I need to figure out pricing for my SaaS product. Lemme see... it includes one-time form filing and an annual subscription for unlimited updates. Competitors charge ninety-nine dollars for one-time filing and one forty-nine dollars annually, while others charge one forty-nine dollars and two forty-nine dollars. Can you help me sort out a competitive price for a customer at thirty-four point zero five two two, negative one eighteen point two four three seven? Lets base it at one hundred dollars, but dont go lower than ninety bucks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_113-69-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_113-69-0_cartesia.mp3",
+          "asr_output": "Hey, I need to figure out pricing for my SaaS product. Let's see, it includes one-time form filing and an annual subscription for unlimited updates. Competitors charge $99 for one-time filing and $149 annually, while others charge $149 and $249. Can you help me sort out a competitive price for a customer at 34.0522, -118.2437? Let's base it at $100 but don't go lower than 90 bucks."
         }
       ]
     ],
@@ -5281,7 +5386,8 @@
           "role": "user",
           "content": "I need to update my profile with my new email, john.doe@example.com, and my new age, 30. My user ID is 12345.",
           "transcript": "Uh, update my profile with a new email: john dot doe at example dot com, and, um, age thirty. My user ID is one two three four five, one two three four five.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_114-70-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_114-70-0_cartesia.mp3",
+          "asr_output": "Uh, update my profile with a new email, john.doe@example.com, and, um, age thirty. My user ID is 12345, 12345."
         }
       ]
     ],
@@ -5341,7 +5447,8 @@
           "role": "user",
           "content": "What is the sum of 133 and 34?",
           "transcript": "So, oh, whats one thirty-three plus thirty-four?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_115-71-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_115-71-0_cartesia.mp3",
+          "asr_output": "So, oh, what's 133 plus 34?"
         }
       ]
     ],
@@ -5377,7 +5484,8 @@
           "role": "user",
           "content": "What is the sum of 133 and 34?",
           "transcript": "Hey, whats one thirty-three plus thirty-four?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_116-72-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_116-72-0_cartesia.mp3",
+          "asr_output": "Hey what's 133 plus 34?"
         }
       ]
     ],
@@ -5411,7 +5519,8 @@
           "role": "user",
           "content": "Reverse say hi",
           "transcript": "Uh, can you, like, reverse the phrase and say hi back?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_117-73-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_117-73-0_cartesia.mp3",
+          "asr_output": "Uh, can you like reverse the phrase and say hi back?"
         }
       ]
     ],
@@ -5442,7 +5551,8 @@
           "role": "user",
           "content": "Could you tell me the current temperature in Hyderabad, India, in Celsius?",
           "transcript": "Uh, okay, whats the temperature, in Celsius, in, um, Hyderabad, India?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_118-74-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_118-74-0_cartesia.mp3",
+          "asr_output": "Okay. What's the temperature in Celsius in Hyderabad, India?"
         }
       ]
     ],
@@ -5488,7 +5598,8 @@
           "role": "user",
           "content": "Could you tell me the names of the current prime ministers of Australia, Canada, and India?",
           "transcript": "Whore the current prime ministers of Australia, Canada, and India?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_119-75-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_119-75-0_cartesia.mp3",
+          "asr_output": "Wore the current prime ministers of Australia, Canada, and India?"
         }
       ]
     ],
@@ -5522,7 +5633,8 @@
           "role": "user",
           "content": "Could you tell me what the weather will be like in Paris, France from April 3rd to April 5th 2023. For temperature use Celsius?",
           "transcript": "Could you give me the weather forecast in Celsius for P-A-R-I-S, France, from April third to fifth, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_120-76-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_120-76-0_cartesia.mp3",
+          "asr_output": "Could you give me the weather forecast in Celsius for Paris, France from April 3rd to 5th, 2023?"
         }
       ]
     ],
@@ -5582,7 +5694,8 @@
           "role": "user",
           "content": "Can you create a bar chart comparing the salaries of five specific jobs such as Software Engineer, Graphic Designer, Data Analyst, Sales Manager, and Nurse? The salaries are 90000, 50000, 70000, 60000, and 80000 respectively.",
           "transcript": "Hey, uh, could you whip up a bar chart that compares salaries for these jobs: Software Engineer at ninety thousand, Graphic Designer at fifty thousand, Data Analyst at seventy thousand, Sales Manager at sixty thousand, and Nurse at eighty thousand?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_121-77-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_121-77-0_cartesia.mp3",
+          "asr_output": "Hey, could you whip up a bar chart that compares salaries for these jobs? Software Engineer at 90,000, Graphic Designer at 50,000, Data Analyst at 70,000, Sales Manager at 60,000, and Nurse at 80,000?"
         }
       ]
     ],
@@ -5624,7 +5737,8 @@
           "role": "user",
           "content": "I would like to easily be able to extract any informaton from an 'image.png' based on a 'question' using the vision language model vikhyatk/moondream2. The question is \"generate with technically complex attention to detail a description of what you see\"\n",
           "transcript": "Hey, can I use the vision language model V-I-K-H-Y-A-T-K slash M-O-O-N-D-R-E-A-M-2, vikhyatk slash moondream2, to extract detailed info from image.png based on the question: Generate a technically complex description of what you see? Alright?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_122-78-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_122-78-0_cartesia.mp3",
+          "asr_output": "Hey, can I use the vision-language model VIKHYATK/MOONDR EAM2VICAK/MOONDREAM2 to extract detailed info from Image.p and g based on the question, generate a technically complex description of what you see? Alright?"
         }
       ]
     ],
@@ -5665,7 +5779,8 @@
           "role": "user",
           "content": "Could you analyze the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/Home-Interior-Design-Hd-Wallpaper-Hd-Background-With-Simple-Staircase-And-Plasma-TV-Also-Nice-Laminate-Flooring-Ideas-With-Modern-Furniture-Interior-Minimalist-Design.jpg and provide a detailed description based on the question, 'How does the arrangement of furniture contribute to the minimalist design of the interior?'",
           "transcript": "Can you take a look at the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/Home-Interior-Design-Hd-Wallpaper-Hd-Background-With-Simple-Staircase-And-Plasma-TV-Also-Nice-Laminate-Flooring-Ideas-With-Modern-Furniture-Interior-Minimalist-Design.jpg? And after that, give me, oh, a detailed description of how the furniture setup supports a minimalist design?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_123-79-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_123-79-0_cartesia.mp3",
+          "asr_output": "Can you take a look at the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/home-interior-design-hd-wallpaper-hd-background-with-simple-staircase-and-plasma-tv-also-nice-laminate-flooring-ideas-with-modern-furniture-interior-minimalist-design.jpg? And after that, give me a detailed description of how the furniture setup supports a minimalist design."
         }
       ]
     ],
@@ -5701,7 +5816,8 @@
           "role": "user",
           "content": "Could you help me combine the names 'John' and 'Doe' into a full name?",
           "transcript": "Hey, um, can you join John and Doe, thats D-O-E, Doe into a full name?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_125-81-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_125-81-0_cartesia.mp3",
+          "asr_output": "Hey, can you join John and Doe? That's D-O-E Doe into a full name?"
         }
       ]
     ],
@@ -5740,7 +5856,8 @@
           "role": "user",
           "content": "Can you retrieve the status information for the Ethernet interface on fabric 'Global-Fabric', node 1200, and pod 3?",
           "transcript": "Uh, right, whats the status of the Ethernet interface on Global-Fabric, node twelve hundred, pod three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_126-82-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_126-82-0_cartesia.mp3",
+          "asr_output": "Alright, what's the status of the Ethernet interface on Global Fabric, node 1200, pod 3?"
         }
       ]
     ],
@@ -5803,7 +5920,8 @@
           "role": "user",
           "content": "Can you retrieve the status information for an ethernet interface in the fabric named 'test-de', on node 5, pod 1?",
           "transcript": "Hey, um, can you get the status info for the ethernet interface on node five, pod one in the fabric called test-de?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_127-82-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_127-82-1_cartesia.mp3",
+          "asr_output": "Hey um, can you get the status info for the ethernet interface on node five, pod one in the fabric called testy?"
         }
       ]
     ],
@@ -5866,7 +5984,8 @@
           "role": "user",
           "content": "How to generate a RESTful API request on Cisco Nexus Dashboard?\nversion:3.1.0\nIP:192.168.11.33\nAPI name: get nodes list\nParameter_fabricName:PEK-ACI",
           "transcript": "Let me see... right, how do I make a RESTful API request on the Cisco Nexus Dashboard, version three point one point oh? The IP is one ninety-two dot one sixty-eight dot eleven dot thirty-three, and I need to use the API called get nodes list with the parameter fabricName set to PEK-ACI.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_128-83-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_128-83-0_cartesia.mp3",
+          "asr_output": "Let me see. Right. How do I make a RESTful API request on the Cisco Nexus Dashboard version 3.1.0? The IP is 192.168.11.33, and I need to use the API called getNodesList with the parameter fabricName set to pekaci."
         }
       ]
     ],
@@ -5902,7 +6021,8 @@
           "role": "user",
           "content": "get list of nodes for fabric fab-ed and ip is 3.321.3232.2",
           "transcript": "Um, can you get the list of nodes for the fabric, uh, fab-ed with IP address three dot three two one dot three two three two dot two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_129-83-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_129-83-1_cartesia.mp3",
+          "asr_output": "Um, can you get the list of nodes for the fabric? A fab-ed with IP address 3.32.1.3232.2?"
         }
       ]
     ],
@@ -5938,7 +6058,8 @@
           "role": "user",
           "content": "Could you retrieve the Ethernet interface statistics from the node with ID 12 in pod 10 of the Network1 fabric, using the IP 192.120.45.67?",
           "transcript": "Uh, right, can you get Ethernet interface stats from node ID twelve in pod ten of Network1 fabric, using IP one ninety-two dot one twenty dot forty-five dot sixty-seven?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_130-84-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_130-84-0_cartesia.mp3",
+          "asr_output": "Alright, can you get ethernet interface stats from node ID 12 in pod 10 of Network1 fabric using IP 192.120.45.67?"
         }
       ]
     ],
@@ -6007,7 +6128,8 @@
           "role": "user",
           "content": "How to generate a RESTful API request on Cisco Nexus Dashboard?\nVersion: 6.3.1\nIP: 192.120.45.67\nAPI name: get information of an interface\nParameter_fabricName: Network1\nParameter_nodeId: 12\nParameter_podId: 10\nParameter_interfaceType: Ethernet\nParameter_infoType: Speed",
           "transcript": "Hey, um, how do I make a RESTful A P I request on the Cisco Nexus Dashboard, version six point three point one? The I P is one ninety-two dot one twenty dot forty-five dot sixty-seven, and I, uh, wanna get details about an interface. The parameters are fabric name: Network1, node I D: twelve, pod I D: ten, interface type: Ethernet, and info type: Speed.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_131-84-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_131-84-1_cartesia.mp3",
+          "asr_output": "Hey um, how do I make a RESTful API request on the Cisco Nexus Dashboard version 6.3.1? The IP is 192.120.45.67, and I, uh, want to get details about an interface. The parameters are fabricName, Network1, nodeId, 12, podId, 10, interfaceType, Ethernet, and infoType, speed."
         }
       ]
     ],
@@ -6077,7 +6199,8 @@
           "role": "user",
           "content": "information on the device connector versions from https://example.com/device-connector-versions.json?",
           "transcript": "Hey, could you, um, get the details on the device connector versions from h t t p s colon slash slash example dot com slash device dash connector dash versions dot json?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_132-85-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_132-85-0_cartesia.mp3",
+          "asr_output": "Hey, could you get the details on the device connector versions from https://example.com/device-connector-versions.john?"
         }
       ]
     ],
@@ -6114,7 +6237,8 @@
           "role": "user",
           "content": "Could you retrieve the recommendation details for the advisory with the identifier 'dac' from the following URL: 'https://api.example.com/recommendations'?",
           "transcript": "Uh, yeah, can you get recommendation details for advisory dac from this U-R-L colon slash slash api dot example dot com slash recommendations?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_133-86-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_133-86-0_cartesia.mp3",
+          "asr_output": "Ah yeah, can you get recommendation details for advisory DAC from this URL://appy.example.com/recommendations"
         }
       ]
     ],
@@ -6160,7 +6284,8 @@
           "role": "user",
           "content": "Could you retrieve the Insights Groups Information for the nodes from the following URL: 'https://api.insights.com/groups'? I'd like to see a maximum of 20 results, sorted in descending order.",
           "transcript": "Uh, get Insights Groups Info from this URL: https://api.insights.com/groups. Um, show me up to twenty results, sorted descending.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_134-87-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_134-87-0_cartesia.mp3",
+          "asr_output": "Get InsightsGroups info from this URL: https://api.insights.com/groups. Show me up to 20 results, sorted descending"
         }
       ]
     ],
@@ -6216,7 +6341,8 @@
           "role": "user",
           "content": "retrieve data from 'https://api.example.com/v1/data' with a limit of 50 items?",
           "transcript": "Hey, can you get data from https://api.example.com/v1/data with a fifty-item limit?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_135-88-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_135-88-0_cartesia.mp3",
+          "asr_output": "Hey, can you get data from https://api.example.com/v1/data with a 50 item limit?"
         }
       ]
     ],
@@ -6263,7 +6389,8 @@
           "role": "user",
           "content": "I need to retrieve the topology information of the SalesApp under the AcmeCorp account. Could you send a GET request to the server at 'https://192.168.1.1/api/v1/applications/topologies' using the filter 'accountName:AcmeCorp AND applicationName:SalesApp'?",
           "transcript": "Uh, can you get the topology info for, uh, the SalesApp under AcmeCorp? Send a GET request to h t t p s colon slash slash one nine two dot one six eight dot one dot one slash a p i slash v one slash applications slash topologies with the filter accountName:AcmeCorp AND applicationName:SalesApp?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_136-89-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_136-89-0_cartesia.mp3",
+          "asr_output": "Can you get the topology info for the SalesApp under AcmeCorp? Send a GET request to https://192.168.1.1/api/v1/applications/topologies with the filter accountName=AcmeCorp AND applicationName=SalesApp."
         }
       ]
     ],
@@ -6305,7 +6432,8 @@
           "role": "user",
           "content": "Reschedule event 'Alice-One-one-One' to November 1, 2023 at 10pm CEST",
           "transcript": "Hey, can you reschedule the event named Alice-One-one-One to November first, twenty-twenty-three, at ten PM C-E-S-T?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_137-90-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_137-90-0_cartesia.mp3",
+          "asr_output": "Hey, can you reschedule the event named Alice111 to November 1, 2023, at 10 p.m. C, EST?"
         }
       ]
     ],
@@ -6352,7 +6480,8 @@
           "role": "user",
           "content": "Reschedule event 'Bob-123' to November 1, 2023 at 6pm CEST",
           "transcript": "Okay, move the event called Bob-123, uh, to November first, twenty-twenty-three, at six PM CEST.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_138-91-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_138-91-0_cartesia.mp3",
+          "asr_output": "Okay move the event called Bob 123 to November 1, 2023 at 6 p.m. CST."
         }
       ]
     ],
@@ -6399,7 +6528,8 @@
           "role": "user",
           "content": "Could you retrieve a summary of anomalies for the fabric named 'network222' using the URL formatted as 'https://{ip}/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary', where {ip} is the IP address '192.168.1.1'?",
           "transcript": "Can you give me an overview of anomalies for the fabric network222 from the URL https://192.168.1.1/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_139-92-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_139-92-0_cartesia.mp3",
+          "asr_output": "Can you give me an overview of anomalies for the fabric network 222 from the URL https://192.168.1.111/sedgeap/v1/cisconurse/ap/ap/v1/anomalies/summary?"
         }
       ]
     ],
@@ -6447,7 +6577,8 @@
           "role": "user",
           "content": "help me send a nice message to my husband, Jeff? My name is Emily.",
           "transcript": "Hey, could you send a sweet message to my husband, Jeff, from me, Emily? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_140-93-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_140-93-0_cartesia.mp3",
+          "asr_output": "Hey, could you send a sweet message to my husband Jeff from me Emily? Thanks."
         }
       ]
     ],
@@ -6493,7 +6624,8 @@
           "role": "user",
           "content": "check whether the docker is installed using docker --version",
           "transcript": "Uh, can you check if Dockers installed by runnin docker dash dash version?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_141-94-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_141-94-0_cartesia.mp3",
+          "asr_output": "Can you check if Docker's installed by running docker--version?"
         }
       ]
     ],
@@ -6533,7 +6665,8 @@
           "role": "user",
           "content": "list file in desktop using dir Desktop",
           "transcript": "Hey, uh, can you show files on the desktop using dir Desktop?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_142-94-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_142-94-1_cartesia.mp3",
+          "asr_output": "Heya, can you show files on the desktop using DearDesktop?"
         }
       ]
     ],
@@ -6573,7 +6706,8 @@
           "role": "user",
           "content": "is docker running, please use docker ps to find out",
           "transcript": "Hey, can ya see if Dockers running? Use docker ps to find out.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_143-95-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_143-95-0_cartesia.mp3",
+          "asr_output": "Hey can ya see if Docker's running? Use docker ps to find out."
         }
       ]
     ],
@@ -6613,7 +6747,8 @@
           "role": "user",
           "content": "close firefox using taskkill command",
           "transcript": "Uh, close Firefox with the taskkill command.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_144-95-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_144-95-1_cartesia.mp3",
+          "asr_output": "Close Firefox with the taskkill command."
         }
       ]
     ],
@@ -6653,7 +6788,8 @@
           "role": "user",
           "content": "LIST C DRIIVE",
           "transcript": "Can you, uh, list the contents of the C drive?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_145-95-2_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_145-95-2_cartesia.mp3",
+          "asr_output": "Can you list the contents of the C drive?"
         }
       ]
     ],
@@ -6693,7 +6829,8 @@
           "role": "user",
           "content": "open huggingface using the start command and through the link: https://huggingface.co",
           "transcript": "Uh, start Hugging Face by usin the command, and open this link: h t t p s colon slash slash huggingface dot co.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_146-95-3_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_146-95-3_cartesia.mp3",
+          "asr_output": "Start Hugging Face by using the command and open this link https://huggingface.co"
         }
       ]
     ],
@@ -6733,7 +6870,8 @@
           "role": "user",
           "content": "remove the timer.exe that i have been set earlier using the taskkill command",
           "transcript": "Uh, can you use taskkill to, um, stop timer.exe I set earlier?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_147-95-4_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_147-95-4_cartesia.mp3",
+          "asr_output": "Can you use Taskkill to, um, stop timer.exe I set earlier?"
         }
       ]
     ],
@@ -6773,7 +6911,8 @@
           "role": "user",
           "content": "what is the file in c.",
           "transcript": "Lemme see... whats the, uh, file in C?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_148-95-5_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_148-95-5_cartesia.mp3",
+          "asr_output": "Lemme see. What's the file in C?"
         }
       ]
     ],
@@ -6813,7 +6952,8 @@
           "role": "user",
           "content": "say hi using the echo command",
           "transcript": "Use the echo command to say hello.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_149-95-6_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_149-95-6_cartesia.mp3",
+          "asr_output": "Use the echo command to say hello."
         }
       ]
     ],
@@ -6853,7 +6993,8 @@
           "role": "user",
           "content": "shutdown the pc, using the exact command shutdown /s /t 0",
           "transcript": "Uh, shut down the PC with this exact command: shutdown slash s slash t zero.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_150-95-7_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_150-95-7_cartesia.mp3",
+          "asr_output": "Shut down the PC with this exact command: shutdown /s /t 0."
         }
       ]
     ],
@@ -6893,7 +7034,8 @@
           "role": "user",
           "content": "disconnect wifi, using the command netsh wlan disconnect",
           "transcript": "Um, can you use the command netsh wlan disconnect to disconnect the WiFi?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_151-95-8_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_151-95-8_cartesia.mp3",
+          "asr_output": "Um, can you use the command netsh wlan disconnect to disconnect the Wi-Fi?"
         }
       ]
     ],
@@ -6933,7 +7075,8 @@
           "role": "user",
           "content": "list file in d drive and make file called testing.txt. This can be achieved through dir D:\\\\ && echo testing.txt.",
           "transcript": "Uh, in the D drive, list the files and, um, create a file named testing dot txt. You can do this with dir D colon and echo testing dot t x t.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_152-95-9_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_152-95-9_cartesia.mp3",
+          "asr_output": "In the D drive, list the files and create a file named testing.txt. You can do this with dir d: and echo testing.txt."
         }
       ]
     ],
@@ -6973,7 +7116,8 @@
           "role": "user",
           "content": "remove shortcut of putty from desktop, using the instruction del \"%userprofile%\\Desktop\\putty.lnk\"",
           "transcript": "Hey, uh, okay, remove the Putty shortcut from the desktop with this command: delete quote percent user profile percent backslash Desktop backslash putty dot l n k end quote.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_153-95-10_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_153-95-10_cartesia.mp3",
+          "asr_output": "Hey, uh, okay, remove the PuTTY shortcut from the desktop with this command: delete \"%userprofile%\\Desktop\\PuTTY.lnk\"."
         }
       ]
     ],
@@ -7013,7 +7157,8 @@
           "role": "user",
           "content": "open youtube and play rickroll using the command start https://www.youtube.com/watch?v=dQw4w9WgXcQ",
           "transcript": "Uh, hey, open YouTube and start playin that link: h t t p s colon slash slash w w w dot youtube dot com slash watch question mark v equals d Q w four w nine W g X c Q, right.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_154-95-11_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_154-95-11_cartesia.mp3",
+          "asr_output": "Ah hey, open YouTube and start playin that link."
         }
       ]
     ],
@@ -7053,7 +7198,8 @@
           "role": "user",
           "content": "what is the date, using the date or echo command",
           "transcript": "Uh, hey, right, how do I get the date using the date or echo command?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_155-95-12_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_155-95-12_cartesia.mp3",
+          "asr_output": "Uh, hey, right, how do I get the date using the date or echo command?"
         }
       ]
     ],
@@ -7093,7 +7239,8 @@
           "role": "user",
           "content": "u have the full control of command prompt if the task need to execute and coommand just do it list c drive",
           "transcript": "Have full control over the command prompt. Uh, if you need to run any tasks or commands, just go ahead. Start off by listing the stuff on the C drive.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_156-95-13_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_156-95-13_cartesia.mp3",
+          "asr_output": "Have full control over the command prompt. If you need to run any tasks or commands, just go ahead. Start off by listing the stuff on the C drive."
         }
       ]
     ],
@@ -7133,7 +7280,8 @@
           "role": "user",
           "content": "what is the time in pc, using the command echo %time%",
           "transcript": "Hey, uh, check the time on my PC? Use command: echo percent time percent. Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_157-95-14_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_157-95-14_cartesia.mp3",
+          "asr_output": "Hey, check the time on my PC? Use command echo %time%. Thanks."
         }
       ]
     ],
@@ -7173,7 +7321,8 @@
           "role": "user",
           "content": "kill vs code using taskkill for code.exe",
           "transcript": "Hey, maybe... uh, close V-S Code by using taskkill for code dot exe.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_158-95-15_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_158-95-15_cartesia.mp3",
+          "asr_output": "Hey maybe. Close VSCode by using taskkill for code.exe."
         }
       ]
     ],
@@ -7213,7 +7362,8 @@
           "role": "user",
           "content": "set a timer for 10 seconds using the timeout command. You should use timeout 10.",
           "transcript": "Hey, uh, can you set timer for ten seconds usin the timeout command? Just use timeout ten.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_159-95-16_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_159-95-16_cartesia.mp3",
+          "asr_output": "Heya, can you set timer for 10 seconds using the timeout command? Just use timeout 10."
         }
       ]
     ],
@@ -7253,7 +7403,8 @@
           "role": "user",
           "content": "open camera, using the start microsoft.windows.camera: command",
           "transcript": "Hey, uh, open the camera app with this command called start microsoft dot windows dot camera.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_160-95-17_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_160-95-17_cartesia.mp3",
+          "asr_output": "Hey\u3001\u3042\u3042\u3001Open the Camera app with this command called start microsoft.windows.camera"
         }
       ]
     ],
@@ -7293,7 +7444,8 @@
           "role": "user",
           "content": "{\n    \"response\": \" The image contains four logos of superheroes from DC Comics and Marvel Comics. They are Superman, Iron Man, Hulk, and Batman. The logos are all in different colors and shapes. Superman's logo is a red and yellow \\\"S\\\" on a blue background. Iron Man's logo is a red and yellow circle with a black face mask. Hulk's logo is a green fist with a black outline. Batman's logo is a black bat on a yellow background.\\n\\nHere is a list of objects that could contain copyrighted material:\\n\\n* Blue square\\n* Red square\\n* Green square\\n* Yellow square\\n* Superman logo\\n* Iron Man logo\\n* Hulk logo\\n* Batman logo\\n* Fist\\n* Bat\\n* Face mask\\n* Outline\"\n}\n",
           "transcript": "The picture showcases four superhero logos from the worlds of DC and Marvel: Superman, Iron Man, Hulk, and Batman. Theyve got those distinct hues and designs going on. Supermans logo sports a red and yellow S on blue, Iron Mans features a red and yellow circle with that black face mask, Hulks has a green fist with a black outline, and Batmans flaunts a black bat on yellow. By the way, theres a list of items that might contain that copyrighted stuff: blue square, red square, green square, yellow square, Superman logo, Iron Man logo, Hulk logo, Batman logo, fist, bat, face mask, and outline.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_161-96-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_161-96-0_cartesia.mp3",
+          "asr_output": "The picture showcases four superhero logos from the worlds of DC and Marvel: Superman, Iron Man, Hulk, and Batman. They've got those distinct hues and designs going on. Superman's logo sports a red and yellow \"S\" on blue, Iron Man's features a red and yellow circle with that black face mask, Hulk's has a green fist with a black outline, and Batman's flaunts a black bat on yellow. By the way, the rest a list of items that might contain that copyrighted stuff: blue square, red square, green square, yellow square, Superman logo, Iron Man logo, Hulk logo, Batman logo, fist, bat, face mask, and outline."
         }
       ]
     ],
@@ -7327,7 +7479,8 @@
           "role": "user",
           "content": "{\n    \"response\": \" A 4-image grid of various comic book superheroes. Her is a list of objects that contain copyright material\\n\\nRed and blue circle logo.\\nRed and yellow circle logo.\\nGreen circle logo.\\nBlack circle logo.\"\n}\n",
           "transcript": "Heres a, um, four-image grid showin different comic book superheroes. Oh, its got some copyright stuff called a red and blue circle logo, a red and yellow circle logo, a green circle logo, and, uh, a black circle logo.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_162-96-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_162-96-1_cartesia.mp3",
+          "asr_output": "Here's a, um, four-image grid showing different comic book superheroes. Oh, it's got some copyright stuff called a red and blue circle logo, a red and yellow circle logo, a green circle logo, and a black circle logo."
         }
       ]
     ],
@@ -7360,8 +7513,9 @@
         {
           "role": "user",
           "content": "The image is a poster for The Lego Movie. It features the Lego logo, which is a red and yellow rectangle with the word \"LEGO\" written in white. The poster also features several Lego characters, including Emmet, Wyldstyle, Batman, and Gandalf. Other objects that could contain copyrighted material include the movie's title, the release date, and the names of the actors who voiced the characters.\n\nred logo\nyellow rectangle\nwhite text\nLego characters\nmovie title\nrelease date\nactor names",
-          "transcript": "The posters for The Lego Movie. It shows the Lego logo—a red and yellow rectangle with LEGO in white letters. Youll also spot Lego characters like Emmet, Wyldstyle, Batman, and Gandalf. Other things with possible copyright, like the movies title, release date, and the actors names, are also there.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_163-96-2_cartesia.mp3"
+          "transcript": "The posters for The Lego Movie. It shows the Lego logo\u2014a red and yellow rectangle with LEGO in white letters. Youll also spot Lego characters like Emmet, Wyldstyle, Batman, and Gandalf. Other things with possible copyright, like the movies title, release date, and the actors names, are also there.",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_163-96-2_cartesia.mp3",
+          "asr_output": "The poster's for The Lego Movie. It shows the LEGO logo, a red and yellow rectangle with LEGO in white letters. You'll also spot LEGO characters like Emmet, Wyldstyle, Batman, and Gandalf. Other things with possible copyright, like the movie's title, release date, and the actors' names, are also there."
         }
       ]
     ],
@@ -7395,7 +7549,8 @@
           "role": "user",
           "content": "The image contains the Coca-Cola logo, which is a registered trademark of The Coca-Cola Company. The Coca-Cola Company is a multinational beverage corporation headquartered in Atlanta, Georgia, United States. The company is the world's largest beverage company, refreshing consumers with more than 500 sparkling and still brands. Led by Coca-Cola, one of the world's most valuable brands, our company's portfolio features 20 billion-dollar brands, 19 of which are available in more than 200 countries. These brands include Diet Coke, Fanta, Sprite, Coca-Cola Zero, vitaminwater, Powerade, Minute Maid, Simply, Dasani, FUZE TEA and Del Valle.\\n\\nI am 100% confident that the image contains copyrighted content.",
           "transcript": "This image definitely has the Coca-Cola logo, a registered trademark of The Coca-Cola Company. Theyre based in Atlanta, and theyre the biggest beverage company out there. They sell over 500 different drinks, both fizzy and still. Coca-Colas one of their top brands, valued at over a billion dollars, and they have 19 other billion-dollar brands sold in more than 200 countries. Some of those include Diet Coke, Fanta, Sprite, Coca-Cola Zero, vitaminwater, Powerade, Minute Maid, Simply, Dasani, FUZE TEA, and Del Valle. So, Im completely sure the images got copyrighted content.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_164-97-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_164-97-0_cartesia.mp3",
+          "asr_output": "This image definitely has the Coca-Cola logo, a registered trademark of The Coca-Cola Company. They're based in Atlanta, and they're the biggest beverage company out there. They sell over 500 different drinks, both fizzy and still. Coca-Cola's one of their top brands, valued at over a billion dollars, and they have 19 other billion-dollar brands sold in more than 200 countries. Some of those include Diet Coke, Fanta, Sprite, Coca-Cola Zero, Vitaminwater, Powerade, Minute Maid, Simply, Dasani, Fuze Tea, and Del Valle. So, I'm completely sure the image has got copyrighted content."
         }
       ]
     ],
@@ -7438,9 +7593,10 @@
         },
         {
           "role": "user",
-          "content": "Could you help me extract the names and ages from this text? Here it is: ```\n我叫李雷，今年18，我姐姐比我大三岁，叫李丽\n```",
-          "transcript": "Um, can you get the names and ages from this text? It says: 我叫李雷，今年18，我姐姐比我大三岁，叫李丽.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_165-98-0_cartesia.mp3"
+          "content": "Could you help me extract the names and ages from this text? Here it is: ```\n\u6211\u53eb\u674e\u96f7\uff0c\u4eca\u5e7418\uff0c\u6211\u59d0\u59d0\u6bd4\u6211\u5927\u4e09\u5c81\uff0c\u53eb\u674e\u4e3d\n```",
+          "transcript": "Um, can you get the names and ages from this text? It says: \u6211\u53eb\u674e\u96f7\uff0c\u4eca\u5e7418\uff0c\u6211\u59d0\u59d0\u6bd4\u6211\u5927\u4e09\u5c81\uff0c\u53eb\u674e\u4e3d.",
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_165-98-0_cartesia.mp3",
+          "asr_output": "Can you get the names and ages from this text? It says: \u6211\u53eb\u674e\u857e\uff0c\u4eca\u5e7418\uff0c\u6211\u59d0\u59d0\u6bd4\u6211\u5927\u4e09\u5c81\uff0c\u53eb\u674e\u8389\u3002"
         }
       ]
     ],
@@ -7484,7 +7640,8 @@
           "role": "user",
           "content": "I need to know the current time on my machine, using the command echo %time%",
           "transcript": "Hey, uh, can you let me know the current time on my machine? Oh, just use the command: echo percent time percent.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_166-99-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_166-99-0_cartesia.mp3",
+          "asr_output": "Heya, can you let me know the current time on my machine? Oh, just use the command: echo %time%"
         }
       ]
     ],
@@ -7515,7 +7672,8 @@
           "role": "user",
           "content": "is vs code running, using the command tasklist /FI \"IMAGENAME eq Code.exe\"",
           "transcript": "Hey, um, can you check if V S Code is running with the command tasklist slash F I IMAGENAME eq Code dot exe?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_167-99-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_167-99-1_cartesia.mp3",
+          "asr_output": "Hey, um, can you check if bs code is running with the command tasklist /fi \"IMAGENAME eq code.exe\"?"
         }
       ]
     ],
@@ -7546,7 +7704,8 @@
           "role": "user",
           "content": "start Docker on window using docker start.",
           "transcript": "Hey, um, can you fire up Docker on Windows using docker start?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_168-99-2_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_168-99-2_cartesia.mp3",
+          "asr_output": "Hey um, can you fire up Docker on Windows using docker start?"
         }
       ]
     ],
@@ -7577,7 +7736,8 @@
           "role": "user",
           "content": "Run the Python script located at d:/playground/pc_contoller/test.py using the Python interpreter in the virtual environment at d:/playground/pc_contoller/env/Scripts/python.exe?",
           "transcript": "Hey, um, can you run the Python script at d colon slash playground slash pc underscore controller slash test dot py using the interpreter from the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_169-99-3_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_169-99-3_cartesia.mp3",
+          "asr_output": "Hey, can you run the Python script at D:/playground/pc_controller/test.py using the interpreter from the scripts folder inside env inside pc_controller inside playground on the D drive? The file python.x, right?"
         }
       ]
     ],
@@ -7608,7 +7768,8 @@
           "role": "user",
           "content": "list c drive",
           "transcript": "Could you show whats on the C drive?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_170-99-4_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_170-99-4_cartesia.mp3",
+          "asr_output": "Could you show what's on the C drive?"
         }
       ]
     ],
@@ -7639,7 +7800,8 @@
           "role": "user",
           "content": "show me today's date using the echo %date% command",
           "transcript": "Hey, um, can you show me todays date by running the command echo percent date percent, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_171-99-5_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_171-99-5_elevenlabs.wav",
+          "asr_output": "Hey, can you show me today's date by running the command echo %date%? Thanks."
         }
       ]
     ],
@@ -7670,7 +7832,8 @@
           "role": "user",
           "content": "check weather docker is running using docker ps",
           "transcript": "Uh, can you see if the weather Docker container is running with docker p s?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_172-99-6_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_172-99-6_elevenlabs.wav",
+          "asr_output": "Can you see if the Weather Docker container is running with Docker PS?"
         }
       ]
     ],
@@ -7701,7 +7864,8 @@
           "role": "user",
           "content": "Help me find service provider who provide cleaning service.",
           "transcript": "Uh, can you help me find a cleaning service provider?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_177-103-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_177-103-0_elevenlabs.wav",
+          "asr_output": "Ah, can you help me find a cleaning service provider?"
         }
       ]
     ],
@@ -7741,7 +7905,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services.",
           "transcript": "Um, can you help me find housekeeper whos offering ironing services?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_178-103-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_178-103-1_elevenlabs.wav",
+          "asr_output": "Can you help me find housekeeper who's offering ironing services?"
         }
       ]
     ],
@@ -7781,7 +7946,8 @@
           "role": "user",
           "content": "get unique identifier for an ironing service within Chiang Mai?",
           "transcript": "Um, can track down a unique ID for an ironing service in, uh, Chiang Mai?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_179-104-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_179-104-0_elevenlabs.wav",
+          "asr_output": "Um can track down a unique ID for an ironing service in Chiang Mai."
         }
       ]
     ],
@@ -7827,7 +7993,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Bangkok, Chatuchak District, with a review score of 4 stars or more",
           "transcript": "Help me find a housekeeper in Bangkoks Chatuchak District who does ironing and has at least 4-star reviews.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_180-105-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_180-105-0_elevenlabs.wav",
+          "asr_output": "Help me find a housekeeper in Bangkok's Chatuchak district who does ironing and has at least four-star reviews."
         }
       ]
     ],
@@ -7868,7 +8035,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Bangkok, Chatuchak District, with a review score of 4.5 stars or more.",
           "transcript": "Uh, can you look for a housekeeper offering ironing services in Bangkoks Chatuchak District, with at least a 4.5-star rating, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_181-106-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_181-106-0_elevenlabs.wav",
+          "asr_output": "Can you look for a housekeeper offering ironing services in Bangkok's Chatuchak District, with at least a 4.5-star rating, right?"
         }
       ]
     ],
@@ -7914,7 +8082,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Bangkok, Khlong Sam Wa District, Sai Kong Subdistrict, with a review score of 4.5 stars or more.",
           "transcript": "Um, can you help me find a housekeeper who, like, does ironing in Bangkok, uh, Khlong Sam Wa, Sai Kong, with at least a four and a half star rating, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_182-107-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_182-107-0_elevenlabs.wav",
+          "asr_output": "Um, can you help me find a housekeeper who, like, does ironing in Bangkok, Khlong Sam Wa, Sai Kong, with at least a four and a half star rating, okay?"
         }
       ]
     ],
@@ -7969,7 +8138,8 @@
           "role": "user",
           "content": "find profressional cleaning in Bangkok with rating 2.0 or higher",
           "transcript": "Hey, um, can find professional cleaning services in Bangkok with a rating of at least two point oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_183-108-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_183-108-0_elevenlabs.wav",
+          "asr_output": "Hey, um, can find professional cleaning services in Bangkok with a rating of at least 2.0?"
         }
       ]
     ],
@@ -8019,7 +8189,8 @@
           "role": "user",
           "content": "find good reputation profressional cleaning in Bangkok with higher than 4 rating",
           "transcript": "Uh, can you get a top-rated professional cleaning service in Bangkok with, um, a rating over four? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_184-109-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_184-109-0_elevenlabs.wav",
+          "asr_output": "Can you get a top-rated professional cleaning service in Bangkok with a rating over 4? Thanks."
         }
       ]
     ],
@@ -8065,7 +8236,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Chonburi Province. with a review score of 4.5 stars or more, available tomorrow, today is 20230929",
           "transcript": "Um, can you help me get a housekeeper for, uh, ironing in Chonburi with a review of four and a half stars or higher, available tomorrow? Right, todays dates September twenty-ninth, twenty twenty-three.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_185-110-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_185-110-0_elevenlabs.wav",
+          "asr_output": "Can you help me get a housekeeper for uh, ironing in Chonburi with a review of four and a half stars or higher, available tomorrow? Right, today's date's September 29, 2023."
         }
       ]
     ],
@@ -8121,7 +8293,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Chonburi Province. with a review score of 4.5 stars or more, available on 12/03/2024 16:00 - 18:00.",
           "transcript": "Um, can you help me get a housekeeper in Chonburi Province for, uh, ironing services, with at least four and a half stars, available on December third, twenty-twenty-four, from four to six PM? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_186-111-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_186-111-0_elevenlabs.wav",
+          "asr_output": "Can you help me get a housekeeper in Chonburi Province for ironing services with at least four and a half stars, available on December 3rd, 2024, from 4 to 6 PM? Thanks."
         }
       ]
     ],
@@ -8182,7 +8355,8 @@
           "role": "user",
           "content": "Help find a housekeeper who provides ironing services in Chonburi Province. with a review score of 4.5 stars or more, available on 12/03/2024 16:00 - 18:00 and has never had a history of being late to work",
           "transcript": "Can you help me get a housekeeper in Chonburi who offers ironing services? They need a review score of four point five stars or higher, and be available on December third, twenty-twenty-four, from four PM to six PM, with no history of being late.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_187-112-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_187-112-0_elevenlabs.wav",
+          "asr_output": "Can you help me get a housekeeper in Chonburi who offers ironing services? They need a review score of 4.5 stars or higher, and be available on December 3, 2024, from 4 p.m. to 6 p.m., with no history of being late."
         }
       ]
     ],
@@ -8252,7 +8426,8 @@
           "role": "user",
           "content": "Help find a housewife who provides ironing services in Chiang Mai, Sankampang District, Ton Pao Subdistrict, with a review of 4.5 stars",
           "transcript": "Uh, can you look for a housewife for ironing services in Chiang Mai, Sankampang District, Ton Pao Subdistrict, with at least a four point five-star review?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_188-113-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_188-113-0_elevenlabs.wav",
+          "asr_output": "Ah, can you look for a housewife for ironing services in Chiang Mai, San Kamphaeng District, Ton Pao Sub-district, with at least a 4.5-star review?"
         }
       ]
     ],
@@ -8332,7 +8507,8 @@
           "role": "user",
           "content": "I need to extract information from the following text: ```\\n\\nMy name is Chester. i am 42 years old. My friend Jane is a year older than me.\\n\\n```\\n",
           "transcript": "Uh, I need you to get info from this text: My name is Chester. I am forty-two years old. My friend Jane is a year older than me., thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_189-114-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_189-114-0_elevenlabs.wav",
+          "asr_output": "I need you to get info from this text: My name is Chester, I am 42 years old. My friend Jane is a year older than me. Thanks."
         }
       ]
     ],
@@ -8381,7 +8557,8 @@
           "role": "user",
           "content": "what is the specs ACHD of type MPN. I want to see images.",
           "transcript": "Um, can show me images of the A-C-H-D specs for type M-P-N?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_190-115-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_190-115-0_elevenlabs.wav",
+          "asr_output": "Can show me images of the ACHD specs for type MPN."
         }
       ]
     ],
@@ -8428,7 +8605,8 @@
           "role": "user",
           "content": "retrieve just the specifications for part with the MPN identifier 3pak7?",
           "transcript": "Um, can you get specs for the part with MPN three p a k seven, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_191-115-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_191-115-1_elevenlabs.wav",
+          "asr_output": "Um, can you get specs for the part with MPN 3PAK7, please?"
         }
       ]
     ],
@@ -8475,7 +8653,8 @@
           "role": "user",
           "content": "Can you tell me the forecast for Pacifica on April 11th, 2023?",
           "transcript": "Whats the weather forecast for, uh, Pacifica on April eleventh, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_192-116-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_192-116-0_elevenlabs.wav",
+          "asr_output": "What's the weather forecast for Pacifica on April 11, 2023?"
         }
       ]
     ],
@@ -8511,7 +8690,8 @@
           "role": "user",
           "content": "Can you tell me the weather forecast for New York on March 8th, 2023?",
           "transcript": "Uh, whats the weather like in New York on March eighth, twenty twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_193-116-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_193-116-1_elevenlabs.wav",
+          "asr_output": "What's the weather like in New York on March 8, 2023?"
         }
       ]
     ],
@@ -8547,7 +8727,8 @@
           "role": "user",
           "content": "I'm visiting Martinez soon and would like to check the weather there for the date of April 25th 2023, please.",
           "transcript": "Um, can you check weather for Martinez on April twenty-fifth, twenty-twenty-three? Im, uh, visiting then.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_194-116-2_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_194-116-2_elevenlabs.wav",
+          "asr_output": "Um, can you check weather for Martinez on April 25th, 2023? I'm, uh, visiting then."
         }
       ]
     ],
@@ -8583,7 +8764,8 @@
           "role": "user",
           "content": "What's the weather forecast for Palo Alto for today April 25th 2023?",
           "transcript": "Hey, can you tell me the weather forecast for Palo Alto today, April twenty-fifth, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_195-116-3_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_195-116-3_elevenlabs.wav",
+          "asr_output": "Hey, can you tell me the weather forecast for Palo Alto today, April 25, 2023?"
         }
       ]
     ],
@@ -8619,7 +8801,8 @@
           "role": "user",
           "content": "Could you provide the forecast for Alameda on the upcoming Wednesday, today is Monday April 25th 2023?",
           "transcript": "Um, whats the weather forecast for Alameda on Wednesday? Oh, todays Monday, April twenty-fifth, twenty-twenty-three.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_196-116-4_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_196-116-4_elevenlabs.wav",
+          "asr_output": "Um, what's the weather forecast for Alameda on Wednesday? Oh, today's Monday, April 25th, 2023."
         }
       ]
     ],
@@ -8655,7 +8838,8 @@
           "role": "user",
           "content": "Could you provide me with the weather forecast for Stinson Beach on April 5th, 2023?",
           "transcript": "Whats weather forecast for Stinson Beach on April fifth, twenty twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_197-116-5_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_197-116-5_elevenlabs.wav",
+          "asr_output": "What's weather forecast for Stinson Beach on April 5, 2023?"
         }
       ]
     ],
@@ -8691,7 +8875,8 @@
           "role": "user",
           "content": "Could you tell me what the weather will be like in Healdsburg on the 2nd of march 2023?",
           "transcript": "Hey, um, can you tell me the weather forecast for Healdsburg on March second, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_198-116-6_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_198-116-6_elevenlabs.wav",
+          "asr_output": "Hey, can you tell me the weather forecast for Healdsburg on March 2, 2023?"
         }
       ]
     ],
@@ -8727,7 +8912,8 @@
           "role": "user",
           "content": "Could you tell me the weather forecast for Marshall, MN on March 5th 2023?",
           "transcript": "Hey, um, whats the weather like in Marshall on March fifth, twenty twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_199-116-7_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_199-116-7_elevenlabs.wav",
+          "asr_output": "Hey, um, what's the weather like in Marshall on March 5th, 2023?"
         }
       ]
     ],
@@ -8763,7 +8949,8 @@
           "role": "user",
           "content": "I want to check the weather condition in Fremont on March 1st 2023. ",
           "transcript": "Um, hows the weather in Fremont on March first, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_200-116-8_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_200-116-8_elevenlabs.wav",
+          "asr_output": "Um, how's the weather in Fremont on March 1st, 2023?"
         }
       ]
     ],
@@ -8799,7 +8986,8 @@
           "role": "user",
           "content": "I'm planning a picnic on the 4th march 2023 and would like to know the forecast for Campbell on that day. Could you provide that information?",
           "transcript": "Whats the weather forecast for Campbell on March fourth, twenty-twenty-three? Im planning a picnic.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_201-116-9_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_201-116-9_elevenlabs.wav",
+          "asr_output": "What's the weather forecast for Campbell on March 4th, 2023? I'm planning a picnic."
         }
       ]
     ],
@@ -8835,7 +9023,8 @@
           "role": "user",
           "content": "Can you provide me with the weather forecast for Foster City for April 25th 2023?",
           "transcript": "Whats weather gonna be like in Foster City on April twenty-fifth, twenty twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_202-116-10_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_202-116-10_elevenlabs.wav",
+          "asr_output": "What's weather gonna be like in Foster City on April 25, 2023?"
         }
       ]
     ],
@@ -8871,7 +9060,8 @@
           "role": "user",
           "content": "Hi, could you help me check the weather in Washington, DC for March 1st, 2023 please?",
           "transcript": "Hey, can you check the weather for Washington on March 1st, 2023, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_203-116-11_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_203-116-11_elevenlabs.wav",
+          "asr_output": "Hey, can you check the weather for Washington on March 1, 2023, please?"
         }
       ]
     ],
@@ -8907,7 +9097,8 @@
           "role": "user",
           "content": "Could you tell me what the weather will be like in Rutherford, NJ, on April 22nd 2023?",
           "transcript": "Um, hey, whats the weather forecast for, uh, Rutherford, NJ, on April twenty-second, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_204-116-12_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_204-116-12_elevenlabs.wav",
+          "asr_output": "Um, hey, what's the weather forecast for, uh, Rutherford NJ, on April 22, 2023?"
         }
       ]
     ],
@@ -8943,7 +9134,8 @@
           "role": "user",
           "content": "What's the weather forecast for Berkeley on the upcoming Saturday? Today is Tuesday April 25th 2023",
           "transcript": "Um, hey, can you tell me weather forecast for Berkeley this Saturday? Its Tuesday, April twenty-fifth, twenty twenty-three, today.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_205-116-13_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_205-116-13_elevenlabs.wav",
+          "asr_output": "Hey, can you tell me weather forecast for Berkeley this Saturday?"
         }
       ]
     ],
@@ -8979,7 +9171,8 @@
           "role": "user",
           "content": "Hi, could you tell me the forecast for London, England on the 5th of march 2023?",
           "transcript": "Hey, um, check the weather in London, England for March fifth, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_206-116-14_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_206-116-14_elevenlabs.wav",
+          "asr_output": "Hey, um, check the weather in London, England for March 5th, 2023."
         }
       ]
     ],
@@ -9015,7 +9208,8 @@
           "role": "user",
           "content": "Can you tell me what the weather will be like in Sacramento on April 22nd 2023?",
           "transcript": "Uh, whats the weather outlook for Sacramento on April twenty-second, twenty twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_207-116-15_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_207-116-15_elevenlabs.wav",
+          "asr_output": "What's the weather outlook for Sacramento on April 22, 2023?"
         }
       ]
     ],
@@ -9051,7 +9245,8 @@
           "role": "user",
           "content": "I want to find a good film to watch with Duane Whitaker and I want something directed by Quentin Tarantino.",
           "transcript": "Hey, um, get me a good movie with Duane Whitaker, thats D-U-A-N-E W-H-I-T-A-K-E-R, Duane Whitaker, thats directed by Quentin Tarantino, yeah.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_208-117-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_208-117-0_elevenlabs.wav",
+          "asr_output": "Hey, um get me a good movie with Duane Whitaker, that's D-U-A-N-E W-H-I-T-A-K-E-R, Duane Whitaker, that's directed by Quentin Tarantino, yeah."
         }
       ]
     ],
@@ -9109,7 +9304,8 @@
           "role": "user",
           "content": "I wish to see the movie which is directed by David Leitch and acted by Lori Pelenise Tuisano.",
           "transcript": "Um, could you show me movie directed by David Leitch, thats L-E-I-T-C-H, Leitch, featuring... Lori Pelenise Tuisano, thats T-U-I-S-A-N-O, Tuisano?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_209-117-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_209-117-1_elevenlabs.wav",
+          "asr_output": "Could you show me movie directed by David Leitch, that's L-E-I-T-C-H, Leitch, featuring Lori Pelenise Tuisano, that's T-U-I-S-A-N-O, Tuisano?"
         }
       ]
     ],
@@ -9167,7 +9363,8 @@
           "role": "user",
           "content": "My friend and I want to go see a movie but we can't find one we like. We really want to see a Drama.",
           "transcript": "Uh, my friend and I are lookin to watch a movie, but were havin trouble, you know, findin one. Right, were hopin for drama. Any suggestions?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_210-117-2_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_210-117-2_elevenlabs.wav",
+          "asr_output": "My friend and I are looking to watch a movie, but we're having trouble, you know, finding one. Right? We're hoping for drama. Any suggestions?"
         }
       ]
     ],
@@ -9225,7 +9422,8 @@
           "role": "user",
           "content": "I would like to choose a movie to watch. Can you help me find a movie in the Comic genre with James Corden in it?",
           "transcript": "Im, uh, looking for movie to watch. Can you find, um, oh, one in the comic genre with James Corden?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_211-117-3_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_211-117-3_elevenlabs.wav",
+          "asr_output": "I'm looking for movie to watch. Can you find, um, oh, one in the comic genre with James Corden?"
         }
       ]
     ],
@@ -9283,7 +9481,8 @@
           "role": "user",
           "content": "I'm in the mood for a good laugh. Find a comedy movie directed by Edgar Wright?",
           "transcript": "Um, hey, can you find a comedy movie directed by Edgar Wright for me? Im, uh, right in the mood for a laugh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_212-117-4_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_212-117-4_elevenlabs.wav",
+          "asr_output": "Um, hey, can you find a comedy movie directed by Edgar Wright for me? I'm, er, right in the mood for a laugh."
         }
       ]
     ],
@@ -9341,7 +9540,8 @@
           "role": "user",
           "content": "Find me a list of Offbeat genre movies directed by Tim Burton?",
           "transcript": "Uh, could you give me a quick overview of that peculiar stuff that Tim Burton has brought to the screen, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_213-117-5_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_213-117-5_elevenlabs.wav",
+          "asr_output": "Could you give me a quick overview of that peculiar stuff that Tim Burton has brought to the screen, right?"
         }
       ]
     ],
@@ -9399,7 +9599,8 @@
           "role": "user",
           "content": "It's suppose to be raining all day so I'm cooped up in the house and bored. Can you help find me a movie to watch, preferably one that is classified as a Comic and directed by Nitesh Tiwari?",
           "transcript": "Uh, its raining all day, and Im bored at home. Could you, um, right, get me a movie to watch? Id prefer a comedy directed by Nitesh Tiwari.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_214-117-6_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_214-117-6_elevenlabs.wav",
+          "asr_output": "It's raining all day, and I'm bored at home. Could you, um, write, get me a movie to watch? I'd prefer a comedy directed by Nitesh Tiwari."
         }
       ]
     ],
@@ -9457,7 +9658,8 @@
           "role": "user",
           "content": "I'm looking for a movie to watch tonight, preferably something in the Fantasy genre. Any suggestions?",
           "transcript": "Uh, in the mood for a Fantasy movie tonight. Yeah, got any recs?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_215-117-7_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_215-117-7_elevenlabs.wav",
+          "asr_output": "In the mood for a fantasy movie tonight. Yeah, got any recs?"
         }
       ]
     ],
@@ -9515,7 +9717,8 @@
           "role": "user",
           "content": "Find me action movies that have David Leitch as the director and include Alex King in the cast?",
           "transcript": "Can you, uh, find action movies directed by David Leitch, with Alex King, thats A-L-E-X K-I-N-G, Alex King, in the cast?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_216-117-8_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_216-117-8_elevenlabs.wav",
+          "asr_output": "Can you find action movies directed by David Leitch with Alex King (that's A-L-E-X K-I-N-G) in the cast?"
         }
       ]
     ],
@@ -9573,7 +9776,8 @@
           "role": "user",
           "content": "Let me enjoy movie directed by Nitesh Tiwari, is there any one?",
           "transcript": "Lemme see, right... can you find a movie directed by Nitesh Tiwari, thats N-I-T-E-S-H T-I-W-A-R-I, Nitesh Tiwari, to watch?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_217-117-9_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_217-117-9_elevenlabs.wav",
+          "asr_output": "Let me see, right. Can you find a movie directed by Nitesh Tiwari, that's N-I-T-E-S-H T-I-W-A-R-I, Nitesh Tiwari, to watch?"
         }
       ]
     ],
@@ -9631,7 +9835,8 @@
           "role": "user",
           "content": "I'm at home alone and it is awfully quiet, so it's the perfect time to sit back and watch a movie. Can you find me a movie with Michaela Watkins starring in it and preferably directed by Paul Downs Colaizzo?",
           "transcript": "Hey, home alone, and, uh, its really quiet, so itd be great to watch a movie. Can you find one with Michaela Watkins in it, um, ideally directed by Paul Downs Colaizzo, thats C-O-L-A-I-Z-Z-O, Colaizzo? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_218-117-10_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_218-117-10_elevenlabs.wav",
+          "asr_output": "Hey, home alone, and it's really quiet, so it'd be great to watch a movie. Can you find one with Michaela Watkins in it, ideally directed by Paul Downs Colaizzo? Thanks."
         }
       ]
     ],
@@ -9689,7 +9894,8 @@
           "role": "user",
           "content": "I want to watch a McKinley Belcher III movie. I want something directed by Simon Curtis. It should be a drama.",
           "transcript": "Um, in the mood for a drama starring McKinley Belcher the third, McKinley Belcher, thats M-C-K-I-N-L-E-Y B-E-L-C-H-E-R, McKinley Belcher the third, directed by Simon Curtis. Right, whats available?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_219-117-11_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_219-117-11_elevenlabs.wav",
+          "asr_output": "Um, in the mood for a drama starring Mckinley Belcher III (that's M-C-K-I-N-L-E-Y B-E-L-C-H-E-R) directed by Simon Curtis. Right, what's available?"
         }
       ]
     ],
@@ -9747,7 +9953,8 @@
           "role": "user",
           "content": "Can you find me a thriller movie directed by Alexander Mackendrick?",
           "transcript": "Hey, um, can you find a thriller movie directed by Alexander Mackendrick, thats M-A-C-K-E-N-D-R-I-C-K, Alexander Mackendrick?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_220-117-12_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_220-117-12_elevenlabs.wav",
+          "asr_output": "Hey, can you find a thriller movie directed by Alexander Mackendrick?"
         }
       ]
     ],
@@ -9805,7 +10012,8 @@
           "role": "user",
           "content": "Can you find me a nice movie directed by James Gray to watch?",
           "transcript": "Hey, lemme see... oh, can you pick good James Gray, thats G-R-A-Y, James Gray, movie for me to watch?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_221-117-13_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_221-117-13_elevenlabs.wav",
+          "asr_output": "Hey, let me see. Oh, can you pick good James Gray (that's G-R-A-Y, James Gray) movie for me to watch?"
         }
       ]
     ],
@@ -9863,7 +10071,8 @@
           "role": "user",
           "content": "I like to watch a movie. will you find me a movie which has sterling K. Brown as a actor and it should be directed by Thurop Van Orman",
           "transcript": "Uh, get me a movie with Sterling K. Brown, thats B-R-O-W-N, Brown, directed by Thurop Van Orman, thats T-H-U-R-O-P V-A-N O-R-M-A-N, Thurop Van Orman.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_222-117-14_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_222-117-14_elevenlabs.wav",
+          "asr_output": "Get me a movie with Sterling K. Brown, that's B-R-O-W-N. Brown directed by Thurop Van Orman, that's T-H-U-R-O-P, V-A-N O-R-M-A-N, Thurop Van Orman."
         }
       ]
     ],
@@ -9921,7 +10130,8 @@
           "role": "user",
           "content": "I would like to find a movie to watch in the Imaginative fiction genre, as I have started to watch a lot of fantasy-type movies lately, you know!!!!!!",
           "transcript": "Hey, uh, can you find me a movie in imaginative fiction genre? You know, Ive been watchin, like, a ton of fantasy movies lately!",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_223-117-15_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_223-117-15_elevenlabs.wav",
+          "asr_output": "Hey, uh, can you find me a movie in imaginative fiction genre? You know, I've been watching like a ton of fantasy movies lately."
         }
       ]
     ],
@@ -9979,7 +10189,8 @@
           "role": "user",
           "content": "Could you suggest some Offbeat genre movies directed by Tim Burton with Johnny Depp in the cast?",
           "transcript": "Hey, um, can you suggest some offbeat flicks by Tim Burton thatve, uh, got Johnny Depp in the cast?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_224-117-16_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_224-117-16_elevenlabs.wav",
+          "asr_output": "Hey, um, can you suggest some offbeat flicks by Tim Burton that've, uh, got Johnny Depp in the cast?"
         }
       ]
     ],
@@ -10037,7 +10248,8 @@
           "role": "user",
           "content": "I have some leisure time so that i could watch a movie. Will you find me a movie directed by Kirill Mikhanovsky and find something like Comedy-drama genre?",
           "transcript": "Uh, Ive got some free time for a movie. Can you, um, get me one in the comedy-drama genre directed by Kirill Mikhanovsky, thats K-I-R-I-L-L M-I-K-H-A-N-O-V-S-K-Y, Kirill Mikhanovsky?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_225-117-17_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_225-117-17_elevenlabs.wav",
+          "asr_output": "I've got some free time for a movie. Can you, um, get me one in the comedy-drama genre directed by Kirill Mikhanovsky?"
         }
       ]
     ],
@@ -10095,7 +10307,8 @@
           "role": "user",
           "content": "Convert the phrase 'I am a pretty girl' into spoken audio in Spanish with a female voice?",
           "transcript": "Uh, can you convert I am a pretty girl into spoken Spanish using a female voice, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_226-118-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_226-118-0_elevenlabs.wav",
+          "asr_output": "Can you convert \"I am a pretty girl\" into spoken Spanish using a female voice?"
         }
       ]
     ],
@@ -10162,7 +10375,8 @@
           "role": "user",
           "content": "Convert it to audio format: I am a pretty girl",
           "transcript": "Right. Turn this into audio: I am a pretty girl.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_228-119-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_228-119-0_elevenlabs.wav",
+          "asr_output": "Right. Turn this into audio: I am a pretty girl."
         }
       ]
     ],
@@ -10219,7 +10433,8 @@
           "role": "user",
           "content": "Retrieve the list of Business Unit products that are associated with me?",
           "transcript": "Uh, right, can you get me the list of Business Unit products linked to my account?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_229-120-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_229-120-0_elevenlabs.wav",
+          "asr_output": "Right, can you get me the list of business unit products linked to my account?"
         }
       ]
     ],
@@ -10254,7 +10469,8 @@
           "role": "user",
           "content": "Play high quality Roar by Katy Perry. The song_id is wjeiruhuq_roar.",
           "transcript": "Lemme see... yeah, play Roar by Katy Perry, thats K-A-T-Y, P-E-R-R-Y, Katy Perry, in high quality. Song ID is W-J-E-I-R-U-H-U-Q underscore R-O-A-R.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_230-121-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_230-121-0_elevenlabs.wav",
+          "asr_output": "Let me see. Yeah, play \"Roar\" by Katy Perry. That's K-A-T-Y P-E-R-R-Y, Katy Perry, in high quality. Song ID is WJEIRUHUPQ_ROAR."
         }
       ]
     ],
@@ -10305,7 +10521,8 @@
           "role": "user",
           "content": "Can you move my next gym session, which is event number 456123, to next Thursday at 4:30 PM? Today is monday 2022-10-20",
           "transcript": "Hey, can reschedule my gym session, event number four five six, one two three, to next Thursday at four-thirty PM? Oh, todays Monday, October twentieth, twenty-twenty-two.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_231-122-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_231-122-0_elevenlabs.wav",
+          "asr_output": "Hey, can reschedule my gym session, event number 456123 to next Thursday at 4:30 PM?"
         }
       ]
     ],
@@ -10341,7 +10558,8 @@
           "role": "user",
           "content": "I need to change the date for Oscar's medicine appointment to this coming Friday. The event identifier is 'med123'. What's the best way to move it to the 15th of April 2021 at 1:45 pm, UTC?",
           "transcript": "Hey, can you reschedule Oscars medicine appointment with ID M-E-D one two three, to this coming Friday? Oh, move it to April fifteen, thats April one five th, twenty twenty-one, at one forty-five PM U-T-C.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_232-122-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_232-122-1_elevenlabs.wav",
+          "asr_output": "Hey, can you reschedule Oscar's medicine appointment with ID MED123 to this coming Friday? Oh move it to April 15, 2021, at 1:45 PM UTC."
         }
       ]
     ],
@@ -10377,7 +10595,8 @@
           "role": "user",
           "content": "Can you book a flight for me departing from Paris, France, on the 12th of March 2023 at 3 in the afternoon?",
           "transcript": "Uh, book a flight from Paris on March twelfth, twenty twenty-three, at three P M.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_233-123-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_233-123-0_elevenlabs.wav",
+          "asr_output": "Book a flight from Paris on March 12, 2023 at 3 PM."
         }
       ]
     ],
@@ -10418,7 +10637,8 @@
           "role": "user",
           "content": "Can you arrange a flight for me from New York, NY to Paris with a departure on the 20th of June 2022 at 5 in the afternoon?",
           "transcript": "Uh, book flight from New York to Paris, leavin June twentieth at five P M.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_234-123-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_234-123-1_elevenlabs.wav",
+          "asr_output": "A book flight from New York to Paris leaving June 20th at 5 PM."
         }
       ]
     ],
@@ -10459,7 +10679,8 @@
           "role": "user",
           "content": "Play the song 'Friends' by Marshmello",
           "transcript": "Hey, uh, play Friends by Marshmello.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_235-124-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_235-124-0_elevenlabs.wav",
+          "asr_output": "Hey, uh, play Friends by Marshmello."
         }
       ]
     ],
@@ -10500,7 +10721,8 @@
           "role": "user",
           "content": "I'd like to listen to the song 'Dil Nu' by Maninder Buttar on Spotify.",
           "transcript": "Uh, play Dil Nu by Maninder B-U-T-T-A-R, Maninder Buttar, on, uh, Spotify, yeah.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_236-124-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_236-124-1_elevenlabs.wav",
+          "asr_output": "Play Dil Nu by Maninder Buttar on Spotify."
         }
       ]
     ],
@@ -10541,7 +10763,8 @@
           "role": "user",
           "content": "play wrecking ball by Miley Cyrus",
           "transcript": "Hey, uh, play Wrecking Ball by Miley Cyrus.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_237-125-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_237-125-0_elevenlabs.wav",
+          "asr_output": "Hey, uh, play Wrecking Ball by Miley Cyrus."
         }
       ]
     ],
@@ -10582,7 +10805,8 @@
           "role": "user",
           "content": "I want to listen to 'Dil Nu' by Maninder Buttar. Can you find it on Spotify.",
           "transcript": "Hey, right, play Dil Nu by Maninder Buttar, thats M-A-N-I-N-D-E-R B-U-T-T-A-R, on Spotify.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_238-125-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_238-125-1_elevenlabs.wav",
+          "asr_output": "Hey, right, play Dil Nu by Maninder Buttar, that's M-A-N-I-N-D-E-R B-U-T-T-A-R, on Spotify."
         }
       ]
     ],
@@ -10623,7 +10847,8 @@
           "role": "user",
           "content": "Can you search for the song 'Shape of You'?",
           "transcript": "Hey, can look up the song Shape of You? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_239-125-2_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_239-125-2_elevenlabs.wav",
+          "asr_output": "Hey, can look up the song Shape of You? Thanks."
         }
       ]
     ],
@@ -10664,7 +10889,8 @@
           "role": "user",
           "content": "Can you search for 'Baby Shark'?",
           "transcript": "Hey, can you find Baby Shark?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_240-125-3_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_240-125-3_elevenlabs.wav",
+          "asr_output": "Hey, can you find Baby Shark?"
         }
       ]
     ],
@@ -10705,7 +10931,8 @@
           "role": "user",
           "content": "play Johnny Johnny Yes papa",
           "transcript": "Uh, play Johnny Johnny Yes Papa.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_241-125-4_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_241-125-4_elevenlabs.wav",
+          "asr_output": "Play Johnny Johnny Yes Papa."
         }
       ]
     ],
@@ -10746,7 +10973,8 @@
           "role": "user",
           "content": "Make the volume 20",
           "transcript": "Set the volume to twenty.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_242-126-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_242-126-0_elevenlabs.wav",
+          "asr_output": "Set the volume to twenty."
         }
       ]
     ],
@@ -10777,7 +11005,8 @@
           "role": "user",
           "content": "Can you lower the audio playback to 30% volume?",
           "transcript": "Uh, could you turn down the volume to, um, thirty percent? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_243-126-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_243-126-1_elevenlabs.wav",
+          "asr_output": "Could you turn down the volume to thirty percent? Thanks."
         }
       ]
     ],
@@ -10808,7 +11037,8 @@
           "role": "user",
           "content": "Set the volume to 70",
           "transcript": "Turn the volume up to seven zero.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_244-126-2_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_244-126-2_elevenlabs.wav",
+          "asr_output": "Turn the volume up to seven zero."
         }
       ]
     ],
@@ -10839,7 +11069,8 @@
           "role": "user",
           "content": "I need to get a flight from JFK on the 16th of March 2024. Can you find me something that leaves around 14:00?",
           "transcript": "Uh, get me flight from JFK on, uh, March sixteenth, twenty twenty-four, leaving around two PM.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_245-127-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_245-127-0_elevenlabs.wav",
+          "asr_output": "Get me flight from JFK on March 16, 2024, leaving around 2 p.m."
         }
       ]
     ],
@@ -10880,7 +11111,8 @@
           "role": "user",
           "content": "Can you arrange a flight for me departing from New York on the 15th of March, 2024?",
           "transcript": "Get me, uh, a flight leaving New York on March fifteenth, twenty twenty-four.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_246-128-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_246-128-0_elevenlabs.wav",
+          "asr_output": "Get me a flight leaving New York on March 15, 2024."
         }
       ]
     ],
@@ -10916,7 +11148,8 @@
           "role": "user",
           "content": "Give me the application version.",
           "transcript": "Uh, can you tell me what version of the applications Im using?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_247-129-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_247-129-0_elevenlabs.wav",
+          "asr_output": "Can you tell me what version of the applications I'm using?"
         }
       ]
     ],
@@ -10940,7 +11173,8 @@
           "role": "user",
           "content": "What are the active root projects of the TEAM with UUID '12'?",
           "transcript": "Um, can you say the active root projects for, uh, the team with U U I D one two, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_248-130-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_248-130-0_elevenlabs.wav",
+          "asr_output": "Um, can you say the active root projects for, uh, the team with UUID 12, right?"
         }
       ]
     ],
@@ -10981,7 +11215,8 @@
           "role": "user",
           "content": "Hey bunny, How are you doing",
           "transcript": "Hey Bunny, um, hows it goin?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_249-131-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_249-131-0_elevenlabs.wav",
+          "asr_output": "Hey Bunny, how's it going?"
         }
       ]
     ],
@@ -11012,7 +11247,8 @@
           "role": "user",
           "content": "Want to have an order for me from McDonald's on Uber Eats? I'd like two Big Macs and one McFlurry.",
           "transcript": "Uh, lemme see... can order from McDonalds on Uber Eats for me? Oh, get, um, two Big Macs and a McFlurry.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_250-132-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_250-132-0_elevenlabs.wav",
+          "asr_output": "Let me see, can order from McDonald's on Uber Eats for me? Oh get two Big Macs and a McFlurry."
         }
       ]
     ],
@@ -11059,7 +11295,8 @@
           "role": "user",
           "content": "Hi, I am Karan. Could you tell me the current status of my Indigo flight 6E123? My ticket number is IND4567.",
           "transcript": "Hey, its Karan, thats K-A-R-A-N, Karan. Uh, can you check the status of my Indigo flight six E one twenty-three? Oh, my ticket number is I-N-D four five six seven.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_251-133-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_251-133-0_elevenlabs.wav",
+          "asr_output": "Hey, it's Karan. That's K-A-R-A-N, Karan. Can you check the status of my Indigo flight 6E123? Oh, my ticket number is IND4567."
         }
       ]
     ],
@@ -11100,7 +11337,8 @@
           "role": "user",
           "content": "Hi, I am Karan. Can you tell me the current status of my Indigo flight? My ticket number is IND4567.",
           "transcript": "Hey, Im Karan. Can you check the status of my Indigo flight? The ticket number is I-N-D-four five six seven, I-N-D four five six seven.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_252-134-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_252-134-0_elevenlabs.wav",
+          "asr_output": "Hey Imkaran, can you check the status of my Indigo flight? The ticket number is IND4567, IND4567."
         }
       ]
     ],
@@ -11141,7 +11379,8 @@
           "role": "user",
           "content": "I want to order five burgers and six chicken wings from McDonald's.",
           "transcript": "Get five burgers and, um, six chicken wings from McDonalds.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_253-135-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_253-135-0_elevenlabs.wav",
+          "asr_output": "Get five burgers and um six chicken wings from McDonalds."
         }
       ]
     ],
@@ -11188,7 +11427,8 @@
           "role": "user",
           "content": "need all pending mandates of Parath with ID U123?",
           "transcript": "Uh, right, can you get me all the pending mandates for Parath, thats P-A-R-A-T-H, Parath, ID U123?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_254-136-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_254-136-0_elevenlabs.wav",
+          "asr_output": "Right, can you get me all the pending mandates for Parath, that's P-A-R-A-T-H, Parath, ID U123?"
         }
       ]
     ],
@@ -11229,7 +11469,8 @@
           "role": "user",
           "content": "Get the list of active mandates for the user with ID U123456?",
           "transcript": "Can you get the active mandates for user I-D U twelve three forty-five six?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_255-136-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_255-136-1_elevenlabs.wav",
+          "asr_output": "Can you get the active mandates for user IDU123456?"
         }
       ]
     ],
@@ -11274,7 +11515,8 @@
           "role": "user",
           "content": "I have had submit a compaint and I like to check its status",
           "transcript": "Hey, uh, can you look up status of my submitted complaint, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_256-137-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_256-137-0_elevenlabs.wav",
+          "asr_output": "Hey, can you look up status of my submitted complaint, yeah?"
         }
       ]
     ],
@@ -11324,7 +11566,8 @@
           "role": "user",
           "content": "Can you tell me what is the minimum package arrival time? ",
           "transcript": "Uh, whats the quickest delivery time, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_257-137-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_257-137-1_openai.wav",
+          "asr_output": "Uh, what's the quickest delivery time?"
         }
       ]
     ],

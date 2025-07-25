@@ -7,7 +7,8 @@
           "role": "user",
           "content": "I'd like to change my food order to a Caesar salad without anchovies, and for the drink, can you update my order 123 to a large hot coffee with regular sweetness and almond milk, please?",
           "transcript": "Uh, switch up my food order to, um, a Caesar salad, hold the anchovies. Update order one two three to a large hot coffee with, uh, regular sweetness and about a splash of almond milk.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_0-0-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_0-0-0_openai.wav",
+          "asr_output": "Switch up my food order to a Caesar salad, hold the anchovies. Update order 123 to a large hot coffee with regular sweetness and about a splash of almond milk."
         }
       ]
     ],
@@ -123,7 +124,8 @@
           "role": "user",
           "content": "Can you tell me the weather in Seoul, South Korea using Celsius units? Also, turn on the air conditioner in the living room, and I'm curious about the Imjin War, Find some up-to-date information on that?",
           "transcript": "Whats the weather like in S-E-O-U-L, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the Imjin War, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_3-2-1_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_3-2-1_openai.wav",
+          "asr_output": "What's the weather like in Seoul, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the engine war. Thanks!"
         }
       ]
     ],
@@ -326,7 +328,8 @@
           "role": "user",
           "content": "Could you provide me with the latest news report for Paris, France, in English and also for Letterkenny, Ireland, focusing on technology news again in English?",
           "transcript": "Get the latest news report for Paris, France in English, okay. Also, give me technology news for Letterkenny, Ireland, in English.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_4-3-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_4-3-0_openai.wav",
+          "asr_output": "Get the latest news report for Paris, France in English, okay? Also, give me technology news for Letterkenny, Ireland in English."
         }
       ]
     ],
@@ -406,7 +409,8 @@
           "role": "user",
           "content": "Could you fetch me the latest news from Paris, France, and also the current weather in Letterkenny, Ireland, in Celsius?",
           "transcript": "Hey, uh, can you get the latest news from Paris, and, um, tell me the current weather in Letterkenny, Ireland, in Celsius, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_5-4-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_5-4-0_openai.wav",
+          "asr_output": "Hey, can you get the latest news from Paris and tell me the current weather in Letterkenny, Ireland in Celsius? Thanks."
         }
       ]
     ],
@@ -462,7 +466,8 @@
           "role": "user",
           "content": "interviewers list for Python and Java",
           "transcript": "Uh, show me the list of interviewers for, um, Python and Java.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_6-5-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_6-5-0_openai.wav",
+          "asr_output": "Show me the list of interviewers for Python and Java?"
         }
       ]
     ],
@@ -530,7 +535,8 @@
           "role": "user",
           "content": "What's cost of 2 cpu and 4 gb ram machine on all clouds?",
           "transcript": "Right, whats price for a machine with two CPUs and four gigabytes RAM on all cloud platforms?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_7-6-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_7-6-0_openai.wav",
+          "asr_output": "Right. What's price for a machine with 2 CPUs and 4 GB RAM on all cloud platforms?"
         }
       ]
     ],
@@ -608,7 +614,8 @@
           "role": "user",
           "content": "\n        Do all the following using the steps provided in their respective sections.\n        Steps:\n        1. clone the repo git@github.com:zelarhq/nodejs-welcome.git\n        2. analyse the contents of the repo and create following.\n            2.1 create/update dockerfile based on the analysis. \n            2.2 kubernetes yamls based on the analysis.\n             3. add all changed file to git changes \n        4. commit / push to repo",
           "transcript": "Okay, do these steps for me: First, clone the repository at git at github dot com colon zelarhq slash nodejs dash welcome dot git. Uh, next, check out whats inside the repo and then create or update the Dockerfile based on, uh, what you find. Also, from your analysis, make Kubernetes YAMLs. Right, don\u2019t forget to add all the changed files to git changes. Finally, commit everything and push it back to the, um, repo.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_8-7-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_8-7-0_openai.wav",
+          "asr_output": "Okay, do these steps for me: First, clone the repository at git@github.com:ZellerHQ/nodejs-welcome.git. Next, check out what's inside the repo and then create or update the Dockerfile based on what you find. Also, from your analysis, make kubernetes yamls. Right, don't forget to add all the changed files to git changes. Finally, commit everything and push it back to the um, repo."
         }
       ]
     ],
@@ -763,7 +770,8 @@
           "role": "user",
           "content": "I'm looking to get updated on the following: 'significant events, news articles, and developments that since October 2021'. Please check for this verbatim. Could you provide me with the latest information on this? Include only information published after the year 2022. Also, I'd like to have \"a digital painting of a masked woman with bright peacock feathers, complex and elegant, with green highlighted lines and complex patterns, reminiscent of cyberpunk Alphonse Mucha's style.\"",
           "transcript": "Um, can you tell me about, like, important events, news articles, and developments since October 2021? Uh, make sure you check this exactly as I said, and, um, only include stuff from after 2022. And also, could you get me a digital painting named a masked woman with bright peacock feathers? Im lookin for somethin, uh, complex and elegant, with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha, thats A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.mp3",
+          "asr_output": "Can you tell me about important events, news articles, and developments since October 2021? Make sure you check this exactly as I said, and only include stuff from after 2022. And also, could you get me a digital painting named a masked woman with bright peacock feathers? Im looking for some thin, complex and elegant, with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A Alphonse Mucha."
         }
       ]
     ],
@@ -954,7 +962,8 @@
           "role": "user",
           "content": "Could you please find out when Shishir's birthday is from our previous conversations and then congratulate him by sending a 'Happy Birthday!' message regardless?",
           "transcript": "Uh, check past chats to find Shishirs birthday, and send him a Happy Birthday! message no matter what.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.mp3",
+          "asr_output": "Check past chats to find Shashir's birthday and send him a happy birthday message no matter what."
         }
       ]
     ],
@@ -1206,7 +1215,8 @@
           "role": "user",
           "content": "I'm trying to fix a compilation error in my Java project. Specifically, the class 'StringNumberHandler' extends 'AbstractCellHandler' and overrides several methods like 'getCellValue', 'setCellValue', 'getExcelType', and 'getDefaultExcelFormat'. However, I'm getting an error saying that the method 'getNumericValue()' cannot be found in 'CellResult'. Find relevant classes that might be related to 'CellResult' in the repository including subdirectories? Also, could you provide the signatures of 'setCellValue' and 'getCellValue' methods in the 'AbstractCellHandler' class to ensure I'm overriding them correctly?",
           "transcript": "Lemme see... Im working on fixin Java compilation error in my project. The StringNumberHandler class extends AbstractCellHandler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, theres an error sayin getNumericValue() cant be found in CellResult. Can you look for any classes related to C-E-L-L-R-E-S-U-L-T, CellResult in the repository, includin subdirectories? Also, could you gimme method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T-C-E-L-L-H-A-N-D-L-E-R, AbstractCellHandler to make sure Im overridin them right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.mp3",
+          "asr_output": "Let me see. I'm working on fixing Java compilation error in my project. The StringNumberHandler class extends AbstractCellHandler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error saying getNumericValue can't be found in CellResult. Can you look for any classes related to C-E-L-L-R-E-S-U-L-T CellResult in the repository, including subdirectories? Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T-C-E-L-L-H-A-N-D-L-E-R AbstractCellHandler to make sure I'm overriding them right?"
         }
       ]
     ],
@@ -1331,7 +1341,8 @@
           "role": "user",
           "content": "To address the compilation failure due to 'No suitable method found for get_weather(String)', could you identify the available methods or properties for the 'Weather' class? Also, provide the signature for the 'get_weather' method within the same class if it exists.",
           "transcript": "Hey, could you take a look at the Weather class to see if it has any methods or properties available? Also, if theres the get_weather method, can you find out what the signature of that thing is?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.mp3",
+          "asr_output": "Hey, could you take a look at the Weather class to see if it has any methods or properties available? Also, if the res.get_Weather method, can you find out what the signature of that thing is?"
         }
       ]
     ],
@@ -1456,7 +1467,8 @@
           "role": "user",
           "content": "Find the highest common factor for 36 and 48, and then tell me how steep the curve of the function f(x) = x^2 is at x = 5?",
           "transcript": "Whats the highest common factor of, uh, thirty-six and forty-eight? Also, um, how steeps the curve of the function f of x equals x squared at x equals five, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.mp3",
+          "asr_output": "What's the highest common factor of 36 and 48? Also, how steep's the curve of the function f(x) equals x squared at x equals 5, okay?"
         }
       ]
     ],
@@ -1528,7 +1540,8 @@
           "role": "user",
           "content": "Can you first calculate the greatest common divisor of the numbers 36 and 48 and then estimate the derivative of the function f(x) = x^2 at the point x = 5?",
           "transcript": "First, uh, get the greatest common divisor of thirty-six and forty-eight. Then, um, okay, estimate the derivative of f of x equals x squared at x equals five.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.mp3",
+          "asr_output": "First, get the greatest common divisor of 36 and 48. Then, um, okay, estimate the derivative of f of x equals x squared at x equals 5."
         }
       ]
     ],
@@ -1600,7 +1613,8 @@
           "role": "user",
           "content": "Could you add 1 and 2 together and also tell me the current time in 'Europe/Berlin' including the date?",
           "transcript": "Hey, uh, can you add one and two for me? And also, oh, whats the current time in Europe slash Berlin, date included?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.mp3"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.mp3",
+          "asr_output": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?"
         }
       ]
     ],
@@ -1677,7 +1691,8 @@
           "role": "user",
           "content": "What's the area of a square with a side of size 5 cm and what is the weather in Queenstown Singapore?",
           "transcript": "Uh, whats the area of a square with a five centimeter side? And, um, oh, whats the weather like in Queenstown, Singapore?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.wav",
+          "asr_output": "What's the area of a square with a five-centimeter side? And what's the weather like in Queenstown Singapore?"
         }
       ]
     ],
@@ -1733,7 +1748,8 @@
           "role": "user",
           "content": "turn it by 20 degree and flip it horizontally",
           "transcript": "Uh, turn it 20 degrees and, um, flip it horizontally. Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.wav",
+          "asr_output": "Turn it twenty degrees and flip it horizontally, thanks."
         }
       ]
     ],
@@ -1911,7 +1927,8 @@
           "role": "user",
           "content": "Find any music or theater events happening in San Diego, CA on March 1st 2023?",
           "transcript": "Uh, are there any music or theater events in San Diego on March first, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.wav",
+          "asr_output": "Are there any music or theater events in San Diego on March 1st, 2023?"
         }
       ]
     ],
@@ -2168,7 +2185,8 @@
           "role": "user",
           "content": "Find any music concerts or theater plays happening in Los Angeles on March 10th? this year is 2023",
           "transcript": "Are there any music concerts or theater plays in Los Angeles on March tenth, twenty-twenty-three?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.wav",
+          "asr_output": "Are there any music concerts or theatre plays in Los Angeles on March 10, 2023?"
         }
       ]
     ],
@@ -2425,7 +2443,8 @@
           "role": "user",
           "content": "I need to set up reservations for my upcoming trip and really need your help to get this done with a minimal amount of stress. Can you find a music event happening in New York on 2023-05-21? Also, I'm traveling from Boston, MA to New York by bus on the same date. Could you search for a direct bus itinerary for 2 people?",
           "transcript": "Hey, Im planning my trip and could use a hand. Can you find a music event in New York for May twenty-first, twenty-twenty-three? Im also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.wav",
+          "asr_output": "Hey, in planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?"
         }
       ]
     ],
@@ -2802,7 +2821,8 @@
           "role": "user",
           "content": "Could you search for a hair stylist in Sunnyvale, CA, and also book an appointment with 'Elegant Styles' salon for me at 15:00 on 2023-05-10?",
           "transcript": "Find a hair stylist in Sunnyvale and set me up with an appointment at Elegant Styles salon for three PM on May tenth, two thousand twenty-three.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_21-18-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_21-18-0_elevenlabs.wav",
+          "asr_output": "Find a hairstylist in Sunnyvale and set me up with an appointment at Elegant Styles Salon for 3 PM on May 10, 2023."
         }
       ]
     ],
@@ -2890,7 +2910,8 @@
           "role": "user",
           "content": "Could you tell me the current weather conditions in Boston, MA and also in San Francisco in fahr?",
           "transcript": "Uh, whats the current weather in Boston and San Francisco in Fahrenheit?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_22-19-0_elevenlabs.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_22-19-0_elevenlabs.wav",
+          "asr_output": "What's the current weather in Boston and San Francisco in Fahrenheit?"
         }
       ]
     ],
@@ -3094,7 +3115,8 @@
           "role": "user",
           "content": "I need all pending and active mandates of users parath and bhanu",
           "transcript": "Can you get me all pending and active mandates for users Parath, thats P-A-R-A-T-H, Parath, and Bhanu, thats B-H-A-N-U, Bhanu?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.wav"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.wav",
+          "asr_output": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu."
         }
       ]
     ],
