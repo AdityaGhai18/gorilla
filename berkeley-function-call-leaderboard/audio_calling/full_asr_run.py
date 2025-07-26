@@ -88,25 +88,29 @@ def process_file(data_path, sample_count=None):
         case_updated = False
         if idx not in indices_to_process:
             continue
-        for turn in case.get("question", [])[0]:
-            audio_path = turn.get("audio_path")
-            if audio_path:
-                print(f"[PROCESS] {case.get('id', '')}: Attempting ASR for {audio_path}")
-                asr = transcribe_audio(audio_path)
-                if asr is not None:
-                    prev = turn.get("asr_output")
-                    turn["asr_output"] = asr
-                    updated += 1
-                    case_updated = True
-                    if prev is not None:
-                        print(f"[OVERWRITE] {case.get('id', '')}: asr_output overwritten.")
+        
+        # Process all turn groups in the question
+        for turn_group_idx, turn_group in enumerate(case.get("question", [])):
+            for turn_idx, turn in enumerate(turn_group):
+                audio_path = turn.get("audio_path")
+                if audio_path:
+                    print(f"[PROCESS] {case.get('id', '')} turn_group_{turn_group_idx} turn_{turn_idx}: Attempting ASR for {audio_path}")
+                    asr = transcribe_audio(audio_path)
+                    if asr is not None:
+                        prev = turn.get("asr_output")
+                        turn["asr_output"] = asr
+                        updated += 1
+                        case_updated = True
+                        if prev is not None:
+                            print(f"[OVERWRITE] {case.get('id', '')} turn_group_{turn_group_idx} turn_{turn_idx}: asr_output overwritten.")
+                        else:
+                            print(f"[SUCCESS] {case.get('id', '')} turn_group_{turn_group_idx} turn_{turn_idx}: asr_output added.")
                     else:
-                        print(f"[SUCCESS] {case.get('id', '')}: asr_output added.")
+                        print(f"[FAIL] {case.get('id', '')} turn_group_{turn_group_idx} turn_{turn_idx}: ASR failed for {audio_path}")
+                    time.sleep(1)  # Small sleep to avoid hammering API
                 else:
-                    print(f"[FAIL] {case.get('id', '')}: ASR failed for {audio_path}")
-                time.sleep(1)  # Small sleep to avoid hammering API
-            else:
-                print(f"[SKIP] {case.get('id', '')}: No audio_path found.")
+                    print(f"[SKIP] {case.get('id', '')} turn_group_{turn_group_idx} turn_{turn_idx}: No audio_path found.")
+        
         # Write after each case if any update was made
         if case_updated:
             with open(data_path, "w") as f:
