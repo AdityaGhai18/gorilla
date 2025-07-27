@@ -8,7 +8,9 @@
           "content": "Calculate the area of a triangle given the base is 10 meters and height is 5 meters.",
           "transcript": "Hey, um, can you get the area of a triangle if the bases ten meters and the heights five meters?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_0_openai.wav",
-          "asr_output_openai": "Hey, can you get the area of a triangle if the base is 10 meters and the height's 5 meters?"
+          "asr_output_openai": "Hey, can you get the area of a triangle if the base is 10 meters and the height's 5 meters?",
+          "asr_output_elevenlabs": "Hey, um, can you get the area of a triangle if the base is 10 meters and the height's 5 meters?",
+          "asr_output_deepgram": "Hey. Can you get the area of a triangle if the base is ten meters and the height's five meters?"
         }
       ]
     ],
@@ -45,7 +47,9 @@
           "content": "Solve the quadratic equation with coefficients a = 1, b = 2, and c = 3.",
           "transcript": "Uh, can you figure out the quadratic equation where as one, bs two, and cs three, please?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_1_openai.wav",
-          "asr_output_openai": "Can you figure out the quadratic equation where a's 1, b's 2, and c's 3, please?"
+          "asr_output_openai": "Can you figure out the quadratic equation where a's 1, b's 2, and c's 3, please?",
+          "asr_output_elevenlabs": "Uh, can you figure out the quadratic equation where 'a' is 1, 'b' is 2, and 'c' is 3, please?",
+          "asr_output_deepgram": "Can you figure out the quadratic equation where s one, b's two, and c's three, please?"
         }
       ]
     ],
@@ -84,7 +88,9 @@
           "content": "Solve for the roots of the equation 3x^2 - 2x - 5.",
           "transcript": "Uh, can you find the roots of the equation three x squared minus two x minus five?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_2_openai.wav",
-          "asr_output_openai": "Can you find the roots of the equation 3x squared minus 2x minus 5?"
+          "asr_output_openai": "Can you find the roots of the equation 3x squared minus 2x minus 5?",
+          "asr_output_elevenlabs": "Uh, can you find the roots of the equation 3x squared minus 2x minus 5?",
+          "asr_output_deepgram": "Can you find the roots of the equation three x squared minus two x minus five?"
         }
       ]
     ],
@@ -127,7 +133,9 @@
           "content": "What is the slope of the line which is perpendicular to the line with the equation y = 3x + 2?",
           "transcript": "Lemme see, whats the slope of a line thats perpendicular to the one with the equation y equals three x plus two?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_3_openai.wav",
-          "asr_output_openai": "Let me see, what's the slope of a line that's perpendicular to the one with the equation y equals 3x plus 2?"
+          "asr_output_openai": "Let me see, what's the slope of a line that's perpendicular to the one with the equation y equals 3x plus 2?",
+          "asr_output_elevenlabs": "Let me see. What's the slope of a line that's perpendicular to the one with the equation Y equals 3X plus 2?",
+          "asr_output_deepgram": "Let me see. What's the slope of the line that's perpendicular to the one with the equation y equals three x plus two?"
         }
       ]
     ],
@@ -171,7 +179,9 @@
           "content": "What is the roots of linear equation bx + c = 0?",
           "transcript": "Hey, um, can you give me the solution to the linear equation b x plus c equals zero?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_4_openai.wav",
-          "asr_output_openai": "Hey, can you give me the solution to the linear equation bx + c = 0?"
+          "asr_output_openai": "Hey, can you give me the solution to the linear equation bx + c = 0?",
+          "asr_output_elevenlabs": "Hey, um, can you give me the solution to the linear equation bx plus c equals 0?",
+          "asr_output_deepgram": "Hey. Can you give me the solution to the linear equation b x plus c equals zero?"
         }
       ]
     ],
@@ -213,7 +223,9 @@
           "content": "What is the perimeter of a rectangle with length 5 meters and width 4 meters?",
           "transcript": "Um, can you say the perimeter of a rectangle thats, uh, five meters long and four meters wide?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_5_openai.wav",
-          "asr_output_openai": "Um, can you say the perimeter of a rectangle that's five meters long and four meters wide?"
+          "asr_output_openai": "Um, can you say the perimeter of a rectangle that's five meters long and four meters wide?",
+          "asr_output_elevenlabs": "Um, can you say the perimeter of a rectangle that's, uh, five meters long and four meters wide?",
+          "asr_output_deepgram": "Can you say the perimeter of a rectangle that's, five meters long and four meters wide?"
         }
       ]
     ],
@@ -255,7 +267,9 @@
           "content": "What's the area of a rectangle that has width of 5m and length of 7m?",
           "transcript": "Hey, um, whats the area of a rectangle with a width of five meters and a length of seven meters?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_6_openai.wav",
-          "asr_output_openai": "Hey, um, what's the area of a rectangle with a width of five meters and a length of seven meters?"
+          "asr_output_openai": "Hey, um, what's the area of a rectangle with a width of five meters and a length of seven meters?",
+          "asr_output_elevenlabs": "Hey, um, what's the area of a rectangle with a width of 5 meters and a length of 7 meters?",
+          "asr_output_deepgram": "Hey. What's the area of a rectangle with a width of five meters and a length of seven meters?"
         }
       ]
     ],
@@ -292,7 +306,9 @@
           "content": "What is the area under the curve of the function f(x) = 3x^2 from x = 1 to x = 5?",
           "transcript": "Hey, can you calculate the area under the curve for the function f of x equals three x squared, from x equals one to x equals five? Right, let me see...",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_7_openai.wav",
-          "asr_output_openai": "Hey, can you calculate the area under the curve for the function f(x) = 3x\u00b2 from x = 1 to x = 5? Right, let me see."
+          "asr_output_openai": "Hey, can you calculate the area under the curve for the function f(x) = 3x\u00b2 from x = 1 to x = 5? Right, let me see.",
+          "asr_output_elevenlabs": "Hey, can you calculate the area under the curve for the function f of x equals 3x squared from x equals 1 to x equals 5? Right. Let me see.",
+          "asr_output_deepgram": "Hey. Can you calculate the area under the curve for the function f of x equals three x squared from x equals one to x equals five? Right. Let me see."
         }
       ]
     ],
@@ -334,7 +350,8 @@
           "content": "Find the integral of x^3 from 1 to 5",
           "transcript": "Um, can you work out the integral of x cubed from one to five?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_8_openai.wav",
-          "asr_output_openai": "Um, can you work out the integral of x cubed from one to five?"
+          "asr_output_openai": "Um, can you work out the integral of x cubed from one to five?",
+          "asr_output_elevenlabs": "Um, can you work out the integral of X cubed from one to five?"
         }
       ]
     ],
@@ -366,7 +383,8 @@
           "content": "Find the definite integral of f(x)=x^2 from x=1 to x=3.",
           "transcript": "Hey, uh, whats the definite integral of f of x equals x squared from x equals one to x equals three?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_9_openai.wav",
-          "asr_output_openai": "Hey, what's the definite integral of f of x equals x squared from x equals one to x equals three?"
+          "asr_output_openai": "Hey, what's the definite integral of f of x equals x squared from x equals one to x equals three?",
+          "asr_output_elevenlabs": "Hey, uh, what's the definite integral of f of x equals x squared from x equals 1 to x equals 3?"
         }
       ]
     ],
@@ -408,7 +426,8 @@
           "content": "Compute the derivative of the function '2x' within the at 1.",
           "transcript": "Hey, um, can you get the derivative of the function 2x at x equals one, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_10_openai.wav",
-          "asr_output_openai": "Hey, um, can you get the derivative of the function 2x at x equals 1?"
+          "asr_output_openai": "Hey, um, can you get the derivative of the function 2x at x equals 1?",
+          "asr_output_elevenlabs": "Hey, um, can you get the derivative of the function 2x at x = 1? Okay?"
         }
       ]
     ],
@@ -452,7 +471,8 @@
           "content": "What is the closest integer to 30?",
           "transcript": "Whats the nearest, um, whole number to thirty?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_11_openai.wav",
-          "asr_output_openai": "What's the nearest, um, whole number to thirty?"
+          "asr_output_openai": "What's the nearest, um, whole number to thirty?",
+          "asr_output_elevenlabs": "What's the nearest, um, whole number to 30?"
         }
       ]
     ],
@@ -489,7 +509,8 @@
           "content": "Find the fastest route from New York to Boston.",
           "transcript": "Whats the fastest way to go from New York to Boston?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_12_openai.wav",
-          "asr_output_openai": "What's the fastest way to go from New York to Boston?"
+          "asr_output_openai": "What's the fastest way to go from New York to Boston?",
+          "asr_output_elevenlabs": "What's the fastest way to go from New York to Boston?"
         }
       ]
     ],
@@ -535,7 +556,8 @@
           "content": "Calculate the prime factors of 100.",
           "transcript": "Hey, could you find the prime factors of one hundred?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_13_openai.wav",
-          "asr_output_openai": "Hey, could you find the prime factors of 100?"
+          "asr_output_openai": "Hey, could you find the prime factors of 100?",
+          "asr_output_elevenlabs": "Hey, could you find the prime factors of one hundred?"
         }
       ]
     ],
@@ -582,7 +604,8 @@
           "content": "What is the acceleration a ball will reach if it's thrown straight upwards with a velocity of 5 m/s?",
           "transcript": "Whats the acceleration of, uh, a ball tossed straight up at five meters per second?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_14_openai.wav",
-          "asr_output_openai": "What's the acceleration of a ball tossed straight up at 5 m/s?"
+          "asr_output_openai": "What's the acceleration of a ball tossed straight up at 5 m/s?",
+          "asr_output_elevenlabs": "What's the acceleration of, uh, a ball tossed straight up at five meters per second?"
         }
       ]
     ],
@@ -618,7 +641,8 @@
           "content": "What are the latest movie releases?",
           "transcript": "Hey, lemme see... oh, whats fresh in the movie releases?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_15_openai.wav",
-          "asr_output_openai": "Hey, let me see. Oh, what's fresh in the movie releases?"
+          "asr_output_openai": "Hey, let me see. Oh, what's fresh in the movie releases?",
+          "asr_output_elevenlabs": "Hey, let me see. Oh, what's fresh in the movie releases?"
         }
       ]
     ],
@@ -660,7 +684,9 @@
           "content": "How far will a car travel in time 't' when launched with velocity 'v' at an angle 'theta'?",
           "transcript": "If a car is launched with speed v at angle theta, um, how far does it go in time t?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_16_openai.wav",
-          "asr_output_openai": "If a car is launched with speed v at angle theta, how far does it go in time t?"
+          "asr_output_openai": "If a car is launched with speed v at angle theta, how far does it go in time t?",
+          "asr_output_elevenlabs": "If a car is launched with speed V at angle theta, um, how far does it go in time T?",
+          "asr_output_deepgram": "If a car is launched with speed v at angle theta, how far does it go in time t?"
         }
       ]
     ],
@@ -702,7 +728,8 @@
           "content": "What's the time right now?",
           "transcript": "Could you tell me the current time, please?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_17_openai.wav",
-          "asr_output_openai": "Could you tell me the current time, please?"
+          "asr_output_openai": "Could you tell me the current time, please?",
+          "asr_output_elevenlabs": "Could you tell me the current time, please?"
         }
       ]
     ],
@@ -744,7 +771,8 @@
           "content": "How do I find the angle of the force for a given momentum?",
           "transcript": "Hey, um, right, how can I find out angle of the force if I know the momentum?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_18_openai.wav",
-          "asr_output_openai": "Hey, um, right, how can I find out angle of the force if I know the momentum?"
+          "asr_output_openai": "Hey, um, right, how can I find out angle of the force if I know the momentum?",
+          "asr_output_elevenlabs": "Hey, um, right. How can I find out angle of the force if I know the momentum?"
         }
       ]
     ],
@@ -785,7 +813,8 @@
           "content": "Find the volume of a cone with base radius 3 cm and height 5 cm.",
           "transcript": "Hey, uh, can you find the volume of a cone with a base radius of three centimeters and, um, a height of five centimeters?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_19_openai.wav",
-          "asr_output_openai": "Hey, can you find the volume of a cone with a base radius of 3 centimeters and a height of 5 centimeters?"
+          "asr_output_openai": "Hey, can you find the volume of a cone with a base radius of 3 centimeters and a height of 5 centimeters?",
+          "asr_output_elevenlabs": "Hey, uh, can you find the volume of a cone with a base radius of 3 cm and, um, a height of 5 cm?"
         }
       ]
     ],
@@ -827,7 +856,8 @@
           "content": "Find the duration of flight between Los Angeles and Miami.",
           "transcript": "Um, how longs the flight from Los Angeles to Miami?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_20_openai.wav",
-          "asr_output_openai": "Um, how long's the flight from Los Angeles to Miami?"
+          "asr_output_openai": "Um, how long's the flight from Los Angeles to Miami?",
+          "asr_output_elevenlabs": "Um, how long's the flight from Los Angeles to Miami?"
         }
       ]
     ],
@@ -869,7 +899,8 @@
           "content": "What's the magnetic field at a point 4m away from a wire carrying a current of 2A?",
           "transcript": "Hey, um, whats magnetic field at a point thats, uh, four meters away from a wire with a two-amp current?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_21_openai.wav",
-          "asr_output_openai": "Hey, um, what's magnetic field at a point that's, uh, four meters away from a wire with a two amp current?"
+          "asr_output_openai": "Hey, um, what's magnetic field at a point that's, uh, four meters away from a wire with a two amp current?",
+          "asr_output_elevenlabs": "Hey, um, what's magnetic field at a point that's, uh, 4 meters away from a wire with a 2 amp current?"
         }
       ]
     ],
@@ -909,7 +940,8 @@
           "content": "What is the magnetic field at a point located at distance 'r' from a wire carrying current 'I'?",
           "transcript": "Uh, can you tell me magnetic field at a point, oh, thats distance r from a wire with current I?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_22_openai.wav",
-          "asr_output_openai": "Can you tell me magnetic field at a point, oh, that's distance r from a wire with current I?"
+          "asr_output_openai": "Can you tell me magnetic field at a point, oh, that's distance r from a wire with current I?",
+          "asr_output_elevenlabs": "Uh, can you tell me magnetic field at a point? Oh, that's distance R from a wire with current I?"
         }
       ]
     ],
@@ -950,7 +982,8 @@
           "content": "What's the mass of an electron?",
           "transcript": "Hey, um, could you tell me the mass of that tiny particle known as an electron?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_23_openai.wav",
-          "asr_output_openai": "Hey, um, could you tell me the mass of that tiny particle known as an electron?"
+          "asr_output_openai": "Hey, um, could you tell me the mass of that tiny particle known as an electron?",
+          "asr_output_elevenlabs": "Hey, um, could you tell me the mass of that tiny particle known as an electron?"
         }
       ]
     ],
@@ -991,7 +1024,8 @@
           "content": "What's the mass of an electron?",
           "transcript": "Hey, whats the mass of an electron, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_24_openai.wav",
-          "asr_output_openai": "Hey, what's the mass of an electron, right?"
+          "asr_output_openai": "Hey, what's the mass of an electron, right?",
+          "asr_output_elevenlabs": "Hey, what's the mass of an electron? Right."
         }
       ]
     ],
@@ -1032,7 +1066,8 @@
           "content": "What is the freezing point point of water at a pressure of 10 kPa?",
           "transcript": "Um, hey, whats the freezing point of water when the pressures, uh, ten kilopascals?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_25_openai.wav",
-          "asr_output_openai": "Um, hey, what's the freezing point of water when the pressure's, uh, ten kilopascals?"
+          "asr_output_openai": "Um, hey, what's the freezing point of water when the pressure's, uh, ten kilopascals?",
+          "asr_output_elevenlabs": "Um, hey! What's the freezing point of water when the pressure's, uh, ten kilopascals?"
         }
       ]
     ],
@@ -1073,7 +1108,8 @@
           "content": "How much gas is generated from heating a 2 m\u00b3 closed chamber with air at a temperature of 25\u00b0C to 100\u00b0C?",
           "transcript": "Uh, hey, can you say how much gass made when you heat two cubic meter closed chamber from twenty-five degrees Celsius to one hundred degrees?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_26_openai.wav",
-          "asr_output_openai": "Oh hey, can you say how much gas made when you heat 2 cubic meter closed chamber from 25 degrees Celsius to 100 degrees?"
+          "asr_output_openai": "Oh hey, can you say how much gas made when you heat 2 cubic meter closed chamber from 25 degrees Celsius to 100 degrees?",
+          "asr_output_elevenlabs": "Uh, hey. Can you say how much gas made when you heat two cubic meter closed chamber from 25 degrees Celsius to 100 degrees?"
         }
       ]
     ],
@@ -1119,7 +1155,8 @@
           "content": "What will be the energy needed to increase the temperature of 3 kg of water by 4 degrees Celsius?",
           "transcript": "How much energy do I need to heat three kilograms of water by four degrees Celsius?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_27_openai.wav",
-          "asr_output_openai": "How much energy do I need to heat three kilograms of water by four degrees Celsius?"
+          "asr_output_openai": "How much energy do I need to heat three kilograms of water by four degrees Celsius?",
+          "asr_output_elevenlabs": "How much energy do I need to heat three kilograms of water by four degrees Celsius?"
         }
       ]
     ],
@@ -1161,7 +1198,8 @@
           "content": "How many sides does a hexagon have?",
           "transcript": "Hey, right, a hexagon has how many sides?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_28_openai.wav",
-          "asr_output_openai": "Hey, right. A hexagon has how many sides?"
+          "asr_output_openai": "Hey, right. A hexagon has how many sides?",
+          "asr_output_elevenlabs": "Hey, Wright! A hexagon has how many sides?"
         }
       ]
     ],
@@ -1198,7 +1236,8 @@
           "content": "Identify the number of the mitochondria in a cell.",
           "transcript": "Uh, right, could you check how many mitochondria there are in a cell?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_29_openai.wav",
-          "asr_output_openai": "Ah, right. Could you check how many mitochondria there are in a cell?"
+          "asr_output_openai": "Ah, right. Could you check how many mitochondria there are in a cell?",
+          "asr_output_elevenlabs": "Uh, right. Could you check how many mitochondria there are in a cell?"
         }
       ]
     ],
@@ -1239,7 +1278,8 @@
           "content": "What's the name of a type of cell that has multiple nuclei?",
           "transcript": "Hey, uh, can you tell me what type of cells got more than one nucleus? Right.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_30_openai.wav",
-          "asr_output_openai": "Hey, can you tell me what type of cells got more than one nucleus?"
+          "asr_output_openai": "Hey, can you tell me what type of cells got more than one nucleus?",
+          "asr_output_elevenlabs": "Hey, uh, can you tell me what type of cells got more than one nucleus? Right."
         }
       ]
     ],
@@ -1281,7 +1321,8 @@
           "content": "Find the favorite restaurant in London.",
           "transcript": "Hey, uh, whats the best restaurant in London, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_31_openai.wav",
-          "asr_output_openai": "Hey, what's the best restaurant in London, right?"
+          "asr_output_openai": "Hey, what's the best restaurant in London, right?",
+          "asr_output_elevenlabs": "Hey, uh, what's the best restaurant in London, right?"
         }
       ]
     ],
@@ -1322,7 +1363,8 @@
           "content": "Identify the type of blood cells responsible for clotting.",
           "transcript": "What kind of blood cells are, yeah, uh, responsible for clotting?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_32_openai.wav",
-          "asr_output_openai": "What kind of blood cells are, yeah, responsible for clotting?"
+          "asr_output_openai": "What kind of blood cells are, yeah, responsible for clotting?",
+          "asr_output_elevenlabs": "What kind of blood cells are, yeah, uh, responsible for clotting?"
         }
       ]
     ],
@@ -1364,7 +1406,8 @@
           "content": "Identify the genetic code sequence \"ATCG\".",
           "transcript": "Um, can ya identify the genetic code sequence ATCG?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_33_openai.wav",
-          "asr_output_openai": "Um, can ya identify the genetic code sequence ATCG?"
+          "asr_output_openai": "Um, can ya identify the genetic code sequence ATCG?",
+          "asr_output_elevenlabs": "Um, can you identify the genetic code sequence ATCG?"
         }
       ]
     ],
@@ -1401,7 +1444,8 @@
           "content": "What is the dominant genetic trait of a Lion?",
           "transcript": "Uh, hey, can you tell me what main genetic trait of a lions, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_34_openai.wav",
-          "asr_output_openai": "Uh, hey, can you tell me what main genetic trait of a lion's, right?"
+          "asr_output_openai": "Uh, hey, can you tell me what main genetic trait of a lion's, right?",
+          "asr_output_elevenlabs": "Uh, hey. Can you tell me what main genetic trait of a lion's right-"
         }
       ]
     ],
@@ -1438,7 +1482,8 @@
           "content": "What is the mating process of Lions?",
           "transcript": "So, um, yeah, how do lions, you know, come together?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_35_openai.wav",
-          "asr_output_openai": "So, um, yeah, how do lions, you know, come together?"
+          "asr_output_openai": "So, um, yeah, how do lions, you know, come together?",
+          "asr_output_elevenlabs": "So, um, yeah. How do lions, you know, come together?"
         }
       ]
     ],
@@ -1480,7 +1525,8 @@
           "content": "What is the frequency of gene variant rs7412 in the European population?",
           "transcript": "Um, hey, can you let me know how common the gene variant rs seven four twelve is among Europeans?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_36_openai.wav",
-          "asr_output_openai": "Hey, can you let me know how common the gene variant rs7412 is among Europeans?"
+          "asr_output_openai": "Hey, can you let me know how common the gene variant rs7412 is among Europeans?",
+          "asr_output_elevenlabs": "Um, hey, can you let me know how common the gene variant RS7412 is among Europeans?"
         }
       ]
     ],
@@ -1521,7 +1567,8 @@
           "content": "Find a picnic spot in Miami.",
           "transcript": "Um, can you look up spot for, uh, a picnic in Miami?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_37_openai.wav",
-          "asr_output_openai": "Um, can you look up spot for a picnic in Miami?"
+          "asr_output_openai": "Um, can you look up spot for a picnic in Miami?",
+          "asr_output_elevenlabs": "Um, can you look up Spot for a, a picnic in Miami?"
         }
       ]
     ],
@@ -1562,7 +1609,8 @@
           "content": "Find me a documentary about global warming.",
           "transcript": "Hey, can you get a documentary on global warming for me?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_38_openai.wav",
-          "asr_output_openai": "Hey, can you get a documentary on global warming for me?"
+          "asr_output_openai": "Hey, can you get a documentary on global warming for me?",
+          "asr_output_elevenlabs": "Hey, can you get a documentary on global warming for me?"
         }
       ]
     ],
@@ -1604,7 +1652,8 @@
           "content": "How to increase the population of deer in a forest?",
           "transcript": "Uh, hey, how can we grow deer numbers in a forest, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_39_openai.wav",
-          "asr_output_openai": "Uh, hey, how can we grow deer numbers in a forest, right?"
+          "asr_output_openai": "Uh, hey, how can we grow deer numbers in a forest, right?",
+          "asr_output_elevenlabs": "Uh hey how can we grow deer numbers in a forest right?"
         }
       ]
     ],
@@ -1646,7 +1695,8 @@
           "content": "How is the air quality in Los Angeles right now?",
           "transcript": "Hey, um, hows the air quality in Los Angeles right now, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_40_openai.wav",
-          "asr_output_openai": "Hey, um, how's the air quality in Los Angeles right now, right?"
+          "asr_output_openai": "Hey, um, how's the air quality in Los Angeles right now, right?",
+          "asr_output_elevenlabs": "Hey, um, how's the air quality in Los Angeles right now? Right?"
         }
       ]
     ],
@@ -1687,7 +1737,8 @@
           "content": "What is the common ancestor of lion and zebra?",
           "transcript": "Um, whats the common ancestor of a lion and a zebra?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_41_openai.wav",
-          "asr_output_openai": "Um, what's the common ancestor of a lion and a zebra?"
+          "asr_output_openai": "Um, what's the common ancestor of a lion and a zebra?",
+          "asr_output_elevenlabs": "Um, what's the common ancestor of a lion and a zebra?"
         }
       ]
     ],
@@ -1723,7 +1774,8 @@
           "content": "What is the evolutionary history of pandas?",
           "transcript": "Uh, let me tell you about the evolutionary history of pandas, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_42_openai.wav",
-          "asr_output_openai": "Uh, let me tell you about the evolutionary history of pandas, right?"
+          "asr_output_openai": "Uh, let me tell you about the evolutionary history of pandas, right?",
+          "asr_output_elevenlabs": "Uh, let me tell you about the evolutionary history of pandas. Right?"
         }
       ]
     ],
@@ -1772,7 +1824,8 @@
           "content": "How can I apply Evolutionary Algorithm in game Artificial Intelligence?",
           "transcript": "Um, how do I, uh, use an Evolutionary Algorithm for AI in games, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_43_openai.wav",
-          "asr_output_openai": "Um, how do I, uh, use an evolutionary algorithm for AI in games, right?"
+          "asr_output_openai": "Um, how do I, uh, use an evolutionary algorithm for AI in games, right?",
+          "asr_output_elevenlabs": "Um, how do I... Uh. Use an evolutionary algorithm for AI in games, right?"
         }
       ]
     ],
@@ -1818,7 +1871,8 @@
           "content": "What is the gene sequence for evolutionary changes in whales?",
           "transcript": "Um, could you tell me gene sequence related to, uh, how whales evolved, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_44_openai.wav",
-          "asr_output_openai": "Um, could you tell me gene sequence related to how whales evolved, right?"
+          "asr_output_openai": "Um, could you tell me gene sequence related to how whales evolved, right?",
+          "asr_output_elevenlabs": "Um, could you tell me gene sequence related to, uh, how whales evolved right?"
         }
       ]
     ],
@@ -1878,7 +1932,8 @@
           "content": "Calculate the sine of 45 degree.",
           "transcript": "Hey, uh, can you work out the sine of forty-five degrees for me? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_45_openai.wav",
-          "asr_output_openai": "Hey, uh, can you work out the sine of 45 degrees for me? Thanks."
+          "asr_output_openai": "Hey, uh, can you work out the sine of 45 degrees for me? Thanks.",
+          "asr_output_elevenlabs": "Hey, uh, can you work out the sine of 45 degrees for me? Thanks."
         }
       ]
     ],
@@ -1922,7 +1977,8 @@
           "content": "Give me the price of a Tesla model S in India.",
           "transcript": "Hey, uh, do you know the price of a Tesla Model S in India, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_46_openai.wav",
-          "asr_output_openai": "Hey, do you know the price of a Tesla Model S in India, right?"
+          "asr_output_openai": "Hey, do you know the price of a Tesla Model S in India, right?",
+          "asr_output_elevenlabs": "Hey, uh, do you know the price of a Tesla Model S in India? Right?"
         }
       ]
     ],
@@ -1959,7 +2015,8 @@
           "content": "What are the ingredients for lasagna?",
           "transcript": "Hey, uh, can you list the ingredients for lasagna, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_47_openai.wav",
-          "asr_output_openai": "Hey, can you list the ingredients for lasagna?"
+          "asr_output_openai": "Hey, can you list the ingredients for lasagna?",
+          "asr_output_elevenlabs": "Hey uh... Can you list the ingredients for lasagna yeah?"
         }
       ]
     ],
@@ -2001,7 +2058,8 @@
           "content": "What is the current Gini Coefficient of USA?",
           "transcript": "Hey, um, whats the current Gini Coefficient for the USA, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_48_openai.wav",
-          "asr_output_openai": "Hey, um, what's the current Gini coefficient for the USA, right?"
+          "asr_output_openai": "Hey, um, what's the current Gini coefficient for the USA, right?",
+          "asr_output_elevenlabs": "Hey, um, what's the current Gini coefficient for the USA, right?"
         }
       ]
     ],
@@ -2047,7 +2105,8 @@
           "content": "What is the time difference between Los Angeles and Berlin?",
           "transcript": "Hey, uh, whats time difference tween Los Angeles and Berlin?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_49_openai.wav",
-          "asr_output_openai": "Hey, uh, what's time difference tween Los Angeles and Berlin?"
+          "asr_output_openai": "Hey, uh, what's time difference tween Los Angeles and Berlin?",
+          "asr_output_elevenlabs": "Hey, uh, what's time difference between Los Angeles and Berlin?"
         }
       ]
     ],
@@ -2079,7 +2138,8 @@
           "content": "Give me a selection of horror movies to watch on a Friday night.",
           "transcript": "Uh, can suggest some spooky movies for Friday night?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_50_openai.wav",
-          "asr_output_openai": "A ken suggest some spooky movies for Friday night?"
+          "asr_output_openai": "A ken suggest some spooky movies for Friday night?",
+          "asr_output_elevenlabs": "Uh, can suggest some spooky movies for Friday night?"
         }
       ]
     ],
@@ -2116,7 +2176,8 @@
           "content": "Calculate the fibonacci of number 20.",
           "transcript": "Hey, can you get the Fibonacci of twenty, please?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_51_openai.wav",
-          "asr_output_openai": "Hey, can you get the Fibonacci of 20, please?"
+          "asr_output_openai": "Hey, can you get the Fibonacci of 20, please?",
+          "asr_output_elevenlabs": "Hey, can you get the Fibonacci of 20 please?"
         }
       ]
     ],
@@ -2158,7 +2219,8 @@
           "content": "Convert the sentence 'Hello, how are you?' from English to French.",
           "transcript": "Uh, change Hello, how are you? into French, okay.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_52_openai.wav",
-          "asr_output_openai": "Change \"Hello, how are you?\" into French, OK?"
+          "asr_output_openai": "Change \"Hello, how are you?\" into French, OK?",
+          "asr_output_elevenlabs": "Uh, change \"Hello. How are you?\" into French, okay?"
         }
       ]
     ],
@@ -2199,7 +2261,8 @@
           "content": "Who won the world series in 2018?",
           "transcript": "Um, hey, who won the World Series in twenty-eighteen, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_53_openai.wav",
-          "asr_output_openai": "Um, hey, who won the World Series in 2018?"
+          "asr_output_openai": "Um, hey, who won the World Series in 2018?",
+          "asr_output_elevenlabs": "Um, hey. Who won the World Series in 2018? Yeah?"
         }
       ]
     ],
@@ -2251,7 +2314,8 @@
           "content": "What is the highest grossing movie of all time?",
           "transcript": "Hey, uh, whats the top-earning movie ever?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_54_openai.wav",
-          "asr_output_openai": "Hey, uh, what's the top-earning movie ever?"
+          "asr_output_openai": "Hey, uh, what's the top-earning movie ever?",
+          "asr_output_elevenlabs": "Hey, uh, what's the top earning movie ever?"
         }
       ]
     ],
@@ -2292,7 +2356,8 @@
           "content": "Which online bookstore sells 'To Kill a Mockingbird'?",
           "transcript": "Hey, let me see... oh, can you check which online bookstore sells To Kill a Mockingbird?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_55_openai.wav",
-          "asr_output_openai": "Hey, lemme see. Oh, can you check which online bookstore sells To Kill a Mockingbird?"
+          "asr_output_openai": "Hey, lemme see. Oh, can you check which online bookstore sells To Kill a Mockingbird?",
+          "asr_output_elevenlabs": "Hey, let me see. Oh, can you check which online bookstore sells To Kill a Mockingbird?"
         }
       ]
     ],
@@ -2334,7 +2399,8 @@
           "content": "What is the current bitcoin price?",
           "transcript": "Hey, uh, whats the current Bitcoin price?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_56_openai.wav",
-          "asr_output_openai": "Hey, what's the current Bitcoin price?"
+          "asr_output_openai": "Hey, what's the current Bitcoin price?",
+          "asr_output_elevenlabs": "Hey, uh, what's the current Bitcoin price?"
         }
       ]
     ],
@@ -2376,7 +2442,8 @@
           "content": "How to solve the quadratic equation with coefficients 2, 3 and 4?",
           "transcript": "Hey, um, how dyou work out a quadratic equation if the coefficients are two, three, and four, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_57_openai.wav",
-          "asr_output_openai": "Hey, um, how'd you work out a quadratic equation if the coefficients are two, three, and four, right?"
+          "asr_output_openai": "Hey, um, how'd you work out a quadratic equation if the coefficients are two, three, and four, right?",
+          "asr_output_elevenlabs": "Hey, um, how would you work out a quadratic equation if the coefficients are 2, 3, and 4? Right?"
         }
       ]
     ],
@@ -2426,7 +2493,8 @@
           "content": "How much electricity will I need for my 2000 sq ft home?",
           "transcript": "So, uh, whats the electricity need for a two thousand square foot home?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_58_openai.wav",
-          "asr_output_openai": "So, what's the electricity need for a 2000 square foot home?"
+          "asr_output_openai": "So, what's the electricity need for a 2000 square foot home?",
+          "asr_output_elevenlabs": "So, uh, what's the electricity need for a 2,000 square foot home?"
         }
       ]
     ],
@@ -2468,7 +2536,8 @@
           "content": "Calculate the power of 2 raise to 5.",
           "transcript": "Um, whats two to power of five?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_59_openai.wav",
-          "asr_output_openai": "Um, what's two to power of five?"
+          "asr_output_openai": "Um, what's two to power of five?",
+          "asr_output_elevenlabs": "Um, what's two to power of five?"
         }
       ]
     ],
@@ -2505,7 +2574,8 @@
           "content": "What is the final price of a product after a 25% discount and 10% sales tax has been applied?",
           "transcript": "Uh, whats the final price of a product with, um, a twenty-five percent discount and after adding a ten percent sales tax, oh?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_60_openai.wav",
-          "asr_output_openai": "What's the final price of a product with a 25% discount and after adding a 10% sales tax?"
+          "asr_output_openai": "What's the final price of a product with a 25% discount and after adding a 10% sales tax?",
+          "asr_output_elevenlabs": "Uh, what's the final price of a product with, um, a 25% discount and after adding a 10% sales tax? Oh."
         }
       ]
     ],
@@ -2547,7 +2617,8 @@
           "content": "What is the meaning of 'Hello' in French?",
           "transcript": "Hey, um, how do you say Hello in French, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_61_openai.wav",
-          "asr_output_openai": "Hey, um, how do you say hello in French, right?"
+          "asr_output_openai": "Hey, um, how do you say hello in French, right?",
+          "asr_output_elevenlabs": "Hey, um, how do you say hello in French? Right?"
         }
       ]
     ],
@@ -2588,7 +2659,9 @@
           "content": "How to build a frontend interface for my e-commerce website?",
           "transcript": "Lemme see... can ya help me with building frontend for my e-commerce site, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_62_openai.wav",
-          "asr_output_openai": "Let me see; can you help me with building front-end for my e-commerce site, right?"
+          "asr_output_openai": "Let me see; can you help me with building front-end for my e-commerce site, right?",
+          "asr_output_elevenlabs": "Let me see. Can you help me with building front end for my e-commerce site? Right?",
+          "asr_output_deepgram": "Let me see. Can you help me with building front end for my ecommerce site? Right?"
         }
       ]
     ],
@@ -2634,7 +2707,8 @@
           "content": "How many heads can I get after tossing 3 coins?",
           "transcript": "Um, whatre the chances of getting heads when, uh, flip three coins, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_63_openai.wav",
-          "asr_output_openai": "Um, what were the chances of getting heads when, uh, flip three coins, right?"
+          "asr_output_openai": "Um, what were the chances of getting heads when, uh, flip three coins, right?",
+          "asr_output_elevenlabs": "Um... What were the chances of getting heads when... uh... flip three coins? Right?!"
         }
       ]
     ],
@@ -2675,7 +2749,8 @@
           "content": "What is the probability of getting a face card in a standard deck?",
           "transcript": "Hey, uh, whats the chance of snagging a face card from a standard deck of cards, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_64_openai.wav",
-          "asr_output_openai": "Hey, what's the chance of snagging a face card from a standard deck of cards, right?"
+          "asr_output_openai": "Hey, what's the chance of snagging a face card from a standard deck of cards, right?",
+          "asr_output_elevenlabs": "Hey, uh, what's the chance of snagging a face card from a standard deck of cards, right?"
         }
       ]
     ],
@@ -2722,7 +2797,8 @@
           "content": "How many red marbles are there in a bag of 20, given the probability of drawing a red marble is 0.3?",
           "transcript": "Hey, um, can you help me find out how many red marblesre in a bag of twenty if the chance of picking a red one is zero point three?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_65_openai.wav",
-          "asr_output_openai": "Hey, um, can you help me find out how many red marbles are in a bag of 20 if the chance of picking a red one is 0.3?"
+          "asr_output_openai": "Hey, um, can you help me find out how many red marbles are in a bag of 20 if the chance of picking a red one is 0.3?",
+          "asr_output_elevenlabs": "Hey, um, can you help me find out how many red marbles are in a bag of 20 if the chance of picking a red one is 0.3?"
         }
       ]
     ],
@@ -2763,7 +2839,8 @@
           "content": "Calculate the probability of getting a head when flipping a coin.",
           "transcript": "Hey, uh, whats chance of flipping a coin and it, uh, landing on heads?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_66_openai.wav",
-          "asr_output_openai": "Hey, what's the chance of flipping a coin and it landing on heads?"
+          "asr_output_openai": "Hey, what's the chance of flipping a coin and it landing on heads?",
+          "asr_output_elevenlabs": "Hey, uh, what's the chance of flipping a coin and it, uh, landing on heads?"
         }
       ]
     ],
@@ -2803,7 +2880,8 @@
           "content": "What is the mean of an experiment with 50 successful outcomes out of 500 trials, under the null hypothesis that the probability of success is 0.1?",
           "transcript": "Can you, uh, tell me the average of an experiment with fifty successes outta five hundred trials, assuming the probability of success is zero point one?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_67_openai.wav",
-          "asr_output_openai": "Can you tell me the average of an experiment with 50 successes out of 500 trials, assuming the probability of success is 0.1?"
+          "asr_output_openai": "Can you tell me the average of an experiment with 50 successes out of 500 trials, assuming the probability of success is 0.1?",
+          "asr_output_elevenlabs": "Can you, uh, tell me the average of an experiment with 50 successes out of 500 trials, assuming the probability of success is 0.1?"
         }
       ]
     ],
@@ -2855,7 +2933,8 @@
           "content": "Calculate the standard deviation of the null hypothesis test with a sample mean of 98.2, standard deviation of 1.4, and sample size of 40 for a population mean of 98.6.",
           "transcript": "Um, can you get the standard deviation for a null hypothesis test? Right, the sample means ninety-eight point two, with a, uh, standard deviation of one point four, a sample size of forty, and the population means ninety-eight point six.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_68_openai.wav",
-          "asr_output_openai": "Um, can you get the standard deviation for a null hypothesis test? Right, the sample means 98.2 with a, uh, standard deviation of 1.4, a sample size of 40, and the population means 98.6."
+          "asr_output_openai": "Um, can you get the standard deviation for a null hypothesis test? Right, the sample means 98.2 with a, uh, standard deviation of 1.4, a sample size of 40, and the population means 98.6.",
+          "asr_output_elevenlabs": "Um, can you get the standard deviation for a null hypothesis test? Right. The sample means ninety-eight point two with a, uh, standard deviation of one point four, a sample size of forty, and the population means ninety-eight point six."
         }
       ]
     ],
@@ -2906,7 +2985,8 @@
           "content": "Retrieve the average house price in california",
           "transcript": "Hey, um, whats the average house price in California, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_69_openai.wav",
-          "asr_output_openai": "Hey, um, what's the average house price in California, right?"
+          "asr_output_openai": "Hey, um, what's the average house price in California, right?",
+          "asr_output_elevenlabs": "Hey, um, what's the average house price in California, right?"
         }
       ]
     ],
@@ -2951,7 +3031,8 @@
           "content": "Calculate the compounded interest for a principal amount of $10000, with a annual interest rate of 5% for a period of 3 years.",
           "transcript": "Hey, uh, could you figure out the compounded interest on ten thousand dollars at five percent annually for, um, three years? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_70_openai.wav",
-          "asr_output_openai": "Hey, could you figure out the compounded interest on ten thousand dollars at five percent annually for three years? Thanks."
+          "asr_output_openai": "Hey, could you figure out the compounded interest on ten thousand dollars at five percent annually for three years? Thanks.",
+          "asr_output_elevenlabs": "Hey, uh, could you figure out the compounded interest on $10,000 at 5% annually for, um, three years? Thanks."
         }
       ]
     ],
@@ -2993,7 +3074,8 @@
           "content": "Calculate the profit margin of a company with revenue of $200,000 and expenses of $150,000.",
           "transcript": "Hey, can you, um, figure out the profit margin for a company thats got two hundred thousand dollars in revenue and one hundred fifty thousand dollars in expenses?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_71_openai.wav",
-          "asr_output_openai": "Hey, can you, um, figure out the profit margin for a company that's got $200,000 in revenue and $150,000 in expenses?"
+          "asr_output_openai": "Hey, can you, um, figure out the profit margin for a company that's got $200,000 in revenue and $150,000 in expenses?",
+          "asr_output_elevenlabs": "Hey, can you figure out the profit margin for a company that's got $200,000 in revenue and $150,000 in expenses?"
         }
       ]
     ],
@@ -3035,7 +3117,8 @@
           "content": "What is the external rate of return for a project with cash flows of -$100, $40, $60, $80, $120?",
           "transcript": "Hey, lemme see... can you, uh, tell me the external rate of return for this project? Oh, the cash flows are: negative one hundred dollars, forty dollars, sixty bucks, eighty dollars, and one twenty dollars.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_72_openai.wav",
-          "asr_output_openai": "Hey, lemme see. Can you, uh, tell me the external rate of return for this project? Oh, the cash flows are negative $100, $40, $60, $80, and $120."
+          "asr_output_openai": "Hey, lemme see. Can you, uh, tell me the external rate of return for this project? Oh, the cash flows are negative $100, $40, $60, $80, and $120.",
+          "asr_output_elevenlabs": "Hey, let me see. Can you, uh, tell me the external rate of return for this project? Oh, the cash flows are negative $100, $40, 60 bucks, $80, and $120."
         }
       ]
     ],
@@ -3074,7 +3157,8 @@
           "content": "What is the loss projection for company XYZ for next year?",
           "transcript": "Um, can you say the projected losses for company XYZ for next year, please?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_73_openai.wav",
-          "asr_output_openai": "Can you say the projected losses for company XYZ for next year, please?"
+          "asr_output_openai": "Can you say the projected losses for company XYZ for next year, please?",
+          "asr_output_elevenlabs": "Um, can you say the projected losses for company XYZ for next year, please?"
         }
       ]
     ],
@@ -3115,7 +3199,8 @@
           "content": "What is the rate of return for a business with $15000 total revenue and $22000 total cost.",
           "transcript": "Um, whats the return rate for a business when the income is, uh, fifteen thousand dollars and the cost is twenty-two thousand dollars, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_74_openai.wav",
-          "asr_output_openai": "Um, what's the return rate for a business when the income is $15,000 and the cost is $22,000, okay?"
+          "asr_output_openai": "Um, what's the return rate for a business when the income is $15,000 and the cost is $22,000, okay?",
+          "asr_output_elevenlabs": "Um, what's the return rate for a business when the income is, uh, $15,000 and the cost is $22,000? Okay?"
         }
       ]
     ],
@@ -3156,7 +3241,8 @@
           "content": "How many kilograms are in a pound?",
           "transcript": "Hey, um, how many kilograms is, uh, one pound?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_75_openai.wav",
-          "asr_output_openai": "Hey, um, how many kilograms is a one pound?"
+          "asr_output_openai": "Hey, um, how many kilograms is a one pound?",
+          "asr_output_elevenlabs": "Hey, um, how many kilograms is, uh, one pound?"
         }
       ]
     ],
@@ -3199,7 +3285,8 @@
           "content": "How do I get the latests news in sports.",
           "transcript": "Um, what\u2019s the best way to get the latest sports news, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_76_openai.wav",
-          "asr_output_openai": "Um, what's the best way to get the latest sports news?"
+          "asr_output_openai": "Um, what's the best way to get the latest sports news?",
+          "asr_output_elevenlabs": "Um, what's the best way to get the latest sports news? Okay?"
         }
       ]
     ],
@@ -3240,7 +3327,8 @@
           "content": "Can you list some horror movies I can watch?",
           "transcript": "Hey, could you, uh, hook me up with a list of horror movies to watch?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_77_openai.wav",
-          "asr_output_openai": "Hey, could you, uh, hook me up with a list of horror movies to watch?"
+          "asr_output_openai": "Hey, could you, uh, hook me up with a list of horror movies to watch?",
+          "asr_output_elevenlabs": "Hey, could you, uh, cook me up with a list of horror movies to watch?"
         }
       ]
     ],
@@ -3286,7 +3374,8 @@
           "content": "What is the gold price today in USA?",
           "transcript": "Uh, in the USA, can you tell me todays gold price, hmm?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_78_openai.wav",
-          "asr_output_openai": "\u3042\u3089\u3001in the USA?  Can you tell me today's gold price?"
+          "asr_output_openai": "\u3042\u3089\u3001in the USA?  Can you tell me today's gold price?",
+          "asr_output_elevenlabs": "Uh, in the USA, can you tell me today's gold price? Hmm?"
         }
       ]
     ],
@@ -3333,7 +3422,8 @@
           "content": "What is the best player in soccer today?",
           "transcript": "Um, whos the top soccer player right now, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_79_openai.wav",
-          "asr_output_openai": "Um, who's the top soccer player right now, right?"
+          "asr_output_openai": "Um, who's the top soccer player right now, right?",
+          "asr_output_elevenlabs": "Um, who's the top soccer player right now, right?"
         }
       ]
     ],
@@ -3373,8 +3463,9 @@
           "role": "user",
           "content": "Who won the FIFA World Cup 2010?",
           "transcript": "Hey, whos the winner of the FIFA World Cup in twenty ten, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_80_cartesia.mp3",
-          "asr_output_openai": "Hey, who's the winner of the FIFA World Cup in 2010, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_80_cartesia.wav",
+          "asr_output_openai": "Hey, who's the winner of the FIFA World Cup in 2010, right?",
+          "asr_output_elevenlabs": "Hey, who's the winner of the FIFA World Cup in 2010, right?"
         }
       ]
     ],
@@ -3414,8 +3505,9 @@
           "role": "user",
           "content": "Can you list some horror movies I can watch?",
           "transcript": "Hey, um, right, can you gimme list of spooky flicks to watch?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_81_cartesia.mp3",
-          "asr_output_openai": "Hey, um, right, can you give me a list of spooky flicks to watch?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_81_cartesia.wav",
+          "asr_output_openai": "Hey, um, right, can you give me a list of spooky flicks to watch?",
+          "asr_output_elevenlabs": "Hey, um, right. Can you give a list of spooky flicks to watch?"
         }
       ]
     ],
@@ -3456,8 +3548,9 @@
           "role": "user",
           "content": "Retrieve me some stock news",
           "transcript": "Um, hey, can you fetch me latest stock news?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_82_cartesia.mp3",
-          "asr_output_openai": "Hey, can you fetch me latest stock news?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_82_cartesia.wav",
+          "asr_output_openai": "Hey, can you fetch me latest stock news?",
+          "asr_output_elevenlabs": "Um, hey can you fetch me latest stock news?"
         }
       ]
     ],
@@ -3502,8 +3595,9 @@
           "role": "user",
           "content": "What's the current interest rate",
           "transcript": "Um, hey, can you let me know what the current interest rate is? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_83_cartesia.mp3",
-          "asr_output_openai": "Um, hey, can you let me know what the current interest rate is? Thanks."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_83_cartesia.wav",
+          "asr_output_openai": "Um, hey, can you let me know what the current interest rate is? Thanks.",
+          "asr_output_elevenlabs": "Um, hey, can you let me know what the current interest rate is? Thanks."
         }
       ]
     ],
@@ -3544,8 +3638,9 @@
           "role": "user",
           "content": "Who won the basketball game between Lakers and Celtics yesterday?",
           "transcript": "Um, hey, right, who won the Lakers-Celtics game yesterday?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_84_cartesia.mp3",
-          "asr_output_openai": "Hey Rai, who won the Lakers-Celtics game yesterday?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_84_cartesia.wav",
+          "asr_output_openai": "Hey Rai, who won the Lakers-Celtics game yesterday?",
+          "asr_output_elevenlabs": "Hey, Wright, who won the Lakers-Celtics game yesterday?"
         }
       ]
     ],
@@ -3581,8 +3676,9 @@
           "role": "user",
           "content": "Who won the presidential election in 2020?",
           "transcript": "Um, who won the twenty-twenty presidential election?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_85_cartesia.mp3",
-          "asr_output_openai": "Um, who won the 2020 presidential election?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_85_cartesia.wav",
+          "asr_output_openai": "Um, who won the 2020 presidential election?",
+          "asr_output_elevenlabs": "Um, who won the 2020 presidential election?"
         }
       ]
     ],
@@ -3622,8 +3718,9 @@
           "role": "user",
           "content": "What's the penalty for burglary in California?",
           "transcript": "Hey, uh, right, whats the penalty for burglary in California?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_86_cartesia.mp3",
-          "asr_output_openai": "Hey, Wright? What's the penalty for burglary in California?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_86_cartesia.wav",
+          "asr_output_openai": "Hey, Wright? What's the penalty for burglary in California?",
+          "asr_output_elevenlabs": "Hey, uh, Wright? What\u2019s the penalty for burglary in California?"
         }
       ]
     ],
@@ -3659,8 +3756,9 @@
           "role": "user",
           "content": "Who is the Governor of California?",
           "transcript": "Hey, uh, whos Governor of California, oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_87_cartesia.mp3",
-          "asr_output_openai": "Hey, uh, who's governor of California?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_87_cartesia.wav",
+          "asr_output_openai": "Hey, uh, who's governor of California?",
+          "asr_output_elevenlabs": "Hey, uh, who's governor of California? Oh."
         }
       ]
     ],
@@ -3706,8 +3804,9 @@
           "role": "user",
           "content": "What are the best Crime-Thriller movies of 2020?",
           "transcript": "Hey, um, whatre some of top Crime-Thriller movies from twenty-twenty?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_88_cartesia.mp3",
-          "asr_output_openai": "Hey Ann, what are some of top crime thriller movies from 2020?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_88_cartesia.wav",
+          "asr_output_openai": "Hey Ann, what are some of top crime thriller movies from 2020?",
+          "asr_output_elevenlabs": "Hey, um, what are some of top crime thriller movies from 2020?"
         }
       ]
     ],
@@ -3751,8 +3850,9 @@
           "role": "user",
           "content": "What are my rights as a tenant in the state of Texas?",
           "transcript": "Um, hey, could you let me know what, uh, tenant rights Ive got in Texas, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_89_cartesia.mp3",
-          "asr_output_openai": "Um, hey, could you let me know what tenant rights I've got in Texas, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_89_cartesia.wav",
+          "asr_output_openai": "Um, hey, could you let me know what tenant rights I've got in Texas, right?",
+          "asr_output_elevenlabs": "Um, hey, could you let me know what, uh, tenant rights I've got in Texas, right?"
         }
       ]
     ],
@@ -3796,8 +3896,9 @@
           "role": "user",
           "content": "What are the components of Civil Law?",
           "transcript": "Um, can you tell me what, uh, Civil Law includes?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_90_cartesia.mp3",
-          "asr_output_openai": "Um, can you tell me what civil law includes?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_90_cartesia.wav",
+          "asr_output_openai": "Um, can you tell me what civil law includes?",
+          "asr_output_elevenlabs": "Umm, can you tell me what, uh, civil law includes?"
         }
       ]
     ],
@@ -3839,8 +3940,9 @@
           "role": "user",
           "content": "Can I report noise complaint to my local council in city of Atlanta?",
           "transcript": "Hey, um, can I send a noise complaint to the local council in Atlanta?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_91_cartesia.mp3",
-          "asr_output_openai": "Hey, um, can I send a noise complaint to the local council in Atlanta?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_91_cartesia.wav",
+          "asr_output_openai": "Hey, um, can I send a noise complaint to the local council in Atlanta?",
+          "asr_output_elevenlabs": "Hey, um, can I send a noise complaint to the local council in Atlanta?"
         }
       ]
     ],
@@ -3880,8 +3982,9 @@
           "role": "user",
           "content": "I need a security guard, where can I find the most popular one in New York?",
           "transcript": "Uh, right, where can I find a top security guard in New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_92_cartesia.mp3",
-          "asr_output_openai": "Alright, where can I find a top security guard in New York?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_92_cartesia.wav",
+          "asr_output_openai": "Alright, where can I find a top security guard in New York?",
+          "asr_output_elevenlabs": "Huh, right. Where can I find the top security guard in New York?"
         }
       ]
     ],
@@ -3922,8 +4025,9 @@
           "role": "user",
           "content": "What's the judgement in case XYZ?",
           "transcript": "Um, hey, okay, whats the judgement for case XYZ?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_93_cartesia.mp3",
-          "asr_output_openai": "Hey, OK, what's the judgment for case XYZ?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_93_cartesia.wav",
+          "asr_output_openai": "Hey, OK, what's the judgment for case XYZ?",
+          "asr_output_elevenlabs": "Um, hey, OK, what's the judgment for case XYZ?"
         }
       ]
     ],
@@ -3963,8 +4067,9 @@
           "role": "user",
           "content": "What were the most impactful cases handled by law firm ABC in the year 2020?",
           "transcript": "Um, what were the biggest cases that law firm A B C worked on in twenty-twenty, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_94_cartesia.mp3",
-          "asr_output_openai": "What were the biggest cases that law firm ABC worked on in 2020, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_94_cartesia.wav",
+          "asr_output_openai": "What were the biggest cases that law firm ABC worked on in 2020, right?",
+          "asr_output_elevenlabs": "Um, what were the biggest cases that law firm ABC worked on in 2020, right?"
         }
       ]
     ],
@@ -4005,8 +4110,9 @@
           "role": "user",
           "content": "Who is the laywer for the Doe vs. Smith law case?",
           "transcript": "Whos the lawyer dealing with the Doe versus Smith case, yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_95_cartesia.mp3",
-          "asr_output_openai": "Who's the lawyer dealing with the Doe versus Smith case, yeah?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_95_cartesia.wav",
+          "asr_output_openai": "Who's the lawyer dealing with the Doe versus Smith case, yeah?",
+          "asr_output_elevenlabs": "Who's the lawyer dealing with the Doe v. Smith case, yeah?"
         }
       ]
     ],
@@ -4048,8 +4154,9 @@
           "role": "user",
           "content": "how long will it take to paint the Eiffel Tower?",
           "transcript": "Hey, um, dyou know how long it takes to paint Eiffel Tower, oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_96_cartesia.mp3",
-          "asr_output_openai": "Hey, um, do you know how long it takes to paint Eiffel Tower?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_96_cartesia.wav",
+          "asr_output_openai": "Hey, um, do you know how long it takes to paint Eiffel Tower?",
+          "asr_output_elevenlabs": "Hey, um, do you know how long it takes to paint Eiffel Tower? Oh?"
         }
       ]
     ],
@@ -4089,8 +4196,9 @@
           "role": "user",
           "content": "Can you recommend a good Chinese restaurant in New York?",
           "transcript": "Hey, uh, can ya, like, recommend a nice Chinese restaurant in New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_97_cartesia.mp3",
-          "asr_output_openai": "Hey, can y'all like recommend a nice Chinese restaurant in New York?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_97_cartesia.wav",
+          "asr_output_openai": "Hey, can y'all like recommend a nice Chinese restaurant in New York?",
+          "asr_output_elevenlabs": "Hey, uh, can y'all like recommend a nice Chinese restaurant in New York?"
         }
       ]
     ],
@@ -4131,8 +4239,9 @@
           "role": "user",
           "content": "How long will it take to paint the Eiffel Tower?",
           "transcript": "Let me see... right, how long does painting the Eiffel Tower take?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_98_cartesia.mp3",
-          "asr_output_openai": "Let me see. Right? How long does painting the Eiffel Tower take?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_98_cartesia.wav",
+          "asr_output_openai": "Let me see. Right? How long does painting the Eiffel Tower take?",
+          "asr_output_elevenlabs": "Let me see. Right, how long does painting the Eiffel Tower take?"
         }
       ]
     ],
@@ -4172,8 +4281,9 @@
           "role": "user",
           "content": "Find out about traffic laws in Texas.",
           "transcript": "Hey, um, can you check traffic laws for me?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_99_cartesia.mp3",
-          "asr_output_openai": "Hey, can you check traffic laws for me?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_99_cartesia.wav",
+          "asr_output_openai": "Hey, can you check traffic laws for me?",
+          "asr_output_elevenlabs": "Hey, um, can you check traffic laws for me?"
         }
       ]
     ],
@@ -4213,8 +4323,9 @@
           "role": "user",
           "content": "How many calories does an apple have?",
           "transcript": "Hey, um, how many caloriesre in an apple, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_100_cartesia.mp3",
-          "asr_output_openai": "Hey, um, how many calories are in an apple, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_100_cartesia.wav",
+          "asr_output_openai": "Hey, um, how many calories are in an apple, right?",
+          "asr_output_elevenlabs": "Hey, um, how many calories are in an apple right?"
         }
       ]
     ],
@@ -4260,8 +4371,9 @@
           "role": "user",
           "content": "What is the best month to visit Hawaii?",
           "transcript": "Um, whens the best time to, uh, visit Hawaii?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_101_cartesia.mp3",
-          "asr_output_openai": "Um, when's the best time to visit Hawaii?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_101_cartesia.wav",
+          "asr_output_openai": "Um, when's the best time to visit Hawaii?",
+          "asr_output_elevenlabs": "Um, when's the best time to, uh, visit Hawaii?"
         }
       ]
     ],
@@ -4297,8 +4409,9 @@
           "role": "user",
           "content": "What is the time now in New York City?",
           "transcript": "Hey, uh, right, what time is it now in New York City?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_102_cartesia.mp3",
-          "asr_output_openai": "Heya, right, what time is it now in New York City?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_102_cartesia.wav",
+          "asr_output_openai": "Heya, right, what time is it now in New York City?",
+          "asr_output_elevenlabs": "Hey, uh, Wright? What time is it now in New York City?"
         }
       ]
     ],
@@ -4343,8 +4456,9 @@
           "role": "user",
           "content": "What is the current time in New York City?",
           "transcript": "Hey, whats the time in New York right now? Oh, lemme see...",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_103_cartesia.mp3",
-          "asr_output_openai": "Hey, what's the time in New York right now?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_103_cartesia.wav",
+          "asr_output_openai": "Hey, what's the time in New York right now?",
+          "asr_output_elevenlabs": "Hey, what's the time in New York right now? Oh, lemme see."
         }
       ]
     ],
@@ -4379,8 +4493,9 @@
           "role": "user",
           "content": "Calculate the volume of the sphere with radius 3 units.",
           "transcript": "Let me see... could you find out the volume of a sphere with a radius of three units?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_104_cartesia.mp3",
-          "asr_output_openai": "Let me see. Could you find out the volume of a sphere with a radius of three units?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_104_cartesia.wav",
+          "asr_output_openai": "Let me see. Could you find out the volume of a sphere with a radius of three units?",
+          "asr_output_elevenlabs": "Let me see. Could you find out the volume of a sphere with a radius of 3 units?"
         }
       ]
     ],
@@ -4420,8 +4535,9 @@
           "role": "user",
           "content": "What are the top five flower species for pollination in South America?",
           "transcript": "Uh, hey, can you let me know the top five flower species for pollination in South America, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_105_cartesia.mp3",
-          "asr_output_openai": "Uh, hey, can you let me know the top five flower species for pollination in South America, please?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_105_cartesia.wav",
+          "asr_output_openai": "Uh, hey, can you let me know the top five flower species for pollination in South America, please?",
+          "asr_output_elevenlabs": "Uh, hey. Can you let me know the top five flower species for pollination in South America please?"
         }
       ]
     ],
@@ -4461,8 +4577,9 @@
           "role": "user",
           "content": "What kind of fertilizer is best for growing tomatoes?",
           "transcript": "Right, um, whats best fertilizer for, uh, growing tomatoes?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_106_cartesia.mp3",
-          "asr_output_openai": "Right, what's the best fertilizer for growing tomatoes?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_106_cartesia.wav",
+          "asr_output_openai": "Right, what's the best fertilizer for growing tomatoes?",
+          "asr_output_elevenlabs": "Right. Um, what's best fertilizer for, uh, growing tomatoes?"
         }
       ]
     ],
@@ -4508,8 +4625,9 @@
           "role": "user",
           "content": "What's the composition of species in my backyard garden in Boston?",
           "transcript": "Uh, can you say what speciesre in my backyard garden in Boston, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_107_cartesia.mp3",
-          "asr_output_openai": "Can you say what species are in my backyard garden in Boston, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_107_cartesia.wav",
+          "asr_output_openai": "Can you say what species are in my backyard garden in Boston, right?",
+          "asr_output_elevenlabs": "Uh, can you say what species are in my backyard garden in Boston right?"
         }
       ]
     ],
@@ -4550,8 +4668,9 @@
           "role": "user",
           "content": "What is the best way to reduce CO2 emissions?",
           "transcript": "Um, how can I best reduce CO2 emissions, oh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_108_cartesia.mp3",
-          "asr_output_openai": "\u00c4hm, how can I best reduce CO2 emissions though?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_108_cartesia.wav",
+          "asr_output_openai": "\u00c4hm, how can I best reduce CO2 emissions though?",
+          "asr_output_elevenlabs": "Um, how can I best reduce CO2 emissions though?"
         }
       ]
     ],
@@ -4597,8 +4716,9 @@
           "role": "user",
           "content": "Calculate how much nurtient a cactus in Arizona needs weekly in the summer.",
           "transcript": "Hey, uh, okay, gotta find out the weekly nutrients a cactus in Arizona needs during summer.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_109_cartesia.mp3",
-          "asr_output_openai": "Hey, uh, ok, gotta find out the weekly nutrients a cactus in Arizona needs during summer."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_109_cartesia.wav",
+          "asr_output_openai": "Hey, uh, ok, gotta find out the weekly nutrients a cactus in Arizona needs during summer.",
+          "asr_output_elevenlabs": "Hey. Uh, okay. Gotta find out the weekly nutrients a cactus in Arizona needs during summer."
         }
       ]
     ],
@@ -4644,8 +4764,9 @@
           "role": "user",
           "content": "What's the average temperature for Los Angeles in December?",
           "transcript": "Hey, whats the average temperature in Los Angeles during December, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_110_cartesia.mp3",
-          "asr_output_openai": "Hey, what's the average temperature in Los Angeles during December, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_110_cartesia.wav",
+          "asr_output_openai": "Hey, what's the average temperature in Los Angeles during December, right?",
+          "asr_output_elevenlabs": "Hey, what's the average temperature in Los Angeles during December, right?"
         }
       ]
     ],
@@ -4685,8 +4806,9 @@
           "role": "user",
           "content": "Find a GMO yoga mat that I can buy in-store.",
           "transcript": "Uh, can you help me locate, um, GMO yoga mat thats, uh, available for in-store pick-up... no, in-store purchase?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_111_cartesia.mp3",
-          "asr_output_openai": "Can you help me locate a Gamo yoga mat that's available for in-store pickup?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_111_cartesia.wav",
+          "asr_output_openai": "Can you help me locate a Gamo yoga mat that's available for in-store pickup?",
+          "asr_output_elevenlabs": "Uh, can you help me locate, um, GMO yoga mat that's, uh, available for in-store pickup? No? In-store purchase?"
         }
       ]
     ],
@@ -4727,8 +4849,9 @@
           "role": "user",
           "content": "What's the current traffic condition in New York?",
           "transcript": "Hey, could you tell me how the traffic is in New York right now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_112_cartesia.mp3",
-          "asr_output_openai": "Hey, could you tell me how the traffic is in New York right now?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_112_cartesia.wav",
+          "asr_output_openai": "Hey, could you tell me how the traffic is in New York right now?",
+          "asr_output_elevenlabs": "Hey, could you tell me how the traffic is in New York right now?"
         }
       ]
     ],
@@ -4763,8 +4886,9 @@
           "role": "user",
           "content": "Find me restaurants in London",
           "transcript": "Hey, can look up some restaurants in London for me, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_113_cartesia.mp3",
-          "asr_output_openai": "Hey, can look up some restaurants in London for me, thanks?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_113_cartesia.wav",
+          "asr_output_openai": "Hey, can look up some restaurants in London for me, thanks?",
+          "asr_output_elevenlabs": "Hey, you can look up some restaurants in London for me. Thanks."
         }
       ]
     ],
@@ -4813,8 +4937,9 @@
           "role": "user",
           "content": "What is the fastest route from Los Angeles to New York?",
           "transcript": "Hey, um, could you find quickest route from Los Angeles to New York, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_114_cartesia.mp3",
-          "asr_output_openai": "Hey, um, could you find quickest route from Los Angeles to New York, thanks?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_114_cartesia.wav",
+          "asr_output_openai": "Hey, um, could you find quickest route from Los Angeles to New York, thanks?",
+          "asr_output_elevenlabs": "Hey, um, could you find quickest route from Los Angeles to New York? Thanks."
         }
       ]
     ],
@@ -4856,8 +4981,9 @@
           "role": "user",
           "content": "How long would it take to travel from Boston to New York by car?",
           "transcript": "Um, hey, right, how longs it usually take to cruise from, uh, Boston to New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_115_cartesia.mp3",
-          "asr_output_openai": "Um hey, right, how long's it usually take to cruise from, uh, Boston to New York?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_115_cartesia.wav",
+          "asr_output_openai": "Um hey, right, how long's it usually take to cruise from, uh, Boston to New York?",
+          "asr_output_elevenlabs": "Um, hey, right! How long does it usually take to cruise from, uh, Boston to New York?"
         }
       ]
     ],
@@ -4898,8 +5024,9 @@
           "role": "user",
           "content": "Can you recommend a good movie to watch?",
           "transcript": "Um, any good movie suggestions, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_116_cartesia.mp3",
-          "asr_output_openai": "Um, any good movie suggestions right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_116_cartesia.wav",
+          "asr_output_openai": "Um, any good movie suggestions right?",
+          "asr_output_elevenlabs": "Um, any good movie suggestions, right?"
         }
       ]
     ],
@@ -4935,8 +5062,9 @@
           "role": "user",
           "content": "Tell me some of the major airports in the United States.",
           "transcript": "Hey, uh, could you list some major airports in U.S., yeah?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_117_cartesia.mp3",
-          "asr_output_openai": "Hey, could you list some major airports in the US, yeah?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_117_cartesia.wav",
+          "asr_output_openai": "Hey, could you list some major airports in the US, yeah?",
+          "asr_output_elevenlabs": "Hey, uh, could you list some major airports in US, yeah?"
         }
       ]
     ],
@@ -4986,8 +5114,9 @@
           "role": "user",
           "content": "Who won the 1996 NBA championships?",
           "transcript": "Hey, okay, who took home NBA championship in nineteen ninety-six?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_118_cartesia.mp3",
-          "asr_output_openai": "Hey okay, who took home NBA championship in 1996?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_118_cartesia.wav",
+          "asr_output_openai": "Hey okay, who took home NBA championship in 1996?",
+          "asr_output_elevenlabs": "Hey, okay. Who took home NBA championship in 1996?"
         }
       ]
     ],
@@ -5029,8 +5158,9 @@
           "role": "user",
           "content": "Tell me a famous quote about life.",
           "transcript": "Uh, hey, can you give me a well-known quote about life?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_119_cartesia.mp3",
-          "asr_output_openai": "Hey, can you give me a well-known quote about life?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_119_cartesia.wav",
+          "asr_output_openai": "Hey, can you give me a well-known quote about life?",
+          "asr_output_elevenlabs": "Uh, hey. Can you give me a well-known quote about life?"
         }
       ]
     ],
@@ -5070,8 +5200,9 @@
           "role": "user",
           "content": "What's the neurological impact of sports on human brain?",
           "transcript": "Um, can you explain how, uh, playing sports, like, affects human brain neurologically, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_120_cartesia.mp3",
-          "asr_output_openai": "Can you explain how playing sports affects the human brain neurologically?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_120_cartesia.wav",
+          "asr_output_openai": "Can you explain how playing sports affects the human brain neurologically?",
+          "asr_output_elevenlabs": "Um, can you explain how, uh, playing sports, like, affects human brain neurologically, right?"
         }
       ]
     ],
@@ -5111,8 +5242,9 @@
           "role": "user",
           "content": "Find the information on motor neuron diseases",
           "transcript": "Um, can you get info on, uh, motor neuron diseases?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_121_cartesia.mp3",
-          "asr_output_openai": "Um, can you get info on motor neuron diseases?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_121_cartesia.wav",
+          "asr_output_openai": "Um, can you get info on motor neuron diseases?",
+          "asr_output_elevenlabs": "Um, can you get info on, uh, motor neuron diseases?"
         }
       ]
     ],
@@ -5147,8 +5279,9 @@
           "role": "user",
           "content": "What is the average weight of a human brain?",
           "transcript": "Hey, um, how much does a human brain usually weigh?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_122_cartesia.mp3",
-          "asr_output_openai": "Hey, um, how much does a human brain usually weigh?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_122_cartesia.wav",
+          "asr_output_openai": "Hey, um, how much does a human brain usually weigh?",
+          "asr_output_elevenlabs": "Hey, um, how much does a human brain usually weigh?"
         }
       ]
     ],
@@ -5194,8 +5327,9 @@
           "role": "user",
           "content": "What are the calories of a Big Mac?",
           "transcript": "Hey, uh, how many calories are in a Big Mac?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_123_cartesia.mp3",
-          "asr_output_openai": "Hey uh, how many calories are in a Big Mac?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_123_cartesia.wav",
+          "asr_output_openai": "Hey uh, how many calories are in a Big Mac?",
+          "asr_output_elevenlabs": "Hey, uh, how many calories are in a Big Mac?"
         }
       ]
     ],
@@ -5235,8 +5369,9 @@
           "role": "user",
           "content": "What's the latest trend in technology?",
           "transcript": "Hey, you know, whats newest trend in tech right now?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_124_cartesia.mp3",
-          "asr_output_openai": "Hey you know, what's newest trend in tech right now?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_124_cartesia.wav",
+          "asr_output_openai": "Hey you know, what's newest trend in tech right now?",
+          "asr_output_elevenlabs": "Hey, you know what's newest trend in tech right now?"
         }
       ]
     ],
@@ -5272,8 +5407,9 @@
           "role": "user",
           "content": "What are some popular books by J.K. Rowling?",
           "transcript": "Um, hey, can you tell me some of the popular books written by J.K. Rowling? Thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_125_cartesia.mp3",
-          "asr_output_openai": "Um, hey, can you tell me some of the popular books written by J.K. Rowling? Thanks."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_125_cartesia.wav",
+          "asr_output_openai": "Um, hey, can you tell me some of the popular books written by J.K. Rowling? Thanks.",
+          "asr_output_elevenlabs": "Um, hey, can you tell me some of the popular books written by J. K. Rowling? Thanks!"
         }
       ]
     ],
@@ -5313,8 +5449,9 @@
           "role": "user",
           "content": "What is the effect of economic status on happiness levels?",
           "transcript": "Uh, how does the economic status affect happiness?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_126_cartesia.mp3",
-          "asr_output_openai": "How does the economic status affect happiness?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_126_cartesia.wav",
+          "asr_output_openai": "How does the economic status affect happiness?",
+          "asr_output_elevenlabs": "Uh, how does the economic status affect happiness?"
         }
       ]
     ],
@@ -5361,8 +5498,9 @@
           "role": "user",
           "content": "What's the general mood of twitter regarding the new iPhone release?",
           "transcript": "Um, whatre folks on Twitter saying about the new iPhone release, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_127_cartesia.mp3",
-          "asr_output_openai": "What are folks on Twitter saying about the new iPhone release, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_127_cartesia.wav",
+          "asr_output_openai": "What are folks on Twitter saying about the new iPhone release, right?",
+          "asr_output_elevenlabs": "Um, what are folks on Twitter saying about the new iPhone release, right?"
         }
       ]
     ],
@@ -5402,8 +5540,9 @@
           "role": "user",
           "content": "How many servings of vegetables should I consume in a day?",
           "transcript": "Um, so, how many servings of veggies should have daily?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_128_cartesia.mp3",
-          "asr_output_openai": "Um, so, how many servings of veggies should have daily?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_128_cartesia.wav",
+          "asr_output_openai": "Um, so, how many servings of veggies should have daily?",
+          "asr_output_elevenlabs": "Um, so how many servings of veggies should have daily?"
         }
       ]
     ],
@@ -5443,8 +5582,9 @@
           "role": "user",
           "content": "Give me the MTBI of my friend.",
           "transcript": "Hey, can you tell me my friends M-B-T-I, thats M-B-T-I, MBTI, please?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_129_cartesia.mp3",
-          "asr_output_openai": "Hey, can you tell me my friend's MBTI please?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_129_cartesia.wav",
+          "asr_output_openai": "Hey, can you tell me my friend's MBTI please?",
+          "asr_output_elevenlabs": "Hey, can you tell me my friend's M B T I, that's M B T I, M B T I, please?"
         }
       ]
     ],
@@ -5496,8 +5636,9 @@
           "role": "user",
           "content": "What type of personality am I?",
           "transcript": "Um, lemme see... can you tell me what my personality type is?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_130_cartesia.mp3",
-          "asr_output_openai": "Um, let me see... Can you tell me what my personality type is?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_130_cartesia.wav",
+          "asr_output_openai": "Um, let me see... Can you tell me what my personality type is?",
+          "asr_output_elevenlabs": "Um, let me see. Can you tell me what my personality type is?"
         }
       ]
     ],
@@ -5541,8 +5682,9 @@
           "role": "user",
           "content": "What does the color purple represent in computer vision?",
           "transcript": "Hey, um, what does purple mean in computer vision?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_131_cartesia.mp3",
-          "asr_output_openai": "Hey, um, what does purple mean in computer vision?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_131_cartesia.wav",
+          "asr_output_openai": "Hey, um, what does purple mean in computer vision?",
+          "asr_output_elevenlabs": "Hey, um, what does purple mean in computer vision?"
         }
       ]
     ],
@@ -5583,8 +5725,9 @@
           "role": "user",
           "content": "What was the casualty number of the Battle of Waterloo?",
           "transcript": "Hey, uh, how many casualties were there at the Battle of Waterloo, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_132_cartesia.mp3",
-          "asr_output_openai": "Heya, how many casualties were there at the Battle of Waterloo, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_132_cartesia.wav",
+          "asr_output_openai": "Heya, how many casualties were there at the Battle of Waterloo, right?",
+          "asr_output_elevenlabs": "Hey, uh, how many casualties were there at the Battle of Waterloo, right?"
         }
       ]
     ],
@@ -5619,8 +5762,9 @@
           "role": "user",
           "content": "Who won the NBA final 2023?",
           "transcript": "Um, hey, could you tell me who won the twenty-twenty three NBA final?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_133_cartesia.mp3",
-          "asr_output_openai": "Hey, could you tell me who won the 2023 NBA final?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_133_cartesia.wav",
+          "asr_output_openai": "Hey, could you tell me who won the 2023 NBA final?",
+          "asr_output_elevenlabs": "Um, hey, could you tell me who won the 2023 NBA Final?"
         }
       ]
     ],
@@ -5661,8 +5805,9 @@
           "role": "user",
           "content": "Who won the World Cup 2022?",
           "transcript": "Hey, who won the twenty-twenty-two World Cup, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_134_cartesia.mp3",
-          "asr_output_openai": "Hey, who won the 2022 World Cup, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_134_cartesia.wav",
+          "asr_output_openai": "Hey, who won the 2022 World Cup, right?",
+          "asr_output_elevenlabs": "Hey, who won the 2022 World Cup, right?"
         }
       ]
     ],
@@ -5703,8 +5848,9 @@
           "role": "user",
           "content": "When was the declaration of independence signed?",
           "transcript": "Um, whend they sign Declaration of Independence?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_135_cartesia.mp3",
-          "asr_output_openai": "Um, when they signed Declaration of Independence?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_135_cartesia.wav",
+          "asr_output_openai": "Um, when they signed Declaration of Independence?",
+          "asr_output_elevenlabs": "Um, when they signed Declaration of Independence?"
         }
       ]
     ],
@@ -5745,8 +5891,9 @@
           "role": "user",
           "content": "Who is the Vice President of United States?",
           "transcript": "Um, can you tell me who Vice President of the United States is, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_136_cartesia.mp3",
-          "asr_output_openai": "Um, can you tell me who Vice President of the United States is, okay?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_136_cartesia.wav",
+          "asr_output_openai": "Um, can you tell me who Vice President of the United States is, okay?",
+          "asr_output_elevenlabs": "Um, can you tell me who Vice President of the United States is? Okay."
         }
       ]
     ],
@@ -5781,8 +5928,9 @@
           "role": "user",
           "content": "Who signed the declaration of independence?",
           "transcript": "Um, who signed Declaration of Independence, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_137_cartesia.mp3",
-          "asr_output_openai": "\ub204\uac00 \ub3c5\ub9bd \uc120\uc5b8\uc5d0 \uc11c\uba85\ud588\uc9c0?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_137_cartesia.wav",
+          "asr_output_openai": "\ub204\uac00 \ub3c5\ub9bd \uc120\uc5b8\uc5d0 \uc11c\uba85\ud588\uc9c0?",
+          "asr_output_elevenlabs": "Um, who signed Declaration of Independence, right?"
         }
       ]
     ],
@@ -5823,8 +5971,9 @@
           "role": "user",
           "content": "When was the Declaration of Independence signed?",
           "transcript": "Hey, um, when was the Declaration of Independence signed?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_138_cartesia.mp3",
-          "asr_output_openai": "Hey, um, when was the Declaration of Independence signed?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_138_cartesia.wav",
+          "asr_output_openai": "Hey, um, when was the Declaration of Independence signed?",
+          "asr_output_elevenlabs": "Hey, uhm, when was the Declaration of Independence signed?"
         }
       ]
     ],
@@ -5860,8 +6009,9 @@
           "role": "user",
           "content": "What is the largest planet in the universe?",
           "transcript": "Um, which planets the largest in the universe, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_139_cartesia.mp3",
-          "asr_output_openai": "Um, which planet's the largest in the universe, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_139_cartesia.wav",
+          "asr_output_openai": "Um, which planet's the largest in the universe, right?",
+          "asr_output_elevenlabs": "Umm, which planet\u2019s the largest in the universe, right?"
         }
       ]
     ],
@@ -5902,8 +6052,9 @@
           "role": "user",
           "content": "Who discovered electricity?",
           "transcript": "Um, who found electricity?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_140_cartesia.mp3",
-          "asr_output_openai": "Um, who found electricity?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_140_cartesia.wav",
+          "asr_output_openai": "Um, who found electricity?",
+          "asr_output_elevenlabs": "Umm, who found electricity?"
         }
       ]
     ],
@@ -5943,8 +6094,9 @@
           "role": "user",
           "content": "What are the different properties of Hydrogen?",
           "transcript": "Uh, could fill me in on the properties of Hydrogen?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_141_cartesia.mp3",
-          "asr_output_openai": "Could fill me in on the properties of hydrogen?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_141_cartesia.wav",
+          "asr_output_openai": "Could fill me in on the properties of hydrogen?",
+          "asr_output_elevenlabs": "Uh, could you fill me in on the properties of hydrogen?"
         }
       ]
     ],
@@ -5980,8 +6132,9 @@
           "role": "user",
           "content": "Who was the scientist that proposed the special theory of relativity?",
           "transcript": "Um, can you say who came up with special theory of relativity?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_142_cartesia.mp3",
-          "asr_output_openai": "Um, can you say who came up with special theory of relativity?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_142_cartesia.wav",
+          "asr_output_openai": "Um, can you say who came up with special theory of relativity?",
+          "asr_output_elevenlabs": "Um, can you say who came up with special theory of relativity?"
         }
       ]
     ],
@@ -6012,8 +6165,9 @@
           "role": "user",
           "content": "What defines scientist",
           "transcript": "So, what defines a scientist?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_143_cartesia.mp3",
-          "asr_output_openai": "So, what defines a scientist?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_143_cartesia.wav",
+          "asr_output_openai": "So, what defines a scientist?",
+          "asr_output_elevenlabs": "So what defines a scientist?"
         }
       ]
     ],
@@ -6059,8 +6213,9 @@
           "role": "user",
           "content": "What is a holy book?",
           "transcript": "Uh, can you say, like, whats a holy book?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_144_cartesia.mp3",
-          "asr_output_openai": "Can you say like, what's a holy book?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_144_cartesia.wav",
+          "asr_output_openai": "Can you say like, what's a holy book?",
+          "asr_output_elevenlabs": "Uh, can you say like what's a holy book?"
         }
       ]
     ],
@@ -6100,8 +6255,9 @@
           "role": "user",
           "content": "Who initiate Protestant Reformation?",
           "transcript": "Um, who began Protestant Reformation, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_145_cartesia.mp3",
-          "asr_output_openai": "Um, who began Protestant Reformation, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_145_cartesia.wav",
+          "asr_output_openai": "Um, who began Protestant Reformation, right?",
+          "asr_output_elevenlabs": "Um, who began Protestant Reformation, right?"
         }
       ]
     ],
@@ -6142,8 +6298,9 @@
           "role": "user",
           "content": "Mix the color #FAEBD7 with #00FFFF, what is the new color?",
           "transcript": "Hey, uh, mix the color F A E B D seven with zero zero F F F F and tell me what the new color is, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_146_cartesia.mp3",
-          "asr_output_openai": "Hey, mix the color #FAEBD7 with #00FFFF and tell me what the new color is, okay?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_146_cartesia.wav",
+          "asr_output_openai": "Hey, mix the color #FAEBD7 with #00FFFF and tell me what the new color is, okay?",
+          "asr_output_elevenlabs": "Hey, uh mix the color F-A-E-B-D-7 with 0-0-F-F-F-F and tell me what the new color is. Okay?"
         }
       ]
     ],
@@ -6183,8 +6340,9 @@
           "role": "user",
           "content": "Who is the most important prophet in Christianity?",
           "transcript": "Um, hey, right, whos, uh, considered the most important prophet in Christianity?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_147_cartesia.mp3",
-          "asr_output_openai": "Um, hey, right, who's considered the most important prophet in Christianity?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_147_cartesia.wav",
+          "asr_output_openai": "Um, hey, right, who's considered the most important prophet in Christianity?",
+          "asr_output_elevenlabs": "Um, hey, right. Who's considered the most important prophet in Christianity?"
         }
       ]
     ],
@@ -6227,8 +6385,9 @@
           "role": "user",
           "content": "What color should I use to get a similar color of blue in my painting?",
           "transcript": "Um, what shade of blue should I use to, uh, match my painting?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_148_cartesia.mp3",
-          "asr_output_openai": "What shade of blue should I use to match my painting?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_148_cartesia.wav",
+          "asr_output_openai": "What shade of blue should I use to match my painting?",
+          "asr_output_elevenlabs": "Um, what shade of blue should I use to, uh, match my painting?"
         }
       ]
     ],
@@ -6264,8 +6423,9 @@
           "role": "user",
           "content": "What is the Pantone color code for sky blue?",
           "transcript": "Hey, um, whats Pantone color code for sky blue, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_149_cartesia.mp3",
-          "asr_output_openai": "Hey um, what's Pantone color code for sky blue right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_149_cartesia.wav",
+          "asr_output_openai": "Hey um, what's Pantone color code for sky blue right?",
+          "asr_output_elevenlabs": "Hey, um, what's Pantone color code for sky blue, right?"
         }
       ]
     ],
@@ -6308,8 +6468,9 @@
           "role": "user",
           "content": "Which colors should I mix to get a specific color shade?",
           "transcript": "Um, right, what colors do I need to mix to, uh, create a specific shade?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_150_cartesia.mp3",
-          "asr_output_openai": "Um, right. What colors do I need to mix to, uh, create a specific shade?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_150_cartesia.wav",
+          "asr_output_openai": "Um, right. What colors do I need to mix to, uh, create a specific shade?",
+          "asr_output_elevenlabs": "Um, right. What colors do I need to mix to, uh, create a specific shade?"
         }
       ]
     ],
@@ -6350,8 +6511,9 @@
           "role": "user",
           "content": "Find the year of a Picasso's painting.",
           "transcript": "Uh, hey, what year was Picassos painting made, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_151_cartesia.mp3",
-          "asr_output_openai": "Hey, what year was Picasso's painting made, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_151_cartesia.wav",
+          "asr_output_openai": "Hey, what year was Picasso's painting made, right?",
+          "asr_output_elevenlabs": "Uh, hey, what year was Picasso's painting made, right?"
         }
       ]
     ],
@@ -6392,8 +6554,9 @@
           "role": "user",
           "content": "What type of rock is the most suitable for creating a garden sculpture?",
           "transcript": "Uh, right, what kind of rock, um, is best for making a garden sculpture?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_152_cartesia.mp3",
-          "asr_output_openai": "Right, what kind of rock is best for making a garden sculpture?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_152_cartesia.wav",
+          "asr_output_openai": "Right, what kind of rock is best for making a garden sculpture?",
+          "asr_output_elevenlabs": "Uh right? What kind of rock, um, is best for making a garden sculpture?"
         }
       ]
     ],
@@ -6433,8 +6596,9 @@
           "role": "user",
           "content": "Which sculture is the most famous in 19th century?",
           "transcript": "Uh, whats the most famous sculpture from the 19th century, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_153_cartesia.mp3",
-          "asr_output_openai": "Uh, what's the most famous sculpture from the nineteenth century, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_153_cartesia.wav",
+          "asr_output_openai": "Uh, what's the most famous sculpture from the nineteenth century, right?",
+          "asr_output_elevenlabs": "Uh, what's the most famous sculpture from the 19th century, right?"
         }
       ]
     ],
@@ -6475,8 +6639,9 @@
           "role": "user",
           "content": "What is the seating capacity of Camp Nou Stadium?",
           "transcript": "Hey, uh, dyou know how many seats Camp Nou Stadium has?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_154_cartesia.mp3",
-          "asr_output_openai": "Heya, dy know how many seats Camp Nou Stadium has?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_154_cartesia.wav",
+          "asr_output_openai": "Heya, dy know how many seats Camp Nou Stadium has?",
+          "asr_output_elevenlabs": "Hey, do you know how many seats Camp Nou Stadium has?"
         }
       ]
     ],
@@ -6517,8 +6682,9 @@
           "role": "user",
           "content": "Who created the sculpture 'The Thinker'?",
           "transcript": "Hey, dyou know who made sculpture called The Thinker? Oh, I just remembered, it was Rodin, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_155_cartesia.mp3",
-          "asr_output_openai": "Hey, do you know who made sculpture called The Thinker? Oh, I just remembered, it was Rodin, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_155_cartesia.wav",
+          "asr_output_openai": "Hey, do you know who made sculpture called The Thinker? Oh, I just remembered, it was Rodin, right?",
+          "asr_output_elevenlabs": "Hey, do you know who made sculpture called The Thinker? Oh, I just remembered, it was Rodin, right?"
         }
       ]
     ],
@@ -6555,8 +6721,9 @@
           "role": "user",
           "content": "What is the Eiffel Tower's height in feet?",
           "transcript": "Um, how talls the Eiffel Tower in feet?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_156_cartesia.mp3",
-          "asr_output_openai": "Hmm, how tall is the Eiffel Tower in feet?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_156_cartesia.wav",
+          "asr_output_openai": "Hmm, how tall is the Eiffel Tower in feet?",
+          "asr_output_elevenlabs": "Um, how tall is the Eiffel Tower in feet?"
         }
       ]
     ],
@@ -6608,8 +6775,9 @@
           "role": "user",
           "content": "How to design a cathedral style ceiling?",
           "transcript": "Hey, um, can you break down how to create cathedral-type... no, cathedral-style ceiling?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_157_cartesia.mp3",
-          "asr_output_openai": "Hey, um, can you break down how to create cathedral type, no, cathedral style ceiling?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_157_cartesia.wav",
+          "asr_output_openai": "Hey, um, can you break down how to create cathedral type, no, cathedral style ceiling?",
+          "asr_output_elevenlabs": "Hey, um, can you break down how to create cathedral type... no, cathedral-style ceiling?"
         }
       ]
     ],
@@ -6645,8 +6813,9 @@
           "role": "user",
           "content": "What's the cost of renting an apartment in New York?",
           "transcript": "Hey, uh, how muchs it gonna cost to rent a place in New York?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_158_cartesia.mp3",
-          "asr_output_openai": "Hey, ah, how much it gonna cost to rent a place in New York?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_158_cartesia.wav",
+          "asr_output_openai": "Hey, ah, how much it gonna cost to rent a place in New York?",
+          "asr_output_elevenlabs": "Hey, uh, how much it gonna cost to rent a place in New York?"
         }
       ]
     ],
@@ -6695,8 +6864,9 @@
           "role": "user",
           "content": "Who was the artist behind the famous painting 'The Scream'?",
           "transcript": "Who painted The Scream, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_159_cartesia.mp3",
-          "asr_output_openai": "Who painted The Scream, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_159_cartesia.wav",
+          "asr_output_openai": "Who painted The Scream, right?",
+          "asr_output_elevenlabs": "Who painted The Scream, right?"
         }
       ]
     ],
@@ -6738,7 +6908,8 @@
           "content": "How frequent do members at the Museum of Modern Art visi last year?",
           "transcript": "Hey, um, can tell me how often members visited the Museum of Modern Art last year?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_160_elevenlabs.wav",
-          "asr_output_openai": "Hey, can tell me how often members visited the Museum of Modern Art last year?"
+          "asr_output_openai": "Hey, can tell me how often members visited the Museum of Modern Art last year?",
+          "asr_output_elevenlabs": "Hey, uhm, can you tell me how often members visited the Museum of Modern Art last year?"
         }
       ]
     ],
@@ -6784,7 +6955,8 @@
           "content": "What is the most visited market in New York?",
           "transcript": "Hey, uh, what\u2019s the top market in New York?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_161_elevenlabs.wav",
-          "asr_output_openai": "Hey, what's the top market in New York?"
+          "asr_output_openai": "Hey, what's the top market in New York?",
+          "asr_output_elevenlabs": "Hey, uh, what's the top market in New York?"
         }
       ]
     ],
@@ -6826,7 +6998,8 @@
           "content": "Who are the famous dancers of the 19th Century?",
           "transcript": "Can you, um, tell me bout famous dancers from the nineteen hundreds, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_162_elevenlabs.wav",
-          "asr_output_openai": "Can you tell me about famous dancers from the 1900s, right?"
+          "asr_output_openai": "Can you tell me about famous dancers from the 1900s, right?",
+          "asr_output_elevenlabs": "Can you, uhm, tell me about famous dancers from the 1900s, right?"
         }
       ]
     ],
@@ -6867,7 +7040,8 @@
           "content": "How can I sell my acoustic guitar?",
           "transcript": "Um, hey, right, how do I sell my acoustic guitar?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_163_elevenlabs.wav",
-          "asr_output_openai": "Um, hey, right, how do I sell my acoustic guitar?"
+          "asr_output_openai": "Um, hey, right, how do I sell my acoustic guitar?",
+          "asr_output_elevenlabs": "Um, hey, right. How do I sell my acoustic guitar?"
         }
       ]
     ],
@@ -6904,7 +7078,8 @@
           "content": "Who is the best singer in Jazz",
           "transcript": "Whos top jazz singer, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_164_elevenlabs.wav",
-          "asr_output_openai": "Who's top jazz singer, right?"
+          "asr_output_openai": "Who's top jazz singer, right?",
+          "asr_output_elevenlabs": "Who's top jazz singer, right?"
         }
       ]
     ],
@@ -6946,7 +7121,8 @@
           "content": "What type of instrument is a cello?",
           "transcript": "Hey, uh, let me know what kinda instrument a cello is, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_165_elevenlabs.wav",
-          "asr_output_openai": "Hey, let me know what kind of instrument a cello is, right?"
+          "asr_output_openai": "Hey, let me know what kind of instrument a cello is, right?",
+          "asr_output_elevenlabs": "Hey, uh, let me know what kind of instrument a cello is, right?"
         }
       ]
     ],
@@ -6989,7 +7165,8 @@
           "content": "What are some tips to maintain a piano?",
           "transcript": "Hey, um, dyou have any tips for keepin that thing, you know, in good shape? Right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_166_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, do you have any tips for keeping that thing, you know, in good shape, right?"
+          "asr_output_openai": "Hey, um, do you have any tips for keeping that thing, you know, in good shape, right?",
+          "asr_output_elevenlabs": "Hey, um, do you have any tips for keeping that thing, you know, in good shape? Right?"
         }
       ]
     ],
@@ -7030,7 +7207,8 @@
           "content": "Who is the teacher for the upcoming lectures?",
           "transcript": "Um, who is, uh, right, teaching the upcoming lectures?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_167_elevenlabs.wav",
-          "asr_output_openai": "Um, who is, uh, right, teaching the upcoming lectures?"
+          "asr_output_openai": "Um, who is, uh, right, teaching the upcoming lectures?",
+          "asr_output_elevenlabs": "Um, who is, uh, right. Teaching the upcoming lectures?"
         }
       ]
     ],
@@ -7072,7 +7250,8 @@
           "content": "Is there any available class at University in Sydney in May?",
           "transcript": "Um, can you see if therere any classes open at University in Sydney, uh, in May?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_168_elevenlabs.wav",
-          "asr_output_openai": "Um, can you see if there are any classes open at university in Sydney in May?"
+          "asr_output_openai": "Um, can you see if there are any classes open at university in Sydney in May?",
+          "asr_output_elevenlabs": "Um, can you see if there any classes open at university in Sydney, uh, in May?"
         }
       ]
     ],
@@ -7114,7 +7293,8 @@
           "content": "Who is playing basketball game  at Madison Square Garden tonight?",
           "transcript": "Hey, uh, whos playin basketball game at Madison Square Garden tonight?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_169_elevenlabs.wav",
-          "asr_output_openai": "Hey, who's playing basketball game at Madison Square Garden tonight?"
+          "asr_output_openai": "Hey, who's playing basketball game at Madison Square Garden tonight?",
+          "asr_output_elevenlabs": "Hey, uh, who's playing basketball game at Madison Square Garden tonight?"
         }
       ]
     ],
@@ -7156,7 +7336,8 @@
           "content": "Who was the most famous composers in United States.",
           "transcript": "Um, who are most famous composers from the United States, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_170_elevenlabs.wav",
-          "asr_output_openai": "Um, who are most famous composers from the United States, right?"
+          "asr_output_openai": "Um, who are most famous composers from the United States, right?",
+          "asr_output_elevenlabs": "Um, who are most famous composers from the United States, right?"
         }
       ]
     ],
@@ -7196,7 +7377,8 @@
           "content": "Who establish laws and orders in Ancient Greek.",
           "transcript": "Hey, uh, who was responsible for setting up laws and orders in Ancient Greece?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_171_elevenlabs.wav",
-          "asr_output_openai": "Hey, who was responsible for setting up laws and orders in ancient Greece?"
+          "asr_output_openai": "Hey, who was responsible for setting up laws and orders in ancient Greece?",
+          "asr_output_elevenlabs": "Hey, who was responsible for setting up laws and orders in ancient Greece?"
         }
       ]
     ],
@@ -7237,7 +7419,8 @@
           "content": "Who write Don Quixote?",
           "transcript": "Um, who wrote Don Quixote?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_172_elevenlabs.wav",
-          "asr_output_openai": "Who wrote Don Quixote?"
+          "asr_output_openai": "Who wrote Don Quixote?",
+          "asr_output_elevenlabs": "Who wrote Don Quixote?"
         }
       ]
     ],
@@ -7274,7 +7457,9 @@
           "content": "What are the primary triads in the key of C major?",
           "transcript": "Um, what are the main triads in C major?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_173_elevenlabs.wav",
-          "asr_output_openai": "What are the main triads in C major?"
+          "asr_output_openai": "What are the main triads in C major?",
+          "asr_output_elevenlabs": "Um, what are the main triads in C major?",
+          "asr_output_deepgram": "What are the main triads in C major?"
         }
       ]
     ],
@@ -7312,7 +7497,8 @@
           "content": "What are the most common chords in a pop song?",
           "transcript": "Um, okay, whatre the main chords youd find in a pop song?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_174_elevenlabs.wav",
-          "asr_output_openai": "Um, okay, what are the main chords you'd find in a pop song?"
+          "asr_output_openai": "Um, okay, what are the main chords you'd find in a pop song?",
+          "asr_output_elevenlabs": "Uhm, okay. What are the main chords you'd find in a pop song?"
         }
       ]
     ],
@@ -7349,7 +7535,8 @@
           "content": "Who was the composer of Moonlight Sonata?",
           "transcript": "Hey, um, who composed the Moonlight Sonata, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_175_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, who composed the Moonlight Sonata, right?"
+          "asr_output_openai": "Hey, um, who composed the Moonlight Sonata, right?",
+          "asr_output_elevenlabs": "Hey, um, who composed the Moonlight Sonata right?"
         }
       ]
     ],
@@ -7385,7 +7572,8 @@
           "content": "What is the pattern of the blues scale in the key of A?",
           "transcript": "Um, hey, whats pattern for blues scale in A?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_176_elevenlabs.wav",
-          "asr_output_openai": "Um hey, what's pattern for blues scale in A?"
+          "asr_output_openai": "Um hey, what's pattern for blues scale in A?",
+          "asr_output_elevenlabs": "Um hey what\u2019s pattern for blues scale in A"
         }
       ]
     ],
@@ -7422,7 +7610,8 @@
           "content": "Who won the Grammy Award for Best Album in 2017?",
           "transcript": "Hey, lemme see... oh, who got Grammy for Best Album in twenty-seventeen?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_177_elevenlabs.wav",
-          "asr_output_openai": "Hey, let me see. Oh, who got Grammy for Best Album in 2017?"
+          "asr_output_openai": "Hey, let me see. Oh, who got Grammy for Best Album in 2017?",
+          "asr_output_elevenlabs": "Hey, let me see. Oh, who got Grammy for Best Album in 2017?"
         }
       ]
     ],
@@ -7463,7 +7652,8 @@
           "content": "Who is the most assist player in Premier League?",
           "transcript": "Whos got most assists in Premier League?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_178_elevenlabs.wav",
-          "asr_output_openai": "Who's got most assists in Premier League?"
+          "asr_output_openai": "Who's got most assists in Premier League?",
+          "asr_output_elevenlabs": "Who's got most assists in Premier League?"
         }
       ]
     ],
@@ -7505,7 +7695,8 @@
           "content": "Who played for Clippers in NBA",
           "transcript": "Um, hey, can you tell me who played for Clippers in the NBA?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_179_elevenlabs.wav",
-          "asr_output_openai": "Um, hey, can you tell me who played for Clippers in the NBA?"
+          "asr_output_openai": "Um, hey, can you tell me who played for Clippers in the NBA?",
+          "asr_output_elevenlabs": "Um, hey, can you tell me who played for Clippers in the NBA?"
         }
       ]
     ],
@@ -7552,7 +7743,8 @@
           "content": "Who are in the cricket matches scheduled for today?",
           "transcript": "Hey, um, can you tell me whos playing in todays cricket matches?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_180_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, can you tell me who's playing in today's cricket matches?"
+          "asr_output_openai": "Hey, um, can you tell me who's playing in today's cricket matches?",
+          "asr_output_elevenlabs": "Hey, um, can you tell me who's playing in today's cricket matches?"
         }
       ]
     ],
@@ -7593,7 +7785,8 @@
           "content": "Who played in La Liga?",
           "transcript": "Hey, um, can you tell me who played in La Liga?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_181_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me who played in La Liga?"
+          "asr_output_openai": "Hey, can you tell me who played in La Liga?",
+          "asr_output_elevenlabs": "Hey, um, can you tell me who played in LaLiga?"
         }
       ]
     ],
@@ -7634,7 +7827,8 @@
           "content": "How many championships did Michael Jordan win in his NBA career?",
           "transcript": "Lemme see... Oh, hey, could tell me how many NBA championships Michael Jordan won?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_182_elevenlabs.wav",
-          "asr_output_openai": "Let me see. Oh, hey, could tell me how many NBA championships Michael Jordan won?"
+          "asr_output_openai": "Let me see. Oh, hey, could tell me how many NBA championships Michael Jordan won?",
+          "asr_output_elevenlabs": "Let me see. Oh, hey, could tell me how many NBA championships Michael Jordan won?"
         }
       ]
     ],
@@ -7679,7 +7873,8 @@
           "content": "Who was the winner of Wimbledon Men's Singles in 2021?",
           "transcript": "Hey, um, who won Wimbledon Mens Singles in twenty twenty-one, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_183_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, who won Wimbledon Men's Singles in 2021, right?"
+          "asr_output_openai": "Hey, um, who won Wimbledon Men's Singles in 2021, right?",
+          "asr_output_elevenlabs": "Hey, um, who won Wimbledon men's singles in 2021, right?"
         }
       ]
     ],
@@ -7721,7 +7916,8 @@
           "content": "Who won the NBA Most Valuable Player in 2020?",
           "transcript": "Hey, who got the NBA MVP in twenty-twenty, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_184_elevenlabs.wav",
-          "asr_output_openai": "Hey, who got the NBA MVP in 2020, right?"
+          "asr_output_openai": "Hey, who got the NBA MVP in 2020, right?",
+          "asr_output_elevenlabs": "Hey, who got the NBA MVP in 2020? Right."
         }
       ]
     ],
@@ -7763,7 +7959,8 @@
           "content": "What is the assist average of basketball player LeBron James?",
           "transcript": "Hey, um, can you tell me LeBron Jamess, thats L-E-B-R-O-N J-A-M-E-S, LeBron Jamess average assists?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_185_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me LeBron James, that's L-e-b-r-o-n J-a-m-e-s, LeBron James average assists?"
+          "asr_output_openai": "Hey, can you tell me LeBron James, that's L-e-b-r-o-n J-a-m-e-s, LeBron James average assists?",
+          "asr_output_elevenlabs": "Hey, um, can you tell me LeBron James, that's L-E-B-R-O-N J-A-M-E-S, LeBron James' average assists?"
         }
       ]
     ],
@@ -7805,7 +8002,8 @@
           "content": "What is the ranking of a football team?",
           "transcript": "I think... right, can you say how football team is ranked?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_186_elevenlabs.wav",
-          "asr_output_openai": "I think... Right, can you say how football team is ranked?"
+          "asr_output_openai": "I think... Right, can you say how football team is ranked?",
+          "asr_output_elevenlabs": "I think. Right. Can you say how football team is ranked?"
         }
       ]
     ],
@@ -7846,7 +8044,8 @@
           "content": "Who won the most valuable player in last season's basketball game?",
           "transcript": "Hey, um, whos last seasons MVP in basketball?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_187_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, who's last season's MVP in basketball?"
+          "asr_output_openai": "Hey, um, who's last season's MVP in basketball?",
+          "asr_output_elevenlabs": "Hey, um, who's last season's MVP in basketball?"
         }
       ]
     ],
@@ -7888,7 +8087,8 @@
           "content": "Who won the championship of the World Series in 2020?",
           "transcript": "Um, hey, who won the World Series in twenty-twenty?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_188_elevenlabs.wav",
-          "asr_output_openai": "Um, hey, who won the World Series in 2020?"
+          "asr_output_openai": "Um, hey, who won the World Series in 2020?",
+          "asr_output_elevenlabs": "Um, hey, who won the World Series in 2020?"
         }
       ]
     ],
@@ -7925,7 +8125,8 @@
           "content": "Who is Lebron James?",
           "transcript": "Right, can you tell me who Lebron James is?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_189_elevenlabs.wav",
-          "asr_output_openai": "Right, can you tell me who LeBron James is?"
+          "asr_output_openai": "Right, can you tell me who LeBron James is?",
+          "asr_output_elevenlabs": "Right. Can you tell me who LeBron James is?"
         }
       ]
     ],
@@ -7967,7 +8168,8 @@
           "content": "Who is currently the top ranked tennis player?",
           "transcript": "Hey, uh, whos top-ranked tennis player right now, ya know?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_190_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, who's top-ranked tennis player right now, you know?"
+          "asr_output_openai": "Hey, um, who's top-ranked tennis player right now, you know?",
+          "asr_output_elevenlabs": "Hey, um, who's top ranked tennis player right now? You know."
         }
       ]
     ],
@@ -8009,7 +8211,8 @@
           "content": "Who won the last world cup in football?",
           "transcript": "Um, who got the most recent, uh, football World Cup victory?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_191_elevenlabs.wav",
-          "asr_output_openai": "Who got the most recent football World Cup victory?"
+          "asr_output_openai": "Who got the most recent football World Cup victory?",
+          "asr_output_elevenlabs": "Who got the most recent football World Cup victory?"
         }
       ]
     ],
@@ -8051,7 +8254,8 @@
           "content": "What is the roster of Manchester United?",
           "transcript": "Hey, um, can you let me know whos on Manchester United roster, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_192_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, can you let me know who's on Manchester United roster, right?"
+          "asr_output_openai": "Hey, um, can you let me know who's on Manchester United roster, right?",
+          "asr_output_elevenlabs": "Hey, um, can you let me know who's on Manchester United roster, right?"
         }
       ]
     ],
@@ -8092,7 +8296,8 @@
           "content": "Who is the top scorer for Los Angeles Lakers?",
           "transcript": "Whos the top scorer for the Los Angeles Lakers, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_193_elevenlabs.wav",
-          "asr_output_openai": "Who's the top scorer for the Los Angeles Lakers, right?"
+          "asr_output_openai": "Who's the top scorer for the Los Angeles Lakers, right?",
+          "asr_output_elevenlabs": "Who's the top scorer for the Los Angeles Lakers, right?"
         }
       ]
     ],
@@ -8137,7 +8342,8 @@
           "content": "What is the best chess move for white player in this position?",
           "transcript": "Um, in this chess position, whats the best move for White?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_194_elevenlabs.wav",
-          "asr_output_openai": "In this chess position, what's the best move for white?"
+          "asr_output_openai": "In this chess position, what's the best move for white?",
+          "asr_output_elevenlabs": "Um, in this chess position, what's the best move for white?"
         }
       ]
     ],
@@ -8179,7 +8385,8 @@
           "content": "Who won the chess tournament in 2015?",
           "transcript": "Hey, um, who won the twenty-fourteen... no, the twenty-fifteen chess tournament?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_195_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, who won the 2014\u2014no, the 2015 chess tournament?"
+          "asr_output_openai": "Hey, um, who won the 2014\u2014no, the 2015 chess tournament?",
+          "asr_output_elevenlabs": "Hey, um, who won the twenty fourteen\u2014no, the twenty fifteen chess tournament?"
         }
       ]
     ],
@@ -8226,7 +8433,8 @@
           "content": "What's the total number of possible arrangements in a chess game?",
           "transcript": "Um, oh, how many ways can you set up a chess game?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_196_elevenlabs.wav",
-          "asr_output_openai": "Um, oh, how many ways can you set up a chess game?"
+          "asr_output_openai": "Um, oh, how many ways can you set up a chess game?",
+          "asr_output_elevenlabs": "Um, oh, how many ways can you set up a chess game?"
         }
       ]
     ],
@@ -8297,7 +8505,8 @@
           "content": "Who won the game of Monopoly last night?",
           "transcript": "Hey, who, um, ended up winning Monopoly last night, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_197_elevenlabs.wav",
-          "asr_output_openai": "Hey, who, um, ended up winning Monopoly last night, right?"
+          "asr_output_openai": "Hey, who, um, ended up winning Monopoly last night, right?",
+          "asr_output_elevenlabs": "Hey, who um ended up winning Monopoly last night? Right."
         }
       ]
     ],
@@ -8338,7 +8547,8 @@
           "content": "What are the rules of the game 'Uno'?",
           "transcript": "Hey, can you tell me how to play Uno? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_198_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me how to play UNO? Thanks."
+          "asr_output_openai": "Hey, can you tell me how to play UNO? Thanks.",
+          "asr_output_elevenlabs": "Hey, can you tell me how to play UNO? Thanks."
         }
       ]
     ],
@@ -8379,7 +8589,8 @@
           "content": "Who has the highest number of hearts in a game of poker?",
           "transcript": "Hey, uh, can you tell me whos got most hearts in this poker game?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_199_elevenlabs.wav",
-          "asr_output_openai": "Hey, uh, can you tell me who's got most hearts in this poker game?"
+          "asr_output_openai": "Hey, uh, can you tell me who's got most hearts in this poker game?",
+          "asr_output_elevenlabs": "Hey, uh, can you tell me who's got most hearts in this poker game?"
         }
       ]
     ],
@@ -8420,7 +8631,8 @@
           "content": "What is the rule for 'Ace' in Blackjack?",
           "transcript": "Hey, whats rule for an Ace in Blackjack, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_200_elevenlabs.wav",
-          "asr_output_openai": "Hey, what's rule for an ace in blackjack, right?"
+          "asr_output_openai": "Hey, what's rule for an ace in blackjack, right?",
+          "asr_output_elevenlabs": "Hey, what's rule for an ace in blackjack, right?"
         }
       ]
     ],
@@ -8457,7 +8669,8 @@
           "content": "Find me an ice cream store",
           "transcript": "Sure, find an ice cream store for me?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_201_elevenlabs.wav",
-          "asr_output_openai": "Sure, find an ice cream store for me?"
+          "asr_output_openai": "Sure, find an ice cream store for me?",
+          "asr_output_elevenlabs": "Sure. Find an ice cream store for me?"
         }
       ]
     ],
@@ -8504,7 +8717,8 @@
           "content": "Who won the world series game?",
           "transcript": "Um, hey, who snagged the win in the World Series game?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_202_elevenlabs.wav",
-          "asr_output_openai": "Hey, who snagged the win in the World Series game?"
+          "asr_output_openai": "Hey, who snagged the win in the World Series game?",
+          "asr_output_elevenlabs": "Um, hey, who snagged the win in the World Series game?"
         }
       ]
     ],
@@ -8546,7 +8760,8 @@
           "content": "What's the rank for player A in the game Halo?",
           "transcript": "Hey, um, whats the rank of Player A in Halo?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_203_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, what's the rank of player A in Halo?"
+          "asr_output_openai": "Hey, um, what's the rank of player A in Halo?",
+          "asr_output_elevenlabs": "Hey, what's the rank of player A in Halo?"
         }
       ]
     ],
@@ -8583,7 +8798,8 @@
           "content": "Create a jigsaw puzzle",
           "transcript": "Um, could you make jigsaw puzzle, please?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_204_elevenlabs.wav",
-          "asr_output_openai": "Um, could you make jigsaw puzzle, please?"
+          "asr_output_openai": "Um, could you make jigsaw puzzle, please?",
+          "asr_output_elevenlabs": "Um, could you make jigsaw puzzle please?"
         }
       ]
     ],
@@ -8629,7 +8845,8 @@
           "content": "Who is the author of the book 'Pride and Prejudice'?",
           "transcript": "Um, hey, whos author of Pride and Prejudice?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_205_elevenlabs.wav",
-          "asr_output_openai": "Um, hey, who's author of Pride and Prejudice?"
+          "asr_output_openai": "Um, hey, who's author of Pride and Prejudice?",
+          "asr_output_elevenlabs": "Um, hey. Who's author of Pride and Prejudice?"
         }
       ]
     ],
@@ -8671,7 +8888,8 @@
           "content": "Find the best character to use against a dragon in DragonSlayer game.",
           "transcript": "Hey, lemme see... right, find the best character for battling a dragon in DragonSlayer?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_206_elevenlabs.wav",
-          "asr_output_openai": "Hey, let me see. Right, find the best character for battling a dragon in Dragon Slayer."
+          "asr_output_openai": "Hey, let me see. Right, find the best character for battling a dragon in Dragon Slayer.",
+          "asr_output_elevenlabs": "Hey, let me see. Right. Find the best character for battling a dragon in Dragonslayer."
         }
       ]
     ],
@@ -8718,7 +8936,8 @@
           "content": "What's the lowest score in the Flappy Bird game?",
           "transcript": "Uh, whats lowest score ever in Flappy Bird?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_207_elevenlabs.wav",
-          "asr_output_openai": "Ah, what's lowest score ever in Flappy Bird?"
+          "asr_output_openai": "Ah, what's lowest score ever in Flappy Bird?",
+          "asr_output_elevenlabs": "Uh, what's lowest score ever in Flappy Bird?"
         }
       ]
     ],
@@ -8759,7 +8978,8 @@
           "content": "Find the shortest path in a game from 'Point A' to 'Point B'",
           "transcript": "Uh, can you find quickest route in the games gonna from Point A to Point B?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_208_elevenlabs.wav",
-          "asr_output_openai": "Can you find quickest route in the games gunner from point A to point B?"
+          "asr_output_openai": "Can you find quickest route in the games gunner from point A to point B?",
+          "asr_output_elevenlabs": "Uh, can you find quickest route in the game's gonna from point A to point B?"
         }
       ]
     ],
@@ -8800,7 +9020,8 @@
           "content": "How to build a new PC?",
           "transcript": "Um, can tell me how to build, uh, a new PC, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_209_elevenlabs.wav",
-          "asr_output_openai": "Can tell me how to build a new PC, OK?"
+          "asr_output_openai": "Can tell me how to build a new PC, OK?",
+          "asr_output_elevenlabs": "Um, can tell me how to build a new PC. Okay?"
         }
       ]
     ],
@@ -8847,7 +9068,8 @@
           "content": "Which place in Paris that is most famous?",
           "transcript": "Whats, uh, the most famous place to see in Paris?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_210_elevenlabs.wav",
-          "asr_output_openai": "What's the most famous place to see in Paris?"
+          "asr_output_openai": "What's the most famous place to see in Paris?",
+          "asr_output_elevenlabs": "What's, uh, the most famous place to see in Paris?"
         }
       ]
     ],
@@ -8905,7 +9127,8 @@
           "content": "What's the recipe to cook five chicken",
           "transcript": "Hey, how do I cook five chickens? Whats recipe?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_211_elevenlabs.wav",
-          "asr_output_openai": "Hey, how do I cook five chickens? What's recipe?"
+          "asr_output_openai": "Hey, how do I cook five chickens? What's recipe?",
+          "asr_output_elevenlabs": "Hey, how do I cook five chickens? What's recipe?"
         }
       ]
     ],
@@ -8946,7 +9169,8 @@
           "content": "What is the best way to boil an egg?",
           "transcript": "Hey, uh, how do you cook an egg, you know, the best way? Oh, thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_212_elevenlabs.wav",
-          "asr_output_openai": "Hey, how do you cook an egg, you know, the best way? Oh thanks."
+          "asr_output_openai": "Hey, how do you cook an egg, you know, the best way? Oh thanks.",
+          "asr_output_elevenlabs": "Hey, uh, how do you cook an egg? You know, the best way. Oh, thanks!"
         }
       ]
     ],
@@ -8994,7 +9218,8 @@
           "content": "Where is a good place for pizza in Boston?",
           "transcript": "Hey, um, know a great pizza joint in Boston?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_213_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, know a great pizza joint in Boston?"
+          "asr_output_openai": "Hey, um, know a great pizza joint in Boston?",
+          "asr_output_elevenlabs": "Hey, um, know a great pizza joint in Boston?"
         }
       ]
     ],
@@ -9036,7 +9261,8 @@
           "content": "Find the best Sushi restaurant in Los Angeles.",
           "transcript": "Uh, whats best sushi spot in... Los Angeles?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_214_elevenlabs.wav",
-          "asr_output_openai": "What's best sushi spot in Los Angeles?"
+          "asr_output_openai": "What's best sushi spot in Los Angeles?",
+          "asr_output_elevenlabs": "What's best sushi spot in Los Angeles?"
         }
       ]
     ],
@@ -9077,7 +9303,8 @@
           "content": "How long will it take to travel from San Francisco to Los Angeles by car?",
           "transcript": "Um, right, how longs it take to drive from San Francisco to Los Angeles?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_215_elevenlabs.wav",
-          "asr_output_openai": "Um, right, how long's it take to drive from San Francisco to Los Angeles?"
+          "asr_output_openai": "Um, right, how long's it take to drive from San Francisco to Los Angeles?",
+          "asr_output_elevenlabs": "Um, right. How long does it take to drive from San Francisco to Los Angeles?"
         }
       ]
     ],
@@ -9119,7 +9346,8 @@
           "content": "Where is the closest Italian restaurant?",
           "transcript": "Hey, uh, wheres the nearest Italian restaurant round here?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_216_elevenlabs.wav",
-          "asr_output_openai": "Hey, where's the nearest Italian restaurant round here?"
+          "asr_output_openai": "Hey, where's the nearest Italian restaurant round here?",
+          "asr_output_elevenlabs": "Hey, uh, where's the nearest Italian restaurant around here?"
         }
       ]
     ],
@@ -9161,7 +9389,8 @@
           "content": "Can you write a book?",
           "transcript": "Hey, um, can you help me whip a book up?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_217_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, can you help me whip a book up?"
+          "asr_output_openai": "Hey, um, can you help me whip a book up?",
+          "asr_output_elevenlabs": "Hey, um, can you help me whip a book up?"
         }
       ]
     ],
@@ -9208,7 +9437,8 @@
           "content": "Can you tell me a machine to bake a chocolate cake?",
           "transcript": "Hey, uh, could you recommend a machine for baking a chocolate cake?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_218_elevenlabs.wav",
-          "asr_output_openai": "Hey, could you recommend a machine for baking a chocolate cake?"
+          "asr_output_openai": "Hey, could you recommend a machine for baking a chocolate cake?",
+          "asr_output_elevenlabs": "Hey, uh, could you recommend a machine for baking a chocolate cake?"
         }
       ]
     ],
@@ -9252,7 +9482,8 @@
           "content": "What's the recipe for lasagna?",
           "transcript": "Um, hey, can you tell me how to cook lasagna?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_219_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me how to cook lasagna?"
+          "asr_output_openai": "Hey, can you tell me how to cook lasagna?",
+          "asr_output_elevenlabs": "Um, hey, can you tell me how to cook lasagna?"
         }
       ]
     ],
@@ -9309,7 +9540,8 @@
           "content": "What should be the ingredient  for baking chocolate cake?",
           "transcript": "Um, what do you need to bake a chocolate cake?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_220_elevenlabs.wav",
-          "asr_output_openai": "What do you need to bake a chocolate cake?"
+          "asr_output_openai": "What do you need to bake a chocolate cake?",
+          "asr_output_elevenlabs": "Uhm, what do you need to bake a chocolate cake?"
         }
       ]
     ],
@@ -9351,7 +9583,8 @@
           "content": "What are some recommended exercises for legs?",
           "transcript": "Can you, uh, give me some good leg exercises, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_221_elevenlabs.wav",
-          "asr_output_openai": "Can you give me some good leg exercises, right?"
+          "asr_output_openai": "Can you give me some good leg exercises, right?",
+          "asr_output_elevenlabs": "Can you, uh, give me some good leg exercises, right?"
         }
       ]
     ],
@@ -9403,7 +9636,8 @@
           "content": "How many calories are in a tomato?",
           "transcript": "Hey, um, can you say how many caloriesre in a tomato?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_222_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, can you say how many calories re in a tomato?"
+          "asr_output_openai": "Hey, um, can you say how many calories re in a tomato?",
+          "asr_output_elevenlabs": "Hey, uhm, can you say how many calories are in a tomato?"
         }
       ]
     ],
@@ -9449,7 +9683,8 @@
           "content": "Find a bakery that sells sourdough bread in Chicago.",
           "transcript": "Uh, can you, um, find bakery in Chicago thats sellin sourdough bread, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_223_elevenlabs.wav",
-          "asr_output_openai": "Can you find bakery in Chicago that sell sourdough bread?"
+          "asr_output_openai": "Can you find bakery in Chicago that sell sourdough bread?",
+          "asr_output_elevenlabs": "Uh, can you, um, find bakery in Chicago that sellin' sourdough bread, right?"
         }
       ]
     ],
@@ -9490,7 +9725,8 @@
           "content": "What's the population in New York right now?",
           "transcript": "Hey, can you, uh, tell me what the current population of New York is?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_225_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me what the current population of New York is?"
+          "asr_output_openai": "Hey, can you tell me what the current population of New York is?",
+          "asr_output_elevenlabs": "Hey, can you tell me what the current population of New York is?"
         }
       ]
     ],
@@ -9532,7 +9768,8 @@
           "content": "What's timezone is it in London?",
           "transcript": "Hey, uh, for London, what is the time zone?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_226_elevenlabs.wav",
-          "asr_output_openai": "Hey, for London, what is the time zone?"
+          "asr_output_openai": "Hey, for London, what is the time zone?",
+          "asr_output_elevenlabs": "Hey, uh, for London, what is the time zone?"
         }
       ]
     ],
@@ -9569,7 +9806,8 @@
           "content": "When will be sunset in Beijing today?",
           "transcript": "Hey, um, what time does the sun go down in Beijing today, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_227_elevenlabs.wav",
-          "asr_output_openai": "Hey, um what time does the sun go down in Beijing today, yeah?"
+          "asr_output_openai": "Hey, um what time does the sun go down in Beijing today, yeah?",
+          "asr_output_elevenlabs": "Hey, um, what time does the sun go down in Beijing today, yeah?"
         }
       ]
     ],
@@ -9609,7 +9847,8 @@
           "content": "What is the current time in Sydney, Australia?",
           "transcript": "Hey, um, whats time in Sydney right now, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_228_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, what's time in Sydney right now, yeah?"
+          "asr_output_openai": "Hey, um, what's time in Sydney right now, yeah?",
+          "asr_output_elevenlabs": "Hey, uhm, what's time in Sydney right now? Yeah."
         }
       ]
     ],
@@ -9654,7 +9893,8 @@
           "content": "What are some popular sushi restaurants in Tokyo?",
           "transcript": "Um, can tell me bout, uh, popular sushi joints in Tokyo, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_229_elevenlabs.wav",
-          "asr_output_openai": "Can tell me about popular sushi joints in Tokyo, yeah?"
+          "asr_output_openai": "Can tell me about popular sushi joints in Tokyo, yeah?",
+          "asr_output_elevenlabs": "Um, can tell me about popular sushi joints in Tokyo? Yeah."
         }
       ]
     ],
@@ -9701,7 +9941,8 @@
           "content": "Find a pet-friendly train station in Miami",
           "transcript": "Uh, can you find a train station in Miami thats pet-friendly?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_230_elevenlabs.wav",
-          "asr_output_openai": "Can you find a train station in Miami that's pet-friendly?"
+          "asr_output_openai": "Can you find a train station in Miami that's pet-friendly?",
+          "asr_output_elevenlabs": "Uh, can you find a train station in Miami that's pet friendly?"
         }
       ]
     ],
@@ -9742,7 +9983,8 @@
           "content": "Find a Thai restaurant in Chicago with vegetarian options.",
           "transcript": "Uh, can you find Thai restaurant in Chicago thats got vegetarian options? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_231_elevenlabs.wav",
-          "asr_output_openai": "Can you find Thai restaurant in Chicago that's got vegetarian options? Thanks."
+          "asr_output_openai": "Can you find Thai restaurant in Chicago that's got vegetarian options? Thanks.",
+          "asr_output_elevenlabs": "Uh, can you find Thai restaurant in Chicago that's got vegetarian options? Thanks."
         }
       ]
     ],
@@ -9794,7 +10036,8 @@
           "content": "Find a yoga retreat in New York that includes vegetarian meals and spa services.",
           "transcript": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_232_elevenlabs.wav",
-          "asr_output_openai": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?"
+          "asr_output_openai": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?",
+          "asr_output_elevenlabs": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?"
         }
       ]
     ],
@@ -9840,7 +10083,8 @@
           "content": "What is the equivalent of $20 in British Pounds?",
           "transcript": "Hey, twenty bucks in British Pounds is what, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_233_elevenlabs.wav",
-          "asr_output_openai": "Hey, twenty bucks in British pounds is what, right?"
+          "asr_output_openai": "Hey, twenty bucks in British pounds is what, right?",
+          "asr_output_elevenlabs": "Hey, twenty bucks in British pounds is what, right?"
         }
       ]
     ],
@@ -9881,7 +10125,8 @@
           "content": "What's 10inch in meter",
           "transcript": "Convert ten inches to meters.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_234_elevenlabs.wav",
-          "asr_output_openai": "Convert ten inches to metres."
+          "asr_output_openai": "Convert ten inches to metres.",
+          "asr_output_elevenlabs": "Convert 10 inches to meters."
         }
       ]
     ],
@@ -9923,7 +10168,8 @@
           "content": "What is the best movie in 2020?",
           "transcript": "Um, whats top movie of twenty-twenty?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_235_elevenlabs.wav",
-          "asr_output_openai": "Um, what's top movie of 2020?"
+          "asr_output_openai": "Um, what's top movie of 2020?",
+          "asr_output_elevenlabs": "Um, what's top movie of 2020?"
         }
       ]
     ],
@@ -9965,7 +10211,8 @@
           "content": "What is the quickest way to get to Tokyo from London by plane?",
           "transcript": "Um, how can I jet to Tokyo from London fastest?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_236_elevenlabs.wav",
-          "asr_output_openai": "Um, how can I jet to Tokyo from London fastest?"
+          "asr_output_openai": "Um, how can I jet to Tokyo from London fastest?",
+          "asr_output_elevenlabs": "Uhm, how can I jet to Tokyo from London fastest?"
         }
       ]
     ],
@@ -10007,7 +10254,8 @@
           "content": "Where is the nearest pharmacy in Los Angeles?",
           "transcript": "Can you, uh, say where the closest pharmacy is in Los Angeles, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_237_elevenlabs.wav",
-          "asr_output_openai": "Can you say where the closest pharmacy is in Los Angeles, OK?"
+          "asr_output_openai": "Can you say where the closest pharmacy is in Los Angeles, OK?",
+          "asr_output_elevenlabs": "Can you, uh, say where the closest pharmacy is in Los Angeles? Okay?"
         }
       ]
     ],
@@ -10049,7 +10297,8 @@
           "content": "Calculate the hypotenuse for a right-angled triangle where other sides are 5 and 6",
           "transcript": "Hey, um, can you get the hypotenuse for a right-angled triangle with sides five and six, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_238_elevenlabs.wav",
-          "asr_output_openai": "Hey, um, can you get the hypotenuse for a right-angled triangle with sides 5 and 6, right?"
+          "asr_output_openai": "Hey, um, can you get the hypotenuse for a right-angled triangle with sides 5 and 6, right?",
+          "asr_output_elevenlabs": "Hey, um, can you get the hypotenuse for a right angled triangle with sides five and six, right?"
         }
       ]
     ],
@@ -10112,7 +10361,8 @@
           "content": "Find the distance in kilometers from San Francisco to Los Angeles.",
           "transcript": "Um, how many kilometers is it from San Francisco to Los Angeles, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_irrelevance/irrelevance_239_elevenlabs.wav",
-          "asr_output_openai": "Um, how many kilometers is it from San Francisco to Los Angeles, right?"
+          "asr_output_openai": "Um, how many kilometers is it from San Francisco to Los Angeles, right?",
+          "asr_output_elevenlabs": "Um, how many kilometers is it from San Francisco to Los Angeles? Right."
         }
       ]
     ],

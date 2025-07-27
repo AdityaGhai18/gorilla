@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Script to safely rename asr_output fields to asr_output_openai in all JSON files.
-This script ONLY renames field names, it does NOT change any content.
+Script to update audio_path fields from .mp3 to .wav for Cartesia files in all JSON files.
+This script updates audio_path values to reflect that Cartesia files are now .wav format.
 Automatically finds all JSON files in the final_results directory.
 """
 
@@ -21,15 +21,15 @@ except ImportError:
         print(f"{desc}: {len(iterable)} items")
         return iterable
 
-def rename_asr_fields(data_path):
-    """Rename asr_output fields to asr_output_openai without changing content."""
+def update_audio_paths(data_path):
+    """Update audio_path fields from .mp3 to .wav for Cartesia files."""
     print(f"Processing: {data_path}")
     
     # Read the JSON file
     with open(data_path, "r") as f:
         data = json.load(f)
     
-    renamed_count = 0
+    updated_count = 0
     total_cases = len(data)
     
     # Process each test case
@@ -42,21 +42,25 @@ def rename_asr_fields(data_path):
                 # Handle single-turn format: turn_group is a list with one turn
                 if isinstance(turn_group, list):
                     for turn in turn_group:
-                        if isinstance(turn, dict) and "asr_output" in turn and "asr_output_openai" not in turn:
-                            # Rename the field without changing content
-                            turn["asr_output_openai"] = turn["asr_output"]
-                            del turn["asr_output"]
-                            renamed_count += 1
-                            case_updated = True
-                            print(f"[RENAME] {case.get('id', '')}: asr_output -> asr_output_openai")
+                        if isinstance(turn, dict) and "audio_path" in turn:
+                            audio_path = turn["audio_path"]
+                            # Check if this is a Cartesia .mp3 file that needs to be updated to .wav
+                            if "cartesia" in audio_path.lower() and audio_path.endswith(".mp3"):
+                                new_audio_path = audio_path.replace(".mp3", ".wav")
+                                turn["audio_path"] = new_audio_path
+                                updated_count += 1
+                                case_updated = True
+                                print(f"[UPDATE] {case.get('id', '')}: {audio_path} -> {new_audio_path}")
                 # Handle direct turn format (if any)
-                elif isinstance(turn_group, dict) and "asr_output" in turn_group and "asr_output_openai" not in turn_group:
-                    # Rename the field without changing content
-                    turn_group["asr_output_openai"] = turn_group["asr_output"]
-                    del turn_group["asr_output"]
-                    renamed_count += 1
-                    case_updated = True
-                    print(f"[RENAME] {case.get('id', '')}: asr_output -> asr_output_openai")
+                elif isinstance(turn_group, dict) and "audio_path" in turn_group:
+                    audio_path = turn_group["audio_path"]
+                    # Check if this is a Cartesia .mp3 file that needs to be updated to .wav
+                    if "cartesia" in audio_path.lower() and audio_path.endswith(".mp3"):
+                        new_audio_path = audio_path.replace(".mp3", ".wav")
+                        turn_group["audio_path"] = new_audio_path
+                        updated_count += 1
+                        case_updated = True
+                        print(f"[UPDATE] {case.get('id', '')}: {audio_path} -> {new_audio_path}")
         
         # Write back to file if any changes were made
         if case_updated:
@@ -65,10 +69,10 @@ def rename_asr_fields(data_path):
     
     print(f"Completed: {data_path}")
     print(f"Total cases processed: {total_cases}")
-    print(f"Fields renamed: {renamed_count}")
+    print(f"Audio paths updated: {updated_count}")
     print("-" * 50)
     
-    return renamed_count
+    return updated_count
 
 def process_all_json_files(base_dir):
     """Find and process all JSON files in the directory."""
@@ -90,18 +94,18 @@ def process_all_json_files(base_dir):
     # Process each JSON file
     for json_file in json_files:
         try:
-            renamed_count = rename_asr_fields(json_file)
-            total_renamed += renamed_count
+            updated_count = update_audio_paths(json_file)
+            total_renamed += updated_count
         except Exception as e:
             print(f"Error processing {json_file}: {e}")
     
     print("=" * 60)
     print(f"PROCESSING COMPLETED!")
-    print(f"Total fields renamed across all files: {total_renamed}")
+    print(f"Total audio paths updated across all files: {total_renamed}")
     print("=" * 60)
 
 def main():
-    parser = argparse.ArgumentParser(description="Safely rename asr_output fields to asr_output_openai in all JSON files")
+    parser = argparse.ArgumentParser(description="Update audio_path fields from .mp3 to .wav for Cartesia files in all JSON files")
     parser.add_argument("--data_path", type=str, help="Path to a specific JSON data file (optional)")
     parser.add_argument("--base_dir", type=str, default="audio_calling/clean_to_speech_text/final_results", 
                        help="Base directory containing JSON files (default: final_results)")
@@ -114,8 +118,8 @@ def main():
             return
         
         try:
-            renamed_count = rename_asr_fields(args.data_path)
-            print(f"Successfully renamed {renamed_count} asr_output fields to asr_output_openai")
+            updated_count = update_audio_paths(args.data_path)
+            print(f"Successfully updated {updated_count} audio paths from .mp3 to .wav")
         except Exception as e:
             print(f"Error processing {args.data_path}: {e}")
     else:

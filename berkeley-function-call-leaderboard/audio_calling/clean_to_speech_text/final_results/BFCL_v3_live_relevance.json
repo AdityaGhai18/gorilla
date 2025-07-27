@@ -8,7 +8,9 @@
           "content": "I'd like to have a digital painting created. The image should be a detailed portrait of a masked woman, including bright peacock feathers, with an elegant and highly detailed style. It should have a fluid illustration quality, with green highlighted lines and complex patterns, reminiscent of cyberpunk and Alphonse Mucha's art.",
           "transcript": "Um, could you make a digital painting thats a detailed portrait of a masked woman? Oh, make sure it, uh, has bright peacock feathers and an elegant, highly detailed style. Im lookin for a, um, fluid illustration with green highlighted lines, complex patterns, and a vibe that mixes cyberpunk with Alphonse Muchas art, Alphonse Mucha, thats A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_0-0-0_openai.wav",
-          "asr_output_openai": "Could you make a digital painting that's a detailed portrait of a masked woman? Oh, make sure it has bright peacock feathers and an elegant, highly detailed style. I'm looking for a fluid illustration with green highlighted lines, complex patterns, and a vibe that mixes cyberpunk with Alphonse Mucha's art. Alphonse Mucha, that's A-L-P-H-O-N-S-E M-U-C-H-A. Alphonse Mucha."
+          "asr_output_openai": "Could you make a digital painting that's a detailed portrait of a masked woman? Oh, make sure it has bright peacock feathers and an elegant, highly detailed style. I'm looking for a fluid illustration with green highlighted lines, complex patterns, and a vibe that mixes cyberpunk with Alphonse Mucha's art. Alphonse Mucha, that's A-L-P-H-O-N-S-E M-U-C-H-A. Alphonse Mucha.",
+          "asr_output_elevenlabs": "Um, could you make a digital painting that's a detailed portrait of a masked woman? Oh, make sure it, uh, has bright peacock feathers and, and an elegant highly detailed style. I'm looking for a, um, fluid illustration with green highlighted lines, complex patterns, and a vibe that mixes cyberpunk with Alphonse Mucha's art. Alphonse Mucha, that's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
+          "asr_output_deepgram": "Could you make a digital painting that's a detailed portrait of a masked woman? Oh, make sure it, has bright peacock feathers and and an elegant, highly detailed style. In looking for a, fluid illustration with green highlighted lines, complex patterns, and a vibe that mixes cyberpunk with Alphonse Mucha's art. Alphonse Mucha, that's a l p h o n s e m u c h a. Alphonse Mucha."
         }
       ]
     ],
@@ -146,7 +148,9 @@
           "content": "Can you generate a digital image of a woman wearing a mask with bright peacock feathers around her? The style should be reminiscent of Alphonse Mucha's art nouveau works, with a cyberpunk twist. I'd like it to be a highly detailed digital painting, featuring fluid illustrations and complex patterns, and please use green highlighted lines.",
           "transcript": "Uh, create digital painting of a woman in a mask, surrounded by bright peacock feathers. Make sure it\u2019s, um, in an art nouveau style like Alphonse Mucha, thats A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha, but with a cyberpunk twist. I want it, like, highly detailed, with fluid illustrations and complex patterns. Oh, and include green highlight lines, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_1-1-0_openai.wav",
-          "asr_output_openai": "Create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's in an Art Nouveau style like Alphonse Mucha (that's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha) but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, and include green highlight lines, right?"
+          "asr_output_openai": "Create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's in an Art Nouveau style like Alphonse Mucha (that's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha) but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, and include green highlight lines, right?",
+          "asr_output_elevenlabs": "Uh, create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's, um, in an art nouveau style like Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha, but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, oh, and include green highlight lines, right?",
+          "asr_output_deepgram": "Create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's, in an art nouveau style like Alphonse Mucha. That's a l p h o n s e m u c h a, Alphonse Mucha, but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, and include green highlight lines. Right?"
         }
       ]
     ],
@@ -338,7 +342,9 @@
           "content": "Can you find the top 5 search results for the capital of the United States in French?",
           "transcript": "Um, hey, can you, right, give me the top five search results for capital of the United States, uh, but in French?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_2-2-0_openai.wav",
-          "asr_output_openai": "Um, hey, can you, right, give me the top five search results for 'capital of the United States,' but in French?"
+          "asr_output_openai": "Um, hey, can you, right, give me the top five search results for 'capital of the United States,' but in French?",
+          "asr_output_elevenlabs": "Um, hey, can you\u2014right, give me the top five search results for \"capital of the United States,\" uh, but in French?",
+          "asr_output_deepgram": "Hey. Can you right. Give me the top five search results for capital of the United States, but in French?"
         }
       ]
     ],
@@ -392,7 +398,9 @@
           "content": "Could you tell me the current temperature in New York, using its latitude and longitude coordinates?",
           "transcript": "Hey, um, whats the current temperature in New York, using its latitude and longitude?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_3-3-0_openai.wav",
-          "asr_output_openai": "Hey, um, what's the current temperature in New York using its latitude and longitude?"
+          "asr_output_openai": "Hey, um, what's the current temperature in New York using its latitude and longitude?",
+          "asr_output_elevenlabs": "Hey, um, what's the current temperature in New York using its latitude and longitude?",
+          "asr_output_deepgram": "Hey. What's the current temperature in New York using its latitude and longitude?"
         }
       ]
     ],
@@ -437,7 +445,9 @@
           "content": "What is the weather like today? Can you help me search it up?",
           "transcript": "Hey, um, whats the weather like today? Can you, uh, look it up for me, thanks?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_4-4-0_openai.wav",
-          "asr_output_openai": "Hey, um, what's the weather like today? Can you look it up for me? Thanks!"
+          "asr_output_openai": "Hey, um, what's the weather like today? Can you look it up for me? Thanks!",
+          "asr_output_elevenlabs": "Hey, um, what's the weather like today? Can you, uh, look it up for me? Thanks.",
+          "asr_output_deepgram": "Hey, what's the weather like today? Can you, look it up for me? Thanks."
         }
       ]
     ],
@@ -484,7 +494,9 @@
           "content": "The image is a poster for The Lego Movie, a 2014 American 3D computer-animated comedy film produced by Warner Animation Group and distributed by Warner Bros. Pictures. The film is based on the Lego toy line of the same name. The poster features the film\\'s title in large, red letters, with the word \"Lego\" in a yellow brick font. The letters are arranged in a 3D cityscape, with the buildings made out of Lego bricks. The poster also features the film\\'s main characters, Emmet Brickowski (Chris Pra\u2026the film.\\n\\nThe copyright holder of the image is Warner Bros. Pictures. The studio owns the rights to the Lego Movie franchise, and has released several films and television shows based on the property. The studio is also responsible for distributing the film\\'s home media releases.\\n\\nI am 100% confident that the image is copyrighted content. The image is a poster for a major motion picture, and is therefore protected by copyright law. The copyright holder of the image is Warner Bros. Pictures.",
           "transcript": "This is a poster for The Lego Movie from 2014. Its a 3D animated film made by Warner Animation Group and Warner Bros Pictures. The poster features the movie title in big red letters, while Lego is in a yellow brick font, designed to resemble a 3D city with buildings made from Lego bricks. It showcases main characters like Emmet Brickowski and Wyldstyle, who are voiced by Chris Pratt and Elizabeth Banks. Warner Bros Pictures holds the copyright for this image, as they own the rights to The Lego Movie franchise. Trust me, this posters definitely copyrighted by Warner Bros Pictures.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_5-5-0_openai.wav",
-          "asr_output_openai": "This is a poster for The LEGO Movie from 2014. It's a 3D animated film made by Warner Animation Group and Warner Bros. Pictures. The poster features the movie title in big red letters, while LEGO is in a yellow brick font, designed to resemble a 3D city with buildings made from LEGO bricks. It showcases main characters like Emmet Brickowski and Wyldstyle, who are voiced by Chris Pratt and Elizabeth Banks.\n\nWarner Bros. Pictures holds the copyright for this image, as they own the rights to The LEGO Movie franchise. Trust me, this poster is definitely copyrighted by Warner Bros. Pictures."
+          "asr_output_openai": "This is a poster for The LEGO Movie from 2014. It's a 3D animated film made by Warner Animation Group and Warner Bros. Pictures. The poster features the movie title in big red letters, while LEGO is in a yellow brick font, designed to resemble a 3D city with buildings made from LEGO bricks. It showcases main characters like Emmet Brickowski and Wyldstyle, who are voiced by Chris Pratt and Elizabeth Banks.\n\nWarner Bros. Pictures holds the copyright for this image, as they own the rights to The LEGO Movie franchise. Trust me, this poster is definitely copyrighted by Warner Bros. Pictures.",
+          "asr_output_elevenlabs": "This is a poster for The LEGO Movie from 2014. It's a 3D animated film made by Warner Animation Group and Warner Bros. Pictures. The poster features the movie title in big red letters, while LEGO is in a yellow brick font designed to resemble a 3D city with buildings made from LEGO bricks. It showcases main characters, like Emmet Brickowski and Wyldstyle, who are voiced by Chris Pratt and Elizabeth Banks. Warner Bros. Pictures holds the copyright for this image, as they own the rights to the LEGO Movie franchise. Trust me, this poster's definitely copyrighted by Warner Bros. Pictures.",
+          "asr_output_deepgram": "This is a poster for The Lego Movie from two thousand fourteen. It's a three d animated film made by Warner Animation Group and Warner Brothers Pictures. The poster features the moody title in big red letters, while Lego is in a yellow brick font designed to resemble a three d city with buildings made from LEGO bricks. It showcases main characters like Emmett Bricowski and Wildstyle, who are voiced by Chris Pratt and Elizabeth Banks. Warner Brothers Pictures holds the copyright for this image as they own the rights to the Lego Movie franchise. Trust me. This poster is definitely copyrighted by Warner Brothers Pictures."
         }
       ]
     ],
@@ -529,8 +541,9 @@
           "role": "user",
           "content": "I have forgotten my parcel tracking number! What  should I do?",
           "transcript": "Uh, Ive lost my parcel tracking number. Uh, right, what can I do?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_6-6-0_cartesia.mp3",
-          "asr_output_openai": "Ah, I've lost my parcel tracking number. Ah, right, what can I do?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_6-6-0_cartesia.wav",
+          "asr_output_openai": "Ah, I've lost my parcel tracking number. Ah, right, what can I do?",
+          "asr_output_elevenlabs": "Uh, I've lost my parcel tracking number. Uh, right, what can I do?"
         }
       ]
     ],
@@ -683,8 +696,9 @@
           "role": "user",
           "content": "Hi, could you get me a house to stay for 4 in London",
           "transcript": "Hey, uh, find me a place to stay London for four people, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_7-7-0_cartesia.mp3",
-          "asr_output_openai": "Hey, find me a place to stay in London for four people, okay?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_7-7-0_cartesia.wav",
+          "asr_output_openai": "Hey, find me a place to stay in London for four people, okay?",
+          "asr_output_elevenlabs": "Hey, uh, find me a place to stay London for four people, okay?"
         }
       ]
     ],
@@ -766,8 +780,10 @@
           "role": "user",
           "content": "I'm looking for a Theater event in Cape Town for the date 2023-05-06.",
           "transcript": "Uh, find a theater event for me in Cape Town happening on May sixth, twenty twenty-three.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_8-8-0_cartesia.mp3",
-          "asr_output_openai": "Find a theater event for me in Cape Town happening on May 6th, 2023."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_8-8-0_cartesia.wav",
+          "asr_output_openai": "Find a theater event for me in Cape Town happening on May 6th, 2023.",
+          "asr_output_elevenlabs": "Uh, find a theater event for me in Cape Town happening on May 6th, 2023.",
+          "asr_output_deepgram": "Find a theater event for me in Cape Town happening on May sixth twenty twenty three."
         }
       ]
     ],
@@ -891,8 +907,9 @@
           "role": "user",
           "content": "I would like to watch a regular show at 3rd Street Cinema in Santa Rosa. Check available ones",
           "transcript": "Hey, uh, what regular showsre playin at Third Street Cinema Santa Rosa?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_9-9-0_cartesia.mp3",
-          "asr_output_openai": "Hey ah, what regular shows are playing at 3rd Street Cinema Santa Rosa?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_9-9-0_cartesia.wav",
+          "asr_output_openai": "Hey ah, what regular shows are playing at 3rd Street Cinema Santa Rosa?",
+          "asr_output_elevenlabs": "Hey, uh, what regular shows are playing at Third Street Cinema Santa Rosa?"
         }
       ]
     ],
@@ -1044,8 +1061,10 @@
           "role": "user",
           "content": "I would like to buy a movie ticket in Concord on the Apr 9th for four people.",
           "transcript": "Get movie ticket for, uh, four people in Concord on April ninth, thanks.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_10-10-0_cartesia.mp3",
-          "asr_output_openai": "Get movie tickets for four people in Concord on April 9th, thanks."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_10-10-0_cartesia.wav",
+          "asr_output_openai": "Get movie tickets for four people in Concord on April 9th, thanks.",
+          "asr_output_elevenlabs": "Get movie ticket for, uh, four people in Concord on April 9th. Thanks.",
+          "asr_output_deepgram": "Get movie ticket for, Four People in Concord on April ninth. Thanks."
         }
       ]
     ],
@@ -1197,8 +1216,9 @@
           "role": "user",
           "content": "I am going to Antioch today, can you look for any unisex salon there?",
           "transcript": "Hey, Im, uh, going to Antioch today. Can you, like, get me a unisex salon there, okay?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_11-11-0_cartesia.mp3",
-          "asr_output_openai": "Hey Im, uh, going to Antioch today. Can you like get me a unisex salon there, okay?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_11-11-0_cartesia.wav",
+          "asr_output_openai": "Hey Im, uh, going to Antioch today. Can you like get me a unisex salon there, okay?",
+          "asr_output_elevenlabs": "Hey, Im, uh, going to Antioch today. Can you like get me a unisex salon there, okay?"
         }
       ]
     ],
@@ -1318,7 +1338,8 @@
           "content": "Can you find me any available cars in Toronto, Canada for a rental period starting today and ending tomorrow? I don't have a preference for the car type, and I'd like to pick up the car at 10:00 in the morning.",
           "transcript": "Uh, find available rental cars in Toronto for today til tomorrow. Right, no car type preference, and, um, pickup at ten A M.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_12-12-0_elevenlabs.wav",
-          "asr_output_openai": "Find available rental cars in Toronto for today till tomorrow, right? No car type preference, and, um, pick up at 10 AM."
+          "asr_output_openai": "Find available rental cars in Toronto for today till tomorrow, right? No car type preference, and, um, pick up at 10 AM.",
+          "asr_output_elevenlabs": "Find available rental cars in Toronto for today till tomorrow. Right, no car type preference and pick up at 10 AM."
         }
       ]
     ],
@@ -1423,7 +1444,8 @@
           "content": "I have a plan for a short trip for which I need to find for a Train to travel. Can you find me the one in Portland, OR.",
           "transcript": "Im planning a short trip and need to get a train. Can you check options in Portland?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_13-13-0_elevenlabs.wav",
-          "asr_output_openai": "Im planning a short trip and need to get a train. Can you check options in Portland?"
+          "asr_output_openai": "Im planning a short trip and need to get a train. Can you check options in Portland?",
+          "asr_output_elevenlabs": "I'm planning a short trip and need to get a train. Can you check options in Portland?"
         }
       ]
     ],
@@ -1531,7 +1553,8 @@
           "content": "Could you help me get tickets for an IMAX movie at 3rd Street Cinema for this Saturday evening 2023.10.1?",
           "transcript": "Um, hey, can you get me tickets for, uh, an IMAX movie at Third Street Cinema for this Saturday evening, October first, twenty twenty-three? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_14-14-0_elevenlabs.wav",
-          "asr_output_openai": "Um, hey, can you get me tickets for an IMAX movie at Third Street Cinema for this Saturday evening, October 1, 2023? Thanks."
+          "asr_output_openai": "Um, hey, can you get me tickets for an IMAX movie at Third Street Cinema for this Saturday evening, October 1, 2023? Thanks.",
+          "asr_output_elevenlabs": "Um, hey, can you get me tickets for, uh, an IMAX movie at Third Street Cinema for this Saturday evening, October 1st, 2023? Thanks."
         }
       ]
     ],
@@ -1806,7 +1829,8 @@
           "content": "Can you help me reserve a train ticket from Sacramento? I'm looking for one seat and I'm flexible with the fare class.",
           "transcript": "Hey, uh, can you snag me a train ticket from Sacramento? Just one seat and, um, Im open to any fare class.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_15-15-0_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you snag me a train ticket from Sacramento? Just one seat, and I'm open to any fare class."
+          "asr_output_openai": "Hey, can you snag me a train ticket from Sacramento? Just one seat, and I'm open to any fare class.",
+          "asr_output_elevenlabs": "Hey, can you snag me a train ticket from Sacramento? Just one seat and I'm open to any fair class."
         }
       ]
     ],
@@ -1997,7 +2021,8 @@
           "content": "What's happening in China right now?",
           "transcript": "Hey, uh, can you tell me latest news in China?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_16-16-0_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you tell me latest news in China?"
+          "asr_output_openai": "Hey, can you tell me latest news in China?",
+          "asr_output_elevenlabs": "Hey, uh, can you tell me latest news in China?"
         }
       ]
     ],
@@ -2201,7 +2226,8 @@
           "content": "I am looking to generate a report for my new living room design with preferences for an earthy and neutral color palette, striped patterns, and rustic furniture style. I'd like to include blankets, plants, mirrors as decorative accessories, with valances and curtains for window treatments. The lighting should involve recessed lighting, chandeliers, and pendant lights. My priorities are to maximize functionality, incorporate smart storage, and maintain flexibility for various activities. The design should reflect minimalism with warmth, improve natural lighting, and use sustainable materials. Could you also take into account my fondness for deep blues, minimalist clothing style, classical music, psychological thrillers, historical fiction books, Italian cuisine, yoga, gardening, cultural trips, autumn weather, cats, succulents, mid-century modern furniture, abstract art, natural linen, soft lighting, impressionist paintings, smooth textures like marble, the scent of lavender, the sound of rain, and matte surfaces? I would prefer the report in PDF format and include visuals such as mood boards and floor plans. An emphasis on environmental impact is not necessary.",
           "transcript": "Hey, can you pull together a report about my new living room design? Im going for that neutral earthy palette with stripes and rustic furniture. Be sure to include accessories such as blankets, plants, and mirrors, plus valances and curtains for the windows. Im considering recessed lighting, chandeliers, and pendant lights. I need it functional with smart storage and flexible for different activities, you know. The design should be minimalist but warm, enhance natural lighting, and use sustainable materials. Also, keep in mind my love for deep blues, minimalist clothes, classical music, thrillers, historical fiction, Italian food, yoga, gardening, cultural trips, cats, autumn, and succulents. Im also a big fan of mid-century modern furniture, abstract art, natural linen, soft light, impressionist paintings, marble textures, lavender scent, rain sounds, and matte finishes. I require this report in PDF with visuals, like mood boards and floor plans. Don\u2019t worry about putting too much focus on the environmental thing.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_relevance/live_relevance_17-17-0_elevenlabs.wav",
-          "asr_output_openai": "Hey, can you pull together a report about my new living room design? I'm going for that neutral earthy palette with stripes and rustic furniture. Be sure to include accessories such as blankets, plants, and mirrors, plus valances and curtains for the windows. I'm considering recessed lighting, chandeliers, and pendant lights. I need it functional with smart storage and flexible for different activities, you know. The design should be minimalist but warm, enhance natural lighting, and use sustainable materials. Also, keep in mind my love for deep blues, minimalist clothes, classical music, thrillers, historical fiction, Italian food, yoga, gardening, cultural trips, cats, autumn, and succulents. I'm also a big fan of mid-century modern furniture, abstract art, natural linen, soft light, impressionist paintings, marble textures, lavender scent, rain sounds, and matte finishes. I require this report in PDF with visuals, like mood boards and floor plans. Don't worry about putting too much focus on the environmental thing."
+          "asr_output_openai": "Hey, can you pull together a report about my new living room design? I'm going for that neutral earthy palette with stripes and rustic furniture. Be sure to include accessories such as blankets, plants, and mirrors, plus valances and curtains for the windows. I'm considering recessed lighting, chandeliers, and pendant lights. I need it functional with smart storage and flexible for different activities, you know. The design should be minimalist but warm, enhance natural lighting, and use sustainable materials. Also, keep in mind my love for deep blues, minimalist clothes, classical music, thrillers, historical fiction, Italian food, yoga, gardening, cultural trips, cats, autumn, and succulents. I'm also a big fan of mid-century modern furniture, abstract art, natural linen, soft light, impressionist paintings, marble textures, lavender scent, rain sounds, and matte finishes. I require this report in PDF with visuals, like mood boards and floor plans. Don't worry about putting too much focus on the environmental thing.",
+          "asr_output_elevenlabs": "Hey, can you pull together a report about my new living room design? I'm going for that neutral, earthy palette with stripes and rustic furniture. Be sure to include accessories such as blankets, plants, and mirrors, plus valances and curtains for the windows. I'm considering recessed lighting, chandeliers, and pendant lights. I need it functional with smart storage and flexible for different activities, you know? The design should be minimalist but warm, enhance natural lighting, and use sustainable materials. Also, keep in mind my love for deep blues, minimalist clothes, classical music, thrillers, historical fiction, Italian food, yoga, gardening, cultural trips, cats, autumn, and succulents. I'm also a big fan of mid-century modern furniture, abstract art, natural linen, soft light, impressionist paintings, marble textures, lavender scent, rain sounds, and matte finishes. I require this report in PDF with visuals, like mood boards and floor plans. Don't worry about putting too much focus on the environmental thing."
         }
       ]
     ],

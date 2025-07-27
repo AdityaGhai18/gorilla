@@ -8,7 +8,9 @@
           "content": "Could you tell me the current weather conditions for Boston, MA and also for San Francisco?",
           "transcript": "Hey, whats the weather like in Boston and San Francisco right now?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_1-0-1_openai.wav",
-          "asr_output_openai": "Hey, what's the weather like in Boston and San Francisco right now?"
+          "asr_output_openai": "Hey, what's the weather like in Boston and San Francisco right now?",
+          "asr_output_elevenlabs": "Hey, what's the weather like in Boston and San Francisco right now?",
+          "asr_output_deepgram": "Hey. What's the weather like in Boston and San Francisco right now?"
         }
       ]
     ],
@@ -49,7 +51,9 @@
           "content": "<<question>> What\\'s the weather like in the two cities of Boston and San Francisco?",
           "transcript": "Um, whats the weather in Boston and, uh, San Francisco?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_2-0-2_openai.wav",
-          "asr_output_openai": "Um, what's the weather in Boston and, uh, San Francisco?"
+          "asr_output_openai": "Um, what's the weather in Boston and, uh, San Francisco?",
+          "asr_output_elevenlabs": "Um, what's the weather in Boston and San Francisco?",
+          "asr_output_deepgram": "What's the weather in Boston and, San Francisco?"
         }
       ]
     ],
@@ -94,7 +98,9 @@
           "content": "\u00bfPodr\u00edas decirme las condiciones actuales del clima en Canc\u00fan, QR, Playa del Carmen, QR y Tulum, QR?",
           "transcript": "Hey, could you tell me current weather in Cancun, Playa del Carmen, and Tulum?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_3-0-3_openai.wav",
-          "asr_output_openai": "Hey, could you tell me current weather in Cancun, Playa del Carmen, and Tulum?"
+          "asr_output_openai": "Hey, could you tell me current weather in Cancun, Playa del Carmen, and Tulum?",
+          "asr_output_elevenlabs": "Hey, could you tell me current weather in Cancun, Playa del Carmen and Tulum?",
+          "asr_output_deepgram": "Hey. Could you tell me current weather in Cancun, Playa del Carmen, and Tulum?"
         }
       ]
     ],
@@ -135,7 +141,9 @@
           "content": "Could you tell me the current weather in Boston, USA and also in San Francisco, USA?",
           "transcript": "Hey, um, hows the weather right now in Boston and, uh, San Francisco?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_4-1-0_openai.wav",
-          "asr_output_openai": "Hey, how's the weather right now in Boston and San Francisco?"
+          "asr_output_openai": "Hey, how's the weather right now in Boston and San Francisco?",
+          "asr_output_elevenlabs": "Hey, um, how's the weather right now in Boston and, uh, San Francisco?",
+          "asr_output_deepgram": "Hey. How's the weather right now in Boston and, San Francisco?"
         }
       ]
     ],
@@ -172,7 +180,9 @@
           "content": "Could you tell me the current temperature in Boston, MA and San Francisco, please?",
           "transcript": "Hey, whats the temperature right now in Boston and San Francisco, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_5-2-0_openai.wav",
-          "asr_output_openai": "Hey, what's the temperature right now in Boston and San Francisco, okay?"
+          "asr_output_openai": "Hey, what's the temperature right now in Boston and San Francisco, okay?",
+          "asr_output_elevenlabs": "Hey, what's the temperature right now in Boston and San Francisco? Okay.",
+          "asr_output_deepgram": "Hey, what's the temperature right now in Boston and San Francisco? Okay?"
         }
       ]
     ],
@@ -217,8 +227,10 @@
           "role": "user",
           "content": "What's the snow like in the two cities of Paris and Bordeaux?",
           "transcript": "Hey, um, can let me know how the snows lookin in Paris and Bordeaux, right?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.mp3",
-          "asr_output_openai": "Hey, um, can let me know how the snow's lookin' in Paris and Bordeaux, right?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.wav",
+          "asr_output_openai": "Hey, um, can let me know how the snow's lookin' in Paris and Bordeaux, right?",
+          "asr_output_elevenlabs": "Hey, um, can let me know how the snows look in, in Paris and Bordeaux, right?",
+          "asr_output_deepgram": "Hey. Can let me know how the snows look in in Paris and Bordeaux. Right?"
         }
       ]
     ],
@@ -283,8 +295,10 @@
           "role": "user",
           "content": "What's the weather like in the two cities of Boston and San Francisco?",
           "transcript": "Hey, can you tell me the weather in Boston and San Francisco, thanks?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.mp3",
-          "asr_output_openai": "Hey, can you tell me the weather in Boston and San Francisco thanks?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.wav",
+          "asr_output_openai": "Hey, can you tell me the weather in Boston and San Francisco thanks?",
+          "asr_output_elevenlabs": "Hey, can you tell me the weather in Boston and San Francisco? Thanks!",
+          "asr_output_deepgram": "Hey. Can you tell me the weather in Boston and San Francisco? Thanks."
         }
       ]
     ],
@@ -349,8 +363,10 @@
           "role": "user",
           "content": "Hi there! Could you please help me manage my tasks? I need to add a task called 'Machine Learning Study Session'. Also, I have completed one of my tasks named 'todo random', and I would like to delete it from my list.",
           "transcript": "Hey! Can you, uh, help me with my tasks? Add one called Machine Learning Study Session. Oh, Ive finished todo random, so, um, please remove it.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.mp3",
-          "asr_output_openai": "Hey, can you help me with my tasks? Add one called 'Machine Learning Study Session'. Oh, I've finished 'Todo Random', so please remove it."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.wav",
+          "asr_output_openai": "Hey, can you help me with my tasks? Add one called 'Machine Learning Study Session'. Oh, I've finished 'Todo Random', so please remove it.",
+          "asr_output_elevenlabs": "Hey, can you, uh, help me with my tasks? Add one called Machine Learning Study Session. Oh, I've finished Toto Random so, um, please remove it.",
+          "asr_output_deepgram": "Hey. Can you, help me with my tasks? Add one called machine learning study session. Oh, I finished Toto random. So, please remove it."
         }
       ]
     ],
@@ -391,8 +407,10 @@
           "role": "user",
           "content": "What's cost of 2 and 4 gb ram machine on aws ec2 with one CPU?",
           "transcript": "Hey, can you check cost on A W S E C two for a machine with two and four gigabytes of R A M and one C P U?",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.mp3",
-          "asr_output_openai": "Hey, can you check cost on a AWS EC, two for a machine with two and four gigabytes of RAM and one CPU?"
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.wav",
+          "asr_output_openai": "Hey, can you check cost on a AWS EC, two for a machine with two and four gigabytes of RAM and one CPU?",
+          "asr_output_elevenlabs": "Hey, can you check cost on AWS EC2 for a machine with 2 and 4 gigabytes of RAM and one CPU?",
+          "asr_output_deepgram": "Hey. Can you check cost on AWS EC? Two for a machine with two and four gigabytes of RAM and one CPU."
         }
       ]
     ],
@@ -447,8 +465,9 @@
           "role": "user",
           "content": "I need to make a couple of hotel reservations. First, secure a room for 2 adults and 1 child at the Sheraton Hotel in New York with check-in on May 1, 2022, and check-out on May 5, 2022. Then, reserve a room for 1 adult and 2 children at the Marriott in Los Angeles, checking in on June 1, 2022, and checking out on June 10, 2022.",
           "transcript": "Uh, snag two hotel stays for me. First, um, a room at the Sheraton in New York, Sheraton thats S-H-E-R-A-T-O-N, Sheraton in New York for two adults and one child, with check-in on May first and, uh, check-out on May fifth, twenty twenty-two. Then, book a room at the Marriott in Los Angeles, Marriott thats M-A-R-R-I-O-T-T, Marriott in Los Angeles for one adult and two kids, uh, checkin in June first and out June tenth, twenty twenty-two.",
-          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.mp3",
-          "asr_output_openai": "Snag two hotel stays for me. First, a room at the Sheraton in New York, Sheraton that's S-H-E-R-A-T-O-N, Sheraton in New York for two adults and one child, with check-in on May 1st and a check-out on May 5th, 2022. Then, book a room at the Marriott in Los Angeles, Marriott that's M-A-R-R-I-O-T-T, Marriott in Los Angeles for one adult and two kids, check-in on June 1st and out June 10th, 2022."
+          "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.wav",
+          "asr_output_openai": "Snag two hotel stays for me. First, a room at the Sheraton in New York, Sheraton that's S-H-E-R-A-T-O-N, Sheraton in New York for two adults and one child, with check-in on May 1st and a check-out on May 5th, 2022. Then, book a room at the Marriott in Los Angeles, Marriott that's M-A-R-R-I-O-T-T, Marriott in Los Angeles for one adult and two kids, check-in on June 1st and out June 10th, 2022.",
+          "asr_output_elevenlabs": "Uh, snag two hotel stays for me. First, um, a room at the Sheraton in New York. Sheraton, that's S-H-E-R-A-T-O-N. Sheraton in New York for two adults and one child with check-in on May 1st and a checkout on May 5th, 2022. Then book a room at the Marriott in Los Angeles. Marriott, that's M-A-R-R-I-O-T-T. Marriott in Los Angeles for one adult and two kids, uh, check-in in June 1st and out June 10th, 2022."
         }
       ]
     ],
@@ -505,7 +524,8 @@
           "content": "For breakfast I had a 12 ounce iced coffee and a banana.\n\nFor lunch I had a quesadilla\n\nBreakfast four ounces of asparagus, two eggs, one piece of gluten free bread.",
           "transcript": "So, uh, for breakfast, I had twelve-ounce iced coffee and a banana. Then for lunch, I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs, and one slice of gluten-free bread.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.wav",
-          "asr_output_openai": "So, for breakfast, I had 12 oz iced coffee and a banana. Then for lunch, I went with a quesadilla. Oh, and breakfast also included 4 oz of asparagus, two eggs, and one slice of gluten-free bread."
+          "asr_output_openai": "So, for breakfast, I had 12 oz iced coffee and a banana. Then for lunch, I went with a quesadilla. Oh, and breakfast also included 4 oz of asparagus, two eggs, and one slice of gluten-free bread.",
+          "asr_output_elevenlabs": "So, uh, for breakfast I had twelve ounce iced coffee and a banana. Then for lunch I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs and one slice of gluten-free bread."
         }
       ]
     ],
@@ -559,7 +579,8 @@
           "content": "Could you tell me the current weather in Boston, MA and also in San Francisco?",
           "transcript": "Um, can you get me the current weather in Boston and uh, San Francisco?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.wav",
-          "asr_output_openai": "Um, can you get me the current weather in Boston and San Francisco?"
+          "asr_output_openai": "Um, can you get me the current weather in Boston and San Francisco?",
+          "asr_output_elevenlabs": "Um, can you get me the current weather in Boston and, uh, San Francisco?"
         }
       ]
     ],
@@ -600,7 +621,9 @@
           "content": "What's the weather like in the two cities of Boston and San Francisco?",
           "transcript": "Hey, yknow, whats the weather in, uh, Boston and San Francisco right now?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_14-10-0_elevenlabs.wav",
-          "asr_output_openai": "Hey, you know, what's the weather in Boston and San Francisco right now?"
+          "asr_output_openai": "Hey, you know, what's the weather in Boston and San Francisco right now?",
+          "asr_output_elevenlabs": "Hey, you know, what's the weather in Boston and San Francisco right now?",
+          "asr_output_deepgram": "Hey. You know, what's the weather in, Boston and San Francisco right now?"
         }
       ]
     ],
@@ -641,7 +664,8 @@
           "content": "list file in c drive and make file called testing.txt",
           "transcript": "Uh, list files in the C drive and, um, create a file named testing dot t x t.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.wav",
-          "asr_output_openai": "List files in the C drive and create a file named testing.txt."
+          "asr_output_openai": "List files in the C drive and create a file named testing.txt.",
+          "asr_output_elevenlabs": "List files in the C drive and create a file named testing.txt."
         }
       ]
     ],
