@@ -786,7 +786,8 @@
           "transcript": "Um, can you tell me about, like, important events, news articles, and developments since October 2021? Uh, make sure you check this exactly as I said, and, um, only include stuff from after 2022. And also, could you get me a digital painting named a masked woman with bright peacock feathers? Im lookin for somethin, uh, complex and elegant, with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha, thats A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.wav",
           "asr_output_openai": "Can you tell me about important events, news articles, and developments since October 2021? Make sure you check this exactly as I said, and only include stuff from after 2022. And also, could you get me a digital painting named a masked woman with bright peacock feathers? Im looking for some thin, complex and elegant, with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A Alphonse Mucha.",
-          "asr_output_elevenlabs": "Um, can you tell me about, like, important events, news articles, and developments since October 2021? Uh, make sure you check this exactly as I said, and, um, only include stuff from after 2022. And also, could you get me a digital painting named A Masked Woman With Bright Peacock Feathers? I'm looking for some thin, uh, complex and elegant with green highlighted lines and intricate patterns. Kind of like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha."
+          "asr_output_elevenlabs": "Um, can you tell me about, like, important events, news articles, and developments since October 2021? Uh, make sure you check this exactly as I said, and, um, only include stuff from after 2022. And also, could you get me a digital painting named A Masked Woman With Bright Peacock Feathers? I'm looking for some thin, uh, complex and elegant with green highlighted lines and intricate patterns. Kind of like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
+          "asr_output_deepgram": "Can you tell me about, like, important events, news articles, and developments since October twenty twenty one? Make sure you check this exactly as I said and, only include stuff from after twenty twenty two. And, also, could you get me a digital painting named a masked woman with bright peacock feathers? I'm looking for some thin, complex and elegant with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's a l p h o n s e m u c h a Alphonse Mucha."
         }
       ]
     ],
@@ -979,7 +980,8 @@
           "transcript": "Uh, check past chats to find Shishirs birthday, and send him a Happy Birthday! message no matter what.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.wav",
           "asr_output_openai": "Check past chats to find Shashir's birthday and send him a happy birthday message no matter what.",
-          "asr_output_elevenlabs": "Uh, check past chats to find Shishir's birthday and send him a happy birthday message no matter what."
+          "asr_output_elevenlabs": "Uh, check past chats to find Shishir's birthday and send him a happy birthday message no matter what.",
+          "asr_output_deepgram": "Check past chats to find Shishir's birthday and send him a happy birthday message no matter what."
         }
       ]
     ],
@@ -1233,7 +1235,8 @@
           "transcript": "Lemme see... Im working on fixin Java compilation error in my project. The StringNumberHandler class extends AbstractCellHandler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, theres an error sayin getNumericValue() cant be found in CellResult. Can you look for any classes related to C-E-L-L-R-E-S-U-L-T, CellResult in the repository, includin subdirectories? Also, could you gimme method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T-C-E-L-L-H-A-N-D-L-E-R, AbstractCellHandler to make sure Im overridin them right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.wav",
           "asr_output_openai": "Let me see. I'm working on fixing Java compilation error in my project. The StringNumberHandler class extends AbstractCellHandler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error saying getNumericValue can't be found in CellResult. Can you look for any classes related to C-E-L-L-R-E-S-U-L-T CellResult in the repository, including subdirectories? Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T-C-E-L-L-H-A-N-D-L-E-R AbstractCellHandler to make sure I'm overriding them right?",
-          "asr_output_elevenlabs": "Let me see. I'm working on fixing Java compilation error in my project. The String Number Handler class extends abstract cell handler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error is saying get numeric value can't be found in cell result. Can you look for any classes related to C-E-L-L-R-E S-U-L-T, cell result, in the repository? Include in subdirectories. Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T C-E-L-L-H-A-N-D-L-E R, abstract cell handler, to make sure I'm overriding them right?"
+          "asr_output_elevenlabs": "Let me see. I'm working on fixing Java compilation error in my project. The String Number Handler class extends abstract cell handler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error is saying get numeric value can't be found in cell result. Can you look for any classes related to C-E-L-L-R-E S-U-L-T, cell result, in the repository? Include in subdirectories. Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T C-E-L-L-H-A-N-D-L-E R, abstract cell handler, to make sure I'm overriding them right?",
+          "asr_output_deepgram": "Let me see. In working on fixing Java compilation error in my project, the string number handler class extends abstract cell handler and overrides methods like get cell value, set cell value, get x l type, and get default excel format. But, oh, the reason error saying get numeric value can't be found in cell result. Can you look for any classes related to c e l l r e s u l t cell result in the repository, including subdirectories? Also, could you give method signatures for set cell value and get cell value in a b s t r a c t c, e l l h a n d l e, our abstract cell handler to make sure I'm overriding them right?"
         }
       ]
     ],
@@ -1360,7 +1363,8 @@
           "transcript": "Hey, could you take a look at the Weather class to see if it has any methods or properties available? Also, if theres the get_weather method, can you find out what the signature of that thing is?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.wav",
           "asr_output_openai": "Hey, could you take a look at the Weather class to see if it has any methods or properties available? Also, if the res.get_Weather method, can you find out what the signature of that thing is?",
-          "asr_output_elevenlabs": "Hey, could you take a look at the weather class to see if it has any methods or properties available? Also, if the res.get_weather method, can you find out what the signature of that thing is?"
+          "asr_output_elevenlabs": "Hey, could you take a look at the weather class to see if it has any methods or properties available? Also, if the res.get_weather method, can you find out what the signature of that thing is?",
+          "asr_output_deepgram": "Hey. Could you take a look at the weather class to see if it has any methods or properties available? Also, if the res, the get underscore weather method, can you find out what the signature of that thing is?"
         }
       ]
     ],
@@ -1487,7 +1491,8 @@
           "transcript": "Whats the highest common factor of, uh, thirty-six and forty-eight? Also, um, how steeps the curve of the function f of x equals x squared at x equals five, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.wav",
           "asr_output_openai": "What's the highest common factor of 36 and 48? Also, how steep's the curve of the function f(x) equals x squared at x equals 5, okay?",
-          "asr_output_elevenlabs": "What's the highest common factor of, uh, 36 and 48? Also, um, how steep's the curve of the function F of X equals X squared at X equals 5, okay?"
+          "asr_output_elevenlabs": "What's the highest common factor of, uh, 36 and 48? Also, um, how steep's the curve of the function F of X equals X squared at X equals 5, okay?",
+          "asr_output_deepgram": "What's the highest common factor of, thirty six and forty eight? Also, how steeps the curve of the function f of x equals x squared at x equals five. Okay?"
         }
       ]
     ],
@@ -1561,7 +1566,8 @@
           "transcript": "First, uh, get the greatest common divisor of thirty-six and forty-eight. Then, um, okay, estimate the derivative of f of x equals x squared at x equals five.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.wav",
           "asr_output_openai": "First, get the greatest common divisor of 36 and 48. Then, um, okay, estimate the derivative of f of x equals x squared at x equals 5.",
-          "asr_output_elevenlabs": "First, uh, get the greatest common divisor of 36 and 48. Then... Um... Okay. Estimate the derivative of F of X equals X squared at X equals five."
+          "asr_output_elevenlabs": "First, uh, get the greatest common divisor of 36 and 48. Then... Um... Okay. Estimate the derivative of F of X equals X squared at X equals five.",
+          "asr_output_deepgram": "First, get the greatest common divisor of thirty six and forty eight. Then, okay, estimate the derivative of f of x equals x squared at x equals five."
         }
       ]
     ],
@@ -1635,7 +1641,8 @@
           "transcript": "Hey, uh, can you add one and two for me? And also, oh, whats the current time in Europe slash Berlin, date included?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.wav",
           "asr_output_openai": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?",
-          "asr_output_elevenlabs": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?"
+          "asr_output_elevenlabs": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?",
+          "asr_output_deepgram": "Hey. Can you add one and two for me? And, also, oh, what's the current time in Europe slash Berlin, date included?"
         }
       ]
     ],
@@ -1714,7 +1721,8 @@
           "transcript": "Uh, whats the area of a square with a five centimeter side? And, um, oh, whats the weather like in Queenstown, Singapore?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.wav",
           "asr_output_openai": "What's the area of a square with a five-centimeter side? And what's the weather like in Queenstown Singapore?",
-          "asr_output_elevenlabs": "Uh, what's the area of a square with a five-centimeter side? And um, oh, what's the weather like in Queenstown, Singapore?"
+          "asr_output_elevenlabs": "Uh, what's the area of a square with a five-centimeter side? And um, oh, what's the weather like in Queenstown, Singapore?",
+          "asr_output_deepgram": "What's the area of a square with a five centimeter side? And, oh, what's the weather like in Queenstown, Singapore?"
         }
       ]
     ],
@@ -1772,7 +1780,8 @@
           "transcript": "Uh, turn it 20 degrees and, um, flip it horizontally. Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.wav",
           "asr_output_openai": "Turn it twenty degrees and flip it horizontally, thanks.",
-          "asr_output_elevenlabs": "Uh, turn it twenty degrees and, um, flip it horizontally. Thanks."
+          "asr_output_elevenlabs": "Uh, turn it twenty degrees and, um, flip it horizontally. Thanks.",
+          "asr_output_deepgram": "Turn it twenty degrees and, flip it horizontally. Thanks."
         }
       ]
     ],
@@ -1952,7 +1961,8 @@
           "transcript": "Uh, are there any music or theater events in San Diego on March first, twenty-twenty-three?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.wav",
           "asr_output_openai": "Are there any music or theater events in San Diego on March 1st, 2023?",
-          "asr_output_elevenlabs": "Are there any music or theater events in San Diego on March 1, 2023?"
+          "asr_output_elevenlabs": "Are there any music or theater events in San Diego on March 1, 2023?",
+          "asr_output_deepgram": "Are there any music or theater events in San Diego on March first twenty twenty three?"
         }
       ]
     ],
@@ -2211,7 +2221,8 @@
           "transcript": "Are there any music concerts or theater plays in Los Angeles on March tenth, twenty-twenty-three?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.wav",
           "asr_output_openai": "Are there any music concerts or theatre plays in Los Angeles on March 10, 2023?",
-          "asr_output_elevenlabs": "Are there any music concerts or theater plays in Los Angeles on March 10, 2023?"
+          "asr_output_elevenlabs": "Are there any music concerts or theater plays in Los Angeles on March 10, 2023?",
+          "asr_output_deepgram": "Are there any music concerts or theater plays in Los Angeles on March tenth twenty twenty three?"
         }
       ]
     ],
@@ -2470,7 +2481,8 @@
           "transcript": "Hey, Im planning my trip and could use a hand. Can you find a music event in New York for May twenty-first, twenty-twenty-three? Im also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.wav",
           "asr_output_openai": "Hey, in planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
-          "asr_output_elevenlabs": "Hey, I'm planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?"
+          "asr_output_elevenlabs": "Hey, I'm planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
+          "asr_output_deepgram": "Hey. I'm planning my trip and could use a hand. Can you find a music event in New York for May twenty first twenty twenty three? I'm also heading there from Boston by bus. Same date. So could you look up a direct bus itinerary for two?"
         }
       ]
     ],
@@ -3147,7 +3159,8 @@
           "transcript": "Can you get me all pending and active mandates for users Parath, thats P-A-R-A-T-H, Parath, and Bhanu, thats B-H-A-N-U, Bhanu?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.wav",
           "asr_output_openai": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu.",
-          "asr_output_elevenlabs": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu?"
+          "asr_output_elevenlabs": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu?",
+          "asr_output_deepgram": "Can you get me all pending and active mandates for users Parath? That's p a r a t h, Parath, and Banu. That's b h a n u. Banu."
         }
       ]
     ],

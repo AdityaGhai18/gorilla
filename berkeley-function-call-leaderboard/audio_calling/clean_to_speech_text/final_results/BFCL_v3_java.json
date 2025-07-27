@@ -302,7 +302,8 @@
           "transcript": "Um, could you copy an NIO resource to slash backup slash data dot txt? Make sure it, uh, overwrites any existing files. Oh, and keep tabs on the progress with progressTracker.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_7_openai.wav",
           "asr_output_openai": "Could you copy an NIO resource to /backup/data.txt? Make sure it overwrites any existing files. Oh, and keep tabs on the progress with ProgressTracker.",
-          "asr_output_elevenlabs": "Um, could you copy an NIO resource to slash backup slash data dot txt? Make sure it, uh, overwrites any existing files. Oh, and keep tabs on the progress with Progress Tracker."
+          "asr_output_elevenlabs": "Um, could you copy an NIO resource to slash backup slash data dot txt? Make sure it, uh, overwrites any existing files. Oh, and keep tabs on the progress with Progress Tracker.",
+          "asr_output_deepgram": "Could you copy an NIO resource to slash backup slash data dot text? Make sure it, overwrites any existing files. Oh, and keep tabs on the progress with progress tracker."
         }
       ]
     ],
@@ -345,7 +346,8 @@
           "transcript": "Hey, update the file in the, uh, non-blocking file system using fileStream. Oh, be sure the operations forced, dont keep the history, and, um, watch the progress with progressMonitor, please.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_8_openai.wav",
           "asr_output_openai": "Hey! Update the file in the non-blocking file system using FileStream. Oh, be sure the operation's forced, don't keep the history, and watch the progress with ProgressMonitor, please.",
-          "asr_output_elevenlabs": "Hey, update the file in the, uh, non-blocking filesystem using filestream. Oh, be sure the operation's forced, don't keep the history, and, um, watch the progress with progress monitor, please."
+          "asr_output_elevenlabs": "Hey, update the file in the, uh, non-blocking filesystem using filestream. Oh, be sure the operation's forced, don't keep the history, and, um, watch the progress with progress monitor, please.",
+          "asr_output_deepgram": "Hey. Update the file in the, non blocking file system using file stream. Oh, be sure the operation's forced. Don't keep the history and, watch the progress with progress monitor, please."
         }
       ]
     ],
@@ -393,7 +395,8 @@
           "transcript": "Um, can you, like, help me serialize a MultiPoint object with, uh, five points\u2014parentheses one comma two, parentheses three comma four, parentheses five comma six, parentheses seven comma eight, and parentheses nine comma ten\u2014into a ByteBuffer using XyzmMode.XYZ for storing spatial data in a HANA database?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_9_openai.wav",
           "asr_output_openai": "Um, can you like, help me serialize a multipoint object with five points (1,2) (3,4) (5,6) (7,8) and (9,10) into a byte buffer using XsMode.xyz for storing spatial data in a HANA database?",
-          "asr_output_elevenlabs": "Um, can you like help me serialize a multipoint object with, uh, five points , , , and into a bite buffer using xsmode.xyz for storing spatial data in a HANA database?"
+          "asr_output_elevenlabs": "Um, can you like help me serialize a multipoint object with, uh, five points , , , and into a bite buffer using xsmode.xyz for storing spatial data in a HANA database?",
+          "asr_output_deepgram": "Can you, like, help me serialize a multipoint object with, five points, parentheses one comma two, parentheses three comma four, parentheses five comma six, parentheses seven comma eight, and parentheses nine comma ten into a byte buffer using x s mode dot x y z for storing spatial data in a HANA database?"
         }
       ]
     ],
@@ -436,7 +439,8 @@
           "transcript": "Uh, update the JNI Bridge launcher info with the path slash u s r slash local slash bin slash dbeaver and, um, name it DBeaverLauncher? Thanks.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_10_openai.wav",
           "asr_output_openai": "Update the JNI Bridge Launcher info with the path /usr/local/bin/dbeaver and name it \"DBeaverLauncher\"? Thanks!",
-          "asr_output_elevenlabs": "Update the JNI Bridge launcher info with the path /usr/local/bin/dbeaver and name it DBeaver Launcher. Thanks!"
+          "asr_output_elevenlabs": "Update the JNI Bridge launcher info with the path /usr/local/bin/dbeaver and name it DBeaver Launcher. Thanks!",
+          "asr_output_deepgram": "Update the JNI bridge launcher info with the path slash USR slash local slash bin slash d beaver and, name it d beaver launcher? Thanks."
         }
       ]
     ],
@@ -474,7 +478,8 @@
           "transcript": "Hey, whats the EnableExtensions property set to in the Windows registry `WinReg` object, under H-K-E-Y underscore L-O-C-A-L underscore M-A-C-H-I-N-E, HKEY_LOCAL_MACHINE, when checking the system policies for DBeaver?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_11_openai.wav",
           "asr_output_openai": "Hey, what's the Enable Extensions property set to in the Windows Registry (WinReg) object, under HKEY_LOCAL_MACHINE (HKLM) when checking the system policies for DBeaver?",
-          "asr_output_elevenlabs": "Hey, watch the enabled extensions property set to in the Windows Registry Winrag object under HKEY_LOCAL_MACHINE H key local machine when checking the system policies for DBeaver."
+          "asr_output_elevenlabs": "Hey, watch the enabled extensions property set to in the Windows Registry Winrag object under HKEY_LOCAL_MACHINE H key local machine when checking the system policies for DBeaver.",
+          "asr_output_deepgram": "Hey. What's the enable extensions property set to in the Windows registry WinReg object under h k e y underscore l o c a l underscore m a c h I n e? HKEY local machine, when checking the system policies for DBeaver?"
         }
       ]
     ],
@@ -512,7 +517,8 @@
           "transcript": "Uh, could you change schema to AnalyticsDB in Exasol, thats E-X-A-S-O-L, Exasol, and, um, watch it usin progressMonitor?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_12_openai.wav",
           "asr_output_openai": "Could you change schema to analyticsdb in Exasol, that's E-X-A-S-O-L, Exasol, and watch it using progress monitor?",
-          "asr_output_elevenlabs": "Uh, could you change schema to analyticsdb in Exasol? That's E-X-A-S-O-L, Exasol. And, um, watch it using progress monitor?"
+          "asr_output_elevenlabs": "Uh, could you change schema to analyticsdb in Exasol? That's E-X-A-S-O-L, Exasol. And, um, watch it using progress monitor?",
+          "asr_output_deepgram": "Could you change schema to Analytics DB in Exasol? That's e x a s o l, Exasol, and, watch it using progress monitor."
         }
       ]
     ],
@@ -550,7 +556,8 @@
           "transcript": "Uh, okay, can you help me set up a J D B C statement to get the privilege and, uh, grantor names for system privileges of the Altibase grantee JohnDoe\u2014thats J O H N D O E\u2014in the backticks J D B C underscore session?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_13_openai.wav",
           "asr_output_openai": "Okay, can you help me set up a JDBC statement to get the privilege and grantor names for system privileges of the Altibase grantee John Doe (that's J-O-H-N D-O-E) in the backticks jdbc_session?",
-          "asr_output_elevenlabs": "Uh, okay. Can you help me set up a JDBC statement to get the privilege and, uh, grantor names for system privileges of the AltaBase grantees John Doe? That's J-O-H-N D-O-E. In the back ticks, JDBC session."
+          "asr_output_elevenlabs": "Uh, okay. Can you help me set up a JDBC statement to get the privilege and, uh, grantor names for system privileges of the AltaBase grantees John Doe? That's J-O-H-N D-O-E. In the back ticks, JDBC session.",
+          "asr_output_deepgram": "Okay. Can you help me set up a JDBC statement to get the privilege and, grantor names for system privileges of the AltaBase grantee, John Doe? That's j o h n d o e. In the back ticks, j d b c underscore session."
         }
       ]
     ],
@@ -588,7 +595,8 @@
           "transcript": "Um, hey, in the SmartRefreshLayout library, how do I start the finish event for a FunGame header using a g-a-m-e capital L-a-y-o-u-t object to show the refresh was successful? Right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_14_openai.wav",
           "asr_output_openai": "Hey, in the SmartRefreshLayout library, how do I start the finish event for a FunGameHeader using a GameLayout object to show the refresh was successful?",
-          "asr_output_elevenlabs": "Um, hey, in the Smart Refresh Layout library, how do I start the finish event for a fun game header using a GAME, capital LAYOUT object to show the refresh was successful? Right?"
+          "asr_output_elevenlabs": "Um, hey, in the Smart Refresh Layout library, how do I start the finish event for a fun game header using a GAME, capital LAYOUT object to show the refresh was successful? Right?",
+          "asr_output_deepgram": "Hey. In the smart refresh layout library, how do I start the finish event for a fun game header using a g a m e, capital l a y o u t object to show the refresh was successful? Right?"
         }
       ]
     ],
@@ -626,7 +634,8 @@
           "transcript": "Um, can you break down a nine dash patch image from `imageInputStream` and, uh, save it as a P N G to `imageOutputStream`, thanks?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_15_openai.wav",
           "asr_output_openai": "Can you break down a NinePatch image from imageInputStream and save it as a PNG to imageOutputStream? Thanks.",
-          "asr_output_elevenlabs": "Um, can you break down a nine-dash patch image from image input stream and save it as a PNG to image output stream? Thanks."
+          "asr_output_elevenlabs": "Um, can you break down a nine-dash patch image from image input stream and save it as a PNG to image output stream? Thanks.",
+          "asr_output_deepgram": "Can you break down a nine dash patch image from image input stream and, save it as a PNG to image output stream? Thanks."
         }
       ]
     ],
@@ -664,7 +673,8 @@
           "transcript": "Uh, can you help me set up an `InvokePolymorphicNode` for the `instructionData` that, uh, indicates a range call in a Java decompiler?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_16_openai.wav",
           "asr_output_openai": "Can you help me set up an invoke polymorphic node for the instruction data that indicates a range call in a Java decompiler?",
-          "asr_output_elevenlabs": "Uh, can you help me set up an InvokePolymorphic node for the instruction data that indicates a range call in a Java decompiler?"
+          "asr_output_elevenlabs": "Uh, can you help me set up an InvokePolymorphic node for the instruction data that indicates a range call in a Java decompiler?",
+          "asr_output_deepgram": "Can you help me set up an invoke polymorphic node for the instruction data that, indicates a range call in a Java decompiler?"
         }
       ]
     ],
@@ -702,7 +712,8 @@
           "transcript": "Let me see... can you help me put generic type info in the `newConstructorInsn` instruction inside the `initMethod` of a Java decompiler tool, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_17_openai.wav",
           "asr_output_openai": "Let me see. Can you help me put generic type info in the new constructor insn instruction inside the init method of a Java decompiler tool?",
-          "asr_output_elevenlabs": "Let me see. Can you help me put generic type info in the new constructor instant instruction inside the init method of a Java decompiler tool? Okay."
+          "asr_output_elevenlabs": "Let me see. Can you help me put generic type info in the new constructor instant instruction inside the init method of a Java decompiler tool? Okay.",
+          "asr_output_deepgram": "Let me see. Can you help me put generic type info in the new constructor insen instruction inside the init method of a Java decompiler tool? Okay?"
         }
       ]
     ],
@@ -740,7 +751,8 @@
           "transcript": "Uh, can you use the SysRoleControllers method for querying in the system management app to get the third page of role counts, with a page size set to 20?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_18_openai.wav",
           "asr_output_openai": "Can you use the sys_role_controller's method for querying in the System Management app to get the third page of role counts, with a page size set to 20?",
-          "asr_output_elevenlabs": "Uh, can you use the sysrolecontrollers method for querying in the system management app to get the third page of role counts with a page size set to 20?"
+          "asr_output_elevenlabs": "Uh, can you use the sysrolecontrollers method for querying in the system management app to get the third page of role counts with a page size set to 20?",
+          "asr_output_deepgram": "Can you use the SysRole controller's method for querying in the system management app to get the third page of role counts with a page size set to twenty?"
         }
       ]
     ],
@@ -778,7 +790,8 @@
           "transcript": "Um, could you show me the personal info page for a user? Ive got a model object called `webModel`, and an H-T-T-P request `userRequest` where username is set to john_doe.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_19_openai.wav",
           "asr_output_openai": "Um, could you show me the personal info page for a user? I've got a model object called WebModel and an HttpRequest userRequest where userName is set to \"John Doe\"?",
-          "asr_output_elevenlabs": "Um, could you show me the personal info page for a user? I've got a model object called web model and an HTTP request, user request, where username is set to John Doe."
+          "asr_output_elevenlabs": "Um, could you show me the personal info page for a user? I've got a model object called web model and an HTTP request, user request, where username is set to John Doe.",
+          "asr_output_deepgram": "Could you show me the personal info page for a user? I've got a model object called web model and an HTTP request user request where username is set to John Doe."
         }
       ]
     ],
@@ -816,7 +829,8 @@
           "transcript": "Uh, can you update HBase mapping config for the file user-mapping dot y m l? Use the, um, new config object `newMappingConfig`, but keep the outer adapter key the same.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_20_openai.wav",
           "asr_output_openai": "Can you update HBase mapping config for the file user-mapping.yml? Use the new config object newMappingConfig, but keep the outer adapter key the same.",
-          "asr_output_elevenlabs": "Uh, can you update HBase mapping config for the file user mapping dot yml? Use the, um, new config object, new mapping config, but keep the outer adapter key the same."
+          "asr_output_elevenlabs": "Uh, can you update HBase mapping config for the file user mapping dot yml? Use the, um, new config object, new mapping config, but keep the outer adapter key the same.",
+          "asr_output_deepgram": "Can you update h base mapping config for the file user mapping dot y m l? Use the, new config object, new mapping config, but keep the outer adapter key the same."
         }
       ]
     ],
@@ -854,7 +868,8 @@
           "transcript": "Um, during the network session, can you manage the `I-O exception event` in `N-E-T-T-Y C-H-A-N-N-E-L context`? Oh, and uh, be sure to log something goes wrong with channel and then close the channel afterward.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_21_openai.wav",
           "asr_output_openai": "During the network session, can you manage the IO exception event in any TTY channel context? Oh, and be sure to log something goes wrong with channel and then close the channel afterward.",
-          "asr_output_elevenlabs": "Um, during the network session, can you manage the IO exception event in any TTY CHANEL context? Oh, and be sure to log something goes wrong with channel and then close the channel afterward."
+          "asr_output_elevenlabs": "Um, during the network session, can you manage the IO exception event in any TTY CHANEL context? Oh, and be sure to log something goes wrong with channel and then close the channel afterward.",
+          "asr_output_deepgram": "During the network session, can you manage the IO exception event in n e t t y c h a n n e l context? Oh, and, be sure to log something goes wrong with channel and then close the channel afterward."
         }
       ]
     ],
@@ -892,7 +907,8 @@
           "transcript": "Hey, uh, right, can you update status to two for these product IDs, uh, in product management system: [one oh one, two oh two, three oh three]?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_22_openai.wav",
           "asr_output_openai": "Hey, uh, right. Can you update status to two for these product IDs, uh, in product management system 101, 202, 303?",
-          "asr_output_elevenlabs": "Hey, uh, right. Can you update status to two for these product IDs, uh, in product management system 101, 202, 303?"
+          "asr_output_elevenlabs": "Hey, uh, right. Can you update status to two for these product IDs, uh, in product management system 101, 202, 303?",
+          "asr_output_deepgram": "Hey. Right. Can you update status to two for these product IDs, in product management system? One zero one two zero two three zero three."
         }
       ]
     ],
@@ -933,7 +949,8 @@
           "transcript": "Uh, can you get me a list of new home products with LED TV in the name and, um, a recommendation status of one? Oh, I need the third page of results, twenty items per page.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_23_openai.wav",
           "asr_output_openai": "Can you get me a list of new home products with LED TV in the name? And, um, a recommendation status of one? Oh, I need the third page of results, 20 items per page.",
-          "asr_output_elevenlabs": "Uh, can you get me a list of new home products with LED TV in the name and, um, a recommendation status of one? Oh, I need the third page of results, 20 items per page."
+          "asr_output_elevenlabs": "Uh, can you get me a list of new home products with LED TV in the name and, um, a recommendation status of one? Oh, I need the third page of results, 20 items per page.",
+          "asr_output_deepgram": "Can you get me a list of new home products with LED TV in the name and, a recommendation status of one? Oh, I need the third page of results, twenty items per page."
         }
       ]
     ],
@@ -981,7 +998,8 @@
           "transcript": "Hey, can you, uh, hide product categories with IDs one oh one, one oh two, and one oh three in the e-commerce admin panel?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_24_openai.wav",
           "asr_output_openai": "Hey, can you hide product categories with IDs 101, 102, and 103 in the e-commerce admin panel?",
-          "asr_output_elevenlabs": "Hey, can you, uh, hide product categories with IDs 101, 102, and 103 in the e-commerce admin panel?"
+          "asr_output_elevenlabs": "Hey, can you, uh, hide product categories with IDs 101, 102, and 103 in the e-commerce admin panel?",
+          "asr_output_deepgram": "Hey. Can you, hide product categories with IDs one zero one, one zero two, and one zero three in the ecommerce admin panel?"
         }
       ]
     ],
@@ -1022,7 +1040,8 @@
           "transcript": "Uh, can you change the sort order of the recommended subject with ID forty-two to five? For that, use the SMS home recommendations controller.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_25_openai.wav",
           "asr_output_openai": "Can you change the sort order of the recommended subject with ID 42 to 5? For that, use the SMSHomeRecommendationsController.",
-          "asr_output_elevenlabs": "Uh, can you change the sort order of the recommended subject with ID 42 to five? For that, use the SMS home recommendations controller."
+          "asr_output_elevenlabs": "Uh, can you change the sort order of the recommended subject with ID 42 to five? For that, use the SMS home recommendations controller.",
+          "asr_output_deepgram": "Can you change the sort order of the recommended subject with ID forty two to five? For that, use the SMS home recommendations controller."
         }
       ]
     ],
@@ -1060,7 +1079,8 @@
           "transcript": "Uh, can you help me, like, create a callable statement to run the stored procedure CALL totalSales(open parenthesis, question mark, close parenthesis)? Oh, its gotta have a scroll insensitive, uh, read-only result set with a close cursors at commit holdability, using the proxyConn connection object.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_26_openai.wav",
           "asr_output_openai": "Can you help me, like, create a callable statement to run the stored procedure call totalSales(?) Oh, it's gotta have a scroll-insensitive, read-only result set with a close cursors at commit holdability using the proxyCon connection object?",
-          "asr_output_elevenlabs": "Uh, can you help me like create a callable statement to run the stored procedure call total sales open parenthesis question mark close parenthesis? Oh, it's gotta have a scroll insensitive, uh, read only result set with a close cursors at commit hold ability using the proxy conn connection object."
+          "asr_output_elevenlabs": "Uh, can you help me like create a callable statement to run the stored procedure call total sales open parenthesis question mark close parenthesis? Oh, it's gotta have a scroll insensitive, uh, read only result set with a close cursors at commit hold ability using the proxy conn connection object.",
+          "asr_output_deepgram": "Can you help me, like, create a callable statement to run the stored procedure, call total sales, open parenthesis, question mark, close parenthesis? Oh, it's gotta have a scroll insensitive, read only result set with a close cursors that commit hold ability using the proxy con connection object."
         }
       ]
     ],
@@ -1108,7 +1128,8 @@
           "transcript": "Hey, um, which two numbers in this array\u2014two, seven, eleven, fifteen\u2014add up to, uh, nine? Yeah, whatre their indices?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_27_openai.wav",
           "asr_output_openai": "Hey, um, which two numbers in this array [2, 7, 11, 15] add up to, uh, 9? Yeah, what are their indices?",
-          "asr_output_elevenlabs": "Hey, um, which two numbers in this array, 2, 7, 11, 15 add up to a nine? Yeah. What are their indices?"
+          "asr_output_elevenlabs": "Hey, um, which two numbers in this array, 2, 7, 11, 15 add up to a nine? Yeah. What are their indices?",
+          "asr_output_deepgram": "Hey. Which two numbers in this array, two, seven, eleven, fifteen, add up to, nine? Yeah. What are their indices?"
         }
       ]
     ],
@@ -1149,7 +1170,8 @@
           "transcript": "Uh, set up a scheduled executor service. Its gotta, you know, refresh Elasticsearch credentials from the es_credentials dot properties file every half a minute. Use the basic credentials from \u2018basicAuthCredentials\u2019.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_28_openai.wav",
           "asr_output_openai": "Set up a scheduled executor service. It's gotta, you know, refresh Elasticsearch credentials from the es-credentials.properties file every half a minute. Use the basic credentials from basic-auth-credentials.",
-          "asr_output_elevenlabs": "Uh, set up a scheduled executor service. It's got to, you know, refresh Elasticsearch credentials from the escredentials.properties file every half a minute. Use the basic credentials from basic auth credentials."
+          "asr_output_elevenlabs": "Uh, set up a scheduled executor service. It's got to, you know, refresh Elasticsearch credentials from the escredentials.properties file every half a minute. Use the basic credentials from basic auth credentials.",
+          "asr_output_deepgram": "Set up a scheduled executor service. It's gotta, you know, refresh Elasticsearch credentials from the ES credentials dot properties file every half a minute. Use the basic credentials from basic auth credentials."
         }
       ]
     ],
@@ -1192,7 +1214,8 @@
           "transcript": "Um, can you help see if the zipkin dot collector dot activemq dot concurrency setting, uh, with a value of ten is properly set in the ActiveMQCollector dot Builder when configurin a Zipkin server?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_29_openai.wav",
           "asr_output_openai": "Can you help see if the Zipkin.collector.activeMQ.concurrency setting, with a value of 10, is properly set in the ActiveMQCollector.Builder when configuring a Zipkin server?",
-          "asr_output_elevenlabs": "Um, can you help see if the Zipkin dot collector dot ActiveMQ dot concurrency setting, uh, with a value of 10 is properly set in the ActiveMQ collector dot builder when configurin' a Zipkin server?"
+          "asr_output_elevenlabs": "Um, can you help see if the Zipkin dot collector dot ActiveMQ dot concurrency setting, uh, with a value of 10 is properly set in the ActiveMQ collector dot builder when configurin' a Zipkin server?",
+          "asr_output_deepgram": "Can you help see if the Zipkin dot collector dot active m q dot concurrency setting, with a value of ten is properly set in the active m q collector dot builder when configuring a Zipkin server?"
         }
       ]
     ],
@@ -1235,7 +1258,8 @@
           "transcript": "Uh, if its not already there, can you keep forty-two under answer in a Redisson cache? I need a CompletableFuture for this that gives an Optional with the previous value, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_30_openai.wav",
           "asr_output_openai": "Uh, if it's not already there, can you keep 42 under answer in a redisson cache? I need a CompletableFuture for this that gives an Optional with the previous value.",
-          "asr_output_elevenlabs": "Uh, if it's not already there, can you keep 42 under answer in a reticent cache? I need a completable future for this that gives an optional with the previous value. Okay?"
+          "asr_output_elevenlabs": "Uh, if it's not already there, can you keep 42 under answer in a reticent cache? I need a completable future for this that gives an optional with the previous value. Okay?",
+          "asr_output_deepgram": "If it's not already there, can you keep forty two under answer in a reticent cache? I need a completable future for this that gives an optional with the previous value. Okay?"
         }
       ]
     ],
@@ -1273,7 +1297,8 @@
           "transcript": "Let me think... can you build a reactive queue named taskQueue using a jsonCodec, thats J-S-O-N-C-O-D-E-C, in a reactive model with R-E-D-I-S-S-O-N, Redisson?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_31_openai.wav",
           "asr_output_openai": "Let me think. Can you build a reactive queue named TaskQueue using a JSON codec, that's J-S-O-N-C-O-D-E-C, in a reactive model with R-E-D-I-S-S-O-N, Redisson?",
-          "asr_output_elevenlabs": "Let me think. Can you build a reactive queue named 'taskqueue' using a JSON codec, that's J-S-O-N C-O-D-E-C, in a reactive model with R-E-D-I-S-O-N, Redison?"
+          "asr_output_elevenlabs": "Let me think. Can you build a reactive queue named 'taskqueue' using a JSON codec, that's J-S-O-N C-O-D-E-C, in a reactive model with R-E-D-I-S-O-N, Redison?",
+          "asr_output_deepgram": "Let me think. Can you build a reactive queue named task queue using a JSON codec? That's j s o n c o d e c. In a reactive model with r e d I s s o n, Redison?"
         }
       ]
     ],
@@ -1311,7 +1336,8 @@
           "transcript": "Uh, can you help me try to, like, get a permit from a R-E-D-I-S-S-O-N, Redisson expirable semaphore asynchronously, with a five-second wait, two-minute lease, using SECONDS as the time unit, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_32_openai.wav",
           "asr_output_openai": "Can you help me try to, like, get a permit from a r-e-d-i-s-s-o-n, prodison expirabl semaphore asynchronously, with a five-second wait, two-minute lease, using seconds as the time unit, right?",
-          "asr_output_elevenlabs": "Uh, can you help me try to like get a permit from a r-e-d-i-s-s-o-n, Redison Expirable Semaphore asynchronously with a five-second wait, two-minute lease using seconds as the time unit? Right?"
+          "asr_output_elevenlabs": "Uh, can you help me try to like get a permit from a r-e-d-i-s-s-o-n, Redison Expirable Semaphore asynchronously with a five-second wait, two-minute lease using seconds as the time unit? Right?",
+          "asr_output_deepgram": "Can you help me try to, like, get a permit from a r e d I s s o n? For disen expirable semaphore asynchronously with a five second wait, two minute lease, using seconds as the time unit. Right?"
         }
       ]
     ],
@@ -1393,7 +1419,8 @@
           "transcript": "Set up a cleanup task with a timer to run in five minutes using the service manager. Its the `cleanupTask` TimerTask object.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_34_cartesia.wav",
           "asr_output_openai": "Set up a cleanup task with a timer to run in five minutes using the Service Manager. It's the cleanup task timer task object.",
-          "asr_output_elevenlabs": "Set up a cleanup task with a timer to run in five minutes using the service manager. It's the CleanupTaskTimerTask object."
+          "asr_output_elevenlabs": "Set up a cleanup task with a timer to run in five minutes using the service manager. It's the CleanupTaskTimerTask object.",
+          "asr_output_deepgram": "Set up a cleanup task with a timer to run-in five minutes using the service manager. It's the cleanup task timer task object."
         }
       ]
     ],
@@ -1436,7 +1463,8 @@
           "transcript": "Uh, can you do a bitwise AND on Redis keys called user:online:today and user:online:yesterday, and save it with the name user:online:both with Redisson, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_35_cartesia.wav",
           "asr_output_openai": "Can you do a bitwise AND on Rita's keys called \"user:online:today\" and \"user:online:yesterday\" and save it with the name \"user:online:both\" with Rita's son?",
-          "asr_output_elevenlabs": "Uh, can you do a bit wise AND on Redis keys called user:online:today and user:online:yesterday and save it with the name user:online both with Redis son, okay?"
+          "asr_output_elevenlabs": "Uh, can you do a bit wise AND on Redis keys called user:online:today and user:online:yesterday and save it with the name user:online both with Redis son, okay?",
+          "asr_output_deepgram": "Can you do a bit wise a and d on Rita's keys called user colon online colon today and user colon online colon yesterday and save it with the name user colon online colon both with Rita's son. Okay?"
         }
       ]
     ],
@@ -1485,7 +1513,8 @@
           "transcript": "Uh, can you help me change this alternating key-value list open bracket userID, four two, username, johndoe, isActive, true close bracket into map entries for, uh, state handling with processingState?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_36_cartesia.wav",
           "asr_output_openai": "Can you help me change this alternating key-value list [userId, 42, userName, John Doe, isActive, true] into map entries for state handling with processing state?",
-          "asr_output_elevenlabs": "Uh, can you help me change this alternating key value list open bracket use RED42, username JOHN DOE, is active TRUE close bracket into map entries for, uh, state handling with processing state?"
+          "asr_output_elevenlabs": "Uh, can you help me change this alternating key value list open bracket use RED42, username JOHN DOE, is active TRUE close bracket into map entries for, uh, state handling with processing state?",
+          "asr_output_deepgram": "Can you help me change this alternating key value list, open bracket, use r e d four two, username, John Doe, is active, true close bracket into map entries for, state handling the processing state?"
         }
       ]
     ],
@@ -1526,7 +1555,8 @@
           "transcript": "Let me think... could you help me handle this markup text buildOutput for the build context jenkinsBuild to put console annotations in Jenkins?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_37_cartesia.wav",
           "asr_output_openai": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?",
-          "asr_output_elevenlabs": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?"
+          "asr_output_elevenlabs": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?",
+          "asr_output_deepgram": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?"
         }
       ]
     ],
@@ -1564,7 +1594,8 @@
           "transcript": "Um, can you help me create, uh, a source map thats stubbed for a nested document in Elasticsearch, thats E-L-A-S-T-I-C-S-E-A-R-C-H, Elasticsearch? Ive got a source map, filtered, called `docFields` with just name and address fields.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_38_cartesia.wav",
           "asr_output_openai": "Can you help me create a source map that's stubbed for a nested document in Elasticsearch? I've got a source map filtered called docFields with just name and address fields.",
-          "asr_output_elevenlabs": "Um, can you help me create a, a source map that's stubbed for a nested document in Elasticsearch? That's E-L-A-S-T-I-C-S-E-R-C-H, Elasticsearch. I've got a source map filtered called Doc Fields with just name and address fields."
+          "asr_output_elevenlabs": "Um, can you help me create a, a source map that's stubbed for a nested document in Elasticsearch? That's E-L-A-S-T-I-C-S-E-R-C-H, Elasticsearch. I've got a source map filtered called Doc Fields with just name and address fields.",
+          "asr_output_deepgram": "Can you help me create a a source map that's stubbed for a nested document in Elasticsearch? That's e l a s t I c s e a r c h Elasticsearch. I've got a source map filtered called doc fields with just name and address fields."
         }
       ]
     ],
@@ -1636,7 +1667,8 @@
           "transcript": "Um, could you tell routing nodes observer that shard capital A, S-H-A-R-D capital A, is now starting as shard capital B, S-H-A-R-D capital B, in Elasticsearch cluster, thanks?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_40_cartesia.wav",
           "asr_output_openai": "Um, could you tell routing nodes observer that shard capital A S H A R D capital A is now starting as shard capital B S H A R D capital B in Elasticsearch cluster? Thanks.",
-          "asr_output_elevenlabs": "Um, could you tell rooting nodes observer that shard capital A-S-H-A-R-D capital A is now starting as shard capital B-S-H-A-R-D capital B in elastic search cluster? Thanks."
+          "asr_output_elevenlabs": "Um, could you tell rooting nodes observer that shard capital A-S-H-A-R-D capital A is now starting as shard capital B-S-H-A-R-D capital B in elastic search cluster? Thanks.",
+          "asr_output_deepgram": "Could you tell routing nodes observer that shard, capital a, s h a r d, capital a, is now starting as shard, capital b, s h a r d, capital b, in Elasticsearch cluster. Thanks."
         }
       ]
     ],
@@ -1674,7 +1706,8 @@
           "transcript": "Okay, can you, um, help me set up `O-B-J-E-C-T-P-A-R-S-E-R, ObjectParser` called `searchHitParser` to handle inner hits fields in Elasticsearch search result?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_41_cartesia.wav",
           "asr_output_openai": "OK, can you help me set up a ObjectParser called SearchHitParser to handle inner hits fields in Elasticsearch search result?",
-          "asr_output_elevenlabs": "Okay. Can you, um, help me set up O-B-J-E-C-T P-A-R-S-E-R object parser called Search Hit Parser to handle inner hits fields in Elasticsearch search results?"
+          "asr_output_elevenlabs": "Okay. Can you, um, help me set up O-B-J-E-C-T P-A-R-S-E-R object parser called Search Hit Parser to handle inner hits fields in Elasticsearch search results?",
+          "asr_output_deepgram": "Okay. Can you, help me set up o b j e c t p a r s e, our object parser called search hit parser to handle inner hits fields in Elasticsearch search result?"
         }
       ]
     ],
@@ -1707,7 +1740,8 @@
           "transcript": "Okay, can you help me set up a term query? Lets see... for the `usernameField`, U-S-E-R-N-A-M-E-F-I-E-L-D, usernameField, to look for JohnDoe without considering case sensitivity in an Elasticsearch, E-L-A-S-T-I-C-S-E-A-R-C-H, Elasticsearch test case?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_42_cartesia.wav",
           "asr_output_openai": "Okay, can you help me set up a term query? Let's see for the username field, use T-E-R-M username field to look for John Doe without considering case sensitivity in an Elasticsearch test case.",
-          "asr_output_elevenlabs": "Okay, can you help me set up a term query? Let's see for the username field, U-S-E-R-N-A-M-E F-I-E-L-D, username field to look for John Doe without considering case sensitivity in an elastic search, E-L-A-S-T-I-C-S-H, elastic search test case."
+          "asr_output_elevenlabs": "Okay, can you help me set up a term query? Let's see for the username field, U-S-E-R-N-A-M-E F-I-E-L-D, username field to look for John Doe without considering case sensitivity in an elastic search, E-L-A-S-T-I-C-S-H, elastic search test case.",
+          "asr_output_deepgram": "Okay. Can you help me set up a term query? Let's see for the username field u s e, r n a m e f I e l d username field to look for John Doe without considering case sensitivity in an Elasticsearch e l a, s t I c s e, ARCH Elasticsearch test case?"
         }
       ]
     ],
@@ -1750,7 +1784,8 @@
           "transcript": "Can you help set up, oh I mean, a spy instance for an Elasticsearch test? Use the mock settings, mock handler, and test object.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_43_cartesia.wav",
           "asr_output_openai": "Can you help set up, oh I mean, a spy instance for an Elasticsearch test? Use the mock settings, mock handler, and test object.",
-          "asr_output_elevenlabs": "Can you help set up, oh I mean, a SPI instance for an Elasticsearch test? Use the mock settings, mock handler and test object."
+          "asr_output_elevenlabs": "Can you help set up, oh I mean, a SPI instance for an Elasticsearch test? Use the mock settings, mock handler and test object.",
+          "asr_output_deepgram": "Can you help set up, oh, I mean, a spy instance for an Elasticsearch test? Use the mock settings, mock handler, and test object."
         }
       ]
     ],
@@ -1793,7 +1828,8 @@
           "transcript": "Hey, uh, could you help me set up the D dash E dash S cipher in Java? I need it for encryption using DESede algorithm, CBC mode, and PKCS5Padding padding.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_44_cartesia.wav",
           "asr_output_openai": "Heya, could you help me set up the DES-EDE cipher in Java? I need it for encryption using DESede algorithm CBC mode and PKCS5PADDING.",
-          "asr_output_elevenlabs": "Hey, could you help me set up the D-E-S cipher in Java? I need it for encryption using DSC algorithm, CBC mode and PKCS5P adding padding."
+          "asr_output_elevenlabs": "Hey, could you help me set up the D-E-S cipher in Java? I need it for encryption using DSC algorithm, CBC mode and PKCS5P adding padding.",
+          "asr_output_deepgram": "Hey. Could you help me set up the d dash e dash s cipher in Java? I need it for encryption using DSC algorithm, CBC mode, and PECC, s five p adding padding."
         }
       ]
     ],
@@ -1836,7 +1872,8 @@
           "transcript": "Um, can you check that environment variable map `envVariables` in the process builder, uh, has exactly five entries, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_45_cartesia.wav",
           "asr_output_openai": "Can you check that environment variable map in variables in the process builder has exactly five entries, right?",
-          "asr_output_elevenlabs": "Um, can you check that environment variable map in variables in the process builder? Uh, has exactly five entries, right?"
+          "asr_output_elevenlabs": "Um, can you check that environment variable map in variables in the process builder? Uh, has exactly five entries, right?",
+          "asr_output_deepgram": "Can you check that environment variable map in variables in the process builder, has exactly five entries. Right?"
         }
       ]
     ],
@@ -1874,7 +1911,8 @@
           "transcript": "Uh, can you check if the caller-sensitive method injected the invoker class for the C S M instance csmInstance as expected in the unit test, and, um, check its MyExpectedClass dot class?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_46_cartesia.wav",
           "asr_output_openai": "Can you check if the callerSensitive method injected the invokerClass for the csmInstance instance as expected in the unit test and check it's myExpectedClass.class?",
-          "asr_output_elevenlabs": "Uh, can you check if the caller sensitive method injected the invoker class for the CSM instance minstance as expected in the unit test and, um, check its my expected class dot class?"
+          "asr_output_elevenlabs": "Uh, can you check if the caller sensitive method injected the invoker class for the CSM instance minstance as expected in the unit test and, um, check its my expected class dot class?",
+          "asr_output_deepgram": "Can you check if the caller sensitive method injected the invoker class for the CSM instance instance as expected in the unit test and, check it's my expected class dot class?"
         }
       ]
     ],
@@ -1912,7 +1950,8 @@
           "transcript": "Can you help me with formatting a Java constant declaration? Lemme see... oh, need it for a large Base64-encoded string of a certificate. The constant should be named CERTIFICATE, and its supposed to start with MIIFdTCCBF2gAwIBAgISESG, covering 1024 characters.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_47_cartesia.wav",
           "asr_output_openai": "Can you help me with formatting a Java constant declaration? Lemme see. Oh, need it for a large base64 encoded string of a certificate. The constant should be named CERTIFICATE and it's supposed to start with MIIFCCBF2GABIBAGESEG covering 1024 characters.",
-          "asr_output_elevenlabs": "Can you help me with formatting a Java constant declaration? Lemme see. Oh, need it for a large base64-encoded string of a certificate. The constant should be named certificate and it's supposed to start with meFTCCBF2gabebagieseg covering 1024 characters."
+          "asr_output_elevenlabs": "Can you help me with formatting a Java constant declaration? Lemme see. Oh, need it for a large base64-encoded string of a certificate. The constant should be named certificate and it's supposed to start with meFTCCBF2gabebagieseg covering 1024 characters.",
+          "asr_output_deepgram": "Can you help me with formatting a Java constant declaration? Let me see. Oh, need it for a large base sixty four encoded string of a certificate. The constant should be named certificate, and it's supposed to start with may f t c c b f two kabibagi s e s g covering ten twenty four characters."
         }
       ]
     ],
@@ -1950,7 +1989,8 @@
           "transcript": "Um, could you set up a dummy server with, uh, SSL encryption for testing? Oh, use IP one ninety-two dot one sixty-eight dot one dot ten, port eight oh eighty, and the SSL context testSSLContext.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_48_cartesia.wav",
           "asr_output_openai": "Um, could you set up a dummy server with SSL encryption for testing? Oh, use IP 192.168.1.10 port 8080 and the SSL context testSSLContext.",
-          "asr_output_elevenlabs": "Um, could you set up a dummy server with, uh, SSL encryption for testing? Oh, use IP 192.168.1.10, port 8080, and the SSL context to test sslcontext."
+          "asr_output_elevenlabs": "Um, could you set up a dummy server with, uh, SSL encryption for testing? Oh, use IP 192.168.1.10, port 8080, and the SSL context to test sslcontext.",
+          "asr_output_deepgram": "Could you set up a dummy server with, SSL encryption for testing? Oh, use IP one ninety two dot one sixty eight dot one dot ten port eight zero eighty, and the SSL context tests SSL context."
         }
       ]
     ],
@@ -1988,7 +2028,8 @@
           "transcript": "Uh, can you help me send H T T P response headers with a four oh four status code and, uh, a content length of one thousand five hundred bytes for a non-HEAD request in an H T T P two test exchange?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_49_cartesia.wav",
           "asr_output_openai": "Can you help me send HTTP response headers with a 404 status code and a content length of 1500 bytes for a non-HEAD request in an HTTP/2 test exchange?",
-          "asr_output_elevenlabs": "Uh, can you help me send HTTP response headers with a 404 status code and a content length of 1,500 bytes for a non-head request in an HTTP/2 test exchange?"
+          "asr_output_elevenlabs": "Uh, can you help me send HTTP response headers with a 404 status code and a content length of 1,500 bytes for a non-head request in an HTTP/2 test exchange?",
+          "asr_output_deepgram": "Can you help me send HTTP response headers with a four zero four status code and, a content length of one thousand five hundred bytes for a non head request in an HTTP two test exchange?"
         }
       ]
     ],
@@ -2026,7 +2067,8 @@
           "transcript": "Um, could you help with simulating, uh, removing documents that match a query in an Elasticsearch test setup? Use a DeleteByQueryRequest object called deleteQueryRequest and an ActionListener named testListener for the BulkByScrollResponse.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_50_cartesia.wav",
           "asr_output_openai": "Could you help with simulating removing documents that match a query in an Elasticsearch test setup? Use a DeleteByQueryRequest object called deleteQueryRequest and an ActionListener named testListener for the BulkByScrollResponse.",
-          "asr_output_elevenlabs": "Um, could you help with simulating, uh, removing documents that match a query in an elastic search test setup? Use a delete by querer request object called Delete Query Request and an action listener named Test Listener for the bulk by scroll response."
+          "asr_output_elevenlabs": "Um, could you help with simulating, uh, removing documents that match a query in an elastic search test setup? Use a delete by querer request object called Delete Query Request and an action listener named Test Listener for the bulk by scroll response.",
+          "asr_output_deepgram": "Could you help with simulating, removing documents that match a query in an Elasticsearch test setup? Use a delete by query request object called delete query request and an action listener named test listener for the bulk by scroll response."
         }
       ]
     ],
@@ -2064,7 +2106,8 @@
           "transcript": "Hey, um, can you start the master operation to get usage stats for Elasticsearchs Cross-Cluster Replication? I need data on follower indices, uh, auto-follow patterns, using usageRequest and clusterState, and, uh, make sure to handle the results with actionListener.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_51_cartesia.wav",
           "asr_output_openai": "Hey Young, can you start the master operation to get usage stats for Elasticsearch's cross-cluster replication? I need data on follower indices, auto-follow patterns using usage request and cluster state, and make sure to handle the results with action listener.",
-          "asr_output_elevenlabs": "Hey, Yum? Can you start the master operation to get usage stats for Elasticsearch cross-cluster replication? I need data on follower indices, uh, auto-follow patterns using usage request and cluster state, and, uh, make sure to handle the results with Action Listener."
+          "asr_output_elevenlabs": "Hey, Yum? Can you start the master operation to get usage stats for Elasticsearch cross-cluster replication? I need data on follower indices, uh, auto-follow patterns using usage request and cluster state, and, uh, make sure to handle the results with Action Listener.",
+          "asr_output_deepgram": "Hey, Can you start the master operation to get usage stats for Elasticsearch cross cluster replication? I need data on follower indices, auto follow patterns using usage request and clusters state, and, make sure to handle the results with action listener."
         }
       ]
     ],
@@ -2112,7 +2155,8 @@
           "transcript": "Uh, how can I, um, get all child elements of type Element from Node thats a SAML, uh, S-A-M-L, assertion, called SAMLAssertionNode in a Java, uh, XML, uh, processing setup?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_52_cartesia.wav",
           "asr_output_openai": "How can I get all child elements of type Element from Node that's a SAML Assertion called samlAssertionNode in a Java XML processing setup?",
-          "asr_output_elevenlabs": "How can I get all child elements of type element from node? That's a SAML, uh, S-A-M-L assertion called S-A-M-L, a assertion node in a Java, uh, XML, uh, processing setup."
+          "asr_output_elevenlabs": "How can I get all child elements of type element from node? That's a SAML, uh, S-A-M-L assertion called S-A-M-L, a assertion node in a Java, uh, XML, uh, processing setup.",
+          "asr_output_deepgram": "How can I, get all child elements of type element from node? That's a SAML, s a m l assertion called SAML, a assertion node in a Java, XML, processing setup."
         }
       ]
     ],
@@ -2150,7 +2194,8 @@
           "transcript": "Uh, can you help me make a predicate to check if a `Join` object is a full master node and, um, its states older than the local nodes accepted term of 42 and version 7, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_53_cartesia.wav",
           "asr_output_openai": "Can you help me make a predicate to check if a joined object is a full master node and it states older than the local nodes accept a term of 42 and version 7, right?",
-          "asr_output_elevenlabs": "Uh, can you help me make a predicate to check if a join object is a full master node and, um, it states older than the local nodes accept a term of 42 and version seven, right?"
+          "asr_output_elevenlabs": "Uh, can you help me make a predicate to check if a join object is a full master node and, um, it states older than the local nodes accept a term of 42 and version seven, right?",
+          "asr_output_deepgram": "Can you help me make a predicate to check if a join object is a full master node and, it states older than the local nodes except a term of forty two in version seven. Right?"
         }
       ]
     ],
@@ -2188,7 +2233,8 @@
           "transcript": "Okay, begin shard operation on searchable snapshot for \\`snapshotRequest\\`, \\`shardRouteInfo\\`, and \\`snapshotTask\\`, and make sure to handle result asynchronously with \\`operationListener\\`.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_54_cartesia.wav",
           "asr_output_openai": "Okay, begin shard operation on searchable snapshot for snapshot request, shard routing info, and snapshot task, and make sure to handle result asynchronously with operation listener.",
-          "asr_output_elevenlabs": "Okay, begin shard operation on searchable snapshot for snapshot request, shard route info and snapshot task, and make sure to handle result asynchronously with operation listener."
+          "asr_output_elevenlabs": "Okay, begin shard operation on searchable snapshot for snapshot request, shard route info and snapshot task, and make sure to handle result asynchronously with operation listener.",
+          "asr_output_deepgram": "Okay. Begin shard operation on searchable snapshot for snapshot request, shard root info, and snapshot task, and make sure to handle result asynchronously with operation listener."
         }
       ]
     ],
@@ -2236,7 +2282,8 @@
           "transcript": "Uh, create a new searchable snapshot for shard ID five in the daily-snapshots repo. Oh, use, um, logs index settings with `indexSettingsForLogs`. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and, uh, get current time in nanoseconds using currentTimeNanos. Services like repositoriesService, cacheService, threadPool, blobStoreCacheService, and, uh, sharedBlobCacheService are set up.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_55_cartesia.wav",
           "asr_output_openai": "Create a new searchable snapshot for shard ID 5 in the daily snapshots repo. O use logs index settings with index settings for logs. The shard path is in the 5 folder inside logs, inside indices, inside zero, inside nodes on the data directory, and get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blob store cache service, and shared blob cache service are set up.",
-          "asr_output_elevenlabs": "Uh, create a new searchable snapshot for shard ID 5 in the daily snapshots repo. Oh, use, um, logs index settings with index settings for logs. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and, uh, get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blob store cache service, and, uh, shared blob cache service are set up."
+          "asr_output_elevenlabs": "Uh, create a new searchable snapshot for shard ID 5 in the daily snapshots repo. Oh, use, um, logs index settings with index settings for logs. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and, uh, get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blob store cache service, and, uh, shared blob cache service are set up.",
+          "asr_output_deepgram": "Create a new searchable snapshot for shard ID five in the daily snapshots repo. Oh, use, logs index settings with index settings for logs. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blobs Tor cache service, and, shared blob cache service are set up."
         }
       ]
     ],
@@ -2304,7 +2351,8 @@
           "transcript": "Um, can you help with parsing the HTTP response body from `httpResponseEntity` using the `responseParser` function and, oh, `defaultParserConfig` in an Elasticsearch multi-cluster search test?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_56_cartesia.wav",
           "asr_output_openai": "Can you help with parsing the HTTP response body from HttpResponse and Entity using the responseParser function and, oh, defaultParserConfig in an Elasticsearch multi-cluster search test?",
-          "asr_output_elevenlabs": "Um, can you help with parsing the HTTP response body from htpressponsan entity using the response parser function and, oh, default parser config in an Elasticsearch multi-cluster search test?"
+          "asr_output_elevenlabs": "Um, can you help with parsing the HTTP response body from htpressponsan entity using the response parser function and, oh, default parser config in an Elasticsearch multi-cluster search test?",
+          "asr_output_deepgram": "Can you help with parsing the HTTP response body from HT Press response and entity using the response parser function and, oh, default parser config in an Elasticsearch multi cluster search test?"
         }
       ]
     ],
@@ -2347,7 +2395,8 @@
           "transcript": "Uh, can you check the enableLogging setting? Its set to yes right now. Right, if its not specified, um, make sure it defaults to false.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_57_cartesia.wav",
           "asr_output_openai": "Can you check the enableLogging setting? It's set to yes right now. Right, if it's not specified, make sure it defaults to false.",
-          "asr_output_elevenlabs": "Uh, can you check the enable login setting? It's set to yes right now. Right, if it's not specified, um, make sure it defaults to false."
+          "asr_output_elevenlabs": "Uh, can you check the enable login setting? It's set to yes right now. Right, if it's not specified, um, make sure it defaults to false.",
+          "asr_output_deepgram": "Can you check the enable login setting? It's set to yes right now. Right? If it's not specified, make sure it defaults to false."
         }
       ]
     ],
@@ -2385,7 +2434,8 @@
           "transcript": "Uh, can you help turn the userProfile data map with keys like name, age, and email into an XContentBuilder object? And, oh, make sure therere no self-references and include start and end object headers.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_58_cartesia.wav",
           "asr_output_openai": "Ah, can you help turn the userProfileData map with keys like name, age, and email into an XContentBuilder object? And oh, make sure there are no self-references and include start and end object headers.",
-          "asr_output_elevenlabs": "Uh, can you help turn the user profile data map with keys like name, age, and email into an XContentBuilder object? And oh, make sure there were no self-references, and include start and end object headers."
+          "asr_output_elevenlabs": "Uh, can you help turn the user profile data map with keys like name, age, and email into an XContentBuilder object? And oh, make sure there were no self-references, and include start and end object headers.",
+          "asr_output_deepgram": "Can you help turn the user profile data map with keys like name, age, and email into an X Content Builder object? And, oh, make sure there are no self references and include start and end object headers."
         }
       ]
     ],
@@ -2428,7 +2478,8 @@
           "transcript": "Could you assist me in truncating the translog for that shard? Its found in the folder slash var slash data slash elasticsearch slash nodes slash zero slash indices slash one shard. To make sure the output goes to the index directory, use the terminal interface located at slash var slash data slash elasticsearch slash nodes slash zero slash indices slash one shard slash index.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_59_cartesia.wav",
           "asr_output_openai": "Could you assist me in truncating the translog for that shard? It's found in the folder /var/data/elasticsearch/nodes/0/indices/1/shard. To make sure the output goes to the index directory, use the terminal interface located at /var/data/elasticsearch/nodes/0/indices/known_shard/index.",
-          "asr_output_elevenlabs": "Could you assist me in truncating the translog for that shard? It's found in the folder /var/data/elasticsearch/nodes/0/indices/1-shard. To make sure the output goes to the index directory, use the terminal interface located at /var/data/elasticsearch/nodes/0/indices/known-shard/index."
+          "asr_output_elevenlabs": "Could you assist me in truncating the translog for that shard? It's found in the folder /var/data/elasticsearch/nodes/0/indices/1-shard. To make sure the output goes to the index directory, use the terminal interface located at /var/data/elasticsearch/nodes/0/indices/known-shard/index.",
+          "asr_output_deepgram": "Could you assist me in truncating the trans log for that shard? It's found in the folder slash var slash data slash elastic search slash node slash zero slash indices slash one shard. To make sure the output goes to the index directory, use the terminal interface located at slash rar slash data slash elastic search slash nodes slash zero slash indices slash known shard slash index."
         }
       ]
     ],
@@ -2471,7 +2522,8 @@
           "transcript": "Hey, uh, can you help me build a nested query in Elasticsearch for mainSearchContext, thats M-A-I-N-S-E-A-R-C-H-C-O-N-T-E-X-T, mainSearchContext? And, um, update the inner hits context hitsContext, thats H-I-T-S-C-O-N-T-E-X-T, hitsContext, for the nested path user dot address, makin sure it doesnt ignore unmapped paths?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_60_cartesia.wav",
           "asr_output_openai": "Hey, can you help me build a nested query in Elasticsearch for main search context (mainSearchContext) and um, update the inner hits context (hitsContext) for the nested path user.address making sure it doesn't ignore unmapped paths?",
-          "asr_output_elevenlabs": "Hey, uh, can you help me build a nested query in Elasticsearch for main search context? That's M-A-I-N-S-E-A-R-C-H-C-O-N-T-E-X-T, main search context. And, um, update the inner hits context, hits context, that's H-I-T-S-C-O-N-T-E-X-T, hits context for the nested path user.address. Making sure it doesn't ignore unmapped paths."
+          "asr_output_elevenlabs": "Hey, uh, can you help me build a nested query in Elasticsearch for main search context? That's M-A-I-N-S-E-A-R-C-H-C-O-N-T-E-X-T, main search context. And, um, update the inner hits context, hits context, that's H-I-T-S-C-O-N-T-E-X-T, hits context for the nested path user.address. Making sure it doesn't ignore unmapped paths.",
+          "asr_output_deepgram": "Hey, can you help me build a nested query in Elasticsearch for main search context? That's m a I n s e a r c h c o n t e x t main search context, and, update the inner hits context hits context. That's h I t s c o n t e x t hits context for the nested path user dot address, making sure it doesn't ignore unmapped paths."
         }
       ]
     ],
@@ -2509,7 +2561,8 @@
           "transcript": "Um, can you help me, uh, set up an exponential decay scoring function for an Elasticsearch query? I need it to target the timestamp field, with the origin as now, a scale of ten days, an offset of two days, and a decay factor of zero point five.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_61_cartesia.wav",
           "asr_output_openai": "Um, can you help me set up an exponential decay scoring function for an Elasticsearch query? I need it to target the timestamp field, with the origin as now, a scale of 10 days, an offset of 2 days, and a decay factor of 0.5.",
-          "asr_output_elevenlabs": "Um, can you help me, uh, set up an exponential decay scoring function for an Elastic search query? I need it to target the timestamp field with the origin as now, a scale of 10 days, an offset of two days, and a decay factor of 0.5."
+          "asr_output_elevenlabs": "Um, can you help me, uh, set up an exponential decay scoring function for an Elastic search query? I need it to target the timestamp field with the origin as now, a scale of 10 days, an offset of two days, and a decay factor of 0.5.",
+          "asr_output_deepgram": "Can you help me, set up an exponential decay scoring function for an Elasticsearch query? I need it to target the timestamp field with the origin as now, a scale of ten days, an offset of two days, and a decay factor of zero point five."
         }
       ]
     ],
@@ -2561,7 +2614,8 @@
           "transcript": "Can you help me set up a range query for the temperature field to get records from twenty point five to thirty point zero degrees? Make sure it includes the lower bound but not the upper, and use FLOAT type.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_62_cartesia.wav",
           "asr_output_openai": "Can you help me set up a range query for the temperature field to get records from 20.5 to 30.0 degrees? Make sure it includes the lower bound but not the upper and use float type.",
-          "asr_output_elevenlabs": "Can you help me set up a range query for the temperature field to get records from 20.5 to 30.0 degrees? Make sure it includes the lower bound but not the upper and use float type."
+          "asr_output_elevenlabs": "Can you help me set up a range query for the temperature field to get records from 20.5 to 30.0 degrees? Make sure it includes the lower bound but not the upper and use float type.",
+          "asr_output_deepgram": "Can you help me set up a range query for the temperature field to get records from twenty point five to thirty point zero degrees? Make sure it includes the lower bound but not the upper and use float type."
         }
       ]
     ],
@@ -2619,7 +2673,8 @@
           "transcript": "Hey, uh, help me craft a query for Elasticsearch to find documents where the age fields between thirty and forty? Right, it should include thirty but not forty.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_63_cartesia.wav",
           "asr_output_openai": "Heya, help me craft a query for Elasticsearch to find documents where the age field's between 30 and 40? Right, it should include 30 but not 40?",
-          "asr_output_elevenlabs": "Hey. Uh, help me craft a query for Elasticsearch to find documents where the age field's between 30 and 40. Right? It should include 30 but not 40?"
+          "asr_output_elevenlabs": "Hey. Uh, help me craft a query for Elasticsearch to find documents where the age field's between 30 and 40. Right? It should include 30 but not 40?",
+          "asr_output_deepgram": "Hey, help me craft a query for Elasticsearch to find documents where the age field's between thirty and forty. Right? It should include thirty but not forty."
         }
       ]
     ],
@@ -2672,7 +2727,8 @@
           "transcript": "Um, can help me set up a new date field type in Elasticsearch? Name it timestamp and use back tick d-a-t-e-f-a-c-t-o-r-y, back tick for the field script. Uh, right, apply the script back tick d-a-t-e-s-c-r-i-p-t, back tick and include metadata with format as epoch_millis. Also, set the error policy to FAIL.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_64_cartesia.wav",
           "asr_output_openai": "Um, can help me set up a new date field type in Elasticsearch? Name it timestamp and use `dateFactory` for the field script. Alright, apply the script `dateScript` and include metadata with format as epoch_millis. Also, set the error policy to fail.",
-          "asr_output_elevenlabs": "Um, can you help me set up a new date field type in Elasticsearch? Name it timestamp and use back tick D-A-T-E-F-A-C-T-O-R-Y back tick for the field script. Uh, right. Apply the script back tick D-A-T-E-S-C-R-I-P-T back tick, and include metadata with format as epoch_millis. Also, set the error policy to fail."
+          "asr_output_elevenlabs": "Um, can you help me set up a new date field type in Elasticsearch? Name it timestamp and use back tick D-A-T-E-F-A-C-T-O-R-Y back tick for the field script. Uh, right. Apply the script back tick D-A-T-E-S-C-R-I-P-T back tick, and include metadata with format as epoch_millis. Also, set the error policy to fail.",
+          "asr_output_deepgram": "Can help me set up a new date field type in Elasticsearch? Name it time stamp and use backtick d a t. E f a c t o r y backtick for the field script. Right. Apply the script backtick d a t e s c r I p t backtick and include metadata with format as epoch underscore millis. Also, set the error policy to fail."
         }
       ]
     ],
@@ -2725,7 +2781,8 @@
           "transcript": "Uh, could you use xContentBuilderInstance to make the XContent for a RootObjectMapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_65_cartesia.wav",
           "asr_output_openai": "Could you use XContentBuilder instance to make the XContent for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates date detection, and numeric detection, but skip the runtime fields.",
-          "asr_output_elevenlabs": "Uh, could you use XContentBuilder instance to make the XContent for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields."
+          "asr_output_elevenlabs": "Uh, could you use XContentBuilder instance to make the XContent for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields.",
+          "asr_output_deepgram": "Could you use X Content Builder instance to make the X Content for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields."
         }
       ]
     ],
@@ -2766,7 +2823,8 @@
           "transcript": "Lemme see... could you help me set up a child runtime field for the composite field compositeField1 in Elasticsearch? Use mappingParserContext the parser context, the compositeScriptFactory as the parent script factory, and handle script errors with onScriptError.IGNORE, yeah.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_66_elevenlabs.wav",
           "asr_output_openai": "Let me see. Could you help me set up a child runtime field for the composite field compositeField1 in Elasticsearch? Use mappingParserContext the parserContext, the compositeScriptFactory as the parentScriptFactory, and handle script errors with onScriptError. Ignore, yeah.",
-          "asr_output_elevenlabs": "Let me see. Could you help me set up a child runtime field for the composite field composite field one in Elasticsearch? Use mapping parser context the parser context, the composite script factory as the parent script factory, and handle script errors with onScriptError? Ignore? Yeah..."
+          "asr_output_elevenlabs": "Let me see. Could you help me set up a child runtime field for the composite field composite field one in Elasticsearch? Use mapping parser context the parser context, the composite script factory as the parent script factory, and handle script errors with onScriptError? Ignore? Yeah...",
+          "asr_output_deepgram": "Let me see. Could you help me set up a child runtime field for the composite field composite field one in Elasticsearch? Use mapping parser context, the parser context, the composite script factory as the parent script factory, and handle script errors with on script error. Ignore yeah."
         }
       ]
     ],
@@ -2814,7 +2872,8 @@
           "transcript": "Um, can you help me make a DMG setup script for an app called PhotoEditor at slash Applications slash PhotoEditor dot app? Uh, make sure the script shows the right volume URL and installation directory for the macOS package with jpackage, and include a custom background image.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_67_elevenlabs.wav",
           "asr_output_openai": "Can you help me make a DMG setup script for an app called PhotoEditor at /Applications/PhotoEditor.app? Make sure the script shows the right volume URL and installation directory for the macOS package with jpackage, and include a custom background image.",
-          "asr_output_elevenlabs": "Um, can you help me make a DMG setup script for an app called Photo Editor at /application/photoeditor.app? Uh, make sure the script shows the right volume URL and installation directory for the MacOS package with JPackage and include a custom background image."
+          "asr_output_elevenlabs": "Um, can you help me make a DMG setup script for an app called Photo Editor at /application/photoeditor.app? Uh, make sure the script shows the right volume URL and installation directory for the MacOS package with JPackage and include a custom background image.",
+          "asr_output_deepgram": "Can you help me make a DMG setup script for an app called photo editor at slash application slash photo editor dot app? Make sure the script shows the right volume URL and installation directory for the macOS package with j package and include a custom background image."
         }
       ]
     ],
@@ -2852,7 +2911,8 @@
           "transcript": "Hey, uh, can you check that the application image directorys there and, um, has a valid name for making a macOS installer package? Right, the path is in the Applications folder, the file MyApp dot app, and the applications called MyApp.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_68_elevenlabs.wav",
           "asr_output_openai": "Hey, can you check that the application image directory's there and has a valid name for making a macOS installer package? Right, the path is in the Applications folder, the file MyApp.app, and the application's called MyApp.",
-          "asr_output_elevenlabs": "Hey, uh, can you check that the application image directory's there and, um, has a valid name for making a MacOS installer package? Right, the path is in the Applications folder, the file myapp.app, and the application's called MyApp."
+          "asr_output_elevenlabs": "Hey, uh, can you check that the application image directory's there and, um, has a valid name for making a MacOS installer package? Right, the path is in the Applications folder, the file myapp.app, and the application's called MyApp.",
+          "asr_output_deepgram": "Hey, can you check that the application image directory is there and, has a valid name for making a macOS installer package? Right. The path is in the applications folder, the file my app dot app, and the application's called my app."
         }
       ]
     ],
@@ -2885,7 +2945,8 @@
           "transcript": "Uh, could you make sure the BigDecimal elements in the `durations` array allve, um, the same sign from index two to five? Oh, these elements are for different time units in a duration object.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_69_elevenlabs.wav",
           "asr_output_openai": "Could you make sure the BigDecimal elements in the durations array all v the same sign from index 2 to 5? Oh, these elements are for different time units in a Duration object",
-          "asr_output_elevenlabs": "Could you make sure the big decimal elements in the durations array all be, um, the same sign from index 2 to 5? Oh, these elements are for different time units in a duration object."
+          "asr_output_elevenlabs": "Could you make sure the big decimal elements in the durations array all be, um, the same sign from index 2 to 5? Oh, these elements are for different time units in a duration object.",
+          "asr_output_deepgram": "Could you make sure the big decimal elements in the durations array all v, the same sign from index two to five? Oh, these elements are for different time units in a duration object."
         }
       ]
     ],
@@ -2931,7 +2992,8 @@
           "transcript": "Uh, can you help me finish an XML element with the qualified name: namespace URI is http://www.example.com, local part is item, and the prefix is ex? Oh, also, add the augmentations info in an XML app that works with namespaces.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_70_elevenlabs.wav",
           "asr_output_openai": "Can you help me finish an XML element with the qualified name? Namespace URI is http://www.example.com, localpart is item, and the prefix is ex. Oh, also add the augmentations info in an XML app that works with namespaces.",
-          "asr_output_elevenlabs": "Uh, can you help me finish an XML element with the qualified name, namespace URI is http dot www.example.com. Local part is item and the prefix is X. Oh, also add the augmentations info in an XML app that works with namespaces."
+          "asr_output_elevenlabs": "Uh, can you help me finish an XML element with the qualified name, namespace URI is http dot www.example.com. Local part is item and the prefix is X. Oh, also add the augmentations info in an XML app that works with namespaces.",
+          "asr_output_deepgram": "Can you help me finish an XML element with the qualified name? Name space URI is h t t p dot I jot w w w dot example dot com. Local part is item, and the prefix is x. Oh, also add the augmentations info in an XML app that works with namespaces."
         }
       ]
     ],
@@ -2969,7 +3031,8 @@
           "transcript": "Uh, can you switch the execution from coroutine eye dee five to coroutine eye dee ten, and pass resultData to it? Oh, and, um, make sure coroutine tens available, right? This needs to be in a Java XML processing setup.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_71_elevenlabs.wav",
           "asr_output_openai": "Can you switch the execution from coroutine ID 5 to coroutine ID 10 and pass result data to it? Oh, and um, make sure coroutine 10's available, right? This needs to be in a Java XML processing setup.",
-          "asr_output_elevenlabs": "Uh, can you switch the execution from coroutine ID five to coroutine ID ten and pass result data to it? Oh, and, um, make sure coroutine ten's available, right? This needs to be in a Java XML processing setup."
+          "asr_output_elevenlabs": "Uh, can you switch the execution from coroutine ID five to coroutine ID ten and pass result data to it? Oh, and, um, make sure coroutine ten's available, right? This needs to be in a Java XML processing setup.",
+          "asr_output_deepgram": "Can you switch the execution from coroutine ID five to coroutine ID ten and pass result data to it? Oh, and, make sure coroutine ten's available. Right? This needs to be in a Java XML processing setup."
         }
       ]
     ],
@@ -3012,7 +3075,8 @@
           "transcript": "Lemme see... right, can you help me put a substring from `textBuffer`\u2014starting at index five and ten characters long\u2014into a text stream, while handling XML serialization?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_72_elevenlabs.wav",
           "asr_output_openai": "Let me see... Right, can you help me put a substring from textBuffer, starting at index 5 and 10 characters long, into a text stream while handling XML serialization?",
-          "asr_output_elevenlabs": "Let me see. Right. Can you help me put a substring from text buffer starting at index five and ten characters long into a text stream while handling XML serialization?"
+          "asr_output_elevenlabs": "Let me see. Right. Can you help me put a substring from text buffer starting at index five and ten characters long into a text stream while handling XML serialization?",
+          "asr_output_deepgram": "Let me see. Right. Can you help me put a substring from text buffer starting at index five and ten characters long into a text stream while handling XML serialization?"
         }
       ]
     ],
@@ -3058,7 +3122,8 @@
           "transcript": "Uh, could you help me get the encoding info for UTF dash 8 using J-A-V-A, Java encoding names?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_73_elevenlabs.wav",
           "asr_output_openai": "Could you help me get the encoding info for UTF-8 using JAVA, Java encoding names?",
-          "asr_output_elevenlabs": "Uh, could you help me get the encoding info for UTF-8 using J-A-V-A, Java encoding names?"
+          "asr_output_elevenlabs": "Uh, could you help me get the encoding info for UTF-8 using J-A-V-A, Java encoding names?",
+          "asr_output_deepgram": "Could you help me get the encoding info for UTF dash eight using JAVA, Java encoding names?"
         }
       ]
     ],
@@ -3096,7 +3161,8 @@
           "transcript": "Uh, can you help me with dealing with surrogate pairs in XML? Im lookin at, like, a high surrogate value of fifty-five three fifty-seven and a low surrogate value of fifty-six eight thirty-two, and its not in a CDATA section.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_74_elevenlabs.wav",
           "asr_output_openai": "Can you help me with dealing with surrogate pairs in XML? I'm looking at like a high surrogate value of 55 357 and a low surrogate value of 56 832 and it's not in a sedata section.",
-          "asr_output_elevenlabs": "Uh, can you help me with dealing with surrogate pairs in XML? I'm looking at like a high surrogate value of 55357 and a low surrogate value of 56832. And it's not in a sedata section."
+          "asr_output_elevenlabs": "Uh, can you help me with dealing with surrogate pairs in XML? I'm looking at like a high surrogate value of 55357 and a low surrogate value of 56832. And it's not in a sedata section.",
+          "asr_output_deepgram": "Can you help me with dealing with surrogate pairs in XML? I'm looking at, like, a high surrogate value of fifty five three fifty seven and a low surrogate value of fifty six eight thirty two, and it's not in a sedator section."
         }
       ]
     ],
@@ -3139,7 +3205,8 @@
           "transcript": "Hey, can you check if the enableXmlSecurityFeature property is turned on for the XML_SECURITY feature in a J-A-V-A, Java X-M-L environment? Oh, lemme see...",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_75_elevenlabs.wav",
           "asr_output_openai": "Hey, can you check if the enableXMLSecurity feature property is turned on for the XML Security feature in a Java XML environment? Oh, let me see.",
-          "asr_output_elevenlabs": "Hey, can you check if the enable XML security feature property is turned on for the XML security feature in a Java XML environment? Oh, let me see."
+          "asr_output_elevenlabs": "Hey, can you check if the enable XML security feature property is turned on for the XML security feature in a Java XML environment? Oh, let me see.",
+          "asr_output_deepgram": "Hey. Can you check if the enable XML security feature property is turned on for the XML security feature in a JAVA Java XML environment? Oh, let me see."
         }
       ]
     ],
@@ -3177,7 +3244,8 @@
           "transcript": "Uh, can you help me change intro animation graphics using the step method? Right, its eight hundred pixels wide and ten minutes tall.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_76_elevenlabs.wav",
           "asr_output_openai": "Can you help me change intro animation graphics using the step method? Right, it's 800 pixels wide and 10 minutes tall.",
-          "asr_output_elevenlabs": "Uh, can you help me change intro animation graphics using the step method? Right. It's 800 pixels wide and 10 minutes tall."
+          "asr_output_elevenlabs": "Uh, can you help me change intro animation graphics using the step method? Right. It's 800 pixels wide and 10 minutes tall.",
+          "asr_output_deepgram": "Can you help me change intro animation graphics using the step method? Right. It's eight hundred pixels wide and ten minutes tall."
         }
       ]
     ],
@@ -3215,7 +3283,8 @@
           "transcript": "Uh, can you check if the user password P@ssw0rd! matches the encrypted one e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, uh, in the system for authentication, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_77_elevenlabs.wav",
           "asr_output_openai": "Can you check if the user password \"p@ssw0rd\" matches the encrypted one \"e3b0c44298fc1c149afbf4c8996b92427ae41e4649b934ca495991b7852b855\" in the system for authentication, right?",
-          "asr_output_elevenlabs": "Uh, can you check if the user password, p-a-s-s-w-o-r-d, matches the encrypted one, e3b0cc442298fc1ce149afbf4c8996ab92427841e4649b934ca4959001b7852b855, uh, in the system for authentication, right?"
+          "asr_output_elevenlabs": "Uh, can you check if the user password, p-a-s-s-w-o-r-d, matches the encrypted one, e3b0cc442298fc1ce149afbf4c8996ab92427841e4649b934ca4959001b7852b855, uh, in the system for authentication, right?",
+          "asr_output_deepgram": "Can you check if the user password, pass w a erd, matches the encrypted one e three b zero c c four four two two nine eight f c one c one four nine a f b f four c eight nine nine six, sir, b nine two four two seven a e four one e four six four nine being three four c a four nine five nine, num one b seven eight five two b eight five five, in the system for authentication. Right?"
         }
       ]
     ],
@@ -3253,7 +3322,8 @@
           "transcript": "Let me see... can help set up an option parser so it needs the output-format option unless theres a quiet or verbose option in the command-line app, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_78_elevenlabs.wav",
           "asr_output_openai": "Let me see, can help set up an option parser so it needs the output format option unless there's a quiet or verbose option in the command line app, okay?",
-          "asr_output_elevenlabs": "Let me see. Can help set up an option parser, so it needs the output format option unless there's a quiet or verbose option in the command line app. Okay?"
+          "asr_output_elevenlabs": "Let me see. Can help set up an option parser, so it needs the output format option unless there's a quiet or verbose option in the command line app. Okay?",
+          "asr_output_deepgram": "Let me see. Can help set up an option parser, so it needs the output format option unless there's a quiet or verbose option in the command line app. Okay?"
         }
       ]
     ],
@@ -3293,7 +3363,8 @@
           "transcript": "Uh, can you get InputSource for entity with system identifier http://astro.com/stylesheets/toptemplate while, um, parsing an XML document with SAX filter factory? Oh, the public I D is one two three four.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_79_elevenlabs.wav",
           "asr_output_openai": "Can you get input source for entity with system identifier \"http://astro.com/char/stylesheets/toptemplate\" while parsing an XML document with SAXFilterFactory? Oh, the public ID is \"1234\".",
-          "asr_output_elevenlabs": "Uh, can you get input source for entity with system identifier? Hgtt- so just astro.com style sheets, top template while, um, parsing an XML document with sax filter factory. Oh, the public ID is one, two, three, four."
+          "asr_output_elevenlabs": "Uh, can you get input source for entity with system identifier? Hgtt- so just astro.com style sheets, top template while, um, parsing an XML document with sax filter factory. Oh, the public ID is one, two, three, four.",
+          "asr_output_deepgram": "Can you get input source for entity with system identifier, h g t t as so, jazz, astro dot com chart stylesheets, top template while, passing an XML document with Sachs filter factory. Oh, the public ID is one two three four."
         }
       ]
     ],
@@ -3331,7 +3402,8 @@
           "transcript": "Um, can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system, specifically in the failOn category for rule four two?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_80_elevenlabs.wav",
           "asr_output_openai": "Can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system, specifically in the failOn category for rule 4.2?",
-          "asr_output_elevenlabs": "Um, can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system? Specifically in the fail on category for rule four two."
+          "asr_output_elevenlabs": "Um, can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system? Specifically in the fail on category for rule four two.",
+          "asr_output_deepgram": "Can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system, specifically in the Phalon category for rule four two?"
         }
       ]
     ],
@@ -3369,7 +3441,8 @@
           "transcript": "Lemme see... can you run a garbage collection test with humongous dash test dash case dot json? Oh, use a custom garbage collector, check object references with referenceChecker, and look at gc dash analysis dot log. Make sure it shows GC pause but no OutOfMemoryError.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_81_elevenlabs.wav",
           "asr_output_openai": "Let me see, can you run a garbage collection test with humongous-test-case.json? Oh, use a custom garbage collector, check object references with reference checker and look at gc-analysis.log. Make sure it shows GC pause but no out-of-memory error.",
-          "asr_output_elevenlabs": "Let me see. Can you run a garbage collection test with humungous-test-case.json? Oh, use a custom garbage collector, check object references with reference checker and look at gc-analysis.log. Make sure it shows GC pause, but no out of memory error."
+          "asr_output_elevenlabs": "Let me see. Can you run a garbage collection test with humungous-test-case.json? Oh, use a custom garbage collector, check object references with reference checker and look at gc-analysis.log. Make sure it shows GC pause, but no out of memory error.",
+          "asr_output_deepgram": "Let me see. Can you run a garbage collection test with humongous dash test dash case dot JSON? Oh, use a custom garbage collector, check object references with reference checker, and look at GC dash analysis dot log. Make sure it shows g c pause, but no out of memory error."
         }
       ]
     ],
@@ -3433,7 +3506,8 @@
           "transcript": "Uh, can you run the runIt method for a test? Oh, it should, like, make an object of the class being tested, hit a breakpoint on the method, and log everything to System.out, using the testArgs array.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_82_elevenlabs.wav",
           "asr_output_openai": "Can you run the runIt method for a test? Oh it should, like, make an object of the class being tested, hit a breakpoint on the method, and log everything to System.out using the testArgs array.",
-          "asr_output_elevenlabs": "Uh, can you run the runIt method for a test? Oh, it should like make an object of the class being tested, hit a breakpoint on the method and log everything to system.out using the test args array."
+          "asr_output_elevenlabs": "Uh, can you run the runIt method for a test? Oh, it should like make an object of the class being tested, hit a breakpoint on the method and log everything to system.out using the test args array.",
+          "asr_output_deepgram": "Can you run the run it method for a test? Oh, it should, like, make an object of the class being tested, hit a breakpoint on the method, and log everything to system dot out using the test args array."
         }
       ]
     ],
@@ -3474,7 +3548,8 @@
           "transcript": "Uh, can you run a performance test in Java with, like, five hundred iterations? Make sure the results go to System dot out. Also, use command-line arguments to, yknow, set a two-minute wait time.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_83_elevenlabs.wav",
           "asr_output_openai": "Can you run a performance test in Java with like 500 iterations? Make sure the results go to System.out. Also, use command line arguments to, you know, set a two-minute wait time.",
-          "asr_output_elevenlabs": "Uh, can you run a performance test in Java with like 500 iterations? Make sure the results go to system dot out. Also use command line arguments to, you know, set a two-minute wait time."
+          "asr_output_elevenlabs": "Uh, can you run a performance test in Java with like 500 iterations? Make sure the results go to system dot out. Also use command line arguments to, you know, set a two-minute wait time.",
+          "asr_output_deepgram": "Can you run a performance test in Java with, like, five hundred iterations? Make sure the results go to system dot out. Also, use command line arguments to, you know, set a two minute wait time."
         }
       ]
     ],
@@ -3515,7 +3590,8 @@
           "transcript": "Can you check if all those inner fields\u2014private, package-private, and public\u2014of `RedefClass` instance `myRedefClass` are set to 100? If theyre not, go ahead and log a complaint about it.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_84_elevenlabs.wav",
           "asr_output_openai": "Can you check if all those inner fields, private, package private, and public, of RedefClass instance MyRedefClass are set to 100? If they're not, go ahead and log a complaint about it.",
-          "asr_output_elevenlabs": "Can you check if all those inner fields, private package, private and public of RedefClass instance MyRedefClass are set to 100? If they're not, go ahead and log a complaint about it."
+          "asr_output_elevenlabs": "Can you check if all those inner fields, private package, private and public of RedefClass instance MyRedefClass are set to 100? If they're not, go ahead and log a complaint about it.",
+          "asr_output_deepgram": "Can you check if all those inner fields, private, package private, and public of REDF class instance, my REDF class, are set to one hundred? If they're not, go ahead and log a complaint about it."
         }
       ]
     ],
@@ -3553,7 +3629,8 @@
           "transcript": "Um, can you help me run the runIt method to, uh, check if a class is properly instrumented? Use these command-line arguments: open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, sixty, and, um, this PrintStream object: logStream. The original class value is one two three four five L, and after instrumentation, it should be five four three two one L.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_85_elevenlabs.wav",
           "asr_output_openai": "Can you help me run the runIt method to check if a class is properly instrumented? Use these command line arguments: ( /path/to/classes ), 60, and this PrintStream object logStream. The original class value is 12345L, and after instrumentation it should be 54321L.",
-          "asr_output_elevenlabs": "Um, can you help me run the runit method to, uh, check if a class is properly instrumented? Use these command line arguments, open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, 60. And, um, this PrintStream object logStream. The original class value is 12345L, and after instrumentation it should be 54321L."
+          "asr_output_elevenlabs": "Um, can you help me run the runit method to, uh, check if a class is properly instrumented? Use these command line arguments, open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, 60. And, um, this PrintStream object logStream. The original class value is 12345L, and after instrumentation it should be 54321L.",
+          "asr_output_deepgram": "Can you help me run the run it method to, check if a class is properly instrumented? Use these command line arguments, open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, sixty, and, this print stream object, log stream. The original class value is one two three four five l, and after instrumentation, it should be five four three two one l."
         }
       ]
     ],
@@ -3594,7 +3671,8 @@
           "transcript": "Hey, can you in the Java debugging test setup run the runThis method with the command-line arguments open square bracket, quote, dash V, quote, comma, quote, dash dash no dash strict, quote, close square bracket, and send the output to a PrintStream object called debugOutput, thats capital D-E-B-U-G capital O-U-T-P-U-T, debugOutput?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_86_elevenlabs.wav",
           "asr_output_openai": "Hey, can you in the JavaDebuggingTest setup run the run() method with the command-line arguments [\"-v\", \"--no-strict\"] and send the output to a PrintStream object called debugOutput?",
-          "asr_output_elevenlabs": "Hey, can you in the Java debugging test setup run the run? This method with the command line arguments open square bracket, quote, dash v, quote, comma, quote, dash, dash, no, dash, strict, quote, close square bracket, and send the output to a print stream object called debug output? That's capital D-E-B-U-G, capital O-U-T-P-U-T, debug output."
+          "asr_output_elevenlabs": "Hey, can you in the Java debugging test setup run the run? This method with the command line arguments open square bracket, quote, dash v, quote, comma, quote, dash, dash, no, dash, strict, quote, close square bracket, and send the output to a print stream object called debug output? That's capital D-E-B-U-G, capital O-U-T-P-U-T, debug output.",
+          "asr_output_deepgram": "Hey. Can you, in the Java debugging test setup, run the run? This method with the command line arguments open square bracket, quote, dash v, quote, comma, quote, dash dash no dash strict, quote, close square bracket, and send the output to a print stream object called debug output. That's capital d e b u g, capital o u t p u t, debug output."
         }
       ]
     ],
@@ -3635,7 +3713,8 @@
           "transcript": "Lemme see... can you help me create a VMDeathRequest with the suspend policy set to EVENT_THREAD, and set the property testProperty to deathEvent001 in a Java debug session, yeah?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_87_elevenlabs.wav",
           "asr_output_openai": "Let me see, can you help me create a VMDeathRequest with the suspend policy set to EVENT_THREAD and set the property testProperty to DEATH_EVENT_001 in a Java debug session, yeah?",
-          "asr_output_elevenlabs": "Let me see. Can you help me create a VM death request with the suspend policy set to event thread and set the property test property to death event 001 in a Java debug session? Yeah."
+          "asr_output_elevenlabs": "Let me see. Can you help me create a VM death request with the suspend policy set to event thread and set the property test property to death event 001 in a Java debug session? Yeah.",
+          "asr_output_deepgram": "Let me see. Can you help me create a VM death request with the suspend policy set to event thread and set the property test property to death event zero zero one in a Java debug session? Yeah?"
         }
       ]
     ],
@@ -3673,7 +3752,8 @@
           "transcript": "Uh, can you help me start a Method Entry Request for the main thread in class C-O-M dot E-X-A-M-P-L-E dot Main Class, thats M-A-I-N-C-L-A-S-S, Main Class? I need it with, uh, the suspend policy set to Event Request dot SUSPEND_ALL and a custom property called testProperty, in a J-D-I test environment.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_88_elevenlabs.wav",
           "asr_output_openai": "Can you help me start a method entry request for the main thread in class com.example.MainClass? I need it with the suspend policy set to EventRequest.SUSPEND_ALL and a custom property called \"testProperty\" in a JDI test environment?",
-          "asr_output_elevenlabs": "Uh, can you help me start a method entry request for the main thread in class COM.example.mainClass, that's M-A-I-N C-L-A-S-S, MainClass? I need it with, uh, the suspend policy set to EventRequest.suspendAll and a custom property called TestProperty in a JDI test environment."
+          "asr_output_elevenlabs": "Uh, can you help me start a method entry request for the main thread in class COM.example.mainClass, that's M-A-I-N C-L-A-S-S, MainClass? I need it with, uh, the suspend policy set to EventRequest.suspendAll and a custom property called TestProperty in a JDI test environment.",
+          "asr_output_deepgram": "Can you help me start a method entry request for the main thread in class c o m dot e x a m p l e dot main class? That's m a I n c l a s s. Main class. I need it with, the suspend policy set to event request dot suspend all and a custom property called test property in a JDI test environment."
         }
       ]
     ],
@@ -3721,7 +3801,8 @@
           "transcript": "Um, can you run the test runner runThis? Uh, set the wait time to one hundred and twenty seconds and send the logs to testLogStream. The debuggee name is TestDebuggee.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_89_elevenlabs.wav",
           "asr_output_openai": "Um, can you run the test runner run this? Set the wait time to one hundred and twenty seconds and send the logs to test log stream. The debuggy name is test debuggy.",
-          "asr_output_elevenlabs": "Um, can you run the Test Runner, run this? Uh, set the wait time to 120 seconds and send the logs to test log stream. The debuggie name is Test Debuggie."
+          "asr_output_elevenlabs": "Um, can you run the Test Runner, run this? Uh, set the wait time to 120 seconds and send the logs to test log stream. The debuggie name is Test Debuggie.",
+          "asr_output_deepgram": "Can you run the test runner run this? Set the wait time to one hundred and twenty seconds and send the logs to test log stream. The debuggy name is test debuggy."
         }
       ]
     ],
@@ -3762,7 +3843,8 @@
           "transcript": "Um, can you run the test for source paths in debug mode? Right, use the arguments dash v and dash p, and, uh, send the output to System dot out.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_90_elevenlabs.wav",
           "asr_output_openai": "Um, can you run the test for source paths in debug mode? Right, use the arguments -v and -p, and uh, send the output to System.out.",
-          "asr_output_elevenlabs": "Um, can you run the test for source paths in debug mode? Right. Use the arguments -v and -p, and, uh, send the output to system.out."
+          "asr_output_elevenlabs": "Um, can you run the test for source paths in debug mode? Right. Use the arguments -v and -p, and, uh, send the output to system.out.",
+          "asr_output_deepgram": "Can you run the test for source paths in debug mode? Right. Use the arguments dash v and dash p and, send the output to system dot out."
         }
       ]
     ],
@@ -3803,7 +3885,8 @@
           "transcript": "Can you, um, run the runIt method to handle the command-line arguments for a debug session, and uh, log the output to a P-R-I-N-T-S-T-R-E-A-M, PrintStream? Use the arguments array suspend, log, and send it to debugLog, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_91_elevenlabs.wav",
           "asr_output_openai": "Can you run the runIt method to handle the command line arguments for a debug session and log the output to a P-R-I-N-T-S-T-R-E-A-M PrintStream? Use the arguments array suspend, log and send it to debug log, okay?",
-          "asr_output_elevenlabs": "Can you, um, run the runit method to handle the command line arguments for a debug session and, uh, log the output to a P-R-I-N-T-S-T-R-E-A-M, PrintStream, use the arguments array, suspend, log and send it to debugLog, okay?"
+          "asr_output_elevenlabs": "Can you, um, run the runit method to handle the command line arguments for a debug session and, uh, log the output to a P-R-I-N-T-S-T-R-E-A-M, PrintStream, use the arguments array, suspend, log and send it to debugLog, okay?",
+          "asr_output_deepgram": "Can you, run the run it method to handle the command line arguments for a debug session and, log the output to a p r I n t s t r e a m print stream, use the arguments array suspend, log, and send it to debug log. Okay?"
         }
       ]
     ],
@@ -3844,7 +3927,8 @@
           "transcript": "Uh, can you get the absolute path for the class file com.example.MyClass? Oh, the class path includes slash u s r slash local slash classes and slash home slash user slash java slash libs.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_92_elevenlabs.wav",
           "asr_output_openai": "Can you get the absolute path for the class file com.example.MyClass? Oh, the class path includes /usr/local/classes and /home/user/java/libs.",
-          "asr_output_elevenlabs": "Uh, can you get the absolute path for the class file com.example.myClass? Oh, the class path includes /usr/local/classes and /home/user/Java/lib's."
+          "asr_output_elevenlabs": "Uh, can you get the absolute path for the class file com.example.myClass? Oh, the class path includes /usr/local/classes and /home/user/Java/lib's.",
+          "asr_output_deepgram": "Can you get the absolute path for the class file com dot example dot my class? Oh, the class path includes slash USR slash local slash classes and slash home slash user slash Java slash libs."
         }
       ]
     ],
@@ -3882,7 +3966,8 @@
           "transcript": "Lets see... can you run jar agent with trace and log options in the Java app? The instrumentation object is called `appInstrumentation`.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_93_elevenlabs.wav",
           "asr_output_openai": "Let's see, can you run jaragent with trace and log options in the Java app? The instrumentation object is called AppInstrumentation.",
-          "asr_output_elevenlabs": "Let's see. Can you run JAR Agent with trace and log options in the Java app? The instrumentation object is called AppInstrumentation."
+          "asr_output_elevenlabs": "Let's see. Can you run JAR Agent with trace and log options in the Java app? The instrumentation object is called AppInstrumentation.",
+          "asr_output_deepgram": "Let's see. Can you run jar agent with trace and log options in the Java app? The instrumentation object is called app instrumentation."
         }
       ]
     ],
@@ -3920,7 +4005,8 @@
           "transcript": "Hey, can you see if the getVersion symbol is readable in the native function interface library for this object?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_94_elevenlabs.wav",
           "asr_output_openai": "Hey, can you see if the GetVersion symbol is readable in the native function interface library for this object?",
-          "asr_output_elevenlabs": "Hey, can you see if the get version symbol is readable in the native function interface library for this object?"
+          "asr_output_elevenlabs": "Hey, can you see if the get version symbol is readable in the native function interface library for this object?",
+          "asr_output_deepgram": "Hey. Can you see if the get version symbol is readable in the native function interface library for this object?"
         }
       ]
     ],
@@ -3957,7 +4043,8 @@
           "transcript": "Can you, uh, run a generic operation on an inlined object with HelloWorld? Use the `InlinableNodeInstance`, spelled I-N-L-I-N-A-B-L-E Node Instance, and make sure its linked to `NodeLibraryInstance`, spelled N-O-D-E-L-I-B-R-A-R-Y Instance, with `ExportInlinedObject1Instance`, spelled E-X-P-O-R-T-I-N-L-I-N-E-D O-B-J-E-C-T one Instance, as the receiver.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_95_elevenlabs.wav",
           "asr_output_openai": "Can you run a generic operation on an inlined object with hello world? Use the InlinableNode instance, spelled I-N-L-I-N-A-B-L-E node instance, and make sure it's linked to NodeLibrary instance, spelled N-O-D-E-L-I-B-R-A-R-Y instance, with ExportInlinedObject1 instance, spelled E-X-P-O-R-T-I-N-L-I-N-E-D O-B-J-E-C-T 1 instance, as the receiver.",
-          "asr_output_elevenlabs": "Can you, uh, run a generic operation on an inline object with hello world? Use the inlineable node instance, spelled I-N-L-I-N-A-B-L-E node instance, and make sure it's linked to node library instance, spelled N-O-D-E L-I-B-R-A-R-Y instance, with export inline object one instance, spelled E-X-P-O-R-T-I-N-L-I-N-E-D-O-B-J-E-C-T one instance as the receiver?"
+          "asr_output_elevenlabs": "Can you, uh, run a generic operation on an inline object with hello world? Use the inlineable node instance, spelled I-N-L-I-N-A-B-L-E node instance, and make sure it's linked to node library instance, spelled N-O-D-E L-I-B-R-A-R-Y instance, with export inline object one instance, spelled E-X-P-O-R-T-I-N-L-I-N-E-D-O-B-J-E-C-T one instance as the receiver?",
+          "asr_output_deepgram": "Can you, run a generic operation on an inlined object with hello world? Use the inlinable node instance, spelled I n l I n a b l e, node instance, and make sure it's linked to node library instance, spelled n o d e l I b r a r y instance with export inlined object one instance, spelled e x p o r t I n l I n e d o b j e c t one instance as the receiver."
         }
       ]
     ],
@@ -4005,7 +4092,8 @@
           "transcript": "Um, can you help make a C-O-D-E-T-R-E-E, CodeTree, for a call conversion in a T-R-U-F-F-L-E, Truffle, D-S-L, DSL, processor? Use the non-static method convertValue with a frame parameter, uh, called frameVar, and, oh, show the return value with returnValueCode.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_96_elevenlabs.wav",
           "asr_output_openai": "Can you help make a CODETREE (code tree) for a call conversion in a TRUFFLE (Truffle) DSL (DSL) processor? Use the non-static method convertValue with a frame parameter (called frameVar) and show the return value with returnValue code.",
-          "asr_output_elevenlabs": "Um, can you help make a C-O-D-E-T-R-E-E, code tree, for a call conversion in a T-R-U-F-F-L-E, Truffle DSL, DSL processor? Use the non-static method convert_value with a frame parameter, uh, called frame_var and, oh, show the return value with return_value_code."
+          "asr_output_elevenlabs": "Um, can you help make a C-O-D-E-T-R-E-E, code tree, for a call conversion in a T-R-U-F-F-L-E, Truffle DSL, DSL processor? Use the non-static method convert_value with a frame parameter, uh, called frame_var and, oh, show the return value with return_value_code.",
+          "asr_output_deepgram": "Can you help make a c o d e t r e e code tree for a call conversion in a t r u f f l e truffle DSL DSL processor? Use the non static method convert value with a frame parameter, called frame var, and o show the return value with return value code."
         }
       ]
     ],
@@ -4048,7 +4136,8 @@
           "transcript": "Let me see... can you give me a hand with generating that introspection stuff for the `NodeClass` in a Truffle D S L processor? And, uh, ensure the introspection stays separate and not inlined.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_97_elevenlabs.wav",
           "asr_output_openai": "Let me see, can you give me a hand with generating that introspection stuff for the Node class in a Truffle DSL processor, and uh, ensure the introspection stays separate and not inlined?",
-          "asr_output_elevenlabs": "Let me see. Can you give me a hand with generating that introspection stuff for the node class in a Truffle DSL processor and ensure the introspection stays separate and not in-lined?"
+          "asr_output_elevenlabs": "Let me see. Can you give me a hand with generating that introspection stuff for the node class in a Truffle DSL processor and ensure the introspection stays separate and not in-lined?",
+          "asr_output_deepgram": "Let me see. Can you give me a hand with generating that introspection stuff for the node class in a truffle DSL processor and, ensure the introspection stays separate and not inlined?"
         }
       ]
     ],
@@ -4086,7 +4175,8 @@
           "transcript": "Um, whats the chance that a loop conditions true if its, like, been true one hundred fifty times and false fifty times?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_98_elevenlabs.wav",
           "asr_output_openai": "Um, what's the chance that a loop condition's true if it's like been true 150 times and false 50 times?",
-          "asr_output_elevenlabs": "What's the chance that a loop condition\u2019s true if it's like been true 150 times and false 50 times?"
+          "asr_output_elevenlabs": "What's the chance that a loop condition\u2019s true if it's like been true 150 times and false 50 times?",
+          "asr_output_deepgram": "What's the chance that a loop condition's true if it's like been true one hundred fifty times and false fifty times?"
         }
       ]
     ],
@@ -4124,7 +4214,8 @@
           "transcript": "Uh, can you help me make an instance of a delegate library for M-Y-C-U-S-T-O-M-L-I-B-R-A-R-Y, MyCustomLibrary using myFactory and existingDelegate, which isnt adoptable?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_java/java_99_openai.wav",
           "asr_output_openai": "Can you help me make an instance of a delegate library for myCustomLibrary using myFactory, an existing delegate which isn't adoptable?",
-          "asr_output_elevenlabs": "Uh, can you help me make an instance of a delegate library for M-Y-C-U-S-T-O-M-L-I-B-R-A-R-Y, My Custom Library, using MyFactory and existing delegate which isn't adoptable?"
+          "asr_output_elevenlabs": "Uh, can you help me make an instance of a delegate library for M-Y-C-U-S-T-O-M-L-I-B-R-A-R-Y, My Custom Library, using MyFactory and existing delegate which isn't adoptable?",
+          "asr_output_deepgram": "Can you help me make an instance of a delegate library for m y c u s t o m l I b r a r y, my custom library using my factory and existing delegate, which isn't adoptable?"
         }
       ]
     ],

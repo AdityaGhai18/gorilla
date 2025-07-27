@@ -467,7 +467,8 @@
           "transcript": "Uh, snag two hotel stays for me. First, um, a room at the Sheraton in New York, Sheraton thats S-H-E-R-A-T-O-N, Sheraton in New York for two adults and one child, with check-in on May first and, uh, check-out on May fifth, twenty twenty-two. Then, book a room at the Marriott in Los Angeles, Marriott thats M-A-R-R-I-O-T-T, Marriott in Los Angeles for one adult and two kids, uh, checkin in June first and out June tenth, twenty twenty-two.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.wav",
           "asr_output_openai": "Snag two hotel stays for me. First, a room at the Sheraton in New York, Sheraton that's S-H-E-R-A-T-O-N, Sheraton in New York for two adults and one child, with check-in on May 1st and a check-out on May 5th, 2022. Then, book a room at the Marriott in Los Angeles, Marriott that's M-A-R-R-I-O-T-T, Marriott in Los Angeles for one adult and two kids, check-in on June 1st and out June 10th, 2022.",
-          "asr_output_elevenlabs": "Uh, snag two hotel stays for me. First, um, a room at the Sheraton in New York. Sheraton, that's S-H-E-R-A-T-O-N. Sheraton in New York for two adults and one child with check-in on May 1st and a checkout on May 5th, 2022. Then book a room at the Marriott in Los Angeles. Marriott, that's M-A-R-R-I-O-T-T. Marriott in Los Angeles for one adult and two kids, uh, check-in in June 1st and out June 10th, 2022."
+          "asr_output_elevenlabs": "Uh, snag two hotel stays for me. First, um, a room at the Sheraton in New York. Sheraton, that's S-H-E-R-A-T-O-N. Sheraton in New York for two adults and one child with check-in on May 1st and a checkout on May 5th, 2022. Then book a room at the Marriott in Los Angeles. Marriott, that's M-A-R-R-I-O-T-T. Marriott in Los Angeles for one adult and two kids, uh, check-in in June 1st and out June 10th, 2022.",
+          "asr_output_deepgram": "Snag two hotel stays for me. First, a room at the Sheraton in New York. Sheraton, that's s h e r a t o n, Sheraton in New York for two adults and one child with check-in on May first and a check out on May fifth twenty twenty two. Then book a room at the Marriott in Los Angeles. Marriott, that's m a r r I o t t Marriott in Los Angeles for one adult and two kids. Check-in in June first and out June tenth twenty twenty two."
         }
       ]
     ],
@@ -525,7 +526,8 @@
           "transcript": "So, uh, for breakfast, I had twelve-ounce iced coffee and a banana. Then for lunch, I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs, and one slice of gluten-free bread.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.wav",
           "asr_output_openai": "So, for breakfast, I had 12 oz iced coffee and a banana. Then for lunch, I went with a quesadilla. Oh, and breakfast also included 4 oz of asparagus, two eggs, and one slice of gluten-free bread.",
-          "asr_output_elevenlabs": "So, uh, for breakfast I had twelve ounce iced coffee and a banana. Then for lunch I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs and one slice of gluten-free bread."
+          "asr_output_elevenlabs": "So, uh, for breakfast I had twelve ounce iced coffee and a banana. Then for lunch I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs and one slice of gluten-free bread.",
+          "asr_output_deepgram": "So, for breakfast, I had twelve ounce iced coffee and a banana. Then for lunch, I went with a, quesadilla. Oh, and breakfast also included four ounces of asparagus, two eggs, and one slice of gluten free bread."
         }
       ]
     ],
@@ -580,7 +582,8 @@
           "transcript": "Um, can you get me the current weather in Boston and uh, San Francisco?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.wav",
           "asr_output_openai": "Um, can you get me the current weather in Boston and San Francisco?",
-          "asr_output_elevenlabs": "Um, can you get me the current weather in Boston and, uh, San Francisco?"
+          "asr_output_elevenlabs": "Um, can you get me the current weather in Boston and, uh, San Francisco?",
+          "asr_output_deepgram": "Can you get me the current weather in Boston and, San Francisco?"
         }
       ]
     ],
@@ -665,7 +668,8 @@
           "transcript": "Uh, list files in the C drive and, um, create a file named testing dot t x t.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.wav",
           "asr_output_openai": "List files in the C drive and create a file named testing.txt.",
-          "asr_output_elevenlabs": "List files in the C drive and create a file named testing.txt."
+          "asr_output_elevenlabs": "List files in the C drive and create a file named testing.txt.",
+          "asr_output_deepgram": "List files in the C drive and, create a file named testing dot TXT."
         }
       ]
     ],
