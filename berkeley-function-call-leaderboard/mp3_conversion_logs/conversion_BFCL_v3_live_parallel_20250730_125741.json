@@ -1,0 +1,486 @@
+{
+  "conversion_summary": {
+    "folder": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel",
+    "quality_kbps": 320,
+    "delete_wav": true,
+    "test_mode": false,
+    "successful_conversions": 15,
+    "total_files": 15,
+    "json_files_updated": 2,
+    "duration_seconds": 0.8323948383331299,
+    "timestamp": "2025-07-30T12:57:42.376643"
+  },
+  "conversion_logs": [
+    {
+      "timestamp": "2025-07-30T12:57:41.622484",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_1-0-1_openai.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_1-0-1_openai.mp3",
+      "wav_size_bytes": 66432,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 84524,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.626121",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_5-2-0_openai.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_5-2-0_openai.mp3",
+      "wav_size_bytes": 76032,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 96524,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.622505",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_14-10-0_elevenlabs.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_14-10-0_elevenlabs.mp3",
+      "wav_size_bytes": 73605,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 186035,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.620203",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.mp3",
+      "wav_size_bytes": 92831,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 234100,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.744941",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_3-0-3_openai.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_3-0-3_openai.mp3",
+      "wav_size_bytes": 81024,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 102764,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.726402",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_11-7-0_elevenlabs.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_11-7-0_elevenlabs.mp3",
+      "wav_size_bytes": 146330,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 367847,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.742042",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.mp3",
+      "wav_size_bytes": 235356,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 590410,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.827750",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.mp3",
+      "wav_size_bytes": 191310,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 88337,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.850563",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.mp3",
+      "wav_size_bytes": 388302,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 177676,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.896902",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_4-1-0_openai.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_4-1-0_openai.mp3",
+      "wav_size_bytes": 79488,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 100844,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.919928",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.mp3",
+      "wav_size_bytes": 71934,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 181855,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.965031",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_2-0-2_openai.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_2-0-2_openai.mp3",
+      "wav_size_bytes": 77568,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 98444,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.728577",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.mp3",
+      "wav_size_bytes": 5230158,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 1188092,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:41.992341",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.mp3",
+      "wav_size_bytes": 528846,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 241415,
+      "wav_deleted": true
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.027383",
+      "wav_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.wav",
+      "mp3_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.mp3",
+      "wav_size_bytes": 659022,
+      "quality_kbps": 320,
+      "delete_wav": true,
+      "success": true,
+      "error": null,
+      "mp3_size_bytes": 151553,
+      "wav_deleted": true
+    }
+  ],
+  "json_changes": [
+    {
+      "timestamp": "2025-07-30T12:57:42.272513",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[0].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_1-0-1_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_1-0-1_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272579",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[1].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_2-0-2_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_2-0-2_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272597",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[2].question[0][1].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_3-0-3_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_3-0-3_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272611",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[3].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_4-1-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_4-1-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272624",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[4].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_5-2-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_5-2-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272639",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[5].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_6-3-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272657",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[6].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_7-3-1_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272675",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[7].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_8-4-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272688",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[8].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_9-5-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272737",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[9].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_10-6-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272758",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[10].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_12-8-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272775",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[11].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_13-9-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272788",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[12].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_14-10-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_14-10-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.272801",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel.json",
+      "json_path": "[13].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel/live_parallel_15-11-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309753",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[0].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_0-0-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_0-0-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309799",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[1].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_3-2-1_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_3-2-1_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309851",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[2].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_4-3-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_4-3-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309874",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[3].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_5-4-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_5-4-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309891",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[4].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_6-5-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_6-5-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309911",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[5].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_7-6-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_7-6-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309933",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[6].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_8-7-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_8-7-0_openai.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.309971",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[7].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310019",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[8].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310079",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[9].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310111",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[10].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310143",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[11].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310164",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[12].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310184",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[13].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310206",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[14].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310224",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[15].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310268",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[16].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310332",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[17].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310394",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[18].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310483",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[19].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_21-18-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_21-18-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310507",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[20].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_22-19-0_elevenlabs.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_22-19-0_elevenlabs.mp3",
+      "test_case_id": null
+    },
+    {
+      "timestamp": "2025-07-30T12:57:42.310557",
+      "json_file": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/BFCL_v3_live_parallel_multiple.json",
+      "json_path": "[21].question[0][0].audio_path",
+      "old_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.wav",
+      "new_audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.mp3",
+      "test_case_id": null
+    }
+  ],
+  "errors": []
+}

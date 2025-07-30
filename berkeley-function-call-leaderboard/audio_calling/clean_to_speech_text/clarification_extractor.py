@@ -21,18 +21,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import openai
 
-# Try to import spaCy for NLP entity extraction
-try:
-    import spacy
-    SPACY_AVAILABLE = True
-    # Load English model
-    nlp = spacy.load("en_core_web_sm")
-except ImportError:
-    SPACY_AVAILABLE = False
-    print("Warning: spaCy not available. Entity hints will be empty.")
-except OSError:
-    SPACY_AVAILABLE = False
-    print("Warning: spaCy English model not found. Install with: python -m spacy download en_core_web_sm")
+
 
 # Load environment variables
 load_dotenv()
@@ -129,48 +118,36 @@ class ClarificationExtractor:
         return ""
     
     def extract_entity_hints(self, text: str) -> str:
-        """Extract entity hints using NLP methods."""
-        if not SPACY_AVAILABLE or not text:
-            return "spaCy not available - using basic regex extraction"
-        
-        try:
-            doc = nlp(text)
-            entities = []
-            
-            for ent in doc.ents:
-                entity_info = f"{ent.label_}: {ent.text}"
-                entities.append(entity_info)
-            
-            # Also extract potential names, numbers, and locations using regex
-            # Names (capitalized words that might be names)
-            potential_names = re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', text)
-            for name in potential_names[:3]:  # Limit to first 3
-                if name not in [ent.text for ent in doc.ents]:
-                    entities.append(f"PERSON: {name}")
-            
-            # Numbers
-            numbers = re.findall(r'\b\d+(?:\.\d+)?\b', text)
-            for num in numbers[:5]:  # Limit to first 5
-                entities.append(f"NUMBER: {num}")
-            
-            # Dates/times
-            date_patterns = [
-                r'\b(?:today|tomorrow|yesterday|next week|last week)\b',
-                r'\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\b',
-                r'\b(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b'
-            ]
-            for pattern in date_patterns:
-                matches = re.findall(pattern, text.lower())
-                for match in matches[:3]:
-                    entities.append(f"DATE: {match}")
-            
-            result = "; ".join(entities) if entities else "No entities found"
-            print(f"spaCy entities extracted: {result}")
-            return result
-            
-        except Exception as e:
-            print(f"Warning: Error extracting entities: {e}")
+        """Extract entity hints using basic regex patterns."""
+        if not text:
             return ""
+        
+        entities = []
+        
+        # Extract potential names, numbers, and locations using regex
+        # Names (capitalized words that might be names)
+        potential_names = re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', text)
+        for name in potential_names[:3]:  # Limit to first 3
+            entities.append(f"PERSON: {name}")
+        
+        # Numbers
+        numbers = re.findall(r'\b\d+(?:\.\d+)?\b', text)
+        for num in numbers[:5]:  # Limit to first 5
+            entities.append(f"NUMBER: {num}")
+        
+        # Dates/times
+        date_patterns = [
+            r'\b(?:today|tomorrow|yesterday|next week|last week)\b',
+            r'\b(?:january|february|march|april|may|june|july|august|september|october|november|december)\b',
+            r'\b(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b'
+        ]
+        for pattern in date_patterns:
+            matches = re.findall(pattern, text.lower())
+            for match in matches[:3]:
+                entities.append(f"DATE: {match}")
+        
+        result = "; ".join(entities) if entities else "No entities found"
+        return result
     
     def generate_clarifications(self, user_query: str, function_docs: List[Dict[str, Any]], entity_hints: str = "") -> Dict[str, str]:
         """Generate clarifications using GPT-4o."""
@@ -204,29 +181,43 @@ class ClarificationExtractor:
 The goal is to help an AI that will call a function ask valid clarifying questions.
 
 Why Clarifications Are Needed
-Voice-based user interactions often contain ambiguities and uncertainties that differ from purely text-based queries:
-1. Uncommon or foreign names that are difficult to spell (e.g., "Jukkasjärvi", "Zhang Wei", "Nguyen")
-2. Technical terms, filepaths, urls, that sound like different words when spoken or are too long or spelled out weirdly (e.g., "XContentBuilder" sounds like "X content builder")
+Voice-based user interactions often contain ambiguities that differ from text-based queries:
+1. Names that could be spelled differently (e.g., "Alex" vs "Alec", "John" vs "Jon", "Zhang Wei", "Nguyen")
+2. Technical terms, filepaths, URLs that could be ambiguous when spoken (e.g., "XContentBuilder" vs "X content builder")
 3. Homophones that could be confused (e.g., "write" vs "right", "to" vs "too" vs "two")
-4. Complex product names or brand names that are unusual
+4. Place names that could have spelling variations (e.g., "New York" vs "NewYork", "Los Angeles" vs "LA")
+5. Complex alphanumeric strings, codes, or identifiers (e.g., "MIIFdTCCBF2gAwIBAgISESG", "ABC123XYZ", "UUID-123e4567-e89b-12d3-a456-426614174000")
+6. Product names, brand names, or database names (e.g., "Firebird", "MongoDB", "PostgreSQL")
+7. Code snippets, SQL queries, or commands with symbols (e.g., "SELECT * FROM table", "x = y + 1", "file.txt")
+8. Technical constants, class names, or identifiers (e.g., "VMDeathRequest", "onScriptError.IGNORE")
 
-IMPORTANT: DO NOT ask for spelling clarification on:
-- Common English names (e.g., "John", "Mary", "Smith")
-- Common place names (e.g., "New York", "London", "Paris")
-- Common words that are clear when spoken (e.g., "football", "World Cup", "twenty twenty-one")
-- Simple technical terms that are clear (e.g., "userProfile", "map", "data")
-- Any term that would be obvious to a native English speaker
+IMPORTANT: Focus on GENUINE speech ambiguity, DO NOT fixate on just any function parameter. 
+
+DO flag:
+- Technical product names, database names, or brand names (e.g., "Elasticsearch", "Firebird", "MongoDB", "PostgreSQL")
+- Technical terms, class names, and identifiers (e.g., "mappingParserContext", "compositeScriptFactory", "VMDeathRequest", "PrintStream", "logStream")
+- Complex alphanumeric strings, codes, or identifiers
+- Complex numbers with suffixes (e.g., "12345L", "54321L", "0xFF")
+- Code snippets, SQL queries, or commands with symbols (e.g., "SELECT * FROM table", "x = y + 1")
+- Names, place names, and technical terms that could be spelled differently
+
+Do NOT flag:
+- Common words that are clear when spoken (e.g., "burglary", "English", "marketing team", "could", "apps")
+- Simple concepts that don't have spelling ambiguity (e.g., "new iPhone release")
+- Generic terms that are obvious in context
+- Numbers or dates that are straightforward
+- Common verbs, prepositions, or articles (e.g., "could", "should", "the", "a", "an")
 
 Your Task
 1. Inputs:
-   - User query (text input)
+   - User query (text input) - focus on the actual spoken content
    - Documentation for the exact function (its arguments and descriptions)
    - Optional entity hints
 2. Actions:
    - Map provided arguments from the query to function parameters.
    - Identify ONLY arguments that have genuine spoken-ambiguity risks.
-   - If no genuine ambiguities exist, return an empty dictionary {{}}.
-   - Be very conservative - only flag things that are truly unclear.
+   - Focus on the content of what was spoken, not just the function parameter names.
+   - Be reasonable - only flag things that could actually be unclear when spoken.
 3. Output:
    - One JSON dictionary (no lists).
    - Keys:
@@ -237,13 +228,13 @@ Your Task
 
 ---
 
-Example 1: Foreign name clarification (VALID)
-User Query: "Schedule a meeting with Zhang Wei on Tuesday at 3pm"
+Example 1: Name clarification (VALID)
+User Query: "Schedule a meeting with Alex Johnson on Tuesday at 3pm"
 Function Documentation:
 schedule_meeting(person_name: string, date: string, time: string)
 Output:
 {{
-  "person_name_spelling": "Zhang Wei"
+  "person_name_spelling": "Alex Johnson"
 }}
 
 Example 2: Technical term clarification (VALID)
@@ -255,36 +246,113 @@ Output:
   "builder_type_spelling": "XContentBuilder"
 }}
 
-Example 3: Common name (NO CLARIFICATION NEEDED)
-User Query: "Send a package to John Smith at 123 Main Street"
-Function Documentation:
-send_package(recipient_name: string, address: string)
-Output:
-{{}}
-
-Example 4: Common place (NO CLARIFICATION NEEDED)
+Example 3: Place name clarification (VALID)
 User Query: "Book a flight to New York on Friday"
 Function Documentation:
 book_flight(destination: string, date: string)
 Output:
-{{}}
+{{
+  "destination_spelling": "New York"
+}}
 
-Example 5: Simple technical term (NO CLARIFICATION NEEDED)
-User Query: "Create a userProfile map with name and age"
+Example 4: Complex alphanumeric string (VALID)
+User Query: "Create a constant named CERTIFICATE with value MIIFdTCCBF2gAwIBAgISESG"
 Function Documentation:
-create_map(map_name: string, fields: list)
+create_constant(name: string, value: string)
+Output:
+{{
+  "value_spelling": "MIIFdTCCBF2gAwIBAgISESG"
+}}
+
+Example 5: Multiple technical terms (VALID)
+User Query: "Set up Elasticsearch with mappingParserContext and compositeScriptFactory, handle errors with onScriptError.IGNORE"
+Function Documentation:
+setup_elasticsearch(parser_context: string, script_factory: string, error_handling: string)
+Output:
+{{
+  "parser_context_spelling": "mappingParserContext",
+  "script_factory_spelling": "compositeScriptFactory",
+  "error_handling_spelling": "onScriptError.IGNORE",
+  "search_spelling": "Elasticsearch"
+}}
+
+Example 6: Database name and SQL query (VALID)
+User Query: "Create a Firebird database view with query SELECT * FROM Employee WHERE status = 'active'"
+Function Documentation:
+create_view(database: string, query: string)
+Output:
+{{
+  "database_spelling": "Firebird",
+  "query_spelling": "SELECT * FROM Employee WHERE status = 'active'"
+}}
+
+Example 7: Technical class name (VALID)
+User Query: "Handle VMDeathRequest in the JVM"
+Function Documentation:
+handle_request(request_type: string, target: string)
+Output:
+{{
+  "request_type_spelling": "VMDeathRequest"
+}}
+
+Example 8: Technical class and complex numbers (VALID)
+User Query: "Use PrintStream logStream with values 12345L and 54321L"
+Function Documentation:
+use_stream(stream_type: string, stream_name: string, old_value: string, new_value: string)
+Output:
+{{
+  "stream_type_spelling": "PrintStream",
+  "stream_name_spelling": "logStream",
+  "old_value_spelling": "12345L",
+  "new_value_spelling": "54321L"
+}}
+
+Example 9: Database name in context (VALID)
+User Query: "Check Elasticsearch cluster status"
+Function Documentation:
+check_status(database: string, component: string)
+Output:
+{{
+  "database_spelling": "Elasticsearch"
+}}
+
+Example 10: Common words (NO CLARIFICATION NEEDED)
+User Query: "Could you help me with the apps database?"
+Function Documentation:
+help_with_database(database: string, action: string)
 Output:
 {{}}
 
-Example 6: Multiple foreign names (VALID)
-User Query: "Schedule a meeting with Priya Sharma and Nguyen Van Minh tomorrow"
+Example 11: Common word (NO CLARIFICATION NEEDED)
+User Query: "Report a burglary incident"
+Function Documentation:
+report_incident(crime_type: string, details: string)
+Output:
+{{}}
+
+Example 6: Simple concept (NO CLARIFICATION NEEDED)
+User Query: "Write about the new iPhone release in English"
+Function Documentation:
+write_article(topic: string, language: string)
+Output:
+{{}}
+
+Example 7: Multiple names (VALID)
+User Query: "Schedule a meeting with John Smith and Mary Johnson tomorrow"
 Function Documentation:
 schedule_meeting(participant_names: list, date: string)
 Output:
 {{
-  "participant_names_1_spelling": "Priya Sharma",
-  "participant_names_2_spelling": "Nguyen Van Minh"
+  "participant_names_1_spelling": "John Smith",
+  "participant_names_2_spelling": "Mary Johnson"
 }}
+
+Example 8: No relevant parameters (NO CLARIFICATION NEEDED)
+User Query: "What's the weather like today?"
+Function Documentation:
+get_weather()
+Output:
+{{}}
 
 ---
 
@@ -293,12 +361,12 @@ User Query: {user_query}
 Function Documentation: {function_docs_text}
 Entity Hints: {entity_hints}
 
-Use the entity hints as weak guidance only - they may contain errors and should not override your judgment:
-- PERSON entities might need spelling clarification if they're foreign names
-- ORG entities might need clarification if they're unusual company names
-- GPE (location) entities are usually clear and don't need clarification
-- CARDINAL numbers might need clarification if they're complex or spelled out
-- Treat entity hints as suggestions only - rely primarily on your own analysis of what's ambiguous
+IMPORTANT: The entity hints below are often WRONG and should be IGNORED. They frequently misidentify:
+- Common words as names (e.g., "could" as a person, "apps" as a database)
+- Technical terms as locations
+- Generic words as specific entities
+
+DO NOT rely on entity hints. Instead, use your own judgment to identify genuine speech ambiguities based on the user query content.
 
 Task Output:
 (Return only one JSON dictionary)"""
@@ -387,10 +455,10 @@ Task Output:
         
         # Test mode: process only 3 random cases
         if test_mode:
-            if len(data) <= 3:
+            if len(data) <= 5:
                 test_cases = data
             else:
-                test_cases = random.sample(data, 3)
+                test_cases = random.sample(data, 5)
             print(f"Test mode: Processing {len(test_cases)} random test cases")
         else:
             test_cases = data
@@ -439,7 +507,7 @@ Task Output:
                 print(f"{'='*80}")
                 print(f"CONTENT: {content}")
                 print(f"TRANSCRIPT: {user_query}")
-                print(f"SPACY ENTITIES: {entity_hints}")
+                print(f"ENTITY HINTS: {entity_hints}")
                 print(f"FUNCTION DOCS: {json.dumps(function_docs, indent=2)}")
                 print(f"CLARIFICATIONS TO ADD: {json.dumps(clarifications, indent=2)}")
                 print(f"{'='*80}\n")
