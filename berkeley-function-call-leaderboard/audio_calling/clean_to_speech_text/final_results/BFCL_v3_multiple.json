@@ -10,7 +10,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_0_openai.mp3",
           "asr_output_openai": "Hey, um, can you help me get the dimensions and properties of a triangle if the sides are 5, 4, and 3 units? Thanks.",
           "asr_output_elevenlabs": "Hey, um, can you help me get the dimensions and properties of a triangle if the sides are 5, 4, and 3 units? Thanks.",
-          "asr_output_deepgram": "Hey. Can you help me get the dimensions and properties of a triangle if the sides are five, four, and three units? Thanks."
+          "asr_output_deepgram": "Hey. Can you help me get the dimensions and properties of a triangle if the sides are five, four, and three units? Thanks.",
+          "clarifications": {
+            "first_side_length": "5 units",
+            "second_side_length": "4 units",
+            "third_side_length": "3 units"
+          }
         }
       ]
     ],
@@ -100,7 +105,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_1_openai.mp3",
           "asr_output_openai": "Hey, can you look up the area of a triangle with sides 3, 4, and 5?",
           "asr_output_elevenlabs": "Hey, can you look up the area of a triangle with sides 3, 4, and 5?",
-          "asr_output_deepgram": "Hey, can you look up the area of a triangle with sides three, four, and five?"
+          "asr_output_deepgram": "Hey, can you look up the area of a triangle with sides three, four, and five?",
+          "clarifications": {}
         }
       ]
     ],
@@ -181,7 +187,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_2_openai.mp3",
           "asr_output_openai": "Hey, um, what's the capital of Brazil?",
           "asr_output_elevenlabs": "Hey, um, what's the capital of Brazil?",
-          "asr_output_deepgram": "Hey. What's the capital of Brazil?"
+          "asr_output_deepgram": "Hey. What's the capital of Brazil?",
+          "clarifications": {}
         }
       ]
     ],
@@ -247,7 +254,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_3_openai.mp3",
           "asr_output_openai": "Oh, calculate the Euclidean distance between point A at (3, 4) and point B at (2, 1)? No, you mean one-two.",
           "asr_output_elevenlabs": "Oh, calculate the Euclidean distance between point A at 3,4 and point B at 2,1? No, you mean 1,2.",
-          "asr_output_deepgram": "Oh, calculate the Euclidean distance between point a at three four and point b at two one? No. You mean one two?"
+          "asr_output_deepgram": "Oh, calculate the Euclidean distance between point a at three four and point b at two one? No. You mean one two?",
+          "clarifications": {}
         }
       ]
     ],
@@ -327,7 +335,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_4_openai.mp3",
           "asr_output_openai": "Yeah. What's the displacement for a car starting at 20 meters per second, speeding up by 10 meters per second squared, over five seconds, in a straight line?",
           "asr_output_elevenlabs": "Yeah. What's the displacement for a car starting at 20 meters per second speeding up by 10 meters per second squared over five seconds in a straight line?",
-          "asr_output_deepgram": "Yeah. What's the displacement for a car starting at twenty meters per second, speeding up by ten meters per second squared over five seconds in a straight line?"
+          "asr_output_deepgram": "Yeah. What's the displacement for a car starting at twenty meters per second, speeding up by ten meters per second squared over five seconds in a straight line?",
+          "clarifications": {
+            "initial_speed_value": "20 m/s",
+            "acceleration_value": "10 m/s^2",
+            "time_interval": "5 seconds"
+          }
         }
       ]
     ],
@@ -407,7 +420,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_5_openai.mp3",
           "asr_output_openai": "Can you tell me the wind speed and temperature for the coordinates 46.603354, 1.8883340 on December 13, 2019?",
           "asr_output_elevenlabs": "Um, can you tell me the wind speed and temperature for the coordinates 46.603354, uh, 1.8883340 on December 13th, 2019?",
-          "asr_output_deepgram": "Can you tell me the wind speed and temperature for the coordinates forty six point six zero three three five four, one point eight eight eight three three four o, on December thirteenth twenty nineteen?"
+          "asr_output_deepgram": "Can you tell me the wind speed and temperature for the coordinates forty six point six zero three three five four, one point eight eight eight three three four o, on December thirteenth twenty nineteen?",
+          "clarifications": {
+            "coordinates": "46.603354,1.8883340",
+            "date": "December 13, 2019"
+          }
         }
       ]
     ],
@@ -495,7 +512,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_6_openai.mp3",
           "asr_output_openai": "Um, can you figure out capacitance of a parallel plate capacitor with a plate area of 10 square meters, a gap of 0.01 meters, and a dielectric constant of 1.0?",
           "asr_output_elevenlabs": "Um, can you figure out capacitance of a parallel plate capacitor with a, a plate area of 10 square meters, a gap of 0.01 meters, and a dielectric constant of 1.0?",
-          "asr_output_deepgram": "Can you figure out capacitance of a parallel plate capacitor with, a plate area of ten square meters, a gap of zero point zero one meters, and a dielectric constant of one point zero?"
+          "asr_output_deepgram": "Can you figure out capacitance of a parallel plate capacitor with, a plate area of ten square meters, a gap of zero point zero one meters, and a dielectric constant of one point zero?",
+          "clarifications": {
+            "plate_area": "10 square meters",
+            "distance_between_plates": "0.01 meters",
+            "dielectric_constant": "1.0"
+          }
         }
       ]
     ],
@@ -523,7 +545,7 @@
       },
       {
         "name": "capacitance_calculator.calculate",
-        "description": "Calculate the capacitance of a parallel plate capacitor based on the area, distance and dielectric constant using the equation C = ε₀KA/d.",
+        "description": "Calculate the capacitance of a parallel plate capacitor based on the area, distance and dielectric constant using the equation C = \u03b5\u2080KA/d.",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -580,7 +602,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_7_openai.mp3",
           "asr_output_openai": "Um, how can I check deer population growth and their effects on woodlands in Washington state over the last decade or so?",
           "asr_output_elevenlabs": "Um, how can I check, uh, deer population growth and their effects on woodlands in Washington State over the last decade or so? Oh?",
-          "asr_output_deepgram": "How can I check, deer population growth and their effects on woodlands in Washington state over the last decade or so? Oh,"
+          "asr_output_deepgram": "How can I check, deer population growth and their effects on woodlands in Washington state over the last decade or so? Oh,",
+          "clarifications": {
+            "species_name": "deer",
+            "location_name": "Washington state",
+            "time_period": "past decade"
+          }
         }
       ]
     ],
@@ -655,7 +682,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_8_openai.mp3",
           "asr_output_openai": "Hey, can you find a three-bedroom villa for sale in San Diego with a budget between $300,000 and $400,000?",
           "asr_output_elevenlabs": "Hey, can you find a three-bedroom villa for sale in San Diego with a budget between $300,000 and $400,000? Okay?",
-          "asr_output_deepgram": "Hey. Can you find a three bedroom villa for sale in San Diego with a budget between three hundred thousand dollars and four hundred thousand dollars? Okay?"
+          "asr_output_deepgram": "Hey. Can you find a three bedroom villa for sale in San Diego with a budget between three hundred thousand dollars and four hundred thousand dollars? Okay?",
+          "clarifications": {
+            "location": "San Diego",
+            "property_type": "villa",
+            "bedrooms": "3",
+            "budget_range": "$300,000 to $400,000"
+          }
         }
       ]
     ],
@@ -745,7 +778,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_9_openai.mp3",
           "asr_output_openai": "Tom, can you work out John's average grade with these scores: Math 90, Science 75, History 82, and Music 89?",
           "asr_output_elevenlabs": "Um, can you work out John's average grade with these scores? Math 90, science 75, history 82, and music 89.",
-          "asr_output_deepgram": "Can you work out John's average grade with these scores? Math, ninety, science, seventy five, history, eighty two, and music, eighty nine."
+          "asr_output_deepgram": "Can you work out John's average grade with these scores? Math, ninety, science, seventy five, history, eighty two, and music, eighty nine.",
+          "clarifications": {}
         }
       ]
     ],
@@ -811,7 +845,15 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_10_openai.mp3",
           "asr_output_openai": "Please take out the email addresses and social security numbers from that table in the employee's database for privacy reasons, okay?",
           "asr_output_elevenlabs": "Please take out the email addresses and Social Security numbers from that table in the employees database for privacy reasons. Okay?",
-          "asr_output_deepgram": "Please take out the email addresses and Social Security numbers from that table in the employee's database for privacy reasons. Okay?"
+          "asr_output_deepgram": "Please take out the email addresses and Social Security numbers from that table in the employee's database for privacy reasons. Okay?",
+          "clarifications": {
+            "database_name": "employees",
+            "table_name": "personal_data",
+            "columns_to_delete": [
+              "email addresses",
+              "social security numbers"
+            ]
+          }
         }
       ]
     ],
@@ -889,7 +931,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_11_openai.mp3",
           "asr_output_openai": "Can calculate the roots of a quadratic equation with coefficients 5, 20, and -25?",
           "asr_output_elevenlabs": "Um, can calculate the roots of a quadratic equation with coefficients 5, 20, and minus 25?",
-          "asr_output_deepgram": "Can calculate the roots of a quadratic equation with coefficients five, twenty, and minus twenty five."
+          "asr_output_deepgram": "Can calculate the roots of a quadratic equation with coefficients five, twenty, and minus twenty five.",
+          "clarifications": {
+            "second_degree_coefficient": "5",
+            "first_degree_coefficient": "20",
+            "constant_term": "-25"
+          }
         }
       ]
     ],
@@ -983,11 +1030,16 @@
         {
           "role": "user",
           "content": "What is the year over year growth rate for company 'Tech Inc' with revenues of $1M in 2019 and $1.2M in 2020?",
-          "transcript": "Um, for Tech Inc—T-E-C-H space I-N-C—whats the year-over-year growth rate, if they made one million dollars in twenty nineteen and, uh, one point two million in twenty-twenty?",
+          "transcript": "Um, for Tech Inc\u2014T-E-C-H space I-N-C\u2014whats the year-over-year growth rate, if they made one million dollars in twenty nineteen and, uh, one point two million in twenty-twenty?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_12_openai.mp3",
           "asr_output_openai": "Um, for Tech Inc. (T-E-C-H space I-N-C), what's the year-over-year growth rate if they made $1 million in 2019 and $1.2 million in 2020?",
           "asr_output_elevenlabs": "Um, for Tech Inc., T-E-C-H space I-N-C., what's the year-over-year growth rate if they made $1 million in 2019 and, uh, $1.2 million in 2020?",
-          "asr_output_deepgram": "For Tech Inc, t e c h space I n c, what's the year over year growth rate if they made one million dollars in twenty nineteen and, one point two million in twenty twenty?"
+          "asr_output_deepgram": "For Tech Inc, t e c h space I n c, what's the year over year growth rate if they made one million dollars in twenty nineteen and, one point two million in twenty twenty?",
+          "clarifications": {
+            "company_name": "Tech Inc",
+            "year1_revenue": "$1M",
+            "year2_revenue": "$1.2M"
+          }
         }
       ]
     ],
@@ -1083,7 +1135,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_13_openai.mp3",
           "asr_output_openai": "Um, what revenue would company XYZ get if we, uh, boost product A sales by like 10% without changing price? Thanks.",
           "asr_output_elevenlabs": "Um, what revenue would company XYZ get if we, uh, boost product A sales by like ten percent without changing price? Thanks!",
-          "asr_output_deepgram": "What revenue would company x y z get if we, boost product a sales by, like, ten percent without changing price? Thanks."
+          "asr_output_deepgram": "What revenue would company x y z get if we, boost product a sales by, like, ten percent without changing price? Thanks.",
+          "clarifications": {
+            "company_name": "company XYZ",
+            "product_name": "product A",
+            "sales_units_increase_percentage": "10%"
+          }
         }
       ]
     ],
@@ -1147,7 +1204,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_14_openai.mp3",
           "asr_output_openai": "Can you figure out the depreciated value for a property that costs $200,000 with a 3% annual depreciation rate over five years?",
           "asr_output_elevenlabs": "Um, can you figure out the depreciated value for a property that costs, uh, $200,000 with a, you know, 3% annual depreciation rate over five years?",
-          "asr_output_deepgram": "Can you figure out the depreciated value for a property that costs, two hundred thousand dollars with, you know, three percent annual depreciation rate over five years?"
+          "asr_output_deepgram": "Can you figure out the depreciated value for a property that costs, two hundred thousand dollars with, you know, three percent annual depreciation rate over five years?",
+          "clarifications": {
+            "initial_cost": "$200,000",
+            "depreciation_rate": "3%",
+            "years": "5"
+          }
         }
       ]
     ],
@@ -1247,7 +1309,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_15_openai.mp3",
           "asr_output_openai": "What's the solar farm's potential at coordinates 43.653225, -79.383186 in December with an 8000 square foot panel area?",
           "asr_output_elevenlabs": "Uh, what's the solar farm's potential at, um, coordinates 43.653225, -79.383186 in December with an 80,000 square foot panel area? Yeah?",
-          "asr_output_deepgram": "What's the solar firm's potential at, coordinates forty three point six five three two two five minus seventy nine point three eight three one eight six in December with an eight thousand square foot panel area? Yeah?"
+          "asr_output_deepgram": "What's the solar firm's potential at, coordinates forty three point six five three two two five minus seventy nine point three eight three one eight six in December with an eight thousand square foot panel area? Yeah?",
+          "clarifications": {
+            "coordinates": "[43.653225, -79.383186]",
+            "panel_area": "80000 sq ft",
+            "month": "December"
+          }
         }
       ]
     ],
@@ -1323,7 +1390,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_16_openai.mp3",
           "asr_output_openai": "Hey, what's the smallest population size needed to keep the genetic diversity of wild tigers for 100 generations, with a 95% chance?",
           "asr_output_elevenlabs": "Hey, what's the smallest population size needed to keep the genetic diversity of wild tigers for 100 generations with a 95% chance?",
-          "asr_output_deepgram": "Hey. What's the smallest population size needed to keep the genetic diversity of wild tigers for one hundred generations with a ninety five percent chance?"
+          "asr_output_deepgram": "Hey. What's the smallest population size needed to keep the genetic diversity of wild tigers for one hundred generations with a ninety five percent chance?",
+          "clarifications": {
+            "species_name": "wild tiger",
+            "generations_count": "100",
+            "probability_value": "0.95"
+          }
         }
       ]
     ],
@@ -1419,7 +1491,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_17_openai.mp3",
           "asr_output_openai": "Um, what's euro to dollar conversion rate for January 1, 2022?",
           "asr_output_elevenlabs": "Um, what's euro to dollar conversion rate for January 1st 2022?",
-          "asr_output_deepgram": "What's euro to dollar conversion rate for, January first twenty twenty two?"
+          "asr_output_deepgram": "What's euro to dollar conversion rate for, January first twenty twenty two?",
+          "clarifications": {
+            "conversion_date": "January 1, 2022"
+          }
         }
       ]
     ],
@@ -1510,7 +1585,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_18_openai.mp3",
           "asr_output_openai": "Hey, um, can you tell me who the main participants were and where the Battle of Stalingrad happened?",
           "asr_output_elevenlabs": "Hey, um, can you tell me who the main participants were and where the Battle of Stalingrad happened?",
-          "asr_output_deepgram": "Hey. Can you tell me who the main participants were and where the Battle of Stalingrad happened?"
+          "asr_output_deepgram": "Hey. Can you tell me who the main participants were and where the Battle of Stalingrad happened?",
+          "clarifications": {
+            "battle_name": "Battle of Stalingrad"
+          }
         }
       ]
     ],
@@ -1576,7 +1654,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_19_openai.mp3",
           "asr_output_openai": "Right, what are three major schisms in Christian history?",
           "asr_output_elevenlabs": "Um, Ryan, what are three major schisms in, uh, Christian history?",
-          "asr_output_deepgram": "Right. What are three major schisms in, Christian history?"
+          "asr_output_deepgram": "Right. What are three major schisms in, Christian history?",
+          "clarifications": {
+            "event_name": "three great Schism"
+          }
         }
       ]
     ],
@@ -1659,7 +1740,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_20_openai.mp3",
           "asr_output_openai": "Hey, um, can you say how much it would cost to get a marble sculpture three feet tall?",
           "asr_output_elevenlabs": "Hey, um, can you say how much it would cost to get a marble sculpture three feet tall?",
-          "asr_output_deepgram": "Hey. Can you say how much it would cost to get a marble sculpture three feet tall?"
+          "asr_output_deepgram": "Hey. Can you say how much it would cost to get a marble sculpture three feet tall?",
+          "clarifications": {
+            "material_type": "marble",
+            "sculpture_size": "3 feet"
+          }
         }
       ]
     ],
@@ -1745,7 +1830,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_21_openai.mp3",
           "asr_output_openai": "Right, how do I make a sound at 445 - no, at 440 hertz for five seconds? What's the function for it, and how do I use it?",
           "asr_output_elevenlabs": "Right. How do I make a sound at 445... No, at 440 hertz for five seconds? What's the function for it and how do I use it?",
-          "asr_output_deepgram": "Right. How do I make a sound at four forty five? No. At four forty hertz for five seconds? What's the function for it, and how do I use it?"
+          "asr_output_deepgram": "Right. How do I make a sound at four forty five? No. At four forty hertz for five seconds? What's the function for it, and how do I use it?",
+          "clarifications": {
+            "frequency_value": "440Hz",
+            "duration_value": "5 seconds"
+          }
         }
       ]
     ],
@@ -1815,7 +1904,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_22_openai.mp3",
           "asr_output_openai": "Hey, what's the highest score ever by a single player in an NBA game, right?",
           "asr_output_elevenlabs": "Hey, what's the highest score ever by a single player in an NBA game? Right.",
-          "asr_output_deepgram": "Hey. What's the highest score ever by a single player in an NBA game? Right?"
+          "asr_output_deepgram": "Hey. What's the highest score ever by a single player in an NBA game? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -1881,7 +1971,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_23_openai.mp3",
           "asr_output_openai": "Hey, um, could you get me the latest stats for LeBron James? I'm looking for, uh, his points per game, assists, and minutes per game.",
           "asr_output_elevenlabs": "Hey, um, could you get me the latest stats for LeBron James? I'm looking for, uh, his points per game, assists, and minutes per game.",
-          "asr_output_deepgram": "Hey. Could you get me the latest stats for LeBron James? I'm looking for, his points per game, assists, and minutes per game."
+          "asr_output_deepgram": "Hey. Could you get me the latest stats for LeBron James? I'm looking for, his points per game, assists, and minutes per game.",
+          "clarifications": {
+            "player_name": "LeBron James",
+            "stats_fields": "points per game, assists, minutes per game"
+          }
         }
       ]
     ],
@@ -1980,7 +2074,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_24_openai.mp3",
           "asr_output_openai": "Um, what's the fastest way to go from London to Edinburgh for the chess championship? And how far is it?",
           "asr_output_elevenlabs": "Um, what's the fastest way to go from London to Edinburgh for the chess championship? And, uh, how far is it?",
-          "asr_output_deepgram": "What's the fastest way to go from London to Edinburgh for the chess championship, and, how far is it?"
+          "asr_output_deepgram": "What's the fastest way to go from London to Edinburgh for the chess championship, and, how far is it?",
+          "clarifications": {}
         }
       ]
     ],
@@ -2055,7 +2150,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_25_openai.mp3",
           "asr_output_openai": "Hey, um, what's the cheapest price for Assassin's Creed Valhalla in the US PlayStation Store, right?",
           "asr_output_elevenlabs": "Hey, um, what's the cheapest price for Assassin's Creed Valhalla in the US PlayStation store? Right?",
-          "asr_output_deepgram": "Hey. What's the cheapest price for Assassin's Creed Valhalla in the US PlayStation Store? Right?"
+          "asr_output_deepgram": "Hey. What's the cheapest price for Assassin's Creed Valhalla in the US PlayStation Store? Right?",
+          "clarifications": {
+            "game_title": "Assassins Creed Valhalla",
+            "platform": "PlayStation",
+            "region": "United States"
+          }
         }
       ]
     ],
@@ -2145,14 +2245,18 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_26_openai.mp3",
           "asr_output_openai": "Hey, can you, uh, tell me about Fortnite rewards on the PlayStation? Like, what do you get for different missions and trophies?",
           "asr_output_elevenlabs": "Hey, can you uh tell me about Fortnite rewards on the PlayStation? Like what do you get for different missions and trophies?",
-          "asr_output_deepgram": "Hey. Can you, tell me about Fortnite rewards on the PlayStation? Like, what do you get for different missions and trophies?"
+          "asr_output_deepgram": "Hey. Can you, tell me about Fortnite rewards on the PlayStation? Like, what do you get for different missions and trophies?",
+          "clarifications": {
+            "game_name": "Fortnite",
+            "platform_name": "Playstation"
+          }
         }
       ]
     ],
     "function": [
       {
         "name": "game_scores.get",
-        "description": "Retrieve scores and rankings based on player’s performance in a certain game.",
+        "description": "Retrieve scores and rankings based on player\u2019s performance in a certain game.",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -2241,7 +2345,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_27_openai.mp3",
           "asr_output_openai": "Can you get, like, the quickest route from Paris to Rome using public transport?",
           "asr_output_elevenlabs": "Uh, can you get like the quickest route from Paris to Rome using public transport?",
-          "asr_output_deepgram": "Can you get, like, the quickest route from Paris to Rome using public transport?"
+          "asr_output_deepgram": "Can you get, like, the quickest route from Paris to Rome using public transport?",
+          "clarifications": {}
         }
       ]
     ],
@@ -2306,7 +2411,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_28_openai.mp3",
           "asr_output_openai": "Hey, could you get the roots of the quadratic equation with coefficients 2, 3, and -4?",
           "asr_output_elevenlabs": "Uh hey! Could you get the roots of the quadratic equation with coefficients two, three, and negative four?",
-          "asr_output_deepgram": "Hey. Could you get the roots of the quadratic equation with coefficients two, three, and negative four?"
+          "asr_output_deepgram": "Hey. Could you get the roots of the quadratic equation with coefficients two, three, and negative four?",
+          "clarifications": {
+            "coefficient_a": "2",
+            "coefficient_b": "3",
+            "constant_c": "-4"
+          }
         }
       ]
     ],
@@ -2392,7 +2502,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_29_openai.mp3",
           "asr_output_openai": "Hey, can you see where the functions y = 3x + 2 and y = 2x + 3 intersect?",
           "asr_output_elevenlabs": "Hey, can you see where the functions y=3x+2 and y=2x+3 intersect?",
-          "asr_output_deepgram": "Hey. Can you see where the functions y equals three x plus two and y equals two x plus three intersect?"
+          "asr_output_deepgram": "Hey. Can you see where the functions y equals three x plus two and y equals two x plus three intersect?",
+          "clarifications": {
+            "first_function_expression": "3x+2",
+            "second_function_expression": "2x+3"
+          }
         }
       ]
     ],
@@ -2447,7 +2561,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_30_openai.mp3",
           "asr_output_openai": "Hey, um, can you say the area of a rectangle that's twelve meters long and five meters wide?",
           "asr_output_elevenlabs": "Hey, um, can you say the area of a rectangle that's 12 meters long and 5 meters wide?",
-          "asr_output_deepgram": "Hey, can you say the area of a rectangle that's twelve meters long and five meters wide?"
+          "asr_output_deepgram": "Hey, can you say the area of a rectangle that's twelve meters long and five meters wide?",
+          "clarifications": {}
         }
       ]
     ],
@@ -2528,7 +2643,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_31_openai.mp3",
           "asr_output_openai": "Hey, um, what's the area and perimeter of a rectangle if the width is, you know, 7 units and the length is 10 units?",
           "asr_output_elevenlabs": "Hey, um, what's the area and perimeter of a rectangle if the width is, you know, 7 units and the length is 10 units?",
-          "asr_output_deepgram": "Hey. What's the area and perimeter of a rectangle if the width is, you know, seven units and the length is ten units?"
+          "asr_output_deepgram": "Hey. What's the area and perimeter of a rectangle if the width is, you know, seven units and the length is ten units?",
+          "clarifications": {
+            "rectangle_width": "7 units",
+            "rectangle_length": "10 units"
+          }
         }
       ]
     ],
@@ -2599,7 +2718,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_32_openai.mp3",
           "asr_output_openai": "Um, hey, can you figure out the volume of a cone with a radius of 4 and a height of 7?",
           "asr_output_elevenlabs": "Um, hey, can you figure out the volume of a cone with a radius of 4 and a, a height of 7?",
-          "asr_output_deepgram": "Hey. Can you figure out the volume of a cone with a radius of four and, a height of seven?"
+          "asr_output_deepgram": "Hey. Can you figure out the volume of a cone with a radius of four and, a height of seven?",
+          "clarifications": {}
         }
       ]
     ],
@@ -2668,7 +2788,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_33_openai.mp3",
           "asr_output_openai": "Om, can you find the integral of f of x equals 3x squared from 1 to 2?",
           "asr_output_elevenlabs": "Um, can you find the integral of f of x equals three x squared from one to two?",
-          "asr_output_deepgram": "Can you find the integral of f of x equals three x squared from one to two?"
+          "asr_output_deepgram": "Can you find the integral of f of x equals three x squared from one to two?",
+          "clarifications": {
+            "function_expression": "3x^2",
+            "lower_bound": "1",
+            "upper_bound": "2"
+          }
         }
       ]
     ],
@@ -2736,9 +2861,10 @@
           "content": "Calculate the Least Common Multiple (LCM) of 18 and 12.",
           "transcript": "Hey, can you find the greatest... oh, no, the least common multiple of eighteen and twelve?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_34_openai.mp3",
-          "asr_output_openai": "Hey, can you find the greatest—oh, no, the least common multiple of 18 and 12?",
-          "asr_output_elevenlabs": "Hey, can you find the greatest— oh, no, the least common multiple of 18 and 12?",
-          "asr_output_deepgram": "Hey. Can you find the greatest oh, no. The least common multiple of eighteen and twelve."
+          "asr_output_openai": "Hey, can you find the greatest\u2014oh, no, the least common multiple of 18 and 12?",
+          "asr_output_elevenlabs": "Hey, can you find the greatest\u2014 oh, no, the least common multiple of 18 and 12?",
+          "asr_output_deepgram": "Hey. Can you find the greatest oh, no. The least common multiple of eighteen and twelve.",
+          "clarifications": {}
         }
       ]
     ],
@@ -2819,7 +2945,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_35_openai.mp3",
           "asr_output_openai": "Um, hey, what's the greatest common divisor of 128 and 256?",
           "asr_output_elevenlabs": "Um, hey, what's the greatest common divisor of one twenty-eight and two fifty-six?",
-          "asr_output_deepgram": "Hey. What's the greatest common divisor of one twenty eight and two fifty six?"
+          "asr_output_deepgram": "Hey. What's the greatest common divisor of one twenty eight and two fifty six?",
+          "clarifications": {}
         }
       ]
     ],
@@ -2891,7 +3018,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_36_openai.mp3",
           "asr_output_openai": "Um, can you calculate the speed of an object that started from rest, traveled 20 meters in 4 seconds? With constant acceleration, right?",
           "asr_output_elevenlabs": "Um, can you calculate the speed of an object that started from rest, traveled 20 meters in 4 seconds? Uh, with constant acceleration, right?",
-          "asr_output_deepgram": "Can you calculate the speed of an object that started from rest, traveled twenty meters in four seconds, with constant acceleration. Right?"
+          "asr_output_deepgram": "Can you calculate the speed of an object that started from rest, traveled twenty meters in four seconds, with constant acceleration. Right?",
+          "clarifications": {
+            "distance_traveled": "20 meters",
+            "time_duration": "4 seconds"
+          }
         }
       ]
     ],
@@ -2966,7 +3097,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_37_openai.mp3",
           "asr_output_openai": "What's the final speed of an object thrown upwards at 40 meters per second after 6 seconds?",
           "asr_output_elevenlabs": "What's the final speed of an object thrown, uh, upwards at 40 meters per second after six seconds?",
-          "asr_output_deepgram": "What's the final speed of an object thrown, upwards at forty meters per second after six seconds?"
+          "asr_output_deepgram": "What's the final speed of an object thrown, upwards at forty meters per second after six seconds?",
+          "clarifications": {
+            "initial_velocity_value": "40 m/s",
+            "time_value": "6 seconds"
+          }
         }
       ]
     ],
@@ -3055,7 +3190,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_38_openai.mp3",
           "asr_output_openai": "Let me see. Right, can you check for The Alchemist at library branches in New York City?",
           "asr_output_elevenlabs": "Let me see. Right. Can you check for The Alchemist at library branches in New York City?",
-          "asr_output_deepgram": "Let me see. Right. Can you check for the alchemist at library branches in New York City?"
+          "asr_output_deepgram": "Let me see. Right. Can you check for the alchemist at library branches in New York City?",
+          "clarifications": {
+            "book_name": "The Alchemist"
+          }
         }
       ]
     ],
@@ -3127,7 +3265,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_39_openai.mp3",
           "asr_output_openai": "Um, can you get a ride from New York to Philadelphia? Make sure it doesn't cost more than fifty bucks. Thanks.",
           "asr_output_elevenlabs": "Um, can you get a ride from New York to Philadelphia? Uh, make sure it doesn't cost more than 50 bucks. Thanks.",
-          "asr_output_deepgram": "Can you get a ride from New York to Philadelphia? Make sure it doesn't cost more than fifty bucks. Thanks."
+          "asr_output_deepgram": "Can you get a ride from New York to Philadelphia? Make sure it doesn't cost more than fifty bucks. Thanks.",
+          "clarifications": {
+            "source_location": "New York",
+            "destination_location": "Philadelphia",
+            "maximum_ride_cost": "$50"
+          }
         }
       ]
     ],
@@ -3198,7 +3341,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_40_openai.mp3",
           "asr_output_openai": "Hey, can you calculate the magnetic field strength? Let me see, if the distance is 8 meters and the current is 12 amperes.",
           "asr_output_elevenlabs": "Hey, can you calculate the magnetic field strength? Let me see... If the distance is 8 meters and the current is 12 amperes...",
-          "asr_output_deepgram": "Hey. Can you calculate the magnetic field strength? Let me see. If the distance is eight meters and the current is twelve amperes."
+          "asr_output_deepgram": "Hey. Can you calculate the magnetic field strength? Let me see. If the distance is eight meters and the current is twelve amperes.",
+          "clarifications": {
+            "distance_in_meters": "8 meters",
+            "current_in_amperes": "12 Amperes"
+          }
         }
       ]
     ],
@@ -3261,12 +3408,17 @@
       [
         {
           "role": "user",
-          "content": "Calculate the magnetic field at point P using Ampere’s law where current I is 10 Amperes and r is 0.01 meter.",
-          "transcript": "Um, can you use Ampere’s law to get the magnetic field at point P? Oh, the current, uh, I is ten Amperes, and the distance r is zero point zero one meters.",
+          "content": "Calculate the magnetic field at point P using Ampere\u2019s law where current I is 10 Amperes and r is 0.01 meter.",
+          "transcript": "Um, can you use Ampere\u2019s law to get the magnetic field at point P? Oh, the current, uh, I is ten Amperes, and the distance r is zero point zero one meters.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_41_openai.mp3",
           "asr_output_openai": "Um, can you use Ampere's Law to get the magnetic field at point P? Oh, the current I is 10 amperes, and the distance r is 0.01 meters.",
           "asr_output_elevenlabs": "Um, can you use Ampere's Law to get the magnetic field at point p? Oh, the current, uh, i is 10 amperes and the distance, r, is 0.01 meters.",
-          "asr_output_deepgram": "Can you use Ampere's law to get the magnetic field at point p? Oh, the current, I is ten amperes, and the distance r is zero point zero one meters."
+          "asr_output_deepgram": "Can you use Ampere's law to get the magnetic field at point p? Oh, the current, I is ten amperes, and the distance r is zero point zero one meters.",
+          "clarifications": {
+            "calculation_method": "Ampere\u2019s law",
+            "current_value": "10 Amperes",
+            "radial_distance": "0.01 meter"
+          }
         }
       ]
     ],
@@ -3294,7 +3446,7 @@
       },
       {
         "name": "magnetic_field.calculate",
-        "description": "Calculate the magnetic field based on the current flowing and the radial distance using Ampere’s law",
+        "description": "Calculate the magnetic field based on the current flowing and the radial distance using Ampere\u2019s law",
         "parameters": {
           "type": "dict",
           "properties": {
@@ -3352,7 +3504,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_42_openai.mp3",
           "asr_output_openai": "What's the final temperature when you mix maybe about two moles of gas at roughly 300 Kelvin with around three moles of the same gas at approximately 400 Kelvin, right?",
           "asr_output_elevenlabs": "Um, what's the final temperature when you mix, uh, maybe about two moles of gas at roughly 300 kelvin with around three moles of the same gas at approximately 400 kelvin? Right?",
-          "asr_output_deepgram": "What's the final temperature when you mix, maybe about two moles of gas at roughly three hundred Kelvin with around three moles of the same gas at approximately four hundred Kelvin? Right?"
+          "asr_output_deepgram": "What's the final temperature when you mix, maybe about two moles of gas at roughly three hundred Kelvin with around three moles of the same gas at approximately four hundred Kelvin? Right?",
+          "clarifications": {
+            "first_quantity": "2 moles",
+            "first_temperature": "300 K",
+            "second_quantity": "3 moles",
+            "second_temperature": "400 K"
+          }
         }
       ]
     ],
@@ -3422,7 +3580,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_43_openai.mp3",
           "asr_output_openai": "How much energy does five moles of glucose make?",
           "asr_output_elevenlabs": "Uh, how much energy does, uh, five moles of glucose make?",
-          "asr_output_deepgram": "How much energy does, five moles of glucose make?"
+          "asr_output_deepgram": "How much energy does, five moles of glucose make?",
+          "clarifications": {
+            "amount_of_substance": "5 mol",
+            "chemical_formula": "C6H12O6"
+          }
         }
       ]
     ],
@@ -3508,7 +3670,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_44_openai.mp3",
           "asr_output_openai": "Um, if I weigh seventy kilos on Earth, how much do I weigh on Mars, right?",
           "asr_output_elevenlabs": "Um, if I weigh 70 kilos on Earth, how much do I weigh on Mars? Right?",
-          "asr_output_deepgram": "If I weigh seventy kilos on Earth, how much do I weigh on Mars? Right?"
+          "asr_output_deepgram": "If I weigh seventy kilos on Earth, how much do I weigh on Mars? Right?",
+          "clarifications": {
+            "planet_name": "Mars"
+          }
         }
       ]
     ],
@@ -3599,7 +3764,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_45_openai.mp3",
           "asr_output_openai": "Hey, um, how many years ago did Ice Age happen, right?",
           "asr_output_elevenlabs": "Hey, um, how many years ago did Ice Age happen? Right?",
-          "asr_output_deepgram": "Hey. How many years ago did ice age happen? Right?"
+          "asr_output_deepgram": "Hey. How many years ago did ice age happen? Right?",
+          "clarifications": {
+            "era_name": "Ice age"
+          }
         }
       ]
     ],
@@ -3657,7 +3825,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_46_openai.mp3",
           "asr_output_openai": "Uh, can sort this list of names in, uh, ascending, that is A-S-C-E-N-D-I-N-G, ascending order. Sam, Alice, Jack, right?",
           "asr_output_elevenlabs": "Uh, can sort this list of names in ascending, that is A-S-C-E-N-D-I-N-G, ascending order? Sam, Alice, Jack. Right?",
-          "asr_output_deepgram": "Can sort this list of names in, Centeing. That is a s c e n d I n g. Ascending order. Sam, Alice, Jack. Right?"
+          "asr_output_deepgram": "Can sort this list of names in, Centeing. That is a s c e n d I n g. Ascending order. Sam, Alice, Jack. Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -3742,7 +3911,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_47_openai.mp3",
           "asr_output_openai": "Hey, um, can you work out the cosine similarity between vector A, which is uh, (3, 2, 1) and vector B, (1, 2, 3)?",
           "asr_output_elevenlabs": "Hey, um, can you work out the cosine similarity between vector A which is, uh, 3, 2, 1, and vector B, 1, 2, 3?",
-          "asr_output_deepgram": "Hey. Can you work out the cosine similarity between vector a, which is, three two one and vector b one two three?"
+          "asr_output_deepgram": "Hey. Can you work out the cosine similarity between vector a, which is, three two one and vector b one two three?",
+          "clarifications": {
+            "first_vector": "vector A [3, 2, 1]",
+            "second_vector": "vector B [1, 2, 3]"
+          }
         }
       ]
     ],
@@ -3826,7 +3999,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_48_openai.mp3",
           "asr_output_openai": "Um, right. Can find a pet-friendly library in New York City that also has facilities for disabled people?",
           "asr_output_elevenlabs": "Um, right. Can find a pet-friendly library in New York City that also, uh, has facilities for disabled people?",
-          "asr_output_deepgram": "Right. Can find a pet friendly library in New York City that also, has facilities for disabled people?"
+          "asr_output_deepgram": "Right. Can find a pet friendly library in New York City that also, has facilities for disabled people?",
+          "clarifications": {}
         }
       ]
     ],
@@ -3904,7 +4078,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_49_openai.mp3",
           "asr_output_openai": "Hey, um, can you work out the compound interest on $1500 for two years at an annual rate of 2.5%?",
           "asr_output_elevenlabs": "Hey, um, can you work out the compound interest on fifteen hundred dollars for two years at an annual rate of 2.5%?",
-          "asr_output_deepgram": "Hey. Can you work out the compound interest on fifteen hundred dollars for two years at an annual rate of two point five percent?"
+          "asr_output_deepgram": "Hey. Can you work out the compound interest on fifteen hundred dollars for two years at an annual rate of two point five percent?",
+          "clarifications": {
+            "principle_amount": "1500",
+            "duration_years": "2",
+            "annual_interest_rate": "2.5%"
+          }
         }
       ]
     ],
@@ -4010,7 +4189,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_50_openai.mp3",
           "asr_output_openai": "Hey, um, can you predict house prices for next month in New York?",
           "asr_output_elevenlabs": "Hey, uhm, can you predict house prices for next month in New York?",
-          "asr_output_deepgram": "Hey. Can you predict house prices for next month in New York?"
+          "asr_output_deepgram": "Hey. Can you predict house prices for next month in New York?",
+          "clarifications": {}
         }
       ]
     ],
@@ -4105,7 +4285,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_51_openai.mp3",
           "asr_output_openai": "Um, can you figure out, uh, odds of getting a sum of seven when rolling two dice, please?",
           "asr_output_elevenlabs": "Um, can you figure out, uh, odds of getting a sum of seven when rolling two dice, please?",
-          "asr_output_deepgram": "Can you figure out, odds of getting a sum of seven when rolling two dice, please?"
+          "asr_output_deepgram": "Can you figure out, odds of getting a sum of seven when rolling two dice, please?",
+          "clarifications": {}
         }
       ]
     ],
@@ -4191,7 +4372,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_52_openai.mp3",
           "asr_output_openai": "Hey, I've got one hundred euros! Oh, what's that in US dollars?",
           "asr_output_elevenlabs": "Hey, I've got one hundred euros. Oh, what's that in US dollars?",
-          "asr_output_deepgram": "Hey. I've got one hundred euros. Oh, what's that in US dollars?"
+          "asr_output_deepgram": "Hey. I've got one hundred euros. Oh, what's that in US dollars?",
+          "clarifications": {
+            "amount": "100",
+            "from_currency": "euro",
+            "to_currency": "USD"
+          }
         }
       ]
     ],
@@ -4261,7 +4447,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_53_openai.mp3",
           "asr_output_openai": "Let me see. Right, can you forecast house prices for next five years, considering interest rates and unemployment rates?",
           "asr_output_elevenlabs": "Let me see. Right, can you forecast house prices for next five years considering interest rates and unemployment rates?",
-          "asr_output_deepgram": "Let me see. Right. Can you forecast house prices for next five years considering interest rates and unemployment rates?"
+          "asr_output_deepgram": "Let me see. Right. Can you forecast house prices for next five years considering interest rates and unemployment rates?",
+          "clarifications": {
+            "independent_variables": "interest rates and unemployment rates",
+            "forecast_period_years": "5"
+          }
         }
       ]
     ],
@@ -4342,7 +4532,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_54_openai.mp3",
           "asr_output_openai": "Um, can you check Apple's dividend payments over the past five years?",
           "asr_output_elevenlabs": "Um, can you check, uh, Apple's dividend payments over the past five years?",
-          "asr_output_deepgram": "Can you check, Apple's dividend payments over the past five years?"
+          "asr_output_deepgram": "Can you check, Apple's dividend payments over the past five years?",
+          "clarifications": {
+            "company_name": "Apple Inc"
+          }
         }
       ]
     ],
@@ -4406,11 +4599,15 @@
         {
           "role": "user",
           "content": "Predict the stock price for Google for the next 3 days.",
-          "transcript": "Um, hey, can you predict Google’s stock price for the next, uh, three days?",
+          "transcript": "Um, hey, can you predict Google\u2019s stock price for the next, uh, three days?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_55_openai.mp3",
           "asr_output_openai": "Um, hey, can you predict Google's stock price for the next, uh, three days?",
           "asr_output_elevenlabs": "Um, hey, can you predict Google's stock price for the next, uh, three days?",
-          "asr_output_deepgram": "Hey. Can you predict Google's stock price for the next, three days?"
+          "asr_output_deepgram": "Hey. Can you predict Google's stock price for the next, three days?",
+          "clarifications": {
+            "company_name": "Google",
+            "forecast_days": "3"
+          }
         }
       ]
     ],
@@ -4474,7 +4671,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_56_openai.mp3",
           "asr_output_openai": "Hey, uh, what's the average closing price for Apple stock over the last, um, 60 days?",
           "asr_output_elevenlabs": "Hey, uh, what's the average closing price for Apple stock over the last, um, 60 days?",
-          "asr_output_deepgram": "Hey. What's the average closing price for Apple stock over the last, sixty days?"
+          "asr_output_deepgram": "Hey. What's the average closing price for Apple stock over the last, sixty days?",
+          "clarifications": {
+            "company_name": "Apple",
+            "days_period": "60"
+          }
         }
       ]
     ],
@@ -4567,7 +4768,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_57_openai.mp3",
           "asr_output_openai": "Work out the compound interest for a $1000 principal at a 5% annual rate over 10 years, compounded quarterly.",
           "asr_output_elevenlabs": "Work out, uh, the compound interest for a 1,000 dollar principal at a, um, five percent annual rate over ten years compounded quarterly.",
-          "asr_output_deepgram": "Work out, the compound interest for a one thousand dollar principal at a, five percent annual rate over ten years compounded quarterly."
+          "asr_output_deepgram": "Work out, the compound interest for a one thousand dollar principal at a, five percent annual rate over ten years compounded quarterly.",
+          "clarifications": {
+            "principle_amount": "$1000",
+            "annual_rate": "5%",
+            "compounding_frequency": "4 compound per year"
+          }
         }
       ]
     ],
@@ -4642,7 +4848,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_58_openai.mp3",
           "asr_output_openai": "Look for divorce law specialists in Los Angeles.",
           "asr_output_elevenlabs": "Uh, look for divorce law specialists in Los Angeles.",
-          "asr_output_deepgram": "Look for divorce law specialists in Los Angeles."
+          "asr_output_deepgram": "Look for divorce law specialists in Los Angeles.",
+          "clarifications": {
+            "location": "Los Angeles",
+            "expertise": "divorce law"
+          }
         }
       ]
     ],
@@ -4702,7 +4912,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_59_openai.mp3",
           "asr_output_openai": "Can you look for criminal law lawyers nearby in New York?",
           "asr_output_elevenlabs": "Um, can you look for, uh, criminal law lawyers nearby in New York? Okay?",
-          "asr_output_deepgram": "Can you look for, criminal law lawyers nearby in New York? Okay?"
+          "asr_output_deepgram": "Can you look for, criminal law lawyers nearby in New York? Okay?",
+          "clarifications": {
+            "location": "New York",
+            "specialization": "criminal law"
+          }
         }
       ]
     ],
@@ -4776,7 +4990,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_60_openai.mp3",
           "asr_output_openai": "Hey, um, what's the humidity and temperature forecast for New York City in a week, right?",
           "asr_output_elevenlabs": "Hey, um, what's the humidity and temperature forecast for New York City in a week, right?",
-          "asr_output_deepgram": "Hey. What's the humidity and temperature forecast for New York City in a week? Right?"
+          "asr_output_deepgram": "Hey. What's the humidity and temperature forecast for New York City in a week? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -4857,7 +5072,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_61_openai.mp3",
           "asr_output_openai": "Ken, um, get a landscape architect with like five years of experience in small-space garden design in Portland, right?",
           "asr_output_elevenlabs": "Ken, um, get a landscape architect with like five years of experience in small space garden design in Portland, right?",
-          "asr_output_deepgram": "Can, get a landscape architect with, like, five years of experience in small space garden design in Portland. Right?"
+          "asr_output_deepgram": "Can, get a landscape architect with, like, five years of experience in small space garden design in Portland. Right?",
+          "clarifications": {
+            "location": "Portland",
+            "specialization": "small space garden design",
+            "years_experience": "5 years"
+          }
         }
       ]
     ],
@@ -4927,7 +5147,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_62_openai.mp3",
           "asr_output_openai": "Hey, what's the nearest nature park in Boston where I can relax and enjoy scenic views?",
           "asr_output_elevenlabs": "Hey, what's the nearest nature park in Boston where I can relax and enjoy scenic views?",
-          "asr_output_deepgram": "Hey. What's the nearest nature park in Boston where I can relax and enjoy scenic views?"
+          "asr_output_deepgram": "Hey. What's the nearest nature park in Boston where I can relax and enjoy scenic views?",
+          "clarifications": {
+            "location": "Boston, MA",
+            "preferred_features": "camping and scenic views"
+          }
         }
       ]
     ],
@@ -5003,7 +5227,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_63_openai.mp3",
           "asr_output_openai": "Can you tell me the air quality index for like New York next week?",
           "asr_output_elevenlabs": "Uh, can you tell me the air quality index for, like, New York next week?",
-          "asr_output_deepgram": "Can you tell me the air quality index for, like, New York next week?"
+          "asr_output_deepgram": "Can you tell me the air quality index for, like, New York next week?",
+          "clarifications": {}
         }
       ]
     ],
@@ -5084,7 +5309,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_64_openai.mp3",
           "asr_output_openai": "What's the UV index for, um, Tokyo tomorrow, June 1st, 2023?",
           "asr_output_elevenlabs": "What's the UV index for, um, Tokyo tomorrow, June 1st, 2023?",
-          "asr_output_deepgram": "What's the UV index for, Tokyo tomorrow, June first twenty twenty three?"
+          "asr_output_deepgram": "What's the UV index for, Tokyo tomorrow, June first twenty twenty three?",
+          "clarifications": {
+            "date_format": "June01 2023"
+          }
         }
       ]
     ],
@@ -5165,7 +5393,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_65_openai.mp3",
           "asr_output_openai": "Hey, uh, how far is it from New York City to Los Angeles, right?",
           "asr_output_elevenlabs": "Hey, uh, how far is it from New York City to Los Angeles, right?",
-          "asr_output_deepgram": "Hey. How far is it from New York City to Los Angeles? Right?"
+          "asr_output_deepgram": "Hey. How far is it from New York City to Los Angeles? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -5252,11 +5481,12 @@
         {
           "role": "user",
           "content": "How much traffic should I expect from Las Vegas to Los Angeles this weekend?",
-          "transcript": "What’s the traffic like from Las Vegas to Los Angeles this weekend?",
+          "transcript": "What\u2019s the traffic like from Las Vegas to Los Angeles this weekend?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_66_cartesia.mp3",
           "asr_output_openai": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
           "asr_output_elevenlabs": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
-          "asr_output_deepgram": "What's the traffic like from Las Vegas to Los Angeles this weekend?"
+          "asr_output_deepgram": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
+          "clarifications": {}
         }
       ]
     ],
@@ -5341,7 +5571,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_67_cartesia.mp3",
           "asr_output_openai": "Translate hello, how are you? from English to French, OK.",
           "asr_output_elevenlabs": "Translate \"hello, how are you?\" from English to French, okay.",
-          "asr_output_deepgram": "Translate hello. How are you? From English to French, okay."
+          "asr_output_deepgram": "Translate hello. How are you? From English to French, okay.",
+          "clarifications": {
+            "text_to_translate": "Hello, how are you?",
+            "source_language": "English",
+            "target_language": "French"
+          }
         }
       ]
     ],
@@ -5417,7 +5652,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_68_cartesia.mp3",
           "asr_output_openai": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?",
           "asr_output_elevenlabs": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?",
-          "asr_output_deepgram": "Hey, could you check if that place, the New York Public Library, has any historical fiction books?"
+          "asr_output_deepgram": "Hey, could you check if that place, the New York Public Library, has any historical fiction books?",
+          "clarifications": {}
         }
       ]
     ],
@@ -5500,7 +5736,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_69_cartesia.mp3",
           "asr_output_openai": "Um, can you find out my personality type using Five-Factor Model? Here's some info: I'm a talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah... I'm forgiving.",
           "asr_output_elevenlabs": "Um, can you find out my personality type using five-factor model? Here's some info. I'm, uh, talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah, I'm forgiving.",
-          "asr_output_deepgram": "Can you find out my personality type using five factor model? Here's some info. Talkative, get nervous easily, not really into art, tend to be a bit lazy, and, yeah, am forgiving."
+          "asr_output_deepgram": "Can you find out my personality type using five factor model? Here's some info. Talkative, get nervous easily, not really into art, tend to be a bit lazy, and, yeah, am forgiving.",
+          "clarifications": {
+            "personality_model": "five factor model"
+          }
         }
       ]
     ],
@@ -5585,7 +5824,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_70_cartesia.mp3",
           "asr_output_openai": "Um, hey, right, can tell me who the French kings were in the eighteenth century?",
           "asr_output_elevenlabs": "Um, hey, Wright, can tell me who the French kings were in the 18th century?",
-          "asr_output_deepgram": "Hey. Right. Can you tell me who the French kings were in the eighteenth century?"
+          "asr_output_deepgram": "Hey. Right. Can you tell me who the French kings were in the eighteenth century?",
+          "clarifications": {
+            "country_name": "France",
+            "century_number": "18"
+          }
         }
       ]
     ],
@@ -5674,7 +5917,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_71_cartesia.mp3",
           "asr_output_openai": "Hey, um, do you know how many veterans were in US back in 1954?",
           "asr_output_elevenlabs": "Hey, uhm, do you know how many veterans were in U.S. back in 1954?",
-          "asr_output_deepgram": "Hey. Do you know how many veterans were in US back in nineteen fifty four?"
+          "asr_output_deepgram": "Hey. Do you know how many veterans were in US back in nineteen fifty four?",
+          "clarifications": {
+            "population_category": "veterans",
+            "year": "1954"
+          }
         }
       ]
     ],
@@ -5755,7 +6002,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_72_cartesia.mp3",
           "asr_output_openai": "Hey, um, dino how many people lived in California back in 1970?",
           "asr_output_elevenlabs": "Hey, um, d'you know how many people, uh, lived in California back in 1970?",
-          "asr_output_deepgram": "Hey. Do I know how many people, lived in California back in nineteen seventy?"
+          "asr_output_deepgram": "Hey. Do I know how many people, lived in California back in nineteen seventy?",
+          "clarifications": {}
         }
       ]
     ],
@@ -5823,7 +6071,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_73_cartesia.mp3",
           "asr_output_openai": "Who's the founder of Buddhism and where did it begin?",
           "asr_output_elevenlabs": "Um, who's the founder of Buddhism and uh where did it begin? Oh.",
-          "asr_output_deepgram": "Who's the founder of Buddhism, and, where did it begin? O?"
+          "asr_output_deepgram": "Who's the founder of Buddhism, and, where did it begin? O?",
+          "clarifications": {
+            "religion_name": "Buddhism"
+          }
         }
       ]
     ],
@@ -5873,7 +6124,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_74_cartesia.mp3",
           "asr_output_openai": "Look at auction platforms for the price of Van Gogh's Starry Night painting, right?",
           "asr_output_elevenlabs": "Uh, look at auction platforms for the price of Van Gogh's Starry Night painting, right?",
-          "asr_output_deepgram": "Look at auction platforms for the price of Van Gogh's Starry Night painting. Right?"
+          "asr_output_deepgram": "Look at auction platforms for the price of Van Gogh's Starry Night painting. Right?",
+          "clarifications": {
+            "artwork_name": "Starry Night",
+            "artist_name": "Van Gogh"
+          }
         }
       ]
     ],
@@ -5943,7 +6198,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_75_cartesia.mp3",
           "asr_output_openai": "Hey, um, what paint color is popular for living rooms right now, you know?",
           "asr_output_elevenlabs": "Hey, um, what paint color is popular for living rooms right now? You know.",
-          "asr_output_deepgram": "Hey. What paint color is popular for living rooms right now, you know?"
+          "asr_output_deepgram": "Hey. What paint color is popular for living rooms right now, you know?",
+          "clarifications": {}
         }
       ]
     ],
@@ -6034,7 +6290,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_76_cartesia.mp3",
           "asr_output_openai": "I'd like to get a custom bronze horse sculpture. Oh, what materials can I pick from?",
           "asr_output_elevenlabs": "He'd like to get, uh, a custom bronze horse sculpture. Oh, um, what materials can I pick from?",
-          "asr_output_deepgram": "You'd like to get, a custom bronze horse sculpture. Oh, what materials can I pick from?"
+          "asr_output_deepgram": "You'd like to get, a custom bronze horse sculpture. Oh, what materials can I pick from?",
+          "clarifications": {
+            "sculpture_subject": "horse"
+          }
         }
       ]
     ],
@@ -6116,7 +6375,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_77_cartesia.mp3",
           "asr_output_openai": "Um, hey, can you get some famous contemporary sculptures in New York? Thanks.",
           "asr_output_elevenlabs": "Um, hey, can you get some famous contemporary sculptures in New York? Thanks!",
-          "asr_output_deepgram": "Hey. Can you get some famous contemporary sculptures in New York? Thanks."
+          "asr_output_deepgram": "Hey. Can you get some famous contemporary sculptures in New York? Thanks.",
+          "clarifications": {
+            "artwork_type": "sculptures",
+            "location": "New York",
+            "era": "contemporary"
+          }
         }
       ]
     ],
@@ -6205,7 +6469,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_78_cartesia.mp3",
           "asr_output_openai": "Um, could you get the details on London's Natural History Museum?",
           "asr_output_elevenlabs": "Um, could you get the details on London's Natural History Museum? Oh, em, uh, look in for the timings, exhibitions, and accessibility info.",
-          "asr_output_deepgram": "Could you get the details on London's Natural History Museum? O m, Lukian for the timings, exhibitions, and accessibility info."
+          "asr_output_deepgram": "Could you get the details on London's Natural History Museum? O m, Lukian for the timings, exhibitions, and accessibility info.",
+          "clarifications": {
+            "museum_name": "Natural History Museum",
+            "city_name": "London"
+          }
         }
       ]
     ],
@@ -6295,7 +6563,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_79_cartesia.mp3",
           "asr_output_openai": "What art exhibitions are happening next month at Museum of Modern Art, that's M-U-S-E-U-M, of Modern Art in New York, that's N-E-W-Y-O-R-K New York.",
           "asr_output_elevenlabs": "What art exhibitions are happening next month at Museum of Modern Art? That's M-U-S-E-U-M of Modern Art in New York. That's N-E-W-Y-O-R-K, New York.",
-          "asr_output_deepgram": "What art exhibitions are happening next month at Museum of Modern Art? That's m u s e u m. Of Modern Art in New York. That's n e w y o r k, New York."
+          "asr_output_deepgram": "What art exhibitions are happening next month at Museum of Modern Art? That's m u s e u m. Of Modern Art in New York. That's n e w y o r k, New York.",
+          "clarifications": {
+            "museum_name": "Museum of Modern Art"
+          }
         }
       ]
     ],
@@ -6359,7 +6630,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_80_cartesia.mp3",
           "asr_output_openai": "Hey, can you look for a guitar shop in Nashville that also offers violin lessons?",
           "asr_output_elevenlabs": "Hey, can you look for a guitar shop in Nashville that also offers violin lessons?",
-          "asr_output_deepgram": "Hey. Can you look for a guitar shop in Nashville that also offers violin lessons?"
+          "asr_output_deepgram": "Hey. Can you look for a guitar shop in Nashville that also offers violin lessons?",
+          "clarifications": {
+            "location": "Nashville",
+            "services": "violin lessons",
+            "instruments": "guitar"
+          }
         }
       ]
     ],
@@ -6461,7 +6737,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_81_cartesia.mp3",
           "asr_output_openai": "I can book a ticket for the Eminem concert in New York City?",
           "asr_output_elevenlabs": "I can book a ticket for the Eminem concert in New York City. Oh, one of the, um, one with backstage access?",
-          "asr_output_deepgram": "I can book a ticket for the Eminem concert in New York City. Oh, one of the one with backstage access."
+          "asr_output_deepgram": "I can book a ticket for the Eminem concert in New York City. Oh, one of the one with backstage access.",
+          "clarifications": {
+            "artist_name": "Eminem",
+            "location": "New York City",
+            "add_on": "backstage access"
+          }
         }
       ]
     ],
@@ -6543,9 +6824,13 @@
           "content": "Play a song in C Major key at tempo 120 bpm.",
           "transcript": "Uh, play a song in the key of C major at one-twenty beats per minute, right.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_82_cartesia.mp3",
-          "asr_output_openai": "プレイアソングインザキーオブCメジャー、アット120ビーツパーミニット、ライト?",
+          "asr_output_openai": "\u30d7\u30ec\u30a4\u30a2\u30bd\u30f3\u30b0\u30a4\u30f3\u30b6\u30ad\u30fc\u30aa\u30d6C\u30e1\u30b8\u30e3\u30fc\u3001\u30a2\u30c3\u30c8120\u30d3\u30fc\u30c4\u30d1\u30fc\u30df\u30cb\u30c3\u30c8\u3001\u30e9\u30a4\u30c8?",
           "asr_output_elevenlabs": "Uh, play a song in the key of C major at 120 beats per minute. Right?",
-          "asr_output_deepgram": "Play a song in the key of C major at one twenty beats per minute. Right?"
+          "asr_output_deepgram": "Play a song in the key of C major at one twenty beats per minute. Right?",
+          "clarifications": {
+            "key": "C Major",
+            "tempo": "120 bpm"
+          }
         }
       ]
     ],
@@ -6615,7 +6900,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_83_cartesia.mp3",
           "asr_output_openai": "Can you tell me how many goals Lionel Messi scored for Barcelona up to now, right?",
           "asr_output_elevenlabs": "Can you tell me how many goals Lionel Messi's, um, scored for Barcelona up to now? Right.",
-          "asr_output_deepgram": "Can you tell me how many goals Lionel Mesis, scored for Barcelona up to now. Right?"
+          "asr_output_deepgram": "Can you tell me how many goals Lionel Mesis, scored for Barcelona up to now. Right?",
+          "clarifications": {
+            "player_name": "Lionel Messi",
+            "team_name": "Barcelona"
+          }
         }
       ]
     ],
@@ -6698,7 +6987,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_84_cartesia.mp3",
           "asr_output_openai": "Um, who are top ten goal scorers from Barcelona in UEFA Champions League, right?",
           "asr_output_elevenlabs": "Um, who are top 10 goal scorers from Barcelona in UEFA Champions League, right?",
-          "asr_output_deepgram": "Who are top ten goal scores from Barcelona in UEFA Champions League. Right?"
+          "asr_output_deepgram": "Who are top ten goal scores from Barcelona in UEFA Champions League. Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -6768,7 +7058,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_85_cartesia.mp3",
           "asr_output_openai": "Can you pull up the Real Madrid scores from their last five La Liga matches?",
           "asr_output_elevenlabs": "Um, can you pull up the Real Madrid scores from their last, uh, five LaLiga matches?",
-          "asr_output_deepgram": "Can you pull up the Real Madrid scores from their last, five La Liga matches?"
+          "asr_output_deepgram": "Can you pull up the Real Madrid scores from their last, five La Liga matches?",
+          "clarifications": {
+            "team_name": "Real Madrid",
+            "league_name": "La Liga",
+            "rounds_count": "5"
+          }
         }
       ]
     ],
@@ -6838,7 +7133,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_86_cartesia.mp3",
           "asr_output_openai": "Hey, could you find some strategy board games for two players recommended by BoardGameGeek?",
           "asr_output_elevenlabs": "Hey, could you, uh, find some strategy board games for two players recommended by Board Game Geek? That's B-O-A-R-D-G-A-M-E-G-E-E-K, Board Game Geek. Thanks.",
-          "asr_output_deepgram": "Hey. Could you, find some strategy board games for two players recommended by Board Game Geek? That's b o a, our d g a m e g e e k board game geek. Thanks."
+          "asr_output_deepgram": "Hey. Could you, find some strategy board games for two players recommended by Board Game Geek? That's b o a, our d g a m e g e e k board game geek. Thanks.",
+          "clarifications": {
+            "store_name": "BoardGameGeek"
+          }
         }
       ]
     ],
@@ -6906,7 +7204,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_87_cartesia.mp3",
           "asr_output_openai": "Um, hey, can snag the latest update or patch for Cyberpunk 2077 on Xbox?",
           "asr_output_elevenlabs": "Um, hey, can snag the latest update or patch for Cyberpunk 2077 on Xbox?",
-          "asr_output_deepgram": "Hey. Can snag, the latest update or patch for Cyberpunk twenty seventy seven on Xbox?"
+          "asr_output_deepgram": "Hey. Can snag, the latest update or patch for Cyberpunk twenty seventy seven on Xbox?",
+          "clarifications": {
+            "game_name": "Cyberpunk 2077",
+            "platform_name": "Xbox"
+          }
         }
       ]
     ],
@@ -6986,11 +7288,15 @@
         {
           "role": "user",
           "content": "Find me the number of active players in the game 'World of Warcraft' in 2020.",
-          "transcript": "Uh, how many active players were, um, in World of Warcraft—spelled W-O-R-L-D of W-A-R-C-R-A-F-T—in twenty-twenty?",
+          "transcript": "Uh, how many active players were, um, in World of Warcraft\u2014spelled W-O-R-L-D of W-A-R-C-R-A-F-T\u2014in twenty-twenty?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_88_cartesia.mp3",
           "asr_output_openai": "How many active players were in World of Warcraft in 2020?",
           "asr_output_elevenlabs": "Uh, how many active players were, um, in World of Warcraft, spelled W-O-R-L-D of W-A-R-C-R-A-F-T in 2020?",
-          "asr_output_deepgram": "How many active players were, in World of Warcraft spelled w o r l d of w a r c r a f t in twenty twenty?"
+          "asr_output_deepgram": "How many active players were, in World of Warcraft spelled w o r l d of w a r c r a f t in twenty twenty?",
+          "clarifications": {
+            "game_title": "World of Warcraft",
+            "year": "2020"
+          }
         }
       ]
     ],
@@ -7060,7 +7366,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_89_cartesia.mp3",
           "asr_output_openai": "Can you get a recipe for a healthy lunch with chicken and mushrooms that's under 500 calories?",
           "asr_output_elevenlabs": "Uh, can you get a recipe for a healthy lunch with chicken and, um, mushrooms that's under 500 calories?",
-          "asr_output_deepgram": "Can you get a recipe for a healthy lunch with chicken and, mushrooms that's under five hundred calories?"
+          "asr_output_deepgram": "Can you get a recipe for a healthy lunch with chicken and, mushrooms that's under five hundred calories?",
+          "clarifications": {}
         }
       ]
     ],
@@ -7160,7 +7467,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_90_cartesia.mp3",
           "asr_output_openai": "Get me a seafood restaurant in Seattle for a group of five, right?",
           "asr_output_elevenlabs": "Uh, get me a seafood restaurant in Seattle for a group of five. Right?",
-          "asr_output_deepgram": "Get me a seafood restaurant in Seattle for a group of five. Right?"
+          "asr_output_deepgram": "Get me a seafood restaurant in Seattle for a group of five. Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -7246,7 +7554,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_91_cartesia.mp3",
           "asr_output_openai": "Hey, can you get a simple apple pie recipe with under five ingredients, right?",
           "asr_output_elevenlabs": "Um, hey, can you get a simple apple pie recipe with, uh, under five ingredients, right?",
-          "asr_output_deepgram": "Hey. Can you get a simple apple pie recipe with, under five ingredients? Right?"
+          "asr_output_deepgram": "Hey. Can you get a simple apple pie recipe with, under five ingredients? Right?",
+          "clarifications": {
+            "main_ingredient": "apple",
+            "ingredient_limit": "5"
+          }
         }
       ]
     ],
@@ -7308,7 +7620,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_92_cartesia.mp3",
           "asr_output_openai": "Can you like get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?",
           "asr_output_elevenlabs": "Uh, can you like get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?",
-          "asr_output_deepgram": "Can you, like, get a list of vegetarian and gluten free foods at the Walmart close to Denver? Thanks."
+          "asr_output_deepgram": "Can you, like, get a list of vegetarian and gluten free foods at the Walmart close to Denver? Thanks.",
+          "clarifications": {}
         }
       ]
     ],
@@ -7407,7 +7720,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_93_cartesia.mp3",
           "asr_output_openai": "Can you get a deluxe room for two nights at the Marriott in New York, and oh, add breakfast as an extra?",
           "asr_output_elevenlabs": "Uh, can you get a deluxe room for two nights at the Marriott in New York and, um, oh, add breakfast as an extra?",
-          "asr_output_deepgram": "Can you get a deluxe room for two nights at the Marriott in New York and, oh, add breakfast as an extra?"
+          "asr_output_deepgram": "Can you get a deluxe room for two nights at the Marriott in New York and, oh, add breakfast as an extra?",
+          "clarifications": {
+            "hotel_name": "Marriott",
+            "room_type": "deluxe",
+            "location": "New York",
+            "additional_service": "breakfast"
+          }
         }
       ]
     ],
@@ -7494,7 +7813,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_94_cartesia.mp3",
           "asr_output_openai": "Um, hey, can you look at prices for a suite with a queen bed for three nights at Hilton New York, okay?",
           "asr_output_elevenlabs": "Um, hey, can you look at prices for a suite with a queen bed for, uh, three nights at Hilton New York? Okay.",
-          "asr_output_deepgram": "Hey. Can you look at prices for a suite with a queen bed for, three nights at Hilton, New York? Okay?"
+          "asr_output_deepgram": "Hey. Can you look at prices for a suite with a queen bed for, three nights at Hilton, New York? Okay?",
+          "clarifications": {
+            "hotel_name": "Hilton New York",
+            "room_type": "suite with queen size bed",
+            "nights": "3"
+          }
         }
       ]
     ],
@@ -7590,7 +7914,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_95_cartesia.mp3",
           "asr_output_openai": "Hey, um, what's the conversion from 200 euros to US dollars at the current rate?",
           "asr_output_elevenlabs": "Hey, uhm, what's the conversion from 200 euros to US dollars at the current rate?",
-          "asr_output_deepgram": "Hey. What's the conversion from two hundred euros to US dollars at the current rate?"
+          "asr_output_deepgram": "Hey. What's the conversion from two hundred euros to US dollars at the current rate?",
+          "clarifications": {
+            "amount": "200",
+            "from_currency": "euros",
+            "to_currency": "US dollars"
+          }
         }
       ]
     ],
@@ -7664,7 +7993,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_96_cartesia.mp3",
           "asr_output_openai": "Um, hey can you solve this quadratic equation me? Right, the coefficients are -a equals two, b equals six, and c equals five.",
           "asr_output_elevenlabs": "Um, hey, can you solve this quadratic equation for me? Right. The coefficients are A equals two, uh, B equals six, and C equals five.",
-          "asr_output_deepgram": "Hey. Can you solve this quadratic equation me? Right. The coefficients are a equals two, b equals six, and c equals five."
+          "asr_output_deepgram": "Hey. Can you solve this quadratic equation me? Right. The coefficients are a equals two, b equals six, and c equals five.",
+          "clarifications": {
+            "coefficient_a": "2",
+            "coefficient_b": "6",
+            "constant_c": "5"
+          }
         }
       ]
     ],
@@ -7764,7 +8098,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_97_cartesia.mp3",
           "asr_output_openai": "Hey Wright, can you say the area of a circle with a radius of ten?",
           "asr_output_elevenlabs": "Hey, Wright, can you say the area of a circle with a radius of 10?",
-          "asr_output_deepgram": "Hayride, can you say the area of a circle with a radius of ten?"
+          "asr_output_deepgram": "Hayride, can you say the area of a circle with a radius of ten?",
+          "clarifications": {}
         }
       ]
     ],
@@ -7837,7 +8172,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_98_cartesia.mp3",
           "asr_output_openai": "Hey um, could you get the circumference of a circle with a radius of three?",
           "asr_output_elevenlabs": "Hey, um, could you get the circumference of a circle with a radius of three?",
-          "asr_output_deepgram": "Hey, could you get the circumference of a circle with a radius of three?"
+          "asr_output_deepgram": "Hey, could you get the circumference of a circle with a radius of three?",
+          "clarifications": {}
         }
       ]
     ],
@@ -7954,7 +8290,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_99_cartesia.mp3",
           "asr_output_openai": "Could you find the derivative of the function 2x squared at x equals 1, please?",
           "asr_output_elevenlabs": "Uh, could you find the derivative of the function two X squared at X equals one please?",
-          "asr_output_deepgram": "Could you find the derivative of the function two x squared at x equals one, please?"
+          "asr_output_deepgram": "Could you find the derivative of the function two x squared at x equals one, please?",
+          "clarifications": {
+            "function_expression": "2x^2",
+            "calculation_value": "1"
+          }
         }
       ]
     ],
@@ -8024,7 +8364,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_100_cartesia.mp3",
           "asr_output_openai": "Hey, what's the greatest common factor of 36 and 24?",
           "asr_output_elevenlabs": "Hey, uh, what's the greatest common factor of 36 and 24?",
-          "asr_output_deepgram": "Hey, what's the greatest common factor of thirty six and twenty four?"
+          "asr_output_deepgram": "Hey, what's the greatest common factor of thirty six and twenty four?",
+          "clarifications": {}
         }
       ]
     ],
@@ -8094,7 +8435,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_101_cartesia.mp3",
           "asr_output_openai": "What's the greatest common divisor of 12 and 18?",
           "asr_output_elevenlabs": "What's the greatest common divisor of 12 and 18?",
-          "asr_output_deepgram": "What's the greatest common divisor of twelve, and eighteen?"
+          "asr_output_deepgram": "What's the greatest common divisor of twelve, and eighteen?",
+          "clarifications": {}
         }
       ]
     ],
@@ -8158,7 +8500,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_102_cartesia.mp3",
           "asr_output_openai": "Uh, can you get the car's displacement? It's got an initial velocity of 10, accelerates at 9.8, and it's like over 5 seconds.",
           "asr_output_elevenlabs": "Uh, can you get the car's displacement? It's got an initial velocity of 10, accelerates at 9.8, and it's like over five seconds.",
-          "asr_output_deepgram": "Can you get the car's displacement? It's got an initial velocity of ten, accelerates at nine point eight, and it's, like, over five seconds."
+          "asr_output_deepgram": "Can you get the car's displacement? It's got an initial velocity of ten, accelerates at nine point eight, and it's, like, over five seconds.",
+          "clarifications": {
+            "acceleration_spelling": "acceleeration"
+          }
         }
       ]
     ],
@@ -8251,7 +8596,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_103_cartesia.mp3",
           "asr_output_openai": "What's the final speed when an object is dropped from 100 meters with no air resistance?",
           "asr_output_elevenlabs": "Um, what's the final speed when an object is, uh, dropped from 100 meters with no air resistance?",
-          "asr_output_deepgram": "What's the final speed when an object is, dropped from one hundred meters with no air resistance?"
+          "asr_output_deepgram": "What's the final speed when an object is, dropped from one hundred meters with no air resistance?",
+          "clarifications": {}
         }
       ]
     ],
@@ -8360,7 +8706,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_104_cartesia.mp3",
           "asr_output_openai": "Uh, what's the shortest driving distance between New York City and Washington D.C., right?",
           "asr_output_elevenlabs": "Uh, what's the shortest driving distance between New York City and Washington DC, right?",
-          "asr_output_deepgram": "What's the shortest driving distance between New York City and Washington DC? Right?"
+          "asr_output_deepgram": "What's the shortest driving distance between New York City and Washington DC? Right?",
+          "clarifications": {
+            "origin_location": "New York City",
+            "destination_location": "Washington D.C."
+          }
         }
       ]
     ],
@@ -8471,7 +8821,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_105_cartesia.mp3",
           "asr_output_openai": "Find the magnetic field at the center of a circular loop. It's carrying a current of 5 amps, and the radius is 4 meters.",
           "asr_output_elevenlabs": "Uh, find the magnetic field at the center of a circular loop. It's carrying a current of 5 amps and, um, the radius is 4 meters.",
-          "asr_output_deepgram": "Find the magnetic field at the center of a circular loop. It's carrying a current of five amps, and, the radius is four meters."
+          "asr_output_deepgram": "Find the magnetic field at the center of a circular loop. It's carrying a current of five amps, and, the radius is four meters.",
+          "clarifications": {
+            "current_value": "5 Ampere",
+            "radius_value": "4 meters"
+          }
         }
       ]
     ],
@@ -8564,7 +8918,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_106_cartesia.mp3",
           "asr_output_openai": "Hey, um, can you work out the electric field strength, like four meters from a 0.01 coulomb charge?",
           "asr_output_elevenlabs": "Hey, um, can you work out the electric field strength, like, 4 meters from a 0.01 coulomb charge?",
-          "asr_output_deepgram": "Hey, can you work out the electric field strength, like four meters from a zero point zero one coulomb charge?"
+          "asr_output_deepgram": "Hey, can you work out the electric field strength, like four meters from a zero point zero one coulomb charge?",
+          "clarifications": {
+            "charge_value": "0.01 Coulombs",
+            "distance_value": "4 meters"
+          }
         }
       ]
     ],
@@ -8684,12 +9042,16 @@
       [
         {
           "role": "user",
-          "content": "What is the density of a substance with a mass of 45 kg and a volume of 15 m³?",
+          "content": "What is the density of a substance with a mass of 45 kg and a volume of 15 m\u00b3?",
           "transcript": "Hey, um, can you tell me the density if something weighs forty-five kilograms and takes up fifteen cubic meters?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_107_cartesia.mp3",
           "asr_output_openai": "Hey um, can you tell me the density if something weighs 45 kilograms and takes up 15 cubic meters?",
           "asr_output_elevenlabs": "Hey, um, can you tell me the density if something weighs 45 kilograms and takes up 15 cubic meters?",
-          "asr_output_deepgram": "Hey, can you tell me the density if something weighs forty five kilograms and takes up fifteen cubic meters?"
+          "asr_output_deepgram": "Hey, can you tell me the density if something weighs forty five kilograms and takes up fifteen cubic meters?",
+          "clarifications": {
+            "mass_value": "45 kg",
+            "volume_value": "15 m\u00b3"
+          }
         }
       ]
     ],
@@ -8735,7 +9097,7 @@
             },
             "unit": {
               "type": "string",
-              "description": "The unit of density. Default is kg/m³"
+              "description": "The unit of density. Default is kg/m\u00b3"
             }
           },
           "required": [
@@ -8757,7 +9119,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_108_cartesia.mp3",
           "asr_output_openai": "Let me see, can you figure out the heat capacity at constant pressure for air with a temperature of 298 Kelvin and a volume of 10 cubic meters?",
           "asr_output_elevenlabs": "Let me see. Can you figure out the heat capacity at constant pressure for air with a temperature of 298 kelvin and a volume of ten cubic meters?",
-          "asr_output_deepgram": "Let me see. Can you figure out the heat capacity at constant pressure for air with a temperature of two hundred ninety eight Kelvin and a volume of ten cubic meters?"
+          "asr_output_deepgram": "Let me see. Can you figure out the heat capacity at constant pressure for air with a temperature of two hundred ninety eight Kelvin and a volume of ten cubic meters?",
+          "clarifications": {
+            "temperature_value": "298K",
+            "volume_value": "10 m^3"
+          }
         }
       ]
     ],
@@ -8830,7 +9196,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_109_cartesia.mp3",
           "asr_output_openai": "Could you let me know what proteins are in the plasma membrane?",
           "asr_output_elevenlabs": "Could you let me know what proteins are in the plasma membrane? Plasma membrane.",
-          "asr_output_deepgram": "Could you let me know what proteins are in the plasma membrane? Plasma membrane?"
+          "asr_output_deepgram": "Could you let me know what proteins are in the plasma membrane? Plasma membrane?",
+          "clarifications": {}
         }
       ]
     ],
@@ -8923,7 +9290,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_110_cartesia.mp3",
           "asr_output_openai": "Heya, can you tell me the gene mutation type for SNP ID rs6034464 please?",
           "asr_output_elevenlabs": "Hey, uh, can you tell me the gene mutation type for SNP ID RS6034464, please?",
-          "asr_output_deepgram": "Hey. Can you tell me the gene mutation type for SNPIDR s six zero three four four six four, please?"
+          "asr_output_deepgram": "Hey. Can you tell me the gene mutation type for SNPIDR s six zero three four four six four, please?",
+          "clarifications": {
+            "snp_id": "rs6034464"
+          }
         }
       ]
     ],
@@ -8986,7 +9356,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_111_cartesia.mp3",
           "asr_output_openai": "Hey, um, right, what's the genotype frequency for the AAA genotype when the allele frequency of A is 0.3?",
           "asr_output_elevenlabs": "Hey, um, right? What's the genotype frequency for the AAA genotype when the allele frequency of as 0.3?",
-          "asr_output_deepgram": "Hey. Right? What's the genotype frequency for the AAA genotype when the allele frequency of as zero point three?"
+          "asr_output_deepgram": "Hey. Right? What's the genotype frequency for the AAA genotype when the allele frequency of as zero point three?",
+          "clarifications": {
+            "genotype_spelling": "AA"
+          }
         }
       ]
     ],
@@ -9075,7 +9448,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_112_cartesia.mp3",
           "asr_output_openai": "Can you forecast how the forest in Yellowstone will grow over the next five years, consider human impact? Thanks.",
           "asr_output_elevenlabs": "Um, can you forecast how the forest in Yellowstone will, uh, grow over the next five years conside-ering human impact? Thanks.",
-          "asr_output_deepgram": "Can you forecast how the forest in Yellowstone will, grow over the next five years? Consid, Aaron, human impact? Thanks."
+          "asr_output_deepgram": "Can you forecast how the forest in Yellowstone will, grow over the next five years? Consid, Aaron, human impact? Thanks.",
+          "clarifications": {
+            "location": "Yellowstone National Park",
+            "years": "5",
+            "include_human_impact": "true"
+          }
         }
       ]
     ],
@@ -9134,7 +9512,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_113_cartesia.mp3",
           "asr_output_openai": "Hey Lensi, calculate the evolutionary fitness for a creature. Trait A makes up 40% with a value of 0.8, and trait B 60% at 0.7.",
           "asr_output_elevenlabs": "Hey, Lem C. Calculate the evolutionary fitness for a creature. Trait A makes up 40% with a value of 0.8 and trait B 60% at 0.7.",
-          "asr_output_deepgram": "Hey, Lem c. Calculate the evolutionary fitness for a creature. Trait a makes up forty percent with a value of zero point eight, and trait b sixty percent at zero point seven."
+          "asr_output_deepgram": "Hey, Lem c. Calculate the evolutionary fitness for a creature. Trait a makes up forty percent with a value of zero point eight, and trait b sixty percent at zero point seven.",
+          "clarifications": {
+            "trait_a_value": "0.8",
+            "trait_b_value": "0.7",
+            "trait_a_contribution": "40%",
+            "trait_b_contribution": "60%"
+          }
         }
       ]
     ],
@@ -9267,7 +9651,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_114_cartesia.mp3",
           "asr_output_openai": "Can you give me the evolutionary rate predictions for Homo sapiens over the next 50 years using the Darwin model?",
           "asr_output_elevenlabs": "Um, can you give me the evolutionary rate predictions for homo sapiens over the next, uh, 50 years using the Darwin model?",
-          "asr_output_deepgram": "Can you give me the evolutionary rate predictions for Homo sapiens over the next, fifty years using the Darwin model?"
+          "asr_output_deepgram": "Can you give me the evolutionary rate predictions for Homo sapiens over the next, fifty years using the Darwin model?",
+          "clarifications": {
+            "species_name": "Homo Sapiens",
+            "prediction_years": "50",
+            "prediction_model": "Darwin"
+          }
         }
       ]
     ],
@@ -9361,7 +9750,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_115_cartesia.mp3",
           "asr_output_openai": "Find me five Thai joints nearby in Manhattan with, you know, vegan options, thanks.",
           "asr_output_elevenlabs": "Uh, find me five Thai joints nearby in Manhattan with, you know, vegan options. Thanks!",
-          "asr_output_deepgram": "Finally, five Thai joints nearby in Manhattan with, you know, vegan options. Thanks."
+          "asr_output_deepgram": "Finally, five Thai joints nearby in Manhattan with, you know, vegan options. Thanks.",
+          "clarifications": {
+            "location": "Manhattan",
+            "food_type": "Thai",
+            "number_of_restaurants": "5",
+            "dietary_requirements": "vegan"
+          }
         }
       ]
     ],
@@ -9488,7 +9883,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_116_cartesia.mp3",
           "asr_output_openai": "Can you figure out BMI for someone weighing 85 kilograms and 180 centimeters tall, okay?",
           "asr_output_elevenlabs": "Can you figure out BMI for someone weighing 85 kilograms and 180 centimeters tall? Okay.",
-          "asr_output_deepgram": "Can you figure out BMI for someone weighing eighty five kilograms and one hundred eighty centimeters tall? Okay?"
+          "asr_output_deepgram": "Can you figure out BMI for someone weighing eighty five kilograms and one hundred eighty centimeters tall? Okay?",
+          "clarifications": {}
         }
       ]
     ],
@@ -9548,11 +9944,12 @@
         {
           "role": "user",
           "content": "Calculate the BMI (Body Mass Index) of a person who weighs 70kg and is 1.75m tall.",
-          "transcript": "Uh, what’s the BMI for someone who’s seventy kilograms and, um, one point seventy-five meters tall, right?",
+          "transcript": "Uh, what\u2019s the BMI for someone who\u2019s seventy kilograms and, um, one point seventy-five meters tall, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_117_cartesia.mp3",
           "asr_output_openai": "What's the BMI for someone who's 70 kilograms and 1.75 meters tall, right?",
           "asr_output_elevenlabs": "What's the BMI for someone who's 70 kilograms and um 1.75 meters tall, right?",
-          "asr_output_deepgram": "What's the BMI for someone who's seventy kilograms and, one point seventy five meters tall? Right?"
+          "asr_output_deepgram": "What's the BMI for someone who's seventy kilograms and, one point seventy five meters tall? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -9656,7 +10053,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_118_cartesia.mp3",
           "asr_output_openai": "Hey, can you find all the 2010 movies with Leonardo DiCaprio (that's L-E-O-N-A-R-D-O D-I-C-A-P-R-I-O) on IMDb? Thanks!",
           "asr_output_elevenlabs": "Hey, can you find all the 2010 movies with Leonardo DiCaprio? That's L-E-O-N-A-R-D-O D-I-C-A-P-R-I-O on IMDb. Thanks!",
-          "asr_output_deepgram": "Hey. Can you find all the two zero one zero movies with Leonardo DiCaprio? That's l e o n a r d o d I c a p r I o and I m d b. Thanks."
+          "asr_output_deepgram": "Hey. Can you find all the two zero one zero movies with Leonardo DiCaprio? That's l e o n a r d o d I c a p r I o and I m d b. Thanks.",
+          "clarifications": {
+            "actor_name": "Leonardo DiCaprio",
+            "year": "2010",
+            "database_name": "IMDB"
+          }
         }
       ]
     ],
@@ -9763,7 +10165,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_119_cartesia.mp3",
           "asr_output_openai": "Hey, can you, uh, check records in the database, specifically in the user table, where the age is over 25 and the job title is engineer? Thanks.",
           "asr_output_elevenlabs": "Hey, can you, uh, check records in the database, specifically in the user table where the age is over 25 and the job title is engineer? Thanks.",
-          "asr_output_deepgram": "Hey. Can you, check records in the database, specifically in the user table where the age is over twenty five and the job title is engineer? Thanks."
+          "asr_output_deepgram": "Hey. Can you, check records in the database, specifically in the user table where the age is over twenty five and the job title is engineer? Thanks.",
+          "clarifications": {
+            "table_name": "user",
+            "query_conditions": "age is greater than 25 and job is 'engineer'"
+          }
         }
       ]
     ],
@@ -9907,7 +10313,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_120_cartesia.mp3",
           "asr_output_openai": "Um, how long's it take light to go from a star that's uh four light years away to Earth?",
           "asr_output_elevenlabs": "Um, how long's it take light to go from a star that's, uh, four light years away to Earth?",
-          "asr_output_deepgram": "How long does it take light to go from a star that's, four light years away to Earth?"
+          "asr_output_deepgram": "How long does it take light to go from a star that's, four light years away to Earth?",
+          "clarifications": {
+            "distance_in_light_years": "4"
+          }
         }
       ]
     ],
@@ -10043,7 +10452,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_121_cartesia.mp3",
           "asr_output_openai": "Hey, could you find the area of a triangle with a base of 6 and a height of 10?",
           "asr_output_elevenlabs": "Hey, could you find the area of a triangle with a base of 6 and a height of 10?",
-          "asr_output_deepgram": "Hey. Could you find the area of a triangle with a base of six and a height of ten?"
+          "asr_output_deepgram": "Hey. Could you find the area of a triangle with a base of six and a height of ten?",
+          "clarifications": {}
         }
       ]
     ],
@@ -10141,7 +10551,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_122_cartesia.mp3",
           "asr_output_openai": "Write: Use a linear regression with age, income, and education as predictors and purchase_amount as the target, and make sure to include standardization.",
           "asr_output_elevenlabs": "Right. Uh, use a linear regression with age, income, and education as predictors, and, um, purchase_amount as the target. And make sure to include standardization.",
-          "asr_output_deepgram": "Right. Use a linear regression with age, income, and education as predictors and, purchase underscore amount as the target, and make sure to include standardization."
+          "asr_output_deepgram": "Right. Use a linear regression with age, income, and education as predictors and, purchase underscore amount as the target, and make sure to include standardization.",
+          "clarifications": {
+            "predictor_variables": "Age, Income, Education",
+            "target_variable": "Purchase_Amount"
+          }
         }
       ]
     ],
@@ -10276,7 +10690,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_123_cartesia.mp3",
           "asr_output_openai": "Hey, um, what's the chance of, uh, drawing a king from a deck of cards, right?",
           "asr_output_elevenlabs": "Hey, uhm, what's the chance of, uh, drawing a king from a deck of cards, right?",
-          "asr_output_deepgram": "Hey. What's the chance of, drawing a king from a deck of cards. Right?"
+          "asr_output_deepgram": "Hey. What's the chance of, drawing a king from a deck of cards. Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -10376,7 +10791,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_124_cartesia.mp3",
           "asr_output_openai": "Hey, alright. What's the chance of getting a king from a standard 52-card deck that's well-shuffled?",
           "asr_output_elevenlabs": "Hey, all right, what's the chance of getting a king from a standard 52-card deck that's well shuffled?",
-          "asr_output_deepgram": "Hey. Alright. What's the chance of getting a king from a standard fifty two card deck that's well shuffled?"
+          "asr_output_deepgram": "Hey. Alright. What's the chance of getting a king from a standard fifty two card deck that's well shuffled?",
+          "clarifications": {}
         }
       ]
     ],
@@ -10464,11 +10880,16 @@
         {
           "role": "user",
           "content": "Run a two sample T-test to compare the average of Group A [3, 4, 5, 6, 4] and Group B [7, 8, 9, 8, 7] assuming equal variance.",
-          "transcript": "Can you, uh, perform a two-sample T-test to compare the averages of Group A—values are three, four, five, six, four—and, um, Group B—values are seven, eight, nine, eight, seven—assuming equal variance, okay?",
+          "transcript": "Can you, uh, perform a two-sample T-test to compare the averages of Group A\u2014values are three, four, five, six, four\u2014and, um, Group B\u2014values are seven, eight, nine, eight, seven\u2014assuming equal variance, okay?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_125_cartesia.mp3",
           "asr_output_openai": "Can you perform a two-sample t-test to compare the averages of Group A values are 3, 4, 5, 6, 4 and Group B values are 7, 8, 9, 8, 7, assuming equal variance, okay?",
           "asr_output_elevenlabs": "Can you, uh, perform a two-sample t-test to compare the averages of Group A, values are 3, 4, 5, 6, 4, and, um, Group B, values are 7, 8, 9, 8, 7, assuming equal variance, okay?",
-          "asr_output_deepgram": "Can you, perform a two sample t test to compare the averages of group a? Values are three, four, five, six, four. And, group b, values are seven eight nine eight seven, assuming equal variance. Okay?"
+          "asr_output_deepgram": "Can you, perform a two sample t test to compare the averages of group a? Values are three, four, five, six, four. And, group b, values are seven eight nine eight seven, assuming equal variance. Okay?",
+          "clarifications": {
+            "group1_data": "[3, 4, 5, 6, 4]",
+            "group2_data": "[7, 8, 9, 8, 7]",
+            "equal_variance_assumption": "equal variance"
+          }
         }
       ]
     ],
@@ -10568,11 +10989,15 @@
         {
           "role": "user",
           "content": "Find the statistical significance between two set of variables, dataset_A with the values 12, 24, 36 and dataset_B with the values 15, 30, 45.",
-          "transcript": "Uh, check the statistical significance between dataset_A—values are twelve, twenty-four, thirty-six—and dataset_B with, uh, values fifteen, thirty, forty-five, right?",
+          "transcript": "Uh, check the statistical significance between dataset_A\u2014values are twelve, twenty-four, thirty-six\u2014and dataset_B with, uh, values fifteen, thirty, forty-five, right?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_126_cartesia.mp3",
           "asr_output_openai": "Check the statistical significance between dataset_A (values are 12, 24, 36) and dataset_B with (values 15, 30, 45), right?",
           "asr_output_elevenlabs": "Uh, check the statistical significance between dataset_A. Values are 12, 24, 36. And dataset_B with, uh, values 15, 30, 45. Right?",
-          "asr_output_deepgram": "Check the statistical significance between dataset underscore a. Values are twelve, twenty four, thirty six, and dataset underscore b with, values fifteen, thirty, forty five. Right?"
+          "asr_output_deepgram": "Check the statistical significance between dataset underscore a. Values are twelve, twenty four, thirty six, and dataset underscore b with, values fifteen, thirty, forty five. Right?",
+          "clarifications": {
+            "dataset_A_values": "12, 24, 36",
+            "dataset_B_values": "15, 30, 45"
+          }
         }
       ]
     ],
@@ -10672,7 +11097,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_127_cartesia.mp3",
           "asr_output_openai": "So, like, what's the quarterly dividend per share for a company with a hundred million shares if they give out fifty million dollars in dividends?",
           "asr_output_elevenlabs": "So, like, what's the quarterly dividend per share for a company with a hundred million shares if they give out 50 million dollars in dividends?",
-          "asr_output_deepgram": "So, like, what's the quarterly dividend per share for a company with a hundred million shares if they give out fifty million dollars in dividends?"
+          "asr_output_deepgram": "So, like, what's the quarterly dividend per share for a company with a hundred million shares if they give out fifty million dollars in dividends?",
+          "clarifications": {
+            "total_dividend_payout": "50 million USD",
+            "outstanding_shares": "100 million"
+          }
         }
       ]
     ],
@@ -10789,7 +11218,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_128_cartesia.mp3",
           "asr_output_openai": "Hey, can you figure out the company's return on equity with these numbers? Net income's $2 million, shareholders' equity's $10 million, and dividends paid are $200,000.",
           "asr_output_elevenlabs": "Hey, can you figure out the company's return on equity with these numbers? Net income's two million dollars. Shareholder's equity is ten million dollars. And dividends paid are $200,000.",
-          "asr_output_deepgram": "Hey. Can you figure out the company's return on equity with these numbers? Net income's two million dollars, shareholders' equity's ten million dollars, and dividends paid are two hundred thousand dollars."
+          "asr_output_deepgram": "Hey. Can you figure out the company's return on equity with these numbers? Net income's two million dollars, shareholders' equity's ten million dollars, and dividends paid are two hundred thousand dollars.",
+          "clarifications": {
+            "net_income_amount": "$2,000,000",
+            "shareholder_equity_amount": "$10,000,000",
+            "dividends_paid_amount": "$200,000"
+          }
         }
       ]
     ],
@@ -10921,7 +11355,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_129_cartesia.mp3",
           "asr_output_openai": "Hey, could you figure out the compound interest for a $10,000 investment at a 5% yearly rate, compounded monthly for 5 years?",
           "asr_output_elevenlabs": "Hey, could you, uh, figure out the compound interest for a $10,000 investment at a 5% yearly rate compounded monthly for five years?",
-          "asr_output_deepgram": "Hey. Could you, figure out the compound interest for a ten thousand dollar investment at a five percent yearly rate compounded monthly for five years?"
+          "asr_output_deepgram": "Hey. Could you, figure out the compound interest for a ten thousand dollar investment at a five percent yearly rate compounded monthly for five years?",
+          "clarifications": {
+            "principal_amount": "$10000",
+            "annual_interest_rate": "5%",
+            "compounding_frequency": "monthly",
+            "investment_duration_years": "5 years"
+          }
         }
       ]
     ],
@@ -11005,7 +11445,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_130_cartesia.mp3",
           "asr_output_openai": "Can you work out the CGR for an investment starting at $2,000 and ending at $3,000 over four years?",
           "asr_output_elevenlabs": "Uh, can you work out the CGR for an investment starting at, uh, $2,000 and ending at $3,000 over four years?",
-          "asr_output_deepgram": "Can you work out the CGR for an investment starting at, two thousand dollars and ending at three thousand dollars over four years?"
+          "asr_output_deepgram": "Can you work out the CGR for an investment starting at, two thousand dollars and ending at three thousand dollars over four years?",
+          "clarifications": {
+            "initial_investment_value": "$2000",
+            "final_investment_value": "$3000",
+            "investment_period_in_years": "4 years"
+          }
         }
       ]
     ],
@@ -11038,7 +11483,7 @@
           "properties": {
             "a": {
               "type": "integer",
-              "description": "Coefficient of x²."
+              "description": "Coefficient of x\u00b2."
             },
             "b": {
               "type": "integer",
@@ -11095,7 +11540,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_131_cartesia.mp3",
           "asr_output_openai": "Um, can you see how the S&P 500 and, uh, Dow Jones have done in the last five days, yeah?",
           "asr_output_elevenlabs": "Um, can you see how the S&P 500 and, uh, Dow Jones have done in the last five days, yeah?",
-          "asr_output_deepgram": "Can you see how the s amp p five hundred and, Dow Jones have done in the last five days? Yeah?"
+          "asr_output_deepgram": "Can you see how the s amp p five hundred and, Dow Jones have done in the last five days? Yeah?",
+          "clarifications": {
+            "stock_market_indexes": "S&P 500, Dow Jones",
+            "time_period_days": "5"
+          }
         }
       ]
     ],
@@ -11196,7 +11645,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_132_elevenlabs.mp3",
           "asr_output_openai": "Um, hey, can you figure out, like, the future value of an investment if I've got a $20,000 initial investment, an 8% annual return over 5 years?",
           "asr_output_elevenlabs": "Um, hey, can you figure out like the future value of an investment if I've got, uh, a $20,000 initial investment, an 8% annual return over five years?",
-          "asr_output_deepgram": "Hey. Can you figure out, like, the future value of an investment if I've got, a twenty thousand dollars initial investment, an eight percent annual return over five years?"
+          "asr_output_deepgram": "Hey. Can you figure out, like, the future value of an investment if I've got, a twenty thousand dollars initial investment, an eight percent annual return over five years?",
+          "clarifications": {
+            "initial_investment_amount": "$20000",
+            "annual_rate_of_return": "8%",
+            "investment_time_frame": "5 years"
+          }
         }
       ]
     ],
@@ -11293,7 +11747,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_133_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you figure out the balance of a mutual fund if I invest $50,000 with a 5% annual yield for 3 years?",
           "asr_output_elevenlabs": "Hey, um, can you figure out the balance of a mutual fund if I invest $50,000 with a 5% annual yield for, uh, three years?",
-          "asr_output_deepgram": "Hey. Can you figure out the balance of a mutual fund if I invest fifty thousand dollars with a five percent annual yield for, three years?"
+          "asr_output_deepgram": "Hey. Can you figure out the balance of a mutual fund if I invest fifty thousand dollars with a five percent annual yield for, three years?",
+          "clarifications": {
+            "investment_amount": "$50000",
+            "annual_yield": "5%",
+            "years": "3 years"
+          }
         }
       ]
     ],
@@ -11357,7 +11816,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_134_elevenlabs.mp3",
           "asr_output_openai": "Ah, fine details for felony case CA123456 in San Diego County, okay?",
           "asr_output_elevenlabs": "Uh, find details for felony case CA123456 in San Diego County. Okay?",
-          "asr_output_deepgram": "Find details for felony case CA one two three four five six in San Diego County. Okay?"
+          "asr_output_deepgram": "Find details for felony case CA one two three four five six in San Diego County. Okay?",
+          "clarifications": {
+            "case_number": "CA123456",
+            "county_name": "San Diego County"
+          }
         }
       ]
     ],
@@ -11486,7 +11949,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_135_elevenlabs.mp3",
           "asr_output_openai": "Hey, um, who was the victim in the case with docket number 2022/AL2562?",
           "asr_output_elevenlabs": "Hey, um, who was the victim in the case with docket number 2022/AL2562?",
-          "asr_output_deepgram": "Hey. Who was the victim in the case with docket number twenty twenty two slash a l two five six two?"
+          "asr_output_deepgram": "Hey. Who was the victim in the case with docket number twenty twenty two slash a l two five six two?",
+          "clarifications": {
+            "docket_number": "2022/AL2562",
+            "court_location": "California"
+          }
         }
       ]
     ],
@@ -11555,7 +12022,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_136_elevenlabs.mp3",
           "asr_output_openai": "What's the official violent crime rate for, um, San Francisco in 2020, right?",
           "asr_output_elevenlabs": "What's the official violent crime rate for, um, San Francisco in 2020, right?",
-          "asr_output_deepgram": "What's the official violent crime rate for, San Francisco in twenty twenty? Right?"
+          "asr_output_deepgram": "What's the official violent crime rate for, San Francisco in twenty twenty? Right?",
+          "clarifications": {
+            "city_name": "San Francisco",
+            "crime_type": "violent crime",
+            "year": "2020"
+          }
         }
       ]
     ],
@@ -11630,7 +12102,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_137_elevenlabs.mp3",
           "asr_output_openai": "Find current lawsuits against Google in California starting January 1, 2021.",
           "asr_output_elevenlabs": "Find current lawsuits against Google in California starting January 1st, 2021.",
-          "asr_output_deepgram": "Find current lawsuits against Google in California starting January first twenty twenty one."
+          "asr_output_deepgram": "Find current lawsuits against Google in California starting January first twenty twenty one.",
+          "clarifications": {
+            "company_name": "Google",
+            "start_date_spelling": "January 1, 2021",
+            "location_spelling": "California"
+          }
         }
       ]
     ],
@@ -11740,7 +12217,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_138_elevenlabs.mp3",
           "asr_output_openai": "Hey, uh, how can I get the detailed info on the R v Adams legal case, right?",
           "asr_output_elevenlabs": "Hey, uh, how can I get the detailed info on the R vs Adams legal case, right?",
-          "asr_output_deepgram": "Hey. How can I get the detailed info on the R versus Adams legal case? Right?"
+          "asr_output_deepgram": "Hey. How can I get the detailed info on the R versus Adams legal case? Right?",
+          "clarifications": {
+            "case_id_spelling": "R vs Adams"
+          }
         }
       ]
     ],
@@ -11839,7 +12319,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_139_elevenlabs.mp3",
           "asr_output_openai": "Can you give me the details of patent lawsuits involving Apple Inc from 2010, thanks?",
           "asr_output_elevenlabs": "Can you, um, give me the details of patent lawsuits involving Apple Inc from 2010? Thanks.",
-          "asr_output_deepgram": "Can you, give me the details of patent lawsuits involving Apple Inc from two thousand and ten? Thanks."
+          "asr_output_deepgram": "Can you, give me the details of patent lawsuits involving Apple Inc from two thousand and ten? Thanks.",
+          "clarifications": {
+            "company_name": "Apple Inc.",
+            "year": "2010",
+            "case_type": "Patent"
+          }
         }
       ]
     ],
@@ -11958,7 +12443,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_140_elevenlabs.mp3",
           "asr_output_openai": "Could you check any lawsuits filed against Google in California from 2020?",
           "asr_output_elevenlabs": "Um, could you check any, uh, lawsuits filed against Google in California from 2020?",
-          "asr_output_deepgram": "Could you check any, lawsuits filed against Google in California from twenty twenty?"
+          "asr_output_deepgram": "Could you check any, lawsuits filed against Google in California from twenty twenty?",
+          "clarifications": {
+            "company_name": "Google",
+            "location": "California",
+            "year": "2020"
+          }
         }
       ]
     ],
@@ -12042,7 +12532,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_141_elevenlabs.mp3",
           "asr_output_openai": "Can you check the details for lawsuit case ID 1234 and see if it's closed, yeah?",
           "asr_output_elevenlabs": "Can you, uh, check the details for lawsuit case ID 1234 and see if it's closed, yeah?",
-          "asr_output_deepgram": "Can you, check the details for lawsuit case ID twelve thirty four and see if it's closed? Yeah?"
+          "asr_output_deepgram": "Can you, check the details for lawsuit case ID twelve thirty four and see if it's closed? Yeah?",
+          "clarifications": {
+            "case_id": "1234"
+          }
         }
       ]
     ],
@@ -12130,7 +12623,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_142_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you say the humidity forecast for Miami for the next seven days?",
           "asr_output_elevenlabs": "Hey, can you say the humidity forecast for Miami for the next seven days?",
-          "asr_output_deepgram": "Hey. Can you say the humidity forecast for Miami for the next seven days?"
+          "asr_output_deepgram": "Hey. Can you say the humidity forecast for Miami for the next seven days?",
+          "clarifications": {}
         }
       ]
     ],
@@ -12199,7 +12693,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_143_elevenlabs.mp3",
           "asr_output_openai": "Can you figure out slope gradient in degrees between points at coordinates 40.7128, -74.0060 and 34.0522, -118.2437?",
           "asr_output_elevenlabs": "Um, can you figure out slope gradient in degrees between points of coordinates, uh, 40.7128, minus 74.0060 and 34.0522, minus 118.2437? Thanks.",
-          "asr_output_deepgram": "Can you figure out slope gradient in degrees between points at coordinates, forty point seven one two eight minus seventy four point zero zero six zero and thirty four point zero five two two minus one hundred eighteen point two four three seven? Thanks."
+          "asr_output_deepgram": "Can you figure out slope gradient in degrees between points at coordinates, forty point seven one two eight minus seventy four point zero zero six zero and thirty four point zero five two two minus one hundred eighteen point two four three seven? Thanks.",
+          "clarifications": {
+            "first_point_coordinates": "(40.7128, -74.0060)",
+            "second_point_coordinates": "(34.0522, -118.2437)"
+          }
         }
       ]
     ],
@@ -12321,7 +12819,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_144_elevenlabs.mp3",
           "asr_output_openai": "Hey, what's the air quality index for London on August 16, 2022?",
           "asr_output_elevenlabs": "Hey, what's the air quality index for London on August 16th, 2022?",
-          "asr_output_deepgram": "Hey. What's the air quality index for London on August sixteenth twenty twenty two?"
+          "asr_output_deepgram": "Hey. What's the air quality index for London on August sixteenth twenty twenty two?",
+          "clarifications": {
+            "location": "London",
+            "date": "2022/08/16"
+          }
         }
       ]
     ],
@@ -12384,8 +12886,13 @@
           "transcript": "Whats the yearly CO2 output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_145_elevenlabs.mp3",
           "asr_output_openai": "What's the yearly CO2 output of a gas car that drives 12,000 miles a year and gets 20 miles per gallon?",
-          "asr_output_elevenlabs": "What's the yearly CO₂ output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?",
-          "asr_output_deepgram": "What's the yearly c o two output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?"
+          "asr_output_elevenlabs": "What's the yearly CO\u2082 output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?",
+          "asr_output_deepgram": "What's the yearly c o two output of a gas car that drives twelve thousand miles a year and gets twenty miles per gallon?",
+          "clarifications": {
+            "distance_traveled": "12,000 miles",
+            "fuel_efficiency": "20 mpg",
+            "fuel_type": "gas"
+          }
         }
       ]
     ],
@@ -12486,7 +12993,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_146_elevenlabs.mp3",
           "asr_output_openai": "Look up Chinese restaurants within ten miles around me in Seattle.",
           "asr_output_elevenlabs": "Look up Chinese restaurants within 10 miles around me in Seattle.",
-          "asr_output_deepgram": "Look up Chinese restaurants within ten miles, around me in Seattle."
+          "asr_output_deepgram": "Look up Chinese restaurants within ten miles, around me in Seattle.",
+          "clarifications": {
+            "location": "Seattle",
+            "cuisine": "Chinese"
+          }
         }
       ]
     ],
@@ -12555,7 +13066,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_147_elevenlabs.mp3",
           "asr_output_openai": "can find the route from New York to Los Angeles that avoids highways and toll roads, okay?",
           "asr_output_elevenlabs": "Uh, can find the route from New York to Los Angeles that, um, avoids highways and toll roads, okay?",
-          "asr_output_deepgram": "Can find the route from New York to Los Angeles that, avoids highways and toll roads. Okay?"
+          "asr_output_deepgram": "Can find the route from New York to Los Angeles that, avoids highways and toll roads. Okay?",
+          "clarifications": {}
         }
       ]
     ],
@@ -12656,7 +13168,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_148_elevenlabs.mp3",
           "asr_output_openai": "Could you give me detailed info on Apple Inc stocks?",
           "asr_output_elevenlabs": "Umm, could you give me detailed info on Apple Inc. stocks?",
-          "asr_output_deepgram": "Could you give me detailed info on Apple ink stocks?"
+          "asr_output_deepgram": "Could you give me detailed info on Apple ink stocks?",
+          "clarifications": {
+            "company_name": "Apple Inc."
+          }
         }
       ]
     ],
@@ -12724,7 +13239,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_149_elevenlabs.mp3",
           "asr_output_openai": "Um, could scope out the sentiment on this customer review: I love the food here, it's always fresh and delicious.",
           "asr_output_elevenlabs": "Um, could scope out the sentiment on this customer review. I love the food here. It's always fresh and delicious. Thanks.",
-          "asr_output_deepgram": "Could scope out the sentiment on this customer review. I love the food here. It's always fresh and delicious. Thanks."
+          "asr_output_deepgram": "Could scope out the sentiment on this customer review. I love the food here. It's always fresh and delicious. Thanks.",
+          "clarifications": {
+            "text_for_analysis": "I love the food here! It's always fresh and delicious."
+          }
         }
       ]
     ],
@@ -12845,7 +13363,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_150_elevenlabs.mp3",
           "asr_output_openai": "Calculate a neuronal activity using a synaptic input rate of 200, weight 0.5, and decay rate 0.1.",
           "asr_output_elevenlabs": "Calculate a neuronal activity using a synaptic input rate of 200, weight 0.5, and decay rate 0.1.",
-          "asr_output_deepgram": "Calculate a neuronal activity using a synaptic input rate of two hundred, weight zero point five, and decay rate zero point one."
+          "asr_output_deepgram": "Calculate a neuronal activity using a synaptic input rate of two hundred, weight zero point five, and decay rate zero point one.",
+          "clarifications": {
+            "input_synaptic_rate": "200",
+            "weight": "0.5",
+            "decay_rate": "0.1"
+          }
         }
       ]
     ],
@@ -12971,11 +13494,15 @@
         {
           "role": "user",
           "content": "Find the most followed person on twitter who tweets about psychology related to behaviour and group dynamics.",
-          "transcript": "Um, who’s the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
+          "transcript": "Um, who\u2019s the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_151_elevenlabs.mp3",
           "asr_output_openai": "Who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
           "asr_output_elevenlabs": "Um, who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
-          "asr_output_deepgram": "Who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?"
+          "asr_output_deepgram": "Who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
+          "clarifications": {
+            "main_topic": "psychology",
+            "sub_topic": "behaviour and group dynamics"
+          }
         }
       ]
     ],
@@ -13080,7 +13607,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_152_elevenlabs.mp3",
           "asr_output_openai": "Um, can you give me a rundown of the major war events in German history between 1871 and 1945, right?",
           "asr_output_elevenlabs": "Um, can you give me a rundown of the major war events in, uh, German history between 1871 and 1945, right?",
-          "asr_output_deepgram": "Can you give me a rundown of the major war events in our German history between eighteen seventy one and nineteen forty five? Right?"
+          "asr_output_deepgram": "Can you give me a rundown of the major war events in our German history between eighteen seventy one and nineteen forty five? Right?",
+          "clarifications": {
+            "country_name": "German",
+            "start_year": "1871",
+            "end_year": "1945",
+            "event_type": "war events"
+          }
         }
       ]
     ],
@@ -13162,7 +13695,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_153_elevenlabs.mp3",
           "asr_output_openai": "Um, hey, do you know when Treaty of Lisbon was signed?",
           "asr_output_elevenlabs": "Um, hey, do you know when Treaty of Lisbon was signed?",
-          "asr_output_deepgram": "Hey. Do you know when Treaty of Lisbon was signed?"
+          "asr_output_deepgram": "Hey. Do you know when Treaty of Lisbon was signed?",
+          "clarifications": {
+            "event_details": "Treaty of Lisbon"
+          }
         }
       ]
     ],
@@ -13256,7 +13792,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_154_elevenlabs.mp3",
           "asr_output_openai": "What's full name of the US President in 1861, right?",
           "asr_output_elevenlabs": "What's full name of the US President in 1861, right?",
-          "asr_output_deepgram": "What's full name of the US president in eighteen sixty one? Right?"
+          "asr_output_deepgram": "What's full name of the US president in eighteen sixty one? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -13387,7 +13924,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_155_elevenlabs.mp3",
           "asr_output_openai": "Who found the neutron? Let me think, right, can you give me more details about that?",
           "asr_output_elevenlabs": "Who found the neutron? Let me think. Right. Can you give me more details about that?",
-          "asr_output_deepgram": "Who found the neutron? Let me think. Right. Can you give me more details about that?"
+          "asr_output_deepgram": "Who found the neutron? Let me think. Right. Can you give me more details about that?",
+          "clarifications": {}
         }
       ]
     ],
@@ -13484,7 +14022,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_156_elevenlabs.mp3",
           "asr_output_openai": "Hey, um, what Albert Einstein contribute to science on March 17, 1915?",
           "asr_output_elevenlabs": "Hey, um, what Albert Einstein contribute to science on March 17, 1915?",
-          "asr_output_deepgram": "Hey. What Albert Einstein contribute to science on March seventeenth nineteen fifteen?"
+          "asr_output_deepgram": "Hey. What Albert Einstein contribute to science on March seventeenth nineteen fifteen?",
+          "clarifications": {
+            "scientist_name": "Albert Einstein",
+            "contribution_date": "March 17, 1915"
+          }
         }
       ]
     ],
@@ -13573,7 +14115,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_157_elevenlabs.mp3",
           "asr_output_openai": "When do historical records first talk about Jesus Christ?",
           "asr_output_elevenlabs": "When do historical records first talk about Jesus Christ?",
-          "asr_output_deepgram": "When do historical records first talk about Jesus Christ?"
+          "asr_output_deepgram": "When do historical records first talk about Jesus Christ?",
+          "clarifications": {
+            "person_name": "Jesus Christ"
+          }
         }
       ]
     ],
@@ -13640,7 +14185,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_158_elevenlabs.mp3",
           "asr_output_openai": "Um, can you give me the lowdown on the biography and da main contributions of Pope Innocent III, thanks?",
           "asr_output_elevenlabs": "Um, can you give me the lowdown on the biography and, uh, main contributions of Pope Innocent III? Thanks.",
-          "asr_output_deepgram": "Can you give me the lowdown on the biography and, main contributions of pope innocent the third? Thanks."
+          "asr_output_deepgram": "Can you give me the lowdown on the biography and, main contributions of pope innocent the third? Thanks.",
+          "clarifications": {
+            "papal_name": "Pope Innocent III"
+          }
         }
       ]
     ],
@@ -13767,7 +14315,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_159_elevenlabs.mp3",
           "asr_output_openai": "How much paint do I need for, you know, a thirty by twelve foot wall if one gallon covers four hundred square feet?",
           "asr_output_elevenlabs": "Uh, how much paint do I need for, you know, a 30 by 12 foot wall if one gallon covers 400 square feet?",
-          "asr_output_deepgram": "How much paint do I need for, you know, a thirty by twelve foot wall if one gallon covers four hundred square feet?"
+          "asr_output_deepgram": "How much paint do I need for, you know, a thirty by twelve foot wall if one gallon covers four hundred square feet?",
+          "clarifications": {
+            "wall_length": "30 feet",
+            "wall_height": "12 feet",
+            "coverage_rate": "400 square feet per gallon"
+          }
         }
       ]
     ],
@@ -13857,7 +14410,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_161_elevenlabs.mp3",
           "asr_output_openai": "Let me see... oh, can you find top-rated modern sculpture exhibitions in New York for next month?",
           "asr_output_elevenlabs": "Let me see. Oh, can you find top-rated modern sculpture exhibitions in New York for next month?",
-          "asr_output_deepgram": "Let me see. Oh, can you find top rated modern sculpture exhibitions in New York for next month?"
+          "asr_output_deepgram": "Let me see. Oh, can you find top rated modern sculpture exhibitions in New York for next month?",
+          "clarifications": {
+            "location": "New York",
+            "art_form": "sculpture",
+            "month": "upcoming month"
+          }
         }
       ]
     ],
@@ -13959,7 +14517,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_162_elevenlabs.mp3",
           "asr_output_openai": "Can you give me the structural dynamic check for building B1004's 2nd, 3rd, and 4th floors?",
           "asr_output_elevenlabs": "Can you, um, give me the structural dynamic check for building B ten oh four's second, third, and uh, fourth floors?",
-          "asr_output_deepgram": "Can you, give me the structural dynamic check for building b ten o four's second, third, and, fourth floors?"
+          "asr_output_deepgram": "Can you, give me the structural dynamic check for building b ten o four's second, third, and, fourth floors?",
+          "clarifications": {
+            "building_id": "B1004"
+          }
         }
       ]
     ],
@@ -14030,7 +14591,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_163_elevenlabs.mp3",
           "asr_output_openai": "Um, um, what are the top top five popular artworks at the Metropolitan Museum of Art? Sort them by popularity.",
           "asr_output_elevenlabs": "Um, um, what are the top, top five popular artworks at the Metropolitan Museum of Art? Uh, sort 'em by, by popularity.",
-          "asr_output_deepgram": "What are the top top five popular artworks at the Metropolitan Museum of Art? Sort them by by popularity."
+          "asr_output_deepgram": "What are the top top five popular artworks at the Metropolitan Museum of Art? Sort them by by popularity.",
+          "clarifications": {
+            "sort_criteria": "popularity"
+          }
         }
       ]
     ],
@@ -14108,7 +14672,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_164_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you give me the retail price for a Fender American Professional II Stratocaster in rosewood finish?",
           "asr_output_elevenlabs": "Hey, um, can you give me the retail price for a Fender American Professional II Stratocaster, uh, in rosewood finish?",
-          "asr_output_deepgram": "Hey. Can you give me the retail price for a Fender American Professional two Stratocaster, in rosewood finish?"
+          "asr_output_deepgram": "Hey. Can you give me the retail price for a Fender American Professional two Stratocaster, in rosewood finish?",
+          "clarifications": {
+            "brand_name": "Fender",
+            "model_name": "American Professional II Stratocaster",
+            "finish_type": "Rosewood Finish"
+          }
         }
       ]
     ],
@@ -14236,7 +14805,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_165_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you find the price for a used Gibson Les Paul guitar in like excellent condition round Chicago?",
           "asr_output_elevenlabs": "Hey, uh can you find the price for a used Gibson Les Paul guitar in like excellent condition around Chicago?",
-          "asr_output_deepgram": "Hey. Can you find the price for a used Gibson Les Paul guitar in, like, excellent condition around Chicago?"
+          "asr_output_deepgram": "Hey. Can you find the price for a used Gibson Les Paul guitar in, like, excellent condition around Chicago?",
+          "clarifications": {
+            "guitar_model": "Gibson Les Paul",
+            "guitar_condition": "excellent",
+            "sale_location": "Chicago"
+          }
         }
       ]
     ],
@@ -14331,7 +14905,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_166_elevenlabs.mp3",
           "asr_output_openai": "Um, can find a classical concert in Los Angeles this weekend with affordable tickets, thanks?",
           "asr_output_elevenlabs": "Uhm, can find a classical concert in Los Angeles this weekend with affordable tickets. Thanks.",
-          "asr_output_deepgram": "Can find a classical concert in Los Angeles this weekend with affordable tickets. Thanks?"
+          "asr_output_deepgram": "Can find a classical concert in Los Angeles this weekend with affordable tickets. Thanks?",
+          "clarifications": {
+            "genre": "classical",
+            "location": "Los Angeles",
+            "date": "this weekend",
+            "price_range": "cheap"
+          }
         }
       ]
     ],
@@ -14432,7 +15012,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_167_elevenlabs.mp3",
           "asr_output_openai": "Create a melody in the C major scale starting on C4. Make it 16 measures long at 120 beats per minute, okay?",
           "asr_output_elevenlabs": "Create a melody in the C major scale starting on C4. Make it 16 measures long at 120 beats per minute. Okay?",
-          "asr_output_deepgram": "Create a melody in the c major scale starting on c four. Make it sixteen measures long, at one hundred twenty beats per minute. Okay?"
+          "asr_output_deepgram": "Create a melody in the c major scale starting on c four. Make it sixteen measures long, at one hundred twenty beats per minute. Okay?",
+          "clarifications": {
+            "key": "C major",
+            "start_note": "C4",
+            "length_measures": "16",
+            "tempo_bpm": "120"
+          }
         }
       ]
     ],
@@ -14540,7 +15126,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_168_elevenlabs.mp3",
           "asr_output_openai": "Hey, can pull up the lyrics for Bohemian Rhapsody by Queen, yeah?",
           "asr_output_elevenlabs": "Hey, can pull up the lyrics for Bohemian Rhapsody by Queen, yeah?",
-          "asr_output_deepgram": "Hey. Can pull up the lyrics for Bohemian Rhapsody by Queen. Yeah?"
+          "asr_output_deepgram": "Hey. Can pull up the lyrics for Bohemian Rhapsody by Queen. Yeah?",
+          "clarifications": {
+            "song_title": "Bohemian Rhapsody",
+            "artist_name": "Queen"
+          }
         }
       ]
     ],
@@ -14639,7 +15229,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_169_elevenlabs.mp3",
           "asr_output_openai": "What's the music scale for a C# major?",
           "asr_output_elevenlabs": "What's the music scale for? A C sharp major?",
-          "asr_output_deepgram": "What's the music scale for? C sharp major?"
+          "asr_output_deepgram": "What's the music scale for? C sharp major?",
+          "clarifications": {}
         }
       ]
     ],
@@ -14709,7 +15300,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_170_elevenlabs.mp3",
           "asr_output_openai": "Can you get me Cristiano Ronaldo's player stats for the 2019-2020 season please?",
           "asr_output_elevenlabs": "Uh, can you get me Cristiano Ronaldo? That's C-R-I-S-T-I-A-N-O R-O-N-A-L-D-O. Cristiano Ronaldo's player stats for the 2019 to 2020 season, please.",
-          "asr_output_deepgram": "Can you get me Cristiano Ronaldo? That's c r I s t I a n o r o n a l d o. Cristiano Ronaldo's player stats for the twenty nineteen to twenty twenty season, please."
+          "asr_output_deepgram": "Can you get me Cristiano Ronaldo? That's c r I s t I a n o r o n a l d o. Cristiano Ronaldo's player stats for the twenty nineteen to twenty twenty season, please.",
+          "clarifications": {
+            "player_name": "Cristiano Ronaldo",
+            "season": "2019-2020"
+          }
         }
       ]
     ],
@@ -14828,7 +15423,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_171_elevenlabs.mp3",
           "asr_output_openai": "Who won Lakers vs Clippers game on January 28, 2021, right?",
           "asr_output_elevenlabs": "Who won Lakers versus Clippers game on January 28th, 2021, right?",
-          "asr_output_deepgram": "Who won Lakers versus Clippers game on January twenty eighth twenty twenty one? Right?"
+          "asr_output_deepgram": "Who won Lakers versus Clippers game on January twenty eighth twenty twenty one? Right?",
+          "clarifications": {
+            "first_team_name": "Lakers",
+            "second_team_name": "Clippers",
+            "game_date": "Jan 28, 2021"
+          }
         }
       ]
     ],
@@ -14896,7 +15496,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_172_elevenlabs.mp3",
           "asr_output_openai": "Can you get LeBron James' detailed player profile for me, thanks?",
           "asr_output_elevenlabs": "Uh, can you get LeBron James' detailed player profile for me? Thanks.",
-          "asr_output_deepgram": "Can you get LeBron James detailed player profile for me? Thanks."
+          "asr_output_deepgram": "Can you get LeBron James detailed player profile for me? Thanks.",
+          "clarifications": {
+            "athlete_name": "Lebron James"
+          }
         }
       ]
     ],
@@ -15037,7 +15640,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_173_elevenlabs.mp3",
           "asr_output_openai": "What's the NBA team's rank for are the best defense in the 2021 season?",
           "asr_output_elevenlabs": "What's the NBA team's rank for are the best defense in the 2021 season?",
-          "asr_output_deepgram": "What's the NBA team's rank for are the best defense in the twenty twenty one season?"
+          "asr_output_deepgram": "What's the NBA team's rank for are the best defense in the twenty twenty one season?",
+          "clarifications": {
+            "season_year": "2021"
+          }
         }
       ]
     ],
@@ -15130,7 +15736,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_174_elevenlabs.mp3",
           "asr_output_openai": "Can you tell me where Manchester United's at in the Premier League rankings?",
           "asr_output_elevenlabs": "Um, can you tell me where Manchester United's at in the Premier League rankings?",
-          "asr_output_deepgram": "Can you tell me where Manchester United's at in the Premier League rankings?"
+          "asr_output_deepgram": "Can you tell me where Manchester United's at in the Premier League rankings?",
+          "clarifications": {
+            "team_name": "Manchester United",
+            "league_name": "Premier League"
+          }
         }
       ]
     ],
@@ -15203,7 +15813,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_175_elevenlabs.mp3",
           "asr_output_openai": "Hey, um, who's top-ranked player in women's tennis, right?",
           "asr_output_elevenlabs": "Hey, who's top ranked player in women's tennis? Right.",
-          "asr_output_deepgram": "Hey. Who's top ranked player in women's tennis? Right?"
+          "asr_output_deepgram": "Hey. Who's top ranked player in women's tennis? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -15323,7 +15934,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_176_elevenlabs.mp3",
           "asr_output_openai": "What's Manchester United's Premier League plan for the next six games?",
           "asr_output_elevenlabs": "What's Manchester United's Premier League plan for the next six games?",
-          "asr_output_deepgram": "What's Manchester United's Premier League plan for the next six games?"
+          "asr_output_deepgram": "What's Manchester United's Premier League plan for the next six games?",
+          "clarifications": {
+            "team_name": "Manchester United",
+            "num_of_games": "6",
+            "league": "Premier League"
+          }
         }
       ]
     ],
@@ -15472,7 +16088,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_177_elevenlabs.mp3",
           "asr_output_openai": "Can you show me the top chess players in New York who have ratings over 2300? Thanks.",
           "asr_output_elevenlabs": "Uh, can you show me the top chess players in, um, New York who have ratings over 2300? Thanks.",
-          "asr_output_deepgram": "Can you show me the top chess players in, New York who have ratings over twenty three hundred? Thanks."
+          "asr_output_deepgram": "Can you show me the top chess players in, New York who have ratings over twenty three hundred? Thanks.",
+          "clarifications": {
+            "location": "New York",
+            "minimum_rating": "2300"
+          }
         }
       ]
     ],
@@ -15567,7 +16187,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_178_elevenlabs.mp3",
           "asr_output_openai": "Right, can you like, look for queen of hearts in deck?",
           "asr_output_elevenlabs": "Right. Can you, like, look for Queen of Hearts in deck?",
-          "asr_output_deepgram": "Right. Can you, like, look for queen of hearts in deck?"
+          "asr_output_deepgram": "Right. Can you, like, look for queen of hearts in deck?",
+          "clarifications": {
+            "card_rank": "Queen",
+            "card_suit": "Hearts"
+          }
         }
       ]
     ],
@@ -15709,7 +16333,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_179_elevenlabs.mp3",
           "asr_output_openai": "Hey, let me see. Oh, what's the chance of getting a full house in poker?",
           "asr_output_elevenlabs": "Hey, let me see. Oh, what's the chance of getting a full house in poker?",
-          "asr_output_deepgram": "Hey. Let me see. Oh, what's the chance of getting a full house in poker?"
+          "asr_output_deepgram": "Hey. Let me see. Oh, what's the chance of getting a full house in poker?",
+          "clarifications": {}
         }
       ]
     ],
@@ -15806,7 +16431,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_180_elevenlabs.mp3",
           "asr_output_openai": "For Sam, get the player stats for Zelda on the Switch. That's S-A-M, Sam.",
           "asr_output_elevenlabs": "Uh, for Sam, get the player stats for Zelda on the Switch. That's S-A-M, Sam.",
-          "asr_output_deepgram": "For Sam, get the player stats for Zelda on the Switch. That's s a m Sam."
+          "asr_output_deepgram": "For Sam, get the player stats for Zelda on the Switch. That's s a m Sam.",
+          "clarifications": {
+            "game_name": "Zelda",
+            "username": "Sam",
+            "platform_name": "Switch"
+          }
         }
       ]
     ],
@@ -15926,7 +16556,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_181_elevenlabs.mp3",
           "asr_output_openai": "Can you give me the details and stats of Liverpool FC's last game, please?",
           "asr_output_elevenlabs": "Uh, can you give me the details and stats of Liverpool FC's last game, please?",
-          "asr_output_deepgram": "Can you give me the details and stats of Liverpool FC's last game, please?"
+          "asr_output_deepgram": "Can you give me the details and stats of Liverpool FC's last game, please?",
+          "clarifications": {
+            "team_name": "Liverpool F.C.",
+            "include_statistics": "Include its statistics"
+          }
         }
       ]
     ],
@@ -16049,7 +16683,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_182_elevenlabs.mp3",
           "asr_output_openai": "Could you get a multiplayer game for me that's rated above 4.5 and works on Windows 10?",
           "asr_output_elevenlabs": "Um, could you get a multiplayer game for me that's rated above 4.5 and works on Windows 10?",
-          "asr_output_deepgram": "Could you get a multiplayer game for me that's, rated above four point five and works on Windows ten?"
+          "asr_output_deepgram": "Could you get a multiplayer game for me that's, rated above four point five and works on Windows ten?",
+          "clarifications": {
+            "platform_compatibility": "Windows 10",
+            "minimum_rating": "4.5"
+          }
         }
       ]
     ],
@@ -16186,7 +16824,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_183_elevenlabs.mp3",
           "asr_output_openai": "Hey, um, could you, from foodnetwork.com, tell me the calorie count for the beef lasagna recipe?",
           "asr_output_elevenlabs": "Hey, um, could you from FoodNetwork.com tell me the calorie count for the beef lasagna recipe?",
-          "asr_output_deepgram": "Hey. Could you, from food network dot com, tell me the calorie count for the beef lasagna recipe?"
+          "asr_output_deepgram": "Hey. Could you, from food network dot com, tell me the calorie count for the beef lasagna recipe?",
+          "clarifications": {
+            "website_name": "Foodnetwork.com",
+            "recipe_name": "Beef Lasagna Recipe"
+          }
         }
       ]
     ],
@@ -16273,7 +16915,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_184_elevenlabs.mp3",
           "asr_output_openai": "Can you give me a vegetarian pasta with um cheese recipe two people please?",
           "asr_output_elevenlabs": "Uh, can you give me a vegetarian pasta with, um, cheese recipe, two people please?",
-          "asr_output_deepgram": "Can you give me a vegetarian pasta with, cheese recipe two people, please?"
+          "asr_output_deepgram": "Can you give me a vegetarian pasta with, cheese recipe two people, please?",
+          "clarifications": {
+            "dietary_restriction": "vegetarian",
+            "ingredients": "pasta, cheese",
+            "servings": "2"
+          }
         }
       ]
     ],
@@ -16366,7 +17013,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_185_elevenlabs.mp3",
           "asr_output_openai": "Um, can you locate the nearest sushi place with a patio in Boston?",
           "asr_output_elevenlabs": "Um, can you locate the nearest sushi place with a patio in Boston?",
-          "asr_output_deepgram": "Can you locate the nearest sushi place with, a patio in Boston?"
+          "asr_output_deepgram": "Can you locate the nearest sushi place with, a patio in Boston?",
+          "clarifications": {
+            "location": "Boston",
+            "cuisine": "sushi",
+            "amenities": "patio"
+          }
         }
       ]
     ],
@@ -16444,7 +17096,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_186_elevenlabs.mp3",
           "asr_output_openai": "Im looking for a vegan brownie recipe that takes less than half an hour to get ready.",
           "asr_output_elevenlabs": "I'm looking for a vegan brownie recipe that takes less than half an hour to get ready.",
-          "asr_output_deepgram": "I'm looking for a a vegan brownie recipe that takes less than half an hour to get ready."
+          "asr_output_deepgram": "I'm looking for a a vegan brownie recipe that takes less than half an hour to get ready.",
+          "clarifications": {}
         }
       ]
     ],
@@ -16508,7 +17161,14 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_187_elevenlabs.mp3",
           "asr_output_openai": "Hey, what's the price of, um, tomatoes and lettuce at Whole Foods in Los Angeles?",
           "asr_output_elevenlabs": "Hey, what's the price of, um, tomatoes and lettuce at Whole Foods in Los Angeles?",
-          "asr_output_deepgram": "Hey. What's the price of, tomatoes and lettuce at Whole Foods in Los Angeles?"
+          "asr_output_deepgram": "Hey. What's the price of, tomatoes and lettuce at Whole Foods in Los Angeles?",
+          "clarifications": {
+            "location": "Whole Foods in Los Angeles",
+            "items": [
+              "tomatoes",
+              "lettuce"
+            ]
+          }
         }
       ]
     ],
@@ -16629,7 +17289,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_188_elevenlabs.mp3",
           "asr_output_openai": "Can you locate a grocery store near Berkeley that's got like at least a 4.5-star rating that sells tomatoes and pet food, thanks?",
           "asr_output_elevenlabs": "Uh, can you locate a grocery store near Berkeley that's got like at least a 4.5 star rating that sells tomatoes and pet food? Thanks.",
-          "asr_output_deepgram": "Can you locate a grocery store near Berkeley that's got, like, at least a four point five star rating that sells tomatoes and pet food? Thanks."
+          "asr_output_deepgram": "Can you locate a grocery store near Berkeley that's got, like, at least a four point five star rating that sells tomatoes and pet food? Thanks.",
+          "clarifications": {
+            "my_location": "Berkeley",
+            "rating": "4.5",
+            "products": "tomatoes and pet food"
+          }
         }
       ]
     ],
@@ -16753,7 +17418,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_189_elevenlabs.mp3",
           "asr_output_openai": "Can you convert 3 p.m. New York time to London time, right?",
           "asr_output_elevenlabs": "Uh, can you convert 3PM New York time to London time, right?",
-          "asr_output_deepgram": "Can you convert three PM New York time to London time. Right?"
+          "asr_output_deepgram": "Can you convert three PM New York time to London time. Right?",
+          "clarifications": {
+            "local_time": "3pm",
+            "from_timezone": "New York",
+            "to_timezone": "London"
+          }
         }
       ]
     ],
@@ -16822,7 +17492,14 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_190_elevenlabs.mp3",
           "asr_output_openai": "Okay, can you get a single room at Hilton in Chicago for two nights, starting December 10, 2022?",
           "asr_output_elevenlabs": "Okay. Can you get a single room at Hilton in Chicago for two nights starting December 10th, 2022?",
-          "asr_output_deepgram": "Okay. Can you get a single room at Hilton in Chicago for two nights starting December tenth twenty twenty two?"
+          "asr_output_deepgram": "Okay. Can you get a single room at Hilton in Chicago for two nights starting December tenth twenty twenty two?",
+          "clarifications": {
+            "hotel_name": "Hilton Hotel",
+            "location": "Chicago",
+            "room_type": "single room",
+            "start_date_spelling": "10th December 2022",
+            "nights": "two nights"
+          }
         }
       ]
     ],
@@ -16921,7 +17598,15 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_191_elevenlabs.mp3",
           "asr_output_openai": "Um, can you book luxury room at Hotel Paradise in Las Vegas, with a city view for three days starting May 12, 2022? Thanks.",
           "asr_output_elevenlabs": "Um, can you book luxury room at Hotel Paradise in Las Vegas, uh, with a city view for three days starting May 12th, 2022? Thanks.",
-          "asr_output_deepgram": "Can you book luxury room at Hotel Paradise in Las Vegas, with a city view for three days starting May twelfth twenty twenty two? Thanks."
+          "asr_output_deepgram": "Can you book luxury room at Hotel Paradise in Las Vegas, with a city view for three days starting May twelfth twenty twenty two? Thanks.",
+          "clarifications": {
+            "hotel_name": "Hotel Paradise",
+            "location": "Las Vegas",
+            "room_type": "luxury room",
+            "start_date_spelling": "May 12, 2022",
+            "stay_duration": "3 days",
+            "view_preference": "city view"
+          }
         }
       ]
     ],
@@ -17054,7 +17739,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_192_elevenlabs.mp3",
           "asr_output_openai": "Hey, how much is 150 euros in Canadian dollars?",
           "asr_output_elevenlabs": "Hey, how much is one hundred fifty euros in Canadian dollars?",
-          "asr_output_deepgram": "Hey. How much is one hundred fifty euros in Canadian dollars?"
+          "asr_output_deepgram": "Hey. How much is one hundred fifty euros in Canadian dollars?",
+          "clarifications": {
+            "amount": "150",
+            "from_currency": "Euros",
+            "to_currency": "Canadian dollars"
+          }
         }
       ]
     ],
@@ -17144,7 +17834,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_193_elevenlabs.mp3",
           "asr_output_openai": "Can you tell me how far it is and how long it takes to get from Eiffel Tower to the Louvre Museum?",
           "asr_output_elevenlabs": "Um, can you tell me how far it is and, uh, how long it takes to get from Eiffel Tower to the Louvre Museum?",
-          "asr_output_deepgram": "Can you tell me how far it is and, how long it takes to get from Eiffel Tower to the Louvre Museum?"
+          "asr_output_deepgram": "Can you tell me how far it is and, how long it takes to get from Eiffel Tower to the Louvre Museum?",
+          "clarifications": {
+            "start_location": "Eiffel Tower",
+            "end_location": "Louvre Museum"
+          }
         }
       ]
     ],
@@ -17256,7 +17950,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_194_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you let me know when Metropolitan Museum of Art opens on Saturday please?",
           "asr_output_elevenlabs": "Um, hey, can you let me know when Metropolitan Museum of Art opens on Saturday, please?",
-          "asr_output_deepgram": "Hey. Can you let me know when Metropolitan Museum of Art opens on Saturday, please?"
+          "asr_output_deepgram": "Hey. Can you let me know when Metropolitan Museum of Art opens on Saturday, please?",
+          "clarifications": {
+            "museum_name": "Metropolitan Museum of Art"
+          }
         }
       ]
     ],
@@ -17375,7 +18072,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_195_elevenlabs.mp3",
           "asr_output_openai": "Can you figure out the heat capacity at constant pressure for air if the temperature's 298 Kelvin and the volume's 10 cubic meters?",
           "asr_output_elevenlabs": "Can you figure out the heat capacity at constant pressure for air if the temperature is 298 kelvin and the volume is 10 cubic meters? Let me see.",
-          "asr_output_deepgram": "Can you figure out the heat capacity at constant pressure for air if the temperature's two ninety eight Kelvin and the volume's ten cubic meters? Let me see."
+          "asr_output_deepgram": "Can you figure out the heat capacity at constant pressure for air if the temperature's two ninety eight Kelvin and the volume's ten cubic meters? Let me see.",
+          "clarifications": {
+            "temperature_value": "298K",
+            "volume_value": "10 m^3"
+          }
         }
       ]
     ],
@@ -17488,7 +18189,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_196_elevenlabs.mp3",
           "asr_output_openai": "Um, can you say the names of proteins in the plasma membrane, right?",
           "asr_output_elevenlabs": "Um, can you say the names of proteins in, uh, the plasma membrane right?",
-          "asr_output_deepgram": "Can you say the names of proteins in, the plasma membrane? Right?"
+          "asr_output_deepgram": "Can you say the names of proteins in, the plasma membrane? Right?",
+          "clarifications": {}
         }
       ]
     ],
@@ -17604,7 +18306,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_197_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you find out what type of gene mutations associated with SNP ID rs6034464?",
           "asr_output_elevenlabs": "Hey, can you find out what type of gene mutation is associated with SNP ID RS6034464? SNP ID RS6034464.",
-          "asr_output_deepgram": "Hey. Can you find out what type of gene mutations associated with SNPID r s six zero three four four six four? SNPID r s six zero three four four six four."
+          "asr_output_deepgram": "Hey. Can you find out what type of gene mutations associated with SNPID r s six zero three four four six four? SNPID r s six zero three four four six four.",
+          "clarifications": {
+            "snp_id": "rs6034464"
+          }
         }
       ]
     ],
@@ -17733,7 +18438,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_198_openai.mp3",
           "asr_output_openai": "Um, okay, what's frequency of the AA genotype if allele A's frequency is 0.3?",
           "asr_output_elevenlabs": "Um, okay. What's frequency of the A-A genotype if allele A's frequency is 0.3?",
-          "asr_output_deepgram": "Okay. What's frequency of the AA genotype if allele a's frequency is zero point three?"
+          "asr_output_deepgram": "Okay. What's frequency of the AA genotype if allele a's frequency is zero point three?",
+          "clarifications": {
+            "genotype_spelling": "AA",
+            "allele_frequency_value": "0.3"
+          }
         }
       ]
     ],
@@ -17860,7 +18569,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multiple/multiple_199_cartesia.mp3",
           "asr_output_openai": "Can you predict Yellowstone's forest growth over the next five years?",
           "asr_output_elevenlabs": "Um, can you, uh, predict Yellowstone's forest growth over the next five years? Yeah. Consid-ering human impact?",
-          "asr_output_deepgram": "Can you, predict yellowstone's force growth over the next five years? Yeah. Constant, errant human impact?"
+          "asr_output_deepgram": "Can you, predict yellowstone's force growth over the next five years? Yeah. Constant, errant human impact?",
+          "clarifications": {
+            "location": "Yellowstone",
+            "years": "5"
+          }
         }
       ]
     ],

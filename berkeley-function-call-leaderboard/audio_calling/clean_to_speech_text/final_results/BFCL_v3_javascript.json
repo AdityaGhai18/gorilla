@@ -10,7 +10,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_0_openai.mp3",
           "asr_output_openai": "Um, can you help check user input in the form field with id userInputField once they're done typing? Ok?",
           "asr_output_elevenlabs": "Um, can you help check user input in the form field with ID userInputField once they're done typing? Okay.",
-          "asr_output_deepgram": "Can you help check user input in the form field with ID user input field once they're done typing? Okay."
+          "asr_output_deepgram": "Can you help check user input in the form field with ID user input field once they're done typing? Okay.",
+          "clarifications": {
+            "form_field_id": "userInputField"
+          }
         }
       ]
     ],
@@ -49,7 +52,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_1_openai.mp3",
           "asr_output_openai": "Hey, uh, can you get all the data entries where dataActive is true from the listElement variable?",
           "asr_output_elevenlabs": "Hey, uh, can you get all the data entries where data active is true from the list element variable? Okay.",
-          "asr_output_deepgram": "Hey. Can you get all the data entries where data active is true from the list element variable okay?"
+          "asr_output_deepgram": "Hey. Can you get all the data entries where data active is true from the list element variable okay?",
+          "clarifications": {
+            "variable_name": "listElement"
+          }
         }
       ]
     ],
@@ -93,7 +99,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_2_openai.mp3",
           "asr_output_openai": "Can you help me grab the last transaction ID from the database log at /var/log/db.log? It should be one that's marked as completed or failed, okay? Make sure it's in UTF-8 encoding and use the function to handle it.",
           "asr_output_elevenlabs": "Uh, can you help me grab the last transaction ID from the database log at, uh, /var/log/db.log? It should be one that's, um, marked as completed or failed. Okay? Make sure it's in UTF-8 encoding and use the function to handle it.",
-          "asr_output_deepgram": "Can you help me grab the last transaction ID from the database log at, slash var slash log slash d b dot log? It should be one that's, marked as completed or failed. Okay? Make sure it's in UTF eight encoding and use the function to handle it."
+          "asr_output_deepgram": "Can you help me grab the last transaction ID from the database log at, slash var slash log slash d b dot log? It should be one that's, marked as completed or failed. Okay? Make sure it's in UTF eight encoding and use the function to handle it.",
+          "clarifications": {
+            "file_path": "/var/log/db.log",
+            "encoding_method": "utf-8"
+          }
         }
       ]
     ],
@@ -145,7 +155,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_3_openai.mp3",
           "asr_output_openai": "Uh, can you send the React form with ID login form? Aim for 30% from the top and 60% from the left? Okay.",
           "asr_output_elevenlabs": "Uh, can you send the react form with ID loginForm? Aim for 30% from the top and, um, 60% from the left. Okay?",
-          "asr_output_deepgram": "Can you send the React form with ID login form? Aim for thirty percent from the top and, sixty percent from the left. Okay."
+          "asr_output_deepgram": "Can you send the React form with ID login form? Aim for thirty percent from the top and, sixty percent from the left. Okay.",
+          "clarifications": {
+            "action_type": "submit",
+            "form_id": "loginForm",
+            "x_coordinate_percentage": "60%",
+            "y_coordinate_percentage": "30%"
+          }
         }
       ]
     ],
@@ -192,7 +208,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_4_openai.mp3",
           "asr_output_openai": "Can you check if the email example@domain.com fits the standard email format? And, right, see if it can be validated with domain.com too?",
           "asr_output_elevenlabs": "Can you, uh, check if the email example@domain.com fits the standard email format and, um, right, see if it can be validated with domain.com too?",
-          "asr_output_deepgram": "Can you, check if the email example at domain dot com fits the standard email format? And, right. See if it can be validated with domain dot com too."
+          "asr_output_deepgram": "Can you, check if the email example at domain dot com fits the standard email format? And, right. See if it can be validated with domain dot com too.",
+          "clarifications": {
+            "email_address": "example@domain.com",
+            "custom_domain": "domain.com"
+          }
         }
       ]
     ],
@@ -230,7 +250,15 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_5_openai.mp3",
           "asr_output_openai": "lemme see. We're gonna write a line of code to initialize manageReactState function. You've got initialState object, a reducersMap, and a loggerMiddleware as middleware. Plus, I think let's enhance with applyMiddleware(myMiddleware). Oh, for accessing and updating state in React, use useStateSelector hook and useDispatchAction hook.",
           "asr_output_elevenlabs": "Let me see. We're going to write a line of code to initialize manageReactState function. You've got initial state object, a reducers map, and, um, a logger middleware as middleware. Plus, I think let's enhance with apply middleware, my middleware. Oh, for accessing and updating state in React, use use state selector hook and use dispatch action hook.",
-          "asr_output_deepgram": "Let me see. We're gonna write a line of code to initialize manage react state function. You've got initial state object, a reducers map, and, a logger middleware as middleware. Plus, I think let's enhance with apply middleware my middleware. Oh, for accessing and updating state in React, use use state selector hook and use dispatch action hook."
+          "asr_output_deepgram": "Let me see. We're gonna write a line of code to initialize manage react state function. You've got initial state object, a reducers map, and, a logger middleware as middleware. Plus, I think let's enhance with apply middleware my middleware. Oh, for accessing and updating state in React, use use state selector hook and use dispatch action hook.",
+          "clarifications": {
+            "initial_state_object_spelling": "initialStateObject",
+            "reducers_map_spelling": "reducersMap",
+            "logger_middleware_spelling": "loggerMiddleware",
+            "middleware_enhancer_spelling": "applyMiddleware('myMiddleWare')",
+            "state_selector_hook_spelling": "useStateSelectorHook",
+            "dispatch_action_hook_spelling": "useDispatchActionHook"
+          }
         }
       ]
     ],
@@ -298,7 +326,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_6_openai.mp3",
           "asr_output_openai": "Can you help me link the first four elements of this array to the transition category for CSS transitions?",
           "asr_output_elevenlabs": "Um, can you help me link the first four elements of this array to the transition category for CSS transitions?",
-          "asr_output_deepgram": "Can you help me link the first four elements of this array to the transition category for CSS transitions?"
+          "asr_output_deepgram": "Can you help me link the first four elements of this array to the transition category for CSS transitions?",
+          "clarifications": {
+            "category_name": "transition",
+            "element_limit": "4"
+          }
         }
       ]
     ],
@@ -337,7 +369,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_7_openai.mp3",
           "asr_output_openai": "Hey, can you, um, help me get all key-value pairs that come after userId within dataAnalysisContext object? Thanks.",
           "asr_output_elevenlabs": "Hey, can you, um, help me get all key value pairs that come after user ID within data analysis context object? Thanks.",
-          "asr_output_deepgram": "Hey. Can you, help me get all key value pairs that come after user ID within data analysis context object? Thanks."
+          "asr_output_deepgram": "Hey. Can you, help me get all key value pairs that come after user ID within data analysis context object? Thanks.",
+          "clarifications": {
+            "context_object_name": "dataAnalysisContext",
+            "initial_key": "userId"
+          }
         }
       ]
     ],
@@ -376,7 +412,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_8_openai.mp3",
           "asr_output_openai": "Can you see if the email form includes an input with the name email address, okay?",
           "asr_output_elevenlabs": "Can you see if the email form includes an input with the name Email Address? Okay?",
-          "asr_output_deepgram": "Can you see if the email form includes an input with the name email address okay?"
+          "asr_output_deepgram": "Can you see if the email form includes an input with the name email address okay?",
+          "clarifications": {
+            "form_element_name": "emailForm",
+            "input_name_attribute": "emailAddress"
+          }
         }
       ]
     ],
@@ -415,7 +455,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_9_openai.mp3",
           "asr_output_openai": "Um, can you look at the JSON payload response data to see if it has a specific key for API response validation? Oh, set key_to_check to expected_key and use process_key function as the processing callback.",
           "asr_output_elevenlabs": "Um, can you look at the JSON payload response data to, uh, see if it has a specific key for API response validation? Oh, set keyToCheck to expectedKey and use processKey function as the processing callback.",
-          "asr_output_deepgram": "Can you look at the JSON payload response data to, see if it has a specific key for API response validation? Oh, set key to check to expected key and use process key function as the processing callback."
+          "asr_output_deepgram": "Can you look at the JSON payload response data to, see if it has a specific key for API response validation? Oh, set key to check to expected key and use process key function as the processing callback.",
+          "clarifications": {
+            "json_payload_variable": "responseData",
+            "key_to_check": "expectedKey",
+            "processing_callback_variable": "processingCallBack"
+          }
         }
       ]
     ],
@@ -459,7 +504,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_10_openai.mp3",
           "asr_output_openai": "Can you get records from the employee records database where, um, the department's sales? Use a JavaScript custom query function called `getSales()`.",
           "asr_output_elevenlabs": "Ah, can you get records from the employee records database where, um, the department's sales? Use a JavaScript custom query function called backtick get sales backtick.",
-          "asr_output_deepgram": "Can you get records from the employee records database where, the department's sales use a JavaScript custom query function called backtick get sales backtick."
+          "asr_output_deepgram": "Can you get records from the employee records database where, the department's sales use a JavaScript custom query function called backtick get sales backtick.",
+          "clarifications": {
+            "database_name": "employeeRecords",
+            "query_function_variable": "getSales"
+          }
         }
       ]
     ],
@@ -498,7 +547,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_11_openai.mp3",
           "asr_output_openai": "Can you put my capital I tem capital L ist in order for me? Make it alphabetical in ascending order, but place anything marked urgent at the top. The list is an array of objects with name and status",
           "asr_output_elevenlabs": "Uh, can you put my capital I-temp, capital L-list in order for me? Make an alphabetical in ascending order. Uh, but place anything marked urgent at the top. The list is, um, an array of objects with name and status.",
-          "asr_output_deepgram": "Can you put my capital I, Tam, capital l list in order for me? Make an alphabetical in ascending order, but place anything marked urgent at the top. The list is, an array of objects with name and status."
+          "asr_output_deepgram": "Can you put my capital I, Tam, capital l list in order for me? Make an alphabetical in ascending order, but place anything marked urgent at the top. The list is, an array of objects with name and status.",
+          "clarifications": {
+            "list_name": "myItemList",
+            "priority_status": "urgent"
+          }
         }
       ]
     ],
@@ -545,7 +598,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_12_openai.mp3",
           "asr_output_openai": "Can you help me get a data fetch operation going? Use the API endpoint URL \"https://api.example.com/data\". Right, expect a JSON response like {\"key\": \"value\"} with a request config of method 'GET'.",
           "asr_output_elevenlabs": "Uh, can you help me get a data fetch operation going? Use the API endpoint URL https colon slash slash api dot example.com/data. Right. Expect a JSON response like key value with a, a request config of method get dot.",
-          "asr_output_deepgram": "Can you help me get a data fetch operation going? Use the API endpoint URL, h t t p s colon slash slash API dot example dot com slash data. Right. Expect a JSON response like key value with a a request config of method get dot."
+          "asr_output_deepgram": "Can you help me get a data fetch operation going? Use the API endpoint URL, h t t p s colon slash slash API dot example dot com slash data. Right. Expect a JSON response like key value with a a request config of method get dot.",
+          "clarifications": {
+            "operation_name": "dataFetch",
+            "api_endpoint_url": "https://api.example.com/data",
+            "expected_response_json": "{\"key\": \"value\"}",
+            "request_configuration_object": "{\"method\": \"GET\"}"
+          }
         }
       ]
     ],
@@ -607,7 +666,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_13_openai.mp3",
           "asr_output_openai": "Could you make a dynamic chart using userData array, scale the axis by three, and link it to dashboardElement on the dashboard?",
           "asr_output_elevenlabs": "Um, could you make a dynamic chart using user data array, uh, scale the axis by three, and link it to dashboard element on the dashboard? Okay?",
-          "asr_output_deepgram": "Could you make a dynamic chart using user data array, scale the axis by three, and link it to dashboard element on the dashboard? Okay?"
+          "asr_output_deepgram": "Could you make a dynamic chart using user data array, scale the axis by three, and link it to dashboard element on the dashboard? Okay?",
+          "clarifications": {
+            "user_data_array_name": "userDataArray",
+            "scaling_factor_value": "3",
+            "dashboard_element_name": "dashboardElement"
+          }
         }
       ]
     ],
@@ -658,7 +722,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_14_openai.mp3",
           "asr_output_openai": "Can you help make a data accessor for the B-A-R-C-H-A-R-T (bar chart) in the C-H-A-R-T-M-O-D-U-L-E (chart module)? It's in the V-I-S-U-A-L-I-Z-A-T-I-O-N L-I-B-R-A-Y (visualization library). And I need it to get and update data points and labels using the config object, right?",
           "asr_output_elevenlabs": "Can you help make a data accessor for the B-A-R-C-H-A-R-T, bar chart, in the C-H-A-R-T M-O-D-U-L-E, chart module? It's in the V-I-S-U-A-L-I-Z-A-T-I-O-N L-I-B-R-A-Y, visualization library, and I need it to get and update data points and labels using the config object, right?",
-          "asr_output_deepgram": "Can you help make a data accessor for the b a r c h a r t bar chart in the c h a r t m o d u l e chart module? It's in the v I s u a l I z a t I o n l I b r a y visualization library, And I need it to get and update data points and labels using the config object. Right?"
+          "asr_output_deepgram": "Can you help make a data accessor for the b a r c h a r t bar chart in the c h a r t m o d u l e chart module? It's in the v I s u a l I z a t I o n l I b r a y visualization library, And I need it to get and update data points and labels using the config object. Right?",
+          "clarifications": {
+            "chart_component_name": "BarChart",
+            "module_name": "chartModule",
+            "library_name": "visualizationLibrary",
+            "config_object_name": "config"
+          }
         }
       ]
     ],
@@ -716,7 +786,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_15_openai.mp3",
           "asr_output_openai": "Hey, could you create new ChartSeries using these initial settings? axisLabels: axisLabelsArray, dataPoints: dataPointsArray, and defaultColorScheme: defaultColor. Oh, and then integrate it into chartLayout: chartLayoutObject.",
           "asr_output_elevenlabs": "Hey, uh, could you create new chart series using these initial settings? Axis labels, axis labels array. Data points, data points array. And, um, default color scheme, default color? Oh, and then integrate it into chart layout, chart layout object.",
-          "asr_output_deepgram": "Hey. Could you create new chart series using these initial settings? Axis labels, axis labels array, data points, data points array, and, default color scheme, default color. Oh, and then integrate it into chart layout, chart layout object."
+          "asr_output_deepgram": "Hey. Could you create new chart series using these initial settings? Axis labels, axis labels array, data points, data points array, and, default color scheme, default color. Oh, and then integrate it into chart layout, chart layout object.",
+          "clarifications": {
+            "axis_labels_array": "axisLabelsArray",
+            "data_points_array": "dataPointsArray",
+            "default_color_scheme": "defaultColor",
+            "chart_layout_object": "chartLayoutObject"
+          }
         }
       ]
     ],
@@ -770,7 +846,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_16_cartesia.mp3",
           "asr_output_openai": "Can you help me calculate new coordinates for vertices at 10, 15 and 20, 25 when they're rotated 30 degrees around pivot point 12, 17?",
           "asr_output_elevenlabs": "Um, can you help me calculate new coordinates for vertices at, uh, 10, 15 and 20, 25 when they're rotated 30 degrees around pivot point 12, 17? Okay.",
-          "asr_output_deepgram": "Can you help me calculate new coordinates for vertices at, ten, fifteen, and twenty, twenty five when they're rotated thirty degrees around pivot point twelve, seventeen. Okay?"
+          "asr_output_deepgram": "Can you help me calculate new coordinates for vertices at, ten, fifteen, and twenty, twenty five when they're rotated thirty degrees around pivot point twelve, seventeen. Okay?",
+          "clarifications": {
+            "vertices_coordinates": "(10, 15) and (20, 25)",
+            "pivot_point_coordinates": "(12, 17)",
+            "rotation_angle": "30 degrees"
+          }
         }
       ]
     ],
@@ -820,7 +901,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_17_cartesia.mp3",
           "asr_output_openai": "Can you set up a notification handler for the app? It should: filter messages with priority level 3, connect to the messagingService messagingSvc, and be under notification type 2.",
           "asr_output_elevenlabs": "Uh, can you set up a notification handler for the app? It should, um, filter messages with priority level three, connect to the messaging service, Messaging Service E, and uh, be under notification type two.",
-          "asr_output_deepgram": "Can you set up a notification handler for the app? It should, filter messages with priority level three, connect to the messaging service messaging and, be under notification type two."
+          "asr_output_deepgram": "Can you set up a notification handler for the app? It should, filter messages with priority level three, connect to the messaging service messaging and, be under notification type two.",
+          "clarifications": {
+            "application_name": "app",
+            "priority_level": "3",
+            "messaging_service_name": "messagingSvc",
+            "notification_type": "2"
+          }
         }
       ]
     ],
@@ -869,7 +956,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_18_cartesia.mp3",
           "asr_output_openai": "Um, hey, what's the final speed of an object that's been falling for five seconds with gravity g and starts from rest, ya know?",
           "asr_output_elevenlabs": "Um, hey, what's the final speed of an object that's, uh, been fallen for five seconds with gravity G and starts from rest? You know?",
-          "asr_output_deepgram": "Hey. What's the final speed of an object that's, been falling for five seconds with gravity g and starts from rest? You know?"
+          "asr_output_deepgram": "Hey. What's the final speed of an object that's, been falling for five seconds with gravity g and starts from rest? You know?",
+          "clarifications": {
+            "gravity_constant": "g"
+          }
         }
       ]
     ],
@@ -913,7 +1003,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_19_cartesia.mp3",
           "asr_output_openai": "Can you create a shader material using material props for a three.js scene?",
           "asr_output_elevenlabs": "Um, can you, uh, create a shader material using material props for a Three.js scene? Oh, and use texture list for textures, putting it on the 3D object mesh object?",
-          "asr_output_deepgram": "Can you, create a shader material using material props for a three dot j s c? Oh, and use texture list for textures, putting it on the three d object mesh object?"
+          "asr_output_deepgram": "Can you, create a shader material using material props for a three dot j s c? Oh, and use texture list for textures, putting it on the three d object mesh object?",
+          "clarifications": {
+            "shader_material_properties": "materialProps",
+            "texture_list": "textureList",
+            "3d_object": "meshObject"
+          }
         }
       ]
     ],
@@ -960,7 +1055,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_20_cartesia.mp3",
           "asr_output_openai": "Can you help me set up a click event listener on the myButton element? I need it to call handleButtonClick and make sure the event doesn't spread, so set stopPropagation to true.",
           "asr_output_elevenlabs": "Can you help me set up a click event listener on the my button element? I need it to call handle button click and make sure the event doesn't spread, so set stop propagation to true.",
-          "asr_output_deepgram": "Can you help me set up a click event listener on the my button element? I need it to call handle button click and make sure the event doesn't spread, so set stop propagation to true."
+          "asr_output_deepgram": "Can you help me set up a click event listener on the my button element? I need it to call handle button click and make sure the event doesn't spread, so set stop propagation to true.",
+          "clarifications": {
+            "element_name": "myButton",
+            "callback_function_name": "handleButtonClick",
+            "options_key": "stopProgation"
+          }
         }
       ]
     ],
@@ -1003,7 +1103,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_21_cartesia.mp3",
           "asr_output_openai": "Uh, can you get a product in the list with productid 123? The list, um, includes product A, product B, and product C, thanks.",
           "asr_output_elevenlabs": "Uh, can you get a product in the list with Product ID 123? The list, um, includes Product A, Product B, and Product C. Thanks.",
-          "asr_output_deepgram": "Can you get a product in the list with productive one two three? The list, includes product a, product b, and product c. Thanks."
+          "asr_output_deepgram": "Can you get a product in the list with productive one two three? The list, includes product a, product b, and product c. Thanks.",
+          "clarifications": {
+            "product_id": "123"
+          }
         }
       ]
     ],
@@ -1045,7 +1148,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_22_cartesia.mp3",
           "asr_output_openai": "Hey uh, can you help me set the user session state property to a value called null in a React component, thanks?",
           "asr_output_elevenlabs": "Hey, uh, can you help me set the user session state property to a value called null in a React component? Thanks.",
-          "asr_output_deepgram": "Hey, can you help me set the user session state property to a value called null in a React component? Thanks."
+          "asr_output_deepgram": "Hey, can you help me set the user session state property to a value called null in a React component? Thanks.",
+          "clarifications": {
+            "state_property_name": "userSession"
+          }
         }
       ]
     ],
@@ -1079,7 +1185,14 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_23_cartesia.mp3",
           "asr_output_openai": "Um, could you make an authorization token for user John Doe? It should be valid for one hour, issued by myapp.net with an admin role and encoded using the HS256 algorithm.",
           "asr_output_elevenlabs": "Um, could you make an authorization token for user John Doe? It should be valid for one hour, uh, issued by myapp.net with an admin role and encoded using the HS256 algorithm.",
-          "asr_output_deepgram": "Could you make an authorization token for user John Doe? It should be valid for one hour, issued by m y a p p dot net with an admin role and encoded using the h s two five six algorithm."
+          "asr_output_deepgram": "Could you make an authorization token for user John Doe? It should be valid for one hour, issued by m y a p p dot net with an admin role and encoded using the h s two five six algorithm.",
+          "clarifications": {
+            "username": "johndoe",
+            "validity_seconds": "3600",
+            "issuer": "myapp.net",
+            "user_role": "admin",
+            "encoding_method": "HS256"
+          }
         }
       ]
     ],
@@ -1136,7 +1249,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_24_cartesia.mp3",
           "asr_output_openai": "Um, how can I get the unique numbers from an array and, uh, put them in ascending order? Oh, like with these numbers: 3, 1, 2, 1, 4, 3.",
           "asr_output_elevenlabs": "Um, how can I get the unique numbers from an array and, uh, put them in ascending order? Oh, like with these numbers: 3, 1, 2, 1, 4, 3.",
-          "asr_output_deepgram": "How can I get the unique numbers from an array and, put them in ascending order? Oh, like with these numbers, three one two one four three."
+          "asr_output_deepgram": "How can I get the unique numbers from an array and, put them in ascending order? Oh, like with these numbers, three one two one four three.",
+          "clarifications": {}
         }
       ]
     ],
@@ -1173,7 +1287,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_25_cartesia.mp3",
           "asr_output_openai": "Can you help me keep track of the submitForm action on the formHandler object but only when both the required and validEmail validation flags are set, right?",
           "asr_output_elevenlabs": "Can you help me keep track of the submit form action on the form handler object, but only when both the required and valid email validation flags are set right?",
-          "asr_output_deepgram": "Can you help me keep track of the submit form action on the form handler object, but only when both the required and valid email validation flags are set. Right?"
+          "asr_output_deepgram": "Can you help me keep track of the submit form action on the form handler object, but only when both the required and valid email validation flags are set. Right?",
+          "clarifications": {
+            "action_name": "submitForm",
+            "object_name": "formHandler",
+            "validation_flag1": "isRequired",
+            "validation_flag2": "isValidEmail"
+          }
         }
       ]
     ],
@@ -1215,7 +1335,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_26_cartesia.mp3",
           "asr_output_openai": "Can you help me change the content of the div with id contentBox to \"Hello World\" using the update action please?",
           "asr_output_elevenlabs": "Um, can you help me change the content of the div with ID content box to hello world using the update action, please?",
-          "asr_output_deepgram": "Can you help me change the content of the div with ID content box to hello world using the update action, please?"
+          "asr_output_deepgram": "Can you help me change the content of the div with ID content box to hello world using the update action, please?",
+          "clarifications": {
+            "element_id": "contentBox",
+            "new_content": "Hello World",
+            "action_name": "update"
+          }
         }
       ]
     ],
@@ -1259,7 +1384,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_27_cartesia.mp3",
           "asr_output_openai": "Can you help me check that the object named serviceProvider matches React's prop type rules? Right, it shouldn't be a promise or have any side-effect methods when used as a prop in the component called UserProfile.",
           "asr_output_elevenlabs": "Can you help me check that the object named service provider matches React's prop type rules? Right, it shouldn't be a promise or have any side effect methods when used as a prop in the component called user profile.",
-          "asr_output_deepgram": "Can you help me check that the object named service provider matches React's prop type rules? Right. It, shouldn't be a promise or have any side effect methods when used as a prop in the component called user profile."
+          "asr_output_deepgram": "Can you help me check that the object named service provider matches React's prop type rules? Right. It, shouldn't be a promise or have any side effect methods when used as a prop in the component called user profile.",
+          "clarifications": {
+            "object_name": "serviceProvider",
+            "component_name": "UserProfile"
+          }
         }
       ]
     ],
@@ -1298,7 +1427,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_28_cartesia.mp3",
           "asr_output_openai": "Um, could you get a list of books Booka, Bookb, and Bookc by J.K. Rowling, that's R-O-W-L-I-N-G, J.K. Rowling from the library collection, right?",
           "asr_output_elevenlabs": "Um, could you get a list of books, book A, book B, and book C by JK Rowling, that's R-O-W-L-I-N-G, JK Rowling from the library collection, right?",
-          "asr_output_deepgram": "Could you get a list of books, booka, book b, and book c by JK Rowling? That's r o w l I n g. JK Rowling from the library collection. Right?"
+          "asr_output_deepgram": "Could you get a list of books, booka, book b, and book c by JK Rowling? That's r o w l I n g. JK Rowling from the library collection. Right?",
+          "clarifications": {
+            "author_name": "J.K. Rowling",
+            "collection_name": "library",
+            "book_list": "bookA, bookB, bookC"
+          }
         }
       ]
     ],
@@ -1340,7 +1474,14 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_29_cartesia.mp3",
           "asr_output_openai": "Can you schedule these events? With setupStage function? setupStage comes before cleanupStage with cleanStage function. Oh, um, make sure only 3 events happen at once.",
           "asr_output_elevenlabs": "Uh, can you schedule these events with setup stage function? Setup stage comes before cleanup stage with clean stage function. Oh, um, make sure only three events happen at once.",
-          "asr_output_deepgram": "Can you schedule these events? With setup stage function? Setup stage comes before cleanup stage with clean stage function. Oh, make sure only three events happen at once."
+          "asr_output_deepgram": "Can you schedule these events? With setup stage function? Setup stage comes before cleanup stage with clean stage function. Oh, make sure only three events happen at once.",
+          "clarifications": {
+            "event_name1_spelling": "setupStage",
+            "event_function1_spelling": "setupStageFunction",
+            "event_name2_spelling": "cleanupStage",
+            "event_function2_spelling": "cleanStageFunction",
+            "concurrency_limit": "3"
+          }
         }
       ]
     ],
@@ -1382,7 +1523,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_30_cartesia.mp3",
           "asr_output_openai": "Can you, um, change the text in the editor to \"Hello World\", starting at position 5 over the next seven characters? Thanks.",
           "asr_output_elevenlabs": "Can you, uhm, change the text in the editor to \"Hello World\", starting at position five over the next seven characters? Thanks.",
-          "asr_output_deepgram": "Can you, change the text in the editor to hello world starting at position five over the next seven characters? Thanks."
+          "asr_output_deepgram": "Can you, change the text in the editor to hello world starting at position five over the next seven characters? Thanks.",
+          "clarifications": {
+            "new_text": "Hello, World!",
+            "start_position": "5",
+            "text_length": "7"
+          }
         }
       ]
     ],
@@ -1425,7 +1571,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_31_cartesia.mp3",
           "asr_output_openai": "Can you help me like handle and change all decorators in a TypeScript declaration node called myNode within myContainer?",
           "asr_output_elevenlabs": "Uh, can you help me like handle and change all decorators in a TypeScript declaration node called my node within my container? Well, let me see.",
-          "asr_output_deepgram": "Can you help me, like, handle and change all decorators in a TypeScript declaration node called my node within my container? Well, let's"
+          "asr_output_deepgram": "Can you help me, like, handle and change all decorators in a TypeScript declaration node called my node within my container? Well, let's",
+          "clarifications": {
+            "node_name": "myNode",
+            "container_name": "myContainer"
+          }
         }
       ]
     ],
@@ -1464,7 +1614,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_32_elevenlabs.mp3",
           "asr_output_openai": "Can you process file watch queue with a 500 millisecond polling interval? Right, start at index zero and handle like ten files at a time to check for changes.",
           "asr_output_elevenlabs": "Uh, can you, um, process file watch queue with a 500-millisecond polling interval? Right, start at index zero and handle like 10 files at a time to check for changes?",
-          "asr_output_deepgram": "Can you, process file watch queue with a five hundred millisecond polling interval? Right. Start at index zero and handle, like, ten files at a time to check for changes."
+          "asr_output_deepgram": "Can you, process file watch queue with a five hundred millisecond polling interval? Right. Start at index zero and handle, like, ten files at a time to check for changes.",
+          "clarifications": {
+            "queue_name": "fileWatchQueue",
+            "polling_interval_milliseconds": "500",
+            "starting_index": "0",
+            "files_per_polling_interval": "10"
+          }
         }
       ]
     ],
@@ -1516,7 +1672,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_33_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you ensure a new line is placed before the leading comments of the node at position 42 in the TypeScript file? Oh, for that, use the ts.LineMap lineMap and ts.Writer writer.",
           "asr_output_elevenlabs": "Hey, uh, can you ensure a new line is placed before the leading comments of the node at position 42 in the TypeScript file? Oh, for that, use the TS line map, line map and TS writer, writer.",
-          "asr_output_deepgram": "Hey. Can you ensure a new line is placed before the leading comments of the node at position forty two in the TypeScript file? Oh, for that, use the TS line map line map and TS writer writer."
+          "asr_output_deepgram": "Hey. Can you ensure a new line is placed before the leading comments of the node at position forty two in the TypeScript file? Oh, for that, use the TS line map line map and TS writer writer.",
+          "clarifications": {
+            "node_position": "42",
+            "line_map_object_name": "tsLineMap",
+            "writer_object_name": "tsWriter"
+          }
         }
       ]
     ],
@@ -1564,7 +1725,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_34_elevenlabs.mp3",
           "asr_output_openai": "Can you use the process_type function on each type in the union type Obj to check its properties? Thanks.",
           "asr_output_elevenlabs": "Uh, can you use the process type function on each type in the union type obj to check its properties? Mm. Thanks.",
-          "asr_output_deepgram": "Can you use the process type function on each type in the union type OBJ to check its properties? Thanks."
+          "asr_output_deepgram": "Can you use the process type function on each type in the union type OBJ to check its properties? Thanks.",
+          "clarifications": {
+            "function_name_spelling": "processType",
+            "type_object_name_spelling": "unionTypeObj"
+          }
         }
       ]
     ],
@@ -1599,11 +1764,15 @@
         {
           "role": "user",
           "content": "Help me check if two TypeScript declaration objects, one representing a parameter parameterObject and the other a variable declaration variableDeclarationObject, have identical declaration flags considering their optionality, privacy, protection level, asynchronicity, abstractness, readonly status, and static nature?",
-          "transcript": "Lemme see... okay, can you check if these two TypeScript declarations—one for a parameter named parameterObject and another for a variable named variableDeclarationObject—have the same flags? Look at their optionality, privacy, protection level, async status, if theyre abstract, readonly, and static.",
+          "transcript": "Lemme see... okay, can you check if these two TypeScript declarations\u2014one for a parameter named parameterObject and another for a variable named variableDeclarationObject\u2014have the same flags? Look at their optionality, privacy, protection level, async status, if theyre abstract, readonly, and static.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_35_elevenlabs.mp3",
           "asr_output_openai": "Let me see. Okay, can you check if these two TypeScript declarations, one for a parameter named parameter object and another for a variable named variable declaration object, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readonly, and static.",
           "asr_output_elevenlabs": "Let me see. Okay, can you check if these two typescript declarations, one for a parameter named ParameterObject and another for a variable named VariableDeclarationObject, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readily, and static.",
-          "asr_output_deepgram": "Let me see. Okay. Can you check if these two TypeScript declarations, one for a parameter named parameter object and another for a variable named variable declaration object, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readily, and static."
+          "asr_output_deepgram": "Let me see. Okay. Can you check if these two TypeScript declarations, one for a parameter named parameter object and another for a variable named variable declaration object, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readily, and static.",
+          "clarifications": {
+            "first_declaration_object_name": "parameterObject",
+            "second_declaration_object_name": "variableDeclarationObject"
+          }
         }
       ]
     ],
@@ -1642,7 +1811,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_36_elevenlabs.mp3",
           "asr_output_openai": "Can you check if BreakNode label in my abstract syntax tree isn't loopEnd? If not, update it to loopEnd.",
           "asr_output_elevenlabs": "Uh, can you check if break node label in my abstract syntax tree isn't loop end? If not, uh, update it to loop end.",
-          "asr_output_deepgram": "Can you check if break node label in my abstract syntax tree isn't loop end? If not, update it to loop end."
+          "asr_output_deepgram": "Can you check if break node label in my abstract syntax tree isn't loop end? If not, update it to loop end.",
+          "clarifications": {
+            "new_label_spelling": "loopEnd"
+          }
         }
       ]
     ],
@@ -1681,7 +1853,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_37_elevenlabs.mp3",
           "asr_output_openai": "Can you help me put lines to set up width and height for shape object in shape statements array?",
           "asr_output_elevenlabs": "Um, can you help me, uh, put lines to set up width and height for shape object in shape statements array? Okay.",
-          "asr_output_deepgram": "Can you help me, put lines to set up width and height for shape object in shape statements array? Okay?"
+          "asr_output_deepgram": "Can you help me, put lines to set up width and height for shape object in shape statements array? Okay?",
+          "clarifications": {
+            "property_names": "width, height",
+            "receiver_object_name": "shape",
+            "statements_array_name": "shapeStatements"
+          }
         }
       ]
     ],
@@ -1731,7 +1908,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_38_elevenlabs.mp3",
           "asr_output_openai": "Hey, can you find the right directory to watch for changes? Oh, start from the failed lookup at inside the React folder, inside node_modules, inside my-app, inside projects. The path /projects/my-app/node_modules/react to make, um, file watching work better in my TypeScript project.",
           "asr_output_elevenlabs": "Hey, uh, can you find the right directory to watch for changes? Oh, start from the failed lookup at inside the React folder inside node_modules inside my-app inside projects. The path /projects/my-app/node_modules/React to make, um, file watching work better in my TypeScript project.",
-          "asr_output_deepgram": "Hey. Can you find the right directory to watch for changes? Oh, start from the failed lookup at inside the React folder, inside node modules, inside my app, inside projects, the path slash projects slash my app slash node modules slash react to make, file watching work better in my TypeScript project."
+          "asr_output_deepgram": "Hey. Can you find the right directory to watch for changes? Oh, start from the failed lookup at inside the React folder, inside node modules, inside my app, inside projects, the path slash projects slash my app slash node modules slash react to make, file watching work better in my TypeScript project.",
+          "clarifications": {
+            "directory_full_path": "/projects/myApp/node_modules/react"
+          }
         }
       ]
     ],
@@ -1770,7 +1950,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_39_elevenlabs.mp3",
           "asr_output_openai": "Um, can you help find out if we need synthetic rest, a parameter for this function? It's got a variadic type at the end. Oh, here's the function declaration object. Func declaration and the parameters array, func parameters.",
           "asr_output_elevenlabs": "Um, can you help find out if we need synthetic rest, uh, parameter for this function? It's got a variadic type at the end. Oh, here's the function declaration object, func declaration and the parameters array, func parameters.",
-          "asr_output_deepgram": "Can you help find out if we need synthetic rest, parameter for this function? It's got a variadic type at the end. Oh, here's the function declaration object. Func declaration and the parameters array. Func parameters."
+          "asr_output_deepgram": "Can you help find out if we need synthetic rest, parameter for this function? It's got a variadic type at the end. Oh, here's the function declaration object. Func declaration and the parameters array. Func parameters.",
+          "clarifications": {
+            "declaration_object": "funcDeclaration",
+            "parameters_array": "funcParameters"
+          }
         }
       ]
     ],
@@ -1812,7 +1996,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_40_elevenlabs.mp3",
           "asr_output_openai": "So, uh, what's max items supposed to be in the config? Default's 10, object shows 12, but max items isn't set.",
           "asr_output_elevenlabs": "So, uh, what's max items supposed to be in the config? Defaults 10, object shows 12, but max items isn't set.",
-          "asr_output_deepgram": "So, what's max items supposed to be in the config? Default's ten, object shows twelve, but max items isn't set."
+          "asr_output_deepgram": "So, what's max items supposed to be in the config? Default's ten, object shows twelve, but max items isn't set.",
+          "clarifications": {
+            "property_name": "maxItems",
+            "default_value": "10",
+            "object_value": "12"
+          }
         }
       ]
     ],
@@ -1861,7 +2050,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_41_elevenlabs.mp3",
           "asr_output_openai": "Can you help me set up a queue to handle tasks using my worker function, with a concurrency level of 5 and um, no payload size specified? Thanks.",
           "asr_output_elevenlabs": "Uh, can you help me set up a queue to handle tasks using my worker function with a concurrency level of five and, um, no payload size specified? Thanks.",
-          "asr_output_deepgram": "Can you help me set up a queue to handle tasks using my worker function with a concurrency level of five and, no payload size specified? Thanks."
+          "asr_output_deepgram": "Can you help me set up a queue to handle tasks using my worker function with a concurrency level of five and, no payload size specified? Thanks.",
+          "clarifications": {
+            "worker_function_name": "myWorkerFunction"
+          }
         }
       ]
     ],
@@ -1900,11 +2092,14 @@
         {
           "role": "user",
           "content": "Help me create a task queue with a concurrency of 5, where tasks are functions that log a message to the console, and ensure that when the queue becomes saturated, it logs 'Queue is saturated', and when it becomes unsaturated, it logs 'Queue is unsaturated'?",
-          "transcript": "Hey, uh, set up task queue with a concurrency of five. Make sure tasks, um, log messages to console. Oh, also, if queue gets full, it should log Queue is saturated, and when it’s not full anymore, log Queue is unsaturated.",
+          "transcript": "Hey, uh, set up task queue with a concurrency of five. Make sure tasks, um, log messages to console. Oh, also, if queue gets full, it should log Queue is saturated, and when it\u2019s not full anymore, log Queue is unsaturated.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_42_elevenlabs.mp3",
           "asr_output_openai": "Hey, uh, set up task queue with a concurrency of 5. Make sure tasks, um, log messages to console. Oh, also if queue gets full it should log \"Queue is saturated\" and when it's not full anymore, log \"Queue is unsaturated\".",
           "asr_output_elevenlabs": "Hey. Uh, set up task queue with a concurrency of five. Make sure tasks, um, log messages to console. Oh, also if queue gets full, it should log \"queue is saturated,\" and when it's not full anymore, log \"queue is unsaturated.\"",
-          "asr_output_deepgram": "Hey. Set up task queue with a concurrency of five. Make sure tasks, log messages to console. Oh, also, if queue gets full, it should log queue is saturated. And when it's not full anymore, log queue is unsaturated."
+          "asr_output_deepgram": "Hey. Set up task queue with a concurrency of five. Make sure tasks, log messages to console. Oh, also, if queue gets full, it should log queue is saturated. And when it's not full anymore, log queue is unsaturated.",
+          "clarifications": {
+            "concurrency_level": "5"
+          }
         }
       ]
     ],
@@ -1945,8 +2140,13 @@
           "transcript": "Okay, can you run, lemme see... the processResult callback function with an error as null and result as Operation successful?",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_43_elevenlabs.mp3",
           "asr_output_openai": "Okay, can you run, let me see, the processResultCallback function with an error as null and result as operation successful",
-          "asr_output_elevenlabs": "Okay, can you run—let me see—the processResultCallback function with an error as null and result as OPERATION successful?",
-          "asr_output_deepgram": "Okay. Can you run, let me see, the process result callback function with an error as null and result as operation successful?"
+          "asr_output_elevenlabs": "Okay, can you run\u2014let me see\u2014the processResultCallback function with an error as null and result as OPERATION successful?",
+          "asr_output_deepgram": "Okay. Can you run, let me see, the process result callback function with an error as null and result as operation successful?",
+          "clarifications": {
+            "callback_function_name": "processResult",
+            "error_value": "null",
+            "result_value": "Operation successful"
+          }
         }
       ]
     ],
@@ -1990,7 +2190,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_44_elevenlabs.mp3",
           "asr_output_openai": "Can you run the custom callback process node on current node using node state while going through the tree? Thanks.",
           "asr_output_elevenlabs": "Um, can you run the custom callback process node on current node using node state, uh, while going through the tree? Thanks.",
-          "asr_output_deepgram": "Can you run the custom callback process node on current node using node state, while going through the tree? Thanks."
+          "asr_output_deepgram": "Can you run the custom callback process node on current node using node state, while going through the tree? Thanks.",
+          "clarifications": {
+            "callback_function_name": "processNode",
+            "node_name": "currentNode",
+            "state_object_name": "nodeState"
+          }
         }
       ]
     ],
@@ -2034,7 +2239,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_45_elevenlabs.mp3",
           "asr_output_openai": "Let me see, could you get a map of remote git references and their commit hashes for this repository, URL https://github.com/yarnpkg/berry asynchronously starting from the directory in the projects folder inside user inside home? Thanks.",
           "asr_output_elevenlabs": "Let me see. Could you get a map of remote Git references and their commit hashes for this repository, url https colon slash slash github dot com slash yarnpkg slash berry asynchronously starting from the directory in the project's folder inside user inside home? Thanks.",
-          "asr_output_deepgram": "Let me see. Could you get a map of remote Git references and their commit hashes for this repository? URL h t t t p s colon slash slash GitHub dot com slash yarn p k g slash bury asynchronously starting from the directory in the projects folder inside user inside home. Thanks."
+          "asr_output_deepgram": "Let me see. Could you get a map of remote Git references and their commit hashes for this repository? URL h t t t p s colon slash slash GitHub dot com slash yarn p k g slash bury asynchronously starting from the directory in the projects folder inside user inside home. Thanks.",
+          "clarifications": {
+            "repository_url": "https://github.com/yarnpkg/berry",
+            "starting_directory": "/home/user/projects"
+          }
         }
       ]
     ],
@@ -2086,7 +2295,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_46_elevenlabs.mp3",
           "asr_output_openai": "Can you change the version property of package_info to 1.2.3, but only if it's different from what's there, or if version isn't yet part of the object?",
           "asr_output_elevenlabs": "Can you change the version property of package info to 1.2.3, but only if it's different from what's there or if version isn't yet part of the object?",
-          "asr_output_deepgram": "Can you change the version property of package info to one dot two dot three, but only if it's different from what's there or if version isn't yet part of the object?"
+          "asr_output_deepgram": "Can you change the version property of package info to one dot two dot three, but only if it's different from what's there or if version isn't yet part of the object?",
+          "clarifications": {
+            "object_name": "packageInfo",
+            "property_name": "version",
+            "new_value": "1.2.3"
+          }
         }
       ]
     ],
@@ -2130,7 +2344,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_47_elevenlabs.mp3",
           "asr_output_openai": "Can you calculate how many days are between April 1, 2023 and April 15, 2023?",
           "asr_output_elevenlabs": "Um, can you, uh, calculate how many days are between April 1st, 2023 and April 15th, 2023?",
-          "asr_output_deepgram": "Can you, calculate how many days are between April first twenty twenty three and April fifteenth twenty twenty three?"
+          "asr_output_deepgram": "Can you, calculate how many days are between April first twenty twenty three and April fifteenth twenty twenty three?",
+          "clarifications": {
+            "start_date_spelling": "2023-04-01",
+            "end_date_spelling": "2023-04-15",
+            "time_unit": "days"
+          }
         }
       ]
     ],
@@ -2174,7 +2393,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_48_openai.mp3",
           "asr_output_openai": "can help switch the DOM event listeners from old virtual node to new virtual node and make sure to update and normalize the click event for the new virtual node, okay?",
           "asr_output_elevenlabs": "Uh, can you help switch the D-O-M, DOM event listeners from old virtual node to new virtual node? And, um, make sure to update and normalize the click event for the new virtual node. Okay?",
-          "asr_output_deepgram": "Can help switch the DOM, Dom, event listeners from old virtual node to new virtual node, and, make sure to update and normalize the click event for the new virtual node. Okay?"
+          "asr_output_deepgram": "Can help switch the DOM, Dom, event listeners from old virtual node to new virtual node, and, make sure to update and normalize the click event for the new virtual node. Okay?",
+          "clarifications": {
+            "old_virtual_node_spelling": "oldVirtualNode",
+            "new_virtual_node_spelling": "newVirtualNode",
+            "event_type_spelling": "click"
+          }
         }
       ]
     ],
@@ -2213,7 +2437,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_javascript/javascript_49_cartesia.mp3",
           "asr_output_openai": "When it's set to plaintext-only, what's the right boolean string for contenteditable?",
           "asr_output_elevenlabs": "When it's set to plaintext only, what's the right Boolean string for content editable? Oh, ensure it's valid for content editable.",
-          "asr_output_deepgram": "When it's set to plain text only, what's the right Boolean string for content editable? Oh, ensure it's valid for content editable."
+          "asr_output_deepgram": "When it's set to plain text only, what's the right Boolean string for content editable? Oh, ensure it's valid for content editable.",
+          "clarifications": {
+            "attribute_value": "plaintext-only"
+          }
         }
       ]
     ],

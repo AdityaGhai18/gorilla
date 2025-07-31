@@ -172,33 +172,41 @@ class ClarificationExtractor:
         result = "; ".join(entities) if entities else "No entities found"
         return result
     
-    def generate_clarifications(self, user_query: str, function_docs: List[Dict[str, Any]], entity_hints: str = "") -> Dict[str, str]:
+    def generate_clarifications(self, user_query: str, function_docs: List[Dict[str, Any]]) -> Dict[str, str]:
         """Generate clarifications using GPT-4o."""
         
-        # Extract entity hints if not provided
-        if not entity_hints:
-            entity_hints = self.extract_entity_hints(user_query)
+
         
         # Format function documentation for the prompt
         function_docs_text = ""
         for i, func in enumerate(function_docs):
-            function_docs_text += f"Function {i+1}:\n"
-            function_docs_text += f"Name: {func.get('name', 'Unknown')}\n"
-            function_docs_text += f"Description: {func.get('description', 'No description')}\n"
-            
-            if "parameters" in func:
-                params = func["parameters"]
-                if "properties" in params:
-                    function_docs_text += "Parameters:\n"
-                    for param_name, param_info in params["properties"].items():
-                        param_type = param_info.get("type", "unknown")
-                        param_desc = param_info.get("description", "No description")
-                        function_docs_text += f"  - {param_name} ({param_type}): {param_desc}\n"
+            try:
+                function_docs_text += f"Function {i+1}:\n"
+                function_docs_text += f"Name: {func.get('name', 'Unknown')}\n"
+                function_docs_text += f"Description: {func.get('description', 'No description')}\n"
                 
-                if "required" in params:
-                    function_docs_text += f"Required parameters: {', '.join(params['required'])}\n"
-            
-            function_docs_text += "\n"
+                if "parameters" in func:
+                    params = func["parameters"]
+                    if "properties" in params:
+                        function_docs_text += "Parameters:\n"
+                        for param_name, param_info in params["properties"].items():
+                            try:
+                                param_type = param_info.get("type", "unknown")
+                                param_desc = param_info.get("description", "No description")
+                                function_docs_text += f"  - {param_name} ({param_type}): {param_desc}\n"
+                                
+
+                            except Exception as e:
+                                print(f"Warning: Error processing parameter {param_name}: {e}")
+                                continue
+                    
+                    if "required" in params:
+                        function_docs_text += f"Required parameters: {', '.join(params['required'])}\n"
+                
+                function_docs_text += "\n"
+            except Exception as e:
+                print(f"Warning: Error processing function {i+1}: {e}")
+                continue
         
         prompt = f"""You are an AI system that identifies clarification points for voice assistant queries.
 The goal is to help an AI that will call a function ask valid clarifying questions.
@@ -215,7 +223,7 @@ Voice-based user interactions often contain ambiguities that differ from text-ba
 8. Unique identifiers or IDs that are essential for function execution
 9. Homophones that could be confused (e.g., "write" vs "right", "to" vs "too" vs "two")
 
-IMPORTANT: Be REASONABLE. Flag items that have genuine spelling ambiguity OR are specific identifiers/names that could be unclear when spoken.
+IMPORTANT: Be REASONABLE. Flag items that have genuine spelling ambiguity OR are specific identifiers/names that could be unclear when spoken and are essential for the correctness of the function call.
 
 DO flag:
 - Unusual or foreign names (e.g., "Zhang Wei", "Nguyen Van Minh", "Shishir")
@@ -235,38 +243,41 @@ DO flag:
 Do NOT flag:
 - Common English words (e.g., "water", "iron", "burglary", "English", "marketing team", "tenant rights")
 - Common English names (e.g., "John", "Mary", "Alex", "Smith")
-- Common place names or obvious abbreviations (e.g., "New York", "London", "LA" for Los Angeles)
+- Common place names or obvious abbreviations (e.g., "New York", "London", "LA" for Los Angeles, "Paris", "Tokyo", "Sydney")
 - Simple technical terms (e.g., "userProfile", "config.json")
 - Common verbs, prepositions, or articles (e.g., "could", "should", "the", "a", "an")
 - Simple concepts or generic terms (e.g., "new iPhone release", "Queue is saturated")
 - Numbers or coordinates that are straightforward (e.g., "ten, fifteen", "twenty, twenty-five")
 - Simple phrases or expressions (e.g., "Happy Birthday!", "Queue is unsaturated")
 - Obvious non-identifiers (e.g., "/q", "quit", "exit", "help")
+- Major world cities and countries (e.g., "London", "Paris", "Tokyo", "New York", "USA", "UK", "Canada")
 
 Your Task
 1. Inputs:
    - User query (text input) - focus on the actual content
    - Documentation for the exact function (its arguments and descriptions)
-   - Optional entity hints
 2. Actions:
-   - Map provided arguments from the query to function parameters.
-   - Identify arguments that have genuine spelling ambiguity OR are critical for function execution.
-   - Focus on the content of what was spoken, not just the function parameter names.
-   - Be reasonable - only flag things that could actually be unclear when spoken or are essential for the function call.
+   - Identify ALL potentially ambiguous class names, method names, technical terms, and identifiers in the query.
+   - Focus on SUPER IMPORTANT and AMBIGUOUS details that need confirmation for the function call.
+   - Flag any critical information that could be unclear when spoken, regardless of which function parameter it maps to.
+   - Map these to appropriate function parameters when possible, but don't limit yourself to only function parameters.
+   - Focus on the content of what was spoken - any technical term that could be unclear when spoken should be flagged.
+   - Be reasonable - flag things that could actually be unclear when spoken, even if they're just context or mentioned in passing.
 3. Output:
    - One JSON dictionary (no lists).
-   - Keys: Use descriptive names that indicate what needs clarification:
-     - <argument_name>_spelling for spelling checks
-     - <argument_name>_address for street addresses
-     - <argument_name>_id for unique identifiers
-     - <argument_name>_name for names
-     - <argument_name>_1_spelling, <argument_name>_2_spelling for multiple items
+   - Keys: Use DESCRIPTIVE, NATURAL LANGUAGE names based on the parameter descriptions:
+     - Look at the parameter description to create meaningful names
+     - Use your understanding of the context to create appropriate, descriptive names
+     - Don't rely on rigid suffix rules - be creative and descriptive
+     - Examples: "start_date_spelling", "user_name", "file_path", "database_name", "street_address", "id", "validity_seconds", "encoding_method"
+     - NOT: "r_spelling", "e_spelling", "param1_spelling", "validity_spelling", "algorithm_spelling" (avoid lazy "_spelling" suffix for everything)
+     - For multiple items: "first_name_spelling", "second_name_spelling"
    - Values:
      - The value from the user query that needs clarification.
 
 ---
 
-Example 1: Foreign name clarification (VALID)
+Example: Foreign name clarification (VALID)
 User Query: "Schedule a meeting with Zhang Wei on Tuesday at 3pm"
 Function Documentation:
 schedule_meeting(person_name: string, date: string, time: string)
@@ -275,7 +286,7 @@ Output:
   "person_name_spelling": "Zhang Wei"
 }}
 
-Example 2: Technical term clarification (VALID)
+Example: Technical term clarification (VALID)
 User Query: "Create an XContentBuilder object for the data"
 Function Documentation:
 create_builder(builder_type: string, data: object)
@@ -284,24 +295,62 @@ Output:
   "builder_type_spelling": "XContentBuilder"
 }}
 
-Example 3: Common place name (NO CLARIFICATION NEEDED)
+Example: Event details clarification (VALID)
+User Query: "Who was the U.S. president during the Civil War?"
+Function Documentation:
+US_President_During_Event(event: string, country: string)
+Output:
+{{
+  "event_details": "Civil War"
+}}
+
+Example: Common place name (NO CLARIFICATION NEEDED)
 User Query: "Book a flight to New York on Friday"
 Function Documentation:
 book_flight(destination: string, date: string)
 Output:
 {{}}
 
-Example 4: Complex alphanumeric string (VALID)
+Example: Major city name (NO CLARIFICATION NEEDED)
+User Query: "Get me a house to stay for 4 in London"
+Function Documentation:
+search_house(location: string, guests: integer)
+Output:
+{{}}
+
+Example: Important ambiguous details (VALID)
+User Query: "I'm planning ahead for our big trip and realized our car's fuel tank is running low. It would be great if you could top it up with an additional 30 gallons before I turn on the ignition using the 'START' mode."
+Function Documentation:
+fillFuelTank(fuelAmount: float), startEngine(ignitionMode: string)
+Output:
+{{
+  "fuel_amount_spelling": "30 gallons"
+}}
+
+Example: Descriptive parameter names (VALID)
+User Query: "Help me generate an authorization token for a user with username 'johndoe', valid for '3600' seconds, issued by 'myapp.net', with a role of 'admin', and encoded with 'HS256' algorithm?"
+Function Documentation:
+createAuthToken(username: string, validity: integer, options: issuer: string, role: string, algorithm: string)
+Output:
+{{
+  "username": "johndoe",
+  "validity_seconds": "3600",
+  "issuer": "myapp.net",
+  "user_role": "admin",
+  "encoding_method": "HS256"
+}}
+
+Example: Complex alphanumeric string (VALID)
 User Query: "Create a constant named CERTIFICATE with value MIIFdTCCBF2gAwIBAgISESG"
 Function Documentation:
 create_constant(name: string, value: string)
 Output:
 {{
   "constant_name_spelling": "CERTIFICATE",
-  "value_spelling": "MIIFdTCCBF2gAwIBAgISESG"
+  "value_id": "MIIFdTCCBF2gAwIBAgISESG"
 }}
 
-Example 5: Multiple technical terms (VALID)
+Example: Multiple technical terms (VALID)
 User Query: "Set up Elasticsearch with mappingParserContext and compositeScriptFactory, handle errors with onScriptError.IGNORE"
 Function Documentation:
 setup_elasticsearch(parser_context: string, script_factory: string, error_handling: string)
@@ -313,26 +362,26 @@ Output:
   "error_handling_spelling": "onScriptError.IGNORE"
 }}
 
-Example 6: Database name and SQL query (VALID)
+Example: Database name and SQL query (VALID)
 User Query: "Create a Firebird database view with query SELECT * FROM Employee WHERE status = 'active'"
 Function Documentation:
 create_view(database: string, query: string)
 Output:
 {{
-  "database_spelling": "Firebird",
-  "query_spelling": "SELECT * FROM Employee WHERE status = 'active'"
+  "database_name": "Firebird",
+  "query": "SELECT * FROM Employee WHERE status = 'active'"
 }}
 
-Example 7: Technical class name (VALID)
+Example: Technical class name (VALID)
 User Query: "Handle VMDeathRequest in the JVM"
 Function Documentation:
 handle_request(request_type: string, target: string)
 Output:
 {{
-  "request_type_spelling": "VMDeathRequest"
+  "request_type_constant": "VMDeathRequest"
 }}
 
-Example 8: Technical class and complex numbers (VALID)
+Example: Technical class and complex numbers (VALID)
 User Query: "Use PrintStream logStream with values 12345L and 54321L"
 Function Documentation:
 use_stream(stream_type: string, stream_name: string, old_value: string, new_value: string)
@@ -344,7 +393,7 @@ Output:
   "new_value_spelling": "54321L"
 }}
 
-Example 9: Database name in context (VALID)
+Example: Database name in context (VALID)
 User Query: "Check Elasticsearch cluster status"
 Function Documentation:
 check_status(database: string, component: string)
@@ -353,49 +402,49 @@ Output:
   "database_spelling": "Elasticsearch"
 }}
 
-Example 10: Common words (NO CLARIFICATION NEEDED)
+Example: Common words (NO CLARIFICATION NEEDED)
 User Query: "Could you help me with the apps database?"
 Function Documentation:
 help_with_database(database: string, action: string)
 Output:
 {{}}
 
-Example 11: Common words (NO CLARIFICATION NEEDED)
+Example: Common words (NO CLARIFICATION NEEDED)
 User Query: "Report a burglary incident"
 Function Documentation:
 report_incident(crime_type: string, details: string)
 Output:
 {{}}
 
-Example 12: Ridiculous clarifications (NO CLARIFICATION NEEDED)
+Example: Ridiculous clarifications (NO CLARIFICATION NEEDED)
 User Query: "Add water and iron to the mixture"
 Function Documentation:
 add_ingredients(ingredient1: string, ingredient2: string)
 Output:
 {{}}
 
-Example 13: Common names (NO CLARIFICATION NEEDED)
+Example: Common names (NO CLARIFICATION NEEDED)
 User Query: "Schedule a meeting with John Smith and Mary Johnson tomorrow"
 Function Documentation:
 schedule_meeting(participant_names: list, date: string)
 Output:
 {{}}
 
-Example 12: Simple concept (NO CLARIFICATION NEEDED)
+Example: Simple concept (NO CLARIFICATION NEEDED)
 User Query: "Write about the new iPhone release in English"
 Function Documentation:
 write_article(topic: string, language: string)
 Output:
 {{}}
 
-Example 13: Common names (NO CLARIFICATION NEEDED)
+Example: Common names (NO CLARIFICATION NEEDED)
 User Query: "Schedule a meeting with John Smith and Mary Johnson tomorrow"
 Function Documentation:
 schedule_meeting(participant_names: list, date: string)
 Output:
 {{}}
 
-Example 14: Street address clarification (VALID)
+Example: Street address clarification (VALID)
 User Query: "Send package to 123 Main Street, New York"
 Function Documentation:
 send_package(address: string, city: string)
@@ -404,16 +453,16 @@ Output:
   "address_address": "123 Main Street"
 }}
 
-Example 15: Unique ID clarification (VALID)
+Example: Unique ID clarification (VALID)
 User Query: "Delete the Apdex config for d0404"
 Function Documentation:
 delete_apdex_configuration(id: string)
 Output:
 {{
-  "id_id": "d0404"
+  "id": "d0404"
 }}
 
-Example 16: Foreign name clarification (VALID)
+Example: Foreign name clarification (VALID)
 User Query: "Send message to Shishir"
 Function Documentation:
 send_message(recipient: string, message: string)
@@ -422,38 +471,38 @@ Output:
   "recipient_name": "Shishir"
 }}
 
-Example 17: Simple phrases (NO CLARIFICATION NEEDED)
+Example: Simple phrases (NO CLARIFICATION NEEDED)
 User Query: "Log Queue is saturated message"
 Function Documentation:
 log_message(message: string)
 Output:
 {{}}
 
-Example 18: Simple coordinates (NO CLARIFICATION NEEDED)
+Example: Simple coordinates (NO CLARIFICATION NEEDED)
 User Query: "Calculate coordinates (ten, fifteen) and (twenty, twenty-five)"
 Function Documentation:
 calculate_coordinates(point1: string, point2: string)
 Output:
 {{}}
 
-Example 19: Common words (NO CLARIFICATION NEEDED)
+Example: Common words (NO CLARIFICATION NEEDED)
 User Query: "Generate tenant rights contract"
 Function Documentation:
 generate_contract(contract_type: string)
 Output:
 {{}}
 
-Example 20: Technical identifiers (VALID)
+Example: Technical identifiers (VALID)
 User Query: "Get DNS resolutions for site.info using apikey_info"
 Function Documentation:
 get_dns(domain: string, api_key: string)
 Output:
 {{
-  "domain_spelling": "site.info",
-  "api_key_spelling": "apikey_info"
+  "domain_id": "site.info",
+  "api_key_id": "apikey_info"
 }}
 
-Example 21: Specific task content (VALID)
+Example: Specific task content (VALID)
 User Query: "Delete todo item 'go for shopping at 9 pm'"
 Function Documentation:
 delete_todo(content: string)
@@ -462,14 +511,42 @@ Output:
   "content_spelling": "go for shopping at 9 pm"
 }}
 
-Example 22: Obvious non-identifier (NO CLARIFICATION NEEDED)
+Example: Obvious non-identifier (NO CLARIFICATION NEEDED)
 User Query: "Type /q to quit"
 Function Documentation:
 quit_command(command: string)
 Output:
 {{}}
 
-Example 23: No relevant parameters (NO CLARIFICATION NEEDED)
+Example: Descriptive parameter names (VALID)
+User Query: "Calculate difference between dates '2023-04-01' and '2023-04-15'"
+Function Documentation:
+calculate_date_difference(r: string, e: string, t: string)
+# r: "The start date for the calculation"
+# e: "The end date for the calculation" 
+# t: "The unit of time to calculate the difference in"
+Output:
+{{
+  "start_date_spelling": "2023-04-01",
+  "end_date_spelling": "2023-04-15"
+}}
+
+Example: Multiple technical terms in context (VALID)
+User Query: "I'm trying to fix a compilation error. The class 'StringNumberHandler' extends 'AbstractCellHandler' and overrides methods like 'getCellValue', 'setCellValue', 'getExcelType'. I'm getting an error with 'CellResult' and 'getNumericValue()'. Find relevant classes for 'CellResult'?"
+Function Documentation:
+get_relevant_classes(search_string: string)
+Output:
+{{
+  "search_string_spelling": "CellResult",
+  "context_class1_spelling": "StringNumberHandler",
+  "context_class2_spelling": "AbstractCellHandler", 
+  "context_method1_spelling": "getCellValue",
+  "context_method2_spelling": "setCellValue",
+  "context_method3_spelling": "getExcelType",
+  "context_method4_spelling": "getNumericValue"
+}}
+
+Example: No relevant parameters (NO CLARIFICATION NEEDED)
 User Query: "What's the weather like today?"
 Function Documentation:
 get_weather()
@@ -481,14 +558,6 @@ Output:
 Task Inputs:
 User Query: {user_query}
 Function Documentation: {function_docs_text}
-Entity Hints: {entity_hints}
-
-IMPORTANT: The entity hints below are often WRONG and should be IGNORED. They frequently misidentify:
-- Common words as names (e.g., "could" as a person, "apps" as a database)
-- Technical terms as locations
-- Generic words as specific entities
-
-DO NOT rely on entity hints. Instead, use your own judgment to identify genuine speech ambiguities based on the user query content.
 
 Task Output:
 (Return only one JSON dictionary)"""
@@ -551,7 +620,13 @@ Task Output:
             return test_case
         
         # Generate clarifications
-        clarifications = self.generate_clarifications(user_query, function_docs)
+        try:
+            clarifications = self.generate_clarifications(user_query, function_docs)
+        except Exception as e:
+            print(f"Error generating clarifications for test case {test_case.get('id', 'unknown')}: {e}")
+            import traceback
+            traceback.print_exc()
+            clarifications = {}
         
         # Add clarifications to the first user message in the first turn
         if "question" in test_case and test_case["question"]:
@@ -575,13 +650,10 @@ Task Output:
             print(f"Error: Expected list of test cases, got {type(data)}")
             return
         
-        # Test mode: process only 1 random case
+        # Test mode: process only first 3 cases
         if test_mode:
-            if len(data) <= 1:
-                test_cases = data
-            else:
-                test_cases = random.sample(data, 1)
-            print(f"Test mode: Processing {len(test_cases)} random test case")
+            test_cases = data[:3]  # Take first 3 test cases
+            print(f"Test mode: Processing first {len(test_cases)} test cases")
         else:
             test_cases = data
             print(f"Processing all {len(test_cases)} test cases")
@@ -606,40 +678,43 @@ Task Output:
                     print(f"  Test case {i+1}: No function documentation found, skipping")
                     continue
                 
-                # Extract entity hints using spaCy
-                entity_hints = self.extract_entity_hints(user_query)
-                
                 # Generate clarifications
-                clarifications = self.generate_clarifications(user_query, function_docs, entity_hints)
+                try:
+                    clarifications = self.generate_clarifications(user_query, function_docs)
+                except Exception as e:
+                    print(f"Error generating clarifications for test case {test_case.get('id', 'unknown')}: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    clarifications = {}
                 
-                # PREVIEW MODE: Show what would be added without making changes
-                test_case_id = test_case.get("id", f"test_case_{i+1}")
-                
-                # Get content field for logging (even though we use transcript)
-                content = ""
+                # ACTUALLY ADD CLARIFICATIONS TO THE TEST CASE
                 if "question" in test_case and test_case["question"]:
-                    first_turn = test_case["question"][0]
-                    for message in first_turn:
-                        if message.get("role") == "user":
-                            content = message.get("content", "")
-                            break
-                
-                print(f"\n{'='*80}")
-                print(f"TEST CASE {i+1}: {test_case_id}")
-                print(f"{'='*80}")
-                print(f"CONTENT: {content}")
-                print(f"TRANSCRIPT: {user_query}")
-                print(f"ENTITY HINTS: {entity_hints}")
-                print(f"FUNCTION DOCS: {json.dumps(function_docs, indent=2)}")
-                print(f"CLARIFICATIONS TO ADD: {json.dumps(clarifications, indent=2)}")
-                print(f"{'='*80}\n")
+                    # For multi-turn: process all turns, for single-turn: just first turn
+                    turns_to_process = test_case["question"] if len(test_case["question"]) > 1 else [test_case["question"][0]]
+                    
+                    for turn in turns_to_process:
+                        for message in turn:
+                            if message.get("role") == "user":
+                                # Generate clarifications for this specific user message
+                                user_query = message.get("content", message.get("transcript", ""))
+                                if user_query:
+                                    try:
+                                        clarifications = self.generate_clarifications(user_query, function_docs)
+                                        message["clarifications"] = clarifications
+                                    except Exception as e:
+                                        print(f"Error generating clarifications for message: {e}")
+                                        message["clarifications"] = {}
                 
                 processed_count += 1
                     
             except Exception as e:
                 print(f"Error processing test case {test_case.get('id', 'unknown')}: {e}")
         
-        print(f"PREVIEW MODE: No changes made to {file_path}")
+        # Save the modified data back to the file
+        with open(file_path, 'w') as f:
+            json.dump(data, f, indent=2)
+        
+        print(f"✅ Successfully processed {file_path}")
         print(f"  - Total test cases: {len(test_cases)}")
         print(f"  - Successfully processed: {processed_count}")
         print(f"  - Failed: {len(test_cases) - processed_count}")

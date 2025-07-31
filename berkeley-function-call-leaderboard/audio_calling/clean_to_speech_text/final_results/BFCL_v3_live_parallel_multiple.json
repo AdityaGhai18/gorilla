@@ -10,7 +10,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_0-0-0_openai.mp3",
           "asr_output_openai": "Switch up my food order to a Caesar salad, hold the anchovies. Update order 123 to a large hot coffee with regular sweetness and about a splash of almond milk.",
           "asr_output_elevenlabs": "Uh, switch up my food order to, um, a Caesar salad. Hold the anchovies. Update order 123 to a large hot coffee with a regular sweetness and about a splash of almond milk.",
-          "asr_output_deepgram": "Switch up my food order to, a Caesar salad. Hold the anchovies. Update order one, two, three to a large hot coffee with, regular sweetness and about a splash of almond milk."
+          "asr_output_deepgram": "Switch up my food order to, a Caesar salad. Hold the anchovies. Update order one, two, three to a large hot coffee with, regular sweetness and about a splash of almond milk.",
+          "clarifications": {
+            "food_item": "Caesar salad",
+            "remove_ingredients": "anchovies",
+            "drink_id": "123",
+            "new_preferences": "large hot coffee with regular sweetness and almond milk"
+          }
         }
       ]
     ],
@@ -129,7 +135,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_3-2-1_openai.mp3",
           "asr_output_openai": "What's the weather like in Seoul, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the engine war. Thanks!",
           "asr_output_elevenlabs": "What's the weather like in S-E-O-U-L, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the Imjin War. Thanks.",
-          "asr_output_deepgram": "What's the weather like in s e o u l, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the Injin war. Thanks."
+          "asr_output_deepgram": "What's the weather like in s e o u l, South Korea in Celsius? Also, turn on the air conditioner in the living room. Oh, and give me some recent info on the Injin war. Thanks.",
+          "clarifications": {
+            "location": "Seoul, South Korea",
+            "units": "Celsius",
+            "command": "\uac70\uc2e4, \uc5d0\uc5b4\ucee8, \uc2e4\ud589",
+            "keyword": "Imjin War"
+          }
         }
       ]
     ],
@@ -174,7 +186,7 @@
       },
       {
         "name": "ControlAppliance.execute",
-        "description": "This function is designed for controlling a home appliance, checking its current status and settings, as well as monitoring indoor air properties like air quality and temperature. For control commands, the input must clearly specify 'power on' or 'start'. To check the status, the input must include the keyword '확인'. Note that this tool is not intended for describing, creating, deleting, or removing modes or routines.",
+        "description": "This function is designed for controlling a home appliance, checking its current status and settings, as well as monitoring indoor air properties like air quality and temperature. For control commands, the input must clearly specify 'power on' or 'start'. To check the status, the input must include the keyword '\ud655\uc778'. Note that this tool is not intended for describing, creating, deleting, or removing modes or routines.",
         "parameters": {
           "type": "dict",
           "required": [
@@ -183,11 +195,11 @@
           "properties": {
             "command": {
               "type": "string",
-              "description": "The command must be specified as a string in Korean, consisting of the room name, appliance name (or alias), and operation command, separated by commas. Examples: '거실, 에어컨, 실행' for turning on the air conditioner in the living room, ', 에어컨, 냉방 실행' for activating cooling without specifying the room, '다용도실, 통돌이, 중지' for stopping the washing machine (alias '통돌이') in the utility room.",
+              "description": "The command must be specified as a string in Korean, consisting of the room name, appliance name (or alias), and operation command, separated by commas. Examples: '\uac70\uc2e4, \uc5d0\uc5b4\ucee8, \uc2e4\ud589' for turning on the air conditioner in the living room, ', \uc5d0\uc5b4\ucee8, \ub0c9\ubc29 \uc2e4\ud589' for activating cooling without specifying the room, '\ub2e4\uc6a9\ub3c4\uc2e4, \ud1b5\ub3cc\uc774, \uc911\uc9c0' for stopping the washing machine (alias '\ud1b5\ub3cc\uc774') in the utility room.",
               "enum": [
-                "거실, 에어컨, 실행",
-                ", 에어컨, 냉방 실행",
-                "다용도실, 통돌이, 중지"
+                "\uac70\uc2e4, \uc5d0\uc5b4\ucee8, \uc2e4\ud589",
+                ", \uc5d0\uc5b4\ucee8, \ub0c9\ubc29 \uc2e4\ud589",
+                "\ub2e4\uc6a9\ub3c4\uc2e4, \ud1b5\ub3cc\uc774, \uc911\uc9c0"
               ]
             }
           }
@@ -335,7 +347,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_4-3-0_openai.mp3",
           "asr_output_openai": "Get the latest news report for Paris, France in English, okay? Also, give me technology news for Letterkenny, Ireland in English.",
           "asr_output_elevenlabs": "Get the latest news report for Paris, France in English. Okay? Also give me technology news for Letterkenny, Ireland in English.",
-          "asr_output_deepgram": "Get the latest news report for Paris, France in English. Okay? Also, give me technology news for Letterkenny Ireland in English."
+          "asr_output_deepgram": "Get the latest news report for Paris, France in English. Okay? Also, give me technology news for Letterkenny Ireland in English.",
+          "clarifications": {
+            "location1": "Paris, France",
+            "location2": "Letterkenny, Ireland",
+            "news_category": "Technology",
+            "language_code": "en"
+          }
         }
       ]
     ],
@@ -418,7 +436,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_5-4-0_openai.mp3",
           "asr_output_openai": "Hey, can you get the latest news from Paris and tell me the current weather in Letterkenny, Ireland in Celsius? Thanks.",
           "asr_output_elevenlabs": "Hey, uh, can you get the latest news from Paris? And, um, tell me the current weather in Letterkenny, Ireland in Celsius? Thanks.",
-          "asr_output_deepgram": "Hey. Can you get the latest news from Paris and, tell me the current weather in Letterkenny, Ireland in Celsius? Thanks."
+          "asr_output_deepgram": "Hey. Can you get the latest news from Paris and, tell me the current weather in Letterkenny, Ireland in Celsius? Thanks.",
+          "clarifications": {
+            "news_location": "Paris, France",
+            "weather_location": "Letterkenny, Ireland",
+            "temperature_unit": "Celsius"
+          }
         }
       ]
     ],
@@ -477,7 +500,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_6-5-0_openai.mp3",
           "asr_output_openai": "Show me the list of interviewers for Python and Java?",
           "asr_output_elevenlabs": "Uh, show me the list of interviewers for, um, Python and Java?",
-          "asr_output_deepgram": "Show me the list of interviewers for, Python and Java."
+          "asr_output_deepgram": "Show me the list of interviewers for, Python and Java.",
+          "clarifications": {
+            "skill_spelling": "Python",
+            "second_skill_spelling": "Java"
+          }
         }
       ]
     ],
@@ -548,7 +575,8 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_7-6-0_openai.mp3",
           "asr_output_openai": "Right. What's price for a machine with 2 CPUs and 4 GB RAM on all cloud platforms?",
           "asr_output_elevenlabs": "Right. What's price for a machine with two CPUs and 4 gigabytes RAM on all cloud platforms?",
-          "asr_output_deepgram": "Right. What's price for a machine with two CPUs and four gigabytes RAM on all cloud platforms?"
+          "asr_output_deepgram": "Right. What's price for a machine with two CPUs and four gigabytes RAM on all cloud platforms?",
+          "clarifications": {}
         }
       ]
     ],
@@ -625,11 +653,15 @@
         {
           "role": "user",
           "content": "\n        Do all the following using the steps provided in their respective sections.\n        Steps:\n        1. clone the repo git@github.com:zelarhq/nodejs-welcome.git\n        2. analyse the contents of the repo and create following.\n            2.1 create/update dockerfile based on the analysis. \n            2.2 kubernetes yamls based on the analysis.\n             3. add all changed file to git changes \n        4. commit / push to repo",
-          "transcript": "Okay, do these steps for me: First, clone the repository at git at github dot com colon zelarhq slash nodejs dash welcome dot git. Uh, next, check out whats inside the repo and then create or update the Dockerfile based on, uh, what you find. Also, from your analysis, make Kubernetes YAMLs. Right, don’t forget to add all the changed files to git changes. Finally, commit everything and push it back to the, um, repo.",
+          "transcript": "Okay, do these steps for me: First, clone the repository at git at github dot com colon zelarhq slash nodejs dash welcome dot git. Uh, next, check out whats inside the repo and then create or update the Dockerfile based on, uh, what you find. Also, from your analysis, make Kubernetes YAMLs. Right, don\u2019t forget to add all the changed files to git changes. Finally, commit everything and push it back to the, um, repo.",
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_8-7-0_openai.mp3",
           "asr_output_openai": "Okay, do these steps for me: First, clone the repository at git@github.com:ZellerHQ/nodejs-welcome.git. Next, check out what's inside the repo and then create or update the Dockerfile based on what you find. Also, from your analysis, make kubernetes yamls. Right, don't forget to add all the changed files to git changes. Finally, commit everything and push it back to the um, repo.",
           "asr_output_elevenlabs": "Okay, do these steps for me. First, clone the repository at git@github.com: Zellar HQ/NodeJS-Welcome.git. Next, check out what's inside the repo and then create or update the docker file based on, uh, what you find. Also, from your analysis, make Kubernetes yamls. Right. Don't forget to add all the changed files to get changes. Finally, commit everything and push it back to the, um, repo.",
-          "asr_output_deepgram": "Okay. Do these steps for me. First, clone the repository at git at github dot com colon zeller h q slash node j s dash welcome dot git. Next, check out what's inside the repo and then create or update the Docker file based on, what you find. Also, from your analysis, make Kubernetes YAMLs. Right. Don't forget to add all the changed files to git changes. Finally, commit everything and push it back to the repo."
+          "asr_output_deepgram": "Okay. Do these steps for me. First, clone the repository at git at github dot com colon zeller h q slash node j s dash welcome dot git. Next, check out what's inside the repo and then create or update the Docker file based on, what you find. Also, from your analysis, make Kubernetes YAMLs. Right. Don't forget to add all the changed files to git changes. Finally, commit everything and push it back to the repo.",
+          "clarifications": {
+            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git",
+            "directory_name": "nodejs-welcome"
+          }
         }
       ]
     ],
@@ -787,7 +819,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_9-8-0_cartesia.mp3",
           "asr_output_openai": "Can you tell me about important events, news articles, and developments since October 2021? Make sure you check this exactly as I said, and only include stuff from after 2022. And also, could you get me a digital painting named a masked woman with bright peacock feathers? Im looking for some thin, complex and elegant, with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A Alphonse Mucha.",
           "asr_output_elevenlabs": "Um, can you tell me about, like, important events, news articles, and developments since October 2021? Uh, make sure you check this exactly as I said, and, um, only include stuff from after 2022. And also, could you get me a digital painting named A Masked Woman With Bright Peacock Feathers? I'm looking for some thin, uh, complex and elegant with green highlighted lines and intricate patterns. Kind of like a cyberpunk Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha.",
-          "asr_output_deepgram": "Can you tell me about, like, important events, news articles, and developments since October twenty twenty one? Make sure you check this exactly as I said and, only include stuff from after twenty twenty two. And, also, could you get me a digital painting named a masked woman with bright peacock feathers? I'm looking for some thin, complex and elegant with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's a l p h o n s e m u c h a Alphonse Mucha."
+          "asr_output_deepgram": "Can you tell me about, like, important events, news articles, and developments since October twenty twenty one? Make sure you check this exactly as I said and, only include stuff from after twenty twenty two. And, also, could you get me a digital painting named a masked woman with bright peacock feathers? I'm looking for some thin, complex and elegant with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's a l p h o n s e m u c h a Alphonse Mucha.",
+          "clarifications": {
+            "search_query": "significant events, news articles, and developments that since October 2021",
+            "image_prompt": "a digital painting of a masked woman with bright peacock feathers, complex and elegant, with green highlighted lines and complex patterns, reminiscent of cyberpunk Alphonse Mucha's style"
+          }
         }
       ]
     ],
@@ -981,7 +1017,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_10-9-0_cartesia.mp3",
           "asr_output_openai": "Check past chats to find Shashir's birthday and send him a happy birthday message no matter what.",
           "asr_output_elevenlabs": "Uh, check past chats to find Shishir's birthday and send him a happy birthday message no matter what.",
-          "asr_output_deepgram": "Check past chats to find Shishir's birthday and send him a happy birthday message no matter what."
+          "asr_output_deepgram": "Check past chats to find Shishir's birthday and send him a happy birthday message no matter what.",
+          "clarifications": {
+            "recipient_name": "Shishir"
+          }
         }
       ]
     ],
@@ -1236,7 +1275,17 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_11-10-0_cartesia.mp3",
           "asr_output_openai": "Let me see. I'm working on fixing Java compilation error in my project. The StringNumberHandler class extends AbstractCellHandler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error saying getNumericValue can't be found in CellResult. Can you look for any classes related to C-E-L-L-R-E-S-U-L-T CellResult in the repository, including subdirectories? Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T-C-E-L-L-H-A-N-D-L-E-R AbstractCellHandler to make sure I'm overriding them right?",
           "asr_output_elevenlabs": "Let me see. I'm working on fixing Java compilation error in my project. The String Number Handler class extends abstract cell handler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error is saying get numeric value can't be found in cell result. Can you look for any classes related to C-E-L-L-R-E S-U-L-T, cell result, in the repository? Include in subdirectories. Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T C-E-L-L-H-A-N-D-L-E R, abstract cell handler, to make sure I'm overriding them right?",
-          "asr_output_deepgram": "Let me see. In working on fixing Java compilation error in my project, the string number handler class extends abstract cell handler and overrides methods like get cell value, set cell value, get x l type, and get default excel format. But, oh, the reason error saying get numeric value can't be found in cell result. Can you look for any classes related to c e l l r e s u l t cell result in the repository, including subdirectories? Also, could you give method signatures for set cell value and get cell value in a b s t r a c t c, e l l h a n d l e, our abstract cell handler to make sure I'm overriding them right?"
+          "asr_output_deepgram": "Let me see. In working on fixing Java compilation error in my project, the string number handler class extends abstract cell handler and overrides methods like get cell value, set cell value, get x l type, and get default excel format. But, oh, the reason error saying get numeric value can't be found in cell result. Can you look for any classes related to c e l l r e s u l t cell result in the repository, including subdirectories? Also, could you give method signatures for set cell value and get cell value in a b s t r a c t c, e l l h a n d l e, our abstract cell handler to make sure I'm overriding them right?",
+          "clarifications": {
+            "search_string_spelling": "CellResult",
+            "context_class1_spelling": "StringNumberHandler",
+            "context_class2_spelling": "AbstractCellHandler",
+            "context_method1_spelling": "getCellValue",
+            "context_method2_spelling": "setCellValue",
+            "context_method3_spelling": "getExcelType",
+            "context_method4_spelling": "getDefaultExcelFormat",
+            "context_method5_spelling": "getNumericValue"
+          }
         }
       ]
     ],
@@ -1364,7 +1413,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_12-10-1_cartesia.mp3",
           "asr_output_openai": "Hey, could you take a look at the Weather class to see if it has any methods or properties available? Also, if the res.get_Weather method, can you find out what the signature of that thing is?",
           "asr_output_elevenlabs": "Hey, could you take a look at the weather class to see if it has any methods or properties available? Also, if the res.get_weather method, can you find out what the signature of that thing is?",
-          "asr_output_deepgram": "Hey. Could you take a look at the weather class to see if it has any methods or properties available? Also, if the res, the get underscore weather method, can you find out what the signature of that thing is?"
+          "asr_output_deepgram": "Hey. Could you take a look at the weather class to see if it has any methods or properties available? Also, if the res, the get underscore weather method, can you find out what the signature of that thing is?",
+          "clarifications": {
+            "class_name": "Weather",
+            "method_name": "get_weather"
+          }
         }
       ]
     ],
@@ -1492,7 +1545,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_13-11-0_cartesia.mp3",
           "asr_output_openai": "What's the highest common factor of 36 and 48? Also, how steep's the curve of the function f(x) equals x squared at x equals 5, okay?",
           "asr_output_elevenlabs": "What's the highest common factor of, uh, 36 and 48? Also, um, how steep's the curve of the function F of X equals X squared at X equals 5, okay?",
-          "asr_output_deepgram": "What's the highest common factor of, thirty six and forty eight? Also, how steeps the curve of the function f of x equals x squared at x equals five. Okay?"
+          "asr_output_deepgram": "What's the highest common factor of, thirty six and forty eight? Also, how steeps the curve of the function f of x equals x squared at x equals five. Okay?",
+          "clarifications": {
+            "function_expression": "f(x) = x^2"
+          }
         }
       ]
     ],
@@ -1567,7 +1623,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_14-12-0_cartesia.mp3",
           "asr_output_openai": "First, get the greatest common divisor of 36 and 48. Then, um, okay, estimate the derivative of f of x equals x squared at x equals 5.",
           "asr_output_elevenlabs": "First, uh, get the greatest common divisor of 36 and 48. Then... Um... Okay. Estimate the derivative of F of X equals X squared at X equals five.",
-          "asr_output_deepgram": "First, get the greatest common divisor of thirty six and forty eight. Then, okay, estimate the derivative of f of x equals x squared at x equals five."
+          "asr_output_deepgram": "First, get the greatest common divisor of thirty six and forty eight. Then, okay, estimate the derivative of f of x equals x squared at x equals five.",
+          "clarifications": {
+            "function_expression": "f(x) = x^2",
+            "point_x_value": "5"
+          }
         }
       ]
     ],
@@ -1642,7 +1702,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_15-13-0_cartesia.mp3",
           "asr_output_openai": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?",
           "asr_output_elevenlabs": "Hey, uh, can you add one and two for me? And also, oh, what's the current time in Europe/Berlin, date included?",
-          "asr_output_deepgram": "Hey. Can you add one and two for me? And, also, oh, what's the current time in Europe slash Berlin, date included?"
+          "asr_output_deepgram": "Hey. Can you add one and two for me? And, also, oh, what's the current time in Europe slash Berlin, date included?",
+          "clarifications": {
+            "timezone": "Europe/Berlin"
+          }
         }
       ]
     ],
@@ -1722,7 +1785,10 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_16-14-0_elevenlabs.mp3",
           "asr_output_openai": "What's the area of a square with a five-centimeter side? And what's the weather like in Queenstown Singapore?",
           "asr_output_elevenlabs": "Uh, what's the area of a square with a five-centimeter side? And um, oh, what's the weather like in Queenstown, Singapore?",
-          "asr_output_deepgram": "What's the area of a square with a five centimeter side? And, oh, what's the weather like in Queenstown, Singapore?"
+          "asr_output_deepgram": "What's the area of a square with a five centimeter side? And, oh, what's the weather like in Queenstown, Singapore?",
+          "clarifications": {
+            "location": "Queenstown Singapore"
+          }
         }
       ]
     ],
@@ -1781,7 +1847,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_17-15-0_elevenlabs.mp3",
           "asr_output_openai": "Turn it twenty degrees and flip it horizontally, thanks.",
           "asr_output_elevenlabs": "Uh, turn it twenty degrees and, um, flip it horizontally. Thanks.",
-          "asr_output_deepgram": "Turn it twenty degrees and, flip it horizontally. Thanks."
+          "asr_output_deepgram": "Turn it twenty degrees and, flip it horizontally. Thanks.",
+          "clarifications": {
+            "rotation_degree": "20 degree",
+            "flip_direction": "horizontally"
+          }
         }
       ]
     ],
@@ -1962,7 +2032,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_18-16-0_elevenlabs.mp3",
           "asr_output_openai": "Are there any music or theater events in San Diego on March 1st, 2023?",
           "asr_output_elevenlabs": "Are there any music or theater events in San Diego on March 1, 2023?",
-          "asr_output_deepgram": "Are there any music or theater events in San Diego on March first twenty twenty three?"
+          "asr_output_deepgram": "Are there any music or theater events in San Diego on March first twenty twenty three?",
+          "clarifications": {
+            "event_type": "music or theater",
+            "city": "San Diego, CA",
+            "date": "2023-03-01"
+          }
         }
       ]
     ],
@@ -2222,7 +2297,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_19-16-1_elevenlabs.mp3",
           "asr_output_openai": "Are there any music concerts or theatre plays in Los Angeles on March 10, 2023?",
           "asr_output_elevenlabs": "Are there any music concerts or theater plays in Los Angeles on March 10, 2023?",
-          "asr_output_deepgram": "Are there any music concerts or theater plays in Los Angeles on March tenth twenty twenty three?"
+          "asr_output_deepgram": "Are there any music concerts or theater plays in Los Angeles on March tenth twenty twenty three?",
+          "clarifications": {
+            "event_type": "music concerts or theater plays",
+            "city": "Los Angeles",
+            "date": "2023-03-10"
+          }
         }
       ]
     ],
@@ -2482,7 +2562,14 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_20-17-0_elevenlabs.mp3",
           "asr_output_openai": "Hey, in planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
           "asr_output_elevenlabs": "Hey, I'm planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
-          "asr_output_deepgram": "Hey. I'm planning my trip and could use a hand. Can you find a music event in New York for May twenty first twenty twenty three? I'm also heading there from Boston by bus. Same date. So could you look up a direct bus itinerary for two?"
+          "asr_output_deepgram": "Hey. I'm planning my trip and could use a hand. Can you find a music event in New York for May twenty first twenty twenty three? I'm also heading there from Boston by bus. Same date. So could you look up a direct bus itinerary for two?",
+          "clarifications": {
+            "event_date": "2023-05-21",
+            "departure_city": "Boston, MA",
+            "destination_city": "New York, NY",
+            "bus_departure_date": "2023-05-21",
+            "number_of_passengers": "2"
+          }
         }
       ]
     ],
@@ -2862,7 +2949,13 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_21-18-0_elevenlabs.mp3",
           "asr_output_openai": "Find a hairstylist in Sunnyvale and set me up with an appointment at Elegant Styles Salon for 3 PM on May 10, 2023.",
           "asr_output_elevenlabs": "Find a hairstylist in Sunnyvale and set me up with an appointment at Elegant Styles Salon for 3 PM on May 10th, 2023.",
-          "asr_output_deepgram": "Find a hairstylist in Sunnyvale, and set me up with an appointment at Elegant Style Salon for three PM on May tenth two thousand twenty three."
+          "asr_output_deepgram": "Find a hairstylist in Sunnyvale, and set me up with an appointment at Elegant Style Salon for three PM on May tenth two thousand twenty three.",
+          "clarifications": {
+            "salon_name": "Elegant Styles",
+            "appointment_time": "15:00",
+            "appointment_date": "2023-05-10",
+            "city": "Sunnyvale, CA"
+          }
         }
       ]
     ],
@@ -2953,7 +3046,12 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_22-19-0_elevenlabs.mp3",
           "asr_output_openai": "What's the current weather in Boston and San Francisco in Fahrenheit?",
           "asr_output_elevenlabs": "Uh, what's the current weather in Boston and San Francisco in Fahrenheit?",
-          "asr_output_deepgram": "What's the current weather in Boston and San Francisco in Fahrenheit?"
+          "asr_output_deepgram": "What's the current weather in Boston and San Francisco in Fahrenheit?",
+          "clarifications": {
+            "location1": "Boston, MA",
+            "location2": "San Francisco",
+            "temperature_unit": "fahr"
+          }
         }
       ]
     ],
@@ -3160,7 +3258,11 @@
           "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_parallel_multiple/live_parallel_multiple_23-20-0_openai.mp3",
           "asr_output_openai": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu.",
           "asr_output_elevenlabs": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu?",
-          "asr_output_deepgram": "Can you get me all pending and active mandates for users Parath? That's p a r a t h, Parath, and Banu. That's b h a n u. Banu."
+          "asr_output_deepgram": "Can you get me all pending and active mandates for users Parath? That's p a r a t h, Parath, and Banu. That's b h a n u. Banu.",
+          "clarifications": {
+            "first_user_name": "parath",
+            "second_user_name": "bhanu"
+          }
         }
       ]
     ],

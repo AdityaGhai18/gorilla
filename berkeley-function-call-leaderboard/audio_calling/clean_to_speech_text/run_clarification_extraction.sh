@@ -43,8 +43,8 @@ for file in "${JSON_FILES[@]}"; do
         log_file="$EXTRACTION_LOGS_DIR/${file%.json}_extraction.log"
         
         # Run the clarification script in background and log output
-        # TEST MODE: Process only 1 random test case
-        python3 clarification_extractor.py "$file_path" --test > "$log_file" 2>&1 &
+        # FULL RUN: Process ALL test cases and modify files
+        python3 clarification_extractor.py "$file_path" > "$log_file" 2>&1 &
         
         echo "  -> Background process started, log: $log_file"
     else
