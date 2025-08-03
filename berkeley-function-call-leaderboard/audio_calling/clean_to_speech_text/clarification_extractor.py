@@ -54,14 +54,14 @@ class ClarificationExtractor:
         
         # Load all available function documentation files
         func_doc_files = {
-            "gorilla_file_system.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/gorilla_file_system.json",
-            "ticket_api.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/ticket_api.json",
-            "trading_bot.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/trading_bot.json",
-            "travel_booking.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/travel_booking.json",
-            "vehicle_control.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/vehicle_control.json",
-            "math_api.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/math_api.json",
-            "message_api.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/message_api.json",
-            "posting_api.json": "/Users/adityaghai/Desktop/BFCL/gorilla/berkeley-function-call-leaderboard/bfcl_eval/data/multi_turn_func_doc/posting_api.json"
+            "gorilla_file_system.json": "../../bfcl_eval/data/multi_turn_func_doc/gorilla_file_system.json",
+            "ticket_api.json": "../../bfcl_eval/data/multi_turn_func_doc/ticket_api.json",
+            "trading_bot.json": "../../bfcl_eval/data/multi_turn_func_doc/trading_bot.json",
+            "travel_booking.json": "../../bfcl_eval/data/multi_turn_func_doc/travel_booking.json",
+            "vehicle_control.json": "../../bfcl_eval/data/multi_turn_func_doc/vehicle_control.json",
+            "math_api.json": "../../bfcl_eval/data/multi_turn_func_doc/math_api.json",
+            "message_api.json": "../../bfcl_eval/data/multi_turn_func_doc/message_api.json",
+            "posting_api.json": "../../bfcl_eval/data/multi_turn_func_doc/posting_api.json"
         }
         
         # Load all function documentation robustly (supports JSON, JSONL, or concatenated JSON)
@@ -214,19 +214,24 @@ The goal is to help an AI that will call a function ask valid clarifying questio
 Why Clarifications Are Needed
 Voice-based user interactions often contain ambiguities that differ from text-based queries:
 1. Names that could be spelled differently (e.g., "Zhang Wei", "Nguyen Van Minh", "Shishir")
-2. Technical terms, filepaths, URLs that could be ambiguous when spoken (e.g., "XContentBuilder" vs "X content builder")
-3. Complex alphanumeric strings, codes, or identifiers (e.g., "MIIFdTCCBF2gAwIBAgISESG", "d0404", "ABC123XYZ")
-4. Technical product names, database names, or brand names (e.g., "Elasticsearch", "Firebird", "MongoDB")
-5. Code snippets, SQL queries, or commands with symbols (e.g., "SELECT * FROM table", "x = y + 1")
-6. Technical constants, class names, or identifiers (e.g., "VMDeathRequest", "onScriptError.IGNORE")
-7. Street addresses or specific locations that are critical for function calls
-8. Unique identifiers or IDs that are essential for function execution
-9. Homophones that could be confused (e.g., "write" vs "right", "to" vs "too" vs "two")
+2. Numbers that sound similar when spoken (e.g., "13" vs "30", "14" vs "40", "15" vs "50")
+3. Dates and times that are critical for function calls (e.g., "March 15th", "3pm", "Tuesday")
+4. Technical terms, filepaths, URLs that could be ambiguous when spoken (e.g., "XContentBuilder" vs "X content builder")
+5. Complex alphanumeric strings, codes, or identifiers (e.g., "MIIFdTCCBF2gAwIBAgISESG", "d0404", "ABC123XYZ")
+6. Technical product names, database names, or brand names (e.g., "Elasticsearch", "Firebird", "MongoDB")
+7. Code snippets, SQL queries, or commands with symbols (e.g., "SELECT * FROM table", "x = y + 1")
+8. Technical constants, class names, or identifiers (e.g., "VMDeathRequest", "onScriptError.IGNORE")
+9. Street addresses or specific locations that are critical for function calls
+10. Unique identifiers or IDs that are essential for function execution
+11. Homophones that could be confused (e.g., "write" vs "right", "to" vs "too" vs "two")
 
 IMPORTANT: Be REASONABLE. Flag items that have genuine spelling ambiguity OR are specific identifiers/names that could be unclear when spoken and are essential for the correctness of the function call.
 
 DO flag:
-- Unusual or foreign names (e.g., "Zhang Wei", "Nguyen Van Minh", "Shishir")
+- ALL proper nouns including common names (e.g., "John Smith", "Mary Johnson", "Zhang Wei", "Nguyen Van Minh")
+- ALL place names including common cities (e.g., "New York", "London", "Paris", "Tokyo", "Sydney")
+- ALL numbers that are essential to function calls (e.g., "13", "30", "100", "2024", "3pm", "9am") - numbers can sound similar when spoken
+- MOST dates and times that are essential to function calls (e.g., "Tuesday", "March 15th", "2024-03-15", "next week", "tomorrow")
 - Complex technical terms (e.g., "mappingParserContext", "compositeScriptFactory", "VMDeathRequest")
 - Complex alphanumeric strings or codes (e.g., "MIIFdTCCBF2gAwIBAgISESG", "d0404", "ABC123XYZ")
 - Technical product names (e.g., "Elasticsearch", "Firebird", "MongoDB")
@@ -236,42 +241,43 @@ DO flag:
 - Technical terms, class names, and identifiers (e.g., "mappingParserContext", "compositeScriptFactory", "VMDeathRequest", "PrintStream", "logStream")
 - Code snippets, SQL queries, or commands with symbols (e.g., "SELECT * FROM table", "x = y + 1")
 - Technical constants, class names, or identifiers (e.g., "VMDeathRequest", "onScriptError.IGNORE")
-- Specific event names, task names, or content (e.g., "go for shopping at 9 pm", "budget analysis meeting")
+- Specific event names, task names, or content that need exact wording (e.g., "go for shopping at 9 pm", "budget analysis meeting")
 - Technical identifiers or keys (e.g., "site.info", "apikey_info", "config_key")
+- Quoted content that needs to be exact (e.g., "use the prompt 'qfqwfqf'")
+- Essential function arguments that could be ambiguous when spoken
 
 
 Do NOT flag:
 - Common English words (e.g., "water", "iron", "burglary", "English", "marketing team", "tenant rights")
-- Common English names (e.g., "John", "Mary", "Alex", "Smith")
-- Common place names or obvious abbreviations (e.g., "New York", "London", "LA" for Los Angeles, "Paris", "Tokyo", "Sydney")
-- Simple technical terms (e.g., "userProfile", "config.json")
+- Simple technical terms (e.g., "user", "config", "file", "data")
 - Common verbs, prepositions, or articles (e.g., "could", "should", "the", "a", "an")
 - Simple concepts or generic terms (e.g., "new iPhone release", "Queue is saturated")
-- Numbers or coordinates that are straightforward (e.g., "ten, fifteen", "twenty, twenty-five")
 - Simple phrases or expressions (e.g., "Happy Birthday!", "Queue is unsaturated")
 - Obvious non-identifiers (e.g., "/q", "quit", "exit", "help")
-- Major world cities and countries (e.g., "London", "Paris", "Tokyo", "New York", "USA", "UK", "Canada")
 
 Your Task
 1. Inputs:
    - User query (text input) - focus on the actual content
    - Documentation for the exact function (its arguments and descriptions)
 2. Actions:
-   - Identify ALL potentially ambiguous class names, method names, technical terms, and identifiers in the query.
+   - Identify ALL potentially ambiguous class names, method names, technical terms, and identifiers in the USER QUERY ONLY.
    - Focus on SUPER IMPORTANT and AMBIGUOUS details that need confirmation for the function call.
    - Flag any critical information that could be unclear when spoken, regardless of which function parameter it maps to.
    - Map these to appropriate function parameters when possible, but don't limit yourself to only function parameters.
    - Focus on the content of what was spoken - any technical term that could be unclear when spoken should be flagged.
    - Be reasonable - flag things that could actually be unclear when spoken, even if they're just context or mentioned in passing.
+   - CRITICAL: ONLY extract clarifications from the USER QUERY text. DO NOT extract examples, sample values, or text from the function documentation.
+   - CRITICAL: If the function documentation contains examples in other languages (like Korean, Chinese, etc.), DO NOT include those as clarifications unless they actually appear in the user query.
+   - CRITICAL: The function documentation is for reference only - all clarifications must come from the actual user query content.
 3. Output:
    - One JSON dictionary (no lists).
    - Keys: Use DESCRIPTIVE, NATURAL LANGUAGE names based on the parameter descriptions:
      - Look at the parameter description to create meaningful names
      - Use your understanding of the context to create appropriate, descriptive names
      - Don't rely on rigid suffix rules - be creative and descriptive
-     - Examples: "start_date_spelling", "user_name", "file_path", "database_name", "street_address", "id", "validity_seconds", "encoding_method"
-     - NOT: "r_spelling", "e_spelling", "param1_spelling", "validity_spelling", "algorithm_spelling" (avoid lazy "_spelling" suffix for everything)
-     - For multiple items: "first_name_spelling", "second_name_spelling"
+     - Examples: "start_date", "user_name", "file_path", "database_name", "street_address", "user_id", "validity_seconds", "encoding_method", "task_description", "event_name"
+     - NOT: "r_spelling", "e_spelling", "param1_spelling", "content_spelling" (avoid lazy "_spelling" suffix for everything)
+     - For multiple items: "first_name", "second_name", "primary_address", "secondary_address"
    - Values:
      - The value from the user query that needs clarification.
 
@@ -283,7 +289,7 @@ Function Documentation:
 schedule_meeting(person_name: string, date: string, time: string)
 Output:
 {{
-  "person_name_spelling": "Zhang Wei"
+  "person_name": "Zhang Wei"
 }}
 
 Example: Technical term clarification (VALID)
@@ -292,7 +298,7 @@ Function Documentation:
 create_builder(builder_type: string, data: object)
 Output:
 {{
-  "builder_type_spelling": "XContentBuilder"
+  "builder_type": "XContentBuilder"
 }}
 
 Example: Event details clarification (VALID)
@@ -304,19 +310,23 @@ Output:
   "event_details": "Civil War"
 }}
 
-Example: Common place name (NO CLARIFICATION NEEDED)
+Example: Common place name (VALID)
 User Query: "Book a flight to New York on Friday"
 Function Documentation:
 book_flight(destination: string, date: string)
 Output:
-{{}}
+{{
+  "destination": "New York"
+}}
 
-Example: Major city name (NO CLARIFICATION NEEDED)
+Example: Major city name (VALID)
 User Query: "Get me a house to stay for 4 in London"
 Function Documentation:
 search_house(location: string, guests: integer)
 Output:
-{{}}
+{{
+  "location": "London"
+}}
 
 Example: Important ambiguous details (VALID)
 User Query: "I'm planning ahead for our big trip and realized our car's fuel tank is running low. It would be great if you could top it up with an additional 30 gallons before I turn on the ignition using the 'START' mode."
@@ -324,7 +334,8 @@ Function Documentation:
 fillFuelTank(fuelAmount: float), startEngine(ignitionMode: string)
 Output:
 {{
-  "fuel_amount_spelling": "30 gallons"
+  "fuel_amount": "30 gallons",
+  "ignition_mode": "START"
 }}
 
 Example: Descriptive parameter names (VALID)
@@ -346,8 +357,8 @@ Function Documentation:
 create_constant(name: string, value: string)
 Output:
 {{
-  "constant_name_spelling": "CERTIFICATE",
-  "value_id": "MIIFdTCCBF2gAwIBAgISESG"
+  "constant_name": "CERTIFICATE",
+  "constant_value": "MIIFdTCCBF2gAwIBAgISESG"
 }}
 
 Example: Multiple technical terms (VALID)
@@ -356,10 +367,10 @@ Function Documentation:
 setup_elasticsearch(parser_context: string, script_factory: string, error_handling: string)
 Output:
 {{
-  "search_spelling": "Elasticsearch", 
-  "parser_context_spelling": "mappingParserContext",
-  "script_factory_spelling": "compositeScriptFactory",
-  "error_handling_spelling": "onScriptError.IGNORE"
+  "database_name": "Elasticsearch", 
+  "parser_context": "mappingParserContext",
+  "script_factory": "compositeScriptFactory",
+  "error_handling": "onScriptError.IGNORE"
 }}
 
 Example: Database name and SQL query (VALID)
@@ -378,7 +389,7 @@ Function Documentation:
 handle_request(request_type: string, target: string)
 Output:
 {{
-  "request_type_constant": "VMDeathRequest"
+  "request_type": "VMDeathRequest"
 }}
 
 Example: Technical class and complex numbers (VALID)
@@ -387,10 +398,10 @@ Function Documentation:
 use_stream(stream_type: string, stream_name: string, old_value: string, new_value: string)
 Output:
 {{
-  "stream_type_spelling": "PrintStream",
-  "stream_name_spelling": "logStream",
-  "old_value_spelling": "12345L",
-  "new_value_spelling": "54321L"
+  "stream_type": "PrintStream",
+  "stream_name": "logStream",
+  "old_value": "12345L",
+  "new_value": "54321L"
 }}
 
 Example: Database name in context (VALID)
@@ -399,7 +410,7 @@ Function Documentation:
 check_status(database: string, component: string)
 Output:
 {{
-  "database_spelling": "Elasticsearch"
+  "database_name": "Elasticsearch"
 }}
 
 Example: Common words (NO CLARIFICATION NEEDED)
@@ -423,24 +434,20 @@ add_ingredients(ingredient1: string, ingredient2: string)
 Output:
 {{}}
 
-Example: Common names (NO CLARIFICATION NEEDED)
+Example: Common names (VALID)
 User Query: "Schedule a meeting with John Smith and Mary Johnson tomorrow"
 Function Documentation:
 schedule_meeting(participant_names: list, date: string)
 Output:
-{{}}
+{{
+  "participant_name1": "John Smith",
+  "participant_name2": "Mary Johnson"
+}}
 
 Example: Simple concept (NO CLARIFICATION NEEDED)
 User Query: "Write about the new iPhone release in English"
 Function Documentation:
 write_article(topic: string, language: string)
-Output:
-{{}}
-
-Example: Common names (NO CLARIFICATION NEEDED)
-User Query: "Schedule a meeting with John Smith and Mary Johnson tomorrow"
-Function Documentation:
-schedule_meeting(participant_names: list, date: string)
 Output:
 {{}}
 
@@ -450,7 +457,8 @@ Function Documentation:
 send_package(address: string, city: string)
 Output:
 {{
-  "address_address": "123 Main Street"
+  "street_address": "123 Main Street",
+  "city": "New York"
 }}
 
 Example: Unique ID clarification (VALID)
@@ -478,12 +486,43 @@ log_message(message: string)
 Output:
 {{}}
 
-Example: Simple coordinates (NO CLARIFICATION NEEDED)
-User Query: "Calculate coordinates (ten, fifteen) and (twenty, twenty-five)"
+Example: Number clarification (VALID)
+User Query: "Book 13 seats for the conference"
 Function Documentation:
-calculate_coordinates(point1: string, point2: string)
+book_seats(quantity: integer, event: string)
 Output:
-{{}}
+{{
+  "quantity": "13"
+}}
+
+Example: Time clarification (VALID)
+User Query: "Schedule the meeting for 3pm tomorrow"
+Function Documentation:
+schedule_meeting(time: string, date: string)
+Output:
+{{
+  "meeting_time": "3pm, tomorrow"
+}}
+
+Example: Date clarification (VALID)
+User Query: "Set reminder for March 15th at 9am"
+Function Documentation:
+set_reminder(date: string, time: string)
+Output:
+{{
+  "reminder_date": "March 15th",
+  "reminder_time": "9am"
+}}
+
+Example: Similar-sounding numbers (VALID)
+User Query: "Transfer 30 dollars to account 12345"
+Function Documentation:
+transfer_money(amount: float, account: string)
+Output:
+{{
+  "amount": "30",
+  "account_number": "12345"
+}}
 
 Example: Common words (NO CLARIFICATION NEEDED)
 User Query: "Generate tenant rights contract"
@@ -508,7 +547,7 @@ Function Documentation:
 delete_todo(content: string)
 Output:
 {{
-  "content_spelling": "go for shopping at 9 pm"
+  "task_description": "go for shopping at 9 pm"
 }}
 
 Example: Obvious non-identifier (NO CLARIFICATION NEEDED)
@@ -527,8 +566,8 @@ calculate_date_difference(r: string, e: string, t: string)
 # t: "The unit of time to calculate the difference in"
 Output:
 {{
-  "start_date_spelling": "2023-04-01",
-  "end_date_spelling": "2023-04-15"
+  "start_date": "2023-04-01",
+  "end_date": "2023-04-15"
 }}
 
 Example: Multiple technical terms in context (VALID)
@@ -537,13 +576,13 @@ Function Documentation:
 get_relevant_classes(search_string: string)
 Output:
 {{
-  "search_string_spelling": "CellResult",
-  "context_class1_spelling": "StringNumberHandler",
-  "context_class2_spelling": "AbstractCellHandler", 
-  "context_method1_spelling": "getCellValue",
-  "context_method2_spelling": "setCellValue",
-  "context_method3_spelling": "getExcelType",
-  "context_method4_spelling": "getNumericValue"
+  "search_string": "CellResult",
+  "context_class1": "StringNumberHandler",
+  "context_class2": "AbstractCellHandler", 
+  "context_method1": "getCellValue",
+  "context_method2": "setCellValue",
+  "context_method3": "getExcelType",
+  "context_method4": "getNumericValue"
 }}
 
 Example: No relevant parameters (NO CLARIFICATION NEEDED)
@@ -552,6 +591,15 @@ Function Documentation:
 get_weather()
 Output:
 {{}}
+
+Example: Function documentation examples (DO NOT EXTRACT FROM DOCS)
+User Query: "Turn on the air conditioner in the living room"
+Function Documentation:
+control_appliance(command: string)
+# command: The command must be specified as a string in Korean, consisting of the room name, appliance name (or alias), and operation command, separated by commas. Examples: '거실, 에어컨, 실행' for turning on the air conditioner in the living room...
+Output:
+{{}}
+# Note: Even though the function documentation contains Korean examples, we do NOT extract '거실, 에어컨, 실행' because the user query is in English and doesn't contain Korean text.
 
 ---
 
@@ -719,6 +767,92 @@ Task Output:
         print(f"  - Successfully processed: {processed_count}")
         print(f"  - Failed: {len(test_cases) - processed_count}")
         print()
+    
+    def process_file_log_only(self, file_path: str, log_file: str = None, sample_count: int = 5) -> None:
+        """Process a JSON file and output clarifications to log file without modifying the original file."""
+        print(f"Processing file: {file_path} (LOG ONLY MODE)")
+        
+        # Load the JSON file
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        
+        if not isinstance(data, list):
+            print(f"Error: Expected list of test cases, got {type(data)}")
+            return
+        
+        # Limit to sample_count cases
+        test_cases = data[:sample_count] if sample_count else data
+        print(f"Processing first {len(test_cases)} test cases (log only)")
+        
+        # Open log file for writing
+        log_output = []
+        
+        # Process each test case (LOG ONLY - NO FILE MODIFICATIONS)
+        processed_count = 0
+        for i, test_case in enumerate(test_cases):
+            try:
+                # Extract user query
+                user_query = self.extract_user_query(test_case)
+                if not user_query:
+                    log_output.append(f"Test case {i+1}: No user query found, skipping")
+                    continue
+                
+                # Get function documentation based on test case type
+                if self.is_single_turn(test_case):
+                    function_docs = self.get_function_docs_single_turn(test_case)
+                else:
+                    function_docs = self.get_function_docs_multi_turn(test_case, "bfcl_eval/data/multi_turn_func_doc")
+                
+                if not function_docs:
+                    log_output.append(f"Test case {i+1}: No function documentation found, skipping")
+                    continue
+                
+                # Generate clarifications
+                try:
+                    clarifications = self.generate_clarifications(user_query, function_docs)
+                except Exception as e:
+                    log_output.append(f"Error generating clarifications for test case {test_case.get('id', 'unknown')}: {e}")
+                    clarifications = {}
+                
+                # Log the results
+                log_output.append(f"\n{'='*80}")
+                log_output.append(f"TEST CASE {i+1}: {test_case.get('id', 'unknown')}")
+                log_output.append(f"{'='*80}")
+                log_output.append(f"User Query: {user_query}")
+                log_output.append(f"Function Documentation:")
+                for j, func in enumerate(function_docs):
+                    log_output.append(f"  Function {j+1}: {func.get('name', 'Unknown')}")
+                    log_output.append(f"    Description: {func.get('description', 'No description')}")
+                    if "parameters" in func:
+                        params = func["parameters"]
+                        if "properties" in params:
+                            for param_name, param_info in params["properties"].items():
+                                param_type = param_info.get("type", "unknown")
+                                param_desc = param_info.get("description", "No description")
+                                log_output.append(f"    - {param_name} ({param_type}): {param_desc}")
+                log_output.append(f"Generated Clarifications (Raw LLM Output):")
+                log_output.append(f"  {clarifications}")
+                log_output.append(f"{'='*80}\n")
+                
+                processed_count += 1
+                    
+            except Exception as e:
+                log_output.append(f"Error processing test case {test_case.get('id', 'unknown')}: {e}")
+        
+        # Write to log file
+        if log_file:
+            with open(log_file, 'w') as f:
+                f.write('\n'.join(log_output))
+            print(f"✅ Log written to: {log_file}")
+        else:
+            # Print to console
+            print('\n'.join(log_output))
+        
+        print(f"✅ Successfully processed {file_path} (LOG ONLY)")
+        print(f"  - Total test cases: {len(test_cases)}")
+        print(f"  - Successfully processed: {processed_count}")
+        print(f"  - Failed: {len(test_cases) - processed_count}")
+        print()
 
 
 def main():
@@ -726,6 +860,9 @@ def main():
     parser.add_argument("file_path", help="Path to the JSON file to process")
     parser.add_argument("--output", "-o", help="Output file path (defaults to input file)")
     parser.add_argument("--test", "-t", action="store_true", help="Test mode: process only 1 random test case")
+    parser.add_argument("--log-only", "-l", action="store_true", help="Log only mode: output to log file without modifying JSON")
+    parser.add_argument("--log-file", help="Log file path (defaults to console output)")
+    parser.add_argument("--sample-count", type=int, default=5, help="Number of samples to process in log-only mode")
     
     args = parser.parse_args()
     
@@ -736,7 +873,11 @@ def main():
     
     # Initialize extractor and process file
     extractor = ClarificationExtractor()
-    extractor.process_file(args.file_path, args.output, args.test)
+    
+    if args.log_only:
+        extractor.process_file_log_only(args.file_path, args.log_file, args.sample_count)
+    else:
+        extractor.process_file(args.file_path, args.output, args.test)
 
 
 if __name__ == "__main__":

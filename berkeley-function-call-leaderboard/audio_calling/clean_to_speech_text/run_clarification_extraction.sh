@@ -9,7 +9,8 @@ EXTRACTION_LOGS_DIR="$FINAL_RESULTS_DIR/extraction_logs"
 # Create logs directory
 mkdir -p "$EXTRACTION_LOGS_DIR"
 
-echo "Starting parallel clarification extraction for all JSON files..."
+echo "Starting parallel clarification extraction TEST RUN (LOG-ONLY MODE)..."
+echo "This will process 5 samples from each file and output to logs WITHOUT modifying JSON files"
 echo "Logs will be saved to: $EXTRACTION_LOGS_DIR"
 echo "============================================================"
 
@@ -43,8 +44,8 @@ for file in "${JSON_FILES[@]}"; do
         log_file="$EXTRACTION_LOGS_DIR/${file%.json}_extraction.log"
         
         # Run the clarification script in background and log output
-        # FULL RUN: Process ALL test cases and modify files
-        python3 clarification_extractor.py "$file_path" > "$log_file" 2>&1 &
+        # LOG-ONLY MODE: Process 5 test cases and output to log without modifying files
+        python3 clarification_extractor.py "$file_path" --log-only --log-file "$log_file" --sample-count 5 > "${log_file%.log}_stdout.log" 2>&1 &
         
         echo "  -> Background process started, log: $log_file"
     else
@@ -61,8 +62,9 @@ wait
 
 echo ""
 echo "============================================================"
-echo "All clarification extraction completed!"
+echo "All clarification extraction TEST RUN completed!"
 echo "Check logs in: $EXTRACTION_LOGS_DIR"
+echo "No JSON files were modified - this was a test run only"
 
 # Print summary of log files
 echo ""
