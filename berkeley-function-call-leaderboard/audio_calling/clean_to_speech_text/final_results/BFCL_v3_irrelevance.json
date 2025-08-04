@@ -51,7 +51,11 @@
           "asr_output_openai": "Can you figure out the quadratic equation where a's 1, b's 2, and c's 3, please?",
           "asr_output_elevenlabs": "Uh, can you figure out the quadratic equation where 'a' is 1, 'b' is 2, and 'c' is 3, please?",
           "asr_output_deepgram": "Can you figure out the quadratic equation where s one, b's two, and c's three, please?",
-          "clarifications": {}
+          "clarifications": {
+            "coefficient_a": "1",
+            "coefficient_b": "2",
+            "coefficient_c": "3"
+          }
         }
       ]
     ],
@@ -317,9 +321,9 @@
           "asr_output_elevenlabs": "Hey, can you calculate the area under the curve for the function f of x equals 3x squared from x equals 1 to x equals 5? Right. Let me see.",
           "asr_output_deepgram": "Hey. Can you calculate the area under the curve for the function f of x equals three x squared from x equals one to x equals five? Right. Let me see.",
           "clarifications": {
-            "function_expression": "f(x) = 3x^2",
-            "lower_bound_value": "1",
-            "upper_bound_value": "5"
+            "mathematical_function": "f(x) = 3x^2",
+            "lower_bound": "1",
+            "upper_bound": "5"
           }
         }
       ]
@@ -534,7 +538,10 @@
           "asr_output_openai": "What's the fastest way to go from New York to Boston?",
           "asr_output_elevenlabs": "What's the fastest way to go from New York to Boston?",
           "asr_output_deepgram": "What's the fastest way to go from New York to Boston?",
-          "clarifications": {}
+          "clarifications": {
+            "starting_location": "New York",
+            "destination": "Boston"
+          }
         }
       ]
     ],
@@ -719,7 +726,7 @@
           "asr_output_deepgram": "If a car is launched with speed v at angle theta, how far does it go in time t?",
           "clarifications": {
             "time_variable": "t",
-            "initial_velocity_variable": "v",
+            "velocity_variable": "v",
             "angle_variable": "theta"
           }
         }
@@ -989,8 +996,8 @@
           "asr_output_elevenlabs": "Uh, can you tell me magnetic field at a point? Oh, that's distance R from a wire with current I?",
           "asr_output_deepgram": "Can you tell me magnetic field at a point? Oh, that's distance r from a wire with current I?",
           "clarifications": {
-            "distance_from_wire": "r",
-            "current_in_wire": "I"
+            "distance": "r",
+            "current": "I"
           }
         }
       ]
@@ -1168,9 +1175,9 @@
           "asr_output_elevenlabs": "Uh, hey. Can you say how much gas made when you heat two cubic meter closed chamber from 25 degrees Celsius to 100 degrees?",
           "asr_output_deepgram": "Hey. Can you say how much gas made when you heat two cubic meter closed chamber from twenty five degrees Celsius to one hundred degrees?",
           "clarifications": {
-            "initial_temperature_value": "25\u00b0C",
-            "final_temperature_value": "100\u00b0C",
-            "chamber_volume": "2 m\u00b3"
+            "chamber_volume": "2 m\u00b3",
+            "initial_temperature": "25\u00b0C",
+            "final_temperature": "100\u00b0C"
           }
         }
       ]
@@ -1611,7 +1618,8 @@
           "asr_output_elevenlabs": "Um, hey, can you let me know how common the gene variant RS7412 is among Europeans?",
           "asr_output_deepgram": "Hey. Can you let me know how common the gene variant r s seven four twelve is among Europeans?",
           "clarifications": {
-            "gene_variant_id": "rs7412"
+            "gene_variant": "rs7412",
+            "population_group": "European"
           }
         }
       ]
@@ -1656,7 +1664,9 @@
           "asr_output_openai": "Um, can you look up spot for a picnic in Miami?",
           "asr_output_elevenlabs": "Um, can you look up Spot for a, a picnic in Miami?",
           "asr_output_deepgram": "Can you look up spot for a a picnic in Miami?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Miami"
+          }
         }
       ]
     ],
@@ -2709,7 +2719,10 @@
           "asr_output_openai": "What's the final price of a product with a 25% discount and after adding a 10% sales tax?",
           "asr_output_elevenlabs": "Uh, what's the final price of a product with, um, a 25% discount and after adding a 10% sales tax? Oh.",
           "asr_output_deepgram": "What's the final price of a product with, a twenty five percent discount and after adding a ten percent sales tax? Oh,",
-          "clarifications": {}
+          "clarifications": {
+            "discount_rate": "25%",
+            "sales_tax": "10%"
+          }
         }
       ]
     ],
@@ -3084,10 +3097,10 @@
           "asr_output_elevenlabs": "Um, can you get the standard deviation for a null hypothesis test? Right. The sample means ninety-eight point two with a, uh, standard deviation of one point four, a sample size of forty, and the population means ninety-eight point six.",
           "asr_output_deepgram": "Can you get the standard deviation for a null hypothesis test? Right. The sample means ninety eight point two with a, standard deviation of one point four, a sample size of forty, and the population means ninety eight point six.",
           "clarifications": {
-            "sample_mean_value": "98.2",
-            "population_mean_value": "98.6",
-            "sample_std_dev_value": "1.4",
-            "sample_size_value": "40"
+            "sample_mean": "98.2",
+            "population_mean": "98.6",
+            "sample_std_dev": "1.4",
+            "sample_size": "40"
           }
         }
       ]
@@ -3190,7 +3203,11 @@
           "asr_output_openai": "Hey, could you figure out the compounded interest on ten thousand dollars at five percent annually for three years? Thanks.",
           "asr_output_elevenlabs": "Hey, uh, could you figure out the compounded interest on $10,000 at 5% annually for, um, three years? Thanks.",
           "asr_output_deepgram": "Hey. Could you figure out the compounded interest on ten thousand dollars at five percent annually for, three years? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "principal_amount": "$10000",
+            "annual_interest_rate": "5%",
+            "investment_period": "3 years"
+          }
         }
       ]
     ],
@@ -3323,7 +3340,8 @@
           "asr_output_elevenlabs": "Um, can you say the projected losses for company XYZ for next year, please?",
           "asr_output_deepgram": "Can you say the projected losses for company x y z for next year, please?",
           "clarifications": {
-            "company_name": "company XYZ"
+            "company_name": "company XYZ",
+            "period": "next year"
           }
         }
       ]
@@ -3368,7 +3386,10 @@
           "asr_output_openai": "Um, what's the return rate for a business when the income is $15,000 and the cost is $22,000, okay?",
           "asr_output_elevenlabs": "Um, what's the return rate for a business when the income is, uh, $15,000 and the cost is $22,000? Okay?",
           "asr_output_deepgram": "What's the return rate for a business when the income is, fifteen thousand dollars and the cost is twenty two thousand dollars? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "total_revenue": "$15000",
+            "total_cost": "$22000"
+          }
         }
       ]
     ],
@@ -4188,7 +4209,9 @@
           "asr_output_openai": "Alright, where can I find a top security guard in New York?",
           "asr_output_elevenlabs": "Huh, right. Where can I find the top security guard in New York?",
           "asr_output_deepgram": "Right. Where can I find a top security guard in New York?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York"
+          }
         }
       ]
     ],
@@ -4233,9 +4256,7 @@
           "asr_output_openai": "Hey, OK, what's the judgment for case XYZ?",
           "asr_output_elevenlabs": "Um, hey, OK, what's the judgment for case XYZ?",
           "asr_output_deepgram": "Hey. Okay. What's the judgment for case x y z?",
-          "clarifications": {
-            "case_id": "XYZ"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -4325,7 +4346,7 @@
           "asr_output_elevenlabs": "Who's the lawyer dealing with the Doe v. Smith case, yeah?",
           "asr_output_deepgram": "Who's the lawyer dealing with the Doe versus Smith case? Yeah.",
           "clarifications": {
-            "case_name_spelling": "Doe vs. Smith"
+            "case_name": "Doe vs. Smith"
           }
         }
       ]
@@ -5010,7 +5031,10 @@
           "asr_output_openai": "Hey, what's the average temperature in Los Angeles during December, right?",
           "asr_output_elevenlabs": "Hey, what's the average temperature in Los Angeles during December, right?",
           "asr_output_deepgram": "Hey. What's the average temperature in Los Angeles during December? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Los Angeles",
+            "month": "December"
+          }
         }
       ]
     ],
@@ -5054,9 +5078,7 @@
           "asr_output_openai": "Can you help me locate a Gamo yoga mat that's available for in-store pickup?",
           "asr_output_elevenlabs": "Uh, can you help me locate, um, GMO yoga mat that's, uh, available for in-store pickup? No? In-store purchase?",
           "asr_output_deepgram": "Can you help me locate, GMO yoga mat that's, available for in store pickup? No. In store purchase?",
-          "clarifications": {
-            "product_category": "GMO yoga mat"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -5101,7 +5123,9 @@
           "asr_output_openai": "Hey, could you tell me how the traffic is in New York right now?",
           "asr_output_elevenlabs": "Hey, could you tell me how the traffic is in New York right now?",
           "asr_output_deepgram": "Hey. Could you tell me how the traffic is in New York right now?",
-          "clarifications": {}
+          "clarifications": {
+            "location_name": "New York"
+          }
         }
       ]
     ],
@@ -5140,7 +5164,9 @@
           "asr_output_openai": "Hey, can look up some restaurants in London for me, thanks?",
           "asr_output_elevenlabs": "Hey, you can look up some restaurants in London for me. Thanks.",
           "asr_output_deepgram": "Hey. Can look up some restaurants in London for me? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "London"
+          }
         }
       ]
     ],
@@ -5193,7 +5219,10 @@
           "asr_output_openai": "Hey, um, could you find quickest route from Los Angeles to New York, thanks?",
           "asr_output_elevenlabs": "Hey, um, could you find quickest route from Los Angeles to New York? Thanks.",
           "asr_output_deepgram": "Hey, could you find quickest route from Los Angeles to New York? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "start_location": "Los Angeles",
+            "destination": "New York"
+          }
         }
       ]
     ],
@@ -5239,7 +5268,10 @@
           "asr_output_openai": "Um hey, right, how long's it usually take to cruise from, uh, Boston to New York?",
           "asr_output_elevenlabs": "Um, hey, right! How long does it usually take to cruise from, uh, Boston to New York?",
           "asr_output_deepgram": "Hey. Right. How long does it usually take to cruise from, Boston to New York?",
-          "clarifications": {}
+          "clarifications": {
+            "origin_city": "Boston",
+            "destination_city": "New York"
+          }
         }
       ]
     ],
@@ -6573,7 +6605,9 @@
           "asr_output_openai": "Um, who began Protestant Reformation, right?",
           "asr_output_elevenlabs": "Um, who began Protestant Reformation, right?",
           "asr_output_deepgram": "Who began Protestant reformation. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "event_name": "Protestant Reformation"
+          }
         }
       ]
     ],
@@ -6749,9 +6783,7 @@
           "asr_output_openai": "Hey um, what's Pantone color code for sky blue right?",
           "asr_output_elevenlabs": "Hey, um, what's Pantone color code for sky blue, right?",
           "asr_output_deepgram": "Hey, what's pant one color code for sky blue. Right?",
-          "clarifications": {
-            "target_color_spelling": "Pantone color code for sky blue"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -7212,9 +7244,7 @@
           "asr_output_openai": "Who painted The Scream, right?",
           "asr_output_elevenlabs": "Who painted The Scream, right?",
           "asr_output_deepgram": "Who painted the screen, right?",
-          "clarifications": {
-            "artwork_name": "The Scream"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -7310,7 +7340,9 @@
           "asr_output_openai": "Hey, what's the top market in New York?",
           "asr_output_elevenlabs": "Hey, uh, what's the top market in New York?",
           "asr_output_deepgram": "Hey. What's the top market in New York?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "New York"
+          }
         }
       ]
     ],
@@ -7619,7 +7651,10 @@
           "asr_output_openai": "Um, can you see if there are any classes open at university in Sydney in May?",
           "asr_output_elevenlabs": "Um, can you see if there any classes open at university in Sydney, uh, in May?",
           "asr_output_deepgram": "Can you see if there are any classes open at university in Sydney, in May?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Sydney",
+            "event_date": "May"
+          }
         }
       ]
     ],
@@ -7664,7 +7699,9 @@
           "asr_output_openai": "Hey, who's playing basketball game at Madison Square Garden tonight?",
           "asr_output_elevenlabs": "Hey, uh, who's playing basketball game at Madison Square Garden tonight?",
           "asr_output_deepgram": "Hey. Who's playing basketball game at Madison Square Garden tonight?",
-          "clarifications": {}
+          "clarifications": {
+            "venue_name": "Madison Square Garden"
+          }
         }
       ]
     ],
@@ -8223,7 +8260,9 @@
           "asr_output_openai": "Let me see. Oh, hey, could tell me how many NBA championships Michael Jordan won?",
           "asr_output_elevenlabs": "Let me see. Oh, hey, could tell me how many NBA championships Michael Jordan won?",
           "asr_output_deepgram": "Let me see. Oh, hey. Could tell me how many NBA championships Michael Jordan won?",
-          "clarifications": {}
+          "clarifications": {
+            "player_name": "Michael Jordan"
+          }
         }
       ]
     ],
@@ -8316,7 +8355,10 @@
           "asr_output_openai": "Hey, who got the NBA MVP in 2020, right?",
           "asr_output_elevenlabs": "Hey, who got the NBA MVP in 2020? Right.",
           "asr_output_deepgram": "Hey. Who got the NBA MVP in twenty twenty? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "event_name": "NBA Most Valuable Player",
+            "season": "2020"
+          }
         }
       ]
     ],
@@ -8361,7 +8403,9 @@
           "asr_output_openai": "Hey, can you tell me LeBron James, that's L-e-b-r-o-n J-a-m-e-s, LeBron James average assists?",
           "asr_output_elevenlabs": "Hey, um, can you tell me LeBron James, that's L-E-B-R-O-N J-A-M-E-S, LeBron James' average assists?",
           "asr_output_deepgram": "Hey. Can you tell me Lebron James? That's l e b r o n j a m e s. Lebron James average assists.",
-          "clarifications": {}
+          "clarifications": {
+            "player_name": "LeBron James"
+          }
         }
       ]
     ],
@@ -8495,7 +8539,10 @@
           "asr_output_openai": "Um, hey, who won the World Series in 2020?",
           "asr_output_elevenlabs": "Um, hey, who won the World Series in 2020?",
           "asr_output_deepgram": "Hey. Who won the World Series in twenty twenty?",
-          "clarifications": {}
+          "clarifications": {
+            "event": "World Series",
+            "year": "2020"
+          }
         }
       ]
     ],
@@ -8670,7 +8717,9 @@
           "asr_output_openai": "Hey, um, can you let me know who's on Manchester United roster, right?",
           "asr_output_elevenlabs": "Hey, um, can you let me know who's on Manchester United roster, right?",
           "asr_output_deepgram": "Hey. Can you let me know who's on Manchester United roster. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "team_name": "Manchester United"
+          }
         }
       ]
     ],
@@ -8714,7 +8763,9 @@
           "asr_output_openai": "Who's the top scorer for the Los Angeles Lakers, right?",
           "asr_output_elevenlabs": "Who's the top scorer for the Los Angeles Lakers, right?",
           "asr_output_deepgram": "Who's the top scorer for the Los Angeles Lakers? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "team_name": "Los Angeles Lakers"
+          }
         }
       ]
     ],
@@ -9336,7 +9387,7 @@
           "asr_output_elevenlabs": "Hey, let me see. Right. Find the best character for battling a dragon in Dragonslayer.",
           "asr_output_deepgram": "Hey. Let me see. Right. Find the best character for battling a dragon in Dragon Slayer.",
           "clarifications": {
-            "enemy_type_spelling": "DragonSlayer"
+            "enemy_type": "DragonSlayer"
           }
         }
       ]
@@ -9681,7 +9732,9 @@
           "asr_output_openai": "Hey, um, know a great pizza joint in Boston?",
           "asr_output_elevenlabs": "Hey, um, know a great pizza joint in Boston?",
           "asr_output_deepgram": "Hey. Know a great pizza joint in Boston?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Boston"
+          }
         }
       ]
     ],
@@ -10166,7 +10219,10 @@
           "asr_output_openai": "Can you find bakery in Chicago that sell sourdough bread?",
           "asr_output_elevenlabs": "Uh, can you, um, find bakery in Chicago that sellin' sourdough bread, right?",
           "asr_output_deepgram": "Can you, find bakery in Chicago that's selling sourdough bread? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "Chicago",
+            "product": "sourdough bread"
+          }
         }
       ]
     ],
@@ -10255,7 +10311,9 @@
           "asr_output_openai": "Hey, for London, what is the time zone?",
           "asr_output_elevenlabs": "Hey, uh, for London, what is the time zone?",
           "asr_output_deepgram": "Hey, for London, what is the time zone?",
-          "clarifications": {}
+          "clarifications": {
+            "timezone": "London"
+          }
         }
       ]
     ],
@@ -10295,7 +10353,9 @@
           "asr_output_openai": "Hey, um what time does the sun go down in Beijing today, yeah?",
           "asr_output_elevenlabs": "Hey, um, what time does the sun go down in Beijing today, yeah?",
           "asr_output_deepgram": "Hey. What time does the sun go down in Beijing today? Yeah?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Beijing"
+          }
         }
       ]
     ],
@@ -10338,7 +10398,9 @@
           "asr_output_openai": "Hey, um, what's time in Sydney right now, yeah?",
           "asr_output_elevenlabs": "Hey, uhm, what's time in Sydney right now? Yeah.",
           "asr_output_deepgram": "Hey. What's time in Sydney right now? Yeah?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Sydney, Australia"
+          }
         }
       ]
     ],
@@ -10386,7 +10448,9 @@
           "asr_output_openai": "Can tell me about popular sushi joints in Tokyo, yeah?",
           "asr_output_elevenlabs": "Um, can tell me about popular sushi joints in Tokyo? Yeah.",
           "asr_output_deepgram": "Can tell me about, popular sushi joints in Tokyo. Yeah?",
-          "clarifications": {}
+          "clarifications": {
+            "city_name": "Tokyo"
+          }
         }
       ]
     ],
@@ -10535,7 +10599,9 @@
           "asr_output_openai": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?",
           "asr_output_elevenlabs": "Um, can you look for a yoga retreat in New York with, uh, vegetarian meals and spa services, right?",
           "asr_output_deepgram": "Can you look for a yoga retreat in New York with, vegetarian meals and spa services? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York"
+          }
         }
       ]
     ],
@@ -10718,7 +10784,10 @@
           "asr_output_openai": "Um, how can I jet to Tokyo from London fastest?",
           "asr_output_elevenlabs": "Uhm, how can I jet to Tokyo from London fastest?",
           "asr_output_deepgram": "How can I jet to Tokyo from London fastest?",
-          "clarifications": {}
+          "clarifications": {
+            "start_city": "London",
+            "destination_city": "Tokyo"
+          }
         }
       ]
     ],
@@ -10763,7 +10832,9 @@
           "asr_output_openai": "Can you say where the closest pharmacy is in Los Angeles, OK?",
           "asr_output_elevenlabs": "Can you, uh, say where the closest pharmacy is in Los Angeles? Okay?",
           "asr_output_deepgram": "Can you, say where the closest pharmacy is in Los Angeles? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "end_point": "Los Angeles"
+          }
         }
       ]
     ],
@@ -10874,7 +10945,10 @@
           "asr_output_openai": "Um, how many kilometers is it from San Francisco to Los Angeles, right?",
           "asr_output_elevenlabs": "Um, how many kilometers is it from San Francisco to Los Angeles? Right.",
           "asr_output_deepgram": "How many kilometers is it from San Francisco to Los Angeles. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "location_1": "San Francisco",
+            "location_2": "Los Angeles"
+          }
         }
       ]
     ],

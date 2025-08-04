@@ -12,10 +12,10 @@
           "asr_output_elevenlabs": "Uh, play Taylor Swift for 20 minutes and, um, Maroon... That's M-A-R-O-O-N... Maroon5 for 15 on Spotify.",
           "asr_output_deepgram": "Play Taylor Swift for twenty minutes and, Maroon, that's m a r o o n, Maroon five for fifteen on Spotify.",
           "clarifications": {
-            "first_artist_name": "Taylor Swift",
-            "second_artist_name": "Maroon 5",
-            "first_duration_minutes": "20 minutes",
-            "second_duration_minutes": "15 minutes"
+            "first_artist": "Taylor Swift",
+            "first_artist_duration": "20 minutes",
+            "second_artist": "Maroon 5",
+            "second_artist_duration": "15 minutes"
           }
         }
       ]
@@ -57,10 +57,10 @@
           "asr_output_elevenlabs": "Uh, can you get induced electromagnetic force for a five-tesla magnetic field over an area of 2 square meters with a, uh, four-second time change? Oh, and then do the same for a ten-second change.",
           "asr_output_deepgram": "Can you get induced electromagnetic force for a five Tesla magnetic field over an area of two square meters with a, four second time change? Oh, and then do the same for a ten second change.",
           "clarifications": {
-            "magnetic_field_value": "5 Tesla",
-            "area_value": "2 square meters",
-            "first_change_in_time_value": "4 seconds",
-            "second_change_in_time_value": "10 seconds"
+            "magnetic_field": "5 Tesla",
+            "area": "2 square meters",
+            "first_change_in_time": "4 seconds",
+            "second_change_in_time": "10 seconds"
           }
         }
       ]
@@ -107,7 +107,10 @@
           "asr_output_elevenlabs": "Hey, can you work out the resistance of a wire that's five meters long with a cross sectional area of 0.01 square meters using resistivity for both copper and aluminum? Thanks.",
           "asr_output_deepgram": "Hey. Can you work out the resistance of a wire that's five meters long with a cross sectional area of zero point zero one square meters using resistivity for both copper and aluminum? Thanks.",
           "clarifications": {
-            "resistivity_material": "copper and aluminum"
+            "wire_length": "5m",
+            "cross_sectional_area": "0.01m\u00b2",
+            "resistivity_material1": "copper",
+            "resistivity_material2": "aluminum"
           }
         }
       ]
@@ -153,9 +156,9 @@
           "asr_output_elevenlabs": "Can you get the protein sequence for human HBA1C, normal hemoglobin, and rat hemoglobin along with their 3D models?",
           "asr_output_deepgram": "Can you get the protein sequence for human HBA one c, normal hemoglobin, and rat hemoglobin along with their three d models?",
           "clarifications": {
-            "protein_name1_spelling": "human HbA1c",
-            "protein_name2_spelling": "normal hemoglobin",
-            "protein_name3_spelling": "rat hemoglobin"
+            "protein_name1": "human HbA1c",
+            "protein_name2": "normal hemoglobin",
+            "protein_name3": "rat hemoglobin"
           }
         }
       ]
@@ -196,7 +199,12 @@
           "asr_output_openai": "Let me see, can you figure out BMI for someone who's 6 feet tall and 80 kilos? Oh, and also for someone who's 5.6 feet and 60 kilos?",
           "asr_output_elevenlabs": "Let me see. Can you figure out BMI for someone who's six feet tall and 80 kilos? Oh, and also for someone who's 5.6 feet and 60 kilos.",
           "asr_output_deepgram": "Let me see. Can you figure out BMI for someone who's six feet tall and eighty kilos? Oh, and also for someone who's five point six feet and sixty kilos.",
-          "clarifications": {}
+          "clarifications": {
+            "height1": "6 feet",
+            "weight1": "80 kg",
+            "height2": "5.6 feet",
+            "weight2": "60 kg"
+          }
         }
       ]
     ],
@@ -237,11 +245,11 @@
           "asr_output_elevenlabs": "Get the ratings for Friends on Netflix and for The Office and Stranger Things on Hulu too. Uh, right. Uh, sort them by rating.",
           "asr_output_deepgram": "Get the ratings for friends on Netflix and for the office and stranger things on Hulu too. Right. Sort them by rating.",
           "clarifications": {
-            "streaming_service1_name": "Netflix",
-            "show1_name": "Friends",
-            "streaming_service2_name": "Hulu",
-            "show2_name": "The Office",
-            "show3_name": "Stranger Things"
+            "streaming_service1": "Netflix",
+            "show_name1": "Friends",
+            "streaming_service2": "Hulu",
+            "show_name2": "The Office",
+            "show_name3": "Stranger Things"
           }
         }
       ]
@@ -379,7 +387,12 @@
           "asr_output_openai": "Can you get the population for New York City and Los Angeles from the US census database? Also, get the data for Alaska and the entire USA?",
           "asr_output_elevenlabs": "Can you get the population for New York City and Los Angeles from the US Census database? Also, get the data for Alaska and the entire USA?",
           "asr_output_deepgram": "Can you get the population for New York City and Los Angeles from the US Census database? Also, get the data for Alaska and the entire USA?",
-          "clarifications": {}
+          "clarifications": {
+            "city1": "New York City, NY",
+            "city2": "Los Angeles, CA",
+            "state": "Alaska",
+            "country": "USA"
+          }
         }
       ]
     ],
@@ -426,9 +439,9 @@
           "asr_output_deepgram": "Find two movie theaters around San Diego showing Tenet at five PM, and, no time to die at seven thirty PM. Okay?",
           "clarifications": {
             "location": "San Diego",
-            "first_movie_title": "Tenet",
+            "first_movie": "Tenet",
             "first_movie_time": "5 pm",
-            "second_movie_title": "No Time To Die",
+            "second_movie": "No Time To Die",
             "second_movie_time": "7:30 pm"
           }
         }
@@ -526,7 +539,10 @@
           "asr_output_elevenlabs": "Hey, um, could you use the machine learning model to guess the house prices for a, a three thousand square foot home in New York and a four thousand square foot home in Los Angeles?",
           "asr_output_deepgram": "Hey. Could you use the machine learning model to guess the house prices for a a three thousand square foot home in New York and a four thousand square foot home in Los Angeles?",
           "clarifications": {
-            "model_name": "Machine Learning Model"
+            "first_location": "New York",
+            "first_size": "3000 sq ft.",
+            "second_location": "Los Angeles",
+            "second_size": "4000 sq ft."
           }
         }
       ]
@@ -569,10 +585,10 @@
           "asr_output_deepgram": "Build one decision tree classifier using, Gini criterion with a max depth of five and random state one. Oh, then do another using entropy criterion, with max depth ten and random state one.",
           "clarifications": {
             "first_criterion": "gini",
-            "first_maximum_depth": "5",
+            "first_max_depth": "5",
             "first_random_state": "1",
             "second_criterion": "entropy",
-            "second_maximum_depth": "10",
+            "second_max_depth": "10",
             "second_random_state": "1"
           }
         }
@@ -620,11 +636,7 @@
           "asr_output_elevenlabs": "Hey, um, can you work out a 95% confidence interval for a sample mean? Use a standard deviation of 10, a sample size of 50, and a, a mean of 25. Also, could you like do it again with a sample size of 150?",
           "asr_output_deepgram": "Hey. Can you work out a ninety five percent confidence interval for a sample mean? Use a standard deviation of ten, a sample size of fifty, and, a mean of twenty five. Also, could you, like, do it again with a sample size of one hundred fifty?",
           "clarifications": {
-            "confidence_level": "95%",
-            "first_sample_size": "50",
-            "second_sample_size": "150",
-            "sample_standard_deviation": "10",
-            "sample_mean": "25"
+            "confidence_level": "95%"
           }
         }
       ]
@@ -675,9 +687,9 @@
           "asr_output_elevenlabs": "Um, hey. Can you figure out the present value of an investment that pays $1,000 annually, uh, with a 5% interest rate over 10, 20, and 30 years? Thanks.",
           "asr_output_deepgram": "Hey. Can you figure out the present value of an investment that pays one thousand dollars annually, with a five percent interest rate over ten, twenty, and thirty years? Thanks.",
           "clarifications": {
-            "payment_per_year_amount": "$1000",
-            "interest_rate_percentage": "5%",
-            "years_list": "10, 20 and 30 years"
+            "payment_per_year": "$1000",
+            "interest_rate": "5%",
+            "years": "10, 20 and 30"
           }
         }
       ]
@@ -723,7 +735,14 @@
           "asr_output_openai": "Hey, can you tell me the capital gains tax for short-term gains of $15,000 and long-term gains of $25,000 in California? And also for $20,000 short-term and $50,000 long-term in Florida? Thanks.",
           "asr_output_elevenlabs": "Um, hey. Can you tell me the capital gains tax for short-term gains of 15,000 and long-term gains of 25,000 in California? And, uh, also for 20,000 short-term and 50,000 long-term in Florida? Thanks.",
           "asr_output_deepgram": "Hey. Can you tell me the capital gains tax for short term gains of fifteen thousand and long term gains of twenty five thousand in California? And, also for twenty thousand short term and fifty thousand long term in Florida? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "short_term_gain_california": "$15000",
+            "long_term_gain_california": "$25000",
+            "state1": "California",
+            "short_term_gain_florida": "$20000",
+            "long_term_gain_florida": "$50000",
+            "state2": "Florida"
+          }
         }
       ]
     ],
@@ -769,10 +788,10 @@
           "asr_output_elevenlabs": "Um, could you work out the return on investment for an initial investment of 2,000 dollars with a gain of 500 dollars? And then, uh, could you do it again for a 5,000-dollar investment where there's a loss of 1,000 dollars?",
           "asr_output_deepgram": "Could you work out the return on investment for an initial investment of two thousand dollars with a gain of five hundred dollars? And then, could you do it again for a five thousand dollar investment where there's a loss of one thousand dollars?",
           "clarifications": {
-            "first_initial_investment": "$2000",
-            "first_gain_loss": "$500",
-            "second_initial_investment": "$5000",
-            "second_gain_loss": "$1000"
+            "initial_investment1": "$2000",
+            "gain_loss1": "$500",
+            "initial_investment2": "$5000",
+            "gain_loss2": "$1000"
           }
         }
       ]
@@ -868,7 +887,7 @@
           "clarifications": {
             "present_value": "$1000",
             "annual_interest_rate": "5%",
-            "number_of_years_list": "1,5 and 10 years"
+            "investment_periods": "1,5 and 10 years"
           }
         }
       ]
@@ -917,7 +936,7 @@
           "clarifications": {
             "loan_amount": "$400,000",
             "interest_rate": "4%",
-            "loan_term_options": "15, 20 and 30 years"
+            "loan_terms": "15, 20 and 30 years"
           }
         }
       ]
@@ -964,12 +983,12 @@
           "asr_output_elevenlabs": "Um, could you check if I'm eligible for a 500,000 dollar home loan from HSBC with, uh, an income of 100,000 dollars? Also, uh, see if I qualify for a 700,000-dollar loan from Wells Fargo with an income of 120,000 dollars?",
           "asr_output_deepgram": "Could you check if I'm eligible for a five hundred thousand dollar home loan from HSBC with, an income of one hundred thousand dollars? Also, see if I qualify for a seven hundred thousand dollar loan from Wells Fargo with an income of one hundred twenty thousand dollars?",
           "clarifications": {
-            "first_financial_institution_name": "HSBC",
-            "first_loan_amount": "$500,000",
-            "first_annual_income": "$100,000",
-            "second_financial_institution_name": "Wells Fargo",
-            "second_loan_amount": "$700,000",
-            "second_annual_income": "$120,000"
+            "financial_institution1": "HSBC",
+            "loan_amount1": "$500,000",
+            "annual_income1": "$100,000",
+            "financial_institution2": "Wells Fargo",
+            "loan_amount2": "$700,000",
+            "annual_income2": "$120,000"
           }
         }
       ]
@@ -1016,7 +1035,6 @@
           "asr_output_elevenlabs": "Let me see. Oh, can you pull up everyone who got convicted for money laundering in San Francisco in 2019? And do same for Texas in 2018?",
           "asr_output_deepgram": "Let me see. Oh, can you pull up everyone who got convicted for money laundering in San Francisco in twenty nineteen? And do same for Texas in twenty eighteen?",
           "clarifications": {
-            "crime_type": "money laundering",
             "location1": "San Francisco",
             "year1": "2019",
             "location2": "Texas",
@@ -1068,9 +1086,9 @@
           "asr_output_deepgram": "Can you check the status and trial date for case x y one two three four in Los Angeles County Court? Also, what's the update for case g h five six seventy eight in Orange County Court?",
           "clarifications": {
             "first_case_number": "XY1234",
-            "first_court_name": "Los Angeles County Court",
+            "first_court": "Los Angeles County Court",
             "second_case_number": "GH5678",
-            "second_court_name": "Orange County Court"
+            "second_court": "Orange County Court"
           }
         }
       ]
@@ -1120,10 +1138,10 @@
           "asr_output_elevenlabs": "Work out alimony payments in California for the next 10 and 20 years. The payer's monthly gross is $10,000 and the recipient's is $3,000.",
           "asr_output_deepgram": "Work out alimony payments in California for the next ten and twenty years. The payer's monthly gross is ten thousand, and the recipient's is three thousand.",
           "clarifications": {
-            "payor_income_amount": "$10,000",
-            "recipient_income_amount": "$3,000",
-            "first_duration_years": "10 years",
-            "second_duration_years": "20 years"
+            "payor_income": "$10,000",
+            "recipient_income": "$3,000",
+            "first_duration": "10 years",
+            "second_duration": "20 years"
           }
         }
       ]
@@ -1170,8 +1188,8 @@
           "asr_output_elevenlabs": "Um, could you uh get the details on case number 28473 and 64725? I need like their history and info about the litigants.",
           "asr_output_deepgram": "Could you, get the details on case number two eight four seven three and six four seven two five? I need, like, their history and info about the litigants.",
           "clarifications": {
-            "first_case_number": "28473",
-            "second_case_number": "64725"
+            "case_number1": "28473",
+            "case_number2": "64725"
           }
         }
       ]
@@ -1216,7 +1234,9 @@
           "asr_output_elevenlabs": "Could you list all the cases against Dara Inc.? That's D-A-R-A I-N-C, Dara Inc., from 2019? And also show me the ones from 2018 for the same company.",
           "asr_output_deepgram": "Could you list all the cases against Dara Inc, that's d a r a I n c, Dara Inc, from twenty nineteen? And also show me the ones from twenty eighteen for the same company.",
           "clarifications": {
-            "company_name": "Dara Inc"
+            "company_name": "Dara Inc",
+            "year1": "2019",
+            "year2": "2018"
           }
         }
       ]
@@ -1317,10 +1337,10 @@
           "asr_output_deepgram": "Can you find a nature reserve near Berkeley, roughly ten kilometers away with picnic tables and public restrooms? Also, find one near Tokyo within five kilometers that has playgrounds and biking trails.",
           "clarifications": {
             "first_location": "Berkeley",
-            "first_proximity_kilometers": "10",
+            "first_proximity": "10 kilometers",
             "first_amenities": "picnic tables and public restrooms",
             "second_location": "Tokyo",
-            "second_proximity_kilometers": "5",
+            "second_proximity": "5 kilometers",
             "second_amenities": "playgrounds and biking trails"
           }
         }
@@ -1378,7 +1398,11 @@
           "asr_output_openai": "Hey, can you give me the current temperature in Seattle and Los Angeles? Also, let me know the forecast for the next three hours in both cities. Thanks!",
           "asr_output_elevenlabs": "Hey, can you give me the current temperature in Seattle and Los Angeles? Also, let me know the forecast for the next three hours in both cities. Thanks.",
           "asr_output_deepgram": "Hey. Can you give me the current temperature in Seattle and Los Angeles? Also, let me know the forecast for the next three hours in both cities. Bikes.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "Seattle",
+            "second_location": "Los Angeles",
+            "forecast_hours": "three"
+          }
         }
       ]
     ],
@@ -1418,7 +1442,12 @@
           "asr_output_openai": "Hey, um, can you check how much waste a family of four makes in Los Angeles? That's with, uh, two kids and two adults. Oh, and while you're at it, okay, find out waste production for a bachelor in New York, too.",
           "asr_output_elevenlabs": "Hey, um, can you check how much waste a family of four makes in Los Angeles? That's with, uh, two kids and two adults. Oh, and while you're at it, okay, find out waste production for a bachelor in New York too.",
           "asr_output_deepgram": "Hey. Can you check how much waste a family of four makes in Los Angeles? That's with, two kids and two adults. Oh, and while you're at it okay. Find out waste production for a bachelor in New York too.",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Los Angeles",
+            "population1": "two children and two adults",
+            "location2": "New York",
+            "population2": "bachelor"
+          }
         }
       ]
     ],
@@ -1463,7 +1492,14 @@
           "asr_output_openai": "Book me a flight from San Francisco to Tokyo May 3rd, 2022 and then another flight from Tokyo to Sydney on May 18th, 2022.",
           "asr_output_elevenlabs": "Book me a flight from San Francisco to Tokyo May 3rd, 2022, and then another flight from Tokyo to Sydney on May 18th, 2022. Right.",
           "asr_output_deepgram": "Book me a flight from San Francisco to Tokyo, May third twenty twenty two, and then another flight from Tokyo to Sydney on May eighteenth twenty twenty two. Right.",
-          "clarifications": {}
+          "clarifications": {
+            "first_departure_city": "San Francisco",
+            "first_destination_city": "Tokyo",
+            "first_flight_date": "May 3rd 2022",
+            "second_departure_city": "Tokyo",
+            "second_destination_city": "Sydney",
+            "second_flight_date": "May 18th 2022"
+          }
         }
       ]
     ],
@@ -1508,7 +1544,10 @@
           "asr_output_openai": "Could you say what the Treaty of Paris was about? Also, why is the Magna Carta important in history?",
           "asr_output_elevenlabs": "Could you say what the Treaty of Paris was about? Also, why is the Magna Carta important in history?",
           "asr_output_deepgram": "Could you say what the Treaty of Paris was about? Also, why is the Magna Carta important in history?",
-          "clarifications": {}
+          "clarifications": {
+            "event1": "Treaty of Paris",
+            "event2": "Magna Carta"
+          }
         }
       ]
     ],
@@ -1601,10 +1640,14 @@
           "asr_output_elevenlabs": "Who's the US president in 1980 and 2016, and who's the vice president in 1975 and 2011?",
           "asr_output_deepgram": "Who's the US president in nineteen eighty and twenty sixteen? And who's the vice president in nineteen seventy five and twenty eleven?",
           "clarifications": {
-            "year1_for_president": "1980",
-            "year2_for_president": "2016",
-            "year1_for_vice_president": "1975",
-            "year2_for_vice_president": "2011"
+            "year1": "1980",
+            "position1": "president",
+            "year2": "2016",
+            "position2": "president",
+            "year3": "1975",
+            "position3": "vice president",
+            "year4": "2011",
+            "position4": "vice president"
           }
         }
       ]
@@ -1646,10 +1689,11 @@
           "asr_output_elevenlabs": "Let me see. Right, tell me about rise and fall of Christianity in Egypt and Turkey between 100 and 1500 AD.",
           "asr_output_deepgram": "Let me see. Right. Tell me about rise and fall of Christianity in Egypt and Turkey between one hundred and fifteen hundred AD.",
           "clarifications": {
-            "region_spelling": "Egypt and Turkey",
-            "religion_name": "Christianity",
-            "start_year_spelling": "100 A.D",
-            "end_year_spelling": "1500 A.D"
+            "region1": "Egypt",
+            "region2": "Turkey",
+            "religion": "Christianity",
+            "start_year": "100 A.D",
+            "end_year": "1500 A.D"
           }
         }
       ]
@@ -1743,10 +1787,7 @@
           "asr_output_openai": "Hey, how do I like mix watercolors to get magenta, and what amounts of each color should I use? Oh, and for acrylics, how do I make navy and what quantities are needed? Thanks!",
           "asr_output_elevenlabs": "Um, hey, how do I, like, mix watercolors to get magenta and what amounts of each color should I, uh, use? Oh, and for acrylics, how do I make navy and what quantities are needed? Uh, thanks.",
           "asr_output_deepgram": "Hey. How do I, like, mix watercolors to get magenta? And what amounts of each color should I, use? Oh, and for acrylics, how do I make navy, and what quantities are needed? Thanks.",
-          "clarifications": {
-            "watercolor_color": "magenta",
-            "acrylic_color": "navy"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -1786,9 +1827,7 @@
           "asr_output_openai": "Can you tell me the RGB and hex codes for navy, purple, and maroon?",
           "asr_output_elevenlabs": "Um, can you tell me the RGB and hex codes for navy, purple and maroon?",
           "asr_output_deepgram": "Can you tell me the RGB and hex codes for navy, purple, and maroon?",
-          "clarifications": {
-            "color_name_spelling": "navy, purple and maroon"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -1839,7 +1878,8 @@
             "start_location1": "New York",
             "end_location1": "Washington DC",
             "start_location2": "Los Angeles",
-            "end_location2": "San Francisco"
+            "end_location2": "San Francisco",
+            "optional_parameter": "shortest route"
           }
         }
       ]
@@ -1885,7 +1925,12 @@
           "asr_output_openai": "What are the opening hours and ticket prices for adults and kids at National Museum in D.C.? That's D.C. and the Louvre in Paris? Thanks!",
           "asr_output_elevenlabs": "What are the opening hours and ticket prices for adults and kids at National Museum in DC? That's D.C. and the Louvre in Paris? Thanks.",
           "asr_output_deepgram": "What are the opening hours and ticket prices for adults and kids at National Museum in DC? That's d dot c dot and the Louvre in Paris? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "museum_name1": "National Museum",
+            "city1": "Washington D.C.",
+            "museum_name2": "Louvre Museum",
+            "city2": "Paris"
+          }
         }
       ]
     ],
@@ -1934,10 +1979,10 @@
           "asr_output_elevenlabs": "Uh, can you give me the details for the exhibition called Wonder of Nature at the Louvre? That's L-O-U-V-R-E, Louvre. And, um, the exhibition titled Age of Reptiles at the British Museum? Also, oh, what's the admission cost for kids and adults?",
           "asr_output_deepgram": "Can you give me the details for the exhibition called Wonder of Nature at the Louvre? That's l o u v r e, Louvre. And, the exhibition titled age of reptiles at the British Museum. Also oh, what's the admission cost for kids and adults?",
           "clarifications": {
-            "first_exhibition_name": "Wonder of Nature",
-            "first_museum_name": "Louvre",
-            "second_exhibition_name": "Age of Reptiles",
-            "second_museum_name": "British Museum"
+            "exhibition_name1": "Wonder of Nature",
+            "museum_name1": "Louvre",
+            "exhibition_name2": "Age of Reptiles",
+            "museum_name2": "British Museum"
           }
         }
       ]
@@ -1990,10 +2035,10 @@
           "asr_output_elevenlabs": "Hey, can you find the nearest music store in San Francisco or Chicago where I can get a Yamaha acoustic guitar and a Kawai piano?",
           "asr_output_deepgram": "Hey. Can you find the nearest music store in San Francisco or Chicago where I can get a Yamaha acoustic guitar and a Kawaii piano?",
           "clarifications": {
-            "location_spelling1": "San Francisco, California",
-            "location_spelling2": "Chicago, Illinois",
-            "instrument_brand1": "Yamaha acoustic guitar",
-            "instrument_brand2": "Kawai piano"
+            "location1": "San Francisco, California",
+            "location2": "Chicago, Illinois",
+            "instrument1": "Yamaha acoustic guitar",
+            "instrument2": "Kawai piano"
           }
         }
       ]
@@ -2081,7 +2126,13 @@
           "asr_output_openai": "Hey, uh, can you see if there are any rock and jazz concerts happening in San Francisco and New York next month?",
           "asr_output_elevenlabs": "Hey, uh, can you see if there are any rock and jazz concerts happening in San Francisco and New York next month?",
           "asr_output_deepgram": "Hey. Can you see if there are any rock and jazz concerts happening in San Francisco and New York next month?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "San Francisco, California",
+            "location2": "New York, New York",
+            "music_genre1": "rock",
+            "music_genre2": "jazz",
+            "time_period": "next month"
+          }
         }
       ]
     ],
@@ -2126,7 +2177,12 @@
           "asr_output_openai": "Let me see. Can you look for classical concerts around Berlin and Paris next Friday, with parking available? Thanks?",
           "asr_output_elevenlabs": "Let me see. Can you look for classical concerts around Berlin and Paris next Friday with parking available? Thanks.",
           "asr_output_deepgram": "Let me see. Can you look for classical concerts around Berlin and Paris next Friday with parking available? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "Berlin",
+            "second_location": "Paris",
+            "concert_date": "next Friday",
+            "music_genre": "classical"
+          }
         }
       ]
     ],
@@ -2188,8 +2244,8 @@
           "asr_output_elevenlabs": "Hey, um, what's most played pop song right now? Oh, and also, uh, what's the top rock song in Australia?",
           "asr_output_deepgram": "Hey. What's most played pop song right now? Oh, and, also, what's the top rock song in Australia?",
           "clarifications": {
-            "first_genre": "Pop",
-            "second_genre": "Rock",
+            "genre1": "Pop",
+            "genre2": "Rock",
             "region": "Australia"
           }
         }
@@ -2236,10 +2292,10 @@
           "asr_output_elevenlabs": "Okay, what's the winning percentage for Lakers and Bulls in the 2018 and 2020 NBA seasons?",
           "asr_output_deepgram": "Okay. What's the winning percentage for Lakers and Bulls in the twenty eighteen and twenty twenty NBA seasons?",
           "clarifications": {
-            "first_team_name": "Lakers",
-            "second_team_name": "Bulls",
-            "first_season_year": "2018",
-            "second_season_year": "2020"
+            "team1": "Lakers",
+            "team2": "Bulls",
+            "season1": "2018",
+            "season2": "2020"
           }
         }
       ]
@@ -2326,8 +2382,9 @@
           "asr_output_elevenlabs": "In Pokemon Go, what moves can Pikachu learn? Oh, and can you check if Bulbasaur can learn the move Solar Beam?",
           "asr_output_deepgram": "In Pokemon Go, what moves can Pikachu learn? Oh, and can you check if Bulbasaur can learn the move solar beam?",
           "clarifications": {
-            "pokemon_name": "Pikachu",
-            "specific_move_name": "Solar Beam"
+            "pokemon_name1": "Pikachu",
+            "pokemon_name2": "Bulbasaur",
+            "specific_move": "Solar Beam"
           }
         }
       ]
@@ -2370,7 +2427,9 @@
           "clarifications": {
             "team_name": "RocketLeague",
             "player_id": "3142",
-            "season_list": "2017, 2018, 2019"
+            "season1": "2017",
+            "season2": "2018",
+            "season3": "2019"
           }
         }
       ]
@@ -2416,8 +2475,8 @@
           "asr_output_elevenlabs": "Hey, um, how do I save the game at stage seven in easy mode and, uh, stage three in hard mode? Right?",
           "asr_output_deepgram": "Hey. How do I save the game at stage seven in easy mode and, stage three in hard mode? Right?",
           "clarifications": {
-            "stage_easy_mode": "stage 7 in easy mode",
-            "stage_hard_mode": "stage 3 in hard mode"
+            "stage_easy_mode": "stage 7",
+            "stage_hard_mode": "stage 3"
           }
         }
       ]
@@ -2513,7 +2572,12 @@
           "asr_output_openai": "Hey, can you look for an Italian restaurant nearby in New York with vegetarian options? Oh, and also a Japanese sushi place in Los Angeles that delivers?",
           "asr_output_elevenlabs": "Hey, can you look for an Italian restaurant nearby in New York with vegetarian options? Oh, and also a Japanese sushi place in Los Angeles that delivers?",
           "asr_output_deepgram": "Hey. Can you look for an Italian restaurant nearby in New York with vegetarian options? Oh, and also a Japanese sushi place in Los Angeles that delivers?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "New York",
+            "cuisine1": "Italian",
+            "location2": "Los Angeles",
+            "cuisine2": "Japanese"
+          }
         }
       ]
     ],
@@ -2612,9 +2676,10 @@
           "asr_output_elevenlabs": "Order large pepperoni pizza and a, a chicken Caesar salad from Whole Foods downtown. Oh, and then, um, get same order from Uptown location too.",
           "asr_output_deepgram": "Order large pepperoni pizza and, a chicken Caesar salad from Whole Foods downtown. Oh, and then, get same order from Uptown location too.",
           "clarifications": {
-            "location_spelling1": "downtown location",
-            "location_spelling2": "uptown location",
-            "items_spelling": "large pepperoni pizza and a chicken Caesar salad"
+            "first_location": "downtown location",
+            "second_location": "uptown location",
+            "order_size": "large",
+            "items": "pepperoni pizza and chicken Caesar salad"
           }
         }
       ]
@@ -2668,7 +2733,10 @@
           "asr_output_openai": "Um, can you get a 24-hour supermarket in New York City, and also one in San Diego with home delivery? Thanks.",
           "asr_output_elevenlabs": "Um, can you get a 24-hour supermarket in New York City and, uh, also one in San Diego with home delivery? Thanks.",
           "asr_output_deepgram": "Can you get a twenty four hour supermarket in New York City and, also one in San Diego with home delivery? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "New York City",
+            "location2": "San Diego"
+          }
         }
       ]
     ],
@@ -2777,11 +2845,13 @@
           "asr_output_deepgram": "Okay. Snag Sheraton Hotel Room in New York for two adults and a child. Check-in on May first and check out on the fifth twenty twenty two. Then book a room at Marriott in Los Angeles for one adult and two kiddos. Check-in on June first and check out on the tenth twenty twenty two. Thanks.",
           "clarifications": {
             "first_hotel_name": "Sheraton Hotel",
-            "first_check_in_date": "May 1, 2022",
-            "first_check_out_date": "May 5, 2022",
+            "first_location": "New York",
+            "first_check_in": "May 1, 2022",
+            "first_check_out": "May 5, 2022",
             "second_hotel_name": "Marriott",
-            "second_check_in_date": "June 1, 2022",
-            "second_check_out_date": "June 10, 2022"
+            "second_location": "Los Angeles",
+            "second_check_in": "June 1, 2022",
+            "second_check_out": "June 10, 2022"
           }
         }
       ]
@@ -2842,7 +2912,10 @@
           "asr_output_openai": "Um, find me exchange rates for USD to AUD and USD to CAD. Thanks.",
           "asr_output_elevenlabs": "Um, find me exchange rates for USD to AUD and USD to CAD. Thanks!",
           "asr_output_deepgram": "Find me exchange rates for USD to AUD and USD to CAD. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "currency_pair1": "USD to AUD",
+            "currency_pair2": "USD to CAD"
+          }
         }
       ]
     ],
@@ -2883,9 +2956,12 @@
           "asr_output_elevenlabs": "What's the dollar cost for, uh, changing fifteen thousand euros? And also, uh, change two hundred pounds to dollars? How much would that be?",
           "asr_output_deepgram": "What's the dollar cost for, changing fifteen thousand euros? And also, change two hundred pounds to dollars? How much would that be?",
           "clarifications": {
-            "first_amount": "15000 Euro",
-            "second_amount": "200 pounds",
-            "target_currency": "dollars"
+            "first_amount": "15000",
+            "first_from_currency": "Euro",
+            "first_to_currency": "dollars",
+            "second_amount": "200",
+            "second_from_currency": "pounds",
+            "second_to_currency": "dollars"
           }
         }
       ]
@@ -2967,10 +3043,9 @@
           "asr_output_elevenlabs": "Uh, can you use the math dot hypot function to find the Euclidean norm or, um, length from the origin to the point three comma four? Then, uh, do the same for the point six comma eight. Also, um, work out the Euclidean norm for the point nine, 12, 15 using the same function.",
           "asr_output_deepgram": "Can you use the math dot hypot function to find the Euclidean norm or, length from the origin to the point three comma four? Then, do the same for the point six comma eight. Also, work out the Euclidean norm for the point nine twelve fifteen using the same function.",
           "clarifications": {
-            "function_name": "math.hypot",
-            "point1_coordinates": "(3, 4)",
-            "point2_coordinates": "(6, 8)",
-            "point3_coordinates": "(9, 12, 15)"
+            "first_point": "(3, 4)",
+            "second_point": "(6, 8)",
+            "third_point": "(9, 12, 15)"
           }
         }
       ]
@@ -3016,12 +3091,8 @@
           "asr_output_elevenlabs": "Hey, can you, uh, help me find the roots of these, um, quadratic equations? Sure. The first one's 3x squared plus 4x plus 2 equals 0. And for that, the coefficients are a for x squared, b for x, and c for the constant. The second one's 5x squared minus 7x plus 3 equals 0, with the same setup for coefficients.",
           "asr_output_deepgram": "Hey. Can you, help me find the roots of these, quadratic equations? Sure. The first one's three x squared plus four x plus two equals zero. And for that, the coefficients are a for x squared, b for x, and c for the constant. The second one's five x squared minus seven x plus three equals zero with the same setup for coefficients.",
           "clarifications": {
-            "first_equation_a_coefficient": "3",
-            "first_equation_b_coefficient": "4",
-            "first_equation_c_constant": "2",
-            "second_equation_a_coefficient": "5",
-            "second_equation_b_coefficient": "-7",
-            "second_equation_c_constant": "3"
+            "first_equation_coefficients": "3x^2 + 4x + 2",
+            "second_equation_coefficients": "5x^2 - 7x + 3"
           }
         }
       ]
@@ -3068,12 +3139,9 @@
           "asr_output_elevenlabs": "Hey. Uh, can you find the roots for two quadratic equations? For the first one, the coefficients are like 5 for x squared, 6 for x, and 1 is the constant. The second equation's got coefficients of a 3 for x squared, 2 for x, and 1 as the constant. Oh, could you use the solve quadratic equation function to solve them?",
           "asr_output_deepgram": "Hey. Can you find the roots for two quadratic equations? For the first one, the coefficients are like five for x squared, six for x, and one is the constant. The second equation's got coefficients of, three for x squared, two for x, and one as the constant. Oh, could you use the solve quadratic equation function to solve them?",
           "clarifications": {
-            "first_equation_coefficient_a": "5",
-            "first_equation_coefficient_b": "6",
-            "first_equation_constant_c": "1",
-            "second_equation_coefficient_a": "3",
-            "second_equation_coefficient_b": "2",
-            "second_equation_constant_c": "1"
+            "first_equation_coefficients": "5, 6, 1",
+            "second_equation_coefficients": "3, 2, 1",
+            "function_name": "solve_quadratic_equation"
           }
         }
       ]
@@ -3120,9 +3188,13 @@
           "asr_output_elevenlabs": "Um, can you help me with these quadratic equations? For first one with coefficients two, five, and three, I need all roots, uh, real or complex. For second one with coefficients one, negative three and two, just the real roots. Oh, third equation with coefficients four, negative seven and three, I've gotta find all roots. And lastly, for the fourth one with coefficients one, two, and one only the real roots.",
           "asr_output_deepgram": "Can you help me with these quadratic equations? For first one with coefficients two, five, and three, I need all roots, real or complex. For second one, with coefficients one, negative three, and two, just the real roots. Oh, third equation with coefficients four, negative seven, and three, I've gotta find all roots. And lastly, for the fourth one with coefficients one, two, and one, only the real roots.",
           "clarifications": {
+            "first_equation_coefficients": "a = 2, b = 5, c = 3",
             "first_equation_root_type": "all",
+            "second_equation_coefficients": "a = 1, b = -3, c = 2",
             "second_equation_root_type": "real",
+            "third_equation_coefficients": "a = 4, b = -7, c = 3",
             "third_equation_root_type": "all",
+            "fourth_equation_coefficients": "a = 1, b = 2, c = 1",
             "fourth_equation_root_type": "real"
           }
         }
@@ -3252,7 +3324,10 @@
           "asr_output_openai": "Could you like find the area for two circles, one with a 5-meter radius and the other 10 meters? Then lemme know which one's bigger and by how much, okay?",
           "asr_output_elevenlabs": "Um, could you like find the area for two circles? One with a five-meter radius and the other 10 meters. Then, uh, lemme know which one's bigger and by how much. Okay?",
           "asr_output_deepgram": "Could you, like, find the area for two circles, one with a five meter radius and the other ten meters? Then, let them know which one's bigger and by how much. Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "first_circle_radius": "5 meters",
+            "second_circle_radius": "10 meters"
+          }
         }
       ]
     ],
@@ -3376,7 +3451,13 @@
           "asr_output_openai": "Work out the total circumference of four circles with these radii: 5 meters, 10 meters, 15 meters, and 20 meters. Yeah, give me the answer in meters.",
           "asr_output_elevenlabs": "Uh, work out the total circumference of four circles with these radii, 5 meters, 10 meters, 15 meters, and 20 meters. Yeah, give the answer in meters.",
           "asr_output_deepgram": "Work out the total circumference of four circles with these roti yi, five meters, ten meters, fifteen meters, and twenty meters. Yeah. Gimme the answer in meters.",
-          "clarifications": {}
+          "clarifications": {
+            "radius1": "5m",
+            "radius2": "10m",
+            "radius3": "15m",
+            "radius4": "20m",
+            "output_units": "meters"
+          }
         }
       ]
     ],
@@ -3417,8 +3498,8 @@
           "asr_output_deepgram": "Find the derivative of the polynomial three x cubed minus two x squared plus five x minus seven and evaluate it at x equals four. Right? After that, take the derivative of what you get and evaluate it at x equals two.",
           "clarifications": {
             "polynomial_function": "3x^3 - 2x^2 + 5x - 7",
-            "first_derivative_evaluation_point": "x=4",
-            "second_derivative_evaluation_point": "x=2"
+            "first_x_value": "4",
+            "second_x_value": "2"
           }
         }
       ]
@@ -3459,14 +3540,14 @@
           "asr_output_elevenlabs": "Um, hey, can you, uh, find the area under the curve for x cubed from x equals 2 to 5 using the trapezoid method, and then, oh, do it again with the Simpson method? After that, could you do the same thing for 2x squared plus 3x minus 1 from x equals negative 1 to 3?",
           "asr_output_deepgram": "Hey. Can you, find the area under the curve for x cubed from x equals two to five using the trapezoid method and then, oh, do it again with the Simpson method? After that, could you do the same thing for two x squared plus three x minus one from x equals negative one to three?",
           "clarifications": {
-            "first_function_expression": "x^3",
-            "first_start_x_value": "2",
-            "first_end_x_value": "5",
-            "first_integration_method": "trapezoid",
-            "second_integration_method": "simpson",
-            "second_function_expression": "2x^2+3x-1",
-            "second_start_x_value": "-1",
-            "second_end_x_value": "3"
+            "first_function": "x^3",
+            "first_start_x": "2",
+            "first_end_x": "5",
+            "first_method": "trapezoid",
+            "second_method": "simpson",
+            "second_function": "2x^2+3x-1",
+            "second_start_x": "-1",
+            "second_end_x": "3"
           }
         }
       ]
@@ -3517,12 +3598,12 @@
           "asr_output_elevenlabs": "Um, could you find the derivative of the function 3x squared plus 2x minus 1 at x equals 5, and then, uh, do the same for the function 4e cubed minus 3e squared plus 2e minus 1 at i equals 3?",
           "asr_output_deepgram": "Could you find the derivative of the function three x squared plus two x minus one at x equals five, and then, do the same for the function four e cubed minus three, e squared plus two, e minus one at I equals three?",
           "clarifications": {
-            "first_function_expression": "3x^2 + 2x - 1",
+            "first_function": "3x^2 + 2x - 1",
             "first_value": "5",
-            "first_function_variable": "x",
-            "second_function_expression": "4y^3 - 3y^2 + 2y - 1",
+            "first_variable": "x",
+            "second_function": "4y^3 - 3y^2 + 2y - 1",
             "second_value": "3",
-            "second_function_variable": "y"
+            "second_variable": "y"
           }
         }
       ]
@@ -3568,7 +3649,10 @@
           "asr_output_openai": "Um, what are the prime factors of 4567 and 7890, you know? Oh, could you give me those as a formatted string and an array?",
           "asr_output_elevenlabs": "Um, what are the prime factors of forty-five sixty-seven and seventy-eight ninety, you know? Oh, could you, uh, give me those as a formatted string and an array?",
           "asr_output_deepgram": "What are the prime factors of forty five sixty seven and seventy eight ninety, you know? Oh, could you, give me those as a formatted string and an array?",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "4567",
+            "second_number": "7890"
+          }
         }
       ]
     ],
@@ -3683,7 +3767,12 @@
           "asr_output_openai": "All right, first get the highest common factor for 45 and 60. Then take that result and get the highest common factor with 90 and 120. Also, figure out the highest common factor for 36 and 48, and use that to get the highest common factor with 72 and 96.",
           "asr_output_elevenlabs": "All right. Uh, first, get the highest common factor for 45 and 60. Then take that result and, um, get the highest common factor with 90 and 120. Also, figure out the highest common factor for 36 and 48 and, uh, use that to get the highest common factor with 72 and 96.",
           "asr_output_deepgram": "Alright. First, get the highest common factor for forty five and sixty. Then take that result and, get the highest common factor with ninety and one twenty. Also, figure out the highest common factor for thirty six and forty eight and, use that to get the highest common factor with seventy two and ninety six.",
-          "clarifications": {}
+          "clarifications": {
+            "first_pair_numbers": "(45, 60)",
+            "second_pair_numbers": "(90, 120)",
+            "third_pair_numbers": "(36, 48)",
+            "fourth_pair_numbers": "(72, 96)"
+          }
         }
       ]
     ],
@@ -3723,7 +3812,11 @@
           "asr_output_openai": "Can you find the greatest common divisor for these integer pairs: 45 and 60, and 81 and 63? Use the number_theory.ggd function for that.",
           "asr_output_elevenlabs": "Can you find the greatest common divisor for these integer pairs? 45 and 60, and 81 and 63. Use the number_theory.ggd function for that.",
           "asr_output_deepgram": "Can you find the greatest common divisor for these integer pairs, forty five and sixty and eighty one and sixty three? Use the number underscore theory dot g g d function for that.",
-          "clarifications": {}
+          "clarifications": {
+            "function_name": "number_theory.gcd",
+            "integer_pair1": "(45, 60)",
+            "integer_pair2": "(81, 63)"
+          }
         }
       ]
     ],
@@ -3764,8 +3857,8 @@
           "asr_output_elevenlabs": "Hey, uh, can you give me the prime factorization in a dictionary format for 4, 5, 6, 7, and 78, 90?",
           "asr_output_deepgram": "Hey, can you give me the prime factorization in a dictionary format for four, five, six, seven, and seventy eight ninety?",
           "clarifications": {
-            "first_number": "4567",
-            "second_number": "7890",
+            "number1": "4567",
+            "number2": "7890",
             "return_format": "dictionary"
           }
         }
@@ -3806,7 +3899,12 @@
           "asr_output_openai": "Lemme see. John picked 36 and 48, and Mary went with 60 and 96. Could you find GCD for their numbers?",
           "asr_output_elevenlabs": "Let me see. John picked thirty six and forty eight, and Mary went with sixty and ninety six. Could you find GCD for their numbers?",
           "asr_output_deepgram": "Let me see. John picked thirty six and forty eight, and Mary went with sixty and ninety six. Could you find GCD for their numbers?",
-          "clarifications": {}
+          "clarifications": {
+            "john_first_number": "36",
+            "john_second_number": "48",
+            "mary_first_number": "60",
+            "mary_second_number": "96"
+          }
         }
       ]
     ],
@@ -3847,14 +3945,12 @@
           "asr_output_elevenlabs": "Hey, could you, um, help me figure out the final speeds for a physics experiment? I'm dropping objects and need to, uh, know their velocities. First, a tennis ball. I drop it from 10 meters and then 20 meters, both with an initial speed of 0 meters per second. Next, a baseball. I'm dropping it from 15 meters and then 25 meters, also with no initial speed. Assume gravity is about 9.81 meters per second squared.",
           "asr_output_deepgram": "Hey. Could you, help me figure out the final speeds for a physics experiment? I'm dropping objects and need to, know their velocities. First, a tennis ball. I drop it from ten meters and then twenty meters, both with an initial speed of zero meters per second. Next, a baseball. I'm dropping it from fifteen meters and then twenty five meters also with no initial speed. Assume gravity's about nine point eight one meters per second squared.",
           "clarifications": {
-            "first_object_name": "tennis ball",
-            "second_object_name": "baseball",
-            "first_height_spelling": "10 meters",
-            "second_height_spelling": "20 meters",
-            "third_height_spelling": "15 meters",
-            "fourth_height_spelling": "25 meters",
-            "initial_velocity_spelling": "0 m/s",
-            "gravity_value": "9.81 m/s^2"
+            "tennis_ball_height1": "10 meters",
+            "tennis_ball_height2": "20 meters",
+            "baseball_height1": "15 meters",
+            "baseball_height2": "25 meters",
+            "initial_velocity": "0 m/s",
+            "gravity": "9.81 m/s^2"
           }
         }
       ]
@@ -4002,16 +4098,16 @@
           "asr_output_elevenlabs": "Okay. So for the first car, it starts from rest and speeds up evenly over 5.2 seconds to cover 110 meters. What's the acceleration? Then you've got a second car that's already going 15 meters per second, speeding up by 3.5 meters per second squared for seven seconds. How far does it go? Next, consider a third car starting at 20 meters per second and speeding up at two meters per second squared for 10 seconds. How far does it go? And finally, the fourth car is moving at 25 meters per second for eight seconds without speeding up. What's its displacement?",
           "asr_output_deepgram": "Okay. So for the first car, it starts from rest and speeds up evenly over five point two seconds to cover one hundred ten meters. What's the acceleration? Then you've got a second car that's already going fifteen meters per second, speeding up by three point five meters per second squared for seven seconds. How far does it go? Next, consider a third car starting at twenty meters per second and speeding up at two meters per second squared for ten seconds. How far does it go? And finally, the fourth car is moving at twenty five meters per second for eight seconds without speeding up. What's its displacement?",
           "clarifications": {
-            "first_car_time": "5.2 seconds",
-            "first_car_distance": "110 m",
-            "second_car_initial_velocity": "15 m/s",
-            "second_car_acceleration": "3.5 m/s^2",
-            "second_car_time": "7 seconds",
-            "third_car_initial_velocity": "20 m/s",
-            "third_car_acceleration": "2 m/s^2",
-            "third_car_time": "10 seconds",
-            "fourth_car_initial_velocity": "25 m/s",
-            "fourth_car_time": "8 seconds"
+            "time_for_first_car": "5.2 seconds",
+            "distance_for_first_car": "110 m",
+            "initial_velocity_second_car": "15 m/s",
+            "acceleration_second_car": "3.5 m/s^2",
+            "time_second_car": "7 seconds",
+            "initial_velocity_third_car": "20 m/s",
+            "acceleration_third_car": "2 m/s^2",
+            "time_third_car": "10 seconds",
+            "initial_velocity_fourth_car": "25 m/s",
+            "time_fourth_car": "8 seconds"
           }
         }
       ]
@@ -4058,10 +4154,10 @@
           "asr_output_elevenlabs": "Hey, Emily. Can, ah, a physics experiment where we let two objects fall from, you know, a height without air resistance. The first one starts at, um, zero meters per second and the second at five meters per second. The first object falls for ten seconds and, ah, the second for seven seconds. Could you help me find out their final speeds using gravity at -9.81 meters per second squared?",
           "asr_output_deepgram": "Hey. I'm Luke Ken at, a physics experiment where we let two objects fall from, you know, a height without air resistance. The first one starts at, zero meters per second and the second at five meters per second. The first object falls for ten seconds and, the second for seven seconds. Could you help me find out their final speeds using gravity at negative nine point eight one meters per second squared?",
           "clarifications": {
-            "first_object_initial_speed": "0 m/s",
-            "second_object_initial_speed": "5 m/s",
-            "first_object_time": "10 seconds",
-            "second_object_time": "7 seconds"
+            "initial_speed_first_object": "0 m/s",
+            "initial_speed_second_object": "5 m/s",
+            "time_first_object": "10 seconds",
+            "time_second_object": "7 seconds"
           }
         }
       ]
@@ -4210,7 +4306,8 @@
             "first_object_initial_velocity": "0 m/s",
             "first_object_height": "10 meters",
             "second_object_initial_velocity": "5 m/s",
-            "second_object_height": "20 meters"
+            "second_object_height": "20 meters",
+            "gravitational_acceleration": "9.8 m/s^2"
           }
         }
       ]
@@ -4256,15 +4353,15 @@
           "asr_output_elevenlabs": "Hey, uh, can you find quickest way from my home in San Francisco to my office in Palo Alto? Then, uh, get a scenic route from Palo Alto back to the Golden Gate Bridge. And finally, oh, fastest path from the Golden Gate Bridge to my place.",
           "asr_output_deepgram": "Hey, can you find quickest way from my home in San Francisco to my office in Palo Alto? Then, get a scenic route from Palo Alto back to the Golden Gate Bridge. And finally, oh, fastest path from the Golden Gate Bridge to my place.",
           "clarifications": {
-            "start_location_spelling": "San Francisco",
-            "end_location_spelling": "Palo Alto",
-            "route_type_spelling": "fastest",
-            "second_start_location_spelling": "Palo Alto",
-            "second_end_location_spelling": "Golden Gate Bridge in San Francisco",
-            "second_route_type_spelling": "scenic",
-            "third_start_location_spelling": "Golden Gate Bridge",
-            "third_end_location_spelling": "San Francisco",
-            "third_route_type_spelling": "fastest"
+            "start_location1": "San Francisco",
+            "end_location1": "Palo Alto",
+            "route_type1": "fastest",
+            "start_location2": "Palo Alto",
+            "end_location2": "Golden Gate Bridge",
+            "route_type2": "scenic",
+            "start_location3": "Golden Gate Bridge",
+            "end_location3": "San Francisco",
+            "route_type3": "fastest"
           }
         }
       ]
@@ -4315,19 +4412,19 @@
           "asr_output_deepgram": "Make a seven day Tokyo plan with a two hundred dollar daily budget for urban exploration. Then, organize a ten day Paris trip with a one fifty dollar daily budget focused on history. Next, I need you to, oh, arrange a five day Sydney trip with a one hundred dollar daily budget centered on nature. Finally, prepare a twelve day Rome itinerary with a one eighty dollar daily budget for cultural experiences.",
           "clarifications": {
             "first_destination": "Tokyo",
-            "first_days": "7",
+            "first_trip_duration": "7 days",
             "first_daily_budget": "$200",
             "first_exploration_type": "urban exploration",
             "second_destination": "Paris",
-            "second_days": "10",
+            "second_trip_duration": "10 days",
             "second_daily_budget": "$150",
             "second_exploration_type": "history",
             "third_destination": "Sydney",
-            "third_days": "5",
+            "third_trip_duration": "5 days",
             "third_daily_budget": "$100",
             "third_exploration_type": "nature",
             "fourth_destination": "Rome",
-            "fourth_days": "12",
+            "fourth_trip_duration": "12 days",
             "fourth_daily_budget": "$180",
             "fourth_exploration_type": "culture"
           }
@@ -4387,10 +4484,10 @@
           "asr_output_elevenlabs": "Hey, can you look for vegan restaurants in Los Angeles that stay open till 10 PM, and then do the same for San Francisco and Seattle?",
           "asr_output_deepgram": "Hey. Can you look for vegan restaurants in Los Angeles that stay open till ten PM and then do the same for San Francisco and Seattle?",
           "clarifications": {
-            "location1": "Los Angeles, CA",
-            "location2": "San Francisco, CA",
-            "location3": "Seattle, WA",
-            "operating_hours": "22:00"
+            "first_location": "Los Angeles, CA",
+            "second_location": "San Francisco, CA",
+            "third_location": "Seattle, WA",
+            "preferred_closing_time": "22:00"
           }
         }
       ]
@@ -4431,7 +4528,12 @@
           "asr_output_openai": "Hey, what's shortest driving distance in miles from New York City to Los Angeles, right then? From Los Angeles to Miami? And finally, back to New York City from Miami?",
           "asr_output_elevenlabs": "Hey, uh, what's shortest driving distance in miles from New York City to Los Angeles? Right then, um, from Los Angeles to Miami? And finally, uh, back to New York City from Miami?",
           "asr_output_deepgram": "Hey. What's shortest driving distance in miles from New York City to Los Angeles right then, from Los Angeles to Miami? And finally, back to New York City from Miami?",
-          "clarifications": {}
+          "clarifications": {
+            "origin_city": "New York City",
+            "first_destination": "Los Angeles",
+            "second_destination": "Miami",
+            "return_city": "New York City"
+          }
         }
       ]
     ],
@@ -4475,7 +4577,20 @@
           "asr_output_openai": "Hey, what's the estimated travel time if I start in New York, stop at Philadelphia, Washington D.C., then Atlanta, and end in Miami? Also, what if I go straight from Washington D.C. to Miami and skip Atlanta? Oh, and lastly, how long'd it take if I started in Philadelphia, stopped in Washington D.C., and ended in Miami?",
           "asr_output_elevenlabs": "Hey, uh, what's estimated travel time if I start in New York, stop at Philadelphia, Washington DC, then Atlanta, and end in Miami? Also, um, what if I go straight from Washington DC to Miami and skip Atlanta? Oh, and lastly, how long did it take if I, uh, started in Philadelphia, stopped in Washington DC, and ended in Miami?",
           "asr_output_deepgram": "Hey. What's estimated travel time if I start in New York, stop at Philadelphia, Washington DC, then Atlanta, and end in Miami? Also, what if I go straight from Washington DC to Miami and skip Atlanta? Oh, and lastly, how long did it take if I, started in Philadelphia, stopped in Washington DC, and ended in Miami?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location1": "New York",
+            "stop1": "Philadelphia",
+            "stop2": "Washington D.C.",
+            "stop3": "Atlanta",
+            "end_location1": "Miami",
+            "start_location2": "New York",
+            "stop4": "Philadelphia",
+            "stop5": "Washington D.C.",
+            "end_location2": "Miami",
+            "start_location3": "Philadelphia",
+            "stop6": "Washington D.C.",
+            "end_location3": "Miami"
+          }
         }
       ]
     ],
@@ -4526,10 +4641,10 @@
           "asr_output_elevenlabs": "Hey, uh, for a physics experiment you've got two charges, one with, uh, five coulombs at two meters and another with three coulombs at four meters, both from the measurement point. It's in a vacuum. Oh, could you like work out the electric field from each charge at that point using the calculate_electric_field function?",
           "asr_output_deepgram": "Hey. For a physics experiment, you've got two charges. One with, five coulombs at two meters and another with three coulombs at four meters, both from the measurement point. It's in a vacuum. Oh, could you, like, work out the electric field from each charge at that point using the calculate underscore electric underscore field function?",
           "clarifications": {
-            "first_charge_value": "5 coulombs",
-            "first_distance_value": "2 meters",
-            "second_charge_value": "3 coulombs",
-            "second_distance_value": "4 meters"
+            "first_charge": "5 coulombs",
+            "first_distance": "2 meters",
+            "second_charge": "3 coulombs",
+            "second_distance": "4 meters"
           }
         }
       ]
@@ -4679,12 +4794,12 @@
           "asr_output_elevenlabs": "Hey, can you find the resonant frequency for an LC circuit with 0.05 henrys of inductance and 0.000001 farads of capacitance and round the answer to three decimals? Then do it again using 0.007 henrys and 0.000002 farads, but this time round it to four decimals.",
           "asr_output_deepgram": "Hey. Can you find the resonant frequency for an LC circuit with zero point zero five henrys of inductance and zero point zero zero zero zero zero zero one farads of capacitance and round the answer to three decimals? Then do it again using zero point zero zero seven henrys and zero point zero zero zero zero zero zero two for adds, but this time round it to four decimals.",
           "clarifications": {
-            "first_inductance_value": "0.005 henries",
-            "first_capacitance_value": "0.0000001 farads",
-            "first_round_off_value": "3 decimal places",
-            "second_inductance_value": "0.007 henries",
-            "second_capacitance_value": "0.0000002 farads",
-            "second_round_off_value": "4 decimal places"
+            "first_inductance": "0.005 henries",
+            "first_capacitance": "0.0000001 farads",
+            "first_round_off": "3",
+            "second_inductance": "0.007 henries",
+            "second_capacitance": "0.0000002 farads",
+            "second_round_off": "4"
           }
         }
       ]
@@ -4730,12 +4845,12 @@
           "asr_output_elevenlabs": "Hey, um, can you figure out electric field strength for me at a 0.5 meters from a two Coulomb charge in a vacuum? Also, calculate it for like one meter and two meters away from same charge. And, uh, right, lastly, what's electric field strength at one meter if the charge is in air instead?",
           "asr_output_deepgram": "Hey, Em. Can you figure out electric field strength for me at, zero point five meters from a two coulomb charge in a vacuum? Also, calculate it for, like, one meter and two meters away from same charge. And, right. Lastly, what's electric field strength at one meter if the charge is in air instead?",
           "clarifications": {
-            "charge_value": "2 Coulombs",
-            "distance1_value": "0.5 meters",
-            "distance2_value": "1 meter",
-            "distance3_value": "2 meters",
-            "medium1_value": "vacuum",
-            "medium2_value": "air"
+            "distance1": "0.5 meters",
+            "distance2": "1 meter",
+            "distance3": "2 meters",
+            "medium1": "vacuum",
+            "medium2": "air",
+            "charge": "2 Coulombs"
           }
         }
       ]
@@ -4781,7 +4896,12 @@
           "asr_output_elevenlabs": "Hey, um, can you help me find out the energy for a phase change? I'm doing a science experiment with, uh, water. First, I'm melting around 500 grams of ice at zero degrees Celsius, then, uh, freezing it back. After that, I'm turning the same amount of water into vapor at 100 degrees and, uh, turning it back to liquid. Can you tell me, uh, the energy needed or released for each phase change?",
           "asr_output_deepgram": "Hey. Can you help me find out the energy for a phase change? I'm doing a science experiment with, water. First, I'm melting around five hundred grams of ice at zero degrees Celsius, then, freezing it back. After that, I'm turning the same amount of water into vapor at one hundred degrees and, turning it back to liquid. Can you tell me, the energy needed or released for each phase change?",
           "clarifications": {
-            "mass_value": "500 grams"
+            "mass": "500 grams",
+            "phase_transition1": "melting",
+            "phase_transition2": "freezing",
+            "phase_transition3": "vaporization",
+            "phase_transition4": "condensation",
+            "substance": "water"
           }
         }
       ]
@@ -4916,7 +5036,7 @@
           "asr_output_elevenlabs": "Hey, I'm in the lab with a sealed container that's got a gauge pressure of 2.58 atm. At sea level, we're at one atm, but I'm taking it to a high altitude spot, um, with an atmospheric pressure of 0.85 atm. Can you tell me the absolute pressure of the container, uh, at both sea level and that high altitude location?",
           "asr_output_deepgram": "Hey. I'm in the lab with a sealed container that's got, a gauge pressure of two point five eight. At sea level, we're at one eight, but I'm taking it to a high altitude spot, with an atmospheric pressure of zero point eighty five eight. Can you tell me the absolute pressure of the container, at both sea level and that high altitude location?",
           "clarifications": {
-            "gauge_pressure_value": "2.5 atm",
+            "gauge_pressure": "2.5 atm",
             "sea_level_atmospheric_pressure": "1 atm",
             "high_altitude_atmospheric_pressure": "0.85 atm"
           }
@@ -4959,7 +5079,13 @@
           "asr_output_elevenlabs": "Uh, hey, can you calculate the change in entropy for like a chemist experiment with a 2 kilogram sample of substance A? First, it's gonna go from 25 to 75 degrees Celsius at 1 atmosphere, then, uh, repeat with the same sample from 10 to 50 degrees Celsius. Right. What's the entropy change in both cases?",
           "asr_output_deepgram": "Hey. Can you calculate the change in entropy for, like, a chemist experiment with a two kilogram sample of substance a? First, it's gonna go from twenty five to seventy five degrees Celsius at one atmosphere. Then, repeat with the same sample from ten to fifty degrees Celsius. Right. What's the entropy change in both cases?",
           "clarifications": {
-            "substance_name": "substance A"
+            "substance": "substance A",
+            "mass": "2 kg",
+            "initial_temperature_experiment1": "25 degrees Celsius",
+            "final_temperature_experiment1": "75 degrees Celsius",
+            "initial_temperature_experiment2": "10 degrees Celsius",
+            "final_temperature_experiment2": "50 degrees Celsius",
+            "pressure": "1 atmosphere"
           }
         }
       ]
@@ -5018,7 +5144,7 @@
           "clarifications": {
             "initial_temperature": "300 Kelvin",
             "final_temperature": "350 Kelvin",
-            "heat_capacity_value": "4.18 J/K"
+            "heat_capacity": "4.18 J/K"
           }
         }
       ]
@@ -5072,7 +5198,8 @@
             "first_temperature": "300 Kelvin",
             "second_temperature": "350 Kelvin",
             "first_volume": "2.5 m^3",
-            "second_volume": "1.5 m^3"
+            "second_volume": "1.5 m^3",
+            "gas_type": "air"
           }
         }
       ]
@@ -5119,7 +5246,7 @@
           "asr_output_deepgram": "Alright. Retrieve the DNA sequence for the molecule with IDX y z one two three from the public database. After that, grab it again in the GenBank format. Right? Finally, fetch it once more with an additional five hundred base pairs upstream.",
           "clarifications": {
             "DNA_id": "XYZ123",
-            "format_type": "genbank",
+            "format": "genbank",
             "upstream_base_pairs": "500"
           }
         }
@@ -5165,8 +5292,8 @@
           "asr_output_elevenlabs": "Um, could you, uh, give me the protein sequences for the BRCA1 and BRCA2 genes in humans and chimpanzees? Thanks.",
           "asr_output_deepgram": "Could you, give me the protein sequences for the BRCA one and BRCA two genes in humans and chimpanzees? Thanks.",
           "clarifications": {
-            "gene_name1": "BRCA1",
-            "gene_name2": "BRCA2",
+            "gene1": "BRCA1",
+            "gene2": "BRCA2",
             "species1": "Homo sapiens",
             "species2": "Pan troglodytes"
           }
@@ -5290,10 +5417,10 @@
           "asr_output_elevenlabs": "Um, what's ATP do in the mitochondria? Uh, does it have any specific role there? And, uh, in the nucleus, what about DNA, right? Explain its function, and if it, like, has a specific role.",
           "asr_output_deepgram": "What's ATP do in the mitochondria? Does it have any specific role there? And, in the nucleus, what about DNA? Right? Explain its function and if it, like, has a specific role.",
           "clarifications": {
-            "molecule1_name": "ATP",
-            "organelle1_name": "mitochondria",
-            "molecule2_name": "DNA",
-            "organelle2_name": "nucleus"
+            "molecule1": "ATP",
+            "organelle1": "mitochondria",
+            "molecule2": "DNA",
+            "organelle2": "nucleus"
           }
         }
       ]
@@ -5340,8 +5467,8 @@
           "asr_output_elevenlabs": "Um, tell me molecular weight of C6H12O6 glucose in grams per mole and compare it to C12H22O11 sucrose in same unit. Okay?",
           "asr_output_deepgram": "Tell me molecular weight of c six h twelve o six glucose in grams per mole and, compare it to c twelve h twenty two o eleven sucrose in same unit. Okay?",
           "clarifications": {
-            "first_compound_formula": "C6H12O6",
-            "second_compound_formula": "C12H22O11",
+            "compound1_formula": "C6H12O6",
+            "compound2_formula": "C12H22O11",
             "unit": "grams/mole"
           }
         }
@@ -5385,9 +5512,9 @@
           "asr_output_deepgram": "Hey. What's the type of genetic mutation for SNP ID r s one two three four five six in humans and, oh, for SNP ID r s seven eight nine one zero one one in dogs?",
           "clarifications": {
             "first_snp_id": "rs123456",
-            "first_species_name": "Homo sapiens",
+            "first_species": "Homo sapiens",
             "second_snp_id": "rs7891011",
-            "second_species_name": "Canis lupus familiaris"
+            "second_species": "Canis lupus familiaris"
           }
         }
       ]
@@ -5428,9 +5555,17 @@
           "asr_output_elevenlabs": "Can you tell the risk of type 2 diabetes for these four people? Oh, the first one weighs 180 pounds, is 70 inches tall, and has a lightly active lifestyle. The second weighs 200 pounds, is 65 inches tall, and is very active. The third weighs 150 pounds, is 72 inches tall, and has a moderately active life. And the fourth weighs 220 pounds, is 68 inches tall, and is extra active.",
           "asr_output_deepgram": "Can you tell the risk of type two diabetes for these four people? Oh, the first one weighs one hundred eighty pounds, is seventy inches tall, and has a lightly active lifestyle. The second weighs two hundred pounds, is sixty five inches tall, and is very active. The third weighs one hundred fifty pounds, is seventy two inches tall, and has a moderately active life. And the fourth weighs two twenty pounds, is sixty eight inches tall, and is extra active.",
           "clarifications": {
+            "first_person_weight": "180 lbs",
+            "first_person_height": "70 inches",
             "first_person_activity_level": "lightly active",
+            "second_person_weight": "200 lbs",
+            "second_person_height": "65 inches",
             "second_person_activity_level": "very active",
+            "third_person_weight": "150 lbs",
+            "third_person_height": "72 inches",
             "third_person_activity_level": "moderately active",
+            "fourth_person_weight": "220 lbs",
+            "fourth_person_height": "68 inches",
             "fourth_person_activity_level": "extra active"
           }
         }
@@ -5485,12 +5620,12 @@
           "asr_output_elevenlabs": "Let me see. Analyze the DNA sequences AGC, TTA, GCTA, and AGC, TTAGGC, TA with the reference sequence AGC, TTAGCTA to find any insertion mutations. Then do the same for deletion and substitution mutations.",
           "asr_output_deepgram": "Let me see. Analyze the DNA sequences A, G, C, TTA, GCTA, and A, G, C, TTA, G, G, C, TA with the reference sequence AGC, TTA, GCTA to find any insertion mutations, then do the same for deletion and substitution mutations.",
           "clarifications": {
-            "sequence1_spelling": "AGCTTAGCTA",
-            "sequence2_spelling": "AGCTTAGGCTA",
-            "reference_sequence_spelling": "AGCTTAGCTA",
-            "mutation_type1_spelling": "insertion",
-            "mutation_type2_spelling": "deletion",
-            "mutation_type3_spelling": "substitution"
+            "first_dna_sequence": "AGCTTAGCTA",
+            "second_dna_sequence": "AGCTTAGGCTA",
+            "reference_sequence": "AGCTTAGCTA",
+            "mutation_type1": "insertion",
+            "mutation_type2": "deletion",
+            "mutation_type3": "substitution"
           }
         }
       ]
@@ -5542,9 +5677,9 @@
           "asr_output_elevenlabs": "Uh, can you figure out the genetic similarity between a human and a chimpanzee, and also between a human and a gorilla using their DNA sequences? Oh, give me the results in both percentage and fraction formats.",
           "asr_output_deepgram": "Can you figure out the genetic similarity between a human and a chimpanzee and also between a human and a gorilla using their DNA sequences? Oh, give me the results in both percentage and fraction formats.",
           "clarifications": {
-            "first_species_name": "human",
-            "second_species_name1": "chimpanzee",
-            "second_species_name2": "gorilla",
+            "first_species": "human",
+            "second_species1": "chimpanzee",
+            "second_species2": "gorilla",
             "result_format1": "percentage",
             "result_format2": "fraction"
           }
@@ -5591,12 +5726,7 @@
           "asr_output_openai": "In a butterfly population, the dominant wing color allele frequency is 0.7. Could you find the frequencies for these genotypes using the Hardy-Weinberg principle: homozygous dominant AA, heterozygous Aa, and homozygous recessive aa?",
           "asr_output_elevenlabs": "In a butterfly population, the dominant wing color allele frequency is 0.7. Could you find the frequencies for these genotypes using the Hardy-Weinberg principle? Homozygous dominant AA, heterozygous aa, and homozygous recessive aa?",
           "asr_output_deepgram": "In a butterfly population, the dominant wing color allele frequency is zero point seven. Could you find the frequencies for these genotypes using the Hardy Weinberg principle, homozygous dominant a a, heterozygous a, and homozygous recessive a?",
-          "clarifications": {
-            "allele_frequency_value": "0.7",
-            "genotype1_spelling": "homozygous dominant genotype (AA)",
-            "genotype2_spelling": "heterozygous genotype (Aa)",
-            "genotype3_spelling": "homozygous recessive genotype (aa)"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -5641,7 +5771,14 @@
           "asr_output_openai": "Ah hey, can you tell me the population density of China for the years 2010? Okay, the population was 1.267 billion in 2000 and 1.341 billion in 2010. The land size stayed the same at 9.597 million square kilometers.",
           "asr_output_elevenlabs": "Uh, hey, can you tell me the population density of China for the years 2010? Okay. The population was 1.267 billion in 2000 and 1.341 billion in 2010. The land size stayed the same at 9.597 million square kilometers.",
           "asr_output_deepgram": "Hey. Can you tell me the population density of China for the years twenty ten? Okay. The population was one point two six seven billion in two thousand and one point three four one billion in twenty ten. The land size stayed the same at nine point five nine seven million square kilometers.",
-          "clarifications": {}
+          "clarifications": {
+            "country_name": "China",
+            "year1": "2000",
+            "population1": "1.267 billion",
+            "year2": "2010",
+            "population2": "1.341 billion",
+            "land_area": "9.597 million square kilometers"
+          }
         }
       ]
     ],
@@ -5691,7 +5828,12 @@
           "asr_output_openai": "Can you give me rain stats for the Amazon rainforest for like the past six months? Past year? And the last five years?",
           "asr_output_elevenlabs": "Uh, can you give me rain stats for the Amazon rainforest for like the past six months, past year, and the last five years?",
           "asr_output_deepgram": "Can you give me rain stats for the Amazon rainforest for, like, the past six months, past year, and the last five years?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Amazon rainforest",
+            "time_frame1": "last six months",
+            "time_frame2": "last year",
+            "time_frame3": "last five years"
+          }
         }
       ]
     ],
@@ -5787,10 +5929,10 @@
           "asr_output_elevenlabs": "What's the expected forest growth in the Amazon and Canada's boreal forests over the next 10 and 20 years without human impact?",
           "asr_output_deepgram": "What's the expected forest growth in the Amazon and Canada's boreal forests over the next ten and twenty years without human impact?",
           "clarifications": {
-            "first_location": "Amazon Rainforest",
-            "first_years": "10 years",
-            "second_location": "Boreal Forests of Canada",
-            "second_years": "20 years"
+            "location1": "Amazon Rainforest",
+            "location2": "Boreal Forests of Canada",
+            "years1": "10 years",
+            "years2": "20 years"
           }
         }
       ]
@@ -5836,9 +5978,9 @@
           "asr_output_elevenlabs": "What's the turtle population in the Galapagos around 2015 along with their species info? And then, oh, give the same details for about 2020.",
           "asr_output_deepgram": "What's the turtle population in the Galapagos around twenty fifteen, along with their species info? And then, oh, give them the same details for about twenty twenty.",
           "clarifications": {
-            "location_name": "Galapagos Islands",
-            "year_2015": "2015",
-            "year_2020": "2020"
+            "location": "Galapagos Islands",
+            "year1": "2015",
+            "year2": "2020"
           }
         }
       ]
@@ -5883,9 +6025,7 @@
           "asr_output_elevenlabs": "How much carbon do gasoline, diesel, and electric cars give off each year if each drives 15,000 miles? Use the default factor for the gas car, a 2.7 factor for diesel, and zero for electric.",
           "asr_output_deepgram": "How much carbon do gasoline, diesel, and electric cars give off each year if each drives fifteen thousand miles? Use the default factor for the gas car, a two point seven factor for diesel, and zero for electric.",
           "clarifications": {
-            "miles_driven": "15,000",
-            "diesel_emission_factor": "2.7",
-            "electric_emission_factor": "0"
+            "miles_driven": "15,000"
           }
         }
       ]
@@ -5934,7 +6074,8 @@
             "first_sequence_preference": "A",
             "second_sequence_preference": "T",
             "third_sequence_preference": "C",
-            "fourth_sequence_preference": "G"
+            "fourth_sequence_preference": "G",
+            "sequence_length": "500"
           }
         }
       ]
@@ -5985,10 +6126,10 @@
           "asr_output_elevenlabs": "Could you maybe figure out, you know, Japan's and India's population increase over the next decade and, uh, two decades? Start with the existing growth rate then sort of recalculate using a rate of 1.5% for Japan and 2.1% for India.",
           "asr_output_deepgram": "Could you maybe figure out, you know, Japan's and India's population increase over the next decade and, two decades? Start with the existing growth rate then sort of recalculate using a rate of one point five percent for Japan and two point one percent for India.",
           "clarifications": {
-            "country1_name": "Japan",
-            "country2_name": "India",
-            "projection_years1": "10",
-            "projection_years2": "20",
+            "country1": "Japan",
+            "country2": "India",
+            "years1": "10",
+            "years2": "20",
             "growth_rate_japan": "1.5%",
             "growth_rate_india": "2.1%"
           }
@@ -6087,10 +6228,10 @@
           "asr_output_elevenlabs": "Um, what's the predicted evolutionary rate for African elephants over 5,000 years with the Darwin model? Oh, and how's that prediction different with the Lamarck model?",
           "asr_output_deepgram": "What's the predicted evolutionary rate for African elephants over five thousand years with the Darwin model? Oh, and how's that prediction different with the Lamarck model?",
           "clarifications": {
-            "species_name": "African Elephant",
-            "prediction_years": "5000",
-            "first_model_name": "Darwin",
-            "second_model_name": "Lamarck"
+            "species": "African Elephant",
+            "years": "5000",
+            "first_model": "Darwin",
+            "second_model": "Lamarck"
           }
         }
       ]
@@ -6135,7 +6276,12 @@
           "asr_output_openai": "Look for restaurants in New York City with vegan, gluten-free, and dairy-free options. Do the same for Los Angeles and Chicago.",
           "asr_output_elevenlabs": "Look for restaurants in New York City with vegan, gluten-free and dairy free options. Do the same for Los Angeles and Chicago.",
           "asr_output_deepgram": "Look for restaurants in New York City with vegan, gluten free, and dairy free options. Do the same for Los Angeles and Chicago.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "New York, NY",
+            "second_location": "Los Angeles, CA",
+            "third_location": "Chicago, IL",
+            "dietary_preferences": "Vegan, Gluten-free, Dairy-free"
+          }
         }
       ]
     ],
@@ -6187,7 +6333,13 @@
           "asr_output_openai": "In Fahrenheit, what's the average temperature in New York over the last week? Also, in Celsius, how does that compare to the average in Los Angeles for the same time?",
           "asr_output_elevenlabs": "Um, in Fahrenheit, what's the average temperature in New York over the last week? Also, uh, in Celsius, how does that compare to the average in Los Angeles for the same time?",
           "asr_output_deepgram": "In Fahrenheit, what's the average temperature in New York over the last week? Also, in Celsius, how does that compare to the average in Los Angeles for the same time?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "New York",
+            "location2": "Los Angeles",
+            "days": "7",
+            "temp_unit1": "Fahrenheit",
+            "temp_unit2": "Celsius"
+          }
         }
       ]
     ],
@@ -6231,10 +6383,7 @@
           "asr_output_openai": "Hey, can you use create_histogram to make two histograms? One for the first set: 12, 15, 11, 14, 18, 19, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 and the other for the second set: 32, 35, 31, 34, 38, 39, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46. Oh, make sure each's got five bins.",
           "asr_output_elevenlabs": "Hey, uh, can you use create histogram to, um, make two histograms? One for the first set, 12, 15, 11, 14, 18, 19, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26. And the other for the second set, 32, 35, 31, 34, 38, 39, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46. Oh, make sure each got five bins.",
           "asr_output_deepgram": "Hey. Can you use create underscore histogram too? I'll make two histograms. One for the first set, twelve, fifteen, eleven, fourteen, eighteen, nineteen, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twenty one, twenty two, twenty three, twenty four, twenty five, twenty six, and the other for the second set, thirty two, thirty five, thirty one, thirty four, thirty eight, thirty nine, thirty three, thirty four, thirty five, thirty six, thirty seven, thirty eight, thirty nine, forty, forty one, forty two, forty three, forty four, forty five, forty six. Oh, make sure Eats got five bins.",
-          "clarifications": {
-            "first_data_set": "[12, 15, 11, 14, 18, 19, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]",
-            "second_data_set": "[32, 35, 31, 34, 38, 39, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -6337,10 +6486,12 @@
           "asr_output_elevenlabs": "Hey could you uh figure out the quickest path from my place in San Francisco to the office in Palo Alto then over to my friends spot in San Jose and finally back home? Ohhh, and um avoid those toll roads okay?",
           "asr_output_deepgram": "Hey. Could you, figure out the quickest path from my place in San Francisco to the office in Palo Alto, then over to my friend's spot in San Jose, and finally back home? Oh, and, avoid those toll roads. Okay?",
           "clarifications": {
-            "start_location_spelling": "San Francisco",
-            "first_end_location_spelling": "Palo Alto",
-            "second_end_location_spelling": "San Jose",
-            "third_end_location_spelling": "San Francisco"
+            "start_location1": "San Francisco",
+            "end_location1": "Palo Alto",
+            "start_location2": "Palo Alto",
+            "end_location2": "San Jose",
+            "start_location3": "San Jose",
+            "end_location3": "San Francisco"
           }
         }
       ]
@@ -6385,7 +6536,12 @@
           "asr_output_openai": "Hey, could you find average for each of these number sets? The first set is 23, 45, 67, 89. The second set is 12, 34, 56, 78. The third set is 98, 76, 54, 32. And the fourth set is 87, 65, 43, 21. Thanks.",
           "asr_output_elevenlabs": "Hey, could you... let me see... find average for each of these number sets? The first set is 23, 45, 67, 89. The second set is 12, 34, 56, 78. The third set is 98, 76, 54, 32. And the fourth set is 87, 65, 43, 21. Thanks.",
           "asr_output_deepgram": "Hey. Could you let me see. Find average for each of these number sets. The first set is twenty three, forty five, sixty seven, eighty nine. The second set is twelve, thirty four, fifty six, seventy eight. The third set is ninety eight, seventy six, fifty four, thirty two, and the fourth set is eighty seven, sixty five, forty three, twenty one. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "first_set_numbers": "[23, 45, 67, 89]",
+            "second_set_numbers": "[12, 34, 56, 78]",
+            "third_set_numbers": "[98, 76, 54, 32]",
+            "fourth_set_numbers": "[87, 65, 43, 21]"
+          }
         }
       ]
     ],
@@ -6423,7 +6579,13 @@
           "asr_output_openai": "Hey, how many kilometers is it if you go from Eiffel Tower in Paris to the Colosseum in Rome, then like hit the Acropolis in Athens, and end up at the Pyramids of Giza? Thanks.",
           "asr_output_elevenlabs": "Hey, uh, how many kilometers is it if you go from Eiffel Tower in Paris to the Colosseum in Rome, then like hit the Acropolis in Athens and end up at the Pyramids of Giza? Thanks.",
           "asr_output_deepgram": "Hey. How many kilometers is it if you go from Eiffel Tower in Paris to the Colosseum in Rome, then, like, hit the Acropolis in Athens and end up at the pyramids of Giza? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "Eiffel Tower in Paris (48.8584\u00b0 N, 2.2945\u00b0 E)",
+            "second_location": "Colosseum in Rome (41.8902\u00b0 N, 12.4922\u00b0 E)",
+            "third_location": "Acropolis in Athens (37.9715\u00b0 N, 23.7257\u00b0 E)",
+            "fourth_location": "Pyramids of Giza in Egypt (29.9792\u00b0 N, 31.1342\u00b0 E)",
+            "distance_unit": "kilometers"
+          }
         }
       ]
     ],
@@ -6474,7 +6636,16 @@
           "asr_output_openai": "Can you work out the BMI for these four people? The first weighs 85 kilos and is, you know, 175 centimeters tall. The second is 60 kilos and 160 centimeters. The third is 75 kilos and 180 centimeters tall. And the fourth is 90 kilos and 185 centimeters. Everything's in metric.",
           "asr_output_elevenlabs": "Uh, can you, um, work out the BMI for these four people? The first weighs 85 kilos and is, you know, 175 centimeters tall. The second is 60 kilos and, uh, 160 centimeters. The third is 75 kilos and 180 centimeters tall. And the fourth is 90 kilos and 185 centimeters. Everything's in metric.",
           "asr_output_deepgram": "Can you, work out the BMI for these four people? The first weighs eighty five kilos and is, you know, one hundred seventy five centimeters tall. The second is sixty kilos and, one hundred sixty centimeters. The third is seventy five kilos and one hundred eighty centimeters tall, and the fourth is ninety kilos and one hundred eighty five centimeters. Everything's in metric.",
-          "clarifications": {}
+          "clarifications": {
+            "first_person_weight": "85 kilograms",
+            "first_person_height": "175 centimeters",
+            "second_person_weight": "60 kilograms",
+            "second_person_height": "160 centimeters",
+            "third_person_weight": "75 kilograms",
+            "third_person_height": "180 centimeters",
+            "fourth_person_weight": "90 kilograms",
+            "fourth_person_height": "185 centimeters"
+          }
         }
       ]
     ],
@@ -6518,7 +6689,12 @@
           "asr_output_openai": "So, uh, how many kilometers is it if I go from New York to Los Angeles, then to Miami, and, um, back to New York?",
           "asr_output_elevenlabs": "\"So, uh, how many kilometers is it if I go from New York to Los Angeles then to Miami and, um, back to New York?\"",
           "asr_output_deepgram": "So, how many kilometers is it if I go from New York to Los Angeles then to Miami and, back to New York?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location": "New York",
+            "first_destination": "Los Angeles",
+            "second_destination": "Miami",
+            "final_destination": "New York"
+          }
         }
       ]
     ],
@@ -6562,7 +6738,11 @@
           "asr_output_openai": "Um, what's the shortest route by bus from New York to Los Angeles? Oh, and if transferring between different types of transport is possible, how about the shortest distance then?",
           "asr_output_elevenlabs": "Um, what's the shortest route by bus from New York to Los Angeles? Oh, and if transferring between different types of transport is possible, how about the shortest distance then?",
           "asr_output_deepgram": "What's the shortest route by bus from New York to Los Angeles? Oh, and if transferring between different types of transport is possible, how about the shortest distance then?",
-          "clarifications": {}
+          "clarifications": {
+            "start_city": "New York",
+            "end_city": "Los Angeles",
+            "preferred_transportation_mode": "bus"
+          }
         }
       ]
     ],
@@ -6610,7 +6790,9 @@
           "asr_output_openai": "Okay, sort these four lists using array_prior_sort function both ways, ascending and descending: 45, 12, 67, 21, 89, 34, 78, 12, 56, 90, 23, 45, 67, 89, 12, and 56, 78, 90, 12, 34.",
           "asr_output_elevenlabs": "Uh, okay. Sort these four lists using array pra sort function both ways, ascending and descending, 45, 12, 67, 21, 89, 34, 78, 12, 56, 90, 23, 45, 67, 89, 12, and 56, 78, 90, 12, 34.",
           "asr_output_deepgram": "Okay. Sort these four lists using array, prior, sort function both ways, ascending and descending. Forty five, twelve, sixty seven, twenty one, eighty nine, thirty four, seventy eight, twelve, fifty six, ninety, twenty three, forty five, sixty seven, eighty nine, twelve, and fifty six, seventy eight, ninety, twelve, thirty four.",
-          "clarifications": {}
+          "clarifications": {
+            "function_name": "array_sort"
+          }
         }
       ]
     ],
@@ -6657,7 +6839,17 @@
           "asr_output_openai": "John's 85kg and 1.8 meters tall, and Sarah's 60kg and um, 1.65 meters. They're curious 'bout their health, so they wanna you know find out their BMI. Later, they also wanna do the same for Mike, who's uh 75kg and is 1.7 meters tall. Can you help 'em work out their BMIs?",
           "asr_output_elevenlabs": "John's 85 kilograms and 1.8 meters tall, and Sarah's 60 kilograms and um, 1.65 meters. They're curious about their health, so they want to, you know, find out their BMI. Later, they also want to do the same for Mike, who's 75 kilograms and is 1.7 meters tall. Can you help them work out their BMIs?",
           "asr_output_deepgram": "John's are eighty five kilograms and one point eight meters tall, and Sarah's sixty kilograms and, one point six five meters. They're curious about their health, so they wanna, you know, find out their BMI. Later, they also wanna do the same for Mike, who's, seventy five kilograms and is one point seven meters tall. Can you help them work out their BMIs?",
-          "clarifications": {}
+          "clarifications": {
+            "first_person_name": "John",
+            "first_person_weight": "85 kilograms",
+            "first_person_height": "1.8 meters",
+            "second_person_name": "Sarah",
+            "second_person_weight": "60 kilograms",
+            "second_person_height": "1.65 meters",
+            "third_person_name": "Mike",
+            "third_person_weight": "75 kilograms",
+            "third_person_height": "1.7 meters"
+          }
         }
       ]
     ],
@@ -6698,10 +6890,15 @@
           "asr_output_elevenlabs": "Use the employee.fetchdotchdata function to get personal info, job history, payroll and attendance for employee ID 12345 from Tech Solutions. Then, hey, do the same for employee ID 67890, OK?",
           "asr_output_deepgram": "Use the employee dot fetch dot data function to get personal info, job history, payroll, and attendance for employee ID twelve three forty five from TechSolutions. Then, hey. Do the same for employee ID sixty seven eight ninety. Okay?",
           "clarifications": {
+            "company_name": "Tech Solutions",
             "first_employee_id": "12345",
             "second_employee_id": "67890",
-            "company_name": "Tech Solutions",
-            "data_fields": "Personal Info, Job History, Payroll, Attendance"
+            "data_fields": [
+              "Personal Info",
+              "Job History",
+              "Payroll",
+              "Attendance"
+            ]
           }
         }
       ]
@@ -6760,10 +6957,10 @@
           "asr_output_deepgram": "Get all the drama and comedy movies Leonardo DiCaprio was in during, two thousand ten and two thousand twelve from the database. Thanks.",
           "clarifications": {
             "actor_name": "Leonardo DiCaprio",
-            "year_1": "2010",
-            "year_2": "2012",
-            "category_1": "Drama",
-            "category_2": "Comedy"
+            "year1": "2010",
+            "year2": "2012",
+            "category1": "Drama",
+            "category2": "Comedy"
           }
         }
       ]
@@ -6810,12 +7007,12 @@
           "asr_output_elevenlabs": "Hey, um, can you get me the list of IMAX movie releases in New York for next week? And also, uh, the 2D movie releases in Los Angeles for the next two weeks?",
           "asr_output_deepgram": "Hey. Can you get me the list of IMAX movie releases in New York for next week and also, the two d movie releases in Los Angeles for the next two weeks?",
           "clarifications": {
-            "first_location": "New York",
-            "first_timeframe_days": "7",
-            "first_format": "IMAX",
-            "second_location": "Los Angeles",
-            "second_timeframe_days": "14",
-            "second_format": "2D"
+            "location1": "New York",
+            "timeframe1": "7 days",
+            "format1": "IMAX",
+            "location2": "Los Angeles",
+            "timeframe2": "14 days",
+            "format2": "2D"
           }
         }
       ]
@@ -6862,11 +7059,12 @@
           "asr_output_elevenlabs": "Use the UPDATE _ch_user_info function to change the name and e-mail for the customer with user ID 12345 in the customer info database to johnanexample@gmail.com. Do the same for the user with ID 67890, updating their details to the same name and e-mail.",
           "asr_output_deepgram": "Use the update chat user info function to change the name and email for the customer with user ID twelve thousand three hundred forty five in the customer info database to John an example at Gmail dot com. Do the same for the user with ID sixty seven thousand eight hundred ninety, updating their details to the same name and email.",
           "clarifications": {
-            "user_id_1": "12345",
-            "user_id_2": "67890",
+            "function_name": "update_user_info",
+            "first_user_id": "12345",
+            "second_user_id": "67890",
             "database_name": "CustomerInfo",
-            "name": "John",
-            "email": "example@.com"
+            "new_name": "John",
+            "new_email": "example@.com"
           }
         }
       ]
@@ -6962,7 +7160,12 @@
           "asr_output_openai": "Calculate the factorial of five, then three, then four, and lastly two. Right, what's the result?",
           "asr_output_elevenlabs": "Calculate the factorial of five, uh, then three, then four, and um, lastly two. Right? What's the result?",
           "asr_output_deepgram": "Calculate the factorial of five, then three, then four, and, lastly, two. Right? What's the result?",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "5",
+            "second_number": "3",
+            "third_number": "4",
+            "fourth_number": "2"
+          }
         }
       ]
     ],
@@ -6998,10 +7201,10 @@
           "asr_output_elevenlabs": "Um, what's angle between hour and minute hands at 3:15 rounded to two decimal places? Oh, and how's that compare to angles at 8:20 and 11:50? Uh, both rounded the same way.",
           "asr_output_deepgram": "What's angle between hour and minute hands at three fifteen rounded to, two decimal places? Oh, and how's that compare to angles at eight twenty and eleven fifty? Both rounded the same way.",
           "clarifications": {
-            "first_time_spelling": "3:15",
-            "second_time_spelling": "8:20",
-            "third_time_spelling": "11:50",
-            "rounding_precision": "2 decimal places"
+            "first_time": "3:15",
+            "second_time": "8:20",
+            "third_time": "11:50",
+            "decimal_places": "2"
           }
         }
       ]
@@ -7111,10 +7314,10 @@
           "asr_output_elevenlabs": "Uh, could you find out how long light takes to travel from Earth to new exoplanet, uh, 4.22 light years away, then to another exoplanet 6.1 light years from there, and finally back to Earth which is 5.88 light years away from second one? Use light speed in a vacuum, 299,792,458 meters per second.",
           "asr_output_deepgram": "Could you find out how long light takes to travel from Earth to new exoplanet? Four point two two light years away, then to another exoplanet six point one light years from there, and finally back to Earth, which is five point eight eight light years away from second one. Use light speed in a vacuum, two hundred and ninety nine million seven hundred and ninety two thousand four hundred fifty eight meters per second.",
           "clarifications": {
-            "first_distance_in_light_years": "4.22 light years",
-            "second_distance_in_light_years": "6.1 light years",
-            "third_distance_in_light_years": "5.88 light years",
-            "speed_of_light_value": "299792458 m/s"
+            "first_leg_distance": "4.22 light years",
+            "second_leg_distance": "6.1 light years",
+            "third_leg_distance": "5.88 light years",
+            "speed_of_light": "299792458 m/s"
           }
         }
       ]
@@ -7209,9 +7412,8 @@
           "asr_output_elevenlabs": "Hey, um, could you let me know the distance in miles between Mars and Venus, and then, uh, also from Mars to Jupiter? Right, the calculate distance function requires the names of the two celestial bodies and the unit of measurement.",
           "asr_output_deepgram": "Hey. Could you let me know the distance in miles between Mars and Venus? And then, also from Mars to Jupiter. Right. The calculate distance function requires the names of the two celestial bodies and the unit of measurement.",
           "clarifications": {
-            "first_body_name": "Mars",
-            "second_body_name": "Venus",
-            "third_body_name": "Jupiter",
+            "first_celestial_body_pair": "Mars and Venus",
+            "second_celestial_body_pair": "Mars and Jupiter",
             "unit_of_measurement": "miles"
           }
         }
@@ -7259,9 +7461,9 @@
           "asr_output_deepgram": "Can you find the area under the curve for the function three x squared minus two x plus one from negative one to two, and then, do the same for the function x squared minus one from zero to three? Oh, I need both results.",
           "clarifications": {
             "first_polynomial_coefficients": "[3, -2, 1]",
-            "first_integration_limits": "[-1, 2]",
+            "first_integration_interval": "[-1, 2]",
             "second_polynomial_coefficients": "[1, 0, -1]",
-            "second_integration_limits": "[0, 3]"
+            "second_integration_interval": "[0, 3]"
           }
         }
       ]
@@ -7308,7 +7510,14 @@
           "asr_output_openai": "For me, could you work out the total area of three triangles? The first one's got a base of 15 meters and a height of 20 meters. The second's got a base of 25 feet and a height of 30 feet. And the third's base is 35 inches with a height of 40 inches. I need the area of each triangle in their own units.",
           "asr_output_elevenlabs": "Uh, for me, could you work out the total area of three triangles? The first one's got a base of 15 meters and, uh, a height of 20 meters. The second's got a base of 25 feet and, um, a height of 30 feet. And the third's base is, uh, 35 inches with a height of 40 inches. I need the area of each triangle in their own units.",
           "asr_output_deepgram": "For me, could you work out the total area of three triangles? The first one's got a base of fifteen meters and, a height of twenty meters. The second's got a base of twenty five feet and, a height of thirty feet. And the third space is, thirty five inches with a height of forty inches. I need the area of each triangle in their own units.",
-          "clarifications": {}
+          "clarifications": {
+            "first_triangle_base": "15 meters",
+            "first_triangle_height": "20 meters",
+            "second_triangle_base": "25 feet",
+            "second_triangle_height": "30 feet",
+            "third_triangle_base": "35 inches",
+            "third_triangle_height": "40 inches"
+          }
         }
       ]
     ],
@@ -7353,10 +7562,10 @@
           "asr_output_elevenlabs": "Hey, uh, can you work out this for me? First, raise 3 to the power of 5 and then, uh, raise 2 to the power of 3.",
           "asr_output_deepgram": "Hey. Can you work out this for me? First, raise three to the power of five, and then, raise two to the power of three.",
           "clarifications": {
-            "first_base_number": "3",
-            "first_exponent_number": "5",
-            "second_base_number": "2",
-            "second_exponent_number": "3"
+            "first_base": "3",
+            "first_exponent": "5",
+            "second_base": "2",
+            "second_exponent": "3"
           }
         }
       ]
@@ -7402,12 +7611,12 @@
           "asr_output_elevenlabs": "Okay, to train the random forest classifier, you should first run it on dataset 1 with a tree depth of 10 and, um, 100 trees. Then you do a second run on dataset 2 with a tree depth of 20 and 200 trees. Uh, how should I call the train_ random_forest classifier function to do that?",
           "asr_output_deepgram": "Okay. To train the random forest classifier, you should first run it on dataset one with a tree depth of ten and, one hundred trees. Then you do a second run on dataset two with a tree depth of twenty and two hundred trees. How should I call the train Yash random forest classifier function to do that?",
           "clarifications": {
-            "first_dataset_name": "dataset1",
-            "second_dataset_name": "dataset2",
-            "first_run_max_depth": "10",
-            "first_run_n_estimators": "100",
-            "second_run_max_depth": "20",
-            "second_run_n_estimators": "200"
+            "first_dataset": "dataset1",
+            "first_max_depth": "10",
+            "first_n_estimators": "100",
+            "second_dataset": "dataset2",
+            "second_max_depth": "20",
+            "second_n_estimators": "200"
           }
         }
       ]
@@ -7453,7 +7662,16 @@
           "asr_output_openai": "Um, can figure out the BMI for, uh, four people using the metric system? Oh, the first person is like 75 kilograms and 180 centimeters tall. The second is 60 kilograms and, uh, 165 centimeters. The third weighs 80 kilograms and is, um, 175 centimeters tall, and the fourth is 90 kilograms and 185 centimeters tall.",
           "asr_output_elevenlabs": "Um, can figure out the BMI for a four people using the metric system. Oh, the first person is like 75 kilograms and 180 centimeters tall. The second is 60 kilograms and a 165 centimeters. The third weighs 80 kilograms and is, um, 175 centimeters tall, and the fourth is 90 kilograms and 185 centimeters tall.",
           "asr_output_deepgram": "Can figure out the BMI for, four people using the metric system. Oh, the first person is, like, seventy five kilograms and one hundred eighty centimeters tall. The second is sixty kilograms and, one sixty five centimeters. The third weighs eighty kilograms and is, one seventy five centimeters tall, and the fourth is ninety kilograms and one eighty five centimeters tall.",
-          "clarifications": {}
+          "clarifications": {
+            "first_person_weight": "75 kilograms",
+            "first_person_height": "180 centimeters",
+            "second_person_weight": "60 kilograms",
+            "second_person_height": "165 centimeters",
+            "third_person_weight": "80 kilograms",
+            "third_person_height": "175 centimeters",
+            "fourth_person_weight": "90 kilograms",
+            "fourth_person_height": "185 centimeters"
+          }
         }
       ]
     ],
@@ -7498,10 +7716,8 @@
           "asr_output_elevenlabs": "Hey, could you use the run.jl linear regression function to predict spending score using age, income, and education as predictors? Um, without standardization yet. Then, oh, run it again, but this time standardize the predictors.",
           "asr_output_deepgram": "Hey. Could you use the run linear regression function to predict spending score using age, income, and education as predictors, without standardization yet? Then, oh, run it again, but this time, standardize the predictors.",
           "clarifications": {
-            "predictor_variable1_spelling": "Age",
-            "predictor_variable2_spelling": "Income",
-            "predictor_variable3_spelling": "Education",
-            "target_variable_spelling": "Spending Score"
+            "predictor_variables": "Age, Income, Education",
+            "target_variable": "Spending Score"
           }
         }
       ]
@@ -7550,7 +7766,15 @@
           "asr_output_elevenlabs": "Hey, I've got this dataframe named data random-forest. Let's train a random forest model on it. I want to test different numbers of trees and... Oh, and tree depths. First, use 100 trees and a max depth of 10. Then try 200 trees with a max depth of 20. Next, let's go with 300 trees and a max depth of 30. Lastly, use 400 trees and a depth of 40. Can you run the randomforest.train function with these settings and check how each model performs?",
           "asr_output_deepgram": "Hey. I've got this data frame named data random doshin forest. Let's train a random forest model on it. I want to test different numbers of trees and, oh, and tree depths. First, use one hundred trees and a max depth of ten, Then try two hundred trees with a max depth of twenty. Next, let's go with three hundred trees and a max depth of thirty. Lastly, use four hundred trees and a depth of forty. Can you run the random forest dot train function with these settings and check how each model performs?",
           "clarifications": {
-            "data_name": "data_random_forest"
+            "data_name": "data_random_forest",
+            "first_n_estimators": "100",
+            "first_max_depth": "10",
+            "second_n_estimators": "200",
+            "second_max_depth": "20",
+            "third_n_estimators": "300",
+            "third_max_depth": "30",
+            "fourth_n_estimators": "400",
+            "fourth_max_depth": "40"
           }
         }
       ]
@@ -7596,7 +7820,12 @@
           "asr_output_openai": "Hey, can you run the predict house price function to compare prices for four houses? The first one's in New York with three beds, two baths, and 1,500 square feet. The second is in Los Angeles with four beds, three baths, and 2,000 square feet. Then there's a house in Chicago with two beds, one bath, 1,200 square feet. Lastly, a house in Miami with three beds, two baths, 1,800 square feet.",
           "asr_output_elevenlabs": "Hey, can you run the predict house price function to compare prices for four houses? The first one's in New York with three beds, two baths and 1,500 square feet. The second is in Los Angeles with four beds, three baths and 2,000 square feet. Then there's a house in Chicago with two beds, one bath, 1,200 square feet. Lastly, a house in Miami with three beds, two baths, 1,800 square feet.",
           "asr_output_deepgram": "Hey. Can you run the predict house price function to compare prices for four houses? The first one's in New York with three beds, two baths, and one thousand five hundred square feet. The second is in Los Angeles with four beds, three baths, and two thousand square feet. Then there's a house in Chicago with two beds, one bath, twelve hundred square feet. Lastly, a house in Miami with three beds, two baths, eighteen hundred square feet.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "New York",
+            "second_location": "Los Angeles",
+            "third_location": "Chicago",
+            "fourth_location": "Miami"
+          }
         }
       ]
     ],
@@ -7648,10 +7877,10 @@
           "asr_output_deepgram": "Hey. I'm working on a project, and, need to create four random numbers. Right? Two of them should be from a normal distribution with a mean of five and standard deviation of two, and the other two from a a normal distribution with a mean of ten and a standard deviation of three. How do I use random dot normal variant to do this?",
           "clarifications": {
             "function_name": "random.normalvariate",
-            "first_distribution_mean": "5",
-            "first_distribution_standard_deviation": "2",
-            "second_distribution_mean": "10",
-            "second_distribution_standard_deviation": "3"
+            "mean1": "5",
+            "standard_deviation1": "2",
+            "mean2": "10",
+            "standard_deviation2": "3"
           }
         }
       ]
@@ -7694,11 +7923,11 @@
           "asr_output_deepgram": "Hey. What's, chance of rolling a four three times in a row on a six sided die? Oh, also, can you tell me probability of, getting a two two times in a row on that same die? And if it were an eight sided die, what's likelihood of, like, rolling a seven back to back?",
           "clarifications": {
             "first_desired_number": "4",
-            "first_number_of_rolls": "three",
+            "first_number_of_rolls": "3",
             "second_desired_number": "2",
-            "second_number_of_rolls": "twice",
+            "second_number_of_rolls": "2",
             "third_desired_number": "7",
-            "third_number_of_rolls": "two",
+            "third_number_of_rolls": "2",
             "third_die_sides": "8"
           }
         }
@@ -7797,7 +8026,13 @@
           "asr_output_elevenlabs": "If a basketball player has, um, a 60% chance of making a shot, what's the probability that they, like, make exactly 7 out of 10 shots? And for 15 shots, what's the chance they, uh, hit exactly 10? Finally, what's the probability they make, uh, exactly 15 out of 20 shots?",
           "asr_output_deepgram": "If a basketball player has, a sixty percent chance of making a shot, what's the probability that they, like, make exactly seven out of ten shots? And for fifteen shots, what's the chance they, hit exactly ten? Finally, what's the probability they make, exactly fifteen out of twenty shots?",
           "clarifications": {
-            "probability_of_success": "60%"
+            "probability_of_success": "60%",
+            "first_series_trials": "10",
+            "first_series_successes": "7",
+            "second_series_trials": "15",
+            "second_series_successes": "10",
+            "third_series_trials": "20",
+            "third_series_successes": "15"
           }
         }
       ]
@@ -7844,13 +8079,11 @@
           "asr_output_elevenlabs": "Alright, I'm, uh, fixin' to plan a probability lesson using a deck of 52 cards. Can you help me like lay out these concepts to my students? First, what's the probability of drawing an ace from the deck? Four chances out of 52 as a decimal. Next, I need the probability of, um, pulling a heart, which is 13 chances out of 52. Oh, give me that as a decimal too. Lastly, how about the probability of drawing a red card? 26 chances out of 52. I need that probability as a ratio.",
           "asr_output_deepgram": "Alright, I'm fixing to plan a probability lesson using a deck of fifty two cards. Can you help me, like, lay out these concepts to my students? First, what's the probability of drawing an ace from the deck, four chances out of fifty two, as a decimal? Next, I need the probability of, pulling a heart, which is thirteen chances out of fifty two. Oh, give me that as a decimal too. Lastly, how about the probability of drawing a red card? Twenty six chances out of fifty two. I need that probability as a ratio.",
           "clarifications": {
-            "first_event_successful_outcomes": "4",
-            "first_event_total_outcomes": "52",
-            "second_event_successful_outcomes": "13",
-            "second_event_total_outcomes": "52",
-            "third_event_successful_outcomes": "26",
-            "third_event_total_outcomes": "52",
-            "third_event_format_as_ratio": "true"
+            "success_outcomes_ace": "4",
+            "total_outcomes_deck": "52",
+            "success_outcomes_heart": "13",
+            "success_outcomes_red_card": "26",
+            "format_as_ratio_red_card": "true"
           }
         }
       ]
@@ -7951,8 +8184,9 @@
           "asr_output_elevenlabs": "Hey, as a data analyst, I've got, uh, two 2 by 2 contingency tables from a survey done in two cities. The first one's got 45, 55, 35, 65, and the second is 30, 70, 50, 50. Right, can you do a chi-squared test for independence on them using a 0.05 significance level? And, um, let me know if there's a strong relationship between the variables in each city.",
           "asr_output_deepgram": "Hey. As a data analyst, I've got, two two by two contingency tables from a survey done in two cities. The first one's got forty five, fifty five, thirty five, sixty five, and the second is thirty, seventy, fifty, fifty. Right. Can you do a chi squared test for independence on them using a zero point zero five significance level? And, let me know if there's a strong relationship between the variables in each city.",
           "clarifications": {
-            "first_table_values": "[45, 55, 35, 65]",
-            "second_table_values": "[30, 70, 50, 50]"
+            "first_contingency_table": "[45, 55, 35, 65]",
+            "second_contingency_table": "[30, 70, 50, 50]",
+            "significance_level": "0.05"
           }
         }
       ]
@@ -8051,9 +8285,17 @@
           "asr_output_elevenlabs": "Hey, could you predict the house price? The first one's in New York, 2,500 square feet, three rooms, built in 2000. Oh, compare it with a similar house in Los Angeles, but that's 3,000 square feet, built in 2005. Lastly, predict for a third house in Chicago, 2,000 square feet, two rooms from 1995.",
           "asr_output_deepgram": "Hey. Could you predict the house price? The first one's in New York, twenty five hundred square feet, three rooms, built in two thousand. Oh, compare it with a similar house in Los Angeles, but that's three thousand square feet, built in two thousand five. Lastly, predict for a third house in Chicago. Two thousand square feet, two rooms from nineteen ninety five.",
           "clarifications": {
-            "first_location": "New York",
-            "second_location": "Los Angeles",
-            "third_location": "Chicago"
+            "first_house_area": "2500 square feet",
+            "first_house_rooms": "3",
+            "first_house_year": "2000",
+            "first_house_location": "New York",
+            "second_house_area": "3000 square feet",
+            "second_house_year": "2005",
+            "second_house_location": "Los Angeles",
+            "third_house_area": "2000 square feet",
+            "third_house_rooms": "2",
+            "third_house_year": "1995",
+            "third_house_location": "Chicago"
           }
         }
       ]
@@ -8105,7 +8347,11 @@
           "asr_output_elevenlabs": "Hey, uh, can you get the R squared for a regression model using the dataset/user/home/datasets/finance.CSV? Oh, first, use income, age, and education as independent variables and credit score as the dependent one? Then, um, do it again but switch education to dependent and use income, age, and credit score as independent variables.",
           "asr_output_deepgram": "Hey. Can you get the r squared for a regression model using the dataset slash user slash home slash datasets slash finance dot CSV? Oh, first, use income, age, and education as independent variables and credit score as the dependent one. Then, do it again, but switch education to dependent and use income, age, and credit score as independent variables.",
           "clarifications": {
-            "dataset_path": "/user/home/datasets/finance.csv"
+            "dataset_path": "/user/home/datasets/finance.csv",
+            "first_independent_variables": "income, age, education",
+            "first_dependent_variable": "credit_score",
+            "second_independent_variables": "income, age, credit_score",
+            "second_dependent_variable": "education"
           }
         }
       ]
@@ -8155,12 +8401,10 @@
           "asr_output_elevenlabs": "Hey, could you work out the quarterly dividend per share for my company? Uh, we've paid out, um, five million dollars in dividends with two million shares outstanding. Uh, also what's the dividend per share if we boost our payout to six million while keeping two million shares? Uh, and what if, uh, we bump up the outstanding shares to two and a half million, still with a six million payout? What would that be per share?",
           "asr_output_deepgram": "Hey. Could you work out the quarterly dividend per share for my company? We've paid out, five million dollars in dividends with two million shares outstanding. Also, what's the dividend per share if we boost our payout to six million while keeping two million shares? And what if, we bump up the outstanding shares to two and a half million still with a six million payout? What would that be per share?",
           "clarifications": {
-            "first_total_payout": "$5,000,000",
-            "first_outstanding_shares": "2,000,000",
-            "second_total_payout": "$6,000,000",
-            "second_outstanding_shares": "2,000,000",
-            "third_total_payout": "$6,000,000",
-            "third_outstanding_shares": "2,500,000"
+            "initial_total_payout": "$5,000,000",
+            "initial_outstanding_shares": "2,000,000",
+            "scenario_total_payout": "$6,000,000",
+            "scenario_outstanding_shares": "2,500,000"
           }
         }
       ]
@@ -8204,13 +8448,11 @@
           "asr_output_deepgram": "Hey. Can you figure out the discounted cash flow for a bond? I've got this bond with a fifty bucks annual coupon, a five year time frame, and a five percent discount rate. Its face value is one thousand bucks. I need the discounted cash flow for that. Oh, then let's compare it with another bond that has a sixty dollar annual coupon, lasts seven years, and uses a four percent discount rate. The face value is also one thousand. Can you figure out the discounted cash flow for this second bond too?",
           "clarifications": {
             "first_bond_coupon_payment": "$50",
-            "first_bond_period": "5 years",
+            "first_bond_time_frame": "5 years",
             "first_bond_discount_rate": "5%",
-            "first_bond_face_value": "$1000",
             "second_bond_coupon_payment": "$60",
-            "second_bond_period": "7 years",
-            "second_bond_discount_rate": "4%",
-            "second_bond_face_value": "$1000"
+            "second_bond_time_frame": "7 years",
+            "second_bond_discount_rate": "4%"
           }
         }
       ]
@@ -8263,12 +8505,10 @@
           "clarifications": {
             "principal_amount": "$5000",
             "annual_interest_rate": "2.5%",
-            "rate_decimal": "0.025",
-            "investment_duration": "10 years",
             "compounding_frequency": "4 times in a year",
-            "first_period_duration": "2 years",
-            "second_period_duration": "3 years",
-            "third_period_duration": "5 years"
+            "first_period_years": "2 years",
+            "second_period_years": "3 years",
+            "third_period_years": "5 years"
           }
         }
       ]
@@ -8323,7 +8563,8 @@
             "first_company_shareholder_equity": "$5,000,000",
             "first_company_dividends_paid": "$200,000",
             "second_company_net_income": "$2,000,000",
-            "second_company_shareholder_equity": "$10,000,000"
+            "second_company_shareholder_equity": "$10,000,000",
+            "second_company_dividends_paid": "0"
           }
         }
       ]
@@ -8371,10 +8612,10 @@
           "clarifications": {
             "first_investment_present_value": "$5000",
             "first_investment_annual_interest_rate": "5%",
-            "first_investment_time_years": "10 years",
+            "first_investment_time_years": "10",
             "second_investment_present_value": "$7000",
             "second_investment_annual_interest_rate": "4%",
-            "second_investment_time_years": "15 years"
+            "second_investment_time_years": "15"
           }
         }
       ]
@@ -8425,12 +8666,12 @@
           "asr_output_elevenlabs": "John's put 5,000 dollars into Fund A with a, uh, 7 percent annual return and plans to like leave it for five years. Oh, he's also put 8,000 dollars in Fund B, which has um, a 5 percent annual return and he'll keep it there for uh, seven years. Can you uh, figure out how much profit he'll make from both funds?",
           "asr_output_deepgram": "John's put five thousand dollars into fund a with a, seven percent annual return and plans to, like, leave it for five years. Oh, he's also put eight thousand dollars in fund b, which has, a five percent annual return, and he'll keep it there for, seven years. Can you, figure out how much profit he'll make from both funds?",
           "clarifications": {
-            "fund_a_investment_amount": "$5000",
-            "fund_a_annual_return": "7%",
-            "fund_a_years": "5 years",
-            "fund_b_investment_amount": "$8000",
-            "fund_b_annual_return": "5%",
-            "fund_b_years": "7 years"
+            "investment_amount_fund_a": "$5000",
+            "annual_return_fund_a": "7%",
+            "years_fund_a": "5",
+            "investment_amount_fund_b": "$8000",
+            "annual_return_fund_b": "5%",
+            "years_fund_b": "7"
           }
         }
       ]
@@ -8477,15 +8718,15 @@
           "asr_output_elevenlabs": "Hey, I, um, recently sold some stocks. I bought one at $150, another at, uh, $200, and one more at $250. I sold them for $180, $210, and, uh, $300 each. Plus, I've got dividends of $20, $30, and $40. Oh, can you use the calculate return on investment function to, uh, figure out the return on investment for each?",
           "asr_output_deepgram": "Hey. I, recently sold some stocks. I bought one at one fifty dollars, another at, two hundred dollars, and one more at two fifty dollars. I sold them for one eighty dollars, two ten dollars, and, three hundred dollars each. Plus, I've got dividends of twenty dollars, thirty dollars, and forty dollars. Oh, can you use the calculate return on investment function to, figure out the return on investment for each?",
           "clarifications": {
-            "purchase_price1": "$150",
-            "sale_price1": "$180",
-            "dividend1": "$20",
-            "purchase_price2": "$200",
-            "sale_price2": "$210",
-            "dividend2": "$30",
-            "purchase_price3": "$250",
-            "sale_price3": "$300",
-            "dividend3": "$40"
+            "first_stock_purchase_price": "$150",
+            "first_stock_sale_price": "$180",
+            "first_stock_dividend": "$20",
+            "second_stock_purchase_price": "$200",
+            "second_stock_sale_price": "$210",
+            "second_stock_dividend": "$30",
+            "third_stock_purchase_price": "$250",
+            "third_stock_sale_price": "$300",
+            "third_stock_dividend": "$40"
           }
         }
       ]
@@ -8597,10 +8838,10 @@
           "clarifications": {
             "first_investment_initial_value": "$5000",
             "first_investment_final_value": "$7000",
-            "first_investment_period_in_years": "5 years",
+            "first_investment_period_in_years": "5",
             "second_investment_initial_value": "$8000",
             "second_investment_final_value": "$12000",
-            "second_investment_period_in_years": "3 years"
+            "second_investment_period_in_years": "3"
           }
         }
       ]
@@ -8687,10 +8928,11 @@
           "asr_output_elevenlabs": "Um, hey, can you let me know closing stock prices for Microsoft and Apple on NASDAQ for January 1st and February 1st 2022? Thanks.",
           "asr_output_deepgram": "Hey. Can you let me know closing stock prices for Microsoft and Apple on NASDAQ for January first and February first twenty twenty two? Thanks.",
           "clarifications": {
-            "first_company_name": "Microsoft",
-            "second_company_name": "Apple",
-            "first_date_spelling": "2022-01-01",
-            "second_date_spelling": "2022-02-01"
+            "company_name1": "Microsoft",
+            "company_name2": "Apple",
+            "exchange_name": "NASDAQ",
+            "first_date": "2022-01-01",
+            "second_date": "2022-02-01"
           }
         }
       ]
@@ -8736,10 +8978,10 @@
           "asr_output_elevenlabs": "Can you fetch me the stock prices for Apple, A-P-P-L-E, Apple, on N-A-S-D-A-Q, Nasdaq, for the last 10 days, and Microsoft, M-I-C-R-O-S-O-F-T, Microsoft, on N-Y-S-E, NYSE, for the last 15 days?",
           "asr_output_deepgram": "Can you fetch me the stock prices for Apple? A p p l e, Apple, on n a s d a q, Nasdaq, for the last ten days, and Microsoft, m I c r o s o f t, Microsoft, on n y s e n y s e for the last fifteen days.",
           "clarifications": {
-            "company_name1": "Apple Inc.",
+            "company1_name": "Apple Inc.",
             "exchange1": "NASDAQ",
             "days1": "10",
-            "company_name2": "Microsoft Corporation",
+            "company2_name": "Microsoft Corporation",
             "exchange2": "NYSE",
             "days2": "15"
           }
@@ -8789,11 +9031,11 @@
           "clarifications": {
             "company_name1": "Microsoft",
             "company_name2": "Apple",
-            "data_type_spelling1": "Open",
-            "data_type_spelling2": "Close",
-            "data_type_spelling3": "High",
-            "data_type_spelling4": "Low",
-            "days": "30"
+            "days": "30",
+            "data_type1": "Open",
+            "data_type2": "Close",
+            "data_type3": "High",
+            "data_type4": "Low"
           }
         }
       ]
@@ -8838,7 +9080,16 @@
           "asr_output_openai": "Use the get_stock_prices function to a) get stock prices for Apple over a week, Microsoft for a couple of weeks, Amazon for about 21 days, and Tesla for about 30 days",
           "asr_output_elevenlabs": "Use the get_stock_prices function to, uh, get stock prices for Apple over a week, Microsoft for a couple of weeks, Amazon for about 21 days, and Tesla for about 30 days.",
           "asr_output_deepgram": "Use the get underscore stock, underscore prices function to, get stock prices for Apple over a week, Microsoft for a couple of weeks, Amazon for about twenty one days, and Tesla for about thirty days.",
-          "clarifications": {}
+          "clarifications": {
+            "company1": "Apple",
+            "company2": "Microsoft",
+            "company3": "Amazon",
+            "company4": "Tesla",
+            "duration1": "1 week",
+            "duration2": "2 weeks",
+            "duration3": "3 weeks",
+            "duration4": "1 month"
+          }
         }
       ]
     ],
@@ -8882,11 +9133,13 @@
           "asr_output_elevenlabs": "John's thinking about, you know, putting money into a mutual fund and he's, um, scoping out two options. In the first scenario, he's starting with $5,000 and expecting a yearly return of 7% without adding any more money. In the second scenario, he's starting with $3,000 at a 6% return rate plus, um, adding $200 each year. He needs to know what these investments might be worth in, uh, 10 years. Can you calculate the future value for both of these situations for him?",
           "asr_output_deepgram": "John's thinking about, you know, putting money into a mutual fund, and he's, scoping out two options. In the first scenario, he's starting with five thousand dollars and, expecting a yearly return of seven percent without adding any more money. In the second scenario, he's starting with three thousand dollars at, a six percent return rate plus, adding two hundred dollars each year. He needs to know what these investments might be worth in, ten years. Can you calculate the future value for both of these situations for him?",
           "clarifications": {
-            "first_scenario_initial_investment": "$5000",
-            "first_scenario_rate_of_return": "7%",
-            "second_scenario_initial_investment": "$3000",
-            "second_scenario_rate_of_return": "6%",
-            "second_scenario_contribution": "$200"
+            "initial_investment_scenario1": "$5000",
+            "rate_of_return_scenario1": "7%",
+            "years_scenario1": "10",
+            "initial_investment_scenario2": "$3000",
+            "rate_of_return_scenario2": "6%",
+            "years_scenario2": "10",
+            "annual_contribution_scenario2": "$200"
           }
         }
       ]
@@ -8937,10 +9190,9 @@
           "asr_output_elevenlabs": "So you're operating a drone at coordinates 5,7. First move it to 10,15 then keep going to 20,25. Oh could you figure out how far it's traveled using the Euclidean norm?",
           "asr_output_deepgram": "So you're operating a drone at, coordinates five seven. First, move it to ten fifteen, then, keep going to twenty twenty five. Oh, could you, figure out how far it's traveled using the Euclidean norm?",
           "clarifications": {
-            "initial_point_coordinates": "(5, 7)",
-            "first_destination_coordinates": "(10, 15)",
-            "second_destination_coordinates": "(20, 25)",
-            "calculation_method": "Euclidean norm"
+            "initial_point": "(5, 7)",
+            "first_destination": "(10, 15)",
+            "second_destination": "(20, 25)"
           }
         }
       ]
@@ -8986,12 +9238,12 @@
           "asr_output_elevenlabs": "Hey, uh, can you solve the roots for, um, these two quadratic equations? The first one's 3x\u00b2+7x+2=0, where the coefficients are a=3, b=7 and c=2. The second one is 5x\u00b2-4x+1=0 with coefficients a=5, b=-4 and ce=1.",
           "asr_output_deepgram": "Hey. Can you solve the roots for, these two quadratic equations? The first one's three x squared plus seven x plus two equals zero, where the coefficients are a equals three, b equals seven, and c equals two. The second one is five x squared minus four x plus one equals zero with coefficients a equals five, b equals negative four, and c e equals one.",
           "clarifications": {
-            "first_equation_coefficient_a": "3",
-            "first_equation_coefficient_b": "7",
-            "first_equation_constant_c": "2",
-            "second_equation_coefficient_a": "5",
-            "second_equation_coefficient_b": "-4",
-            "second_equation_constant_c": "1"
+            "first_equation_a": "3",
+            "first_equation_b": "7",
+            "first_equation_c": "2",
+            "second_equation_a": "5",
+            "second_equation_b": "-4",
+            "second_equation_c": "1"
           }
         }
       ]
@@ -9038,11 +9290,11 @@
           "asr_output_elevenlabs": "Uh, can you estimate the population of Bengal tigers in India for 2021 and, uh, compare it like with African elephants in Kenya for the same year? Also, um, give me the estimates for both in their countries for 2023. Thanks.",
           "asr_output_deepgram": "Can you estimate the population of Bengal tigers in India for twenty twenty one and, compare it like with African elephants in Kenya for the same year? Also, give me the estimates for both in their countries for twenty twenty three. Thanks.",
           "clarifications": {
-            "species1_name": "Bengal Tigers",
-            "country1_name": "India",
+            "species1": "Bengal Tigers",
+            "country1": "India",
             "year1": "2021",
-            "species2_name": "African Elephants",
-            "country2_name": "Kenya",
+            "species2": "African Elephants",
+            "country2": "Kenya",
             "year2": "2021",
             "year3": "2023"
           }
@@ -9090,10 +9342,10 @@
           "asr_output_elevenlabs": "So, um, what greenhouse gas emissions could I cut down by using solar for a year and... No. I mean, and wind for eight months in the Midwest?",
           "asr_output_deepgram": "So, what greenhouse gas emissions could I cut down by using solar for a year and no. I mean, in wind for eight months in the Midwest.",
           "clarifications": {
-            "first_energy_type": "solar energy",
-            "first_usage_duration": "12 months",
-            "second_energy_type": "wind energy",
-            "second_usage_duration": "8 months",
+            "energy_type1": "solar energy",
+            "usage_duration1": "12 months",
+            "energy_type2": "wind energy",
+            "usage_duration2": "8 months",
             "region": "Midwest region of the United States"
           }
         }
@@ -9140,7 +9392,10 @@
           "asr_output_openai": "Can you give me the air quality data for New York City, including PM2.5, PM10, ozone levels, and pollution sources for today, May 5, 2023, yesterday, and the day before?",
           "asr_output_elevenlabs": "Can you give me the air quality data for New York City, including PM2.5, PM10, ozone levels, and pollution sources for today, May 5th, 2023, yesterday, and the day before?",
           "asr_output_deepgram": "Can you give me the air quality data for New York City, including PM two point five, PM ten, ozone levels, and pollution sources for today, May fifth twenty twenty three, yesterday, and the day before?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York City",
+            "historical_dates": "today, yesterday, the day before yesterday"
+          }
         }
       ]
     ],
@@ -9184,7 +9439,17 @@
           "asr_output_openai": "Oh, could you see what's up with the traffic for driving from New York to LA? After that, maybe see about biking from LA to San Francisco. And you know, lastly, what's the transit situation like for heading back to New York from San Francisco?",
           "asr_output_elevenlabs": "Oh, could you see what's up with the traffic for driving from New York to LA? After that, maybe see about biking from LA to San Francisco. And you know, lastly, what's the transit situation like for heading back to New York from San Francisco?",
           "asr_output_deepgram": "Oh, could you see what's up with the traffic for driving from New York to LA? After that, maybe see about biking from LA to San Francisco. And, you know, lastly, what's the transit situation like for heading back to New York from San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location1": "New York",
+            "end_location1": "Los Angeles",
+            "transportation_mode1": "driving",
+            "start_location2": "Los Angeles",
+            "end_location2": "San Francisco",
+            "transportation_mode2": "bicycling",
+            "start_location3": "San Francisco",
+            "end_location3": "New York",
+            "transportation_mode3": "transit"
+          }
         }
       ]
     ],
@@ -9234,7 +9499,14 @@
           "asr_output_openai": "Hey, could you check out parks in New York that have a tennis court and a picnic area? After that, look for parks in Los Angeles with a playground and a running track. Finally, search for parks in Chicago offering both a tennis court and a playground.",
           "asr_output_elevenlabs": "Hey, could you check out parks in New York that have a tennis court and a picnic area? After that, look for parks in Los Angeles with a playground and a running track. Finally, search for parks in Chicago offering both the tennis court and a playground.",
           "asr_output_deepgram": "Hey. Could you check out parks in New York that have a tennis court and a picnic area? After that, look for parks in Los Angeles with a playground and a running track. Finally, search for parks in Chicago offering both a tennis court and a playground.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "New York, USA",
+            "first_amenities": "Tennis Court, Picnic Area",
+            "second_location": "Los Angeles, USA",
+            "second_amenities": "Playground, Running Track",
+            "third_location": "Chicago, USA",
+            "third_amenities": "Tennis Court, Playground"
+          }
         }
       ]
     ],
@@ -9286,10 +9558,12 @@
           "asr_output_elevenlabs": "So what's the shortest drive from New York City to Los Angeles, and then from LA to Miami? I want both the shortest route and the scenic route options.",
           "asr_output_deepgram": "So what's the shortest drive from New York City to Los Angeles and then from LA to Miami? I want both the shortest route and the scenic route options.",
           "clarifications": {
-            "start_location_spelling": "New York City",
-            "end_location_spelling": "Los Angeles",
-            "second_end_location_spelling": "Miami",
-            "route_preference_spelling": "shortest and scenic"
+            "start_location1": "New York City",
+            "end_location1": "Los Angeles",
+            "start_location2": "Los Angeles",
+            "end_location2": "Miami",
+            "route_preference1": "shortest",
+            "route_preference2": "scenic"
           }
         }
       ]
@@ -9341,11 +9615,11 @@
           "asr_output_deepgram": "Hey. Can you find public libraries in New York that have a reading room and a fiction section? Then look for ones in Los Angeles with Wi Fi and a children's section. Finally, check Chicago for libraries with a cafe and a reading room.",
           "clarifications": {
             "location1": "New York, NY",
-            "facilities1": "Reading Room and Fiction section",
+            "facilities1": "Reading Room, Fiction section",
             "location2": "Los Angeles, CA",
-            "facilities2": "Wi-Fi and Children Section",
+            "facilities2": "Wi-Fi, Children Section",
             "location3": "Chicago, IL",
-            "facilities3": "Cafe and Reading Room"
+            "facilities3": "Cafe, Reading Room"
           }
         }
       ]
@@ -9397,9 +9671,9 @@
           "asr_output_elevenlabs": "Uh, please get me the latest five articles on climate change and artificial intelligence for Europe. Oh.",
           "asr_output_deepgram": "Please get me the latest five articles on climate change and artificial intelligence for Europe. Oh.",
           "clarifications": {
-            "first_topic": "Climate Change",
-            "second_topic": "Artificial Intelligence",
-            "article_quantity": "5",
+            "topic1": "Climate Change",
+            "topic2": "Artificial Intelligence",
+            "quantity": "5",
             "region": "Europe"
           }
         }
@@ -9565,8 +9839,8 @@
           "asr_output_elevenlabs": "Umm, could you get more info like director, uhh, cast and awards for Inception and The Dark Knight please?",
           "asr_output_deepgram": "Could you get more info like director, cast, and awards for inception and the dark knight, please?",
           "clarifications": {
-            "first_movie_title": "Inception",
-            "second_movie_title": "The Dark Knight"
+            "movie_title1": "Inception",
+            "movie_title2": "The Dark Knight"
           }
         }
       ]
@@ -9658,11 +9932,11 @@
           "asr_output_deepgram": "Could you, give me the specifics for the lawsuit case one twelve three four five a b c that got going back in twenty eighteen at the New York court? Also, be sure to, gather some info for the case six am eight nine Noeck c y z from twenty nineteen in the California court.",
           "clarifications": {
             "first_case_number": "12345ABC",
-            "first_year_initiated": "2018",
-            "first_court_jurisdiction": "New York",
+            "first_year": "2018",
+            "first_location": "New York",
             "second_case_number": "67890XYZ",
-            "second_year_initiated": "2019",
-            "second_court_jurisdiction": "California"
+            "second_year": "2019",
+            "second_location": "California"
           }
         }
       ]
@@ -9711,10 +9985,11 @@
           "asr_output_elevenlabs": "Uh, use the lawsuit search function to find all lawsuits with Google in Santa Clara County. That's S-A-N-T-A C-L-A-R-A, Santa Clara County. And Facebook in, um, San Mateo County, California. That's S-A-N-M-A-T-O. San Mateo County, California. Okay?",
           "asr_output_deepgram": "Use the lawsuit search function to find all lawsuits with Google in Santa Clara County. That's s a n t a c l a r a, Santa Clara County, and Facebook in, San Mateo County, California. That's s a n n a t e o, San Mateo County, California. Okay?",
           "clarifications": {
-            "first_entity_name": "Google",
-            "first_county_name": "Santa Clara",
-            "second_entity_name": "Facebook",
-            "second_county_name": "San Mateo"
+            "first_entity": "Google",
+            "first_county": "Santa Clara",
+            "second_entity": "Facebook",
+            "second_county": "San Mateo",
+            "state": "California"
           }
         }
       ]
@@ -9759,7 +10034,12 @@
           "asr_output_openai": "Can you give me the current temperature and humidity for New York, Los Angeles, London, and Tokyo, thanks?",
           "asr_output_elevenlabs": "Um, can you give me the current temperature and uh humidity for New York, Los Angeles, London, and Tokyo thanks?",
           "asr_output_deepgram": "Can you give me the current temperature and, humidity for New York, Los Angeles, London, and Tokyo? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "New York",
+            "location2": "Los Angeles",
+            "location3": "London",
+            "location4": "Tokyo"
+          }
         }
       ]
     ],

@@ -687,7 +687,7 @@ Task Output:
         return test_case
     
     def process_file(self, file_path: str, output_path: str = None, test_mode: bool = False) -> None:
-        """Process a JSON file and show clarifications preview without making changes."""
+        """Process a JSON file and replace existing clarifications with new ones."""
         print(f"Processing file: {file_path}")
         
         # Load the JSON file
@@ -706,7 +706,7 @@ Task Output:
             test_cases = data
             print(f"Processing all {len(test_cases)} test cases")
         
-        # Process each test case (PREVIEW MODE - NO CHANGES)
+        # Process each test case and log clarifications
         processed_count = 0
         for i, test_case in enumerate(test_cases):
             try:
@@ -726,22 +726,13 @@ Task Output:
                     print(f"  Test case {i+1}: No function documentation found, skipping")
                     continue
                 
-                # Generate clarifications
-                try:
-                    clarifications = self.generate_clarifications(user_query, function_docs)
-                except Exception as e:
-                    print(f"Error generating clarifications for test case {test_case.get('id', 'unknown')}: {e}")
-                    import traceback
-                    traceback.print_exc()
-                    clarifications = {}
-                
                 # ACTUALLY ADD CLARIFICATIONS TO THE TEST CASE
                 if "question" in test_case and test_case["question"]:
                     # For multi-turn: process all turns, for single-turn: just first turn
                     turns_to_process = test_case["question"] if len(test_case["question"]) > 1 else [test_case["question"][0]]
                     
-                    for turn in turns_to_process:
-                        for message in turn:
+                    for turn_idx, turn in enumerate(turns_to_process):
+                        for msg_idx, message in enumerate(turn):
                             if message.get("role") == "user":
                                 # Generate clarifications for this specific user message
                                 user_query = message.get("content", message.get("transcript", ""))
@@ -749,6 +740,15 @@ Task Output:
                                     try:
                                         clarifications = self.generate_clarifications(user_query, function_docs)
                                         message["clarifications"] = clarifications
+                                        
+                                        # LOG THE CLARIFICATIONS FOR VERIFICATION
+                                        test_id = test_case.get('id', f'unknown_{i}')
+                                        print(f"  ✅ Test {i+1}/{len(test_cases)} - {test_id}")
+                                        print(f"     Turn {turn_idx+1}, Message {msg_idx+1}")
+                                        print(f"     User: {user_query[:100]}{'...' if len(user_query) > 100 else ''}")
+                                        print(f"     Clarifications: {clarifications}")
+                                        print()
+                                        
                                     except Exception as e:
                                         print(f"Error generating clarifications for message: {e}")
                                         message["clarifications"] = {}

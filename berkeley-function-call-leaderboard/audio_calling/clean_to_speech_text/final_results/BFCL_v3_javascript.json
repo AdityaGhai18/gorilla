@@ -101,8 +101,10 @@
           "asr_output_elevenlabs": "Uh, can you help me grab the last transaction ID from the database log at, uh, /var/log/db.log? It should be one that's, um, marked as completed or failed. Okay? Make sure it's in UTF-8 encoding and use the function to handle it.",
           "asr_output_deepgram": "Can you help me grab the last transaction ID from the database log at, slash var slash log slash d b dot log? It should be one that's, marked as completed or failed. Okay? Make sure it's in UTF eight encoding and use the function to handle it.",
           "clarifications": {
-            "file_path": "/var/log/db.log",
-            "encoding_method": "utf-8"
+            "log_file_path": "/var/log/db.log",
+            "file_encoding": "utf-8",
+            "transaction_status1": "completed",
+            "transaction_status2": "failed"
           }
         }
       ]
@@ -252,12 +254,12 @@
           "asr_output_elevenlabs": "Let me see. We're going to write a line of code to initialize manageReactState function. You've got initial state object, a reducers map, and, um, a logger middleware as middleware. Plus, I think let's enhance with apply middleware, my middleware. Oh, for accessing and updating state in React, use use state selector hook and use dispatch action hook.",
           "asr_output_deepgram": "Let me see. We're gonna write a line of code to initialize manage react state function. You've got initial state object, a reducers map, and, a logger middleware as middleware. Plus, I think let's enhance with apply middleware my middleware. Oh, for accessing and updating state in React, use use state selector hook and use dispatch action hook.",
           "clarifications": {
-            "initial_state_object_spelling": "initialStateObject",
-            "reducers_map_spelling": "reducersMap",
-            "logger_middleware_spelling": "loggerMiddleware",
-            "middleware_enhancer_spelling": "applyMiddleware('myMiddleWare')",
-            "state_selector_hook_spelling": "useStateSelectorHook",
-            "dispatch_action_hook_spelling": "useDispatchActionHook"
+            "initial_state_object": "initialStateObject",
+            "reducers_map": "reducersMap",
+            "logger_middleware": "loggerMiddleware",
+            "middleware_enhancer": "applyMiddleware('myMiddleWare')",
+            "state_selector_hook": "useStateSelectorHook",
+            "dispatch_action_hook": "useDispatchActionHook"
           }
         }
       ]
@@ -328,8 +330,8 @@
           "asr_output_elevenlabs": "Um, can you help me link the first four elements of this array to the transition category for CSS transitions?",
           "asr_output_deepgram": "Can you help me link the first four elements of this array to the transition category for CSS transitions?",
           "clarifications": {
-            "category_name": "transition",
-            "element_limit": "4"
+            "category": "transition",
+            "limit": "4"
           }
         }
       ]
@@ -457,7 +459,7 @@
           "asr_output_elevenlabs": "Um, can you look at the JSON payload response data to, uh, see if it has a specific key for API response validation? Oh, set keyToCheck to expectedKey and use processKey function as the processing callback.",
           "asr_output_deepgram": "Can you look at the JSON payload response data to, see if it has a specific key for API response validation? Oh, set key to check to expected key and use process key function as the processing callback.",
           "clarifications": {
-            "json_payload_variable": "responseData",
+            "json_payload_key": "responseData",
             "key_to_check": "expectedKey",
             "processing_callback_variable": "processingCallBack"
           }
@@ -507,7 +509,7 @@
           "asr_output_deepgram": "Can you get records from the employee records database where, the department's sales use a JavaScript custom query function called backtick get sales backtick.",
           "clarifications": {
             "database_name": "employeeRecords",
-            "query_function_variable": "getSales"
+            "query_function": "getSales"
           }
         }
       ]
@@ -600,10 +602,9 @@
           "asr_output_elevenlabs": "Uh, can you help me get a data fetch operation going? Use the API endpoint URL https colon slash slash api dot example.com/data. Right. Expect a JSON response like key value with a, a request config of method get dot.",
           "asr_output_deepgram": "Can you help me get a data fetch operation going? Use the API endpoint URL, h t t p s colon slash slash API dot example dot com slash data. Right. Expect a JSON response like key value with a a request config of method get dot.",
           "clarifications": {
-            "operation_name": "dataFetch",
             "api_endpoint_url": "https://api.example.com/data",
-            "expected_response_json": "{\"key\": \"value\"}",
-            "request_configuration_object": "{\"method\": \"GET\"}"
+            "expected_response": "{\"key\": \"value\"}",
+            "request_configuration": "{\"method\": \"GET\"}"
           }
         }
       ]
@@ -668,9 +669,9 @@
           "asr_output_elevenlabs": "Um, could you make a dynamic chart using user data array, uh, scale the axis by three, and link it to dashboard element on the dashboard? Okay?",
           "asr_output_deepgram": "Could you make a dynamic chart using user data array, scale the axis by three, and link it to dashboard element on the dashboard? Okay?",
           "clarifications": {
-            "user_data_array_name": "userDataArray",
-            "scaling_factor_value": "3",
-            "dashboard_element_name": "dashboardElement"
+            "user_data_array": "userDataArray",
+            "scaling_factor": "3",
+            "dashboard_element": "dashboardElement"
           }
         }
       ]
@@ -727,6 +728,8 @@
             "chart_component_name": "BarChart",
             "module_name": "chartModule",
             "library_name": "visualizationLibrary",
+            "property1": "DataPoints",
+            "property2": "Labels",
             "config_object_name": "config"
           }
         }
@@ -788,8 +791,8 @@
           "asr_output_elevenlabs": "Hey, uh, could you create new chart series using these initial settings? Axis labels, axis labels array. Data points, data points array. And, um, default color scheme, default color? Oh, and then integrate it into chart layout, chart layout object.",
           "asr_output_deepgram": "Hey. Could you create new chart series using these initial settings? Axis labels, axis labels array, data points, data points array, and, default color scheme, default color. Oh, and then integrate it into chart layout, chart layout object.",
           "clarifications": {
-            "axis_labels_array": "axisLabelsArray",
-            "data_points_array": "dataPointsArray",
+            "axis_labels": "axisLabelsArray",
+            "data_points": "dataPointsArray",
             "default_color_scheme": "defaultColor",
             "chart_layout_object": "chartLayoutObject"
           }
@@ -848,8 +851,8 @@
           "asr_output_elevenlabs": "Um, can you help me calculate new coordinates for vertices at, uh, 10, 15 and 20, 25 when they're rotated 30 degrees around pivot point 12, 17? Okay.",
           "asr_output_deepgram": "Can you help me calculate new coordinates for vertices at, ten, fifteen, and twenty, twenty five when they're rotated thirty degrees around pivot point twelve, seventeen. Okay?",
           "clarifications": {
-            "vertices_coordinates": "(10, 15) and (20, 25)",
-            "pivot_point_coordinates": "(12, 17)",
+            "vertices": "(10, 15) and (20, 25)",
+            "pivot_point": "(12, 17)",
             "rotation_angle": "30 degrees"
           }
         }
@@ -905,7 +908,7 @@
           "clarifications": {
             "application_name": "app",
             "priority_level": "3",
-            "messaging_service_name": "messagingSvc",
+            "messaging_service": "messagingSvc",
             "notification_type": "2"
           }
         }
@@ -958,7 +961,9 @@
           "asr_output_elevenlabs": "Um, hey, what's the final speed of an object that's, uh, been fallen for five seconds with gravity G and starts from rest? You know?",
           "asr_output_deepgram": "Hey. What's the final speed of an object that's, been falling for five seconds with gravity g and starts from rest? You know?",
           "clarifications": {
-            "gravity_constant": "g"
+            "time_in_seconds": "5",
+            "gravity": "g",
+            "initial_velocity": "0"
           }
         }
       ]
@@ -1007,7 +1012,7 @@
           "clarifications": {
             "shader_material_properties": "materialProps",
             "texture_list": "textureList",
-            "3d_object": "meshObject"
+            "3D_object": "meshObject"
           }
         }
       ]
@@ -1057,9 +1062,11 @@
           "asr_output_elevenlabs": "Can you help me set up a click event listener on the my button element? I need it to call handle button click and make sure the event doesn't spread, so set stop propagation to true.",
           "asr_output_deepgram": "Can you help me set up a click event listener on the my button element? I need it to call handle button click and make sure the event doesn't spread, so set stop propagation to true.",
           "clarifications": {
-            "element_name": "myButton",
-            "callback_function_name": "handleButtonClick",
-            "options_key": "stopProgation"
+            "event_name": "click",
+            "element_id": "myButton",
+            "callback_function": "handleButtonClick",
+            "option_key": "stopPropagation",
+            "option_value": "true"
           }
         }
       ]
@@ -1291,8 +1298,7 @@
           "clarifications": {
             "action_name": "submitForm",
             "object_name": "formHandler",
-            "validation_flag1": "isRequired",
-            "validation_flag2": "isValidEmail"
+            "validation_flags": "is required and is valid email"
           }
         }
       ]
@@ -1339,7 +1345,7 @@
           "clarifications": {
             "element_id": "contentBox",
             "new_content": "Hello World",
-            "action_name": "update"
+            "action": "update"
           }
         }
       ]
@@ -1429,9 +1435,9 @@
           "asr_output_elevenlabs": "Um, could you get a list of books, book A, book B, and book C by JK Rowling, that's R-O-W-L-I-N-G, JK Rowling from the library collection, right?",
           "asr_output_deepgram": "Could you get a list of books, booka, book b, and book c by JK Rowling? That's r o w l I n g. JK Rowling from the library collection. Right?",
           "clarifications": {
+            "book_list": "bookA, bookB, bookC",
             "author_name": "J.K. Rowling",
-            "collection_name": "library",
-            "book_list": "bookA, bookB, bookC"
+            "collection_name": "library"
           }
         }
       ]
@@ -1476,10 +1482,10 @@
           "asr_output_elevenlabs": "Uh, can you schedule these events with setup stage function? Setup stage comes before cleanup stage with clean stage function. Oh, um, make sure only three events happen at once.",
           "asr_output_deepgram": "Can you schedule these events? With setup stage function? Setup stage comes before cleanup stage with clean stage function. Oh, make sure only three events happen at once.",
           "clarifications": {
-            "event_name1_spelling": "setupStage",
-            "event_function1_spelling": "setupStageFunction",
-            "event_name2_spelling": "cleanupStage",
-            "event_function2_spelling": "cleanStageFunction",
+            "event_name1": "setupStage",
+            "function_name1": "setupStageFunction",
+            "event_name2": "cleanupStage",
+            "function_name2": "cleanStageFunction",
             "concurrency_limit": "3"
           }
         }
@@ -1617,9 +1623,9 @@
           "asr_output_deepgram": "Can you, process file watch queue with a five hundred millisecond polling interval? Right. Start at index zero and handle, like, ten files at a time to check for changes.",
           "clarifications": {
             "queue_name": "fileWatchQueue",
-            "polling_interval_milliseconds": "500",
-            "starting_index": "0",
-            "files_per_polling_interval": "10"
+            "polling_interval": "500 milliseconds",
+            "start_index": "0",
+            "files_per_poll": "10"
           }
         }
       ]
@@ -1675,8 +1681,8 @@
           "asr_output_deepgram": "Hey. Can you ensure a new line is placed before the leading comments of the node at position forty two in the TypeScript file? Oh, for that, use the TS line map line map and TS writer writer.",
           "clarifications": {
             "node_position": "42",
-            "line_map_object_name": "tsLineMap",
-            "writer_object_name": "tsWriter"
+            "line_map_object": "tsLineMap",
+            "writer_object": "tsWriter"
           }
         }
       ]
@@ -1727,8 +1733,8 @@
           "asr_output_elevenlabs": "Uh, can you use the process type function on each type in the union type obj to check its properties? Mm. Thanks.",
           "asr_output_deepgram": "Can you use the process type function on each type in the union type OBJ to check its properties? Thanks.",
           "clarifications": {
-            "function_name_spelling": "processType",
-            "type_object_name_spelling": "unionTypeObj"
+            "function_name": "processType",
+            "union_type_object_name": "unionTypeObj"
           }
         }
       ]
@@ -1770,8 +1776,8 @@
           "asr_output_elevenlabs": "Let me see. Okay, can you check if these two typescript declarations, one for a parameter named ParameterObject and another for a variable named VariableDeclarationObject, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readily, and static.",
           "asr_output_deepgram": "Let me see. Okay. Can you check if these two TypeScript declarations, one for a parameter named parameter object and another for a variable named variable declaration object, have the same flags? Look at their optionality, privacy, protection level, async status, if they're abstract, readily, and static.",
           "clarifications": {
-            "first_declaration_object_name": "parameterObject",
-            "second_declaration_object_name": "variableDeclarationObject"
+            "first_declaration_object": "parameterObject",
+            "second_declaration_object": "variableDeclarationObject"
           }
         }
       ]
@@ -1813,7 +1819,7 @@
           "asr_output_elevenlabs": "Uh, can you check if break node label in my abstract syntax tree isn't loop end? If not, uh, update it to loop end.",
           "asr_output_deepgram": "Can you check if break node label in my abstract syntax tree isn't loop end? If not, update it to loop end.",
           "clarifications": {
-            "new_label_spelling": "loopEnd"
+            "new_label": "loopEnd"
           }
         }
       ]
@@ -2052,7 +2058,8 @@
           "asr_output_elevenlabs": "Uh, can you help me set up a queue to handle tasks using my worker function with a concurrency level of five and, um, no payload size specified? Thanks.",
           "asr_output_deepgram": "Can you help me set up a queue to handle tasks using my worker function with a concurrency level of five and, no payload size specified? Thanks.",
           "clarifications": {
-            "worker_function_name": "myWorkerFunction"
+            "worker_function": "myWorkerFunction",
+            "concurrency_level": "5"
           }
         }
       ]
@@ -2194,7 +2201,7 @@
           "clarifications": {
             "callback_function_name": "processNode",
             "node_name": "currentNode",
-            "state_object_name": "nodeState"
+            "state_object": "nodeState"
           }
         }
       ]
@@ -2297,8 +2304,8 @@
           "asr_output_elevenlabs": "Can you change the version property of package info to 1.2.3, but only if it's different from what's there or if version isn't yet part of the object?",
           "asr_output_deepgram": "Can you change the version property of package info to one dot two dot three, but only if it's different from what's there or if version isn't yet part of the object?",
           "clarifications": {
-            "object_name": "packageInfo",
             "property_name": "version",
+            "object_name": "packageInfo",
             "new_value": "1.2.3"
           }
         }
@@ -2346,8 +2353,8 @@
           "asr_output_elevenlabs": "Um, can you, uh, calculate how many days are between April 1st, 2023 and April 15th, 2023?",
           "asr_output_deepgram": "Can you, calculate how many days are between April first twenty twenty three and April fifteenth twenty twenty three?",
           "clarifications": {
-            "start_date_spelling": "2023-04-01",
-            "end_date_spelling": "2023-04-15",
+            "start_date": "2023-04-01",
+            "end_date": "2023-04-15",
             "time_unit": "days"
           }
         }
@@ -2395,9 +2402,9 @@
           "asr_output_elevenlabs": "Uh, can you help switch the D-O-M, DOM event listeners from old virtual node to new virtual node? And, um, make sure to update and normalize the click event for the new virtual node. Okay?",
           "asr_output_deepgram": "Can help switch the DOM, Dom, event listeners from old virtual node to new virtual node, and, make sure to update and normalize the click event for the new virtual node. Okay?",
           "clarifications": {
-            "old_virtual_node_spelling": "oldVirtualNode",
-            "new_virtual_node_spelling": "newVirtualNode",
-            "event_type_spelling": "click"
+            "old_virtual_node": "oldVirtualNode",
+            "new_virtual_node": "newVirtualNode",
+            "event_type": "click"
           }
         }
       ]

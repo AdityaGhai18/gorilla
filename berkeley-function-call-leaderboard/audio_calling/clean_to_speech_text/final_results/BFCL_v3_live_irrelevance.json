@@ -135,7 +135,9 @@
           "asr_output_openai": "Show me the stock prices from last year for the top ten stocks on the Toronto Stock Exchange?",
           "asr_output_elevenlabs": "Uh, show me the stock prices from last year for, um, the top ten stocks on the Toronto Stock Exchange. Okay?",
           "asr_output_deepgram": "Show me the stock prices from last year for, the top ten stocks on the Toronto Stock Exchange. Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "stock_exchange_name": "Toronto stock exchange"
+          }
         }
       ]
     ],
@@ -629,7 +631,11 @@
           "asr_output_openai": "Look for a movie in NYC that's under two hours long and within walking distance of Times Square?",
           "asr_output_elevenlabs": "Uh, look for a movie in NYC that's, um, under two hours long and, uh, within walking distance of Times Square.",
           "asr_output_deepgram": "Look for a movie in NYC that's, under two hours long and, within walking distance of Times Square.",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "NYC",
+            "location": "Time Square",
+            "movie_duration": "2 hours"
+          }
         }
       ]
     ],
@@ -1124,7 +1130,9 @@
           "asr_output_openai": "In planning a ski trip to Whistler, uh, and can you give me, um, the five-day weather forecast for the top and bottom of the mountain please?",
           "asr_output_elevenlabs": "I'm planning a ski trip to Whistler, uh, and can you give me, um, the five-day weather forecast for the top and bottom of the mountain please?",
           "asr_output_deepgram": "In planning a ski trip to Whistler, and can you give me, the five day weather forecast for the top and bottom of the mountain, please?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Whistler"
+          }
         }
       ]
     ],
@@ -1349,7 +1357,7 @@
           "asr_output_elevenlabs": "Uh, can you get the DNS resolution info for the domain linked to IP 255.255.255.0 from Virus Total? Oh, and use the key sample key four for this.",
           "asr_output_deepgram": "Can you get the DNS resolution info for the domain linked to IP two fifty five dot two fifty five dot two fifty five dot zero from virus total? Oh, and use the key sample key four for this.",
           "clarifications": {
-            "domain_ip": "255.255.255.0",
+            "ip_address": "255.255.255.0",
             "api_key": "sample_key4"
           }
         }
@@ -1439,9 +1447,7 @@
           "asr_output_openai": "Can you help get the votes linked to the IP at http://digdeep.io?",
           "asr_output_elevenlabs": "Um, can you help get the votes linked to the IP at http://digdeep.io?",
           "asr_output_deepgram": "Can you help get the votes linked to the IP at h t t p colon slash slash dig deep dot I o?",
-          "clarifications": {
-            "ip_address": "http://digdeep.io"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -1486,9 +1492,10 @@
           "asr_output_elevenlabs": "Uh, use API KEY 2 to get the IDs of graphs, um, with IP 145.34.45.56 on VirusTotal. Oh, set the cursor to cursor B and, like, limit the results to eight.",
           "asr_output_deepgram": "Use API key two to get the IDs of graphs, with IP one forty five dot thirty four dot forty five dot fifty six on virus total. Oh, set the cursor to cursor b and, like, limit the results to eight.",
           "clarifications": {
-            "api_key_id": "api_key_2",
+            "api_key": "api_key_2",
             "ip_address": "145.34.45.56",
-            "cursor_id": "cursor_b"
+            "cursor": "cursor_b",
+            "result_limit": "8"
           }
         }
       ]
@@ -1535,7 +1542,7 @@
           "asr_output_deepgram": "Hey. How can I find the domain info for Twitter dot com? That's t w I t t e r dot com from VirusTotal using this API key, t w underscore key underscore a b c. Thanks.",
           "clarifications": {
             "domain_name": "twitter.com",
-            "api_key_id": "twt_key_abc"
+            "api_key": "twt_key_abc"
           }
         }
       ]
@@ -1582,6 +1589,7 @@
           "asr_output_deepgram": "Show me up to five comments about Google dot com on VirusTotal. Use my API key, secret underscore key four five six, all lowercase, no spaces.",
           "clarifications": {
             "domain_name": "google.com",
+            "comment_limit": "5",
             "api_key": "secret_key456"
           }
         }
@@ -1676,7 +1684,8 @@
           "asr_output_deepgram": "Give me a list of threat actors linked to IP one ninety two dot one sixty eight dot one dot one. Use Epsilon key and just, get the first five.",
           "clarifications": {
             "ip_address": "192.168.1.1",
-            "api_key_id": "epsilon_key"
+            "api_key": "epsilon_key",
+            "result_limit": "5"
           }
         }
       ]
@@ -1723,8 +1732,8 @@
           "asr_output_deepgram": "Could you, oh, get up to twenty URLs for the domain Trello dot com on virus total? Start from cursor t r dash cursor one and use the API key t r key dash zero zero one.",
           "clarifications": {
             "domain_name": "trello.com",
-            "cursor_id": "tr_cursor1",
-            "api_key_id": "tr_key001"
+            "cursor": "tr_cursor1",
+            "api_key": "tr_key001"
           }
         }
       ]
@@ -1815,8 +1824,8 @@
           "asr_output_deepgram": "Can you fetch sibling domains for pinterest dot com on virus total? Use cursor PINCR three to get the next ten. Oh, my key is a PIN key zero zero two.",
           "clarifications": {
             "domain_name": "pinterest.com",
-            "cursor_id": "pin_cur3",
-            "api_key_id": "pin_key002"
+            "cursor": "pin_cur3",
+            "api_key": "pin_key002"
           }
         }
       ]
@@ -1863,7 +1872,7 @@
           "asr_output_deepgram": "Hey. Can you, like, check VirusTotal, v I r u s t o t a l, VirusTotal for, you know, subdomains of PayPal? That's p a y p a l, paypal dot com. Limit it to twenty five and use the PP next continuation cursor. My API key is p p underscore k e y one two three, all lowercase, no spaces.",
           "clarifications": {
             "domain_name": "paypal.com",
-            "limit_value": "25",
+            "limit": "25",
             "continuation_cursor": "pp_next",
             "api_key": "pp_key123"
           }
@@ -2002,8 +2011,7 @@
           "asr_output_elevenlabs": "Generate VirusTotal report for 10.10.0.0 with my API key rst495.",
           "asr_output_deepgram": "Generate virus total report for ten dot ten dot zero dot zero with my API key, RST four ninety five.",
           "clarifications": {
-            "ip_address": "10.10.0.0",
-            "api_key_id": "RST495"
+            "api_key": "RST495"
           }
         }
       ]
@@ -2094,7 +2102,7 @@
           "asr_output_deepgram": "Let me see. Could you get the DNS resolutions for yahoo dot com from VirusTotal using the API key? That's API underscore key one two three, all lowercase, no spaces.",
           "clarifications": {
             "domain_name": "yahoo.com",
-            "api_key_id": "api_key123"
+            "api_key": "api_key123"
           }
         }
       ]
@@ -2140,8 +2148,8 @@
           "asr_output_elevenlabs": "Hey, uh, use the API key, API 12345, to grab the comments for, um, example.com.",
           "asr_output_deepgram": "Hey. Use the API key, API one two three four five, to grab the comments for, example dot com.",
           "clarifications": {
-            "domain_id": "example.com",
-            "api_key_id": "api12345"
+            "domain_name": "example.com",
+            "api_key": "api12345"
           }
         }
       ]
@@ -2188,9 +2196,9 @@
           "asr_output_deepgram": "Fetch seven comments for reddit dot com using the API key, beta key, and keep going from cursor cursor seven eighty nine.",
           "clarifications": {
             "domain_name": "reddit.com",
-            "number_of_comments": "7",
+            "comment_count": "7",
             "api_key": "beta_key",
-            "cursor_id": "cursor789"
+            "cursor": "cursor789"
           }
         }
       ]
@@ -2285,9 +2293,7 @@
           "asr_output_deepgram": "Using my key underscore four, I need to submit a vote on virus total marking IP twenty two dot two forty two dot seventy five dot one thirty six as malicious. Here's the JSON for the vote called. Type, vote. Attributes, verdict, malicious.",
           "clarifications": {
             "api_key": "key_four",
-            "ip_address": "22.242.75.136",
-            "platform_name": "VirusTotal",
-            "json_payload": "{\"type\": \"vote\", \"attributes\": {\"verdict\": \"malicious\"}}"
+            "ip_address": "22.242.75.136"
           }
         }
       ]
@@ -2424,8 +2430,9 @@
           "asr_output_elevenlabs": "Uh, can you get the file IDs and, like, their context attributes for anything interacting with domain example dot net? Keep the results to 20. My API key is API key_456.",
           "asr_output_deepgram": "Can you get the file IDs and, like, their context attributes for anything interacting with domain example dot net? Keep the results to twenty. My API key is API key underscore four five six.",
           "clarifications": {
-            "domain_id": "example.net",
-            "api_key_id": "apikey_456"
+            "domain_name": "example.net",
+            "result_limit": "20",
+            "api_key": "apikey_456"
           }
         }
       ]
@@ -2562,8 +2569,8 @@
           "asr_output_elevenlabs": "Um, okay. Can you show object descriptors for URLs linked to linked.net using the API key? Linker API?",
           "asr_output_deepgram": "Okay. Can you show object descriptors for URLs linked to linked dot net using the API key? Linker API?",
           "clarifications": {
-            "domain_id": "linked.net",
-            "api_key_id": "linker_api"
+            "domain_name": "linked.net",
+            "api_key": "linker_api"
           }
         }
       ]
@@ -2610,6 +2617,9 @@
           "asr_output_deepgram": "Let me see. Oh, get comments for IP two zero three dot zero dot one thirteen dot zero from virus total. Limited to twenty five with cursor knob. Use my API key g h I six five four.",
           "clarifications": {
             "ip_address": "203.0.113.0",
+            "service_name": "VirusTotal",
+            "result_limit": "25",
+            "cursor_value": "nop",
             "api_key": "GHI654"
           }
         }
@@ -2655,7 +2665,11 @@
           "asr_output_openai": "I'm heading to New York December for five days. Can you help plan my trip? Thanks!",
           "asr_output_elevenlabs": "Uh, I'm heading to New York December for, um, five days. Can you help plan my trip? Thanks.",
           "asr_output_deepgram": "I'm heading to New York December for, five days. Can you help plan my trip? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "NY",
+            "travel_month": "December",
+            "duration_days": "5"
+          }
         }
       ]
     ],
@@ -2700,8 +2714,9 @@
           "asr_output_elevenlabs": "Hey, uh, fetch comments from google.com using the key secret key and limit 'em to, um, five.",
           "asr_output_deepgram": "Hey, fetch comments from Google dot com using the key secret key and limit them to, five.",
           "clarifications": {
-            "website_domain": "google.com",
-            "api_key": "secret_key"
+            "website": "google.com",
+            "api_key": "secret_key",
+            "comment_limit": "5"
           }
         }
       ]
@@ -2747,7 +2762,7 @@
           "asr_output_elevenlabs": "For the domain sister.com, uh, get me the sibling domain IDs and context using next 50 as the continuation cursor and my API key, sisterkey, all lower case no spaces.",
           "asr_output_deepgram": "For the domain sister dot com, get me the sibling domain IDs and context using next fifty as the continuation cursor and my API key, sister key, all lowercase, no spaces.",
           "clarifications": {
-            "domain_name": "sister.com",
+            "domain_id": "sister.com",
             "continuation_cursor": "next50",
             "api_key": "sister_key"
           }
@@ -2841,7 +2856,7 @@
           "clarifications": {
             "domain_name": "domain6.xyz",
             "result_limit": "8",
-            "api_key": "key_def"
+            "key_definition": "key_def"
           }
         }
       ]
@@ -2931,8 +2946,8 @@
           "asr_output_elevenlabs": "Um, how can I get files from downloads, that's D-O-W-N-L-O-A-D-S dot com using my API key, DLOD_KEY? I just need, uh, IDs and any context attributes.",
           "asr_output_deepgram": "How can I get files from downloads? That's d o w n l o a d s dot com using my API key, deload key? I just need, IDs and any context attributes.",
           "clarifications": {
-            "domain_id": "downloads.com",
-            "api_key_id": "dload_key"
+            "domain_name": "downloads.com",
+            "api_key": "dload_key"
           }
         }
       ]
@@ -3071,8 +3086,8 @@
           "asr_output_deepgram": "Get the WHOIS data for IP one twenty three dot one twenty three dot one twenty three dot one twenty three from VirusTotal. That's v I r u s t o t a l, VirusTotal. Use the elite API key and, limit it to seven results. Put the cursor on next seven.",
           "clarifications": {
             "ip_address": "123.123.123.123",
-            "api_key_id": "elite_api",
-            "result_limit": "7",
+            "api_key": "elite_api",
+            "max_results": "7",
             "continuation_cursor": "next_seven"
           }
         }
@@ -3120,8 +3135,9 @@
           "asr_output_deepgram": "Hey. Can you grab object descriptors related to example dot o r g on virus total? I'm, looking for subdomains. Just give me the related objects IDs at any context attributes, not everything. Use my API key, my API, set the limit to ten, and use the continuation cursor a b c.",
           "clarifications": {
             "domain_name": "example.org",
-            "api_key": "my_api",
             "relationship_type": "subdomains",
+            "api_key": "my_api",
+            "limit_value": "10",
             "continuation_cursor": "abc"
           }
         }
@@ -3259,6 +3275,7 @@
           "asr_output_elevenlabs": "Hey, on VirusTotal, that's V-I-R-U-S-T-O-T-A-L, VirusTotal, uh, can you find the sibling domains related to amazon.com using the continuation cursor next123 and the API key magic_key001?",
           "asr_output_deepgram": "Hey. On Virustotal, that's v I r u s t o t a l, Virustotal. Can you find the sibling domains related to Amazon dot com? Using the continuation cursor next one two three and the API key magic underscore key zero zero one?",
           "clarifications": {
+            "platform_name": "VirusTotal",
             "domain_name": "amazon.com",
             "continuation_cursor": "next123",
             "api_key": "magic_key001"
@@ -3308,7 +3325,7 @@
           "asr_output_deepgram": "Can you, like, get community comments linked to the IP one zero nine dot eighty seven dot sixty five dot forty three? Yeah. I'll use delta key for it.",
           "clarifications": {
             "ip_address": "109.87.65.43",
-            "key_spelling": "delta_key"
+            "key_name": "delta_key"
           }
         }
       ]
@@ -3399,6 +3416,7 @@
           "asr_output_deepgram": "Can you hook me up with a list of URLs with the domain facebook dot com? I just need, up to ten URLs. Thanks. The API key is f b underscore k e y zero zero two, all lowercase, no spaces.",
           "clarifications": {
             "domain_name": "facebook.com",
+            "maximum_urls": "10",
             "api_key": "fb_key002"
           }
         }
@@ -3446,7 +3464,7 @@
           "asr_output_deepgram": "Hey. Let me see. Can you show me any threat actors linked to dropbox dot com on VirusTotal? Use my access key, d b underscore key four five six.",
           "clarifications": {
             "domain_name": "dropbox.com",
-            "access_key_id": "db_key456"
+            "access_key": "db_key456"
           }
         }
       ]
@@ -3583,9 +3601,9 @@
           "asr_output_elevenlabs": "Um, how do I get just the IDs and context attributes for community comments on test4.org? Use the continuation cursor, CUR456. And, uh, my API key, KEY123.",
           "asr_output_deepgram": "How do I get just the IDs and context attributes for community comments on test four dot org? Use the continuation cursor, four fifty six, and, my API key, key one two three.",
           "clarifications": {
-            "domain_id": "test4.org",
+            "domain_name": "test4.org",
             "continuation_cursor": "cur456",
-            "api_key_id": "key123"
+            "api_key": "key123"
           }
         }
       ]
@@ -3863,7 +3881,7 @@
           "asr_output_elevenlabs": "How do I use my access token? No, my delta key to get comments for apple.com?",
           "asr_output_deepgram": "How do I use my access token? No. My delta key to get comments for apple dot com?",
           "clarifications": {
-            "api_key_id": "delta_key",
+            "api_key": "delta_key",
             "domain_name": "apple.com"
           }
         }
@@ -3911,6 +3929,7 @@
           "asr_output_deepgram": "Look at virus total for files with the domain airbnb dot com. Show, up to fifty files starting from the cursor a b next. Right. Use my authorization key. A b key seven eight nine.",
           "clarifications": {
             "domain_name": "airbnb.com",
+            "file_limit": "50",
             "cursor_point": "ab_next",
             "authorization_key": "ab_key789"
           }
@@ -3960,6 +3979,7 @@
           "clarifications": {
             "ip_address": "12.234.56.126",
             "api_key": "my_api",
+            "max_number": "10",
             "continuation_cursor": "pointer"
           }
         }
@@ -4007,7 +4027,8 @@
           "asr_output_deepgram": "Hey. Could you get comments on youtube dot com from VirusTotal? Use the key my API, limit it to ten, and, oh, set the continuation cursor to a b c.",
           "clarifications": {
             "domain_name": "youtube.com",
-            "api_key_id": "my_api",
+            "api_key": "my_api",
+            "limit": "10",
             "continuation_cursor": "abc"
           }
         }
@@ -4054,9 +4075,9 @@
           "asr_output_elevenlabs": "Uh, get the next 10 comments for twitter.com using edit key and starting from cursor rst890.",
           "asr_output_deepgram": "Get the next ten comments for twitter dot com using eta key and starting from cursor r s t eight ninety.",
           "clarifications": {
-            "website_name": "twitter.com",
-            "api_key_id": "eta_key",
-            "cursor_id": "rst890"
+            "website": "twitter.com",
+            "api_key": "eta_key",
+            "cursor": "rst890"
           }
         }
       ]
@@ -4148,7 +4169,7 @@
           "clarifications": {
             "domain_name": "amazon.com",
             "api_key": "zeta_key",
-            "cursor_id": "lmn456"
+            "cursor_position": "lmn456"
           }
         }
       ]
@@ -4194,8 +4215,9 @@
           "asr_output_elevenlabs": "Uh, use Theta key to get comments from instagram.com and, um, check there's a 25-comment limit.",
           "asr_output_deepgram": "Use theta key to get comments from instagram dot com and, check there's a twenty five comment limit.",
           "clarifications": {
-            "api_key_id": "theta_key",
-            "domain_id": "instagram.com"
+            "api_key": "theta_key",
+            "domain": "instagram.com",
+            "limit": "25"
           }
         }
       ]
@@ -4290,7 +4312,7 @@
           "asr_output_deepgram": "Check the SSL certificates history for reddit dot com. I've got the API key, r d underscore key zero zero five.",
           "clarifications": {
             "domain_name": "reddit.com",
-            "api_key_id": "rd_key005"
+            "api_key": "rd_key005"
           }
         }
       ]
@@ -4383,9 +4405,9 @@
           "asr_output_elevenlabs": "Uh, let me see. Fetch the next 30 comments on slack.com from V-I-R-U-S-T-O-T-A-L, VirusTotal community posts using cursor slack_c2. My key is SL_KEY456.",
           "asr_output_deepgram": "Let me see. Fetch the next thirty comments on slack dot com from v I r u s t o t a l. Virus total community posts using cursor slack underscore c two. My key is s l underscore k e y four five six.",
           "clarifications": {
-            "domain_name": "slack.com",
-            "source_name": "VirusTotal",
-            "comment_cursor": "slack_c2",
+            "website": "slack.com",
+            "comment_count": "30",
+            "cursor": "slack_c2",
             "api_key": "sl_key456"
           }
         }
@@ -4433,7 +4455,7 @@
           "asr_output_deepgram": "Can you grab fifteen comments from netflix dot com using the Epsilon key? Thanks.",
           "clarifications": {
             "website_name": "netflix.com",
-            "comments_count": "15",
+            "comment_count": "15",
             "api_key": "epsilon_key"
           }
         }
@@ -4751,7 +4773,9 @@
           "asr_output_deepgram": "Can you get the resolutions for IP sixty seven dot eighty nine dot zero dot one on virus total? Use the API key sec key five and, take the first twenty five records.",
           "clarifications": {
             "ip_address": "67.89.0.1",
-            "api_key": "sec_key5"
+            "platform_name": "VirusTotal",
+            "api_key": "sec_key5",
+            "record_limit": "25"
           }
         }
       ]
@@ -4796,11 +4820,7 @@
           "asr_output_openai": "Hey, um, how do I use torch.linspace API to create like a one-dimensional tensor with evenly spaced values from 0 to 1, right?",
           "asr_output_elevenlabs": "Hey, um, how do I use torch dot linspace API to create like a one-dimensional tensor with evenly spaced values from 0 to 1? Right?",
           "asr_output_deepgram": "Hey. How do I use torch dot linspace API to create, like, a one dimensional tensor with evenly spaced values from zero to one? Right?",
-          "clarifications": {
-            "start_value": "0",
-            "end_value": "1",
-            "api_name": "torch.linspace"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -4846,7 +4866,8 @@
           "asr_output_deepgram": "Hey. Can you use v I r u s t o t a l virus total to get files from n e t f l I x dot com? I've got the key. N f underscore key seven eight nine.",
           "clarifications": {
             "domain_name": "netflix.com",
-            "api_key": "nf_key789"
+            "api_key": "nf_key789",
+            "service_name": "VirusTotal"
           }
         }
       ]
@@ -4892,8 +4913,8 @@
           "asr_output_elevenlabs": "Hey, uh, use the key v dash t underscore k seven eight nine, that's lowercase, no spaces, to get files linked to, uh, microsoft.com from v dash i dash r dash u dash s dash t dash o dash t dash a dash l, virustotal.",
           "asr_output_deepgram": "Hey. Use the key v dash t underscore key seven eight nine. That's lowercase, no spaces. To get files linked to, Microsoft dot com from v dash I dash r dash u dash s dash t dash o dash t dash a dash l virus total.",
           "clarifications": {
-            "api_key_id": "vt_key789",
-            "domain_name": "microsoft.com"
+            "api_key": "vt_key789",
+            "domain": "microsoft.com"
           }
         }
       ]
@@ -4940,7 +4961,8 @@
           "asr_output_deepgram": "Hey. Can you get the community comments for spotify dot com on VirusTotal? Use key s p underscore k e y zero zero two, spelling it out. And just grab, up to seven comments. Okay?",
           "clarifications": {
             "domain_name": "spotify.com",
-            "api_key": "sp_key002"
+            "api_key": "sp_key002",
+            "comment_limit": "7"
           }
         }
       ]
@@ -4987,7 +5009,8 @@
           "asr_output_deepgram": "Show me all files snagged from IP one twenty three dot forty five dot sixty seven dot eight using API key beta key, and, limit the results to thirty.",
           "clarifications": {
             "ip_address": "123.45.67.8",
-            "api_key": "beta_key"
+            "api_key": "beta_key",
+            "result_limit": "30"
           }
         }
       ]
@@ -5082,7 +5105,7 @@
           "asr_output_deepgram": "Could you use the API key alpha key to, find the who is info for IP address ninety eight seventy six fifty four thirty two?",
           "clarifications": {
             "ip_address": "98.76.54.32",
-            "api_key_id": "alpha_key"
+            "api_key": "alpha_key"
           }
         }
       ]
@@ -5173,7 +5196,8 @@
           "asr_output_deepgram": "Hey. How do I check the comments for the domain Microsoft dot com using my gamma key and keep it to twenty, please?",
           "clarifications": {
             "domain_name": "microsoft.com",
-            "api_key": "gamma_key"
+            "api_key": "gamma_key",
+            "comment_limit": "20"
           }
         }
       ]
@@ -5219,8 +5243,8 @@
           "asr_output_elevenlabs": "Uh, can you, uh, get VirusTotal details for the domain reddit.com using my API key which is REDDIT_API_KEY?",
           "asr_output_deepgram": "Can you, get virus total details for the domain reddit dot com using my API key, which is Reddit underscore API key?",
           "clarifications": {
-            "domain_id": "reddit.com",
-            "api_key_id": "reddit_api_key"
+            "domain_name": "reddit.com",
+            "api_key": "reddit_api_key"
           }
         }
       ]
@@ -5266,9 +5290,9 @@
           "asr_output_elevenlabs": "Hey, uh, fetch the next comments from facebook.com using my key, alpha key. Start from where the cursor's at. X, Y, Z. 1, 2, 3.",
           "asr_output_deepgram": "Hey. Fetch the next comments from facebook dot com using my key alpha key. Start from where the cursor's at. X y z one two three.",
           "clarifications": {
-            "website_name": "facebook.com",
+            "website": "facebook.com",
             "api_key": "alpha_key",
-            "cursor_id": "xyz123"
+            "cursor": "xyz123"
           }
         }
       ]
@@ -5637,9 +5661,7 @@
           "asr_output_openai": "Hey, Whopper!",
           "asr_output_elevenlabs": "Hey, Whopper.",
           "asr_output_deepgram": "Hey, Whopper.",
-          "clarifications": {
-            "food_name_spelling": "Whopper"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -6102,7 +6124,12 @@
           "asr_output_openai": "Uh, gimme ten wheat hot chicken legs, fifty cups of Coca-Cola, thirty fried chicken wings, and um... ninety fries, if you could please.",
           "asr_output_elevenlabs": "Uh, gimme 10 wheat hot chicken legs, 50 cups of Coca-Cola, 30 fried chicken wings and um, 90 fries if you could, please.",
           "asr_output_deepgram": "Give me ten wheat hot chicken legs, fifty cups of Coca Cola, thirty fried chicken wings, and, ninety fries, if you could, please.",
-          "clarifications": {}
+          "clarifications": {
+            "quantity1": "10",
+            "quantity2": "50",
+            "quantity3": "30",
+            "quantity4": "90"
+          }
         }
       ]
     ],
@@ -6204,7 +6231,10 @@
           "asr_output_openai": "Hey, I'm Karan. That's K-A-R-A-N, Karan. Could you look at the status of my IndiGo flight with ticket number IND4567?",
           "asr_output_elevenlabs": "Hey, I'm Karan. That's K-A-R-A-N, Karan. Uh, could you look at the status of my Indigo flight with ticket number IND4567?",
           "asr_output_deepgram": "Hey. I'm Karan. That's k a r a n. Karan, could you look at the status of my indigo flight with ticket number I n d four five six seven?",
-          "clarifications": {}
+          "clarifications": {
+            "user_name": "Karan",
+            "flight_number": "IND4567"
+          }
         }
       ]
     ],
@@ -6255,7 +6285,10 @@
           "asr_output_openai": "Take me to McDonald's, I uh, wanna grab pizza. Thanks.",
           "asr_output_elevenlabs": "Uh, take me to McDonald's. I, uh, want to grab pizza. Thanks.",
           "asr_output_deepgram": "Take me to McDonald's. I, wanna grab pizza. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "restaurant_name": "McDonald's",
+            "food_item": "pizza"
+          }
         }
       ]
     ],
@@ -6497,7 +6530,7 @@
           "asr_output_elevenlabs": "Umm, how do I, uh, set up Mbox?",
           "asr_output_deepgram": "How do I, set up Mbox?",
           "clarifications": {
-            "system_name": "mbox"
+            "product_name": "mbox"
           }
         },
         {
@@ -6508,9 +6541,7 @@
           "role": "user",
           "content": "\u56de\u7b54\u4e0d\u6b63\u786e\uff0c\u76f4\u63a5\u53d1\u8d77oncall",
           "transcript": "If the answers incorrect, uh, go ahead and begin the on-call.",
-          "clarifications": {
-            "event_name": "oncall"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -6839,7 +6870,9 @@
           "asr_output_openai": "Um, hey, can you tell me who Mao Zedong is?",
           "asr_output_elevenlabs": "Um, hey, can you tell me who Mao Zedong is?",
           "asr_output_deepgram": "Hey, can you tell me who Mao Zedong is?",
-          "clarifications": {}
+          "clarifications": {
+            "person_name": "Mao Ze Dong"
+          }
         }
       ]
     ],
@@ -6960,7 +6993,7 @@
           "asr_output_elevenlabs": "Hey, uh, can you help me on how to install N-B-O-X, N-Box?",
           "asr_output_deepgram": "Hey. Can you help me on how to install NBOX inbox?",
           "clarifications": {
-            "system_name": "mbox"
+            "software_name": "mbox"
           }
         }
       ]
@@ -7193,9 +7226,7 @@
           "asr_output_openai": "Hey, could you switch off the air purifier?",
           "asr_output_elevenlabs": "Hey, could you switch off the air purifier?",
           "asr_output_deepgram": "Hey. Could you switch off the air purifier?",
-          "clarifications": {
-            "appliance_name": "airpurifier"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -7403,7 +7434,7 @@
           "asr_output_elevenlabs": "Hey, who's Jisung Park?",
           "asr_output_deepgram": "Hey. Who's Jisung Park?",
           "clarifications": {
-            "person_name": "ji sung park"
+            "person_name": "Ji Sung Park"
           }
         }
       ]
@@ -8572,7 +8603,13 @@
           "asr_output_elevenlabs": "In laundry room, I've got a washer called Tongdoly. That's T-O-N-G-O-L-Y, Tongdoly. Then, uh, there's an air conditioner and a robot cleaner in living room and an air purifier in main room. Oh, and, um, can you tell me about the Imjin War? Spelled I-M-J-I-N, Imjin War?",
           "asr_output_deepgram": "In laundry room, I've got a washer called tongdoly. That's t o n g o l y, tongdoly. Then, there's an air conditioner and a robot cleaner in living room and an air purifier in main room. Oh, and, can you tell me about the Imjinwar, spelled I n j I n, Imjinwar?",
           "clarifications": {
-            "appliance_name": "tongdoly",
+            "appliance_name1": "tongdoly",
+            "appliance_name2": "airconditioner",
+            "appliance_name3": "air purifier",
+            "appliance_name4": "robot cleaner",
+            "room_name1": "laundry room",
+            "room_name2": "living room",
+            "room_name3": "main room",
             "historical_event": "imjin war"
           }
         }
@@ -9198,7 +9235,7 @@
           "asr_output_elevenlabs": "Hey, can we um put more stock of the white one please?",
           "asr_output_deepgram": "Hey. Can we, put more stock of the white one, please?",
           "clarifications": {
-            "color_spelling": "white"
+            "color": "white"
           }
         }
       ]
@@ -9304,9 +9341,7 @@
           "asr_output_openai": "You got that Shinarock shirt in XL?",
           "asr_output_elevenlabs": "You got that Shinerock shirt in XL?",
           "asr_output_deepgram": "You got that Shinra Rock shirt in XL?",
-          "clarifications": {
-            "product_name": "shimmer"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -9488,7 +9523,10 @@
           "asr_output_openai": "When are long weekends in Canada for 2023? I need the list for my holiday planning app to sort some weekend getaways.",
           "asr_output_elevenlabs": "When are long weekends in Canada for 2023? I need the list for my holiday planning app to sort some weekend getaways.",
           "asr_output_deepgram": "Winter long weekends in Canada for twenty twenty three? I need the list for my holiday planning app to sort some weekend getaways.",
-          "clarifications": {}
+          "clarifications": {
+            "country": "Canada",
+            "year": "2023"
+          }
         }
       ]
     ],
@@ -9659,7 +9697,8 @@
           "asr_output_elevenlabs": "Ken, um, tell me the latest news from Paris and Letterkenny. That's L-E-T-T-E-R-K-E-N-N-Y. Okay?",
           "asr_output_deepgram": "Can, tell me the latest news from Paris and Letterkenny? That's l e t t e r k e n n y. Okay?",
           "clarifications": {
-            "city_name_spelling": "Letterkenny"
+            "first_city": "Paris",
+            "second_city": "Letterkenny"
           }
         }
       ]
@@ -10076,7 +10115,10 @@
           "asr_output_openai": "Gimme latest news from Paris. And, uh, Letterkenny. That's L-E-T-T-E-R-K-E-N-N-Y. Letterkenny, right?",
           "asr_output_elevenlabs": "Uh, gimme latest news from Paris and, uh, Letterkenny. That's L-E-T-T-E-R-K-E-N-N-Y. Letterkenny, right?",
           "asr_output_deepgram": "Give me latest news from Paris and, Letterkenny. That's l e t t e r k e n n y. Letterkenny. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "first_city": "Paris",
+            "second_city": "Letterkenny"
+          }
         }
       ]
     ],
@@ -10312,9 +10354,7 @@
           "asr_output_openai": "Hey, I'm a Machine Learning Engineer and Kaggle Master. Let me see! Oh, follow me on Twitter at slash RohanPaul_AI. That's RohanPaul_AI, for daily deep dives into machine learning, LLM, OpenAI, LangChain, and Python intricacies.",
           "asr_output_elevenlabs": "Hey, I'm a machine learning engineer and Kaggle master. Let me see. Oh, follow me on Twitter at /rohanpaul_ai. That's rohanpaul_ai for daily deep dives into machine learning, LLM, OpenAI, LangChain, and Python intricacies.",
           "asr_output_deepgram": "Hey. I'm a machine learning engineer and Kaggle master. Let me see. Oh, follow me on Twitter at slash r o h a n p a u l underscore a I. That's Rohan Paul underscore a I. For daily deep dives into machine learning, LLM, OpenAI, Lang chain, and Python intricacies.",
-          "clarifications": {
-            "twitter_handle": "rohanpaul_ai"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -10360,7 +10400,7 @@
           "asr_output_elevenlabs": "Set a reminder to go shopping at 9:00 PM. Okay?",
           "asr_output_deepgram": "Set a reminder to go shopping at nine PM. Okay?",
           "clarifications": {
-            "content_spelling": "go for shopping at 9 pm"
+            "task_description": "go for shopping at 9 pm"
           }
         }
       ]
@@ -10525,7 +10565,9 @@
           "asr_output_openai": "When's the size 40 gonna be ready, um?",
           "asr_output_elevenlabs": "When's the size 40 gonna be ready? Um?",
           "asr_output_deepgram": "When's the size forty gonna be ready?",
-          "clarifications": {}
+          "clarifications": {
+            "size": "40"
+          }
         }
       ]
     ],
@@ -11017,7 +11059,7 @@
           "asr_output_elevenlabs": "Hey, uh, any updates on order number 123?",
           "asr_output_deepgram": "Hey. Any updates on order number one twenty three?",
           "clarifications": {
-            "order_id": "#123"
+            "order_id": "123"
           }
         }
       ]
@@ -11151,9 +11193,7 @@
           "asr_output_openai": "Hey, um, do you have a red cup?",
           "asr_output_elevenlabs": "Hey, um, do you have a red cup?",
           "asr_output_deepgram": "Hey. Do you have a red cup?",
-          "clarifications": {
-            "color_availability": "red"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -11290,7 +11330,9 @@
           "asr_output_openai": "Hey, is the Marula color still being restocked?",
           "asr_output_elevenlabs": "Hey, uh, is the marula color still being restocked?",
           "asr_output_deepgram": "Hey. Is the Marui collar still being restocked?",
-          "clarifications": {}
+          "clarifications": {
+            "color": "maroon"
+          }
         }
       ]
     ],
@@ -11578,9 +11620,7 @@
           "asr_output_openai": "Hey, the white one's in stock, right?",
           "asr_output_elevenlabs": "Hey, the white one's in stock, right?",
           "asr_output_deepgram": "Hey. The white one's in stock. Right?",
-          "clarifications": {
-            "color": "white"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -11723,7 +11763,7 @@
           "asr_output_elevenlabs": "When gonna have size L and M back in stock?",
           "asr_output_deepgram": "When gonna have size l and m back in stock?",
           "clarifications": {
-            "sizes_to_check": "ukuran L sama M"
+            "sizes_to_check": "L, M"
           }
         }
       ]
@@ -11871,8 +11911,7 @@
           "asr_output_elevenlabs": "My package just arrived, and I ordered size UK 34 but, uh, it's not like the size 34 pants I've bought here before. It's off by about, um, five centimeters so it doesn't fit me.",
           "asr_output_deepgram": "My package just arrived, and I ordered size UK thirty four. But, it's not like the size thirty four pants I've bought here before. It's off by about, five centimeters, so it doesn't fit me.",
           "clarifications": {
-            "size_difference": "UK 34",
-            "previous_size": "size 34"
+            "size_difference": "UK 34 vs size 34"
           }
         }
       ]
@@ -13288,9 +13327,7 @@
           "asr_output_openai": "Ah, hey, when'll the yang cream be ready again?",
           "asr_output_elevenlabs": "Uh, hey. When will the Yang cream be ready again? Okay, yeah?",
           "asr_output_deepgram": "Hey. When will the yang cream be ready again? Okay. Yeah?",
-          "clarifications": {
-            "keywords_spelling": "yang cream kapan ready lagi kak"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -14145,7 +14182,9 @@
           "asr_output_openai": "Hey, um, right, when can I get size 40?",
           "asr_output_elevenlabs": "Hey, um, right. When can I get size 40?",
           "asr_output_deepgram": "Hey, right. When can I get size forty?",
-          "clarifications": {}
+          "clarifications": {
+            "product_size": "40"
+          }
         }
       ]
     ],
@@ -14635,7 +14674,7 @@
           "asr_output_elevenlabs": "Hey, uh, can you set up a new PostgreSQL server at http://plgah.ca.? Oh, the username should be Pascal, that's P-A-S-C-A-L. Pascal.",
           "asr_output_deepgram": "Hey. Can you set up a new PostgreSQL server at h t t p colon slash slash p l g a h dot c a? Oh, the username should be Pascal. That's p a s c a l. Pascal.",
           "clarifications": {
-            "host_url": "http://plgah.ca",
+            "host": "http://plgah.ca",
             "username": "pascal"
           }
         }
@@ -14718,7 +14757,7 @@
           "asr_output_elevenlabs": "Uh, send up a new PostgreSQL server at http://plgah.ca. The username's Pascal, that's P-A-S-C-A-L, Pascal.",
           "asr_output_deepgram": "Set up a new Postgres server at h t t p colon slash slash p l g a h dot c a. The username's Pascal. That's p a s c a l, Pascal.",
           "clarifications": {
-            "host_url": "http://plgah.ca",
+            "host": "http://plgah.ca",
             "username": "pascal"
           }
         }
@@ -15275,7 +15314,7 @@
           "asr_output_elevenlabs": "Hey, uh, add new SQL Server at http://plgah.ca.",
           "asr_output_deepgram": "Hey. Add new SQL server at h t t p colon slash slash p l g a h dot c a.",
           "clarifications": {
-            "host_url": "http://plgah.ca"
+            "server_url": "http://plgah.ca"
           }
         }
       ]
@@ -15460,7 +15499,7 @@
           "asr_output_elevenlabs": "Hey, can you help me out with D-A-T-A A-R-T-I-F-E-X, data artifex?",
           "asr_output_deepgram": "Hey. Can you help me out with d a t a a r t I f e x, data artifacts?",
           "clarifications": {
-            "topic_spelling": "data artifex"
+            "topic": "data artifex"
           }
         }
       ]
@@ -15754,7 +15793,7 @@
           "asr_output_elevenlabs": "Uh, can you set up a fresh Rich Data Service server at http://plga.ca?",
           "asr_output_deepgram": "Can you set up a fresh, rich data service server at h t t p colon slash slash p l g a dot c a?",
           "clarifications": {
-            "host_address": "http://plga.ca"
+            "server_host": "http://plga.ca"
           }
         }
       ]
@@ -17242,9 +17281,7 @@
           "asr_output_openai": "Um, can you list servers by type?",
           "asr_output_elevenlabs": "Um... Can you list servers by type?",
           "asr_output_deepgram": "Can you list servers by type?",
-          "clarifications": {
-            "server_type": "type"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -17543,10 +17580,7 @@
           "asr_output_elevenlabs": "Let's, uh, follow these steps. First, clone the repo at git@github.com:zelarhq/nodejs-welcome.git. Next, look at the repo contents, and from that, check create or update a Dockerfile, uh, set up Kubernetes YAMLs, and make a GitHub Actions file to build the app when you push to the main branch. After that, add all the changed files to Git, and then, um, go ahead and commit and push everything to the repo.",
           "asr_output_deepgram": "Let's, follow these steps. First, clone the repo at git at github dot com colon zeller h q slash node j s dash welcome dot git. Next, look at the repo contents, and from that, check create or update a Docker file, set up Kubernetes y a m l's, and make a GitHub actions file to build the app when you push to the main branch. After that, add all the changed files to Git and then, go ahead and commit and push everything to the repo.",
           "clarifications": {
-            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git",
-            "dockerfile_directory": "directory_name",
-            "kubernetes_yaml_directory": "directory_name",
-            "github_actions_file": "github actions file"
+            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git"
           }
         }
       ]
@@ -17654,8 +17688,7 @@
           "asr_output_elevenlabs": "Alright, um, follow these steps. First, clone the repository at git@github.com:zelarhq/nodejs-welcome.git. Then, check out what's in there and, uh, update or create the Dockerfile, the Kubernetes YAML files, and the GitHub Actions file based on that so it'll build when you push to the main branch. After that, make sure to add all the changed files to git, then commit and, uh, push them back to the repository.",
           "asr_output_deepgram": "Alright. Follow these steps. First, clone the repository at git at github dot com colon zeller h q slash node j s dash welcome dot git. Then check out what's in there and, update or create the Docker file, the Kubernetes YAML files, and the GitHub actions file based on that. So it'll build when you push to the main branch. After that, make sure to add all the changed files to Git, then commit and, push them back to the repository.",
           "clarifications": {
-            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git",
-            "directory_name": "nodejs-welcome"
+            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git"
           }
         }
       ]
@@ -18465,8 +18498,7 @@
           "asr_output_elevenlabs": "It looks like the input is not a complete sentence or command. Could you clarify what you'd like to do with it?",
           "asr_output_deepgram": "It looks like the input is not a complete sentence or command. Could you clarify what you'd like to do with it?",
           "clarifications": {
-            "up_arrow_key": "A",
-            "down_arrow_key": "B"
+            "clarification_needed": "No clarifications needed from the user query."
           }
         }
       ]
@@ -19297,9 +19329,7 @@
           "asr_output_openai": "Um, can you, uh...right, describe what's happening in this image for me?",
           "asr_output_elevenlabs": "Um, can you uh... Right! Describe what's happening in this image for me?",
           "asr_output_deepgram": "Can you, right, describe what's happening in this image for me?",
-          "clarifications": {
-            "image_scene_description": "scene in this image"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -20052,7 +20082,7 @@
           "asr_output_elevenlabs": "Um, right. Can you say what's the time to collision for this image?",
           "asr_output_deepgram": "Right. Can you say what's the time to collision for this image?",
           "clarifications": {
-            "image_reference": "the following image"
+            "image_description": "the following image"
           }
         }
       ]
@@ -20664,7 +20694,7 @@
           "asr_output_elevenlabs": "Make sure it's, uh, about 93.5% beets.",
           "asr_output_deepgram": "Make sure it's, about ninety three point five percent beats.",
           "clarifications": {
-            "capture_percentage_value": "93.5%"
+            "capture_percentage": "93.5"
           }
         }
       ]
@@ -20978,7 +21008,7 @@
           "asr_output_elevenlabs": "Hey, Wright. Can you tell me what the coldest temperature recorded was in my organization's records?",
           "asr_output_deepgram": "Hey. Right. Can you tell me what the coldest temperature recorded was in my organization's records?",
           "clarifications": {
-            "organization_name": "org"
+            "metric": "temperature"
           }
         }
       ]
@@ -21126,7 +21156,7 @@
           "asr_output_elevenlabs": "Make news item in Sitefinity with no content. Right?",
           "asr_output_deepgram": "Make news item Insightfinity with no content. Right?",
           "clarifications": {
-            "content_spelling": "empty content"
+            "content_management_system": "Sitefinity"
           }
         }
       ]
@@ -21499,9 +21529,7 @@
           "asr_output_openai": "Can you, uh, check his profile for me?",
           "asr_output_elevenlabs": "Can you, uh, check his profile for me?",
           "asr_output_deepgram": "Can you, check his profile for me?",
-          "clarifications": {
-            "query_context": "his profile"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -21650,9 +21678,7 @@
           "asr_output_openai": "Um, what's going on with his profile?",
           "asr_output_elevenlabs": "Um, what's going on with his profile?",
           "asr_output_deepgram": "What's going on with his profile?",
-          "clarifications": {
-            "user_id": "his profile"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -21820,9 +21846,7 @@
           "asr_output_openai": "I'm sorry, I can't assist with that request.",
           "asr_output_elevenlabs": "I'm sorry, I can't assist with that request.",
           "asr_output_deepgram": "I'm sorry. I can't assist with that request.",
-          "clarifications": {
-            "query_spelling": "suk ma dik"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -22179,7 +22203,9 @@
           "asr_output_openai": "Hey, uh, can you get me Adriel's contact information, please?",
           "asr_output_elevenlabs": "Hey, uh, can you get me Adriel's contact information please?",
           "asr_output_deepgram": "Hey, can you get me Adriel's contact information, please?",
-          "clarifications": {}
+          "clarifications": {
+            "contact_name": "Adriel"
+          }
         }
       ]
     ],
@@ -22321,9 +22347,7 @@
           "asr_output_openai": "Can you give me more details on that?",
           "asr_output_elevenlabs": "Can you give me more details on that?",
           "asr_output_deepgram": "You give me more details on that?",
-          "clarifications": {
-            "clarification_needed": "detail"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -22832,9 +22856,7 @@
           "content": "menggokil",
           "role": "user",
           "transcript": "Right, could you tell me about menggokil?",
-          "clarifications": {
-            "query_spelling": "menggokil"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -22997,9 +23019,7 @@
           "asr_output_openai": "Hey, could you tell me about Ed?",
           "asr_output_elevenlabs": "Hey, could you tell me about Ed?",
           "asr_output_deepgram": "Hey. Could you tell me about Ed?",
-          "clarifications": {
-            "user_query_spelling": "ed"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -23268,7 +23288,7 @@
           "asr_output_elevenlabs": "Hey. Uh, answer these questions as best as you can. Got these tools available. Here's the format to use. Question: The question you need to answer thought. Think about what you need to do action. Pick the action to take action input. Give me the input for the action observation. Note the result of the action. Uh, keep repeating this thought/action/action input/observation if needed. Thought: Now you know the final answer. Okay, final answer. Give the final answer to that question. Let's start. Question: What's your name?",
           "asr_output_deepgram": "Hey. Answer these questions as best as you can. Got these tools available. Here's the format to use. Question. The question you need to answer thought. Think about what you need to do action. Pick the action to take action input. Give me the input for the action observation. Note the result of the action. Keep repeating this thought slash action slash action input slash observation if needed thought. Now you know the final answer. Okay. Final answer. Give the final answer to that question. Let's start. Question, what's your name?",
           "clarifications": {
-            "question_content": "What is your name?"
+            "question": "What is your name?"
           }
         }
       ]
@@ -23551,7 +23571,10 @@
           "asr_output_openai": "Hey, can you get the address for these coordinates: latitude 37.4224764 and longitude -122.0842499? And give me the response in JSON, please. Thanks!",
           "asr_output_elevenlabs": "Hey, um, can get the address for these coordinates? Latitude 37.4224764 and longitude -122.0842499. And, uh, give me the response in JSON please. Thanks!",
           "asr_output_deepgram": "Hey, can get the address for these coordinates, latitude thirty seven point four two two four seven six four and longitude minus one twenty two point zero eight four two four nine nine? And, give me the response in JSON, please. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "latitude": "37.4224764",
+            "longitude": "-122.0842499"
+          }
         }
       ]
     ],
@@ -23974,7 +23997,9 @@
           "asr_output_openai": "Who is LeBron James?",
           "asr_output_elevenlabs": "Who is LeBron James?",
           "asr_output_deepgram": "Who is LeBron James?",
-          "clarifications": {}
+          "clarifications": {
+            "person_name": "lebron James"
+          }
         }
       ]
     ],
@@ -24400,7 +24425,7 @@
           "clarifications": {
             "latitude": "35.68",
             "longitude": "-121.34",
-            "forecast_duration_days": "10",
+            "forecast_duration": "10 days",
             "temperature_unit": "Fahrenheit",
             "precipitation_unit": "inches"
           }
@@ -24544,7 +24569,10 @@
           "asr_output_openai": "Hey, can you get the weather forecast for the next 10 days at the campsite located at latitude 35.68 and longitude minus 121.34? I think I need the daily temperatures in Fahrenheit and the total precipitation in inches.",
           "asr_output_elevenlabs": "Hey, can you get the weather forecast for the next 10 days at the campsite located at latitude 35.68 and longitude -121.34? I think I need the daily temperatures in Fahrenheit and the total precipitation in inches.",
           "asr_output_deepgram": "Hey. Can you get the weather forecast for the next ten days at the campsite located at latitude thirty five point six eight and longitude minus one twenty one point three four? I think I need the daily temperatures in Fahrenheit and the total precipitation in inches.",
-          "clarifications": {}
+          "clarifications": {
+            "latitude": "35.68",
+            "longitude": "-121.34"
+          }
         }
       ]
     ],
@@ -24826,7 +24854,9 @@
           "asr_output_openai": "Hey, um, which city's airport code BLR for?",
           "asr_output_elevenlabs": "Hey, um, which city is airport code BLR for?",
           "asr_output_deepgram": "Hey, which city's airport code BLR for?",
-          "clarifications": {}
+          "clarifications": {
+            "airport_code": "BLR"
+          }
         }
       ]
     ],
@@ -25390,7 +25420,9 @@
           "asr_output_openai": "Hey, um, what's the temperature like in Antwerpen?",
           "asr_output_elevenlabs": "Hey, uhm, what's the temperature like in Antwerpen?",
           "asr_output_deepgram": "Hey. What's the temperature like in Antwerp?",
-          "clarifications": {}
+          "clarifications": {
+            "city_name": "Antwerpen"
+          }
         }
       ]
     ],
@@ -25532,7 +25564,10 @@
           "asr_output_elevenlabs": "Um, hey, can you grab the weather data for Antwerpen? Uh, okay. Send a request to the weather API using latitude 51.2194 and longitude 4.4025. Make sure the response is in JSON format.",
           "asr_output_deepgram": "Hey. Can you grab the weather data for Antwerpon? Okay. Send a request to the weather API using latitude fifty one point two one nine four and longitude four point four zero two five. Make sure the response is in JSON format.",
           "clarifications": {
-            "url_spelling": "weather API URL"
+            "city_name": "Antwerpen",
+            "latitude": "51.2194",
+            "longitude": "4.4025",
+            "response_format": "JSON"
           }
         }
       ]
@@ -25674,9 +25709,7 @@
           "asr_output_openai": "\u3042\u30fc\u3001\u304d\u306b\u304e\u307f\u306e\u30b9\u30bf\u30fc\u30c8\u30a2\u30c3\u30d7\u3057\u305fAPI\u3002",
           "asr_output_elevenlabs": "Uh, can you give me the startup stat API?",
           "asr_output_deepgram": "Can you give me the startup stat API?",
-          "clarifications": {
-            "api_name": "startup stat API"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -26240,7 +26273,9 @@
           "asr_output_openai": "What's the weather like in Paris?",
           "asr_output_elevenlabs": "What's the weather like in Paris?",
           "asr_output_deepgram": "What's the weather like in Paris?",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "Paris"
+          }
         }
       ]
     ],
@@ -26522,9 +26557,7 @@
           "asr_output_openai": "Um, right? Can make an address with the Hugging Face API?",
           "asr_output_elevenlabs": "Um, right? Can make an address with the Hugging Face API.",
           "asr_output_deepgram": "Right. Can make an address with the Hugging Face API.",
-          "clarifications": {
-            "api_name": "HuggingFace API"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -26665,7 +26698,10 @@
           "asr_output_openai": "Okay, what's the weather like at latitude 40.7128 and longitude -74.0060?",
           "asr_output_elevenlabs": "Okay. What's the weather like at latitude 40.7128 and longitude -74.0060?",
           "asr_output_deepgram": "Okay. What's the weather like at latitude forty point seven one two eight and longitude minus seventy four point zero zero six zero?",
-          "clarifications": {}
+          "clarifications": {
+            "latitude": "40.7128",
+            "longitude": "-74.0060"
+          }
         }
       ]
     ],
@@ -26947,7 +26983,9 @@
           "asr_output_openai": "What's the latitude of, um, Rome?",
           "asr_output_elevenlabs": "What's the latitude of, um, Rome?",
           "asr_output_deepgram": "What's the latitude of, Rome?",
-          "clarifications": {}
+          "clarifications": {
+            "city_name": "Rome"
+          }
         }
       ]
     ],
@@ -27088,7 +27126,10 @@
           "asr_output_openai": "What's the weather in Fahrenheit in Boston and, um, San Francisco?",
           "asr_output_elevenlabs": "Uh, what's the weather in Fahrenheit in Boston and, um, San Francisco?",
           "asr_output_deepgram": "What's the weather in Fahrenheit in Boston and, San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "city1": "Boston",
+            "city2": "San Francisco"
+          }
         }
       ]
     ],
@@ -27511,7 +27552,9 @@
           "asr_output_openai": "Um, can plan a trip to Paris for me? Thanks.",
           "asr_output_elevenlabs": "Um, can plan a trip to Paris for me? Thanks.",
           "asr_output_deepgram": "Can plan a trip to Paris for me? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "Paris"
+          }
         }
       ]
     ],
@@ -27554,7 +27597,10 @@
           "asr_output_openai": "Can you gimme details and estimated cost for a trip to Paris for two people, right?",
           "asr_output_elevenlabs": "Um, can you give me, uh, details and estimated cost for a trip to Paris for two people, right?",
           "asr_output_deepgram": "Can you give me, details and estimated cost for a trip to Paris for two people. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "Paris, France",
+            "number_of_travelers": "2"
+          }
         }
       ]
     ],
@@ -27623,7 +27669,9 @@
           "asr_output_openai": "Hey, could help sort out a trip to Paris? Thanks.",
           "asr_output_elevenlabs": "Hey, could help sort out a trip to Paris? Thanks!",
           "asr_output_deepgram": "Hey. Could help sort out a trip to Paris? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "Paris"
+          }
         }
       ]
     ],
@@ -27887,7 +27935,7 @@
           "asr_output_elevenlabs": "Uh, I'm planning a camping trip and I need a weather forecast for my campsite. Can you get, um, weather data for the next 10 days at latitude 35 with daily temperatures in Fahrenheit and a total precipitation in inches? Please skip the hourly details.",
           "asr_output_deepgram": "I'm planning a camping trip, and I need a weather forecast for my campsite. Can you get, weather data for the next ten days at latitude thirty five with daily temperatures in Fahrenheit and, total precipitation in inches? Please skip the hourly details.",
           "clarifications": {
-            "latitude_value": "35.",
+            "latitude": "35.",
             "forecast_duration": "10 days",
             "temperature_unit": "Fahrenheit",
             "precipitation_unit": "inches"
@@ -28435,7 +28483,11 @@
           "asr_output_openai": "What's the weather forecast for White Plains next week in Celsius?",
           "asr_output_elevenlabs": "Uh, what's the weather forecast for White Plains next week in Celsius?",
           "asr_output_deepgram": "What's the weather forecast for White Plains next week in Celsius?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "White Plains",
+            "forecast_period": "next week",
+            "temperature_unit": "Celsius"
+          }
         }
       ]
     ],
@@ -28843,7 +28895,9 @@
           "asr_output_openai": "\u30d5\u30a1\u30a4\u30f3\u30c0\u30a6\u30c8\u30a6\u30a7\u30b6\u30fc\u30d5\u30a9\u30fc\u30ad\u30e3\u30b9\u30c8\u30d5\u30a9\u30fc\u30b5\u30bf\u30c7\u30fc\u3002",
           "asr_output_elevenlabs": "Find out the weather forecast for, um, Saturday. Okay?",
           "asr_output_deepgram": "Find out the weather forecast for, Saturday. Okay.",
-          "clarifications": {}
+          "clarifications": {
+            "forecast_date": "this coming Saturday"
+          }
         }
       ]
     ],
@@ -31155,7 +31209,9 @@
           "asr_output_openai": "Show me a the weather forecast for Tel Aviv, look it up by latitude and longitude, thanks.",
           "asr_output_elevenlabs": "Show me, uh, the weather forecast for Tel Aviv. Look it up by latitude and longitude. Thanks.",
           "asr_output_deepgram": "Show me, the weather forecast for Tel Aviv. Look it up by latitude and longitude. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "city_name": "\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1"
+          }
         }
       ]
     ],
@@ -31428,6 +31484,7 @@
           "asr_output_elevenlabs": "Alright, let me, um, break this down. First, I need to, uh, check the weather for the campsite over the next 10 days. It'll look for daily temperature and, you know, rain details. It'll change the temperature to Fahrenheit and add up the rain in inches for you. Let's do this step by step. Can you, oh, give me the location of the campsite?",
           "asr_output_deepgram": "Alright. Let me, break this down. First, I need to, check the weather for the campsite over the next ten days. It'll look for daily temperature and, you know, rain details. It'll change the temperature to Fahrenheit and add up the rain in inches for you. Let's do this step by step. Can you, oh, give me the location of the campsite?",
           "clarifications": {
+            "forecast_duration": "10 days",
             "temperature_unit": "Fahrenheit",
             "precipitation_unit": "inches"
           }
@@ -31566,9 +31623,7 @@
           "asr_output_openai": "Hey, um, could you tell me where Ganner is?",
           "asr_output_elevenlabs": "Hey, um, could you tell me where Gander is?",
           "asr_output_deepgram": "Hey, could you tell me where Ganner is?",
-          "clarifications": {
-            "location_name_spelling": "gan ner"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -31842,7 +31897,7 @@
           "asr_output_deepgram": "Can you get me the price and shipping details for the Galaxy s twenty four from Amazon?",
           "clarifications": {
             "product_name": "Galaxy S24",
-            "platform_name": "Amazon"
+            "platform": "Amazon"
           }
         }
       ]
@@ -32116,6 +32171,8 @@
           "asr_output_elevenlabs": "What's the address at latitude 37.4224764, longitude -122.0842499 using the geocoding API, right?",
           "asr_output_deepgram": "What's the address at latitude thirty seven point four two two four seven six four? Longitude minus one twenty two point zero eight four two four nine nine using the geocoding API. Right?",
           "clarifications": {
+            "latitude": "37.4224764",
+            "longitude": "-122.0842499",
             "api_name": "Geocoding API"
           }
         }
@@ -32525,9 +32582,7 @@
           "asr_output_openai": "Um, could you help find an object detection model using the torchhub APIs?",
           "asr_output_elevenlabs": "Um, could you help, uh, find an object detection model using the T-O-R-C-H H-U-B TorchHub APIs?",
           "asr_output_deepgram": "Could you help, find an object detection model using the t o r c h h u b TorchHub APIs?",
-          "clarifications": {
-            "api_name": "torchhub"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -32935,7 +32990,9 @@
           "asr_output_openai": "Heya, what's the temperature in New York?",
           "asr_output_elevenlabs": "Hey, uh, what's the temperature in New York?",
           "asr_output_deepgram": "Hey, what's the temperature in New York?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New york"
+          }
         }
       ]
     ],
@@ -33071,7 +33128,9 @@
           "asr_output_openai": "Ah, okay, give me current temperature for New York, please.",
           "asr_output_elevenlabs": "Ah, okay. Give me current temperature for New York please.",
           "asr_output_deepgram": "Okay. Give me current temperature for New York, please.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York"
+          }
         }
       ]
     ],
@@ -33207,7 +33266,9 @@
           "asr_output_openai": "What's the current weather in Turin?",
           "asr_output_elevenlabs": "Uh, what's the current weather in Turin? Oh, can you tell me the temperature?",
           "asr_output_deepgram": "What's the current weather in Turin? Oh, can you tell me the temperature?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Turin, Italy"
+          }
         }
       ]
     ],
@@ -33615,7 +33676,10 @@
           "asr_output_openai": "Lemsi, planning a trip to Munich. Can you look up all the available connections for Sunday?",
           "asr_output_elevenlabs": "Lem C. planning a trip to Munich. Can you look up all the available connections for Sunday?",
           "asr_output_deepgram": "Lem c, planning a trip to Munich. Can you look up all the available connections for Sunday?",
-          "clarifications": {}
+          "clarifications": {
+            "destination": "Munich",
+            "day_of_week": "sunday"
+          }
         }
       ]
     ],
@@ -33751,7 +33815,10 @@
           "asr_output_openai": "Hey, planning a trip to Munich. Can you get me the weather forecast for there like this Sunday?",
           "asr_output_elevenlabs": "Hey, planning a trip to Munich. Can you get me the weather forecast for there like this Sunday?",
           "asr_output_deepgram": "Hey. Planning a trip to Munich. Can you get me the weather forecast for there, like, this Sunday?",
-          "clarifications": {}
+          "clarifications": {
+            "city_name": "Munich",
+            "day": "this Sunday"
+          }
         }
       ]
     ],
@@ -34435,7 +34502,9 @@
           "asr_output_openai": "Heyo, who's Jisung Park?",
           "asr_output_elevenlabs": "Hey, oh, who's Jisung Park?",
           "asr_output_deepgram": "Hey, Oh. Who's Jisung Park?",
-          "clarifications": {}
+          "clarifications": {
+            "person_name": "Ji Sung Park"
+          }
         }
       ]
     ],
@@ -34806,7 +34875,7 @@
           "asr_output_elevenlabs": "Hey, uh, let me see. Play Cha Cha Cha by Carrie Yee.",
           "asr_output_deepgram": "Hey, let me see. Play Cha Cha Cha by Keri Yeh.",
           "clarifications": {
-            "artist_name_spelling": "k\u00e4\u00e4rij\u00e4"
+            "artist_name": "k\u00e4\u00e4rij\u00e4"
           }
         }
       ]
@@ -34843,7 +34912,7 @@
           "asr_output_elevenlabs": "Hey, could you, um, play Cha Cha Cha by K\u00e4rij? That's K-\u00c4-R-I-J for me.",
           "asr_output_deepgram": "Hey. Could you, play by Kiariye. That's k a with r I j with Kiariye for me.",
           "clarifications": {
-            "artist_name_spelling": "k\u00e4\u00e4rij\u00e4"
+            "artist_name": "k\u00e4\u00e4rij\u00e4"
           }
         }
       ]
@@ -34978,7 +35047,10 @@
           "asr_output_openai": "Um, can you get me the list of long weekends in Canada for 2023? Oh, wanna add 'em to my holiday planning app for my getaways.",
           "asr_output_elevenlabs": "Um, can you get me the list of long weekends in Canada for 2023? Oh, wanna add 'em to my holiday planning app for my getaways.",
           "asr_output_deepgram": "Can you get me the list of long weekends in Canada for twenty twenty three? Oh, wanna add them to my holiday planning app for my getaways?",
-          "clarifications": {}
+          "clarifications": {
+            "country_name": "Canada",
+            "year": "2023"
+          }
         }
       ]
     ],
@@ -35025,7 +35097,8 @@
           "asr_output_deepgram": "Hey. I'm working on a dashboard for, Uganda's real time COVID nineteen stats showing total cases, recoveries, and deaths. I need to get the latest numbers from the API support COVID I d nineteen API. I've got my API key and host info ready. Can you, guide me on sending a request to h t t p s colon slash slash covid dash one nine three dot p dot rapidapi dot com slash statistics question mark country equals Uganda with a time out set for ten seconds and, oh, no streaming responses.",
           "clarifications": {
             "api_url": "https://covid-193.p.rapidapi.com/statistics?country=Uganda",
-            "api_name": "API Sports COVID-19 API"
+            "timeout_duration": "10 seconds",
+            "response_streaming": "not streamed"
           }
         }
       ]
@@ -35248,7 +35321,7 @@
           "asr_output_elevenlabs": "Hey, uh, can you find the latitude and longitude for Soda Hall, Berkeley, California? Oh, send a get request, uh, to our geocoding API, and don't forget to include my API key, Y-O-U-R-API K-E-Y in the headers. Also, make sure the response comes back in GeoJSON format.",
           "asr_output_deepgram": "Hey. Can you find the latitude and longitude for Soda Hall, Berkeley, California? Oh, send a get request, to our geocoding API, and don't forget to include my API key y o u r a p I k e y in the headers. Also, make sure the response comes back in GeoJSON format.",
           "clarifications": {
-            "location_name": "Soda Hall, Berkeley, CA",
+            "location": "Soda Hall, Berkeley, CA",
             "api_key": "YOUR_API_KEY",
             "response_format": "GeoJSON"
           }
@@ -36912,7 +36985,7 @@
           "asr_output_elevenlabs": "Um, for the intent show me my balance, what should it be? Oh, is it getbalance, transfer_funds, hello, or goodbye?",
           "asr_output_deepgram": "For the intent, show me my balance. What should it be? Oh, is it get underscore balance, transfer underscore funds, hello, or goodbye?",
           "clarifications": {
-            "intent_classification": "get_balance"
+            "user_intent": "show me my balance"
           }
         }
       ]
@@ -37111,9 +37184,7 @@
           "asr_output_openai": "As a chatbot, I want to give users accurate answers. Can you help me match each query with the right intent from my list? The list includes: get_balance, transfer_funds, hello, and goodbye. Here are the queries: Hello, I want to transfer funds, show my balance, and hey there.",
           "asr_output_elevenlabs": "As a chatbot, I want to give users accurate answers. Can you help me match each query with the right intent from my list? The list includes getbalance, transfer_funds, hello, and goodbye. Here are the queries: Hello, I want to transfer funds, Show my balance, and Hey there!",
           "asr_output_deepgram": "As a chatbot, I want to give users accurate answers. Can you help me match each query with the right intent from my list? The list includes get underscore balance, transfer underscore funds, hello, and goodbye. Here are the queries. Hello. I want to transfer funds, show my balance, and hey there.",
-          "clarifications": {
-            "intents_list": "get_balance, transfer_funds, hello, goodbye"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37180,8 +37251,8 @@
           "asr_output_elevenlabs": "As a chatbot, I need to provide my users with the right answers based on their intent. Could you send a get request to htp colon slash slash w w w w dot miyapiya com slash intent so we can determine the intent for each query? The intents might be weather, news, or traffic. Oh, and here are the queries: What's the weather like today?, Is there any news on the city marathon?, and What's the traffic situation on the M3 highway?",
           "asr_output_deepgram": "As a chatbot, I need to provide my users with the right answers based on their intent. Could you send a get request to h t p colon slash slash w w w dot miyapi dot com slash intent so we can determine the intent for each query? The intents might be weather, news, or traffic. Oh, and here are the queries. What's the weather like today? Is there any news on the City Marathon? And what's the traffic situation on the m three highway?",
           "clarifications": {
-            "url": "http://www.myapi.com/intent",
-            "intents_list": "['Weather', 'News', 'Traffic']"
+            "request_url": "http://www.myapi.com/intent",
+            "recognized_intents": "['Weather', 'News', 'Traffic']"
           }
         }
       ]
@@ -37253,10 +37324,7 @@
           "asr_output_openai": "As a chatbot got some user queries like \"hello\", \"I want to transfer funds\", \"show my balance\", and \"hey there\". Oh, can you help me match these with the right intent codes like \"GET_BALANCE\", \"TRANSFER_FUNDS\", \"HELLO\", and \"GOODBYE\"? Also, send a GET request to the intent recognition service with these queries.",
           "asr_output_elevenlabs": "As a chatbot, got some user queries like \"Hello\", \"I want to transfer funds\", \"Show my balance\", and \"Hey there\". Oh! Can you help me match these with the right intent codes like GET_BALANCE, TRANSFER_FUNDS, HELLO, and GOODBYE? Also, send a GET request to the Intent Recognition Service with these queries.",
           "asr_output_deepgram": "As a chatbot, got some user queries like hello, I wanna transfer funds, show my balance, and hey there. Oh, can you help me match these with the right intent codes like get underscore balance, transfer underscore funds, hello, and goodbye? Also, send a get request to the intent recognition service with these queries.",
-          "clarifications": {
-            "intent_codes_spelling": "[get_balance, transfer_funds, hello, goodbye]",
-            "user_queries_spelling": "[hello, I want to transfer funds, show my balance, hey there]"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37324,8 +37392,8 @@
           "asr_output_deepgram": "Can you, get the server's response for a Git request to h t t p s colon slash slash a p dot intent dot com slash query? Check the intents for these queries called, hello. I wanna transfer funds, show my balance. Hey there. The intents are get underscore balance, transfer underscore funds, hello, and goodbye.",
           "clarifications": {
             "url": "https://api.intent.com/query",
-            "queries_list": "[hello, I want to transfer funds, show my balance, hey there]",
-            "intent_codes_list": "[get_balance, transfer_funds, hello, goodbye]"
+            "queries": "[hello, I want to transfer funds, show my balance, hey there]",
+            "intent_codes": "[get_balance, transfer_funds, hello, goodbye]"
           }
         }
       ]
@@ -37393,7 +37461,8 @@
           "asr_output_elevenlabs": "Uh, can you send GET requests to https colon slash slash example dot com slash ap slash intent for these intents? Get underscore balance. Transfer underscore funds. Hello. Goodbye. I'm trying to, you know, pair these user queries. Hello and I want to transfer funds with the appropriate server responses.",
           "asr_output_deepgram": "Can you send Git request to h t t p s colon slash slash example dot com slash a p slash intent for these intents? Get underscore balance, transfer underscore funds, hello, goodbye. I'm trying to, you know, pair these user queries. Hello, and I wanna transfer funds with the appropriate server responses.",
           "clarifications": {
-            "url": "https://example.com/api/intent"
+            "request_url": "https://example.com/api/intent",
+            "intent_codes": "['get_balance', 'transfer_funds', 'hello', 'goodbye']"
           }
         }
       ]
@@ -37562,9 +37631,7 @@
           "asr_output_openai": "When given the query \"Hello,\" ah, can you find out which intent it matches from our list? Oh, we've got options like clean_hello_start for casual greetings, activate_card_start if it's about activating a bank card, atm_finder_start for finding ATMs, and more.",
           "asr_output_elevenlabs": "When given the query \"Hello\", uh, can you find out which intent it matches from our list? Oh, we've got options like CLEAN_HELLOSTART for casual greetings, ACTIVATE CARD START if it's about activating a bank card, AT.M_FINDER START for finding ATMs, and, um, more.",
           "asr_output_deepgram": "When given the query hello, can you find out which intent it matches from our list? Oh, we've got options like clean underscore hello underscore start for casual greetings, activate underscore card underscore start if it's about activating a bank card, eight dot m underscore finder underscore start for finding ATMs, and, more.",
-          "clarifications": {
-            "intent_name": "clean_hello_start"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37614,9 +37681,7 @@
           "asr_output_openai": "Hey there, I'm a chatbot. Can you help me match the right intent to each query from this list? Okay, here's the intent list, starting with ACC_ROUTING_START, which involves bank routing or account numbers, and ending with what_UNDERSTORE_CAN_UNDERSTORE_YOU_UNDERSTORE_DO_UNDERSTORE_START, where users ask about my capabilities. The query I'm working on is like a casual greeting hello?",
           "asr_output_elevenlabs": "Hey there, Im a chatbot. Can you, uh, help me match the right intent to each query from this list? Okay, here's the intent list starting with acc-routing_start which involves bank routing or account numbers and ending with what_can_you_do_start where users ask about my capabilities. The query Im working on is like a casual greeting, hello.",
           "asr_output_deepgram": "Hey there. I'm a chatbot. Can you, help me match the right intent to each query from this list? Okay. Here's the intent list, starting with a c c underscore routing underscore start, which involves bank routing or account numbers and ending with what underscore can underscore you underscore do underscore start where users ask about my capabilities. The query I'm working on is like a casual greeting hello?",
-          "clarifications": {
-            "intent_description": "clean_hello_start"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37666,9 +37731,7 @@
           "asr_output_openai": "I'm dealing with some chatbot stuff, aiming to ensure it responds correctly to folks' questions. For instance, when someone inquires about their checking account's routing and account numbers, the chatbot ought to identify it as a request for bank routing or account numbers. Now, how can I categorize these sorts of queries accurately?",
           "asr_output_elevenlabs": "I'm dealing with some chatbot stuff, aiming to ensure it responds correctly to folks' questions. For instance, when someone inquires about their checking accounts routing and account numbers, the chatbot ought to identify it as a request for bank routing or account numbers. Now, how can I categorize these sorts of queries accurately?",
           "asr_output_deepgram": "I'm dealing with some chatbot stuff, aiming to ensure it responds correctly to folks' questions. For instance, when someone inquires about their checking accounts routing and account numbers, the chatbot ought to identify it as a request for bank routing or account numbers. Now how can I categorize these sorts of queries accurately?",
-          "clarifications": {
-            "user_intent_description": "Queries requesting the bank routing numbers or account numbers"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37719,9 +37782,7 @@
           "asr_output_openai": "As a chatbot, I've got to respond to users correctly based on what they're asking. Oh, could you help me, like, identify from this list of intents the right intent for each user query? Here's the list of intents we've got. Intent: ACC_Routing_Start. Description: Queries requesting the bank routing numbers or account numbers. Intent: Activate_Card_Start. Description: Queries related to activating a new bank card. Now, the \"reze\" query, which is just some random gibberish. How should I classify it?",
           "asr_output_elevenlabs": "Um, as a chatbot, I've got to respond to users correctly based on what they're asking. Oh, could you help me, like, identify from this list of intents the right intent for each user query? Here's the list of intents we've got. Intent: ACC_Routing_Start. Description: Queries requesting the bank routing numbers or account numbers. Intent: Activate_Card_Start. Description: Queries related to activating a new bank card. Uh, now, there is this query, which is just some random gibberish. How should I, um, classify it?",
           "asr_output_deepgram": "As a chatbot, I've gotta respond to users correctly based on what they're asking. Oh, could you help me, like, identify from this list of intents the right intent for each user query? Here's the list of intents we've got. Intent, a c c underscore routing underscore start. Description, queries requesting the bank routing numbers or account numbers. Intent, activate underscore card underscore start. Description, queries related to activating a new bank card. Now the reason this query, which is just some random gibberish. How should I, classify it?",
-          "clarifications": {
-            "intent_spelling": "[some random gibberish]"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -37897,7 +37958,11 @@
           "asr_output_openai": "What's the weather prediction for Paris starting April 1st in Celsius?",
           "asr_output_elevenlabs": "What's the weather prediction for Paris starting April 1st in Celsius?",
           "asr_output_deepgram": "What's the weather prediction for Paris starting April first in Celsius?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Paris, France",
+            "start_date": "April 1st",
+            "units": "Celsius"
+          }
         }
       ]
     ],
@@ -38319,7 +38384,6 @@
           "asr_output_elevenlabs": "I've got, um, some encoded strings for map tiles, uh, for a construction plan. Right, each tile scale is, like, 50 meters. Can you please, uh, add a summary and include elevation data?",
           "asr_output_deepgram": "I've got, some encoded strings for map tiles, for a construction plan. Right. Each tile scale is, like, fifty meters. Can you please, add a summary and include elevation data?",
           "clarifications": {
-            "map_tiles_spelling": "array of encoded strings",
             "scale_factor": "50 meters"
           }
         }
@@ -38378,7 +38442,7 @@
           "asr_output_elevenlabs": "Hey, I need to handle some transactions. They're in USD and EUR. Can you convert them to GBP for me? The rates are one US dollar to 0.72 GBP and one euro to 0.86 GBP.",
           "asr_output_deepgram": "Hey. I need to handle some transactions. They're in USD and EUR. Can you convert them to GBP for me? The rates are one US dollar to zero point seven two GBP and one euro to zero point eight six GBP.",
           "clarifications": {
-            "target_currency_code": "GBP",
+            "target_currency": "GBP",
             "conversion_rate_usd_to_gbp": "1 USD to 0.72 GBP",
             "conversion_rate_eur_to_gbp": "1 EUR to 0.86 GBP"
           }
@@ -38767,8 +38831,13 @@
           "asr_output_elevenlabs": "Hey, I'm planning a road trip from, um, the Golden Gate Bridge in San Francisco to the Hollywood sign in Los Angeles. Uh, can you check the transportation routes for me using the FareTrotter, F-A-R-E-T-R-O-T-T-E-R, FareTrotter API?",
           "asr_output_deepgram": "Hey. I'm planning a road trip from, the Golden Gate Bridge in San Francisco to the Hollywood sign in Los Angeles. Can you check the transportation routes for me using the Fair Trotter, f a r e t r o t t e r, Fair Trotter API?",
           "clarifications": {
-            "origin_location_name": "Golden Gate Bridge",
-            "destination_location_name": "Hollywood Sign"
+            "origin_location": "Golden Gate Bridge, San Francisco",
+            "origin_latitude": "37.8199",
+            "origin_longitude": "-122.4783",
+            "destination_location": "Hollywood Sign, Los Angeles",
+            "destination_latitude": "34.1341",
+            "destination_longitude": "-118.3217",
+            "api_name": "Faretrotter API"
           }
         }
       ]
@@ -38962,7 +39031,9 @@
           "asr_output_openai": "What's the weather forecast for Alpharetta including the measurements?",
           "asr_output_elevenlabs": "What's the, uh, weather forecast for Alpharetta including the measurements?",
           "asr_output_deepgram": "What's the, weather forecast for Alpharetta including the measurements?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Alpharetta, GA"
+          }
         }
       ]
     ],
@@ -39013,7 +39084,7 @@
           "asr_output_elevenlabs": "What's weather like in ZIP code 30022?",
           "asr_output_deepgram": "What's weather like in ZIP code three double o two two?",
           "clarifications": {
-            "location_zip_code": "30022"
+            "location": "zip code 30022"
           }
         }
       ]
@@ -39065,9 +39136,9 @@
           "asr_output_elevenlabs": "Uh, I'm planning a road trip from the Golden Gate Bridge in San Francisco to the Hollywood sign in Los Angeles. Can you use the Fairtrotter API to find possible transportation routes for me? Thanks!",
           "asr_output_deepgram": "I'm planning a road trip from the Golden Gate Bridge in San Francisco to the Hollywood sign in Los Angeles. Can you use the Fair Trotter API to find possible transportation routes for me? Thanks.",
           "clarifications": {
-            "api_name": "Faretrotter API",
-            "start_location": "Golden Gate Bridge, San Francisco",
-            "end_location": "Hollywood Sign, Los Angeles"
+            "starting_location": "Golden Gate Bridge, San Francisco",
+            "destination_location": "Hollywood Sign, Los Angeles",
+            "api_name": "Faretrotter API"
           }
         }
       ]
@@ -39414,7 +39485,9 @@
           "asr_output_openai": "What's the weather like in Hyderabad right now?",
           "asr_output_elevenlabs": "Uh, what's the weather like in, um, Hyderabad right now?",
           "asr_output_deepgram": "What's the weather like in, high or bad right now?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Hyderabad"
+          }
         }
       ]
     ],
@@ -39662,8 +39735,8 @@
           "asr_output_elevenlabs": "Uh, can you set up a visual question-answering bot to, uh, reply to a query from the file named questiondetails.txt about the image called cat.jpeg? Start a pipeline on my GPU at index 0 and use it to handle the data.",
           "asr_output_deepgram": "Can you set up a visual question answering bot to, reply to a query from the file named question details dot TX? T about the image called cat dot j p e g? Start a pipeline on my GPU at index zero and use it to handle the data.",
           "clarifications": {
-            "text_file_path": "questiondetails.txt",
-            "image_file_path": "cat.jpeg",
+            "text_file_name": "questiondetails.txt",
+            "image_file_name": "cat.jpeg",
             "gpu_index": "0"
           }
         }
@@ -39732,8 +39805,8 @@
           "asr_output_elevenlabs": "I want to... Wait, oh! Can you help me make a visual question answering bot that can answer a question from question details.txt about the image cat.jpeg? The inputs are question details.txt and cat.jpeg.",
           "asr_output_deepgram": "I wanna wait. Oh, can you help me make a visual question answering bot that can answer a question from question details dot txt about the image cat dot j p e g? The inputs are question details dot txt and cat dot j p e g.",
           "clarifications": {
-            "file_path": "questiondetails.txt",
-            "image_path": "cat.jpeg"
+            "question_file_path": "questiondetails.txt",
+            "image_file_path": "cat.jpeg"
           }
         }
       ]
@@ -39993,7 +40066,10 @@
           "asr_output_elevenlabs": "Hey, update the inventory. Three units for one product ID, uh, two units for another, and five units for the last product. The restock threshold's five units.",
           "asr_output_deepgram": "Hey. Update the inventory. Three units for one product ID, two units for another, and five units for the last product. The restock threshold's five units.",
           "clarifications": {
-            "product_id_spelling": "product ID"
+            "product_id1_quantity": "3 units",
+            "product_id2_quantity": "2 units",
+            "product_id3_quantity": "5 units",
+            "restock_threshold": "5 units"
           }
         }
       ]
@@ -40416,7 +40492,11 @@
           "asr_output_openai": "What's the weather forecast for Paris, France from April 1st to the 7th? I need temperature, rain, and wind speed in metric units. Thanks.",
           "asr_output_elevenlabs": "Um, what's the weather forecast for Paris, France from April 1st to the 7th? Uh, I need temperature, rain, and wind speed in metric units. Thanks.",
           "asr_output_deepgram": "What's the weather forecast for Paris? France from April first to the seventh. I need temperature, rain, and wind speed in metric units. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Paris, France",
+            "start_date": "April 1st",
+            "end_date": "April 7th"
+          }
         }
       ]
     ],
@@ -40644,7 +40724,9 @@
           "asr_output_openai": "Hey, what's the weather in San Francisco?",
           "asr_output_elevenlabs": "Hey, uh, what's the weather in San Francisco?",
           "asr_output_deepgram": "Hey, what's the weather in San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "San Francisco"
+          }
         }
       ]
     ],
@@ -42545,7 +42627,8 @@
           "asr_output_elevenlabs": "Oh, send your mom an email saying if Friday works, we should go out and play. Okay?",
           "asr_output_deepgram": "Oh, send your mom an email saying if Friday works, we should go out and play. Okay?",
           "clarifications": {
-            "recipient_name": "Mom"
+            "recipient_name": "Mom",
+            "email_content": "we should go out and play if Friday is okay"
           }
         }
       ]
@@ -42651,7 +42734,8 @@
           "asr_output_elevenlabs": "Hey, uh, send Mom an email saying we're gonna go out and play if Friday works for her, okay?",
           "asr_output_deepgram": "Hey, send mom an email saying we're gonna go out and play if Friday works for her. Okay.",
           "clarifications": {
-            "recipient_name": "Mom"
+            "recipient_name": "Mom",
+            "day": "Friday"
           }
         }
       ]
@@ -43015,7 +43099,8 @@
           "asr_output_deepgram": "Get the interface info for network seven seven seven. Oh, I mean, find gigabit Ethernet stats.",
           "clarifications": {
             "fabric_name": "network777",
-            "interface_type": "gigabitethernet"
+            "interface_type": "gigabitethernet",
+            "information_type": "statistics"
           }
         }
       ]
@@ -43245,9 +43330,9 @@
           "asr_output_elevenlabs": "Hey, um, can you help me on creating a RESTful API request on the Cisco Nexus Dashboard? I'm using, uh, version 6.3.1 and I need the API for getting info on device connector versions.",
           "asr_output_deepgram": "Hey. Can you help me on creating a RESTful API request on the Cisco Nexus dashboard? I'm using, version six three point one, and I need the API for getting info on device connector versions.",
           "clarifications": {
-            "api_name_spelling": "get information of device connector versions",
-            "product_name_spelling": "Cisco Nexus Dashboard",
-            "version_number": "6.3.1"
+            "api_name": "get information of device connector versions",
+            "product_name": "Cisco Nexus Dashboard",
+            "version": "6.3.1"
           }
         }
       ]
@@ -43435,7 +43520,10 @@
           "asr_output_openai": "Alright, get me data on system anomalies from January 1 to January 31, 2023.",
           "asr_output_elevenlabs": "Uh, right. Get me data on system anomalies from January the 1st to January 31st, 2023.",
           "asr_output_deepgram": "Right. Get me data on system anomalies from January the first to January thirty first two thousand twenty three.",
-          "clarifications": {}
+          "clarifications": {
+            "start_date": "January 1st",
+            "end_date": "January 31st"
+          }
         }
       ]
     ],
@@ -43496,8 +43584,10 @@
           "asr_output_elevenlabs": "Uh, can you send a GET request to the Cisco? That's C-I-S-C-O, Cisco Nexus Dashboard. I need to, um, get anomaly data for network issues from January 1st to January 31st, 2023.",
           "asr_output_deepgram": "Can you send a gate request to the Cisco? That's c I s c o Cisco Nexus dashboard. I need to, get anomaly data for network issues from January first to January thirty first twenty twenty three.",
           "clarifications": {
-            "url_spelling": "Cisco Nexus Dashboard",
-            "date_range": "2023-01-01 to 2023-01-31",
+            "target_platform": "Cisco Nexus Dashboard",
+            "data_type": "anomaly data",
+            "start_date": "2023-01-01",
+            "end_date": "2023-01-31",
             "anomaly_type": "network anomalies"
           }
         }
@@ -43620,8 +43710,8 @@
           "asr_output_elevenlabs": "Show me top flows by anomalies from March 32nd, 2023 to October 22nd, 2023.",
           "asr_output_deepgram": "Show me top flows by anomalies from March thirty second twenty twenty three to October twenty second twenty twenty three.",
           "clarifications": {
-            "start_date_spelling": "2023-03-32",
-            "end_date_spelling": "2023-10-22"
+            "start_date": "2023-03-32",
+            "end_date": "2023-10-22"
           }
         }
       ]
@@ -43673,8 +43763,8 @@
           "asr_output_elevenlabs": "Can you, um, give me details for connecting with fabric network four node five?",
           "asr_output_deepgram": "Can you, give me details for connecting with fabric network four node five?",
           "clarifications": {
-            "fabric_name": "fabric Network4",
-            "node_id": "node 5"
+            "fabric_name": "Network4",
+            "node_number": "5"
           }
         }
       ]
@@ -44000,7 +44090,7 @@
           "asr_output_deepgram": "Can you check when my dentist appointment is and, move it to November first twenty twenty four at four PM, America slash new underscore York time? Thanks.",
           "clarifications": {
             "new_date_time": "November 1, 2024 at 4:00 PM",
-            "timezone_identifier": "America/New_York"
+            "timezone": "America/New_York"
           }
         }
       ]
@@ -44078,8 +44168,9 @@
           "asr_output_elevenlabs": "When's my next dentist appointment? Move it to November 1st, 2024 at 04:00 P.m. EST.",
           "asr_output_deepgram": "When's my next dentist appointment? Move it to November first twenty twenty four at four PM EST.",
           "clarifications": {
-            "new_date_time": "November 1, 2024 at 4pm",
-            "timezone_identifier": "EST"
+            "new_date": "November 1, 2024",
+            "new_time": "4pm",
+            "timezone": "EST"
           }
         }
       ]
@@ -44705,7 +44796,9 @@
           "asr_output_openai": "Hey Juno Daniel.",
           "asr_output_elevenlabs": "Hey, do you know Daniel?",
           "asr_output_deepgram": "Hey. Do you know Daniel?",
-          "clarifications": {}
+          "clarifications": {
+            "individual_name": "daniel"
+          }
         }
       ]
     ],
@@ -45151,7 +45244,10 @@
           "asr_output_openai": "Make a note to remind me about the Netflix subscription on March 27th this year.",
           "asr_output_elevenlabs": "Uh, make a note to remind me about the Netflix subscription on March 27th this year.",
           "asr_output_deepgram": "Make a note to remind me about the Netflix subscription on March twenty seventh this year.",
-          "clarifications": {}
+          "clarifications": {
+            "reminder_date": "27th of March this year",
+            "subscription_service": "Netflix"
+          }
         }
       ]
     ],
@@ -45232,8 +45328,7 @@
           "asr_output_elevenlabs": "Uh, remove System32 using admin privileges.",
           "asr_output_deepgram": "Remove system thirty two using admin privileges.",
           "clarifications": {
-            "command_spelling": "delete system32",
-            "privileges_spelling": "admin privelages"
+            "command": "delete system32 with admin privelages"
           }
         }
       ]
@@ -45436,7 +45531,10 @@
           "asr_output_openai": "Can you book a ticket for me from New York City to New Delhi, please?",
           "asr_output_elevenlabs": "Can you book a ticket for me from New York City to New Delhi, please?",
           "asr_output_deepgram": "Can you book a ticket for me from New York City to New Delhi, please?",
-          "clarifications": {}
+          "clarifications": {
+            "departure_city": "USA NYC",
+            "destination_city": "India New Delhi"
+          }
         },
         {
           "role": "assistant",
@@ -45447,9 +45545,8 @@
           "content": "Book me a ticket from USA NYC to India New Delhi usiong tools ",
           "transcript": "Uh, book ticket from New York City, N-E-W Y-O-R-K C-I-T-Y, to New Delhi, India, usin tools.",
           "clarifications": {
-            "departure_city": "NYC",
-            "destination_city": "New Delhi",
-            "tool_name_spelling": "usiong tools"
+            "departure_city": "USA NYC",
+            "destination_city": "India New Delhi"
           }
         }
       ]
@@ -45621,7 +45718,7 @@
           "asr_output_elevenlabs": "Write, can you write an API call to create a Google Cloud EC2 instance with an RTX A6000 GPU and Ubuntu 2019 LTS?",
           "asr_output_deepgram": "Right. Can you write an API call to create a Google Cloud e c two instance with an r t x a six thousand GPU and Ubuntu twenty nineteen l t s?",
           "clarifications": {
-            "cloud_service_name": "google cloud",
+            "cloud_service": "google cloud",
             "instance_type": "ec2",
             "gpu_model": "rtx a6000",
             "operating_system": "ubuntu 20.04 LTS"
@@ -45805,9 +45902,7 @@
           "role": "user",
           "content": "u have access to tools use them ",
           "transcript": "Youve, uh, tools available. Go ahead and use em.",
-          "clarifications": {
-            "context_spelling": "tools"
-          }
+          "clarifications": {}
         },
         {
           "role": "assistant",
@@ -45957,9 +46052,7 @@
           "asr_output_openai": "Order some grub from DoorDash using your tools and give me the response in JSON.",
           "asr_output_elevenlabs": "Uh, order some grub from DoorDash using your tools and, uh, gimme the response in JSON.",
           "asr_output_deepgram": "Order some grub from DoorDash using your tools and, give me the response in JSON.",
-          "clarifications": {
-            "service_name": "doordash"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -46300,7 +46393,7 @@
           "asr_output_elevenlabs": "Run the function n of n underscore responses. Okay.",
           "asr_output_deepgram": "Run the function nresponses. Okay.",
           "clarifications": {
-            "query_spelling": "fn_responses"
+            "function_name": "fn_responses"
           }
         }
       ]
@@ -46652,10 +46745,9 @@
           "asr_output_elevenlabs": "Uh, could you book a ticket from New York to New Delhi using API tools and, um, give me the response in JSON?",
           "asr_output_deepgram": "Could you book a ticket from New York to New Delhi using API tools and, give me the response in JSON?",
           "clarifications": {
-            "departure_city": "NYC",
-            "destination_city": "New Delhi",
-            "api_tool": "api tools",
-            "response_format": "json"
+            "departure_city": "USA NYC",
+            "destination_city": "India New Delhi",
+            "api_tool": "api tools"
           }
         }
       ]
@@ -47240,7 +47332,7 @@
           "asr_output_elevenlabs": "Run the script located in the test.pi file inside the PC underscore controller in the playground on the D drive using the python.x file which is inside the scripts folder inside env.",
           "asr_output_deepgram": "Run the script located in the test dot p I file inside the PC underscore controller in the playground on the d drive using the Python dot x file, which is inside the scripts folder inside mv.",
           "clarifications": {
-            "command_path": "d:/playground/pc_contoller/env/Scripts/python.exe d:/playground/pc_contoller/test.py"
+            "command": "& d:/playground/pc_contoller/env/Scripts/python.exe d:/playground/pc_contoller/test.py"
           }
         }
       ]
@@ -47382,7 +47474,7 @@
           "asr_output_elevenlabs": "Uh, rotate it by 20 degrees. Then set it to freeze at 40 degrees Celsius.",
           "asr_output_deepgram": "Rotate it by twenty degrees, then set it to freeze at forty degrees Celsius.",
           "clarifications": {
-            "rotation_degrees": "20 degree",
+            "rotation_degree": "20",
             "freeze_temperature": "40 degree celsius"
           }
         }
@@ -47567,7 +47659,6 @@
           "asr_output_elevenlabs": "Um, can you help me look for a housekeeper in, uh, Chiang Mai who does ironing? Thanks!",
           "asr_output_deepgram": "Can you help me look for a housekeeper in, Chang Mai who does ironing? Thanks.",
           "clarifications": {
-            "service_type": "ironing service",
             "province_name": "Chiang Mai"
           }
         }
@@ -47929,7 +48020,10 @@
           "asr_output_openai": "Booked dentist appointment for next Monday at 11.",
           "asr_output_elevenlabs": "Uh, book dentist appointment for next Monday at eleven.",
           "asr_output_deepgram": "Book dentist appointment for next Monday at eleven.",
-          "clarifications": {}
+          "clarifications": {
+            "appointment_date": "next Monday",
+            "appointment_time": "11"
+          }
         }
       ]
     ],
@@ -48001,7 +48095,8 @@
           "asr_output_elevenlabs": "I'll reschedule my RTC2 session for, um, next Friday.",
           "asr_output_deepgram": "I'll reschedule my r two c two session for, next Friday.",
           "clarifications": {
-            "event_identifier": "R2C2"
+            "event_identifier": "R2C2 session",
+            "new_date": "next Friday"
           }
         }
       ]
@@ -48407,7 +48502,7 @@
           "asr_output_elevenlabs": "Uh, hey, right? What's the price for A, Y-U? Or B\u2026",
           "asr_output_deepgram": "Hey. Right? What's the price for a, y, u, or b?",
           "clarifications": {
-            "identifier_spelling": "AYURB"
+            "identifier": "AYURB"
           }
         }
       ]
@@ -48464,8 +48559,9 @@
           "asr_output_elevenlabs": "Look for a bathroom cleaning service in the Bang Khen District, Bangkok that is available on March 14th, 2024 at 3 pm. Okay.",
           "asr_output_deepgram": "Look for a bathroom cleaning service in the Bang Ken District, Bangkok. That is available on March fourteenth twenty twenty four at, three PM. Okay.",
           "clarifications": {
+            "city_name": "Bangkok",
             "district_name": "Bang Khen District",
-            "start_available_date": "14/03/2024 15:00"
+            "service_date_time": "14/03/2024 15:00"
           }
         }
       ]
@@ -48601,7 +48697,7 @@
           "asr_output_elevenlabs": "Look for a service provider for ironing who's, um, between 25 and 35 years old. Okay-",
           "asr_output_deepgram": "Look for a service provider for ironing who's, between twenty five and thirty five years old. Okay.",
           "clarifications": {
-            "service_id": "ironing service",
+            "service_type": "ironing",
             "min_age": "25",
             "max_age": "35"
           }
@@ -49282,7 +49378,7 @@
           "asr_output_elevenlabs": "Uh, can you show me the profile for the service provider with, uh, Idaho ONE, please?",
           "asr_output_deepgram": "Can you show me the profile for the service provider with, Idaho one, please?",
           "clarifications": {
-            "service_provider_id": "id:1"
+            "service_provider_id": "1"
           }
         }
       ]
@@ -49900,7 +49996,9 @@
           "asr_output_openai": "Find spot in Oakland where I can grab a bite without breaking the bank, yeah.",
           "asr_output_elevenlabs": "Find spot in Oakland where I can grab a bite without breaking the bank. Yeah.",
           "asr_output_deepgram": "Find spot in Oakland where I can grab a bite without breaking the bank. Yeah.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Oakland"
+          }
         }
       ]
     ],
@@ -50434,9 +50532,7 @@
           "asr_output_openai": "Yeah, play a song for me.",
           "asr_output_elevenlabs": "Uh, yeah. Play a song for me.",
           "asr_output_deepgram": "Yeah. Play song for me.",
-          "clarifications": {
-            "track_title": "song"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -50816,7 +50912,9 @@
           "asr_output_openai": "Hey, let me see. Can you get me something fun to do in London, OK?",
           "asr_output_elevenlabs": "Hey, let me see. Can you get me something fun to do in London, okay?",
           "asr_output_deepgram": "Hey. Let me see. Can you get me something fun to do in London? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "London, England"
+          }
         }
       ]
     ],
@@ -50945,7 +51043,7 @@
           "asr_output_elevenlabs": "Find the cheapest cab ride to the China Station Restaurant. Thanks!",
           "asr_output_deepgram": "Find the cheapest cab ride to the China station restaurant. Thanks.",
           "clarifications": {
-            "destination_address": "China Station Restaurant"
+            "destination": "China Station Restaurant"
           }
         }
       ]
@@ -52197,7 +52295,9 @@
           "asr_output_openai": "Hey, uh, can you get me a regular imaginative fiction movie, right?",
           "asr_output_elevenlabs": "Hey, uh, can you get me a regular imaginative fiction movie, right?",
           "asr_output_deepgram": "Hey. Can you get me a regular imaginative fiction movie. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "movie_genre": "Imaginative fiction"
+          }
         }
       ]
     ],
@@ -52354,7 +52454,7 @@
           "asr_output_elevenlabs": "Oh, right. Give me Toy Story 4 tickets right now.",
           "asr_output_deepgram": "Oh, right. Give me Toy Story four tickets right now.",
           "clarifications": {
-            "movie_name_spelling": "Toy Story Four"
+            "movie_name": "Toy Story Four"
           }
         }
       ]
@@ -52511,7 +52611,9 @@
           "asr_output_openai": "Could you hook me up with a rental car, please?",
           "asr_output_elevenlabs": "Uh, could you hook me up with a rental car please?",
           "asr_output_deepgram": "Could you hook me up with a rental car, please?",
-          "clarifications": {}
+          "clarifications": {
+            "rental_service": "car"
+          }
         }
       ]
     ],
@@ -52832,7 +52934,9 @@
           "asr_output_openai": "Looking to snag a rental car in Portland?",
           "asr_output_elevenlabs": "Uh, looking to snag a rental car in, uh, Portland.",
           "asr_output_deepgram": "Looking to snag a rental car in, Portland.",
-          "clarifications": {}
+          "clarifications": {
+            "pickup_location": "Portland"
+          }
         }
       ]
     ],
@@ -53153,9 +53257,7 @@
           "asr_output_openai": "Could look up a rental car for me?",
           "asr_output_elevenlabs": "Could, um, look up a rental car for me?",
           "asr_output_deepgram": "Could, look up a rental car for me?",
-          "clarifications": {
-            "search_term_spelling": "arental car"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -53800,7 +53902,9 @@
           "asr_output_openai": "Can help me look up a rental car starting next Monday, right?",
           "asr_output_elevenlabs": "Er, can you help me look up a rental car starting next Monday, right?",
           "asr_output_deepgram": "Can help me look up a rental car starting next Monday. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "start_date": "Monday next week"
+          }
         }
       ]
     ],
@@ -54122,8 +54226,7 @@
           "asr_output_elevenlabs": "Uh, can you get me economy train tickets for March 2nd?",
           "asr_output_deepgram": "Can you get me economy train tickets for March second?",
           "clarifications": {
-            "date_of_journey_spelling": "2nd of March",
-            "fare_class_spelling": "economy"
+            "date_of_journey": "2nd of March"
           }
         }
       ]
@@ -54317,7 +54420,9 @@
           "asr_output_openai": "Get a train for like a short trip.",
           "asr_output_elevenlabs": "Uh, get a train for like a short trip. Okay.",
           "asr_output_deepgram": "Get a train for, like, a short trip. Okay.",
-          "clarifications": {}
+          "clarifications": {
+            "transportation_mode": "Train"
+          }
         }
       ]
     ],
@@ -54704,8 +54809,8 @@
           "asr_output_elevenlabs": "Hey, can you find me a train to San Diego on March ninth?",
           "asr_output_deepgram": "Hey. Can you find me a train to San Diego on March ninth?",
           "clarifications": {
-            "arrival_city": "San Diego",
-            "date_of_journey": "9th of March"
+            "date_of_journey": "9th of March",
+            "destination_city": "San Diego"
           }
         }
       ]
@@ -54902,7 +55007,7 @@
           "clarifications": {
             "departure_city": "Portland",
             "arrival_city": "Seattle",
-            "number_of_adults": "1"
+            "number_of_tickets": "1"
           }
         }
       ]
@@ -55759,6 +55864,7 @@
           "asr_output_elevenlabs": "Hey. Uh, can you get me a roundtrip flight for three people? I'm good with any departure date, but I need to come back on March 8th, 2023. Thanks.",
           "asr_output_deepgram": "Hey. Can you get me a round trip flight for three people? I'm good with any departure date, but I need to come back on March eighth twenty twenty three. Thanks.",
           "clarifications": {
+            "number_of_tickets": "three",
             "return_date": "March 8th 2023"
           }
         }
@@ -56034,6 +56140,7 @@
           "asr_output_elevenlabs": "I'm looking for three round-trip tickets coming back on March 8th.",
           "asr_output_deepgram": "I'm looking for three round trip tickets coming back on March eighth.",
           "clarifications": {
+            "number_of_tickets": "three",
             "return_date": "8th of March"
           }
         }
@@ -56308,9 +56415,7 @@
           "asr_output_openai": "Can help me get a round trip flight, please?",
           "asr_output_elevenlabs": "Um, can help me get a roundtrip flight please?",
           "asr_output_deepgram": "Can help me get a round trip flight, please?",
-          "clarifications": {
-            "flight_type": "full circle"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -57386,9 +57491,7 @@
           "asr_output_openai": "Hey, um, could you help me reserve a train trip, okay?",
           "asr_output_elevenlabs": "Hey, um, could you help me reserve a train trip? Okay.",
           "asr_output_deepgram": "Hey. Could you help me reserve a train trip? Okay?",
-          "clarifications": {
-            "travel_assistance_type": "train"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -58114,9 +58217,7 @@
           "asr_output_openai": "Get one-way flight for me, thanks.",
           "asr_output_elevenlabs": "Get one way flight for me. Thanks.",
           "asr_output_deepgram": "Get one way flight for me. Thanks.",
-          "clarifications": {
-            "query_spelling": "one-way fight"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -58359,7 +58460,8 @@
           "asr_output_elevenlabs": "Hey, uh, look up regular showing of a supernatural movie. Right.",
           "asr_output_deepgram": "Hey. Look up regular show in of a supernatural movie. Right?",
           "clarifications": {
-            "movie_genre": "Supernatural"
+            "movie_genre": "Supernatural",
+            "show_type": "regular"
           }
         }
       ]
@@ -58624,9 +58726,7 @@
           "asr_output_openai": "Hey, could you recommend any regular shows or good life history movies to watch?",
           "asr_output_elevenlabs": "Hey, could you recommend any regular shows or good life history movies to watch?",
           "asr_output_deepgram": "Hey. Could you, recommend any regular shows or good life history movies to watch?",
-          "clarifications": {
-            "genre": "life history movies"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -58890,9 +58990,7 @@
           "asr_output_openai": "I've been wanting to watch movie for ages, but haven't been able to. Now I really need to. Oh, can you help me pick the best one to check out there?",
           "asr_output_elevenlabs": "Um, I've been wanting to watch movie for ages, but haven't been able to. Now I really need to... Oh, can you help me pick the best one to check out there?",
           "asr_output_deepgram": "I've been wanting to watch movie for ages but, haven't been able to. Now I really need to oh, can you help me pick the best one to check out there?",
-          "clarifications": {
-            "location": "that place"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -59156,7 +59254,9 @@
           "asr_output_openai": "Hey, could you find some movies playing in Larkspur for me?",
           "asr_output_elevenlabs": "Hey, um, could you find some movies playing in Larkspur for me?",
           "asr_output_deepgram": "Hey. Could you find some movies playing in Larkspur for me?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Larkspur"
+          }
         }
       ]
     ],
@@ -59580,7 +59680,10 @@
           "asr_output_openai": "Hey, um, what interesting things can we do near LAX on March 7, 2023, right?",
           "asr_output_elevenlabs": "Hey, um, what interesting things can we do near LAX on March 7th, 2023, right?",
           "asr_output_deepgram": "Hey. What interesting things can we do near LAX on March seventh twenty twenty three. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "LAX",
+            "event_date": "7th of March 2023"
+          }
         }
       ]
     ],
@@ -59660,7 +59763,9 @@
           "asr_output_openai": "Can you help me find something fun to do in Portland, yeah?",
           "asr_output_elevenlabs": "Can you help me find something fun to do in Portland, yeah?",
           "asr_output_deepgram": "Can you help me find something fun to do in Portland? Yeah?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "Portland"
+          }
         }
       ]
     ],
@@ -60330,9 +60435,7 @@
           "asr_output_openai": "Um, I need to snag a car rental 'cause mine's in the shop, right?",
           "asr_output_elevenlabs": "Um, I need to snag a car rental 'cause mine's in the shop, right?",
           "asr_output_deepgram": "I need to snag a car rental because mine's in the shop. Right?",
-          "clarifications": {
-            "pickup_location": "shop"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -60500,9 +60603,7 @@
           "asr_output_openai": "Hey, we need a car for the tour, can we set that up, yeah?",
           "asr_output_elevenlabs": "Hey, we need a car for the tour. Can we set that up? Yeah.",
           "asr_output_deepgram": "Hey. We need a car for the tour. Can we set that up? Yeah?",
-          "clarifications": {
-            "context_spelling": "proposed tour"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -61456,9 +61557,7 @@
           "asr_output_openai": "Lemme see. Hey, can you find me some musical shows? Oh, I really wanna do something fun ill enjoy.",
           "asr_output_elevenlabs": "Let me see. Hey, can you find me some musical shows? Oh, I really want to do something fun I'll enjoy.",
           "asr_output_deepgram": "Let me see. Hey. Can you find me some musical shows? Oh, I really wanna do something fun. I'll enjoy.",
-          "clarifications": {
-            "event_type": "musical shows"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -62127,7 +62226,9 @@
           "asr_output_openai": "Hey, can you look up professional groomer in San Francisco?",
           "asr_output_elevenlabs": "Hey, uh, can you look up professional groomer in San Francisco?",
           "asr_output_deepgram": "Hey. Can you look up professional groomer in San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "city": "San Francisco"
+          }
         }
       ]
     ],
@@ -62565,9 +62666,7 @@
           "asr_output_openai": "Find a salon that can, you know, help switch up my hairstyle and make me look good? Thanks!",
           "asr_output_elevenlabs": "Uh, find a salon that can, you know, help switch up my hairstyle and make me look good? Thanks.",
           "asr_output_deepgram": "Find a salon that can, you know, help switch up my hairstyle and make me look good? Thanks.",
-          "clarifications": {
-            "service_type": "salon"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -62786,9 +62885,7 @@
           "asr_output_openai": "Look up three star hotel for me",
           "asr_output_elevenlabs": "Look up three star hotel for me.",
           "asr_output_deepgram": "Look up three star hotel for me.",
-          "clarifications": {
-            "star_rating": "three star"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -62899,9 +62996,7 @@
           "asr_output_openai": "Hey, can you toss out something fun to do?",
           "asr_output_elevenlabs": "Hey, can you toss out something fun to do?",
           "asr_output_deepgram": "Hey. Can you toss out something fun to do?",
-          "clarifications": {
-            "activity_type": "some type of activity"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -63146,7 +63241,7 @@
           "asr_output_elevenlabs": "Find songs for me. Oh, I've heard Raiz has some good ones.",
           "asr_output_deepgram": "Find songs for me. Oh, I've heard Rais has some good ones.",
           "clarifications": {
-            "artist_name": "Raees"
+            "movie_title": "Raees"
           }
         }
       ]
@@ -64133,7 +64228,9 @@
           "asr_output_openai": "Hey, um, can you get something fun to do on March 10th, yeah?",
           "asr_output_elevenlabs": "Hey, um, can you get something fun to do on March 10th, yeah?",
           "asr_output_deepgram": "Hey. Can you get something fun to do on March tenth? Yeah?",
-          "clarifications": {}
+          "clarifications": {
+            "event_date": "march 10th"
+          }
         }
       ]
     ],
@@ -65790,7 +65887,9 @@
           "asr_output_openai": "OK, look at the weather forecast for the third.",
           "asr_output_elevenlabs": "Okay, look at the weather forecast for the third.",
           "asr_output_deepgram": "Okay. Look at the weather forecast for the third.",
-          "clarifications": {}
+          "clarifications": {
+            "date": "3rd"
+          }
         }
       ]
     ],
@@ -66547,9 +66646,7 @@
           "asr_output_openai": "Right, help me look for... wait, can you help me find a nice house to live in?",
           "asr_output_elevenlabs": "Right. Help me look for\u2014wait. Can you help me find a nice house to live in?",
           "asr_output_deepgram": "Right. Help me look for wait. Can you help me find a nice house to live in?",
-          "clarifications": {
-            "intent": "search for some nice house to live"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -66875,9 +66972,7 @@
           "asr_output_openai": "Can you help me shift some money?",
           "asr_output_elevenlabs": "Can you help me shift some money?",
           "asr_output_deepgram": "You help me shift some money?",
-          "clarifications": {
-            "clarification_needed": "The user query 'Transfer some funds for me' lacks specific details such as the receiver, amount, and payment method, which are essential for executing a payment function."
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -67414,7 +67509,7 @@
           "asr_output_deepgram": "Find me, an SUV available to March seventh.",
           "clarifications": {
             "car_type": "SUV",
-            "end_date_spelling": "7th of March"
+            "end_date": "7th of March"
           }
         }
       ]
@@ -67631,9 +67726,7 @@
           "asr_output_openai": "Could you arrange time for me to view a property, please?",
           "asr_output_elevenlabs": "Could you arrange time for me to view a property please?",
           "asr_output_deepgram": "Could you arrange time for me to view a property, please?",
-          "clarifications": {
-            "property_name_spelling": "property"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -67983,7 +68076,7 @@
           "asr_output_elevenlabs": "Uh, can you help me find some nice events to enjoy in my free time? Like to, uh, buy tickets now for a good one. Thanks.",
           "asr_output_deepgram": "Can you help me find some nice events to enjoy in my free time? Like to, buy tickets now for a good one. Thanks.",
           "clarifications": {
-            "event_name_spelling": "the good one"
+            "task_description": "book the tickets"
           }
         }
       ]
@@ -68491,9 +68584,7 @@
           "asr_output_openai": "Im looking to snag some tickets.",
           "asr_output_elevenlabs": "I'm looking to snag some tickets.",
           "asr_output_deepgram": "I'm looking to snag some tickets.",
-          "clarifications": {
-            "clarification_needed": "The user query lacks specific details such as departure city, destination city, departure date, and departure time, which are required for purchasing bus tickets."
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -68689,7 +68780,8 @@
           "asr_output_elevenlabs": "Uh, could you give me, um, two bus tickets for March 7th?",
           "asr_output_deepgram": "Could you give me, two bus tickets for March seventh?",
           "clarifications": {
-            "departure_date_format": "7th of March"
+            "number_of_passengers": "2",
+            "departure_date": "7th of March"
           }
         }
       ]
@@ -68885,9 +68977,7 @@
           "asr_output_openai": "We're traveling soon and are okay, need to buy bus tickets.",
           "asr_output_elevenlabs": "Uh, we're traveling soon and, uh, okay, need to buy bus tickets.",
           "asr_output_deepgram": "We're traveling soon and, okay, need to buy bus tickets.",
-          "clarifications": {
-            "num_passengers": "some"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -69082,7 +69172,9 @@
           "asr_output_openai": "Um, right. Can you get train tickets from Sacramento?",
           "asr_output_elevenlabs": "Um, right. Can you get train tickets from Sacramento?",
           "asr_output_deepgram": "Right. Can you get train tickets from Sacramento?",
-          "clarifications": {}
+          "clarifications": {
+            "departure_city": "Sacramento"
+          }
         }
       ]
     ],
@@ -69193,7 +69285,9 @@
           "asr_output_openai": "Look up general dentist in Orinda for me.",
           "asr_output_elevenlabs": "Look up general dentist in Orinda for me.",
           "asr_output_deepgram": "Look up general dentist in Arinda for me.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Orinda"
+          }
         }
       ]
     ],
@@ -71292,8 +71386,8 @@
           "clarifications": {
             "province_name": "Chonburi Province",
             "review_score": "4.5 stars",
-            "availability_start_date": "12/03/2024 16:00",
-            "availability_end_date": "12/03/2024 18:00"
+            "availability_start": "12/03/2024 16:00",
+            "availability_end": "12/03/2024 18:00"
           }
         }
       ]
@@ -71425,7 +71519,7 @@
           "asr_output_elevenlabs": "Hey, could you, uhm, get me a luxury cab to 1270 Linford Lane?",
           "asr_output_deepgram": "Hey. Could you, get me a luxury cab to twelve seventy Linford Lane?",
           "clarifications": {
-            "destination_address": "1270 Linford Lane"
+            "destination": "1270 Linford Lane"
           }
         }
       ]
@@ -71925,8 +72019,8 @@
           "asr_output_elevenlabs": "Uh, transfer 122 dollars from my Visa. Thanks!",
           "asr_output_deepgram": "Transfer one twenty two dollars from my Visa. Thanks.",
           "clarifications": {
-            "payment_method": "visa",
-            "amount": "$122"
+            "amount": "$122",
+            "payment_method": "visa"
           }
         }
       ]
@@ -72124,9 +72218,7 @@
           "asr_output_openai": "I need help with a transaction. Let me see, can you handle it?",
           "asr_output_elevenlabs": "I need help with a transaction. Let me see. Can you handle it?",
           "asr_output_deepgram": "I need help with a transaction. Let me see. Can you handle it?",
-          "clarifications": {
-            "transaction_details": "transaction"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -73312,9 +73404,7 @@
           "asr_output_openai": "What's the current price of ACHD?",
           "asr_output_elevenlabs": "What's the current price of ACHD?",
           "asr_output_deepgram": "What's the current price of ACHD?",
-          "clarifications": {
-            "query_spelling": "ACHD"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -73409,7 +73499,9 @@
           "asr_output_openai": "Um, can you find a service provider who's done the job like ten times before?",
           "asr_output_elevenlabs": "Um, can you find a service provider who's done the job like 10 times before?",
           "asr_output_deepgram": "Can you find a service provider who's done the job, like, ten times before?",
-          "clarifications": {}
+          "clarifications": {
+            "job_quantity": "10"
+          }
         }
       ]
     ],
@@ -74233,9 +74325,9 @@
           "asr_output_elevenlabs": "Hey, um, can you book a reservation and arrange cleaning for March 22nd, 2024 in Bangkok, Chatuchak?",
           "asr_output_deepgram": "Hey, can you book a reservation and arrange cleaning for March twenty second twenty twenty four in Bangkok, Chatuchak?",
           "clarifications": {
-            "start_available_date": "22/3/2024",
-            "province_name": "Bangkok",
-            "district_name": "Chatuchak"
+            "service_date": "22/3/2024",
+            "city": "Bangkok",
+            "district": "Chatuchak"
           }
         }
       ]
@@ -74570,7 +74662,9 @@
           "asr_output_openai": "Get a flight to Paris.",
           "asr_output_elevenlabs": "Uh, get a flight to Paris.",
           "asr_output_deepgram": "Get a flight to Paris.",
-          "clarifications": {}
+          "clarifications": {
+            "departure_location": "Paris"
+          }
         }
       ]
     ],
@@ -74911,7 +75005,10 @@
           "asr_output_openai": "Hey, remind me to text Raj in F-I-V minutes.",
           "asr_output_elevenlabs": "Hey, uh, remind me to text Raj in FIV minutes.",
           "asr_output_deepgram": "Hey. Remind me to text Raj in FIV minutes.",
-          "clarifications": {}
+          "clarifications": {
+            "recipient_name": "raj",
+            "reminder_time": "5 mins"
+          }
         }
       ]
     ],
@@ -75105,7 +75202,7 @@
           "asr_output_elevenlabs": "Uh, display all the open tickets from Jira.",
           "asr_output_deepgram": "Display all the open tickets from Jira.",
           "clarifications": {
-            "query_spelling": "frim"
+            "system_name": "Jira"
           }
         }
       ]
@@ -75750,7 +75847,12 @@
           "asr_output_openai": "Hey, can you get me Uber Plus from Berkeley, that's B-E-R-K-E-L-E-Y at zip code 94704, to be here in 10 minutes?",
           "asr_output_elevenlabs": "Hey, can you get me Uber Plus from Berkeley, that's B-E-R-K-E-L-E-Y at zip code 94704 to be here in ten minutes?",
           "asr_output_deepgram": "Hey. Can you get me Uber Plus from Berkeley? That's b e r k e l e y at ZIP code ninety four seven zero four to be here in ten minutes.",
-          "clarifications": {}
+          "clarifications": {
+            "ride_type": "Plus",
+            "location": "Berkeley",
+            "zipcode": "94704",
+            "pickup_time": "10 minutes"
+          }
         }
       ]
     ],
@@ -76140,7 +76242,7 @@
           "asr_output_elevenlabs": "Can you show the Instana events from the last 24 hours?",
           "asr_output_deepgram": "Can you show the events from, the last twenty four hours?",
           "clarifications": {
-            "event_source_spelling": "instana"
+            "event_time_frame": "last 24 hours"
           }
         }
       ]
@@ -76342,7 +76444,7 @@
           "asr_output_elevenlabs": "Hey, um, can you call an Uber for me to Rua Explos\u00e3o 8899?",
           "asr_output_deepgram": "Hey. Can you call an Uber for me to eighty eight ninety nine?",
           "clarifications": {
-            "pickup_location_address": "Rua Explosao, 8899"
+            "pickup_location": "Rua Explosao, 8899"
           }
         }
       ]
@@ -76488,7 +76590,8 @@
           "asr_output_elevenlabs": "Are looking for a cleaning service provider? Oh, and are also need fabric reinforcement services, right?",
           "asr_output_deepgram": "Looking for a cleaning service provider. Oh, and, also need fabric reinforcement services. Right?",
           "clarifications": {
-            "service_type_spelling": "Fabric reinforcement service"
+            "service_type1": "cleaning services",
+            "service_type2": "Fabric reinforcement service"
           }
         }
       ]
@@ -77805,7 +77908,12 @@
           "asr_output_openai": "Gimme Uber in Berkeley, ZIP code 94704, to pick me up in 10 minutes. Thanks.",
           "asr_output_elevenlabs": "Gimme Uber in Berkeley, ZIP code 94704, to pick me up in ten minutes. Thanks!",
           "asr_output_deepgram": "Give me Uber in Berkeley, ZIP code nine four seven zero four, to pick me up in ten minutes. Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "ride_type": "Uber",
+            "location": "Berkeley",
+            "zipcode": "94704",
+            "time": "10 minutes"
+          }
         }
       ]
     ],
@@ -78096,7 +78204,9 @@
           "asr_output_openai": "Can you give me all releases but cap it at 50?",
           "asr_output_elevenlabs": "Can you give me all releases, but cap it at 50?",
           "asr_output_deepgram": "Can you give me all releases, but cap it at fifty?",
-          "clarifications": {}
+          "clarifications": {
+            "max_results": "50"
+          }
         }
       ]
     ],
@@ -78224,8 +78334,8 @@
           "asr_output_elevenlabs": "Um, hey, what versions of Infrana Alert, that's I-N-F-R-A-N-A, Infrana Alert, is Delta using?",
           "asr_output_deepgram": "Hey. What versions of infra nullert, that's I n f r a n a, infra nullert is Delta using?",
           "clarifications": {
-            "product_name_spelling": "Infrana Alert",
-            "user_group_name": "delta"
+            "product_name": "Infrana Alert",
+            "user_group": "delta"
           }
         }
       ]
@@ -78537,7 +78647,7 @@
           "asr_output_elevenlabs": "Provide all releases, but only up to 50.",
           "asr_output_deepgram": "Provide all releases, but only up to fifty.",
           "clarifications": {
-            "max_results_limit": "50"
+            "max_results": "50"
           }
         }
       ]
@@ -79345,7 +79455,10 @@
           "asr_output_elevenlabs": "Uh, bookmaid code seventy-seven fifty-eight for March twenty-eighth at eight thirty A.M., for, um, four hours.",
           "asr_output_deepgram": "Book Maid code, seventy seven fifty eight for March twenty eighth at eight thirty AM for, four hours.",
           "clarifications": {
-            "service_code": "7758"
+            "service_code": "7758",
+            "service_date": "March 28th",
+            "start_time": "8:30 a.m.",
+            "duration_hours": "4 hours"
           }
         }
       ]
@@ -79565,7 +79678,9 @@
           "asr_output_openai": "Ask for cleaning service with a team of three.",
           "asr_output_elevenlabs": "Uh, ask for cleaning service with a team of three.",
           "asr_output_deepgram": "Ask for cleaning service with a team of three.",
-          "clarifications": {}
+          "clarifications": {
+            "team_size": "3 people"
+          }
         }
       ]
     ],
@@ -79947,7 +80062,7 @@
           "asr_output_elevenlabs": "Um, which Studio Ghibli, that's G-H-I-B-L-I, Studio Ghibli film first won Japan Academy Film Prize for Picture of Year? And, uh, yeah, how did its box office success boost studio's global fame?",
           "asr_output_deepgram": "Which Studio Ghibli, that's g h I b l I, Studio Ghibli film first won Japan Academy Film Prize for picture of year, and, yeah, how did its box office success boost studio's global fame?",
           "clarifications": {
-            "query": "What was the first Studio Ghibli film to win the Japan Academy Film Prize for Picture of the Year, and how did its box office success influence the studio's international popularity?"
+            "film_name": "Studio Ghibli film to win the Japan Academy Film Prize for Picture of the Year"
           }
         }
       ]
@@ -80062,7 +80177,9 @@
           "asr_output_openai": "San Francisco's definitely one of those cool cities.",
           "asr_output_elevenlabs": "San Francisco's definitely one of those cool cities.",
           "asr_output_deepgram": "San Franciscos, definitely one of those cool cities.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "San Francisco"
+          }
         }
       ]
     ],
@@ -80132,8 +80249,8 @@
           "asr_output_elevenlabs": "Is the text called \"Meeting Saloni and Sahil in the evening\" relevant to the keyword named Sahil, right?",
           "asr_output_deepgram": "Is the text called meeting Saloni and Sahil in the evening relevant to the keyword named Sahil. Right?",
           "clarifications": {
-            "first_name_spelling": "Saloni",
-            "second_name_spelling": "Sahil"
+            "participant_name1": "Saloni",
+            "participant_name2": "Sahil"
           }
         }
       ]
@@ -80228,7 +80345,10 @@
           "asr_output_openai": "Let me see, a meeting between Saloni, that's S-A-L-O-N-I, Saloni and Sahil, that's S-A-H-I-L, Sahil is there this evening, uh",
           "asr_output_elevenlabs": "Let me see. A meeting between Saloni, that's S-A-L-O-N-I, Saloni and Sahil, that's S-A-H-I-L, Sahil is there this evening at-",
           "asr_output_deepgram": "Let me see. A meeting between Saloni, that's s a l o n I, Saloni and Sahil, that's s a h I l. Sahil is there this evening.",
-          "clarifications": {}
+          "clarifications": {
+            "participant_name1": "Saloni",
+            "participant_name2": "Sahil"
+          }
         }
       ]
     ],
@@ -80563,9 +80683,7 @@
           "asr_output_openai": "Hey, I'm in a meeting right now and need to see if I've got any tasks.",
           "asr_output_elevenlabs": "Hey, uh, I'm in a meeting right now. I need to see if I've got any tasks.",
           "asr_output_deepgram": "Hey. I'm in a meeting right now and need to see if I've got any tasks.",
-          "clarifications": {
-            "meeting_id": "meeting"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -80638,7 +80756,11 @@
           "asr_output_openai": "Get the weather info for 37.8651 North, 119.5383 West, please. I need the hourly forecast for temperature, wind speed, and rain for the next 10 days.",
           "asr_output_elevenlabs": "Uh, get the weather info for 37.8651 north 119.5383 west, please. I need the hourly forecast for temperature, wind speed and rain for the next 10 days.",
           "asr_output_deepgram": "Get the weather info for thirty seven point eight six five one north one nineteen point five three eight three west, please. I need the hourly forecast for temperature, wind speed, and rain for the next ten days.",
-          "clarifications": {}
+          "clarifications": {
+            "latitude": "37.8651 N",
+            "longitude": "119.5383 W",
+            "forecast_duration": "next 10 days"
+          }
         }
       ]
     ],
@@ -81312,9 +81434,7 @@
           "asr_output_openai": "Hey, can snag the event shoes?",
           "asr_output_elevenlabs": "Hey, can snag the event shoes?",
           "asr_output_deepgram": "Hey. Can snag the event shoes?",
-          "clarifications": {
-            "event_name_spelling": "event shoes"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -81937,8 +82057,7 @@
           "asr_output_elevenlabs": "Hey, um, can you check what versions of INFRA-NA Alert Delta is using, yeah?",
           "asr_output_deepgram": "Hey. Can you check what versions of I n f r a n a alert delta is using? Yeah?",
           "clarifications": {
-            "alert_configuration_id": "delta",
-            "product_name": "Infrana Alert"
+            "infrastructure_alert_configuration_id": "delta"
           }
         }
       ]
@@ -82249,9 +82368,7 @@
           "asr_output_openai": "Can you grab the event shoes for me?",
           "asr_output_elevenlabs": "Can you grab the event shoes for me?",
           "asr_output_deepgram": "Can you grab the event shoes for me?",
-          "clarifications": {
-            "event_name": "event shoes"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -82371,9 +82488,7 @@
           "asr_output_openai": "Hey, can you get the event shoes?",
           "asr_output_elevenlabs": "Hey, can you get the event shoes?",
           "asr_output_deepgram": "Hey. Can you get the event shoes?",
-          "clarifications": {
-            "search_term": "shoes"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -82491,9 +82606,7 @@
           "asr_output_openai": "Hey, uh, okay, get the event shoes.",
           "asr_output_elevenlabs": "Hey, uh, okay. Get the event shoes.",
           "asr_output_deepgram": "Hey. Okay. Get the event shoes.",
-          "clarifications": {
-            "event_name": "event shoes"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -82692,7 +82805,10 @@
           "asr_output_openai": "Can you explain the bar chart for the patient, okay?",
           "asr_output_elevenlabs": "Uh, can you explain the bar chart for the patient? Okay?",
           "asr_output_deepgram": "Can you explain the bar chart for the patient? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "chart_type": "bar chart",
+            "subject": "Patient"
+          }
         }
       ]
     ],
@@ -83366,7 +83482,9 @@
           "asr_output_openai": "Hey, uh, right. You know, I'm getting an error that says too many arguments.",
           "asr_output_elevenlabs": "Hey, uh, right. You know, I'm getting an error that says too many arguments.",
           "asr_output_deepgram": "Hey. Right. You know, I'm getting an error that says too many arguments.",
-          "clarifications": {}
+          "clarifications": {
+            "error_message": "Too many arguments"
+          }
         }
       ]
     ],
@@ -83838,7 +83956,7 @@
           "asr_output_elevenlabs": "Yeah. Chat S-C-E test. Jinx you at U-S-zero-one O-D-C H-Q-D-C one G-P-U zero thirteen. Dollar sign G go ahead. No, just execute it.",
           "asr_output_deepgram": "Yeah. Chat s c e test. Jingsu at US zero one o d c h q d c one GPU zero thirteen. Dollar sign g go ahead. No. Just execute it.",
           "clarifications": {
-            "command_spelling": "[jinxu@us01odc-hqdc-1-gpu013 ~]$ executing"
+            "command": "[jinxu@us01odc-hqdc-1-gpu013 ~]$ executing"
           }
         }
       ]
@@ -83996,7 +84114,9 @@
           "asr_output_openai": "a run in the task",
           "asr_output_elevenlabs": "Uh, running the task.",
           "asr_output_deepgram": "Run-in the task.",
-          "clarifications": {}
+          "clarifications": {
+            "clarification_needed": "executing...."
+          }
         }
       ]
     ],
@@ -84153,9 +84273,7 @@
           "asr_output_openai": "Run the CLI interactively to type commands directly into the terminal for Opsmate. Oh, if you've got, um, any specific tasks or commands, let me know and help with the syntax.",
           "asr_output_elevenlabs": "Uh, run the CLI interactively to type commands directly into the terminal for OpsMate. Oh, if you've got, um, any specific tasks or commands, let me know and help with the syntax.",
           "asr_output_deepgram": "Run the CLI interactively to type commands directly into the terminal for OpsMate. Oh, if you've got, any specific tasks or commands, let me know and help with the syntax.",
-          "clarifications": {
-            "system_name": "OpsMate"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -84313,7 +84431,7 @@
           "asr_output_elevenlabs": "Hey there. You're on a OpsMate chatbot. Just type your message and hit enter for a reply. When you're done, type exit to quit. Thanks.",
           "asr_output_deepgram": "Hey there. You're on a OPSMate chatbot. Just type your message and hit enter for a reply. When you're done, type exit to quit. Thanks.",
           "clarifications": {
-            "user_query_context": "OpsMate Chatbot"
+            "user_query": "chatSCE_test"
           }
         }
       ]
@@ -84472,7 +84590,7 @@
           "asr_output_elevenlabs": "Let me see. Hey, could you give me the address for Latitude 74.98764 using the geocoding API?",
           "asr_output_deepgram": "Let me see. Hey. Could you give me the address for latitude seventy four point nine eight seven six four using the geocoding API?",
           "clarifications": {
-            "latitude_value": "74.98764",
+            "latitude": "74.98764",
             "api_name": "Geocoding API"
           }
         }
@@ -84788,9 +84906,7 @@
           "asr_output_openai": "Run the Bash script by typing `bash start`.",
           "asr_output_elevenlabs": "Run the bash script by typing backtick bash start backtick.",
           "asr_output_deepgram": "Run the bash script by typing backtick bash start backtick.",
-          "clarifications": {
-            "product_name_spelling": "xVG"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -85135,7 +85251,7 @@
           "asr_output_elevenlabs": "Hey, remove the APDEX config for D34.",
           "asr_output_deepgram": "Hey. Remove the APDEX config for four zero four.",
           "clarifications": {
-            "id": "d0404"
+            "config_id": "d0404"
           }
         }
       ]
@@ -85412,7 +85528,9 @@
           "asr_output_openai": "Let me see... OK, pull up dashboard for dashing.",
           "asr_output_elevenlabs": "Let me see. Okay, pull up dashboard for dashing.",
           "asr_output_deepgram": "Let me see. Okay. Pull up dashboard for dashing.",
-          "clarifications": {}
+          "clarifications": {
+            "dashboard_name": "dashing"
+          }
         }
       ]
     ],
@@ -85853,8 +85971,8 @@
           "asr_output_elevenlabs": "Uh, right format of C-U-L-P-R-I-T-underscore-UNIQUE-underscore-ID ain't matchin' C-R-M-underscore-ID.",
           "asr_output_deepgram": "Right. Format of c u l p r I t underscore unique underscore ID ain't matching CRM underscore ID.",
           "clarifications": {
-            "culprit_id_format": "culprit_unique_id",
-            "crm_id_format": "crm_id"
+            "first_identifier": "culprit_unique_id",
+            "second_identifier": "crm_id"
           }
         }
       ]
@@ -87173,9 +87291,7 @@
           "asr_output_openai": "Hey, can you snap pic of the same thing?",
           "asr_output_elevenlabs": "Hey, can you snap pic of the same thing?",
           "asr_output_deepgram": "Hey. Can you snap pic of the same thing?",
-          "clarifications": {
-            "search_query": "uma foto do mesmo"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -87750,7 +87866,9 @@
           "asr_output_openai": "I'm hunting for a three-bedroom apartment in Zurich.",
           "asr_output_elevenlabs": "I'm hunting for a three-bedroom apartment in Zurich. That's Z-U-R-I-C-H, Zurich.",
           "asr_output_deepgram": "I'm hunting for a three bedroom apartment in Zurich. That's z u r I c h, Zurich.",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Zuerich"
+          }
         }
       ]
     ],
@@ -88465,7 +88583,9 @@
           "asr_output_openai": "Can you help me with this error? It says 'Message object is not subscriptable'.",
           "asr_output_elevenlabs": "Uh, can you help me with this error? It says message object is not subscriptable.",
           "asr_output_deepgram": "Can you help me with this error? It says message object is not scriptable.",
-          "clarifications": {}
+          "clarifications": {
+            "error_message": "'Message' object is not subscriptable"
+          }
         }
       ]
     ],
@@ -88767,9 +88887,7 @@
           "asr_output_openai": "Hey, can you tell me who Shashitej Reddy is? That's S-H-A-S-H-I-T-E-J R-E-D-D-Y, Shashitej Reddy.",
           "asr_output_elevenlabs": "Hey, can you tell me who Shashi Tej Reddy is? That's S-H-A-S-H-I T-E-J R-E-D-D-Y, Shashi Tej Reddy.",
           "asr_output_deepgram": "Hey. Can you tell me who Shashi Tej Reddy is? That's s h a s h I t e j r e d d y. Shashi Tej Reddy.",
-          "clarifications": {
-            "person_name": "shashi tej reddy"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -88818,7 +88936,7 @@
           "asr_output_elevenlabs": "Hey, can you tell me who Shashi Tej Reddy, that's S-H-A-S-H-I T-E-J R-E-D-D-Y, Shashi Tej Reddy is?",
           "asr_output_deepgram": "Hey. Can tell me who Shashi Tejreddy? That's s h a s h I t e j r e d d y. Shashi Tejreddy is.",
           "clarifications": {
-            "person_name_spelling": "shashi tej reddy"
+            "person_name": "Shashi Tej Reddy"
           }
         }
       ]
@@ -88893,7 +89011,7 @@
           "asr_output_elevenlabs": "Hey, could you tell me about Vamsi Krishna Dulam, that's V-A-M-S-I K-R-I-S-H-N-A D-U-L-A-M, Vamsi Krishna Dulam?",
           "asr_output_deepgram": "Hey. Could you tell me about Vamsi Krishnadulam? That's v a m s I k r I s h n a d u l a m. Vamsi Krishnadulam.",
           "clarifications": {
-            "person_name": "vamsi krishna dulam"
+            "person_name": "Vamsi Krishna Dulam"
           }
         }
       ]
@@ -88954,7 +89072,7 @@
           "asr_output_elevenlabs": "Hey, let me see. Can you tell me who Shashi Tej Reddy is? That's S-H-A-S-H-I T-E-J R-E-D-D-Y. Shashi Tej Reddy.",
           "asr_output_deepgram": "Hey. Let me see. Can you tell me who Shashi Tejreddy is? That's s h a s h I t e j r e d d y. Shashi Tejreddy.",
           "clarifications": {
-            "person_name_spelling": "shashi tej reddy"
+            "person_name": "Shashi Tej Reddy"
           }
         }
       ]
@@ -89167,9 +89285,7 @@
           "asr_output_openai": "Tell me about FMP's Income Statement API. How does it give real-time income statement data for different companies, public and private, and ETFs? I want to know how this data can help track profitability over time, compare companies, and find business trends.",
           "asr_output_elevenlabs": "Tell me about FMP's income statement API. How does it give real-time income statement data for different companies, public and private and ETFs? I want to know how this data can help track profitability over time, compare companies, and find business trends.",
           "asr_output_deepgram": "Tell me about FMP's income statement API. How does it give real time income statement data for different companies, public and private and ETFs? I want to know how this data can help track profitability over time, compare companies, and find business trends.",
-          "clarifications": {
-            "api_name": "FMP's Income Statement API"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -89377,7 +89493,10 @@
           "asr_output_openai": "Can you give me the list of long weekends in Canada for 2023? Yeah, I'm planning some trips and want to add 'em to my holiday planning app.",
           "asr_output_elevenlabs": "Uh, can you give me the list of long weekends in Canada for 2023? Yeah, I'm planning some trips and want to add them to my holiday planning app.",
           "asr_output_deepgram": "Can you give me the list of long weekends in Canada for twenty twenty three? Yeah. I'm planning some trips and wanna add them to my holiday planning app.",
-          "clarifications": {}
+          "clarifications": {
+            "country_name": "Canada",
+            "year": "2023"
+          }
         }
       ]
     ],
@@ -89428,7 +89547,9 @@
           "asr_output_elevenlabs": "Um, hey, could you use the geocoding API to get the address for latitude 37.4224764 and, uh, longitude -122.0842499? Yeah.",
           "asr_output_deepgram": "Hey. Could you use the geocoding API to get the address for latitude thirty seven point four two two four seven six four and a longitude negative one twenty two point zero eight four two four nine nine? Yeah?",
           "clarifications": {
-            "api_name": "Geocoding API"
+            "api_name": "Geocoding API",
+            "latitude": "37.4224764",
+            "longitude": "-122.0842499"
           }
         }
       ]
@@ -90334,7 +90455,7 @@
           "asr_output_elevenlabs": "Uh, I'm traveling on March 8th, 2023. Could you, um, get train tickets for me? Yeah, I'm like flexible on the fare class.",
           "asr_output_deepgram": "I'm traveling on March eighth twenty twenty three. Could you, get train tickets for me? Yeah. I'm like flexible on the fare class.",
           "clarifications": {
-            "date_of_journey": "8th of march 2023"
+            "date_of_journey": "8th of March 2023"
           }
         }
       ]
@@ -90636,7 +90757,7 @@
           "asr_output_elevenlabs": "Umm, can you book me business class train ticket for March 3rd, 2023 right?",
           "asr_output_deepgram": "Can you book me business class train ticket for March third twenty twenty three? Right?",
           "clarifications": {
-            "date_of_journey": "03/03/2023",
+            "date_of_journey": "3rd of March 2023",
             "fare_class": "business class"
           }
         }
@@ -90939,8 +91060,8 @@
           "asr_output_elevenlabs": "I need, uhm, to get a rental car, preferably a sedan for pickup in Phoenix at 6 PM. Thanks.",
           "asr_output_deepgram": "I need, to get a rental car, preferably a sedan, for pickup in Phoenix at six PM. Thanks.",
           "clarifications": {
-            "pickup_location": "Phoenix",
             "pickup_time": "6 in the evening",
+            "pickup_location": "Phoenix",
             "car_type": "sedan"
           }
         }
@@ -91052,7 +91173,8 @@
           "asr_output_deepgram": "Could you, book a table one at a restaurant in Half Moon Bay this Sunday, October first twenty twenty three?",
           "clarifications": {
             "location": "Half Moon Bay",
-            "date": "2023 10-1"
+            "reservation_date": "2023-10-01",
+            "reservation_day": "this Sunday"
           }
         }
       ]
@@ -91181,7 +91303,7 @@
           "asr_output_elevenlabs": "Hey, could you, um, get bus tickets to Sacramento for 3 p.m. departure today? Thanks!",
           "asr_output_deepgram": "Hey. Could you, get bus tickets to Sacramento for three PM departure today? Thanks.",
           "clarifications": {
-            "to_city": "Sacramento",
+            "destination_city": "Sacramento",
             "departure_time": "3 PM"
           }
         }
@@ -91380,7 +91502,8 @@
           "asr_output_deepgram": "Let me see. Okay. Get me a train to Washington DC on March thirteenth. I need one seat.",
           "clarifications": {
             "destination_city": "Washington, DC",
-            "date_of_journey": "March 13th"
+            "date_of_journey": "March 13th",
+            "number_of_adults": "one"
           }
         }
       ]

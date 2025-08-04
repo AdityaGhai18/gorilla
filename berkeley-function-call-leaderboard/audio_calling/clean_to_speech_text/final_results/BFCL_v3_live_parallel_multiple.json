@@ -352,7 +352,7 @@
             "location1": "Paris, France",
             "location2": "Letterkenny, Ireland",
             "news_category": "Technology",
-            "language_code": "en"
+            "language": "English"
           }
         }
       ]
@@ -502,8 +502,8 @@
           "asr_output_elevenlabs": "Uh, show me the list of interviewers for, um, Python and Java?",
           "asr_output_deepgram": "Show me the list of interviewers for, Python and Java.",
           "clarifications": {
-            "skill_spelling": "Python",
-            "second_skill_spelling": "Java"
+            "skill1": "Python",
+            "skill2": "Java"
           }
         }
       ]
@@ -576,7 +576,10 @@
           "asr_output_openai": "Right. What's price for a machine with 2 CPUs and 4 GB RAM on all cloud platforms?",
           "asr_output_elevenlabs": "Right. What's price for a machine with two CPUs and 4 gigabytes RAM on all cloud platforms?",
           "asr_output_deepgram": "Right. What's price for a machine with two CPUs and four gigabytes RAM on all cloud platforms?",
-          "clarifications": {}
+          "clarifications": {
+            "cpu_count": "2",
+            "memory_gb": "4"
+          }
         }
       ]
     ],
@@ -659,8 +662,7 @@
           "asr_output_elevenlabs": "Okay, do these steps for me. First, clone the repository at git@github.com: Zellar HQ/NodeJS-Welcome.git. Next, check out what's inside the repo and then create or update the docker file based on, uh, what you find. Also, from your analysis, make Kubernetes yamls. Right. Don't forget to add all the changed files to get changes. Finally, commit everything and push it back to the, um, repo.",
           "asr_output_deepgram": "Okay. Do these steps for me. First, clone the repository at git at github dot com colon zeller h q slash node j s dash welcome dot git. Next, check out what's inside the repo and then create or update the Docker file based on, what you find. Also, from your analysis, make Kubernetes YAMLs. Right. Don't forget to add all the changed files to git changes. Finally, commit everything and push it back to the repo.",
           "clarifications": {
-            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git",
-            "directory_name": "nodejs-welcome"
+            "repository_url": "git@github.com:zelarhq/nodejs-welcome.git"
           }
         }
       ]
@@ -822,7 +824,7 @@
           "asr_output_deepgram": "Can you tell me about, like, important events, news articles, and developments since October twenty twenty one? Make sure you check this exactly as I said and, only include stuff from after twenty twenty two. And, also, could you get me a digital painting named a masked woman with bright peacock feathers? I'm looking for some thin, complex and elegant with green highlighted lines and intricate patterns, kinda like a cyberpunk Alphonse Mucha. That's a l p h o n s e m u c h a Alphonse Mucha.",
           "clarifications": {
             "search_query": "significant events, news articles, and developments that since October 2021",
-            "image_prompt": "a digital painting of a masked woman with bright peacock feathers, complex and elegant, with green highlighted lines and complex patterns, reminiscent of cyberpunk Alphonse Mucha's style"
+            "image_description": "a digital painting of a masked woman with bright peacock feathers, complex and elegant, with green highlighted lines and complex patterns, reminiscent of cyberpunk Alphonse Mucha's style"
           }
         }
       ]
@@ -1277,14 +1279,14 @@
           "asr_output_elevenlabs": "Let me see. I'm working on fixing Java compilation error in my project. The String Number Handler class extends abstract cell handler and overrides methods like getCellValue, setCellValue, getExcelType, and getDefaultExcelFormat. But, oh, the reason error is saying get numeric value can't be found in cell result. Can you look for any classes related to C-E-L-L-R-E S-U-L-T, cell result, in the repository? Include in subdirectories. Also, could you give method signatures for setCellValue and getCellValue in A-B-S-T-R-A-C-T C-E-L-L-H-A-N-D-L-E R, abstract cell handler, to make sure I'm overriding them right?",
           "asr_output_deepgram": "Let me see. In working on fixing Java compilation error in my project, the string number handler class extends abstract cell handler and overrides methods like get cell value, set cell value, get x l type, and get default excel format. But, oh, the reason error saying get numeric value can't be found in cell result. Can you look for any classes related to c e l l r e s u l t cell result in the repository, including subdirectories? Also, could you give method signatures for set cell value and get cell value in a b s t r a c t c, e l l h a n d l e, our abstract cell handler to make sure I'm overriding them right?",
           "clarifications": {
-            "search_string_spelling": "CellResult",
-            "context_class1_spelling": "StringNumberHandler",
-            "context_class2_spelling": "AbstractCellHandler",
-            "context_method1_spelling": "getCellValue",
-            "context_method2_spelling": "setCellValue",
-            "context_method3_spelling": "getExcelType",
-            "context_method4_spelling": "getDefaultExcelFormat",
-            "context_method5_spelling": "getNumericValue"
+            "search_string": "CellResult",
+            "context_class1": "StringNumberHandler",
+            "context_class2": "AbstractCellHandler",
+            "context_method1": "getCellValue",
+            "context_method2": "setCellValue",
+            "context_method3": "getExcelType",
+            "context_method4": "getDefaultExcelFormat",
+            "context_method5": "getNumericValue"
           }
         }
       ]
@@ -1547,7 +1549,10 @@
           "asr_output_elevenlabs": "What's the highest common factor of, uh, 36 and 48? Also, um, how steep's the curve of the function F of X equals X squared at X equals 5, okay?",
           "asr_output_deepgram": "What's the highest common factor of, thirty six and forty eight? Also, how steeps the curve of the function f of x equals x squared at x equals five. Okay?",
           "clarifications": {
-            "function_expression": "f(x) = x^2"
+            "first_number": "36",
+            "second_number": "48",
+            "function_expression": "f(x) = x^2",
+            "evaluation_point": "x = 5"
           }
         }
       ]
@@ -1625,8 +1630,10 @@
           "asr_output_elevenlabs": "First, uh, get the greatest common divisor of 36 and 48. Then... Um... Okay. Estimate the derivative of F of X equals X squared at X equals five.",
           "asr_output_deepgram": "First, get the greatest common divisor of thirty six and forty eight. Then, okay, estimate the derivative of f of x equals x squared at x equals five.",
           "clarifications": {
+            "first_number": "36",
+            "second_number": "48",
             "function_expression": "f(x) = x^2",
-            "point_x_value": "5"
+            "evaluation_point": "x = 5"
           }
         }
       ]
@@ -1787,7 +1794,8 @@
           "asr_output_elevenlabs": "Uh, what's the area of a square with a five-centimeter side? And um, oh, what's the weather like in Queenstown, Singapore?",
           "asr_output_deepgram": "What's the area of a square with a five centimeter side? And, oh, what's the weather like in Queenstown, Singapore?",
           "clarifications": {
-            "location": "Queenstown Singapore"
+            "location": "Queenstown Singapore",
+            "side_length": "5 cm"
           }
         }
       ]
@@ -1849,7 +1857,7 @@
           "asr_output_elevenlabs": "Uh, turn it twenty degrees and, um, flip it horizontally. Thanks.",
           "asr_output_deepgram": "Turn it twenty degrees and, flip it horizontally. Thanks.",
           "clarifications": {
-            "rotation_degree": "20 degree",
+            "rotation_degrees": "20",
             "flip_direction": "horizontally"
           }
         }
@@ -2036,7 +2044,7 @@
           "clarifications": {
             "event_type": "music or theater",
             "city": "San Diego, CA",
-            "date": "2023-03-01"
+            "date": "March 1st 2023"
           }
         }
       ]
@@ -2301,7 +2309,7 @@
           "clarifications": {
             "event_type": "music concerts or theater plays",
             "city": "Los Angeles",
-            "date": "2023-03-10"
+            "date": "March 10th"
           }
         }
       ]
@@ -2564,9 +2572,10 @@
           "asr_output_elevenlabs": "Hey, I'm planning my trip and could use a hand. Can you find a music event in New York for May 21st, 2023? I'm also heading there from Boston by bus, same date, so could you look up a direct bus itinerary for two?",
           "asr_output_deepgram": "Hey. I'm planning my trip and could use a hand. Can you find a music event in New York for May twenty first twenty twenty three? I'm also heading there from Boston by bus. Same date. So could you look up a direct bus itinerary for two?",
           "clarifications": {
+            "event_city": "New York",
             "event_date": "2023-05-21",
             "departure_city": "Boston, MA",
-            "destination_city": "New York, NY",
+            "destination_city": "New York",
             "bus_departure_date": "2023-05-21",
             "number_of_passengers": "2"
           }
@@ -2951,10 +2960,10 @@
           "asr_output_elevenlabs": "Find a hairstylist in Sunnyvale and set me up with an appointment at Elegant Styles Salon for 3 PM on May 10th, 2023.",
           "asr_output_deepgram": "Find a hairstylist in Sunnyvale, and set me up with an appointment at Elegant Style Salon for three PM on May tenth two thousand twenty three.",
           "clarifications": {
-            "salon_name": "Elegant Styles",
+            "city": "Sunnyvale, CA",
+            "stylist_name": "Elegant Styles",
             "appointment_time": "15:00",
-            "appointment_date": "2023-05-10",
-            "city": "Sunnyvale, CA"
+            "appointment_date": "2023-05-10"
           }
         }
       ]
@@ -3260,8 +3269,8 @@
           "asr_output_elevenlabs": "Can you get me all pending and active mandates for users Parath, that's P-A-R-A-T-H, Parath, and Bhanu, that's B-H-A-N-U, Bhanu?",
           "asr_output_deepgram": "Can you get me all pending and active mandates for users Parath? That's p a r a t h, Parath, and Banu. That's b h a n u. Banu.",
           "clarifications": {
-            "first_user_name": "parath",
-            "second_user_name": "bhanu"
+            "user_name1": "parath",
+            "user_name2": "bhanu"
           }
         }
       ]

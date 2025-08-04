@@ -106,7 +106,11 @@
           "asr_output_openai": "Hey, can you look up the area of a triangle with sides 3, 4, and 5?",
           "asr_output_elevenlabs": "Hey, can you look up the area of a triangle with sides 3, 4, and 5?",
           "asr_output_deepgram": "Hey, can you look up the area of a triangle with sides three, four, and five?",
-          "clarifications": {}
+          "clarifications": {
+            "first_side_length": "3",
+            "second_side_length": "4",
+            "third_side_length": "5"
+          }
         }
       ]
     ],
@@ -255,7 +259,10 @@
           "asr_output_openai": "Oh, calculate the Euclidean distance between point A at (3, 4) and point B at (2, 1)? No, you mean one-two.",
           "asr_output_elevenlabs": "Oh, calculate the Euclidean distance between point A at 3,4 and point B at 2,1? No, you mean 1,2.",
           "asr_output_deepgram": "Oh, calculate the Euclidean distance between point a at three four and point b at two one? No. You mean one two?",
-          "clarifications": {}
+          "clarifications": {
+            "coordinates_pointA": "A(3,4)",
+            "coordinates_pointB": "B(1,2)"
+          }
         }
       ]
     ],
@@ -337,8 +344,8 @@
           "asr_output_elevenlabs": "Yeah. What's the displacement for a car starting at 20 meters per second speeding up by 10 meters per second squared over five seconds in a straight line?",
           "asr_output_deepgram": "Yeah. What's the displacement for a car starting at twenty meters per second, speeding up by ten meters per second squared over five seconds in a straight line?",
           "clarifications": {
-            "initial_speed_value": "20 m/s",
-            "acceleration_value": "10 m/s^2",
+            "initial_speed": "20 m/s",
+            "acceleration": "10 m/s^2",
             "time_interval": "5 seconds"
           }
         }
@@ -515,7 +522,7 @@
           "asr_output_deepgram": "Can you figure out capacitance of a parallel plate capacitor with, a plate area of ten square meters, a gap of zero point zero one meters, and a dielectric constant of one point zero?",
           "clarifications": {
             "plate_area": "10 square meters",
-            "distance_between_plates": "0.01 meters",
+            "plate_distance": "0.01 meters",
             "dielectric_constant": "1.0"
           }
         }
@@ -604,9 +611,9 @@
           "asr_output_elevenlabs": "Um, how can I check, uh, deer population growth and their effects on woodlands in Washington State over the last decade or so? Oh?",
           "asr_output_deepgram": "How can I check, deer population growth and their effects on woodlands in Washington state over the last decade or so? Oh,",
           "clarifications": {
-            "species_name": "deer",
-            "location_name": "Washington state",
-            "time_period": "past decade"
+            "species": "deer",
+            "location": "Washington state",
+            "duration": "past decade"
           }
         }
       ]
@@ -779,7 +786,9 @@
           "asr_output_openai": "Tom, can you work out John's average grade with these scores: Math 90, Science 75, History 82, and Music 89?",
           "asr_output_elevenlabs": "Um, can you work out John's average grade with these scores? Math 90, science 75, history 82, and music 89.",
           "asr_output_deepgram": "Can you work out John's average grade with these scores? Math, ninety, science, seventy five, history, eighty two, and music, eighty nine.",
-          "clarifications": {}
+          "clarifications": {
+            "student_name": "John"
+          }
         }
       ]
     ],
@@ -849,6 +858,7 @@
           "clarifications": {
             "database_name": "employees",
             "table_name": "personal_data",
+            "operation": "delete",
             "columns_to_delete": [
               "email addresses",
               "social security numbers"
@@ -933,8 +943,8 @@
           "asr_output_elevenlabs": "Um, can calculate the roots of a quadratic equation with coefficients 5, 20, and minus 25?",
           "asr_output_deepgram": "Can calculate the roots of a quadratic equation with coefficients five, twenty, and minus twenty five.",
           "clarifications": {
-            "second_degree_coefficient": "5",
-            "first_degree_coefficient": "20",
+            "coefficient_a": "5",
+            "coefficient_b": "20",
             "constant_term": "-25"
           }
         }
@@ -1037,7 +1047,9 @@
           "asr_output_deepgram": "For Tech Inc, t e c h space I n c, what's the year over year growth rate if they made one million dollars in twenty nineteen and, one point two million in twenty twenty?",
           "clarifications": {
             "company_name": "Tech Inc",
+            "year1": "2019",
             "year1_revenue": "$1M",
+            "year2": "2020",
             "year2_revenue": "$1.2M"
           }
         }
@@ -1312,8 +1324,8 @@
           "asr_output_deepgram": "What's the solar firm's potential at, coordinates forty three point six five three two two five minus seventy nine point three eight three one eight six in December with an eight thousand square foot panel area? Yeah?",
           "clarifications": {
             "coordinates": "[43.653225, -79.383186]",
-            "panel_area": "80000 sq ft",
-            "month": "December"
+            "month": "December",
+            "panel_area": "80000 sq ft"
           }
         }
       ]
@@ -1392,9 +1404,9 @@
           "asr_output_elevenlabs": "Hey, what's the smallest population size needed to keep the genetic diversity of wild tigers for 100 generations with a 95% chance?",
           "asr_output_deepgram": "Hey. What's the smallest population size needed to keep the genetic diversity of wild tigers for one hundred generations with a ninety five percent chance?",
           "clarifications": {
-            "species_name": "wild tiger",
-            "generations_count": "100",
-            "probability_value": "0.95"
+            "species": "wild tiger",
+            "generations": "100",
+            "probability": "0.95"
           }
         }
       ]
@@ -1493,6 +1505,8 @@
           "asr_output_elevenlabs": "Um, what's euro to dollar conversion rate for January 1st 2022?",
           "asr_output_deepgram": "What's euro to dollar conversion rate for, January first twenty twenty two?",
           "clarifications": {
+            "from_currency": "Euro",
+            "to_currency": "Dollar",
             "conversion_date": "January 1, 2022"
           }
         }
@@ -1587,7 +1601,8 @@
           "asr_output_elevenlabs": "Hey, um, can you tell me who the main participants were and where the Battle of Stalingrad happened?",
           "asr_output_deepgram": "Hey. Can you tell me who the main participants were and where the Battle of Stalingrad happened?",
           "clarifications": {
-            "battle_name": "Battle of Stalingrad"
+            "battle_name": "Battle of Stalingrad",
+            "location": "Stalingrad"
           }
         }
       ]
@@ -1656,7 +1671,8 @@
           "asr_output_elevenlabs": "Um, Ryan, what are three major schisms in, uh, Christian history?",
           "asr_output_deepgram": "Right. What are three major schisms in, Christian history?",
           "clarifications": {
-            "event_name": "three great Schism"
+            "religion": "Christianity",
+            "count": "three"
           }
         }
       ]
@@ -1742,8 +1758,8 @@
           "asr_output_elevenlabs": "Hey, um, can you say how much it would cost to get a marble sculpture three feet tall?",
           "asr_output_deepgram": "Hey. Can you say how much it would cost to get a marble sculpture three feet tall?",
           "clarifications": {
-            "material_type": "marble",
-            "sculpture_size": "3 feet"
+            "material": "marble",
+            "size": "3 feet"
           }
         }
       ]
@@ -1832,8 +1848,8 @@
           "asr_output_elevenlabs": "Right. How do I make a sound at 445... No, at 440 hertz for five seconds? What's the function for it and how do I use it?",
           "asr_output_deepgram": "Right. How do I make a sound at four forty five? No. At four forty hertz for five seconds? What's the function for it, and how do I use it?",
           "clarifications": {
-            "frequency_value": "440Hz",
-            "duration_value": "5 seconds"
+            "frequency": "440Hz",
+            "duration": "5 seconds"
           }
         }
       ]
@@ -1973,8 +1989,7 @@
           "asr_output_elevenlabs": "Hey, um, could you get me the latest stats for LeBron James? I'm looking for, uh, his points per game, assists, and minutes per game.",
           "asr_output_deepgram": "Hey. Could you get me the latest stats for LeBron James? I'm looking for, his points per game, assists, and minutes per game.",
           "clarifications": {
-            "player_name": "LeBron James",
-            "stats_fields": "points per game, assists, minutes per game"
+            "player_name": "LeBron James"
           }
         }
       ]
@@ -2075,7 +2090,11 @@
           "asr_output_openai": "Um, what's the fastest way to go from London to Edinburgh for the chess championship? And how far is it?",
           "asr_output_elevenlabs": "Um, what's the fastest way to go from London to Edinburgh for the chess championship? And, uh, how far is it?",
           "asr_output_deepgram": "What's the fastest way to go from London to Edinburgh for the chess championship, and, how far is it?",
-          "clarifications": {}
+          "clarifications": {
+            "start": "London",
+            "destination": "Edinburgh",
+            "event_name": "chess championship"
+          }
         }
       ]
     ],
@@ -2346,7 +2365,10 @@
           "asr_output_openai": "Can you get, like, the quickest route from Paris to Rome using public transport?",
           "asr_output_elevenlabs": "Uh, can you get like the quickest route from Paris to Rome using public transport?",
           "asr_output_deepgram": "Can you get, like, the quickest route from Paris to Rome using public transport?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location": "Paris, France",
+            "end_location": "Rome, Italy"
+          }
         }
       ]
     ],
@@ -2415,7 +2437,7 @@
           "clarifications": {
             "coefficient_a": "2",
             "coefficient_b": "3",
-            "constant_c": "-4"
+            "constant_term": "-4"
           }
         }
       ]
@@ -2504,8 +2526,8 @@
           "asr_output_elevenlabs": "Hey, can you see where the functions y=3x+2 and y=2x+3 intersect?",
           "asr_output_deepgram": "Hey. Can you see where the functions y equals three x plus two and y equals two x plus three intersect?",
           "clarifications": {
-            "first_function_expression": "3x+2",
-            "second_function_expression": "2x+3"
+            "first_function": "3x+2",
+            "second_function": "2x+3"
           }
         }
       ]
@@ -2562,7 +2584,10 @@
           "asr_output_openai": "Hey, um, can you say the area of a rectangle that's twelve meters long and five meters wide?",
           "asr_output_elevenlabs": "Hey, um, can you say the area of a rectangle that's 12 meters long and 5 meters wide?",
           "asr_output_deepgram": "Hey, can you say the area of a rectangle that's twelve meters long and five meters wide?",
-          "clarifications": {}
+          "clarifications": {
+            "rectangle_length": "12 meters",
+            "rectangle_width": "5 meters"
+          }
         }
       ]
     ],
@@ -2719,7 +2744,10 @@
           "asr_output_openai": "Um, hey, can you figure out the volume of a cone with a radius of 4 and a height of 7?",
           "asr_output_elevenlabs": "Um, hey, can you figure out the volume of a cone with a radius of 4 and a, a height of 7?",
           "asr_output_deepgram": "Hey. Can you figure out the volume of a cone with a radius of four and, a height of seven?",
-          "clarifications": {}
+          "clarifications": {
+            "cone_radius": "4",
+            "cone_height": "7"
+          }
         }
       ]
     ],
@@ -2790,7 +2818,7 @@
           "asr_output_elevenlabs": "Um, can you find the integral of f of x equals three x squared from one to two?",
           "asr_output_deepgram": "Can you find the integral of f of x equals three x squared from one to two?",
           "clarifications": {
-            "function_expression": "3x^2",
+            "function_expression": "f(x) = 3x^2",
             "lower_bound": "1",
             "upper_bound": "2"
           }
@@ -2864,7 +2892,10 @@
           "asr_output_openai": "Hey, can you find the greatest\u2014oh, no, the least common multiple of 18 and 12?",
           "asr_output_elevenlabs": "Hey, can you find the greatest\u2014 oh, no, the least common multiple of 18 and 12?",
           "asr_output_deepgram": "Hey. Can you find the greatest oh, no. The least common multiple of eighteen and twelve.",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "18",
+            "second_number": "12"
+          }
         }
       ]
     ],
@@ -2946,7 +2977,10 @@
           "asr_output_openai": "Um, hey, what's the greatest common divisor of 128 and 256?",
           "asr_output_elevenlabs": "Um, hey, what's the greatest common divisor of one twenty-eight and two fifty-six?",
           "asr_output_deepgram": "Hey. What's the greatest common divisor of one twenty eight and two fifty six?",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "128",
+            "second_number": "256"
+          }
         }
       ]
     ],
@@ -3020,8 +3054,8 @@
           "asr_output_elevenlabs": "Um, can you calculate the speed of an object that started from rest, traveled 20 meters in 4 seconds? Uh, with constant acceleration, right?",
           "asr_output_deepgram": "Can you calculate the speed of an object that started from rest, traveled twenty meters in four seconds, with constant acceleration. Right?",
           "clarifications": {
-            "distance_traveled": "20 meters",
-            "time_duration": "4 seconds"
+            "travel_distance": "20 meters",
+            "travel_time": "4 seconds"
           }
         }
       ]
@@ -3099,8 +3133,8 @@
           "asr_output_elevenlabs": "What's the final speed of an object thrown, uh, upwards at 40 meters per second after six seconds?",
           "asr_output_deepgram": "What's the final speed of an object thrown, upwards at forty meters per second after six seconds?",
           "clarifications": {
-            "initial_velocity_value": "40 m/s",
-            "time_value": "6 seconds"
+            "initial_velocity": "40 m/s",
+            "time": "6 seconds"
           }
         }
       ]
@@ -3192,7 +3226,8 @@
           "asr_output_elevenlabs": "Let me see. Right. Can you check for The Alchemist at library branches in New York City?",
           "asr_output_deepgram": "Let me see. Right. Can you check for the alchemist at library branches in New York City?",
           "clarifications": {
-            "book_name": "The Alchemist"
+            "book_name": "The Alchemist",
+            "city": "New York"
           }
         }
       ]
@@ -3267,9 +3302,9 @@
           "asr_output_elevenlabs": "Um, can you get a ride from New York to Philadelphia? Uh, make sure it doesn't cost more than 50 bucks. Thanks.",
           "asr_output_deepgram": "Can you get a ride from New York to Philadelphia? Make sure it doesn't cost more than fifty bucks. Thanks.",
           "clarifications": {
-            "source_location": "New York",
-            "destination_location": "Philadelphia",
-            "maximum_ride_cost": "$50"
+            "source": "New York",
+            "destination": "Philadelphia",
+            "max_cost": "$50"
           }
         }
       ]
@@ -3343,8 +3378,8 @@
           "asr_output_elevenlabs": "Hey, can you calculate the magnetic field strength? Let me see... If the distance is 8 meters and the current is 12 amperes...",
           "asr_output_deepgram": "Hey. Can you calculate the magnetic field strength? Let me see. If the distance is eight meters and the current is twelve amperes.",
           "clarifications": {
-            "distance_in_meters": "8 meters",
-            "current_in_amperes": "12 Amperes"
+            "distance": "8 meters",
+            "current": "12 Amperes"
           }
         }
       ]
@@ -3415,8 +3450,7 @@
           "asr_output_elevenlabs": "Um, can you use Ampere's Law to get the magnetic field at point p? Oh, the current, uh, i is 10 amperes and the distance, r, is 0.01 meters.",
           "asr_output_deepgram": "Can you use Ampere's law to get the magnetic field at point p? Oh, the current, I is ten amperes, and the distance r is zero point zero one meters.",
           "clarifications": {
-            "calculation_method": "Ampere\u2019s law",
-            "current_value": "10 Amperes",
+            "current": "10 Amperes",
             "radial_distance": "0.01 meter"
           }
         }
@@ -3506,10 +3540,10 @@
           "asr_output_elevenlabs": "Um, what's the final temperature when you mix, uh, maybe about two moles of gas at roughly 300 kelvin with around three moles of the same gas at approximately 400 kelvin? Right?",
           "asr_output_deepgram": "What's the final temperature when you mix, maybe about two moles of gas at roughly three hundred Kelvin with around three moles of the same gas at approximately four hundred Kelvin? Right?",
           "clarifications": {
-            "first_quantity": "2 moles",
-            "first_temperature": "300 K",
-            "second_quantity": "3 moles",
-            "second_temperature": "400 K"
+            "quantity1": "2 moles",
+            "temperature1": "300 K",
+            "quantity2": "3 moles",
+            "temperature2": "400 K"
           }
         }
       ]
@@ -3672,7 +3706,8 @@
           "asr_output_elevenlabs": "Um, if I weigh 70 kilos on Earth, how much do I weigh on Mars? Right?",
           "asr_output_deepgram": "If I weigh seventy kilos on Earth, how much do I weigh on Mars? Right?",
           "clarifications": {
-            "planet_name": "Mars"
+            "weight_on_earth": "70 kg",
+            "planet": "Mars"
           }
         }
       ]
@@ -3826,7 +3861,10 @@
           "asr_output_openai": "Uh, can sort this list of names in, uh, ascending, that is A-S-C-E-N-D-I-N-G, ascending order. Sam, Alice, Jack, right?",
           "asr_output_elevenlabs": "Uh, can sort this list of names in ascending, that is A-S-C-E-N-D-I-N-G, ascending order? Sam, Alice, Jack. Right?",
           "asr_output_deepgram": "Can sort this list of names in, Centeing. That is a s c e n d I n g. Ascending order. Sam, Alice, Jack. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "elements_to_sort": "['Sam', 'Alice', 'Jack']",
+            "sort_order": "ascending"
+          }
         }
       ]
     ],
@@ -4000,7 +4038,9 @@
           "asr_output_openai": "Um, right. Can find a pet-friendly library in New York City that also has facilities for disabled people?",
           "asr_output_elevenlabs": "Um, right. Can find a pet-friendly library in New York City that also, uh, has facilities for disabled people?",
           "asr_output_deepgram": "Right. Can find a pet friendly library in New York City that also, has facilities for disabled people?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York City"
+          }
         }
       ]
     ],
@@ -4190,7 +4230,10 @@
           "asr_output_openai": "Hey, um, can you predict house prices for next month in New York?",
           "asr_output_elevenlabs": "Hey, uhm, can you predict house prices for next month in New York?",
           "asr_output_deepgram": "Hey. Can you predict house prices for next month in New York?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York",
+            "time_frame": "next month"
+          }
         }
       ]
     ],
@@ -4286,7 +4329,9 @@
           "asr_output_openai": "Um, can you figure out, uh, odds of getting a sum of seven when rolling two dice, please?",
           "asr_output_elevenlabs": "Um, can you figure out, uh, odds of getting a sum of seven when rolling two dice, please?",
           "asr_output_deepgram": "Can you figure out, odds of getting a sum of seven when rolling two dice, please?",
-          "clarifications": {}
+          "clarifications": {
+            "desired_sum": "7"
+          }
         }
       ]
     ],
@@ -4449,8 +4494,7 @@
           "asr_output_elevenlabs": "Let me see. Right, can you forecast house prices for next five years considering interest rates and unemployment rates?",
           "asr_output_deepgram": "Let me see. Right. Can you forecast house prices for next five years considering interest rates and unemployment rates?",
           "clarifications": {
-            "independent_variables": "interest rates and unemployment rates",
-            "forecast_period_years": "5"
+            "forecast_period": "5 years"
           }
         }
       ]
@@ -4534,7 +4578,8 @@
           "asr_output_elevenlabs": "Um, can you check, uh, Apple's dividend payments over the past five years?",
           "asr_output_deepgram": "Can you check, Apple's dividend payments over the past five years?",
           "clarifications": {
-            "company_name": "Apple Inc"
+            "company_name": "Apple Inc",
+            "duration_years": "last five years"
           }
         }
       ]
@@ -4674,7 +4719,7 @@
           "asr_output_deepgram": "Hey. What's the average closing price for Apple stock over the last, sixty days?",
           "clarifications": {
             "company_name": "Apple",
-            "days_period": "60"
+            "days": "60"
           }
         }
       ]
@@ -4772,7 +4817,8 @@
           "clarifications": {
             "principle_amount": "$1000",
             "annual_rate": "5%",
-            "compounding_frequency": "4 compound per year"
+            "time_period": "10 years",
+            "compounds_per_year": "4"
           }
         }
       ]
@@ -4991,7 +5037,10 @@
           "asr_output_openai": "Hey, um, what's the humidity and temperature forecast for New York City in a week, right?",
           "asr_output_elevenlabs": "Hey, um, what's the humidity and temperature forecast for New York City in a week, right?",
           "asr_output_deepgram": "Hey. What's the humidity and temperature forecast for New York City in a week? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York City",
+            "forecast_days": "7"
+          }
         }
       ]
     ],
@@ -5076,7 +5125,7 @@
           "clarifications": {
             "location": "Portland",
             "specialization": "small space garden design",
-            "years_experience": "5 years"
+            "years_experience": "5"
           }
         }
       ]
@@ -5149,8 +5198,7 @@
           "asr_output_elevenlabs": "Hey, what's the nearest nature park in Boston where I can relax and enjoy scenic views?",
           "asr_output_deepgram": "Hey. What's the nearest nature park in Boston where I can relax and enjoy scenic views?",
           "clarifications": {
-            "location": "Boston, MA",
-            "preferred_features": "camping and scenic views"
+            "location": "Boston, MA"
           }
         }
       ]
@@ -5228,7 +5276,10 @@
           "asr_output_openai": "Can you tell me the air quality index for like New York next week?",
           "asr_output_elevenlabs": "Uh, can you tell me the air quality index for, like, New York next week?",
           "asr_output_deepgram": "Can you tell me the air quality index for, like, New York next week?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York",
+            "time_frame": "next week"
+          }
         }
       ]
     ],
@@ -5311,7 +5362,8 @@
           "asr_output_elevenlabs": "What's the UV index for, um, Tokyo tomorrow, June 1st, 2023?",
           "asr_output_deepgram": "What's the UV index for, Tokyo tomorrow, June first twenty twenty three?",
           "clarifications": {
-            "date_format": "June01 2023"
+            "location": "Tokyo",
+            "date": "June01 2023"
           }
         }
       ]
@@ -5394,7 +5446,10 @@
           "asr_output_openai": "Hey, uh, how far is it from New York City to Los Angeles, right?",
           "asr_output_elevenlabs": "Hey, uh, how far is it from New York City to Los Angeles, right?",
           "asr_output_deepgram": "Hey. How far is it from New York City to Los Angeles? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "origin_city": "New York City",
+            "destination_city": "Los Angeles"
+          }
         }
       ]
     ],
@@ -5486,7 +5541,11 @@
           "asr_output_openai": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
           "asr_output_elevenlabs": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
           "asr_output_deepgram": "What's the traffic like from Las Vegas to Los Angeles this weekend?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location": "Las Vegas",
+            "end_location": "Los Angeles",
+            "time_period": "this weekend"
+          }
         }
       ]
     ],
@@ -5653,7 +5712,9 @@
           "asr_output_openai": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?",
           "asr_output_elevenlabs": "Hey, um, could you check if that place, the New York Public Library, has any historical fiction books?",
           "asr_output_deepgram": "Hey, could you check if that place, the New York Public Library, has any historical fiction books?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York public library"
+          }
         }
       ]
     ],
@@ -5737,9 +5798,7 @@
           "asr_output_openai": "Um, can you find out my personality type using Five-Factor Model? Here's some info: I'm a talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah... I'm forgiving.",
           "asr_output_elevenlabs": "Um, can you find out my personality type using five-factor model? Here's some info. I'm, uh, talkative, get nervous easily, not really into art, tend to be a bit lazy, and yeah, I'm forgiving.",
           "asr_output_deepgram": "Can you find out my personality type using five factor model? Here's some info. Talkative, get nervous easily, not really into art, tend to be a bit lazy, and, yeah, am forgiving.",
-          "clarifications": {
-            "personality_model": "five factor model"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -5826,8 +5885,8 @@
           "asr_output_elevenlabs": "Um, hey, Wright, can tell me who the French kings were in the 18th century?",
           "asr_output_deepgram": "Hey. Right. Can you tell me who the French kings were in the eighteenth century?",
           "clarifications": {
-            "country_name": "France",
-            "century_number": "18"
+            "country": "France",
+            "century": "18"
           }
         }
       ]
@@ -5919,8 +5978,8 @@
           "asr_output_elevenlabs": "Hey, uhm, do you know how many veterans were in U.S. back in 1954?",
           "asr_output_deepgram": "Hey. Do you know how many veterans were in US back in nineteen fifty four?",
           "clarifications": {
-            "population_category": "veterans",
-            "year": "1954"
+            "year": "1954",
+            "population_category": "veterans"
           }
         }
       ]
@@ -6003,7 +6062,10 @@
           "asr_output_openai": "Hey, um, dino how many people lived in California back in 1970?",
           "asr_output_elevenlabs": "Hey, um, d'you know how many people, uh, lived in California back in 1970?",
           "asr_output_deepgram": "Hey. Do I know how many people, lived in California back in nineteen seventy?",
-          "clarifications": {}
+          "clarifications": {
+            "state_name": "California",
+            "year": "1970"
+          }
         }
       ]
     ],
@@ -6072,9 +6134,7 @@
           "asr_output_openai": "Who's the founder of Buddhism and where did it begin?",
           "asr_output_elevenlabs": "Um, who's the founder of Buddhism and uh where did it begin? Oh.",
           "asr_output_deepgram": "Who's the founder of Buddhism, and, where did it begin? O?",
-          "clarifications": {
-            "religion_name": "Buddhism"
-          }
+          "clarifications": {}
         }
       ]
     ],
@@ -6127,7 +6187,7 @@
           "asr_output_deepgram": "Look at auction platforms for the price of Van Gogh's Starry Night painting. Right?",
           "clarifications": {
             "artwork_name": "Starry Night",
-            "artist_name": "Van Gogh"
+            "artist": "Van Gogh"
           }
         }
       ]
@@ -6292,7 +6352,8 @@
           "asr_output_elevenlabs": "He'd like to get, uh, a custom bronze horse sculpture. Oh, um, what materials can I pick from?",
           "asr_output_deepgram": "You'd like to get, a custom bronze horse sculpture. Oh, what materials can I pick from?",
           "clarifications": {
-            "sculpture_subject": "horse"
+            "sculpture_subject": "horse",
+            "material_type": "bronze"
           }
         }
       ]
@@ -6378,8 +6439,7 @@
           "asr_output_deepgram": "Hey. Can you get some famous contemporary sculptures in New York? Thanks.",
           "clarifications": {
             "artwork_type": "sculptures",
-            "location": "New York",
-            "era": "contemporary"
+            "location": "New York"
           }
         }
       ]
@@ -6472,7 +6532,7 @@
           "asr_output_deepgram": "Could you get the details on London's Natural History Museum? O m, Lukian for the timings, exhibitions, and accessibility info.",
           "clarifications": {
             "museum_name": "Natural History Museum",
-            "city_name": "London"
+            "city": "London"
           }
         }
       ]
@@ -6565,7 +6625,8 @@
           "asr_output_elevenlabs": "What art exhibitions are happening next month at Museum of Modern Art? That's M-U-S-E-U-M of Modern Art in New York. That's N-E-W-Y-O-R-K, New York.",
           "asr_output_deepgram": "What art exhibitions are happening next month at Museum of Modern Art? That's m u s e u m. Of Modern Art in New York. That's n e w y o r k, New York.",
           "clarifications": {
-            "museum_name": "Museum of Modern Art"
+            "museum_name": "Museum of Modern Art",
+            "city": "New York"
           }
         }
       ]
@@ -6633,8 +6694,8 @@
           "asr_output_deepgram": "Hey. Can you look for a guitar shop in Nashville that also offers violin lessons?",
           "clarifications": {
             "location": "Nashville",
-            "services": "violin lessons",
-            "instruments": "guitar"
+            "instrument_lessons": "violin",
+            "instrument_sales": "guitar"
           }
         }
       ]
@@ -6740,7 +6801,7 @@
           "asr_output_deepgram": "I can book a ticket for the Eminem concert in New York City. Oh, one of the one with backstage access.",
           "clarifications": {
             "artist_name": "Eminem",
-            "location": "New York City",
+            "concert_location": "New York City",
             "add_on": "backstage access"
           }
         }
@@ -6828,8 +6889,8 @@
           "asr_output_elevenlabs": "Uh, play a song in the key of C major at 120 beats per minute. Right?",
           "asr_output_deepgram": "Play a song in the key of C major at one twenty beats per minute. Right?",
           "clarifications": {
-            "key": "C Major",
-            "tempo": "120 bpm"
+            "music_key": "C Major",
+            "tempo_bpm": "120"
           }
         }
       ]
@@ -6988,7 +7049,11 @@
           "asr_output_openai": "Um, who are top ten goal scorers from Barcelona in UEFA Champions League, right?",
           "asr_output_elevenlabs": "Um, who are top 10 goal scorers from Barcelona in UEFA Champions League, right?",
           "asr_output_deepgram": "Who are top ten goal scores from Barcelona in UEFA Champions League. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "competition_name": "UEFA Champions League",
+            "team_name": "Barcelona",
+            "number_of_goal_scorers": "10"
+          }
         }
       ]
     ],
@@ -7207,7 +7272,7 @@
           "asr_output_deepgram": "Hey. Can snag, the latest update or patch for Cyberpunk twenty seventy seven on Xbox?",
           "clarifications": {
             "game_name": "Cyberpunk 2077",
-            "platform_name": "Xbox"
+            "gaming_platform": "Xbox"
           }
         }
       ]
@@ -7367,7 +7432,10 @@
           "asr_output_openai": "Can you get a recipe for a healthy lunch with chicken and mushrooms that's under 500 calories?",
           "asr_output_elevenlabs": "Uh, can you get a recipe for a healthy lunch with chicken and, um, mushrooms that's under 500 calories?",
           "asr_output_deepgram": "Can you get a recipe for a healthy lunch with chicken and, mushrooms that's under five hundred calories?",
-          "clarifications": {}
+          "clarifications": {
+            "ingredients": "chicken and mushrooms",
+            "calories": "500"
+          }
         }
       ]
     ],
@@ -7468,7 +7536,11 @@
           "asr_output_openai": "Get me a seafood restaurant in Seattle for a group of five, right?",
           "asr_output_elevenlabs": "Uh, get me a seafood restaurant in Seattle for a group of five. Right?",
           "asr_output_deepgram": "Get me a seafood restaurant in Seattle for a group of five. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Seattle",
+            "cuisine_type": "seafood",
+            "group_size": "5"
+          }
         }
       ]
     ],
@@ -7556,7 +7628,7 @@
           "asr_output_elevenlabs": "Um, hey, can you get a simple apple pie recipe with, uh, under five ingredients, right?",
           "asr_output_deepgram": "Hey. Can you get a simple apple pie recipe with, under five ingredients? Right?",
           "clarifications": {
-            "main_ingredient": "apple",
+            "main_ingredient": "apple pie",
             "ingredient_limit": "5"
           }
         }
@@ -7621,7 +7693,9 @@
           "asr_output_openai": "Can you like get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?",
           "asr_output_elevenlabs": "Uh, can you like get a list of vegetarian and gluten-free foods at the Walmart close to Denver, thanks?",
           "asr_output_deepgram": "Can you, like, get a list of vegetarian and gluten free foods at the Walmart close to Denver? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "store_location": "Walmart near Denver"
+          }
         }
       ]
     ],
@@ -7722,9 +7796,10 @@
           "asr_output_elevenlabs": "Uh, can you get a deluxe room for two nights at the Marriott in New York and, um, oh, add breakfast as an extra?",
           "asr_output_deepgram": "Can you get a deluxe room for two nights at the Marriott in New York and, oh, add breakfast as an extra?",
           "clarifications": {
-            "hotel_name": "Marriott",
-            "room_type": "deluxe",
             "location": "New York",
+            "room_type": "deluxe",
+            "nights": "2",
+            "hotel_name": "Marriott",
             "additional_service": "breakfast"
           }
         }
@@ -8173,7 +8248,9 @@
           "asr_output_openai": "Hey um, could you get the circumference of a circle with a radius of three?",
           "asr_output_elevenlabs": "Hey, um, could you get the circumference of a circle with a radius of three?",
           "asr_output_deepgram": "Hey, could you get the circumference of a circle with a radius of three?",
-          "clarifications": {}
+          "clarifications": {
+            "circle_radius": "3"
+          }
         }
       ]
     ],
@@ -8293,7 +8370,7 @@
           "asr_output_deepgram": "Could you find the derivative of the function two x squared at x equals one, please?",
           "clarifications": {
             "function_expression": "2x^2",
-            "calculation_value": "1"
+            "evaluation_point": "1"
           }
         }
       ]
@@ -8365,7 +8442,10 @@
           "asr_output_openai": "Hey, what's the greatest common factor of 36 and 24?",
           "asr_output_elevenlabs": "Hey, uh, what's the greatest common factor of 36 and 24?",
           "asr_output_deepgram": "Hey, what's the greatest common factor of thirty six and twenty four?",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "36",
+            "second_number": "24"
+          }
         }
       ]
     ],
@@ -8436,7 +8516,10 @@
           "asr_output_openai": "What's the greatest common divisor of 12 and 18?",
           "asr_output_elevenlabs": "What's the greatest common divisor of 12 and 18?",
           "asr_output_deepgram": "What's the greatest common divisor of twelve, and eighteen?",
-          "clarifications": {}
+          "clarifications": {
+            "first_number": "12",
+            "second_number": "18"
+          }
         }
       ]
     ],
@@ -8502,7 +8585,9 @@
           "asr_output_elevenlabs": "Uh, can you get the car's displacement? It's got an initial velocity of 10, accelerates at 9.8, and it's like over five seconds.",
           "asr_output_deepgram": "Can you get the car's displacement? It's got an initial velocity of ten, accelerates at nine point eight, and it's, like, over five seconds.",
           "clarifications": {
-            "acceleration_spelling": "acceleeration"
+            "initial_velocity": "10",
+            "acceleration": "9.8",
+            "time": "5"
           }
         }
       ]
@@ -8597,7 +8682,9 @@
           "asr_output_openai": "What's the final speed when an object is dropped from 100 meters with no air resistance?",
           "asr_output_elevenlabs": "Um, what's the final speed when an object is, uh, dropped from 100 meters with no air resistance?",
           "asr_output_deepgram": "What's the final speed when an object is, dropped from one hundred meters with no air resistance?",
-          "clarifications": {}
+          "clarifications": {
+            "height": "100 m"
+          }
         }
       ]
     ],
@@ -8708,8 +8795,8 @@
           "asr_output_elevenlabs": "Uh, what's the shortest driving distance between New York City and Washington DC, right?",
           "asr_output_deepgram": "What's the shortest driving distance between New York City and Washington DC? Right?",
           "clarifications": {
-            "origin_location": "New York City",
-            "destination_location": "Washington D.C."
+            "origin": "New York City",
+            "destination": "Washington D.C."
           }
         }
       ]
@@ -8823,8 +8910,8 @@
           "asr_output_elevenlabs": "Uh, find the magnetic field at the center of a circular loop. It's carrying a current of 5 amps and, um, the radius is 4 meters.",
           "asr_output_deepgram": "Find the magnetic field at the center of a circular loop. It's carrying a current of five amps, and, the radius is four meters.",
           "clarifications": {
-            "current_value": "5 Ampere",
-            "radius_value": "4 meters"
+            "current": "5 Ampere",
+            "radius": "4 meters"
           }
         }
       ]
@@ -8920,8 +9007,8 @@
           "asr_output_elevenlabs": "Hey, um, can you work out the electric field strength, like, 4 meters from a 0.01 coulomb charge?",
           "asr_output_deepgram": "Hey, can you work out the electric field strength, like four meters from a zero point zero one coulomb charge?",
           "clarifications": {
-            "charge_value": "0.01 Coulombs",
-            "distance_value": "4 meters"
+            "charge": "0.01 Coulombs",
+            "distance": "4 meters"
           }
         }
       ]
@@ -9049,8 +9136,8 @@
           "asr_output_elevenlabs": "Hey, um, can you tell me the density if something weighs 45 kilograms and takes up 15 cubic meters?",
           "asr_output_deepgram": "Hey, can you tell me the density if something weighs forty five kilograms and takes up fifteen cubic meters?",
           "clarifications": {
-            "mass_value": "45 kg",
-            "volume_value": "15 m\u00b3"
+            "mass": "45 kg",
+            "volume": "15 m\u00b3"
           }
         }
       ]
@@ -9121,8 +9208,8 @@
           "asr_output_elevenlabs": "Let me see. Can you figure out the heat capacity at constant pressure for air with a temperature of 298 kelvin and a volume of ten cubic meters?",
           "asr_output_deepgram": "Let me see. Can you figure out the heat capacity at constant pressure for air with a temperature of two hundred ninety eight Kelvin and a volume of ten cubic meters?",
           "clarifications": {
-            "temperature_value": "298K",
-            "volume_value": "10 m^3"
+            "temperature": "298K",
+            "volume": "10 m^3"
           }
         }
       ]
@@ -9358,7 +9445,7 @@
           "asr_output_elevenlabs": "Hey, um, right? What's the genotype frequency for the AAA genotype when the allele frequency of as 0.3?",
           "asr_output_deepgram": "Hey. Right? What's the genotype frequency for the AAA genotype when the allele frequency of as zero point three?",
           "clarifications": {
-            "genotype_spelling": "AA"
+            "genotype": "AA"
           }
         }
       ]
@@ -9451,8 +9538,7 @@
           "asr_output_deepgram": "Can you forecast how the forest in Yellowstone will, grow over the next five years? Consid, Aaron, human impact? Thanks.",
           "clarifications": {
             "location": "Yellowstone National Park",
-            "years": "5",
-            "include_human_impact": "true"
+            "years": "5"
           }
         }
       ]
@@ -9514,10 +9600,10 @@
           "asr_output_elevenlabs": "Hey, Lem C. Calculate the evolutionary fitness for a creature. Trait A makes up 40% with a value of 0.8 and trait B 60% at 0.7.",
           "asr_output_deepgram": "Hey, Lem c. Calculate the evolutionary fitness for a creature. Trait a makes up forty percent with a value of zero point eight, and trait b sixty percent at zero point seven.",
           "clarifications": {
-            "trait_a_value": "0.8",
-            "trait_b_value": "0.7",
-            "trait_a_contribution": "40%",
-            "trait_b_contribution": "60%"
+            "trait_contribution_A": "40%",
+            "trait_contribution_B": "60%",
+            "trait_value_A": "0.8",
+            "trait_value_B": "0.7"
           }
         }
       ]
@@ -9653,9 +9739,9 @@
           "asr_output_elevenlabs": "Um, can you give me the evolutionary rate predictions for homo sapiens over the next, uh, 50 years using the Darwin model?",
           "asr_output_deepgram": "Can you give me the evolutionary rate predictions for Homo sapiens over the next, fifty years using the Darwin model?",
           "clarifications": {
-            "species_name": "Homo Sapiens",
-            "prediction_years": "50",
-            "prediction_model": "Darwin"
+            "species": "Homo Sapiens",
+            "years": "50",
+            "model": "Darwin"
           }
         }
       ]
@@ -9884,7 +9970,10 @@
           "asr_output_openai": "Can you figure out BMI for someone weighing 85 kilograms and 180 centimeters tall, okay?",
           "asr_output_elevenlabs": "Can you figure out BMI for someone weighing 85 kilograms and 180 centimeters tall? Okay.",
           "asr_output_deepgram": "Can you figure out BMI for someone weighing eighty five kilograms and one hundred eighty centimeters tall? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "weight": "85 kilograms",
+            "height": "180 cm"
+          }
         }
       ]
     ],
@@ -9949,7 +10038,10 @@
           "asr_output_openai": "What's the BMI for someone who's 70 kilograms and 1.75 meters tall, right?",
           "asr_output_elevenlabs": "What's the BMI for someone who's 70 kilograms and um 1.75 meters tall, right?",
           "asr_output_deepgram": "What's the BMI for someone who's seventy kilograms and, one point seventy five meters tall? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "weight_kg": "70kg",
+            "height_m": "1.75m"
+          }
         }
       ]
     ],
@@ -10453,7 +10545,10 @@
           "asr_output_openai": "Hey, could you find the area of a triangle with a base of 6 and a height of 10?",
           "asr_output_elevenlabs": "Hey, could you find the area of a triangle with a base of 6 and a height of 10?",
           "asr_output_deepgram": "Hey. Could you find the area of a triangle with a base of six and a height of ten?",
-          "clarifications": {}
+          "clarifications": {
+            "base_length": "6",
+            "height_length": "10"
+          }
         }
       ]
     ],
@@ -11220,9 +11315,9 @@
           "asr_output_elevenlabs": "Hey, can you figure out the company's return on equity with these numbers? Net income's two million dollars. Shareholder's equity is ten million dollars. And dividends paid are $200,000.",
           "asr_output_deepgram": "Hey. Can you figure out the company's return on equity with these numbers? Net income's two million dollars, shareholders' equity's ten million dollars, and dividends paid are two hundred thousand dollars.",
           "clarifications": {
-            "net_income_amount": "$2,000,000",
-            "shareholder_equity_amount": "$10,000,000",
-            "dividends_paid_amount": "$200,000"
+            "net_income": "$2,000,000",
+            "shareholder_equity": "$10,000,000",
+            "dividends_paid": "$200,000"
           }
         }
       ]
@@ -11360,7 +11455,7 @@
             "principal_amount": "$10000",
             "annual_interest_rate": "5%",
             "compounding_frequency": "monthly",
-            "investment_duration_years": "5 years"
+            "investment_duration": "5 years"
           }
         }
       ]
@@ -11542,8 +11637,8 @@
           "asr_output_elevenlabs": "Um, can you see how the S&P 500 and, uh, Dow Jones have done in the last five days, yeah?",
           "asr_output_deepgram": "Can you see how the s amp p five hundred and, Dow Jones have done in the last five days? Yeah?",
           "clarifications": {
-            "stock_market_indexes": "S&P 500, Dow Jones",
-            "time_period_days": "5"
+            "indexes": "S&P 500, Dow Jones",
+            "days": "5"
           }
         }
       ]
@@ -11647,9 +11742,9 @@
           "asr_output_elevenlabs": "Um, hey, can you figure out like the future value of an investment if I've got, uh, a $20,000 initial investment, an 8% annual return over five years?",
           "asr_output_deepgram": "Hey. Can you figure out, like, the future value of an investment if I've got, a twenty thousand dollars initial investment, an eight percent annual return over five years?",
           "clarifications": {
-            "initial_investment_amount": "$20000",
-            "annual_rate_of_return": "8%",
-            "investment_time_frame": "5 years"
+            "rate_of_return": "8%",
+            "initial_investment": "$20000",
+            "time_frame_years": "5 years"
           }
         }
       ]
@@ -11751,7 +11846,7 @@
           "clarifications": {
             "investment_amount": "$50000",
             "annual_yield": "5%",
-            "years": "3 years"
+            "years": "3"
           }
         }
       ]
@@ -11819,7 +11914,7 @@
           "asr_output_deepgram": "Find details for felony case CA one two three four five six in San Diego County. Okay?",
           "clarifications": {
             "case_number": "CA123456",
-            "county_name": "San Diego County"
+            "county": "San Diego County"
           }
         }
       ]
@@ -12105,8 +12200,8 @@
           "asr_output_deepgram": "Find current lawsuits against Google in California starting January first twenty twenty one.",
           "clarifications": {
             "company_name": "Google",
-            "start_date_spelling": "January 1, 2021",
-            "location_spelling": "California"
+            "start_date": "January 1, 2021",
+            "location": "California"
           }
         }
       ]
@@ -12219,7 +12314,7 @@
           "asr_output_elevenlabs": "Hey, uh, how can I get the detailed info on the R vs Adams legal case, right?",
           "asr_output_deepgram": "Hey. How can I get the detailed info on the R versus Adams legal case? Right?",
           "clarifications": {
-            "case_id_spelling": "R vs Adams"
+            "case_name": "R vs Adams"
           }
         }
       ]
@@ -12322,8 +12417,7 @@
           "asr_output_deepgram": "Can you, give me the details of patent lawsuits involving Apple Inc from two thousand and ten? Thanks.",
           "clarifications": {
             "company_name": "Apple Inc.",
-            "year": "2010",
-            "case_type": "Patent"
+            "year": "2010"
           }
         }
       ]
@@ -12624,7 +12718,10 @@
           "asr_output_openai": "Hey, can you say the humidity forecast for Miami for the next seven days?",
           "asr_output_elevenlabs": "Hey, can you say the humidity forecast for Miami for the next seven days?",
           "asr_output_deepgram": "Hey. Can you say the humidity forecast for Miami for the next seven days?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "Miami, Florida",
+            "forecast_days": "7"
+          }
         }
       ]
     ],
@@ -12996,7 +13093,8 @@
           "asr_output_deepgram": "Look up Chinese restaurants within ten miles, around me in Seattle.",
           "clarifications": {
             "location": "Seattle",
-            "cuisine": "Chinese"
+            "cuisine": "Chinese",
+            "max_distance": "10 miles"
           }
         }
       ]
@@ -13067,7 +13165,10 @@
           "asr_output_openai": "can find the route from New York to Los Angeles that avoids highways and toll roads, okay?",
           "asr_output_elevenlabs": "Uh, can find the route from New York to Los Angeles that, um, avoids highways and toll roads, okay?",
           "asr_output_deepgram": "Can find the route from New York to Los Angeles that, avoids highways and toll roads. Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "start_location": "New York",
+            "end_location": "Los Angeles"
+          }
         }
       ]
     ],
@@ -13241,7 +13342,7 @@
           "asr_output_elevenlabs": "Um, could scope out the sentiment on this customer review. I love the food here. It's always fresh and delicious. Thanks.",
           "asr_output_deepgram": "Could scope out the sentiment on this customer review. I love the food here. It's always fresh and delicious. Thanks.",
           "clarifications": {
-            "text_for_analysis": "I love the food here! It's always fresh and delicious."
+            "review_text": "I love the food here! It's always fresh and delicious."
           }
         }
       ]
@@ -13500,7 +13601,7 @@
           "asr_output_elevenlabs": "Um, who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
           "asr_output_deepgram": "Who's the most followed person on Twitter chatting about the stuff related to psychology, especially around behavior and group dynamics?",
           "clarifications": {
-            "main_topic": "psychology",
+            "topic": "psychology",
             "sub_topic": "behaviour and group dynamics"
           }
         }
@@ -13609,10 +13710,9 @@
           "asr_output_elevenlabs": "Um, can you give me a rundown of the major war events in, uh, German history between 1871 and 1945, right?",
           "asr_output_deepgram": "Can you give me a rundown of the major war events in our German history between eighteen seventy one and nineteen forty five? Right?",
           "clarifications": {
-            "country_name": "German",
+            "country": "Germany",
             "start_year": "1871",
-            "end_year": "1945",
-            "event_type": "war events"
+            "end_year": "1945"
           }
         }
       ]
@@ -13697,7 +13797,7 @@
           "asr_output_elevenlabs": "Um, hey, do you know when Treaty of Lisbon was signed?",
           "asr_output_deepgram": "Hey. Do you know when Treaty of Lisbon was signed?",
           "clarifications": {
-            "event_details": "Treaty of Lisbon"
+            "event_name": "Treaty of Lisbon"
           }
         }
       ]
@@ -13793,7 +13893,9 @@
           "asr_output_openai": "What's full name of the US President in 1861, right?",
           "asr_output_elevenlabs": "What's full name of the US President in 1861, right?",
           "asr_output_deepgram": "What's full name of the US president in eighteen sixty one? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "year": "1861"
+          }
         }
       ]
     ],
@@ -14117,7 +14219,7 @@
           "asr_output_elevenlabs": "When do historical records first talk about Jesus Christ?",
           "asr_output_deepgram": "When do historical records first talk about Jesus Christ?",
           "clarifications": {
-            "person_name": "Jesus Christ"
+            "name": "Jesus Christ"
           }
         }
       ]
@@ -14412,9 +14514,7 @@
           "asr_output_elevenlabs": "Let me see. Oh, can you find top-rated modern sculpture exhibitions in New York for next month?",
           "asr_output_deepgram": "Let me see. Oh, can you find top rated modern sculpture exhibitions in New York for next month?",
           "clarifications": {
-            "location": "New York",
-            "art_form": "sculpture",
-            "month": "upcoming month"
+            "location": "New York"
           }
         }
       ]
@@ -14519,7 +14619,8 @@
           "asr_output_elevenlabs": "Can you, um, give me the structural dynamic check for building B ten oh four's second, third, and uh, fourth floors?",
           "asr_output_deepgram": "Can you, give me the structural dynamic check for building b ten o four's second, third, and, fourth floors?",
           "clarifications": {
-            "building_id": "B1004"
+            "building_id": "B1004",
+            "floors": "2nd, 3rd and 4th"
           }
         }
       ]
@@ -14593,6 +14694,8 @@
           "asr_output_elevenlabs": "Um, um, what are the top, top five popular artworks at the Metropolitan Museum of Art? Uh, sort 'em by, by popularity.",
           "asr_output_deepgram": "What are the top top five popular artworks at the Metropolitan Museum of Art? Sort them by by popularity.",
           "clarifications": {
+            "museum_name": "Metropolitan Museum of Art",
+            "number_of_artworks": "5",
             "sort_criteria": "popularity"
           }
         }
@@ -14674,9 +14777,9 @@
           "asr_output_elevenlabs": "Hey, um, can you give me the retail price for a Fender American Professional II Stratocaster, uh, in rosewood finish?",
           "asr_output_deepgram": "Hey. Can you give me the retail price for a Fender American Professional two Stratocaster, in rosewood finish?",
           "clarifications": {
-            "brand_name": "Fender",
-            "model_name": "American Professional II Stratocaster",
-            "finish_type": "Rosewood Finish"
+            "brand": "Fender",
+            "model": "American Professional II Stratocaster",
+            "finish": "Rosewood Finish"
           }
         }
       ]
@@ -14909,8 +15012,7 @@
           "clarifications": {
             "genre": "classical",
             "location": "Los Angeles",
-            "date": "this weekend",
-            "price_range": "cheap"
+            "date": "this weekend"
           }
         }
       ]
@@ -15016,8 +15118,8 @@
           "clarifications": {
             "key": "C major",
             "start_note": "C4",
-            "length_measures": "16",
-            "tempo_bpm": "120"
+            "length": "16 measures",
+            "tempo": "120 beats per minute"
           }
         }
       ]
@@ -15425,8 +15527,8 @@
           "asr_output_elevenlabs": "Who won Lakers versus Clippers game on January 28th, 2021, right?",
           "asr_output_deepgram": "Who won Lakers versus Clippers game on January twenty eighth twenty twenty one? Right?",
           "clarifications": {
-            "first_team_name": "Lakers",
-            "second_team_name": "Clippers",
+            "team1": "Lakers",
+            "team2": "Clippers",
             "game_date": "Jan 28, 2021"
           }
         }
@@ -15642,7 +15744,7 @@
           "asr_output_elevenlabs": "What's the NBA team's rank for are the best defense in the 2021 season?",
           "asr_output_deepgram": "What's the NBA team's rank for are the best defense in the twenty twenty one season?",
           "clarifications": {
-            "season_year": "2021"
+            "season": "2021"
           }
         }
       ]
@@ -15814,7 +15916,10 @@
           "asr_output_openai": "Hey, um, who's top-ranked player in women's tennis, right?",
           "asr_output_elevenlabs": "Hey, who's top ranked player in women's tennis? Right.",
           "asr_output_deepgram": "Hey. Who's top ranked player in women's tennis? Right?",
-          "clarifications": {}
+          "clarifications": {
+            "sport": "tennis",
+            "gender": "woman"
+          }
         }
       ]
     ],
@@ -16435,7 +16540,7 @@
           "clarifications": {
             "game_name": "Zelda",
             "username": "Sam",
-            "platform_name": "Switch"
+            "platform": "Switch"
           }
         }
       ]
@@ -16558,8 +16663,7 @@
           "asr_output_elevenlabs": "Uh, can you give me the details and stats of Liverpool FC's last game, please?",
           "asr_output_deepgram": "Can you give me the details and stats of Liverpool FC's last game, please?",
           "clarifications": {
-            "team_name": "Liverpool F.C.",
-            "include_statistics": "Include its statistics"
+            "team_name": "Liverpool F.C."
           }
         }
       ]
@@ -16685,7 +16789,7 @@
           "asr_output_elevenlabs": "Um, could you get a multiplayer game for me that's rated above 4.5 and works on Windows 10?",
           "asr_output_deepgram": "Could you get a multiplayer game for me that's, rated above four point five and works on Windows ten?",
           "clarifications": {
-            "platform_compatibility": "Windows 10",
+            "platform": "Windows 10",
             "minimum_rating": "4.5"
           }
         }
@@ -16826,8 +16930,8 @@
           "asr_output_elevenlabs": "Hey, um, could you from FoodNetwork.com tell me the calorie count for the beef lasagna recipe?",
           "asr_output_deepgram": "Hey. Could you, from food network dot com, tell me the calorie count for the beef lasagna recipe?",
           "clarifications": {
-            "website_name": "Foodnetwork.com",
-            "recipe_name": "Beef Lasagna Recipe"
+            "website": "Foodnetwork.com",
+            "recipe": "Beef Lasagna Recipe"
           }
         }
       ]
@@ -17016,7 +17120,7 @@
           "asr_output_deepgram": "Can you locate the nearest sushi place with, a patio in Boston?",
           "clarifications": {
             "location": "Boston",
-            "cuisine": "sushi",
+            "cuisine": "Sushi",
             "amenities": "patio"
           }
         }
@@ -17097,7 +17201,9 @@
           "asr_output_openai": "Im looking for a vegan brownie recipe that takes less than half an hour to get ready.",
           "asr_output_elevenlabs": "I'm looking for a vegan brownie recipe that takes less than half an hour to get ready.",
           "asr_output_deepgram": "I'm looking for a a vegan brownie recipe that takes less than half an hour to get ready.",
-          "clarifications": {}
+          "clarifications": {
+            "prep_time_limit": "30 minutes"
+          }
         }
       ]
     ],
@@ -17163,8 +17269,8 @@
           "asr_output_elevenlabs": "Hey, what's the price of, um, tomatoes and lettuce at Whole Foods in Los Angeles?",
           "asr_output_deepgram": "Hey. What's the price of, tomatoes and lettuce at Whole Foods in Los Angeles?",
           "clarifications": {
-            "location": "Whole Foods in Los Angeles",
-            "items": [
+            "store_location": "Whole Foods in Los Angeles",
+            "items_to_check": [
               "tomatoes",
               "lettuce"
             ]
@@ -17293,7 +17399,10 @@
           "clarifications": {
             "my_location": "Berkeley",
             "rating": "4.5",
-            "products": "tomatoes and pet food"
+            "products": [
+              "tomatoes",
+              "pet food"
+            ]
           }
         }
       ]
@@ -17420,7 +17529,7 @@
           "asr_output_elevenlabs": "Uh, can you convert 3PM New York time to London time, right?",
           "asr_output_deepgram": "Can you convert three PM New York time to London time. Right?",
           "clarifications": {
-            "local_time": "3pm",
+            "time": "3pm",
             "from_timezone": "New York",
             "to_timezone": "London"
           }
@@ -17497,8 +17606,8 @@
             "hotel_name": "Hilton Hotel",
             "location": "Chicago",
             "room_type": "single room",
-            "start_date_spelling": "10th December 2022",
-            "nights": "two nights"
+            "start_date": "10th December 2022",
+            "nights": "two"
           }
         }
       ]
@@ -17603,9 +17712,9 @@
             "hotel_name": "Hotel Paradise",
             "location": "Las Vegas",
             "room_type": "luxury room",
-            "start_date_spelling": "May 12, 2022",
+            "start_date": "May 12, 2022",
             "stay_duration": "3 days",
-            "view_preference": "city view"
+            "preferred_view": "city view"
           }
         }
       ]
@@ -17952,7 +18061,8 @@
           "asr_output_elevenlabs": "Um, hey, can you let me know when Metropolitan Museum of Art opens on Saturday, please?",
           "asr_output_deepgram": "Hey. Can you let me know when Metropolitan Museum of Art opens on Saturday, please?",
           "clarifications": {
-            "museum_name": "Metropolitan Museum of Art"
+            "museum_name": "Metropolitan Museum of Art",
+            "day": "Saturday"
           }
         }
       ]
@@ -18074,8 +18184,8 @@
           "asr_output_elevenlabs": "Can you figure out the heat capacity at constant pressure for air if the temperature is 298 kelvin and the volume is 10 cubic meters? Let me see.",
           "asr_output_deepgram": "Can you figure out the heat capacity at constant pressure for air if the temperature's two ninety eight Kelvin and the volume's ten cubic meters? Let me see.",
           "clarifications": {
-            "temperature_value": "298K",
-            "volume_value": "10 m^3"
+            "temperature": "298K",
+            "volume": "10 m^3"
           }
         }
       ]
@@ -18440,8 +18550,7 @@
           "asr_output_elevenlabs": "Um, okay. What's frequency of the A-A genotype if allele A's frequency is 0.3?",
           "asr_output_deepgram": "Okay. What's frequency of the AA genotype if allele a's frequency is zero point three?",
           "clarifications": {
-            "genotype_spelling": "AA",
-            "allele_frequency_value": "0.3"
+            "genotype": "AA"
           }
         }
       ]

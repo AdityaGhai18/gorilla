@@ -12,8 +12,8 @@
           "asr_output_elevenlabs": "Uh, can you set up the GIS, that's geographic information system, geometry presentation in the interface? Use map controller for results and map area to display the GIS data.",
           "asr_output_deepgram": "Can you set up the GIS? That's geographic information system, geometry presentation in the interface. Use map controller for results and map area to display the GIS data.",
           "clarifications": {
-            "result_set_controller_name": "mapController",
-            "composite_ui_element_name": "mapArea"
+            "result_set_controller": "mapController",
+            "composite_ui_element": "mapArea"
           }
         }
       ]
@@ -55,9 +55,9 @@
           "asr_output_elevenlabs": "Uh, can you help me make SQL completion suggestions for the customer's table? I prefer, um, short names and, oh, make sure to add a limit of fifty and set the schema filter to public.",
           "asr_output_deepgram": "Can you help me make SQL completion suggestions for the customer's table? I prefer, short names and oh, make sure to add a limit of fifty and set the schema filter to public.",
           "clarifications": {
-            "database_object_name": "Customers",
+            "table_name": "Customers",
             "name_preference": "short names",
-            "additional_parameters_limit": "50",
+            "proposal_limit": "50",
             "schema_filter": "public"
           }
         }
@@ -155,9 +155,9 @@
           "asr_output_elevenlabs": "Um, hey. Can you help me figure out a tablespace reference called user space one in a DB2 database, uh, using the data source object DB2 data source and the progress monitor DB monitor? Thanks.",
           "asr_output_deepgram": "Hey. Can you help me figure out a table space reference called user space one in a d b two database, using the data source object d b two data source and the progress monitor d b monitor? Thanks.",
           "clarifications": {
-            "tablespace_reference_name": "USERSPACE1",
+            "tablespace_reference": "USERSPACE1",
             "data_source_object": "db2DataSource",
-            "progress_monitor_object": "dbMonitor"
+            "progress_monitor": "dbMonitor"
           }
         }
       ]
@@ -249,7 +249,7 @@
           "asr_output_deepgram": "Hey. Can you put together a plain text presentation data controller in composite parent? Please, make sure the text areas read only and lets you input multiple lines and scroll both ways.",
           "clarifications": {
             "controller_name": "dataController",
-            "parent_element_name": "compositeParent"
+            "parent_element": "compositeParent"
           }
         }
       ]
@@ -291,7 +291,7 @@
           "asr_output_elevenlabs": "Uh, can you help update the data in a database app spreadsheet view? Oh, make sure you refresh the metadata, add to the existing data, and, um, keep the current state as it is.",
           "asr_output_deepgram": "Can you help update the data in a database app spreadsheet view? Oh, make sure you refresh the metadata, add to the existing data, and, keep the current state as it is.",
           "clarifications": {
-            "action_description": "update the data in a spreadsheet view within a database application, ensuring that metadata is refreshed, existing data is appended, and the current state is preserved"
+            "task_description": "update the data in a spreadsheet view within a database application, ensuring that metadata is refreshed, existing data is appended, and the current state is preserved"
           }
         }
       ]
@@ -339,7 +339,7 @@
           "asr_output_deepgram": "Could you copy an NIO resource to slash backup slash data dot text? Make sure it, overwrites any existing files. Oh, and keep tabs on the progress with progress tracker.",
           "clarifications": {
             "destination_path": "/backup/data.txt",
-            "progress_monitor_name": "progressTracker"
+            "progress_monitor": "progressTracker"
           }
         }
       ]
@@ -386,8 +386,8 @@
           "asr_output_elevenlabs": "Hey, update the file in the, uh, non-blocking filesystem using filestream. Oh, be sure the operation's forced, don't keep the history, and, um, watch the progress with progress monitor, please.",
           "asr_output_deepgram": "Hey. Update the file in the, non blocking file system using file stream. Oh, be sure the operation's forced. Don't keep the history and, watch the progress with progress monitor, please.",
           "clarifications": {
-            "input_stream_name": "fileStream",
-            "progress_monitor_name": "progressMonitor"
+            "input_stream": "fileStream",
+            "progress_monitor": "progressMonitor"
           }
         }
       ]
@@ -440,7 +440,9 @@
           "asr_output_deepgram": "Can you, like, help me serialize a multipoint object with, five points, parentheses one comma two, parentheses three comma four, parentheses five comma six, parentheses seven comma eight, and parentheses nine comma ten into a byte buffer using x s mode dot x y z for storing spatial data in a HANA database?",
           "clarifications": {
             "object_type": "MultiPoint",
-            "xyzm_mode": "XyzmMode.XYZ",
+            "number_of_points": "5",
+            "points_coordinates": "(1,2) (3,4) (5,6), (7,8) (9,10)",
+            "serialization_mode": "XyzmMode.XYZ",
             "database_name": "HANA"
           }
         }
@@ -662,8 +664,8 @@
           "asr_output_elevenlabs": "Um, hey, in the Smart Refresh Layout library, how do I start the finish event for a fun game header using a GAME, capital LAYOUT object to show the refresh was successful? Right?",
           "asr_output_deepgram": "Hey. In the smart refresh layout library, how do I start the finish event for a fun game header using a g a m e, capital l a y o u t object to show the refresh was successful? Right?",
           "clarifications": {
-            "header_type_spelling": "FunGame",
-            "layout_object_name": "gameLayout"
+            "header_type": "FunGame",
+            "layout_object": "gameLayout"
           }
         }
       ]
@@ -705,8 +707,8 @@
           "asr_output_elevenlabs": "Um, can you break down a nine-dash patch image from image input stream and save it as a PNG to image output stream? Thanks.",
           "asr_output_deepgram": "Can you break down a nine dash patch image from image input stream and, save it as a PNG to image output stream? Thanks.",
           "clarifications": {
-            "input_stream_name": "imageInputStream",
-            "output_stream_name": "imageOutputStream"
+            "input_stream": "imageInputStream",
+            "output_stream": "imageOutputStream"
           }
         }
       ]
@@ -748,8 +750,8 @@
           "asr_output_elevenlabs": "Uh, can you help me set up an InvokePolymorphic node for the instruction data that indicates a range call in a Java decompiler?",
           "asr_output_deepgram": "Can you help me set up an invoke polymorphic node for the instruction data that, indicates a range call in a Java decompiler?",
           "clarifications": {
-            "node_type_spelling": "InvokePolymorphicNode",
-            "instruction_data_spelling": "instructionData"
+            "node_type": "InvokePolymorphicNode",
+            "instruction_data": "instructionData"
           }
         }
       ]
@@ -834,9 +836,9 @@
           "asr_output_elevenlabs": "Uh, can you use the sysrolecontrollers method for querying in the system management app to get the third page of role counts with a page size set to 20?",
           "asr_output_deepgram": "Can you use the SysRole controller's method for querying in the system management app to get the third page of role counts with a page size set to twenty?",
           "clarifications": {
-            "method_name": "SysRoleController.queryPageRoleCount",
             "page_number": "third",
-            "page_size": "20"
+            "page_size": "20",
+            "method_name": "SysRoleController.queryPageRoleCount"
           }
         }
       ]
@@ -878,9 +880,9 @@
           "asr_output_elevenlabs": "Um, could you show me the personal info page for a user? I've got a model object called web model and an HTTP request, user request, where username is set to John Doe.",
           "asr_output_deepgram": "Could you show me the personal info page for a user? I've got a model object called web model and an HTTP request user request where username is set to John Doe.",
           "clarifications": {
-            "model_object_name": "webModel",
-            "http_request_name": "userRequest",
-            "username_parameter_value": "john_doe"
+            "model_object": "webModel",
+            "http_request": "userRequest",
+            "username_parameter": "john_doe"
           }
         }
       ]
@@ -965,8 +967,8 @@
           "asr_output_elevenlabs": "Um, during the network session, can you manage the IO exception event in any TTY CHANEL context? Oh, and be sure to log something goes wrong with channel and then close the channel afterward.",
           "asr_output_deepgram": "During the network session, can you manage the IO exception event in n e t t y c h a n n e l context? Oh, and, be sure to log something goes wrong with channel and then close the channel afterward.",
           "clarifications": {
-            "exception_event_spelling": "ioExceptionEvent",
-            "channel_context_spelling": "nettyChannelContext",
+            "exception_event": "ioExceptionEvent",
+            "channel_context": "nettyChannelContext",
             "error_message": "something goes wrong with channel"
           }
         }
@@ -1009,8 +1011,8 @@
           "asr_output_elevenlabs": "Hey, uh, right. Can you update status to two for these product IDs, uh, in product management system 101, 202, 303?",
           "asr_output_deepgram": "Hey. Right. Can you update status to two for these product IDs, in product management system? One zero one two zero two three zero three.",
           "clarifications": {
-            "product_ids": "[101, 202, 303]",
-            "new_status_value": "2"
+            "new_status": "2",
+            "product_ids": "[101, 202, 303]"
           }
         }
       ]
@@ -1110,7 +1112,8 @@
           "asr_output_elevenlabs": "Hey, can you, uh, hide product categories with IDs 101, 102, and 103 in the e-commerce admin panel?",
           "asr_output_deepgram": "Hey. Can you, hide product categories with IDs one zero one, one zero two, and one zero three in the ecommerce admin panel?",
           "clarifications": {
-            "product_category_ids": "101, 102, and 103"
+            "product_category_ids": "101, 102, and 103",
+            "new_show_status": "hidden"
           }
         }
       ]
@@ -1157,7 +1160,7 @@
           "clarifications": {
             "subject_id": "42",
             "new_sort_value": "5",
-            "controller_name": "SmsHomeRecommendSubjectController"
+            "controller_name": "SMS home recommendations"
           }
         }
       ]
@@ -1254,7 +1257,9 @@
           "asr_output_openai": "Hey, um, which two numbers in this array [2, 7, 11, 15] add up to, uh, 9? Yeah, what are their indices?",
           "asr_output_elevenlabs": "Hey, um, which two numbers in this array, 2, 7, 11, 15 add up to a nine? Yeah. What are their indices?",
           "asr_output_deepgram": "Hey. Which two numbers in this array, two, seven, eleven, fifteen, add up to, nine? Yeah. What are their indices?",
-          "clarifications": {}
+          "clarifications": {
+            "target_sum": "9"
+          }
         }
       ]
     ],
@@ -1301,7 +1306,7 @@
             "database_name": "Elasticsearch",
             "credentials_file_path": "es_credentials.properties",
             "refresh_interval_seconds": "30",
-            "credentials_variable_name": "basicAuthCredentials"
+            "credentials_variable": "basicAuthCredentials"
           }
         }
       ]
@@ -1350,7 +1355,7 @@
           "clarifications": {
             "property_name": "zipkin.collector.activemq.concurrency",
             "property_value": "10",
-            "builder_class_name": "ActiveMQCollector.Builder"
+            "collector_builder": "ActiveMQCollector.Builder"
           }
         }
       ]
@@ -1397,9 +1402,9 @@
           "asr_output_elevenlabs": "Uh, if it's not already there, can you keep 42 under answer in a reticent cache? I need a completable future for this that gives an optional with the previous value. Okay?",
           "asr_output_deepgram": "If it's not already there, can you keep forty two under answer in a reticent cache? I need a completable future for this that gives an optional with the previous value. Okay?",
           "clarifications": {
-            "cache_name": "Redisson",
-            "key_name": "answer",
-            "value": "42"
+            "cache_key": "answer",
+            "cache_value": "42",
+            "cache_name": "Redisson"
           }
         }
       ]
@@ -1484,7 +1489,9 @@
           "asr_output_elevenlabs": "Uh, can you help me try to like get a permit from a r-e-d-i-s-s-o-n, Redison Expirable Semaphore asynchronously with a five-second wait, two-minute lease using seconds as the time unit? Right?",
           "asr_output_deepgram": "Can you help me try to, like, get a permit from a r e d I s s o n? For disen expirable semaphore asynchronously with a five second wait, two minute lease, using seconds as the time unit. Right?",
           "clarifications": {
-            "semaphore_name": "Redisson",
+            "semaphore_name": "Redisson expirable semaphore",
+            "wait_time_seconds": "5 seconds",
+            "lease_time_minutes": "2 minutes",
             "time_unit": "SECONDS"
           }
         }
@@ -1532,9 +1539,9 @@
           "asr_output_elevenlabs": "Store John Doe with key employee colon 1234 in Rita Sun map cache asynchronously. Oh, I think. Make sure it's done right.",
           "asr_output_deepgram": "Store John Doe with key employee colon one two three four in Read a Sun Map Cache asynchronously. Oh, I think. Make sure it's done right.",
           "clarifications": {
-            "key_spelling": "employee:1234",
-            "value_spelling": "John Doe",
-            "cache_name": "Redisson"
+            "value_to_store": "John Doe",
+            "key_to_store": "employee:1234",
+            "database_name": "Redisson"
           }
         }
       ]
@@ -1576,8 +1583,8 @@
           "asr_output_elevenlabs": "Set up a cleanup task with a timer to run in five minutes using the service manager. It's the CleanupTaskTimerTask object.",
           "asr_output_deepgram": "Set up a cleanup task with a timer to run-in five minutes using the service manager. It's the cleanup task timer task object.",
           "clarifications": {
-            "task_name": "cleanupTask",
-            "delay_time": "5 minutes"
+            "task_object": "cleanupTask",
+            "delay_duration": "5 minutes"
           }
         }
       ]
@@ -1627,7 +1634,7 @@
             "source_key1": "user:online:today",
             "source_key2": "user:online:yesterday",
             "destination_key": "user:online:both",
-            "operation_name": "bitwise AND"
+            "operation": "bitwise AND"
           }
         }
       ]
@@ -1680,8 +1687,8 @@
           "asr_output_elevenlabs": "Uh, can you help me change this alternating key value list open bracket use RED42, username JOHN DOE, is active TRUE close bracket into map entries for, uh, state handling with processing state?",
           "asr_output_deepgram": "Can you help me change this alternating key value list, open bracket, use r e d four two, username, John Doe, is active, true close bracket into map entries for, state handling the processing state?",
           "clarifications": {
-            "list_of_objects": "['userID', 42, 'username', 'johndoe', 'isActive', true]",
-            "state_object_name": "processingState"
+            "key_value_list": "['userID', 42, 'username', 'johndoe', 'isActive', true]",
+            "state_object": "processingState"
           }
         }
       ]
@@ -1726,8 +1733,8 @@
           "asr_output_elevenlabs": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?",
           "asr_output_deepgram": "Let me think. Could you help me handle this markup text build output for the build context Jenkins? Build to put console annotations in Jenkins?",
           "clarifications": {
-            "markup_text_spelling": "buildOutput",
-            "build_context_spelling": "jenkinsBuild"
+            "markup_text": "buildOutput",
+            "build_context": "jenkinsBuild"
           }
         }
       ]
@@ -1851,9 +1858,9 @@
           "asr_output_elevenlabs": "Um, could you tell rooting nodes observer that shard capital A-S-H-A-R-D capital A is now starting as shard capital B-S-H-A-R-D capital B in elastic search cluster? Thanks.",
           "asr_output_deepgram": "Could you tell routing nodes observer that shard, capital a, s h a r d, capital a, is now starting as shard, capital b, s h a r d, capital b, in Elasticsearch cluster. Thanks.",
           "clarifications": {
-            "unassigned_shard_name": "shardA",
-            "initialized_shard_name": "shardB",
-            "database_spelling": "Elasticsearch"
+            "unassigned_shard": "shardA",
+            "initialized_shard": "shardB",
+            "database_name": "Elasticsearch"
           }
         }
       ]
@@ -1895,7 +1902,7 @@
           "asr_output_elevenlabs": "Okay. Can you, um, help me set up O-B-J-E-C-T P-A-R-S-E-R object parser called Search Hit Parser to handle inner hits fields in Elasticsearch search results?",
           "asr_output_deepgram": "Okay. Can you, help me set up o b j e c t p a r s e, our object parser called search hit parser to handle inner hits fields in Elasticsearch search result?",
           "clarifications": {
-            "parser_name": "searchHitParser",
+            "parser_instance_name": "searchHitParser",
             "application_name": "Elasticsearch"
           }
         }
@@ -1933,9 +1940,9 @@
           "asr_output_elevenlabs": "Okay, can you help me set up a term query? Let's see for the username field, U-S-E-R-N-A-M-E F-I-E-L-D, username field to look for John Doe without considering case sensitivity in an elastic search, E-L-A-S-T-I-C-S-H, elastic search test case.",
           "asr_output_deepgram": "Okay. Can you help me set up a term query? Let's see for the username field u s e, r n a m e f I e l d username field to look for John Doe without considering case sensitivity in an Elasticsearch e l a, s t I c s e, ARCH Elasticsearch test case?",
           "clarifications": {
-            "field_type_spelling": "usernameField",
-            "value_to_search": "JohnDoe",
-            "database_name": "Elasticsearch"
+            "field_type": "usernameField",
+            "search_value": "JohnDoe",
+            "case_sensitivity": "case-insensitive"
           }
         }
       ]
@@ -1982,7 +1989,7 @@
           "asr_output_elevenlabs": "Can you help set up, oh I mean, a SPI instance for an Elasticsearch test? Use the mock settings, mock handler and test object.",
           "asr_output_deepgram": "Can you help set up, oh, I mean, a spy instance for an Elasticsearch test? Use the mock settings, mock handler, and test object.",
           "clarifications": {
-            "framework_name": "Elasticsearch",
+            "database_name": "Elasticsearch",
             "mock_creation_settings": "mockSettings",
             "mock_handler": "mockHandler",
             "object_to_be_spied": "testObject"
@@ -2081,7 +2088,7 @@
           "asr_output_elevenlabs": "Um, can you check that environment variable map in variables in the process builder? Uh, has exactly five entries, right?",
           "asr_output_deepgram": "Can you check that environment variable map in variables in the process builder, has exactly five entries. Right?",
           "clarifications": {
-            "environment_variable_map_name": "envVariables",
+            "environment_variable_map": "envVariables",
             "expected_size": "5"
           }
         }
@@ -2124,8 +2131,8 @@
           "asr_output_elevenlabs": "Uh, can you check if the caller sensitive method injected the invoker class for the CSM instance minstance as expected in the unit test and, um, check its my expected class dot class?",
           "asr_output_deepgram": "Can you check if the caller sensitive method injected the invoker class for the CSM instance instance as expected in the unit test and, check it's my expected class dot class?",
           "clarifications": {
-            "csm_instance_name": "csmInstance",
-            "expected_class_name": "MyExpectedClass.class"
+            "csm_instance": "csmInstance",
+            "expected_class": "MyExpectedClass.class"
           }
         }
       ]
@@ -2167,8 +2174,8 @@
           "asr_output_elevenlabs": "Can you help me with formatting a Java constant declaration? Lemme see. Oh, need it for a large base64-encoded string of a certificate. The constant should be named certificate and it's supposed to start with meFTCCBF2gabebagieseg covering 1024 characters.",
           "asr_output_deepgram": "Can you help me with formatting a Java constant declaration? Let me see. Oh, need it for a large base sixty four encoded string of a certificate. The constant should be named certificate, and it's supposed to start with may f t c c b f two kabibagi s e s g covering ten twenty four characters.",
           "clarifications": {
-            "constant_name_spelling": "CERTIFICATE",
-            "value_id": "MIIFdTCCBF2gAwIBAgISESG"
+            "constant_name": "CERTIFICATE",
+            "constant_value": "MIIFdTCCBF2gAwIBAgISESG"
           }
         }
       ]
@@ -2211,7 +2218,7 @@
           "asr_output_deepgram": "Could you set up a dummy server with, SSL encryption for testing? Oh, use IP one ninety two dot one sixty eight dot one dot ten port eight zero eighty, and the SSL context tests SSL context.",
           "clarifications": {
             "ip_address": "192.168.1.10",
-            "port_number": "8080",
+            "port": "8080",
             "ssl_context_name": "testSSLContext"
           }
         }
@@ -2255,7 +2262,7 @@
           "asr_output_deepgram": "Can you help me send HTTP response headers with a four zero four status code and, a content length of one thousand five hundred bytes for a non head request in an HTTP two test exchange?",
           "clarifications": {
             "status_code": "404",
-            "content_length_bytes": "1500"
+            "content_length": "1500"
           }
         }
       ]
@@ -2298,11 +2305,8 @@
           "asr_output_deepgram": "Could you help with simulating, removing documents that match a query in an Elasticsearch test setup? Use a delete by query request object called delete query request and an action listener named test listener for the bulk by scroll response.",
           "clarifications": {
             "request_object_name": "DeleteByQueryRequest",
-            "request_object_instance": "deleteQueryRequest",
-            "listener_class_name": "ActionListener",
-            "listener_instance_name": "testListener",
-            "response_type": "BulkByScrollResponse",
-            "database_name": "Elasticsearch"
+            "listener_name": "ActionListener",
+            "response_listener_name": "testListener"
           }
         }
       ]
@@ -2400,8 +2404,8 @@
           "asr_output_elevenlabs": "How can I get all child elements of type element from node? That's a SAML, uh, S-A-M-L assertion called S-A-M-L, a assertion node in a Java, uh, XML, uh, processing setup.",
           "asr_output_deepgram": "How can I, get all child elements of type element from node? That's a SAML, s a m l assertion called SAML, a assertion node in a Java, XML, processing setup.",
           "clarifications": {
-            "node_type_class_name": "Element",
-            "node_class_name": "SAMLAssertionNode"
+            "node_type": "Element",
+            "node_name": "SAMLAssertionNode"
           }
         }
       ]
@@ -2443,7 +2447,6 @@
           "asr_output_elevenlabs": "Uh, can you help me make a predicate to check if a join object is a full master node and, um, it states older than the local nodes accept a term of 42 and version seven, right?",
           "asr_output_deepgram": "Can you help me make a predicate to check if a join object is a full master node and, it states older than the local nodes except a term of forty two in version seven. Right?",
           "clarifications": {
-            "object_type_spelling": "Join",
             "local_accepted_term": "42",
             "local_accepted_version": "7"
           }
@@ -2542,17 +2545,17 @@
           "asr_output_elevenlabs": "Uh, create a new searchable snapshot for shard ID 5 in the daily snapshots repo. Oh, use, um, logs index settings with index settings for logs. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and, uh, get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blob store cache service, and, uh, shared blob cache service are set up.",
           "asr_output_deepgram": "Create a new searchable snapshot for shard ID five in the daily snapshots repo. Oh, use, logs index settings with index settings for logs. The shard path is in the five folder inside logs, inside indices, inside zero, inside nodes on the data directory, and get current time in nanoseconds using current time nanos. Services like repository service, cache service, thread pool, blobs Tor cache service, and, shared blob cache service are set up.",
           "clarifications": {
-            "repository_name": "daily-snapshots",
             "shard_id": "5",
+            "repository_name": "daily-snapshots",
             "index_name": "logs",
             "index_settings_variable": "indexSettingsForLogs",
             "shard_path": "/data/nodes/0/indices/logs/5",
-            "time_supplier_name": "currentTimeNanos",
-            "service1_name": "repositoriesService",
-            "service2_name": "cacheService",
-            "service3_name": "threadPool",
-            "service4_name": "blobStoreCacheService",
-            "service5_name": "sharedBlobCacheService"
+            "time_supplier": "currentTimeNanos",
+            "service1": "repositoriesService",
+            "service2": "cacheService",
+            "service3": "threadPool",
+            "service4": "blobStoreCacheService",
+            "service5": "sharedBlobCacheService"
           }
         }
       ]
@@ -2624,10 +2627,10 @@
           "asr_output_elevenlabs": "Um, can you help with parsing the HTTP response body from htpressponsan entity using the response parser function and, oh, default parser config in an Elasticsearch multi-cluster search test?",
           "asr_output_deepgram": "Can you help with parsing the HTTP response body from HT Press response and entity using the response parser function and, oh, default parser config in an Elasticsearch multi cluster search test?",
           "clarifications": {
-            "entity_name": "httpResponseEntity",
-            "parser_function_name": "responseParser",
-            "parser_configuration_name": "defaultParserConfig",
-            "search_test_context": "Elasticsearch multi-cluster search test"
+            "entity": "httpResponseEntity",
+            "entity_parser_function": "responseParser",
+            "parser_configuration": "defaultParserConfig",
+            "database_name": "Elasticsearch"
           }
         }
       ]
@@ -2674,9 +2677,9 @@
           "asr_output_elevenlabs": "Uh, can you check the enable login setting? It's set to yes right now. Right, if it's not specified, um, make sure it defaults to false.",
           "asr_output_deepgram": "Can you check the enable login setting? It's set to yes right now. Right? If it's not specified, make sure it defaults to false.",
           "clarifications": {
-            "configuration_setting_name": "enableLogging",
-            "current_value_spelling": "yes",
-            "default_value_spelling": "false"
+            "configuration_setting": "enableLogging",
+            "current_value": "yes",
+            "default_value": "false"
           }
         }
       ]
@@ -2718,7 +2721,7 @@
           "asr_output_elevenlabs": "Uh, can you help turn the user profile data map with keys like name, age, and email into an XContentBuilder object? And oh, make sure there were no self-references, and include start and end object headers.",
           "asr_output_deepgram": "Can you help turn the user profile data map with keys like name, age, and email into an X Content Builder object? And, oh, make sure there are no self references and include start and end object headers.",
           "clarifications": {
-            "object_type_spelling": "XContentBuilder"
+            "object_type": "XContentBuilder"
           }
         }
       ]
@@ -2766,7 +2769,7 @@
           "asr_output_deepgram": "Could you assist me in truncating the trans log for that shard? It's found in the folder slash var slash data slash elastic search slash node slash zero slash indices slash one shard. To make sure the output goes to the index directory, use the terminal interface located at slash rar slash data slash elastic search slash nodes slash zero slash indices slash known shard slash index.",
           "clarifications": {
             "shard_path": "/var/data/elasticsearch/nodes/0/indices/1shard",
-            "index_directory_path": "/var/data/elasticsearch/nodes/0/indices/1shard/index"
+            "index_directory": "/var/data/elasticsearch/nodes/0/indices/1shard/index"
           }
         }
       ]
@@ -2813,9 +2816,8 @@
           "asr_output_elevenlabs": "Hey, uh, can you help me build a nested query in Elasticsearch for main search context? That's M-A-I-N-S-E-A-R-C-H-C-O-N-T-E-X-T, main search context. And, um, update the inner hits context, hits context, that's H-I-T-S-C-O-N-T-E-X-T, hits context for the nested path user.address. Making sure it doesn't ignore unmapped paths.",
           "asr_output_deepgram": "Hey, can you help me build a nested query in Elasticsearch for main search context? That's m a I n s e a r c h c o n t e x t main search context, and, update the inner hits context hits context. That's h I t s c o n t e x t hits context for the nested path user dot address, making sure it doesn't ignore unmapped paths.",
           "clarifications": {
-            "database_name": "Elasticsearch",
-            "search_context_spelling": "mainSearchContext",
-            "inner_hits_context_spelling": "hitsContext",
+            "search_context": "mainSearchContext",
+            "inner_hits_context": "hitsContext",
             "nested_path": "user.address"
           }
         }
@@ -2920,8 +2922,10 @@
           "clarifications": {
             "field_name": "temperature",
             "query_type": "FLOAT",
-            "lower_bound_value": "20.5",
-            "upper_bound_value": "30.0"
+            "lower_bound": "20.5",
+            "upper_bound": "30.0",
+            "include_lower_bound": "including the lower bound",
+            "exclude_upper_bound": "excluding the upper bound"
           }
         }
       ]
@@ -2984,7 +2988,11 @@
           "asr_output_deepgram": "Hey, help me craft a query for Elasticsearch to find documents where the age field's between thirty and forty. Right? It should include thirty but not forty.",
           "clarifications": {
             "database_name": "Elasticsearch",
-            "field_name": "age"
+            "field_name": "age",
+            "lower_bound": "30",
+            "upper_bound": "40",
+            "include_lower_bound": "inclusive of 30",
+            "exclude_upper_bound": "exclusive of 40"
           }
         }
       ]
@@ -3043,11 +3051,11 @@
           "clarifications": {
             "database_name": "Elasticsearch",
             "field_name": "timestamp",
-            "factory_name": "dateFactory",
-            "script_name": "dateScript",
+            "date_field_script_factory": "dateFactory",
+            "date_script": "dateScript",
             "metadata_key": "format",
             "metadata_value": "epoch_millis",
-            "error_handling_policy": "FAIL"
+            "script_error_handling_policy": "FAIL"
           }
         }
       ]
@@ -3104,13 +3112,9 @@
           "asr_output_elevenlabs": "Uh, could you use XContentBuilder instance to make the XContent for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields.",
           "asr_output_deepgram": "Could you use X Content Builder instance to make the X Content for a root object mapper? Oh, make sure it includes default settings for things like dynamic date formats, dynamic templates, date detection, and numeric detection, but skip the runtime fields.",
           "clarifications": {
+            "content_type": "XContent",
             "builder_instance": "xContentBuilderInstance",
-            "object_mapper_type": "RootObjectMapper",
-            "dynamic_date_formats": "dynamic date formats",
-            "dynamic_templates": "dynamic templates",
-            "date_detection": "date detection",
-            "numeric_detection": "numeric detection",
-            "skip_runtime_fields": "skip runtime fields"
+            "object_mapper": "RootObjectMapper"
           }
         }
       ]
@@ -3156,9 +3160,9 @@
           "asr_output_deepgram": "Let me see. Could you help me set up a child runtime field for the composite field composite field one in Elasticsearch? Use mapping parser context, the parser context, the composite script factory as the parent script factory, and handle script errors with on script error. Ignore yeah.",
           "clarifications": {
             "parent_field_name": "compositeField1",
-            "parser_context_spelling": "mappingParserContext",
-            "parent_script_factory_spelling": "compositeScriptFactory",
-            "script_error_handling_strategy": "onScriptError.IGNORE"
+            "parser_context": "mappingParserContext",
+            "parent_script_factory": "compositeScriptFactory",
+            "script_error_handling": "onScriptError.IGNORE"
           }
         }
       ]
@@ -3211,7 +3215,7 @@
           "asr_output_deepgram": "Can you help me make a DMG setup script for an app called photo editor at slash application slash photo editor dot app? Make sure the script shows the right volume URL and installation directory for the macOS package with j package and include a custom background image.",
           "clarifications": {
             "application_name": "PhotoEditor",
-            "app_location_path": "/Applications/PhotoEditor.app",
+            "application_location": "/Applications/PhotoEditor.app",
             "volume_url": "volume URL",
             "installation_directory": "installation directory"
           }
@@ -3345,7 +3349,7 @@
           "asr_output_elevenlabs": "Uh, can you help me finish an XML element with the qualified name, namespace URI is http dot www.example.com. Local part is item and the prefix is X. Oh, also add the augmentations info in an XML app that works with namespaces.",
           "asr_output_deepgram": "Can you help me finish an XML element with the qualified name? Name space URI is h t t p dot I jot w w w dot example dot com. Local part is item, and the prefix is x. Oh, also add the augmentations info in an XML app that works with namespaces.",
           "clarifications": {
-            "qualified_name_spelling": "{namespaceURI='http://www.example.com', localPart='item', prefix='ex'}",
+            "qualified_name": "{namespaceURI='http://www.example.com', localPart='item', prefix='ex'}",
             "augmentation_information": "augmentations"
           }
         }
@@ -3437,7 +3441,7 @@
           "asr_output_elevenlabs": "Let me see. Right. Can you help me put a substring from text buffer starting at index five and ten characters long into a text stream while handling XML serialization?",
           "asr_output_deepgram": "Let me see. Right. Can you help me put a substring from text buffer starting at index five and ten characters long into a text stream while handling XML serialization?",
           "clarifications": {
-            "character_array_name": "textBuffer",
+            "character_array": "textBuffer",
             "start_index": "5",
             "length_of_characters": "10"
           }
@@ -3580,7 +3584,7 @@
           "asr_output_deepgram": "Hey. Can you check if the enable XML security feature property is turned on for the XML security feature in a JAVA Java XML environment? Oh, let me see.",
           "clarifications": {
             "system_property_name": "enableXmlSecurityFeature",
-            "xml_feature_name": "XML_SECURITY"
+            "security_feature": "XML_SECURITY"
           }
         }
       ]
@@ -3623,8 +3627,8 @@
           "asr_output_deepgram": "Can you help me change intro animation graphics using the step method? Right. It's eight hundred pixels wide and ten minutes tall.",
           "clarifications": {
             "method_name": "step",
-            "width_pixels": "800",
-            "height_pixels": "600"
+            "width": "800 pixels",
+            "height": "600 pixels"
           }
         }
       ]
@@ -3709,11 +3713,9 @@
           "asr_output_elevenlabs": "Let me see. Can help set up an option parser, so it needs the output format option unless there's a quiet or verbose option in the command line app. Okay?",
           "asr_output_deepgram": "Let me see. Can help set up an option parser, so it needs the output format option unless there's a quiet or verbose option in the command line app. Okay?",
           "clarifications": {
-            "dependent_option_name": "output-format",
-            "other_dependent_options": [
-              "quiet",
-              "verbose"
-            ]
+            "dependent_option": "output-format",
+            "other_dependent_option1": "quiet",
+            "other_dependent_option2": "verbose"
           }
         }
       ]
@@ -3759,7 +3761,7 @@
           "clarifications": {
             "system_identifier": "http://astro.com/stylesheets/toptemplate",
             "public_identifier": "1234",
-            "factory_name": "SAX filter factory"
+            "sax_filter_factory": "SAX filter factory"
           }
         }
       ]
@@ -3801,7 +3803,7 @@
           "asr_output_elevenlabs": "Um, can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system? Specifically in the fail on category for rule four two.",
           "asr_output_deepgram": "Can you say the pattern for a failure message when checking for forbidden nodes in a graph constraint system, specifically in the Phalon category for rule four two?",
           "clarifications": {
-            "category_name": "failOn",
+            "category": "failOn",
             "rule_index": "42"
           }
         }
@@ -3844,10 +3846,10 @@
           "asr_output_elevenlabs": "Let me see. Can you run a garbage collection test with humungous-test-case.json? Oh, use a custom garbage collector, check object references with reference checker and look at gc-analysis.log. Make sure it shows GC pause, but no out of memory error.",
           "asr_output_deepgram": "Let me see. Can you run a garbage collection test with humongous dash test dash case dot JSON? Oh, use a custom garbage collector, check object references with reference checker, and look at GC dash analysis dot log. Make sure it shows g c pause, but no out of memory error.",
           "clarifications": {
-            "test_case_data_file": "humongous-test-case.json",
-            "garbage_collector_name": "custom garbage collector",
-            "object_reference_checker_function": "referenceChecker",
-            "gc_log_file_name": "gc-analysis.log",
+            "testcase_data": "humongous-test-case.json",
+            "custom_garbage_collector": "custom garbage collector",
+            "object_reference_checker": "referenceChecker",
+            "gc_log_name": "gc-analysis.log",
             "log_should_contain": "GC pause",
             "log_should_not_contain": "OutOfMemoryError"
           }
@@ -3917,9 +3919,9 @@
           "asr_output_elevenlabs": "Uh, can you run the runIt method for a test? Oh, it should like make an object of the class being tested, hit a breakpoint on the method and log everything to system.out using the test args array.",
           "asr_output_deepgram": "Can you run the run it method for a test? Oh, it should, like, make an object of the class being tested, hit a breakpoint on the method, and log everything to system dot out using the test args array.",
           "clarifications": {
-            "method_name_spelling": "runIt",
-            "stream_name_spelling": "System.out",
-            "arguments_array_name": "testArgs"
+            "method_name": "runIt",
+            "output_stream": "System.out",
+            "arguments_array": "testArgs"
           }
         }
       ]
@@ -3964,8 +3966,9 @@
           "asr_output_elevenlabs": "Uh, can you run a performance test in Java with like 500 iterations? Make sure the results go to system dot out. Also use command line arguments to, you know, set a two-minute wait time.",
           "asr_output_deepgram": "Can you run a performance test in Java with, like, five hundred iterations? Make sure the results go to system dot out. Also, use command line arguments to, you know, set a two minute wait time.",
           "clarifications": {
+            "iterations": "500",
             "output_stream": "System.out",
-            "command_line_arguments": "-waitTime, 2 minutes, -iterations, 500"
+            "wait_time": "2 minutes"
           }
         }
       ]
@@ -4010,7 +4013,7 @@
           "asr_output_elevenlabs": "Can you check if all those inner fields, private package, private and public of RedefClass instance MyRedefClass are set to 100? If they're not, go ahead and log a complaint about it.",
           "asr_output_deepgram": "Can you check if all those inner fields, private, package private, and public of REDF class instance, my REDF class, are set to one hundred? If they're not, go ahead and log a complaint about it.",
           "clarifications": {
-            "class_instance_name": "myRedefClass",
+            "class_instance": "myRedefClass",
             "expected_value": "100"
           }
         }
@@ -4053,9 +4056,10 @@
           "asr_output_elevenlabs": "Um, can you help me run the runit method to, uh, check if a class is properly instrumented? Use these command line arguments, open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, 60. And, um, this PrintStream object logStream. The original class value is 12345L, and after instrumentation it should be 54321L.",
           "asr_output_deepgram": "Can you help me run the run it method to, check if a class is properly instrumented? Use these command line arguments, open bracket, forward slash, path, slash, to, slash, classes, close bracket, comma, sixty, and, this print stream object, log stream. The original class value is one two three four five l, and after instrumentation, it should be five four three two one l.",
           "clarifications": {
+            "method_name": "runIt",
             "command_line_arguments": "['/path/to/classes', '60']",
-            "stream_type_spelling": "PrintStream",
-            "stream_name_spelling": "logStream",
+            "stream_type": "PrintStream",
+            "stream_name": "logStream",
             "original_class_value": "12345L",
             "new_expected_value": "54321L"
           }
@@ -4104,8 +4108,8 @@
           "clarifications": {
             "method_name": "runThis",
             "command_line_arguments": "['-v', '--no-strict']",
-            "output_stream_name": "PrintStream",
-            "output_stream_object": "debugOutput"
+            "output_stream": "PrintStream",
+            "stream_name": "debugOutput"
           }
         }
       ]
@@ -4150,8 +4154,8 @@
           "asr_output_elevenlabs": "Let me see. Can you help me create a VM death request with the suspend policy set to event thread and set the property test property to death event 001 in a Java debug session? Yeah.",
           "asr_output_deepgram": "Let me see. Can you help me create a VM death request with the suspend policy set to event thread and set the property test property to death event zero zero one in a Java debug session? Yeah?",
           "clarifications": {
-            "request_type_constant": "VMDeathRequest",
-            "suspend_policy_spelling": "EVENT_THREAD",
+            "request_type": "VMDeathRequest",
+            "suspend_policy": "EVENT_THREAD",
             "property_name": "testProperty",
             "property_value": "deathEvent001"
           }
@@ -4250,8 +4254,8 @@
           "asr_output_elevenlabs": "Um, can you run the Test Runner, run this? Uh, set the wait time to 120 seconds and send the logs to test log stream. The debuggie name is Test Debuggie.",
           "asr_output_deepgram": "Can you run the test runner run this? Set the wait time to one hundred and twenty seconds and send the logs to test log stream. The debuggy name is test debuggy.",
           "clarifications": {
-            "command_line_argument_wait_time": "2 minutes",
-            "print_stream_name": "testLogStream",
+            "wait_time": "2 minutes",
+            "print_stream": "testLogStream",
             "debuggee_name": "TestDebuggee"
           }
         }
@@ -4391,7 +4395,8 @@
           "asr_output_deepgram": "Can you get the absolute path for the class file com dot example dot my class? Oh, the class path includes slash USR slash local slash classes and slash home slash user slash Java slash libs.",
           "clarifications": {
             "class_name": "com.example.MyClass",
-            "class_path": "/usr/local/classes:/home/user/java/libs"
+            "class_path1": "/usr/local/classes",
+            "class_path2": "/home/user/java/libs"
           }
         }
       ]
@@ -4433,7 +4438,8 @@
           "asr_output_elevenlabs": "Let's see. Can you run JAR Agent with trace and log options in the Java app? The instrumentation object is called AppInstrumentation.",
           "asr_output_deepgram": "Let's see. Can you run jar agent with trace and log options in the Java app? The instrumentation object is called app instrumentation.",
           "clarifications": {
-            "instrumentation_object_name": "appInstrumentation"
+            "options": "trace, log",
+            "instrumentation_object": "appInstrumentation"
           }
         }
       ]
@@ -4516,10 +4522,10 @@
           "asr_output_elevenlabs": "Can you, uh, run a generic operation on an inline object with hello world? Use the inlineable node instance, spelled I-N-L-I-N-A-B-L-E node instance, and make sure it's linked to node library instance, spelled N-O-D-E L-I-B-R-A-R-Y instance, with export inline object one instance, spelled E-X-P-O-R-T-I-N-L-I-N-E-D-O-B-J-E-C-T one instance as the receiver?",
           "asr_output_deepgram": "Can you, run a generic operation on an inlined object with hello world? Use the inlinable node instance, spelled I n l I n a b l e, node instance, and make sure it's linked to node library instance, spelled n o d e l I b r a r y instance with export inlined object one instance, spelled e x p o r t I n l I n e d o b j e c t one instance as the receiver.",
           "clarifications": {
-            "argument_value": "HelloWorld",
-            "specialized_node_name": "InlinableNodeInstance",
-            "node_library_name": "NodeLibraryInstance",
-            "receiver_object_name": "ExportInlinedObject1Instance"
+            "argument": "HelloWorld",
+            "node": "InlinableNodeInstance",
+            "library": "NodeLibraryInstance",
+            "receiver": "ExportInlinedObject1Instance"
           }
         }
       ]
@@ -4621,7 +4627,7 @@
           "asr_output_deepgram": "Let me see. Can you give me a hand with generating that introspection stuff for the node class in a truffle DSL processor and, ensure the introspection stays separate and not inlined?",
           "clarifications": {
             "class_name": "NodeClass",
-            "introspection_inlined_status": "not inlined"
+            "inlined_status": "not inlined"
           }
         }
       ]
@@ -4663,8 +4669,8 @@
           "asr_output_elevenlabs": "What's the chance that a loop condition\u2019s true if it's like been true 150 times and false 50 times?",
           "asr_output_deepgram": "What's the chance that a loop condition's true if it's like been true one hundred fifty times and false fifty times?",
           "clarifications": {
-            "true_count": "150",
-            "false_count": "50"
+            "true_evaluation_count": "150",
+            "false_evaluation_count": "50"
           }
         }
       ]
@@ -4706,9 +4712,9 @@
           "asr_output_elevenlabs": "Uh, can you help me make an instance of a delegate library for M-Y-C-U-S-T-O-M-L-I-B-R-A-R-Y, My Custom Library, using MyFactory and existing delegate which isn't adoptable?",
           "asr_output_deepgram": "Can you help me make an instance of a delegate library for m y c u s t o m l I b r a r y, my custom library using my factory and existing delegate, which isn't adoptable?",
           "clarifications": {
-            "library_type_spelling": "MyCustomLibrary",
-            "factory_object_name": "myFactory",
-            "delegate_instance_name": "existingDelegate"
+            "library_type": "MyCustomLibrary",
+            "factory_object": "myFactory",
+            "delegate_instance": "existingDelegate"
           }
         }
       ]

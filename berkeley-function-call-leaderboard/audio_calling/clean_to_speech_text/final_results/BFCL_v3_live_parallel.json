@@ -11,7 +11,10 @@
           "asr_output_openai": "Hey, what's the weather like in Boston and San Francisco right now?",
           "asr_output_elevenlabs": "Hey, what's the weather like in Boston and San Francisco right now?",
           "asr_output_deepgram": "Hey. What's the weather like in Boston and San Francisco right now?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Boston, MA",
+            "location2": "San Francisco"
+          }
         }
       ]
     ],
@@ -55,7 +58,10 @@
           "asr_output_openai": "Um, what's the weather in Boston and, uh, San Francisco?",
           "asr_output_elevenlabs": "Um, what's the weather in Boston and San Francisco?",
           "asr_output_deepgram": "What's the weather in Boston and, San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "first_city": "Boston",
+            "second_city": "San Francisco"
+          }
         }
       ]
     ],
@@ -103,7 +109,11 @@
           "asr_output_openai": "Hey, could you tell me current weather in Cancun, Playa del Carmen, and Tulum?",
           "asr_output_elevenlabs": "Hey, could you tell me current weather in Cancun, Playa del Carmen and Tulum?",
           "asr_output_deepgram": "Hey. Could you tell me current weather in Cancun, Playa del Carmen, and Tulum?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Canc\u00fan, QR",
+            "location2": "Playa del Carmen, QR",
+            "location3": "Tulum, QR"
+          }
         }
       ]
     ],
@@ -147,7 +157,10 @@
           "asr_output_openai": "Hey, how's the weather right now in Boston and San Francisco?",
           "asr_output_elevenlabs": "Hey, um, how's the weather right now in Boston and, uh, San Francisco?",
           "asr_output_deepgram": "Hey. How's the weather right now in Boston and, San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Boston, USA",
+            "location2": "San Francisco, USA"
+          }
         }
       ]
     ],
@@ -187,7 +200,10 @@
           "asr_output_openai": "Hey, what's the temperature right now in Boston and San Francisco, okay?",
           "asr_output_elevenlabs": "Hey, what's the temperature right now in Boston and San Francisco? Okay.",
           "asr_output_deepgram": "Hey, what's the temperature right now in Boston and San Francisco? Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Boston, MA",
+            "location2": "San Francisco"
+          }
         }
       ]
     ],
@@ -236,7 +252,10 @@
           "asr_output_openai": "Hey, um, can let me know how the snow's lookin' in Paris and Bordeaux, right?",
           "asr_output_elevenlabs": "Hey, um, can let me know how the snows look in, in Paris and Bordeaux, right?",
           "asr_output_deepgram": "Hey. Can let me know how the snows look in in Paris and Bordeaux. Right?",
-          "clarifications": {}
+          "clarifications": {
+            "first_city": "Paris",
+            "second_city": "Bordeaux"
+          }
         }
       ]
     ],
@@ -305,7 +324,10 @@
           "asr_output_openai": "Hey, can you tell me the weather in Boston and San Francisco thanks?",
           "asr_output_elevenlabs": "Hey, can you tell me the weather in Boston and San Francisco? Thanks!",
           "asr_output_deepgram": "Hey. Can you tell me the weather in Boston and San Francisco? Thanks.",
-          "clarifications": {}
+          "clarifications": {
+            "first_location": "Boston",
+            "second_location": "San Francisco"
+          }
         }
       ]
     ],
@@ -375,8 +397,8 @@
           "asr_output_elevenlabs": "Hey, can you, uh, help me with my tasks? Add one called Machine Learning Study Session. Oh, I've finished Toto Random so, um, please remove it.",
           "asr_output_deepgram": "Hey. Can you, help me with my tasks? Add one called machine learning study session. Oh, I finished Toto random. So, please remove it.",
           "clarifications": {
-            "add_task_content": "Machine Learning Study Session",
-            "delete_task_content": "todo random"
+            "task_to_add": "Machine Learning Study Session",
+            "task_to_delete": "todo random"
           }
         }
       ]
@@ -423,7 +445,8 @@
           "asr_output_elevenlabs": "Hey, can you check cost on AWS EC2 for a machine with 2 and 4 gigabytes of RAM and one CPU?",
           "asr_output_deepgram": "Hey. Can you check cost on AWS EC? Two for a machine with two and four gigabytes of RAM and one CPU.",
           "clarifications": {
-            "memory_amount": "2 and 4 gb",
+            "memory_option1": "2 gb",
+            "memory_option2": "4 gb",
             "cpu_units": "one CPU"
           }
         }
@@ -487,12 +510,16 @@
           "clarifications": {
             "first_hotel_name": "Sheraton Hotel",
             "first_location": "New York",
-            "first_check_in_date": "May 1, 2022",
-            "first_check_out_date": "May 5, 2022",
+            "first_check_in": "May 1, 2022",
+            "first_check_out": "May 5, 2022",
+            "first_adults": "2",
+            "first_children": "1",
             "second_hotel_name": "Marriott",
             "second_location": "Los Angeles",
-            "second_check_in_date": "June 1, 2022",
-            "second_check_out_date": "June 10, 2022"
+            "second_check_in": "June 1, 2022",
+            "second_check_out": "June 10, 2022",
+            "second_adults": "1",
+            "second_children": "2"
           }
         }
       ]
@@ -554,22 +581,22 @@
           "asr_output_elevenlabs": "So, uh, for breakfast I had twelve ounce iced coffee and a banana. Then for lunch I went with a, uh, quesadilla. Oh, and breakfast also included four ounces of asparagus, uh, two eggs and one slice of gluten-free bread.",
           "asr_output_deepgram": "So, for breakfast, I had twelve ounce iced coffee and a banana. Then for lunch, I went with a, quesadilla. Oh, and breakfast also included four ounces of asparagus, two eggs, and one slice of gluten free bread.",
           "clarifications": {
-            "portion_amount_spelling1": "12 ounce",
-            "food_name1": "iced coffee",
-            "meal_name1": "breakfast",
-            "food_name2": "banana",
-            "meal_name2": "breakfast",
-            "food_name3": "quesadilla",
-            "meal_name3": "lunch",
-            "portion_amount_spelling2": "four ounces",
-            "food_name4": "asparagus",
-            "meal_name4": "breakfast",
-            "portion_amount_spelling3": "two",
-            "food_name5": "eggs",
-            "meal_name5": "breakfast",
-            "portion_amount_spelling4": "one piece",
-            "food_name6": "gluten free bread",
-            "meal_name6": "breakfast"
+            "portion_amount_breakfast1": "12 ounces",
+            "food_name_breakfast1": "iced coffee",
+            "meal_name_breakfast1": "breakfast",
+            "food_name_breakfast2": "banana",
+            "meal_name_breakfast2": "breakfast",
+            "food_name_lunch": "quesadilla",
+            "meal_name_lunch": "lunch",
+            "portion_amount_breakfast3": "four ounces",
+            "food_name_breakfast3": "asparagus",
+            "meal_name_breakfast3": "breakfast",
+            "food_name_breakfast4": "eggs",
+            "portion_amount_breakfast4": "two",
+            "meal_name_breakfast4": "breakfast",
+            "food_name_breakfast5": "gluten free bread",
+            "portion_amount_breakfast5": "one piece",
+            "meal_name_breakfast5": "breakfast"
           }
         }
       ]
@@ -627,7 +654,10 @@
           "asr_output_openai": "Um, can you get me the current weather in Boston and San Francisco?",
           "asr_output_elevenlabs": "Um, can you get me the current weather in Boston and, uh, San Francisco?",
           "asr_output_deepgram": "Can you get me the current weather in Boston and, San Francisco?",
-          "clarifications": {}
+          "clarifications": {
+            "location1": "Boston, MA",
+            "location2": "San Francisco"
+          }
         }
       ]
     ],
@@ -671,7 +701,10 @@
           "asr_output_openai": "Hey, you know, what's the weather in Boston and San Francisco right now?",
           "asr_output_elevenlabs": "Hey, you know, what's the weather in Boston and San Francisco right now?",
           "asr_output_deepgram": "Hey. You know, what's the weather in, Boston and San Francisco right now?",
-          "clarifications": {}
+          "clarifications": {
+            "first_city": "Boston",
+            "second_city": "San Francisco"
+          }
         }
       ]
     ],
@@ -716,7 +749,8 @@
           "asr_output_elevenlabs": "List files in the C drive and create a file named testing.txt.",
           "asr_output_deepgram": "List files in the C drive and, create a file named testing dot TXT.",
           "clarifications": {
-            "command_spelling": "list file in c drive and make file called testing.txt"
+            "file_name": "testing.txt",
+            "drive_letter": "C drive"
           }
         }
       ]

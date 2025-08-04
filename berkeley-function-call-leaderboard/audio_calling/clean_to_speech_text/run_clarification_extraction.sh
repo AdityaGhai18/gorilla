@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to run clarification extraction in parallel across all JSON files
-# This will add clarification dictionaries to all files
+# This will REPLACE existing clarification dictionaries in all files now for the 2nd run
 
 FINAL_RESULTS_DIR="final_results"
 EXTRACTION_LOGS_DIR="$FINAL_RESULTS_DIR/extraction_logs"
@@ -9,8 +9,8 @@ EXTRACTION_LOGS_DIR="$FINAL_RESULTS_DIR/extraction_logs"
 # Create logs directory
 mkdir -p "$EXTRACTION_LOGS_DIR"
 
-echo "Starting parallel clarification extraction TEST RUN (LOG-ONLY MODE)..."
-echo "This will process 5 samples from each file and output to logs WITHOUT modifying JSON files"
+echo "Starting parallel clarification extraction FULL RUN..."
+echo "This will process ALL test cases and REPLACE existing clarifications in JSON files"
 echo "Logs will be saved to: $EXTRACTION_LOGS_DIR"
 echo "============================================================"
 
@@ -40,14 +40,14 @@ for file in "${JSON_FILES[@]}"; do
     file_path="$FINAL_RESULTS_DIR/$file"
     
     if [ -f "$file_path" ]; then
-        echo "Starting clarification extraction for: $file"
+        echo "[$(date '+%H:%M:%S')] Starting clarification extraction for: $file"
         log_file="$EXTRACTION_LOGS_DIR/${file%.json}_extraction.log"
         
         # Run the clarification script in background and log output
-        # LOG-ONLY MODE: Process 5 test cases and output to log without modifying files
-        python3 clarification_extractor.py "$file_path" --log-only --log-file "$log_file" --sample-count 5 > "${log_file%.log}_stdout.log" 2>&1 &
+        # FULL PROCESSING MODE: Process ALL test cases and modify JSON files
+        python3 clarification_extractor.py "$file_path" > "${log_file%.log}_stdout.log" 2>&1 &
         
-        echo "  -> Background process started, log: $log_file"
+        echo "  -> Background process started (PID: $!), log: $log_file"
     else
         echo "WARNING: File not found: $file_path"
     fi
@@ -56,15 +56,41 @@ done
 echo ""
 echo "All clarification extraction processes started in background."
 echo "Waiting for all processes to complete..."
+echo ""
+echo "Monitoring progress (check logs for real-time updates):"
+echo "============================================================"
+
+# Function to show progress
+show_progress() {
+    while true; do
+        echo -n "[$(date '+%H:%M:%S')] "
+        echo -n "Active processes: $(jobs -r | wc -l | tr -d ' ') | "
+        echo -n "Completed: $(jobs -s | wc -l | tr -d ' ') | "
+        echo "Total: ${#JSON_FILES[@]}"
+        
+        # Check if all jobs are done
+        if [ $(jobs -r | wc -l) -eq 0 ]; then
+            break
+        fi
+        
+        sleep 10  # Update every 10 seconds
+    done
+}
+
+# Show progress in background
+show_progress &
 
 # Wait for all background processes to finish
 wait
 
+# Stop progress monitoring
+kill %1 2>/dev/null || true
+
 echo ""
 echo "============================================================"
-echo "All clarification extraction TEST RUN completed!"
+echo "All clarification extraction FULL RUN completed!"
 echo "Check logs in: $EXTRACTION_LOGS_DIR"
-echo "No JSON files were modified - this was a test run only"
+echo "JSON files have been updated with new clarifications"
 
 # Print summary of log files
 echo ""

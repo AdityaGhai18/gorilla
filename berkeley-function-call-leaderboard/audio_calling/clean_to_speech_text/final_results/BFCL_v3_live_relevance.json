@@ -155,11 +155,7 @@
           "asr_output_elevenlabs": "Uh, create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's, um, in an art nouveau style like Alphonse Mucha. That's A-L-P-H-O-N-S-E M-U-C-H-A, Alphonse Mucha, but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, oh, and include green highlight lines, right?",
           "asr_output_deepgram": "Create digital painting of a woman in a mask surrounded by bright peacock feathers. Make sure it's, in an art nouveau style like Alphonse Mucha. That's a l p h o n s e m u c h a, Alphonse Mucha, but with a cyberpunk twist. I want it like highly detailed with fluid illustrations and complex patterns. Oh, and include green highlight lines. Right?",
           "clarifications": {
-            "art_style_reference": "Alphonse Mucha's art nouveau",
-            "theme": "cyberpunk",
-            "subject_description": "a woman wearing a mask with bright peacock feathers",
-            "artistic_elements": "fluid illustrations and complex patterns",
-            "highlight_color": "green highlighted lines"
+            "image_prompt": "a woman wearing a mask with bright peacock feathers around her, reminiscent of Alphonse Mucha's art nouveau works, with a cyberpunk twist, highly detailed digital painting, featuring fluid illustrations and complex patterns, with green highlighted lines"
           }
         }
       ]
@@ -355,7 +351,11 @@
           "asr_output_openai": "Um, hey, can you, right, give me the top five search results for 'capital of the United States,' but in French?",
           "asr_output_elevenlabs": "Um, hey, can you\u2014right, give me the top five search results for \"capital of the United States,\" uh, but in French?",
           "asr_output_deepgram": "Hey. Can you right. Give me the top five search results for capital of the United States, but in French?",
-          "clarifications": {}
+          "clarifications": {
+            "results_limit": "5",
+            "query": "capital of the United States",
+            "language": "French"
+          }
         }
       ]
     ],
@@ -412,7 +412,9 @@
           "asr_output_openai": "Hey, um, what's the current temperature in New York using its latitude and longitude?",
           "asr_output_elevenlabs": "Hey, um, what's the current temperature in New York using its latitude and longitude?",
           "asr_output_deepgram": "Hey. What's the current temperature in New York using its latitude and longitude?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "New York"
+          }
         }
       ]
     ],
@@ -513,7 +515,7 @@
           "clarifications": {
             "copyright_content": "The image is a poster for The Lego Movie, a 2014 American 3D computer-animated comedy film produced by Warner Animation Group and distributed by Warner Bros. Pictures.",
             "copyright_holder": "Warner Bros. Pictures",
-            "confidence_score": "100.0"
+            "confidence_score": "100"
           }
         }
       ]
@@ -720,7 +722,10 @@
           "asr_output_openai": "Hey, find me a place to stay in London for four people, okay?",
           "asr_output_elevenlabs": "Hey, uh, find me a place to stay London for four people, okay?",
           "asr_output_deepgram": "Hey, find me a place to stay London for four people. Okay?",
-          "clarifications": {}
+          "clarifications": {
+            "location": "London",
+            "number_of_adults": "4"
+          }
         }
       ]
     ],
@@ -940,7 +945,7 @@
           "asr_output_deepgram": "Hey, what regular shows are playing at Third Street Cinema Santa Rosa?",
           "clarifications": {
             "theater_name": "3rd Street Cinema",
-            "location": "Santa Rosa"
+            "city": "Santa Rosa"
           }
         }
       ]
@@ -1098,8 +1103,9 @@
           "asr_output_elevenlabs": "Get movie ticket for, uh, four people in Concord on April 9th. Thanks.",
           "asr_output_deepgram": "Get movie ticket for, Four People in Concord on April ninth. Thanks.",
           "clarifications": {
-            "show_date_spelling": "Apr 9th",
-            "location_spelling": "Concord"
+            "location": "Concord",
+            "show_date": "Apr 9th",
+            "number_of_tickets": "four"
           }
         }
       ]
@@ -1257,7 +1263,7 @@
           "asr_output_elevenlabs": "Hey, Im, uh, going to Antioch today. Can you like get me a unisex salon there, okay?",
           "asr_output_deepgram": "Hey, I'm, going to Antioch today. Can you, like, get me a unisex salon there? Okay?",
           "clarifications": {
-            "city_name": "Antioch"
+            "city": "Antioch"
           }
         }
       ]
@@ -1383,8 +1389,8 @@
           "asr_output_deepgram": "Find available rental cars in Toronto for today till tomorrow. Right. No car type preference. And, pickup at ten AM.",
           "clarifications": {
             "pickup_location": "Toronto, Canada",
-            "start_date_spelling": "today",
-            "end_date_spelling": "tomorrow",
+            "start_date": "today",
+            "end_date": "tomorrow",
             "pickup_time": "10:00"
           }
         }
@@ -1890,7 +1896,9 @@
           "asr_output_elevenlabs": "Hey, can you snag me a train ticket from Sacramento? Just one seat and I'm open to any fair class.",
           "asr_output_deepgram": "Hey. Can you snag me a train ticket from Sacramento? Just one seat, and, I'm open to any fare class.",
           "clarifications": {
-            "starting_city": "Sacramento"
+            "starting_city": "Sacramento",
+            "number_of_seats": "one",
+            "fare_class": "flexible"
           }
         }
       ]
