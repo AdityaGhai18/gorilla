@@ -31,29 +31,55 @@ def llm_analyze_batch(test_cases: List[Dict]) -> List[Dict]:
     # Create a comprehensive batch prompt
     batch_prompt = """You are analyzing test cases to determine if clarification is ABSOLUTELY NECESSARY to get the function call correct.
 
-ONLY flag cases where the ASR actually MISHEARD or LOST critical information that an LLM cannot reasonably infer or convert into a correct function call.
+ONLY flag cases where the ASR actually MISHEARD or LOST critical information that an LLM cannot reasonably infer or convert to derive the correct function call.
 
 CRITICAL: Only flag cases where the ASR error would cause the LLM to:
-1. Receive completely wrong parameter values
-2. Be unable to determine the correct parameter due to ASR transcription errors
-3. Have multiple valid interpretations due to ASR ambiguity
+1. Receive completely wrong parameter values (e.g., "Zhang Wei" → "John Way")
+2. Be unable to determine the correct parameter due to ASR transcription errors (e.g., "config.py" → "config.pe")
+3. Have multiple valid interpretations due to ASR ambiguity (e.g., "13" vs "30")
 4. Miss critical information that cannot be inferred from context
+
+IMPORTANT: The LLM is very capable and can handle:
+- Numbers spoken as words ("one" → "1", "twenty four" → "24"), some cases have issues where "twelve thirty four" could be 1234 or 12304 so be careful and if in doubt flag them
+- File extensions spoken as "dot" (".csv" → "dot CSV")
+- Case differences ("FinalReport.txt" vs "finalreport.txt")
+- Common abbreviations ("SQL01" → "SQL zero one")
+- Hyphens spoken as "dash" ("feature-branch" → "feature dash branch")
+
+CRITICAL: Don't be overly pedantic about capitalization unless absolutely necessary. Check the function documentation to see if case sensitivity actually matters for the specific function call. Only flag capitalization issues when:
+- The function explicitly requires exact case (e.g., database names, API keys, exact filenames)
+- The LLM cannot reasonably infer the correct case from context
+- Case differences would lead to completely different entities (e.g., "MainDB" vs "main db" for database names)
+
+IMPORTANT: The LLM has access to the function documentation and can infer required formats. Do NOT flag cases where:
+- The function docs show the required format (e.g., if docs show "PIZZA" is required, don't flag "pizza" → "PIZZA")
+- The LLM can easily convert between common formats (e.g., "pizza" → "PIZZA" for food orders)
+- The function documentation provides clear guidance on expected input format
 
 Examples of cases that NEED clarification:
 - "final_report.pdf" vs "final report dot pdf" (Filename missing underscore, Argument value incorrect, Clarification needed)
-- "my-bot-id" vs "my bot ID" (hyphens lost, argument value incorrect, Clarification needed)
+- "my-bot-id" vs "my bot ID" (hyphens lost AND meaning changed, argument value incorrect, Clarification needed)
 - "v2" vs "v two" (version number ambiguity in terms of spacing, v2 or v 2, could lead to incorrect argument value, Clarification might be needed)
 - "13" vs "30" (similar-sounding numbers, argument value incorrect, Clarification needed)
 - "Zhang Wei" vs "John Way" (foreign name misheard, argument value incorrect, Clarification needed)
 - Technical codes like "MIIFdTCCBF2gAwIBAgISESG" vs "M I I F D T C C B F 2 G A W I B A G I S E S G" (argument value incorrect due to capitalisation, case sensitivity was not clear, Clarification needed)
+- "development-env" vs "development env" (hyphen lost, meaning changed clarification needed)
 
-Examples of cases that DON'T need clarification:
+
+Examples of cases that DON'T need clarification (these are all literally the same, or simple cases where the LLM could infer and handle it correctly):
 - "New York" vs "New York" (same city name, no ASR issue possible, no clarification needed)
 - "pizza" vs "pizza" (same food item, no ASR issue possible, no clarification needed)
 - "Boston" vs "Boston" (same city name, no ASR issue possible, no clarification needed)
 - "greens" vs "greens" (same food item, no ASR issue possible, no clarification needed)
 - "Naples, Florida" vs "Naples, Florida" (same location, no ASR issue possible, no clarification needed)
 - "logistic regression" vs "logistic regression" (same technical term, no ASR issue possible, no clarification needed)
+- "feature-branch" vs "feature dash branch" (hyphen spoken as "dash" is normal, meaning preserved, no clarification needed)
+- "DataSet1.csv" vs "data set one dot CSV" (numbers spoken as words, file extensions spoken as "dot", LLM can convert, no clarification needed)
+- "2024_backup.txt" vs "two zero two four backup dot txt" (numbers spoken as words, LLM can convert, no clarification needed)
+- "654321" vs "six five four three twenty one" (digits spoken individually, clear pattern, LLM can convert, no clarification needed)
+- "FinalReport.txt" vs "finalreport.txt" (case differences, LLM can handle, no clarification needed)
+- "pizza" vs "PIZZA" (function docs show required format, LLM can convert, no clarification needed)
+- "burger" vs "BURGER" (function docs show required format, LLM can convert, no clarification needed)
 
 The key question: "Did the ASR actually MISHEAR or LOSE information that an LLM cannot reasonably determine or convert hence producing an incorrect function call?"
 
@@ -66,13 +92,10 @@ NO: [brief explanation of why the LLM can handle this case correctly]
     for i, case in enumerate(test_cases):
         content = case['content']
         asr_outputs = case['asr_outputs']
-        transcript = case.get('transcript', '')
         functions = case.get('function', [])
         
         batch_prompt += f"\nCase {i+1}:\n"
         batch_prompt += f"Original Content: {content}\n"
-        if transcript:
-            batch_prompt += f"Manual Transcript: {transcript}\n"
         batch_prompt += f"ASR Outputs: {asr_outputs}\n"
         
         # Include function definitions
@@ -197,9 +220,34 @@ def filter_file(input_file: str, output_file: str, batch_size: int = 15, max_cas
         
         for case, result in zip(batch, llm_results):
             if result['should_include']:
-                # Add explanation to the original test case
-                original_item = case['original_item']
-                original_item['asr_issue_explanation'] = result['explanation']
+                # Create a filtered version with only problematic turns
+                original_item = case['original_item'].copy()
+                
+                # Find which turn this case belongs to and mark it
+                turn_index = None
+                for turn_idx, turn in enumerate(original_item['question']):
+                    for msg_idx, message in enumerate(turn):
+                        if (message.get('role') == 'user' and 
+                            message.get('content') == case['content']):
+                            turn_index = turn_idx
+                            # Add explanation to the specific message
+                            message['asr_issue_explanation'] = result['explanation']
+                            break
+                    if turn_index is not None:
+                        break
+                
+                # Only include turns that have ASR issues
+                filtered_question = []
+                for turn_idx, turn in enumerate(original_item['question']):
+                    has_issues = False
+                    for message in turn:
+                        if message.get('role') == 'user' and 'asr_issue_explanation' in message:
+                            has_issues = True
+                            break
+                    if has_issues:
+                        filtered_question.append(turn)
+                
+                original_item['question'] = filtered_question
                 filtered_cases.append(original_item)
         
         issues_found = sum(1 for r in llm_results if r['should_include'])
