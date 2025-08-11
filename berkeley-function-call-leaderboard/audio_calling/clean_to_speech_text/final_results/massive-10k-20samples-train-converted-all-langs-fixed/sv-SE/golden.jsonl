@@ -1,0 +1,16 @@
+{"alarm.query": {"alarm_type": ["v\u00e4ckningsalarm"], "time": ["sex p\u00e5 morgonen"], "date": [""], "event_name": [""], "timeofday": [""]}}
+{"lists.createoradd": {"drink_type": ["kaffe"], "list_name": ["ink\u00f6pslistan"], "event_name": [""], "person": [""]}}
+{"datetime.query": {"date": ["imorgon"], "place_name": ["", "current"], "time_zone": ["", "current"]}}
+{"audio.volume_down": {"change_amount": ["till femtio procent"]}}
+{"general.joke": {"date": ["dagens"], "joke_type": ["", "random"]}}
+{"iot.wemo_off": {"device_type": [""]}}
+{"iot.hue_lighton": {"device_type": ["lampan"], "house_place": [""]}}
+{"qa.currency": {"query": ["vad \u00e4r v\u00e4xelkursen mellan amerikanska dollar och yen"]}}
+{"qa.definition": {"definition_word": [""]}}
+{"email.querycontact": {"business_name": [""], "person": [""], "personal_info": [""], "relation": [""]}}
+{"recommendation.events": {"event_name": ["festivaler"], "date": ["i helgen"], "business_name": [""], "place_name": ["", "users location"], "time": ["", "today"], "timeofday": [""]}}
+{"transport.ticket": {"transport_type": ["t\u00e5gbiljett"], "transport_descriptor": ["sovplats"], "place_name": ["stockholm"], "date": ["n\u00e4sta vecka"], "time": [""], "timeofday": [""], "transport_name": [""]}}
+{"alarm.remove": {"date": ["tionde mars tv\u00e5tusensjutton"], "time": [""]}}
+{"lists.query": {"list_name": ["ink\u00f6pslista"], "date": [""]}}
+{"play.game": {"game_name": [""]}}
+{"calendar.remove": {"event_name": ["m\u00f6te"], "time": ["\u00e5tta"], "date": ["imorgon"], "meal_type": [""], "person": [""], "place_name": [""], "relation": [""], "timeofday": [""]}}

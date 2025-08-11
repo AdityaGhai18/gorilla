@@ -1,0 +1,20 @@
+{"recommendation.locations": {"business_type": ["\u05d4\u05e1\u05d5\u05e4\u05e8"], "business_name": [""], "food_type": [""], "place_name": ["", "users location"]}}
+{"takeaway.order": {"order_type": ["\u05d8\u05d9\u05d9\u05e7\u05d0\u05d5\u05d5\u05d9"], "food_type": ["\u05e0\u05d5\u05d3\u05dc\u05e1"], "business_name": [""], "business_type": [""], "drink_type": [""], "ingredient": [""], "meal_type": [""], "timeofday": [""]}}
+{"datetime.query": {"event_name": ["\u05d9\u05d5\u05dd \u05d4\u05d0\u05d4\u05d1\u05d4"], "date": [""], "place_name": ["", "current"], "time_zone": ["", "current"]}}
+{"qa.maths": {"query": ["\u05db\u05de\u05d4 \u05d6\u05d4 \u05d0\u05e8\u05d1\u05e2 \u05d5\u05e2\u05d5\u05d3 \u05d0\u05e8\u05d1\u05e2"]}}
+{"lists.remove": {"event_name": ["\u05e8\u05d0\u05e9 \u05d4\u05e9\u05e0\u05d4"], "date": [""], "list_name": [""]}}
+{"calendar.remove": {"event_name": ["\u05e4\u05d2\u05d9\u05e9\u05d5\u05ea \u05d4\u05d8\u05e8\u05d4-\u05d5\u05d5\u05d0\u05d8"], "date": [""], "meal_type": [""], "person": [""], "place_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"play.audiobook": {"audiobook_author": [""], "audiobook_name": [""], "media_type": [""], "player_setting": [""]}}
+{"news.query": {"news_topic": ["\u05e7\u05e9\u05e8\u05d9\u05d5 \u05e9\u05dc \u05d8\u05e8\u05d0\u05de\u05e4"], "place_name": ["\u05dc\u05e8\u05d5\u05e1\u05d9\u05d4"], "date": ["", "today"], "media_type": [""], "person": [""]}}
+{"play.music": {"time": ["\u05d1\u05e2\u05d5\u05d3 \u05d7\u05de\u05e9 \u05d3\u05e7\u05d5\u05ea"], "artist_name": [""], "device_type": [""], "media_type": [""], "music_album": [""], "music_descriptor": [""], "music_genre": [""], "player_setting": [""], "playlist_name": [""], "song_name": [""]}}
+{"play.podcasts": {"player_setting": ["\u05d3\u05dc\u05d2"], "podcast_descriptor": ["\u05dc\u05e4\u05e8\u05e7 \u05d4\u05d1\u05d0"], "person": [""], "podcast_name": [""]}}
+{"transport.query": {"transport_name": ["\u05e8\u05db\u05d1\u05ea \u05d9\u05e9\u05e8\u05d0\u05dc"], "place_name": ["\u05dc\u05d7\u05d9\u05e4\u05d4"], "business_name": [""], "business_type": [""], "date": ["", "today"], "time": ["", "now"], "timeofday": [""], "transport_type": [""]}}
+{"audio.volume_mute": {"time": ["\u05dc\u05e9\u05e2\u05ea\u05d9\u05d9\u05dd"], "date": [""], "timeofday": [""]}}
+{"email.sendemail": {"email_address": [""], "event_name": ["", "empty"], "person": [""], "relation": [""]}}
+{"email.addcontact": {"person": ["\u05e9\u05dc \u05d9\u05d5\u05e0\u05d9"], "business_name": [""], "email_address": [""], "list_name": [""]}}
+{"email.query": {"person": ["\u05d1\u05df"], "business_name": [""], "date": [""], "email_folder": [""], "event_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"iot.hue_lighton": {"device_type": ["\u05d0\u05d5\u05e8\u05d5\u05ea \u05d4\u05d3\u05d9\u05e1\u05e7\u05d5"], "house_place": [""]}}
+{"recommendation.movies": {"business_type": [""], "date": ["", "today"], "movie_name": [""], "movie_type": [""], "time": ["", "now"], "timeofday": [""]}}
+{"general.joke": {"joke_type": ["\u05e9\u05de\u05d3\u05d5\u05e8\u05d2\u05ea \u05d4\u05db\u05d9 \u05d2\u05d1\u05d5\u05d4"], "date": ["\u05d4\u05d9\u05d5\u05dd"]}}
+{"alarm.remove": {"date": ["\u05dc\u05d9\u05d5\u05dd \u05e8\u05d1\u05d9\u05e2\u05d9"], "event_name": ["\u05db\u05d3\u05d5\u05e8\u05d2\u05dc"], "time": [""]}}
+{"iot.wemo_off": {"device_type": ["\u05e9\u05e7\u05e2 \u05d7\u05db\u05dd"], "house_place": ["\u05d1\u05d7\u05d3\u05e8 \u05d4\u05de\u05e9\u05d7\u05e7\u05d9\u05dd"]}}

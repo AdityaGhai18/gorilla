@@ -1,0 +1,273 @@
+{
+  "summary": {
+    "total_entries": 20,
+    "language_distribution": {
+      "Hindi": {
+        "count": 17,
+        "percentage": 85.0
+      },
+      "Marathi": {
+        "count": 3,
+        "percentage": 15.0
+      }
+    }
+  },
+  "entries": [
+    {
+      "id": "11830",
+      "question": "मैं अपने आस-पास खेल उपकरण कहां से खरीद सकता हूं",
+      "primary_language": "Hindi",
+      "confidence": 0.8846388152062608,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.8846388152062604
+        ]
+      ]
+    },
+    {
+      "id": "5227",
+      "question": "स्मार्ट सॉकेट बंद करें",
+      "primary_language": "Hindi",
+      "confidence": 0.7176071354432869,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7176071354432865
+        ]
+      ]
+    },
+    {
+      "id": "5967",
+      "question": "मुझे कुछ खाना है क्या तुम मेरे लिए खाना मंगवाओगे",
+      "primary_language": "Hindi",
+      "confidence": 0.5064286490589164,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.5064286490589168
+        ]
+      ]
+    },
+    {
+      "id": "15549",
+      "question": "सैमसंग को ट्वीट कर के शिकायत करें",
+      "primary_language": "Hindi",
+      "confidence": 0.5639776973659908,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.5639776973659912
+        ]
+      ]
+    },
+    {
+      "id": "3672",
+      "question": "कृपया शयनकक्ष में बत्तियाँ कम करें",
+      "primary_language": "Hindi",
+      "confidence": 0.5805783951713955,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.5805783951713955
+        ]
+      ]
+    },
+    {
+      "id": "12858",
+      "question": "नक्शा दिखाओ",
+      "primary_language": "Hindi",
+      "confidence": 0.8411309342357882,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.8411309342357882
+        ]
+      ]
+    },
+    {
+      "id": "12837",
+      "question": "वर्तमान यातायात के बारे में विवरण दें",
+      "primary_language": "Marathi",
+      "confidence": 0.6251648803399991,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.37483511966000166
+        ]
+      ]
+    },
+    {
+      "id": "15715",
+      "question": "क्या आज ट्विटर पर कुछ रोमांचक है",
+      "primary_language": "Hindi",
+      "confidence": 0.6489700546185645,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.6489700546185658
+        ]
+      ]
+    },
+    {
+      "id": "5115",
+      "question": "अगर अलार्म है तो उसे हटाएं",
+      "primary_language": "Hindi",
+      "confidence": 0.7992716783298179,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7992716783298179
+        ]
+      ]
+    },
+    {
+      "id": "5572",
+      "question": "शयन कक्ष की बत्तियों का प्रकाश बढ़ाओ",
+      "primary_language": "Hindi",
+      "confidence": 0.7602801552967304,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7602801552967305
+        ]
+      ]
+    },
+    {
+      "id": "7408",
+      "question": "एक कार्यक्रम सेट करें जन्मदिन मुबारक हो जॉन इक्कीस जनवरी दो हजार सत्रह पर दोहराने के लिए",
+      "primary_language": "Hindi",
+      "confidence": 0.7165603090519539,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7165603090519547
+        ],
+        [
+          "Marathi",
+          0.28343969094804533
+        ],
+        [
+          "Hindi",
+          0.7165603090519539
+        ]
+      ]
+    },
+    {
+      "id": "6154",
+      "question": "अगले सोमवार की तारीख क्या है",
+      "primary_language": "Hindi",
+      "confidence": 0.685595346258237,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.6855953462582374
+        ]
+      ]
+    },
+    {
+      "id": "1507",
+      "question": "वेमो प्लग सॉकेट चालू करें",
+      "primary_language": "Marathi",
+      "confidence": 0.5310929592775352,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.468907040722464
+        ],
+        [
+          "Marathi",
+          0.5310929592775356
+        ]
+      ]
+    },
+    {
+      "id": "16466",
+      "question": "इस ईमेल को एक नए संपर्क में जोड़ें",
+      "primary_language": "Hindi",
+      "confidence": 0.7113943349851223,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7113943349851223
+        ]
+      ]
+    },
+    {
+      "id": "9041",
+      "question": "जन्मदिन की पार्टी हटाएं",
+      "primary_language": "Hindi",
+      "confidence": 0.5900353504513851,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.5900353504513851
+        ]
+      ]
+    },
+    {
+      "id": "5978",
+      "question": "पूर्वी समय को पश्चिमी समय में बदलें",
+      "primary_language": "Hindi",
+      "confidence": 0.5721233135427141,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.5721233135427133
+        ]
+      ]
+    },
+    {
+      "id": "10278",
+      "question": "शतरंज",
+      "primary_language": "Hindi",
+      "confidence": 0.7179961899484175,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7179961899484175
+        ]
+      ]
+    },
+    {
+      "id": "4294",
+      "question": "क्या तुम मुझे मेरे अलार्म के बारे में बता सकते हो जो मैंने सेट किए हैं",
+      "primary_language": "Hindi",
+      "confidence": 0.8269731272929826,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.8269731272929828
+        ]
+      ]
+    },
+    {
+      "id": "5319",
+      "question": "सुबह पांच बजे का अलार्म लगाओ",
+      "primary_language": "Hindi",
+      "confidence": 0.7938054921124195,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.7938054921124199
+        ]
+      ]
+    },
+    {
+      "id": "2686",
+      "question": "मुझे राम को बताने के लिए एक मज़ेदार चुटकुला चाहिए",
+      "primary_language": "Marathi",
+      "confidence": 0.6932710679880364,
+      "detected_languages": [
+        [
+          "Hindi",
+          0.30672893201196394
+        ],
+        [
+          "Marathi",
+          0.6932710679880361
+        ]
+      ]
+    }
+  ]
+}

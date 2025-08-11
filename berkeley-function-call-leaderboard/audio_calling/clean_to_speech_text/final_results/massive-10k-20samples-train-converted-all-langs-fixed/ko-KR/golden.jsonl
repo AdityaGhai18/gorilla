@@ -1,0 +1,18 @@
+{"calendar.set": {"date": ["\ud1a0\uc694\uc77c"], "place_name": ["\ub86f\ub370\uc6d4\ub4dc"], "event_name": ["\ud30c\ud2f0"], "business_name": [""], "general_frequency": [""], "meal_type": [""], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"general.joke": {"person": ["\ud615\uc6b0\ud55c\ud14c"], "joke_type": ["\uc6c3\uae34"]}}
+{"qa.currency": {"query": ["\uc624\ub298 \ubbf8\uad6d \ub2ec\ub7ec \ub300 \ub8e8\ud53c \uc758 \ud658\uc728\uc740"]}}
+{"email.addcontact": {"business_name": [""], "email_address": [""], "list_name": [""], "person": [""]}}
+{"email.sendemail": {"time": ["\uc800\ub141\uae4c\uc9c0"], "person": ["\uc138\uc724\uc5d0\uac8c"], "email_address": [""], "event_name": ["", "empty"], "relation": [""]}}
+{"play.audiobook": {"artist_name": ["\uc2f8\uc774"], "media_type": ["\uc624\ub514\uc624\ubd81\uc5d0\uc11c"], "player_setting": ["\ub2e4\uc2dc \uc7ac\uc0dd"], "audiobook_author": [""], "audiobook_name": [""]}}
+{"social.post": {"business_name": ["\ud55c\uad6d\uc804\ub825"], "media_type": [""]}}
+{"lists.createoradd": {"list_name": ["\uce74\uba54\ub77c \uc0ac\uc9c4"], "event_name": [""], "person": [""]}}
+{"calendar.remove": {"date": ["\ubaa9\uc694\uc77c"], "meal_type": ["\uc800\ub141 \uc57d\uc18d"], "event_name": [""], "person": [""], "place_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"qa.stock": {"person": ["\uc6cc\ub80c \ubc84\ud54f\uc774"], "business_name": ["", "dow jones"], "date": ["", "today"]}}
+{"recommendation.movies": {"business_type": [""], "date": ["", "today"], "movie_name": [""], "movie_type": [""], "time": ["", "now"], "timeofday": [""]}}
+{"transport.query": {"transport_type": ["\uae30\ucc28"], "business_name": [""], "business_type": [""], "date": ["", "today"], "place_name": [""], "time": ["", "now"], "timeofday": [""], "transport_name": [""]}}
+{"iot.hue_lightoff": {"house_place": ["\uac70\uc2e4"], "device_type": ["\ubb34\ub4dc\ub4f1"], "time": ["", "now"]}}
+{"alarm.query": {"alarm_type": [""], "date": [""], "event_name": [""], "time": [""], "timeofday": [""]}}
+{"iot.wemo_off": {"device_type": ["\ud3f0 \ud50c\ub7ec\uadf8"]}}
+{"music.query": {"player_setting": ["\uc154\ud50c"], "artist_name": [""], "song_name": [""]}}
+{"transport.taxi": {"transport_agency": ["\uce74\uce74\uc624\ud0dd\uc2dc"], "date": ["", "today"], "place_name": [""], "time": ["", "now"], "timeofday": [""], "transport_type": [""]}}
+{"transport.traffic": {"place_name": ["", "current location, work"], "time": ["", "now"]}}

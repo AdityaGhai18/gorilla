@@ -1,0 +1,19 @@
+{"general.joke": {"food_type": ["portokallin dhe bananen"], "joke_type": ["", "random"]}}
+{"play.radio": {"radio_name": ["rikoshet"], "house_place": ["dhom\u00ebn e ndenjes"], "app_name": [""], "device_type": [""], "media_type": [""], "music_genre": [""]}}
+{"qa.currency": {"query": ["mund t\u00eb m\u00eb tregosh norm\u00ebn e k\u00ebmbimit p\u00ebr monedh\u00ebn kanadeze"]}}
+{"email.querycontact": {"personal_info": ["adres\u00ebn e rrug\u00ebs"], "relation": ["shokut"], "media_type": ["facebook"], "person": ["benit"], "business_name": [""]}}
+{"cooking.recipe": {"ingredient": ["ujit"], "cooking_type": ["zier"], "app_name": [""], "device_type": [""], "food_type": [""], "media_type": [""]}}
+{"qa.definition": {"definition_word": ["kufje"]}}
+{"transport.taxi": {"place_name": ["kor\u00e7\u00eb"], "date": ["", "today"], "time": ["", "now"], "timeofday": [""], "transport_agency": [""], "transport_type": [""]}}
+{"lists.remove": {"person": ["arben hoxha"], "date": [""], "list_name": [""]}}
+{"recommendation.locations": {"business_type": ["restorante"], "food_type": ["sushi"], "place_name": ["sarand\u00eb"], "business_name": [""]}}
+{"iot.wemo_off": {"device_type": ["priz\u00ebn inteligjente"]}}
+{"recommendation.movies": {"event_name": ["film"], "business_type": ["kinemaja"], "date": ["", "today"], "movie_name": [""], "movie_type": [""], "time": ["", "now"], "timeofday": [""]}}
+{"audio.volume_mute": {"device_type": ["radion"], "date": [""], "time": [""], "timeofday": [""]}}
+{"qa.maths": {"query": ["sa tresha gjenden n\u00eb nj\u00ebzet e shtat\u00eb"]}}
+{"music.dislikeness": {"music_genre": [""]}}
+{"iot.hue_lightup": {"change_amount": ["", "20 percent"], "device_type": ["", "all"], "house_place": ["", "all"]}}
+{"email.sendemail": {"person": ["landit"], "timeofday": ["n\u00eb m\u00ebngjes"], "email_address": [""], "event_name": ["", "empty"], "relation": [""]}}
+{"social.post": {"event_name": ["dit\u00eblindja"], "relation": ["burrit"], "business_name": [""], "media_type": [""]}}
+{"news.query": {"date": ["sot"], "place_name": ["shtetet e bashkuara t\u00eb amerik\u00ebs"], "media_type": [""], "news_topic": [""], "person": [""]}}
+{"social.query": {"person": ["ana"], "date": ["sot"], "media_type": [""], "relation": [""]}}

@@ -1,0 +1,20 @@
+{"recommendation.events": {"movie_type": ["drama dda"], "business_name": [""], "date": ["", "today"], "event_name": [""], "place_name": ["", "users location"], "time": ["", "today"], "timeofday": [""]}}
+{"play.radio": {"app_name": [""], "device_type": [""], "house_place": [""], "media_type": [""], "music_genre": [""], "radio_name": ["", "latest"]}}
+{"email.addcontact": {"list_name": ["rhestrau cyswllt"], "business_name": [""], "email_address": [""], "person": [""]}}
+{"lists.query": {"device_type": ["sgr\u00een"], "date": [""], "list_name": [""]}}
+{"datetime.query": {"date": ["dyddiad"], "place_name": ["efrog newydd"], "time_zone": ["", "current"]}}
+{"iot.hue_lightchange": {"color_type": ["", "random"], "house_place": [""], "time": ["", "now"]}}
+{"general.joke": {"joke_type": ["radd orau"], "date": ["heddiw"]}}
+{"play.music": {"song_name": ["ceidwad y goleudy"], "artist_name": [""], "device_type": [""], "media_type": [""], "music_album": [""], "music_descriptor": [""], "music_genre": [""], "player_setting": [""], "playlist_name": [""]}}
+{"audio.volume_up": {}}
+{"alarm.query": {"alarm_type": ["dihuno"], "time": ["chwech o'r gloch y bore"], "date": [""], "event_name": [""], "timeofday": [""]}}
+{"email.sendemail": {"person": ["tom"], "event_name": ["cyfarfod"], "date": ["yfory"], "email_address": [""], "relation": [""]}}
+{"takeaway.query": {"business_type": ["bwyty"], "order_type": ["cludo"], "business_name": [""], "food_type": [""], "meal_type": [""]}}
+{"cooking.recipe": {"meal_type": ["brecwast"], "food_type": ["calor\u00efau isel"], "app_name": [""], "cooking_type": [""], "device_type": [""], "media_type": [""]}}
+{"qa.factoid": {"query": ["dywed wrthyf am bryn terfel"]}}
+{"transport.query": {"place_name": ["d\u0177"], "relation": ["mam-gu"], "business_name": [""], "business_type": [""], "date": ["", "today"], "time": ["", "now"], "timeofday": [""], "transport_name": [""], "transport_type": [""]}}
+{"email.querycontact": {"personal_info": ["leoliad"], "business_name": [""], "person": [""], "relation": [""]}}
+{"social.query": {"media_type": ["trydariadau"], "person": [""], "relation": [""]}}
+{"audio.volume_down": {"change_amount": ["i hanner"]}}
+{"audio.volume_mute": {"device_type": ["teledu"], "time": ["un awr"], "date": [""], "timeofday": [""]}}
+{"play.podcasts": {"person": ["bore cothi"], "time": ["bore 'ma"], "player_setting": [""], "podcast_descriptor": [""], "podcast_name": [""]}}

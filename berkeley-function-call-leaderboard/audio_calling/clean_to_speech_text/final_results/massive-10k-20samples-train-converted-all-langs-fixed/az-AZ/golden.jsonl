@@ -1,0 +1,19 @@
+{"recommendation.movies": {"timeofday": ["bu gec\u0259"], "business_type": [""], "date": ["", "today"], "movie_name": [""], "movie_type": [""], "time": ["", "now"]}}
+{"datetime.query": {"time_zone": ["bu saat qur\u015fa\u011f\u0131nda"], "date": [""], "place_name": ["", "current"]}}
+{"transport.query": {"transport_type": ["qatar"], "business_name": [""], "business_type": [""], "date": ["", "today"], "place_name": [""], "time": ["", "now"], "timeofday": [""], "transport_name": [""]}}
+{"iot.wemo_off": {"device_type": ["ventilyatoru"]}}
+{"alarm.set": {"time": ["alt\u0131 otuzda"], "date": [""], "timeofday": [""]}}
+{"play.music": {"time": ["s\u0259h\u0259r saat on ikid\u0259"], "artist_name": [""], "device_type": [""], "media_type": [""], "music_album": [""], "music_descriptor": [""], "music_genre": [""], "player_setting": [""], "playlist_name": [""], "song_name": [""]}}
+{"news.query": {"place_name": ["\u015f\u0259h\u0259rin"], "news_topic": ["yerli x\u0259b\u0259rl\u0259rini"], "date": ["", "today"], "media_type": [""], "person": [""]}}
+{"iot.hue_lightoff": {"house_place": ["yataq ota\u011f\u0131n\u0131n"], "device_type": ["lampas\u0131n\u0131"], "time": ["", "now"]}}
+{"email.querycontact": {"relation": ["qarda\u015f\u0131m\u0131n"], "personal_info": ["ofis \u00fcnvan\u0131n\u0131"], "business_name": [""], "person": [""]}}
+{"qa.factoid": {"query": ["ayran n\u0259d\u0259n haz\u0131rlan\u0131r"]}}
+{"iot.hue_lightchange": {"house_place": ["evd\u0259"], "color_type": ["t\u00fcnd"], "time": ["", "now"]}}
+{"lists.createoradd": {"date": ["bug\u00fcnk\u00fc"], "list_name": ["g\u00f6r\u00fcl\u0259c\u0259k i\u015fl\u0259r"], "event_name": [""], "person": [""]}}
+{"music.likeness": {"music_descriptor": ["dangal filmi"], "artist_name": [""], "playlist_name": [""]}}
+{"calendar.remove": {"relation": ["ana"], "meal_type": ["\u015fam yem\u0259yini"], "date": [""], "event_name": [""], "person": [""], "place_name": [""], "time": [""], "timeofday": [""]}}
+{"audio.volume_up": {"song_name": ["m\u0259n k\u00fcl\u0259y\u0259m"]}}
+{"recommendation.locations": {"food_type": ["tayland"], "business_name": [""], "business_type": [""], "place_name": ["", "users location"]}}
+{"calendar.query": {"event_name": ["g\u00f6r\u00fc\u015f\u00fcn"], "date": ["", "today"], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"iot.hue_lightdim": {"house_place": ["qonaq ota\u011f\u0131n\u0131n"], "change_amount": ["", "20 percent"]}}
+{"audio.volume_down": {"change_amount": ["be\u015f faiz\u0259"]}}

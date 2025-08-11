@@ -1,0 +1,18 @@
+{"social.query": {"person": ["\u03b9\u03c9\u03ac\u03bd\u03bd\u03b1"], "date": ["\u03c3\u03ae\u03bc\u03b5\u03c1\u03b1"], "media_type": [""], "relation": [""]}}
+{"play.game": {"game_name": ["\u03b1\u03b3\u03ce\u03bd\u03b1 \u03c0\u03bf\u03b4\u03bf\u03c3\u03c6\u03b1\u03af\u03c1\u03bf\u03c5"], "device_type": ["\u03c4\u03b7\u03bb\u03b5\u03cc\u03c1\u03b1\u03c3\u03b7"]}}
+{"email.query": {"relation": ["\u03b1\u03c6\u03b5\u03bd\u03c4\u03b9\u03ba\u03cc"], "business_name": [""], "date": [""], "email_folder": [""], "event_name": [""], "person": [""], "time": [""], "timeofday": [""]}}
+{"recommendation.movies": {"movie_type": ["\u03c1\u03bf\u03bc\u03b1\u03bd\u03c4\u03b9\u03ba\u03ae \u03ba\u03c9\u03bc\u03c9\u03b4\u03af\u03b1"], "place_name": ["\u03b1\u03b8\u03ae\u03bd\u03b1"], "business_type": [""], "date": ["", "today"], "movie_name": [""], "time": ["", "now"], "timeofday": [""]}}
+{"iot.hue_lightup": {"change_amount": ["\u03c3\u03c4\u03bf \u03bc\u03ad\u03b3\u03b9\u03c3\u03c4\u03bf"], "device_type": ["", "all"], "house_place": ["", "all"]}}
+{"alarm.set": {"event_name": ["\u03c3\u03c5\u03bd\u03ac\u03bd\u03c4\u03b7\u03c3\u03b7"], "date": ["\u03c4\u03c1\u03af\u03c4\u03b7\u03c2"], "time": [""], "timeofday": [""]}}
+{"datetime.query": {"time_zone": ["\u03b7\u03bc\u03ad\u03c1\u03b1"], "date": ["\u03c3\u03ae\u03bc\u03b5\u03c1\u03b1"], "place_name": ["", "current"]}}
+{"general.joke": {"joke_type": ["\u03ac\u03bd\u03b8\u03c1\u03c9\u03c0\u03bf"]}}
+{"datetime.convert": {"query": ["\u03c0\u03bf\u03b9\u03b1 \u03b5\u03af\u03bd\u03b1\u03b9 \u03b7 \u03b4\u03b9\u03b1\u03c6\u03bf\u03c1\u03ac \u03ce\u03c1\u03b1\u03c2 \u03bc\u03b5\u03c4\u03b1\u03be\u03cd \u03c4\u03b7\u03c2 \u03b8\u03b5\u03c3\u03c3\u03b1\u03bb\u03bf\u03bd\u03af\u03ba\u03b7\u03c2 \u03ba\u03b1\u03b9 \u03c4\u03b7\u03c2 \u03b1\u03b8\u03ae\u03bd\u03b1\u03c2"]}}
+{"audio.volume_down": {"device_type": ["\u03c1\u03ac\u03b4\u03b9\u03bf"]}}
+{"iot.wemo_off": {"device_type": [""]}}
+{"alarm.remove": {"timeofday": ["\u03c0\u03c1\u03c9\u03b9\u03bd\u03cc"], "date": [""], "time": [""]}}
+{"iot.hue_lightchange": {"house_place": ["\u03bc\u03c0\u03ac\u03bd\u03b9\u03bf"], "color_type": ["\u03ba\u03af\u03c4\u03c1\u03b9\u03bd\u03bf"], "time": ["", "now"]}}
+{"audio.volume_mute": {"device_type": ["\u03c4\u03b7\u03bb\u03b5\u03cc\u03c1\u03b1\u03c3\u03b7"], "time": ["\u03bc\u03af\u03b1 \u03ce\u03c1\u03b1"], "date": [""], "timeofday": [""]}}
+{"play.audiobook": {"media_type": ["\u03b7\u03c7\u03bf\u03b3\u03c1\u03b1\u03c6\u03b7\u03bc\u03ad\u03bd\u03bf \u03b2\u03b9\u03b2\u03bb\u03af\u03bf"], "audiobook_author": [""], "audiobook_name": [""], "player_setting": [""]}}
+{"play.radio": {"person": ["\u03b1\u03bd\u03c4\u03ce\u03bd\u03b7 \u03ba\u03b1\u03bd\u03ac\u03ba\u03b7"], "device_type": ["\u03c1\u03b1\u03b4\u03b9\u03cc\u03c6\u03c9\u03bd\u03bf \u03b4\u03af\u03c0\u03bb\u03b1 \u03b1\u03c0\u03cc \u03c4\u03bf \u03ba\u03c1\u03b5\u03b2\u03b2\u03ac\u03c4\u03b9"], "app_name": [""], "house_place": [""], "media_type": [""], "music_genre": [""], "radio_name": ["", "latest"]}}
+{"weather.query": {"weather_descriptor": ["\u03b8\u03b5\u03c1\u03bc\u03bf\u03ba\u03c1\u03b1\u03c3\u03af\u03b1"], "place_name": ["\u03c0\u03b5\u03b9\u03c1\u03b1\u03b9\u03ac"], "date": ["", "today"], "event_name": [""], "general_frequency": [""], "time": ["", "now"], "timeofday": [""]}}
+{"recommendation.locations": {"business_type": ["\u03c0\u03b1\u03bc\u03c0"], "place_name": ["\u03c3\u03c4\u03b7 \u03c3\u03c4\u03ac\u03c3\u03b7 \u03c4\u03bf\u03c5 \u03bc\u03b5\u03c4\u03c1\u03cc"], "business_name": [""], "food_type": [""]}}

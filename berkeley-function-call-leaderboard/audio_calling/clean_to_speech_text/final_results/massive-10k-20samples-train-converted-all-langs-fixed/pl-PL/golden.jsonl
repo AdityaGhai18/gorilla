@@ -1,0 +1,18 @@
+{"email.query": {"person": ["julii"], "business_name": [""], "date": [""], "email_folder": [""], "event_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"play.music": {"song_name": ["dmuchawce latawce wiatr"], "artist_name": ["urszuli"], "device_type": [""], "media_type": [""], "music_album": [""], "music_descriptor": [""], "music_genre": [""], "player_setting": [""], "playlist_name": [""]}}
+{"iot.hue_lightdim": {"change_amount": ["", "20 percent"], "house_place": [""]}}
+{"transport.ticket": {"transport_type": ["poci\u0105g"], "place_name": ["mazury"], "date": ["", "today"], "time": [""], "timeofday": [""], "transport_descriptor": [""], "transport_name": [""]}}
+{"music.query": {"artist_name": ["coldplay"], "date": ["wczoraj"], "timeofday": ["wieczorem"], "song_name": [""]}}
+{"cooking.recipe": {"business_name": ["kwestiasmaku"], "food_type": ["omlet z czterema serami"], "app_name": [""], "cooking_type": [""], "device_type": [""], "media_type": [""]}}
+{"audio.volume_mute": {"date": [""], "time": [""], "timeofday": [""]}}
+{"transport.query": {"place_name": ["krakowa"], "time": ["przed po\u0142udniem"], "transport_type": ["poci\u0105giem"], "business_name": [""], "business_type": [""], "date": ["", "today"], "timeofday": [""], "transport_name": [""]}}
+{"play.game": {"game_name": [""]}}
+{"news.query": {"media_type": ["wyborczej"], "time": ["ostatniej godziny"], "date": ["", "today"], "news_topic": [""], "person": [""], "place_name": [""]}}
+{"qa.maths": {"query": ["powiedz jaka jest warto\u015b\u0107 sinus trzydzie\u015bci"]}}
+{"music.likeness": {"player_setting": ["powt\u00f3rz"], "artist_name": [""], "playlist_name": [""]}}
+{"iot.coffee": {"time": ["na si\u00f3dm\u0105 rano"], "coffee_type": ["", "cappuccino"], "date": ["", "today"], "device_type": ["", "coffee machine"]}}
+{"iot.hue_lightchange": {"color_type": ["czerwony"], "house_place": ["domu"], "time": ["", "now"]}}
+{"weather.query": {"weather_descriptor": ["pada\u0107"], "date": ["kolejne kilka dni"], "place_name": ["bytomiu"], "event_name": [""], "general_frequency": [""], "time": ["", "now"], "timeofday": [""]}}
+{"alarm.query": {"timeofday": ["rano"], "alarm_type": [""], "date": [""], "event_name": [""], "time": [""]}}
+{"iot.hue_lightoff": {"device_type": ["inteligentn\u0105 lamp\u0119"], "house_place": ["w salonie"], "time": ["", "now"]}}
+{"recommendation.locations": {"food_type": ["tapas"], "place_name": ["we wroc\u0142awiu"], "business_name": [""], "business_type": [""]}}

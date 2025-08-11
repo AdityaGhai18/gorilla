@@ -1,0 +1,20 @@
+{"lists.remove": {"date": ["t\u00e4m\u00e4n viikonlopun"], "list_name": [""]}}
+{"iot.coffee": {"business_type": ["kahvilasta"], "coffee_type": ["", "cappuccino"], "date": ["", "today"], "device_type": ["", "coffee machine"], "time": ["", "now"]}}
+{"qa.currency": {"query": ["kuinka monta dollaria on yksi punta"]}}
+{"audio.volume_down": {"change_amount": ["kahteenkymmeneen"]}}
+{"lists.query": {"date": ["t\u00e4m\u00e4n p\u00e4iv\u00e4n"], "list_name": [""]}}
+{"cooking.recipe": {"food_type": ["perunat"], "app_name": [""], "cooking_type": [""], "device_type": [""], "media_type": [""]}}
+{"email.sendemail": {"email_address": [""], "event_name": ["", "empty"], "person": [""], "relation": [""]}}
+{"recommendation.movies": {"business_type": ["teatteri"], "date": ["", "today"], "movie_name": [""], "movie_type": [""], "time": ["", "now"], "timeofday": [""]}}
+{"transport.traffic": {"date": ["t\u00e4n\u00e4\u00e4n"], "place_name": ["", "current location, work"], "time": ["", "now"]}}
+{"transport.ticket": {"place_name": ["helsinkiin"], "date": ["", "today"], "time": [""], "timeofday": [""], "transport_descriptor": [""], "transport_name": [""], "transport_type": ["", "train"]}}
+{"play.game": {"game_name": ["hirsipuuta"]}}
+{"calendar.set": {"date": ["tiistaina kahdeskymmenesensimm\u00e4inen"], "time": ["kymmenelt\u00e4"], "person": ["arin"], "business_name": [""], "event_name": [""], "general_frequency": [""], "meal_type": [""], "place_name": [""], "relation": [""], "timeofday": [""]}}
+{"email.querycontact": {"person": ["mari miettinen"], "place_name": ["mannerheimintiell\u00e4"], "business_name": [""], "personal_info": [""], "relation": [""]}}
+{"takeaway.order": {"food_type": ["sushia"], "business_name": ["hanko sushi"], "business_type": ["ravintolasta"], "drink_type": [""], "ingredient": [""], "meal_type": [""], "order_type": [""], "timeofday": [""]}}
+{"recommendation.locations": {"business_name": ["kauppoja"], "business_type": [""], "food_type": [""], "place_name": ["", "users location"]}}
+{"takeaway.query": {"order_type": ["kotiinkuljetuksen"], "business_name": ["kotipizzasta"], "business_type": [""], "food_type": [""], "meal_type": [""]}}
+{"iot.wemo_on": {"device_type": [""]}}
+{"audio.volume_up": {"change_amount": ["viiteenkymmeneenviiteen"]}}
+{"alarm.set": {"time": ["viideksi aamulla"], "general_frequency": ["viikon jokaiselle p\u00e4iv\u00e4lle"], "date": [""], "timeofday": [""]}}
+{"recommendation.events": {"event_name": ["kirjamessut"], "date": ["ensi viikolla"], "place_name": ["raaseporissa"], "business_name": [""], "time": ["", "today"], "timeofday": [""]}}

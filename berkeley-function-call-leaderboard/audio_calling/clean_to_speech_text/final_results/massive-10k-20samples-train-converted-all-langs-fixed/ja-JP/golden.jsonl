@@ -1,0 +1,21 @@
+{"iot.hue_lightoff": {"house_place": ["\u66f8\u658e"], "device_type": ["\u30b9\u30de\u30fc\u30c8\u96fb\u7403"], "time": ["", "now"]}}
+{"audio.volume_down": {"device_type": ["\u30e9\u30b8\u30aa"]}}
+{"music.dislikeness": {"music_genre": [""]}}
+{"qa.definition": {"definition_word": ["\u52d5\u7269"]}}
+{"social.post": {"business_name": ["\u30bd\u30d5\u30c8\u30d0\u30f3\u30af\u306e\u6d88\u8cbb\u8005\u30b5\u30fc\u30d3\u30b9"], "media_type": ["twitter"]}}
+{"iot.hue_lightchange": {"color_type": ["", "random"], "house_place": [""], "time": ["", "now"]}}
+{"news.query": {"person": ["\u30e2\u30c7\u30a3\u9996\u76f8"], "news_topic": ["\u3069\u3053\u304b\u306e\u56fd\u3092\u8a2a\u554f\u4e2d"], "date": ["", "today"], "media_type": [""], "place_name": [""]}}
+{"iot.cleaning": {"device_type": ["", "vacuum"], "general_frequency": [""], "house_place": [""], "time": ["", "now"]}}
+{"email.query": {"person": ["\u6d69\u592a\u90ce"], "event_name": ["\u8a95\u751f\u65e5"], "business_name": [""], "date": [""], "email_folder": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"email.addcontact": {"person": ["\u8b72"], "business_name": [""], "email_address": [""], "list_name": [""]}}
+{"social.query": {"time": ["\u4e8c\u5341\u56db\u6642\u9593"], "media_type": [""], "person": [""], "relation": [""]}}
+{"play.game": {"game_type": ["\u30c6\u30ec\u30d3"], "game_name": [""]}}
+{"cooking.recipe": {"app_name": [""], "cooking_type": [""], "device_type": [""], "food_type": [""], "media_type": [""]}}
+{"play.radio": {"radio_name": ["\u30a8\u30d5\u30a8\u30e0\u6771\u4eac"], "music_genre": ["\u30d2\u30c3\u30d7\u30db\u30c3\u30d7"], "app_name": [""], "device_type": [""], "house_place": [""], "media_type": [""]}}
+{"play.audiobook": {"date": ["\u4eca\u6708"], "media_type": ["\u30aa\u30fc\u30c7\u30a3\u30aa\u30d6\u30c3\u30af"], "audiobook_author": [""], "audiobook_name": [""], "player_setting": [""]}}
+{"alarm.remove": {"date": ["\u660e\u65e5"], "time": ["\u5348\u524d\u516b\u6642"]}}
+{"qa.factoid": {"query": ["\u6e21\u8fba\u8b19\u306f\u3069\u306e\u3088\u3046\u306b\u82f1\u4f1a\u8a71\u3092\u52c9\u5f37\u3057\u305f\u306e"]}}
+{"datetime.convert": {"query": ["\u3053\u3053\u304c\u5348\u5f8c\u4e94\u6642\u306e\u3068\u304d\u30b7\u30f3\u30ac\u30dd\u30fc\u30eb\u306f\u4f55\u6642\u3067\u3059\u304b"]}}
+{"recommendation.locations": {"meal_type": ["\u591c\u3054\u98ef"], "business_name": [""], "business_type": [""], "food_type": [""], "place_name": ["", "users location"]}}
+{"general.joke": {"date": ["\u4eca\u65e5"], "joke_type": ["\u4e00\u756a\u8a55\u4fa1\u306e\u9ad8\u3044"]}}
+{"qa.stock": {"business_name": ["", "dow jones"], "date": ["", "today"]}}

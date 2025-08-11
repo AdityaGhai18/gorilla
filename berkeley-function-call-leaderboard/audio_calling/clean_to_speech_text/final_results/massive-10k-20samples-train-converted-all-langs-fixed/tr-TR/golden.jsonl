@@ -1,0 +1,18 @@
+{"cooking.recipe": {"food_type": ["patates k\u0131zartmas\u0131"], "ingredient": ["ya\u011f"], "cooking_type": ["k\u0131zart\u0131lmal\u0131"], "app_name": [""], "device_type": [""], "media_type": [""]}}
+{"recommendation.events": {"place_name": ["izmir b\u00f6lgesindeki"], "business_name": [""], "date": ["", "today"], "event_name": [""], "time": ["", "today"], "timeofday": [""]}}
+{"news.query": {"place_name": ["d\u00fcnya"], "date": ["", "today"], "media_type": [""], "news_topic": [""], "person": [""]}}
+{"lists.createoradd": {"list_name": ["market"], "event_name": [""], "person": [""]}}
+{"calendar.query": {"date": ["bug\u00fcnk\u00fc"], "sport_type": ["kriket ma\u00e7\u0131"], "event_name": [""], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"calendar.set": {"date": ["bug\u00fcn"], "time": ["ak\u015fam be\u015fte"], "relation": ["\u00f6\u011fretmenimle"], "event_name": ["toplant\u0131y\u0131"], "business_name": [""], "general_frequency": [""], "meal_type": [""], "person": [""], "place_name": [""], "timeofday": [""]}}
+{"calendar.remove": {"place_name": ["izmir'deki"], "event_name": ["toplant\u0131y\u0131"], "date": [""], "meal_type": [""], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"iot.coffee": {"business_type": ["kahve d\u00fckkan\u0131ndan"], "coffee_type": ["", "cappuccino"], "date": ["", "today"], "device_type": ["", "coffee machine"], "time": ["", "now"]}}
+{"play.game": {"game_type": ["video"], "game_name": [""]}}
+{"email.query": {"date": ["bug\u00fcn"], "time": ["sabah yedide"], "business_name": [""], "email_folder": [""], "event_name": [""], "person": [""], "relation": [""], "timeofday": [""]}}
+{"iot.wemo_on": {"device_type": ["ak\u0131ll\u0131 prizi"]}}
+{"takeaway.query": {"food_type": ["pizza"], "order_type": ["paket servisi"], "business_name": [""], "business_type": [""], "meal_type": [""]}}
+{"transport.traffic": {"place_name": ["\u015fehir merkezinde"], "time": ["", "now"]}}
+{"iot.cleaning": {"place_name": ["zemini"], "device_type": ["", "vacuum"], "general_frequency": [""], "house_place": [""], "time": ["", "now"]}}
+{"social.post": {"date": ["bu ay"], "media_type": ["tweeti at"], "business_name": [""]}}
+{"alarm.query": {"alarm_type": [""], "date": [""], "event_name": [""], "time": [""], "timeofday": [""]}}
+{"social.query": {"person": ["leyla"], "date": ["bug\u00fcn"], "media_type": ["facebook"], "relation": [""]}}
+{"iot.wemo_off": {"device_type": ["telefonumun prizini"]}}

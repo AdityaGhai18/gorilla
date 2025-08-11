@@ -1,0 +1,21 @@
+{"qa.factoid": {"query": ["unde este marele canion"]}}
+{"cooking.recipe": {"business_name": ["savori urbane"], "food_type": ["omlet\u0103 cu legume"], "app_name": [""], "cooking_type": [""], "device_type": [""], "media_type": [""]}}
+{"iot.wemo_on": {"device_type": [""]}}
+{"social.post": {"personal_info": ["telefonul familiei"], "media_type": ["instagram"], "business_name": [""]}}
+{"lists.query": {"business_name": ["ralph and lauren"], "date": [""], "list_name": [""]}}
+{"music.likeness": {"music_descriptor": ["filmul liceenii"], "artist_name": [""], "playlist_name": [""]}}
+{"iot.cleaning": {"house_place": ["covoarele"], "device_type": ["", "vacuum"], "general_frequency": [""], "time": ["", "now"]}}
+{"play.podcasts": {"person": [""], "player_setting": [""], "podcast_descriptor": [""], "podcast_name": [""]}}
+{"audio.volume_mute": {"event_name": ["\u0219edin\u021b\u0103"], "date": [""], "time": [""], "timeofday": [""]}}
+{"email.addcontact": {"email_address": ["dan arond dancom"], "business_name": [""], "list_name": [""], "person": [""]}}
+{"iot.hue_lightchange": {"player_setting": ["alterneaz\u0103"], "house_place": ["cas\u0103"], "color_type": ["", "random"], "time": ["", "now"]}}
+{"alarm.query": {"alarm_type": ["trezire"], "time": ["sase dimineata"], "date": [""], "event_name": [""], "timeofday": [""]}}
+{"play.game": {"game_name": [""]}}
+{"datetime.convert": {"query": ["c\u00e2t e ora opt a. m. din bucure\u0219ti \u00een fusul orar estic"]}}
+{"alarm.set": {"time": ["cinci"], "timeofday": ["dimineata"], "date": [""]}}
+{"lists.createoradd": {"list_name": ["lucruri pe care trebuie s\u0103 le cump\u0103r"], "date": ["m\u00e2ine"], "event_name": [""], "person": [""]}}
+{"iot.hue_lightdim": {"color_type": ["albastru"], "change_amount": ["", "20 percent"], "house_place": [""]}}
+{"email.query": {"person": ["mihai"], "business_name": [""], "date": [""], "email_folder": [""], "event_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"datetime.query": {"place_name": ["ia\u0219i"], "date": [""], "time_zone": ["", "current"]}}
+{"calendar.set": {"date": ["joi"], "time": ["\u0219apte diminea\u021ba"], "event_name": ["\u0219edin\u021b\u0103 de v\u00e2nz\u0103ri"], "business_name": [""], "general_frequency": [""], "meal_type": [""], "person": [""], "place_name": [""], "relation": [""], "timeofday": [""]}}
+{"qa.stock": {"business_name": ["", "dow jones"], "date": ["", "today"]}}

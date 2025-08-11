@@ -1,0 +1,18 @@
+{"social.query": {"general_frequency": ["setiap tiga jam"], "media_type": ["facebook"], "person": [""], "relation": [""]}}
+{"alarm.remove": {"timeofday": ["petang ini"], "date": [""], "time": [""]}}
+{"play.music": {"date": ["malam tadi"], "artist_name": [""], "device_type": [""], "media_type": [""], "music_album": [""], "music_descriptor": [""], "music_genre": [""], "player_setting": [""], "playlist_name": [""], "song_name": [""]}}
+{"music.likeness": {"music_genre": ["rock"], "artist_name": [""], "playlist_name": [""]}}
+{"iot.cleaning": {"house_place": ["ruang tamu"], "time": ["sepuluh minit"], "device_type": ["", "vacuum"], "general_frequency": [""]}}
+{"calendar.remove": {"date": [""], "event_name": [""], "meal_type": [""], "person": [""], "place_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"alarm.query": {"date": ["hari ini"], "alarm_type": [""], "event_name": [""], "time": [""], "timeofday": [""]}}
+{"qa.definition": {"definition_word": ["perkataan"]}}
+{"iot.coffee": {"business_type": ["kedai kopi"], "coffee_type": ["", "cappuccino"], "date": ["", "today"], "device_type": ["", "coffee machine"], "time": ["", "now"]}}
+{"qa.factoid": {"query": ["olly berapa banyak bintang yang paskal terima di i. m. d. b."]}}
+{"iot.hue_lightup": {"house_place": ["bilik"], "change_amount": ["", "20 percent"], "device_type": ["", "all"]}}
+{"play.audiobook": {"app_name": ["audible"], "player_setting": ["sambung"], "audiobook_author": [""], "audiobook_name": [""], "media_type": [""]}}
+{"play.radio": {"app_name": ["radio malaysia f. m. online"], "music_descriptor": ["senaman"], "device_type": [""], "house_place": [""], "media_type": [""], "music_genre": [""], "radio_name": ["", "latest"]}}
+{"iot.hue_lighton": {"device_type": ["lampu"], "house_place": [""]}}
+{"email.addcontact": {"person": ["saodah"], "business_name": [""], "email_address": [""], "list_name": [""]}}
+{"takeaway.query": {"food_type": ["pizza"], "business_name": ["dominos"], "business_type": [""], "meal_type": [""], "order_type": ["", "takeaway"]}}
+{"transport.traffic": {"date": ["hari ini"], "place_name": ["", "current location, work"], "time": ["", "now"]}}
+{"social.post": {"business_name": ["acer"], "media_type": ["twitter"]}}

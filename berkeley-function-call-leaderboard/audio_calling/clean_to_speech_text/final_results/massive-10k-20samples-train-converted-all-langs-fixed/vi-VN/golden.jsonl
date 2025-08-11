@@ -1,0 +1,21 @@
+{"qa.stock": {"date": ["h\u00f4m nay"], "business_name": ["", "dow jones"]}}
+{"email.querycontact": {"personal_info": ["\u0111i\u0323a chi\u0309 nha\u0300"], "person": ["linh"], "business_name": [""], "relation": [""]}}
+{"calendar.set": {"event_name": ["cu\u1ed9c h\u1ecdp"], "person": ["h\u1ed3ng mai"], "business_name": [""], "date": [""], "general_frequency": [""], "meal_type": [""], "place_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"transport.query": {"transport_name": ["t\u00e0u th\u1ed1ng nh\u1ea5t"], "place_name": ["h\u00e0 n\u1ed9i"], "business_name": [""], "business_type": [""], "date": ["", "today"], "time": ["", "now"], "timeofday": [""], "transport_type": [""]}}
+{"audio.volume_up": {"device_type": ["m\u00e1y ph\u00e1t nh\u1ea1c"], "change_amount": ["t\u1edbi t\u00e1m m\u01b0\u01a1i ph\u1ea7n tr\u0103m"]}}
+{"transport.traffic": {"date": ["h\u00f4m nay"], "place_name": ["", "current location, work"], "time": ["", "now"]}}
+{"audio.volume_down": {}}
+{"qa.currency": {"query": ["t\u1ef7 gi\u00e1 \u0111\u00f4 la m\u1ef9 sang euro"]}}
+{"cooking.recipe": {"cooking_type": ["n\u01b0\u1edbng"], "ingredient": ["khoai t\u00e2y"], "app_name": [""], "device_type": [""], "food_type": [""], "media_type": [""]}}
+{"general.joke": {"joke_type": ["vui nh\u1ed9n"], "person": ["mai"]}}
+{"iot.hue_lightoff": {"device_type": [""], "house_place": [""], "time": ["", "now"]}}
+{"alarm.remove": {"time": ["b\u1ea3y gi\u1edd s\u00e1ng"], "date": [""]}}
+{"email.sendemail": {"person": ["huy"], "time": ["v\u00e0o bu\u1ed5i chi\u1ec1u"], "email_address": [""], "event_name": ["", "empty"], "relation": [""]}}
+{"datetime.convert": {"query": ["n\u1ebfu \u1edf v\u0169ng t\u00e0u l\u00e0 bu\u1ed5i tr\u01b0a th\u00ec \u1edf s\u00e0i g\u00f2n l\u00e0 m\u1ea5y gi\u1edd"]}}
+{"social.post": {"event_name": ["sinh nh\u1eadt"], "relation": ["ch\u1ed3ng"], "business_name": [""], "media_type": [""]}}
+{"music.likeness": {"music_genre": ["tr\u01b0\u0303 ti\u0300nh"], "artist_name": [""], "playlist_name": [""]}}
+{"iot.hue_lighton": {"house_place": ["sa\u0309nh"]}}
+{"lists.remove": {"list_name": ["danh s\u00e1ch nh\u1eefng th\u1ee9"], "place_name": ["c\u1eeda h\u00e0ng"], "date": [""]}}
+{"play.radio": {"radio_name": ["\u0111\u00e0i th\u1ec3 thao"], "app_name": [""], "device_type": [""], "house_place": [""], "media_type": [""], "music_genre": [""]}}
+{"lists.createoradd": {"event_name": [""], "list_name": [""], "person": [""]}}
+{"qa.maths": {"query": ["c\u0103n b\u1eadc hai c\u1ee7a ch\u00edn m\u01b0\u01a1i b\u1ea3y l\u00e0 g\u00ec"]}}

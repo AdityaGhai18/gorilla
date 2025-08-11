@@ -1,0 +1,20 @@
+{"qa.currency": {"query": ["gi meg valutakursen mellom u. s. d. og n. o. k."]}}
+{"email.query": {"date": ["i dag"], "business_name": [""], "email_folder": [""], "event_name": [""], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"play.radio": {"person": ["tix"], "device_type": ["nattbordsradioen"], "app_name": [""], "house_place": [""], "media_type": [""], "music_genre": [""], "radio_name": ["", "latest"]}}
+{"iot.wemo_on": {"device_type": ["viftekontakten"]}}
+{"calendar.remove": {"event_name": ["m\u00f8te"], "date": [""], "meal_type": [""], "person": [""], "place_name": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"audio.volume_up": {}}
+{"calendar.query": {"sport_type": ["v\u00e5lerengakampen"], "date": ["", "today"], "event_name": [""], "person": [""], "relation": [""], "time": [""], "timeofday": [""]}}
+{"news.query": {"general_frequency": ["hver time"], "news_topic": ["\u00f8konomiske"], "date": ["", "today"], "media_type": [""], "person": [""], "place_name": [""]}}
+{"alarm.query": {"time": ["f\u00f8r seks"], "timeofday": ["morgenen"], "alarm_type": [""], "date": [""], "event_name": [""]}}
+{"recommendation.locations": {"business_type": ["bar"], "place_name": ["bergen"], "time": ["to om morgenen"], "business_name": [""], "food_type": [""]}}
+{"recommendation.movies": {"event_name": ["film"], "movie_type": ["justin bieber"], "business_type": [""], "date": ["", "today"], "movie_name": [""], "time": ["", "now"], "timeofday": [""]}}
+{"transport.query": {"transport_type": ["toget"], "date": ["i dag"], "business_name": [""], "business_type": [""], "place_name": [""], "time": ["", "now"], "timeofday": [""], "transport_name": [""]}}
+{"social.query": {"person": ["ask"], "media_type": ["instagrammen"], "relation": [""]}}
+{"takeaway.order": {"food_type": ["vanlig pizza"], "business_name": ["mimos"], "business_type": [""], "drink_type": [""], "ingredient": [""], "meal_type": [""], "order_type": [""], "timeofday": [""]}}
+{"music.query": {"song_name": ["bohemian rhapsody"], "artist_name": [""]}}
+{"qa.definition": {"definition_word": ["basketball"]}}
+{"email.querycontact": {"personal_info": ["epost i. d."], "person": ["per"], "business_name": [""], "relation": [""]}}
+{"lists.remove": {"list_name": ["gj\u00f8rem\u00e5l"], "date": ["s\u00f8ndag"]}}
+{"lists.query": {"date": ["i dag"], "list_name": [""]}}
+{"transport.taxi": {"time": ["om en time"], "date": ["", "today"], "place_name": [""], "timeofday": [""], "transport_agency": [""], "transport_type": [""]}}

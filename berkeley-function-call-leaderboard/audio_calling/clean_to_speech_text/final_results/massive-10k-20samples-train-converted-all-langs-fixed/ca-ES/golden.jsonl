@@ -1,0 +1,20 @@
+{"news.query": {"media_type": ["tuits"], "person": ["de carles puigdemont"], "date": ["", "today"], "news_topic": [""], "place_name": [""]}}
+{"general.joke": {"joke_type": ["graciosa"]}}
+{"transport.ticket": {"transport_type": ["tren"], "transport_name": ["ave"], "date": ["dijous"], "place_name": [""], "time": [""], "timeofday": [""], "transport_descriptor": [""]}}
+{"email.addcontact": {"person": ["doctor peranau"], "business_name": [""], "email_address": [""], "list_name": [""]}}
+{"audio.volume_down": {"change_amount": ["vint per cent"]}}
+{"qa.factoid": {"query": ["llista de famosos que hagin estat al meu pa\u00eds durant els \u00faltims cinc anys"]}}
+{"calendar.query": {"place_name": ["ciutat"], "date": ["avui"], "time": ["dues a quatre de la tarda"], "event_name": [""], "person": [""], "relation": [""], "timeofday": [""]}}
+{"iot.wemo_off": {"device_type": ["endoll intel\u00b7ligent"]}}
+{"transport.taxi": {"transport_type": ["taxi"], "date": ["dem\u00e0"], "timeofday": ["mat\u00ed"], "place_name": [""], "time": ["", "now"], "transport_agency": [""]}}
+{"iot.coffee": {"device_type": ["caf\u00e8"], "coffee_type": ["de filtre"], "time": ["en deu minuts"], "date": ["", "today"]}}
+{"weather.query": {"general_frequency": ["setmanal"], "date": ["", "today"], "event_name": [""], "place_name": ["", "current location"], "time": ["", "now"], "timeofday": [""], "weather_descriptor": [""]}}
+{"alarm.remove": {"date": ["dem\u00e0"], "timeofday": ["mat\u00ed"], "time": [""]}}
+{"takeaway.order": {"meal_type": ["sopar"], "order_type": ["per emportar"], "business_name": ["minamo"], "business_type": [""], "drink_type": [""], "food_type": [""], "ingredient": [""], "timeofday": [""]}}
+{"play.podcasts": {"podcast_descriptor": ["seg\u00fcent episodi"], "podcast_name": ["catalunya r\u00e0dio"], "person": [""], "player_setting": [""]}}
+{"iot.hue_lightchange": {"player_setting": ["canvia aleat\u00f2riament"], "house_place": ["casa"], "color_type": ["", "random"], "time": ["", "now"]}}
+{"iot.hue_lightdim": {"house_place": ["jard\u00ed"], "change_amount": ["a la meitat"]}}
+{"qa.stock": {"business_name": ["motorola"], "date": ["avui"]}}
+{"email.sendemail": {"person": ["senyor subirats"], "event_name": ["reunir\u00e9 amb ell"], "date": ["el primer de febrer de dos mil disset"], "time": ["cinc de la tarda"], "place_name": ["oficina"], "email_address": [""], "relation": [""]}}
+{"iot.hue_lighton": {"house_place": ["casa"]}}
+{"iot.cleaning": {"device_type": ["robot aspirador"], "date": ["avui"], "time": ["una del migdia"], "general_frequency": [""], "house_place": [""]}}
