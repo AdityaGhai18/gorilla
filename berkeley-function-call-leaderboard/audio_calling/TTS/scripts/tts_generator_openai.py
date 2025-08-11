@@ -6,6 +6,7 @@ from typing import Optional, Dict, Any
 
 def generate_tts_instruction_from_text(
     transformed_content: str,
+    language: str = "en",
     function_name: Optional[str] = None,
     function_description: Optional[str] = None,
     openai_api_key: str = None,
@@ -14,28 +15,29 @@ def generate_tts_instruction_from_text(
     """
     Calls an LLM to generate a 1-2 line instruction for OpenAI TTS, given the text to be spoken and function context.
     The function context is provided to help the LLM understand the purpose of the speech and generate a more natural, context-aware instruction.
+    
+    Args:
+        transformed_content: The text to be spoken
+        language: ISO language code for the text
+        function_name: Optional function name for context
+        function_description: Optional function description for context
+        openai_api_key: Optional OpenAI API key
+        model: Model to use for instruction generation
+        
+    Returns:
+        A natural-sounding instruction for the TTS model
     """
     prompt = (
         "You are helping to generate instructions for a text-to-speech model. "
-        "Given the following text that will be spoken out-loud by the TTS model, write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
-        "MOST IMPORTANTLY: Focus on making it sound like real world speech by incporating little features like pauses, intonation, and other natural speech patterns as though you were just talking to or giving instructions to an assistant.\n\n"
+        f"Given the following text in {language} that will be spoken out-loud by the TTS model, write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
+        "MOST IMPORTANTLY: Focus on making it sound like real world speech by incorporating little features like pauses, intonation, and other natural speech patterns as though you were just talking to or giving instructions to an assistant.\n\n"
         f"Text: {transformed_content}\n\n"
         "Instruction:"
     )
-    # prompt = (
-    #     "You are helping to generate instructions for a text-to-speech model. "
-    #     "Given the following text that will be spoken out-loud by the TTS model, and the function context below, "
-    #     "write a 1-2 line instruction for the TTS model to make the speech sound as natural, conversational, and human-like as possible. "
-    #     "MOST IMPORTANTLY: Focus on making it sound like real world speech as though you were just talking to or giving instructions to an assistant. "
-    #     "The function context describes the purpose of the action or command that this speech is associated with. "
-    #     "Use this to help you choose the most natural and appropriate speaking style.\n\n"
-    #     f"Text: {transformed_content}\n"
-    #     f"Function: {function_name}\n"
-    #     f"Function Description: {function_description}\n\n"
-    #     "Instruction:"
-    # )
+    
     print("[TTS Prompt Context]")
     print(f"Transformed Content: {transformed_content}")
+    print(f"Language: {language}")
     print(f"Function: {function_name}")
     print(f"Function Description: {function_description}")
     client = openai.OpenAI(api_key=openai_api_key) if openai_api_key else openai.OpenAI()
@@ -71,8 +73,17 @@ class OpenAITTSGenerator(TTSGeneratorBase):
             self.client = OpenAI()
         print("OpenAI client initialized")
     
-    def _generate_audio(self, text: str, test_case: Optional[Dict[str, Any]] = None) -> bytes:
-        """Generate audio using OpenAI TTS API, with dynamic instructions per sample."""
+    def _generate_audio(self, text: str, test_case: Optional[Dict[str, Any]] = None, language: str = "en") -> bytes:
+        """Generate audio using OpenAI TTS API, with dynamic instructions per sample.
+        
+        Args:
+            text: The text to convert to speech
+            test_case: Optional test case data for context
+            language: ISO language code for the text
+            
+        Returns:
+            Audio bytes in MP3 format
+        """
         try:
             function_name = ""
             function_description = ""
@@ -82,6 +93,7 @@ class OpenAITTSGenerator(TTSGeneratorBase):
                 function_description = func.get("description", "")
             instruction = generate_tts_instruction_from_text(
                 transformed_content=text,
+                language=language,
                 function_name=function_name,
                 function_description=function_description,
                 openai_api_key=self.api_key,
