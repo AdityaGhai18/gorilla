@@ -15,10 +15,20 @@ class ElevenLabsTTSGenerator(TTSGeneratorBase):
         self.client = ElevenLabs(api_key=self.api_key)
         print("ElevenLabs client initialized")
     
-    def _generate_audio(self, text: str) -> bytes:
-        """Generate audio using ElevenLabs API."""
+    def _generate_audio(self, text: str, language: str = None) -> bytes:
+        """Generate audio using ElevenLabs API.
+        
+        Args:
+            text: The text to convert to speech
+            language: ISO language code (optional, ElevenLabs detects language automatically)
+            
+        Returns:
+            Audio bytes in MP3 format
+        """
         try:
             # Generate audio using ElevenLabs client
+            # Note: ElevenLabs multilingual model automatically detects the language
+            # from the input text, so we don't need to explicitly set the language
             audio = self.client.text_to_speech.convert(
                 text=text,
                 voice_id="JBFqnCBsd6RMkjVDRZzb",  # Josh voice ID
@@ -26,8 +36,6 @@ class ElevenLabsTTSGenerator(TTSGeneratorBase):
                 output_format="mp3_44100_128",
             )
             
-            #v3 still not available for public use
-
             # Convert generator to bytes by iterating through chunks
             audio_chunks = []
             for chunk in audio:

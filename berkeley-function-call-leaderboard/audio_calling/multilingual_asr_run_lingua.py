@@ -13,8 +13,6 @@ from audio_calling.clean_to_speech_text.granular_speech_pipeline import (
     GranularSpeechPipeline,
     PipelineConfig,
 )
-from audio_calling.TTS.scripts.tts_generator_openai import OpenAITTSGenerator
-from audio_calling.TTS.scripts.tts_generator_cartesia import CartesiaTTSGenerator
 from audio_calling.TTS.scripts.tts_generator_elevenlabs import ElevenLabsTTSGenerator
 
 # Mapping of Lingua language objects to human-readable names
@@ -51,6 +49,42 @@ LANGUAGE_MAPPING = {
     Language.PERSIAN: "Persian",
     Language.THAI: "Thai",
     Language.TURKISH: "Turkish"
+}
+
+# Mapping of human-readable language names to language codes for TTS
+LANGUAGE_CODE_MAPPING = {
+    "English": "en-US",
+    "Hindi": "hi-IN",
+    "Urdu": "ur-PK",
+    "Bengali": "bn-IN",
+    "Punjabi": "pa-IN",
+    "Marathi": "mr-IN",
+    "Gujarati": "gu-IN",
+    "Tamil": "ta-IN",
+    "Telugu": "te-IN",
+    "French": "fr-FR",
+    "German": "de-DE",
+    "Spanish": "es-ES",
+    "Portuguese": "pt-PT",
+    "Italian": "it-IT",
+    "Dutch": "nl-NL",
+    "Polish": "pl-PL",
+    "Danish": "da-DK",
+    "Swedish": "sv-SE",
+    "Finnish": "fi-FI",
+    "Hungarian": "hu-HU",
+    "Icelandic": "is-IS",
+    "Czech": "cs-CZ",
+    "Slovak": "sk-SK",
+    "Russian": "ru-RU",
+    "Ukrainian": "uk-UA",
+    "Chinese": "zh-CN",
+    "Japanese": "ja-JP",
+    "Korean": "ko-KR",
+    "Arabic": "ar-SA",
+    "Persian": "fa-IR",
+    "Thai": "th-TH",
+    "Turkish": "tr-TR"
 }
 
 # Initialize the Lingua language detector with all languages
@@ -191,6 +225,17 @@ def collect_all_user_turns(data) -> List[Tuple[int, int, int, str, str]]:
                 entries.append((case_idx, turn_idx, 0, text, language))
     return entries
 
+def get_language_code_for_tts(language_name: str) -> str:
+    """Get the language code for TTS from the language name.
+    
+    Args:
+        language_name: The language name to get the code for
+        
+    Returns:
+        The language code for TTS
+    """
+    return LANGUAGE_CODE_MAPPING.get(language_name, "en-US")
+
 def main():
     parser = argparse.ArgumentParser(description="Multilingual speechifying pipeline with Lingua language detection")
     parser.add_argument('--data_path', type=str, required=True, help='Path to input data JSON (array or JSONL)')
@@ -255,23 +300,13 @@ def main():
         all_turns = random.sample(all_turns, sample_count)
         print(f"Sampled down to {len(all_turns)} turns.")
 
-    tts_providers = [
-        ("openai", OpenAITTSGenerator, "OPENAI_API_KEY"),
-        ("cartesia", CartesiaTTSGenerator, "CARTESIA_API_KEY"),
-        ("elevenlabs", ElevenLabsTTSGenerator, "ELEVENLABS_API_KEY"),
-    ]
-
-    generators = {}
-    for name, cls, env_var in tts_providers:
-        api_key = os.environ.get(env_var)
-        if not api_key:
-            raise RuntimeError(f"Missing API key for {name}: set {env_var}")
-        ext = "mp3" if name == "cartesia" else "wav"
-        generators[name] = (cls(api_key, output_root=audio_dir), ext)
-
-    provider_names = list(generators.keys())
-    n_providers = len(provider_names)
-
+    # Use only ElevenLabs for TTS
+    api_key = os.environ.get("ELEVENLABS_API_KEY")
+    if not api_key:
+        raise RuntimeError("Missing API key for ElevenLabs: set ELEVENLABS_API_KEY")
+    
+    generator = ElevenLabsTTSGenerator(api_key, output_root=audio_dir)
+    
     # Process the selected user turns
     for idx, (case_idx, turn_idx, utter_idx, text, detected_language) in enumerate(all_turns):
         print(f"Processing query {idx+1}/{len(all_turns)}: case={case_idx}, turn={turn_idx}, utter={utter_idx}, language={detected_language}")
@@ -279,22 +314,26 @@ def main():
         
         # Handle MS MARCO format
         if isinstance(case.get("question", ""), str):
-            transcript = case["question"]
-            audio_path = os.path.join(audio_dir, f"{case['id']}_audio.wav")
+            # Use the original text from all_turns which is in the detected language
+            original_text = text
+            audio_path = os.path.join(audio_dir, f"{case['id']}_audio.mp3")
         # Handle original BFCL format
         else:
             turn = case["question"][turn_idx]
             if isinstance(turn, list):
                 utter = turn[utter_idx]
-                transcript = utter.get("content") or utter.get("transcript")
+                # Use the original content in the detected language, not the transcript which is in English
+                original_text = utter.get("content", "")
                 utter_id = utter.get("id", f"{utter_idx}")
-                audio_path = os.path.join(audio_dir, f"{case['id']}_turn{turn_idx}_utter{utter_id}_audio.wav")
+                audio_path = os.path.join(audio_dir, f"{case['id']}_turn{turn_idx}_utter{utter_id}_audio.mp3")
             else:
-                transcript = turn.get("content") or turn.get("transcript")
-                audio_path = os.path.join(audio_dir, f"{case['id']}_turn{turn_idx}_audio.wav")
+                # Use the original content in the detected language, not the transcript which is in English
+                original_text = turn.get("content", "")
+                audio_path = os.path.join(audio_dir, f"{case['id']}_turn{turn_idx}_audio.mp3")
         
-        # Apply disfluency-adding method via transform_text
-        transcript_result = pipeline.transform_text(transcript)
+        # Apply disfluency-adding method via transform_text to all languages
+        print(f"Original: {original_text}")
+        transcript_result = pipeline.transform_text(original_text)
         transcript = transcript_result.get("final", "")
         transcript = transcript.replace('"', '').replace("'", '')
         
@@ -308,42 +347,32 @@ def main():
             else:
                 case["question"][turn_idx]["detected_language"] = detected_language
         
-        # Generate audio (Round-robin provider assignment for now)
-        provider_name = provider_names[idx % n_providers]
-        generator, ext = generators[provider_name]
+        # Get language code for TTS
+        language_code = get_language_code_for_tts(detected_language)
         
         # Update audio path with language info
-        audio_path = audio_path.replace(".wav", f"_{detected_language.lower()}.{ext}")
+        audio_path = audio_path.replace(".mp3", f"_{detected_language.lower()}.mp3")
         
-        if provider_name == "cartesia":
-            while True:
-                try:
-                    # Pass language code to Cartesia TTS
-                    audio_bytes = generator._generate_audio(transcript, language=detected_language)
-                    break
-                except Exception as e:
-                    print(f"[Cartesia ERROR] {data[case_idx]['id']} turn {turn_idx}: {e}. Retrying in 30 seconds...")
-                    time.sleep(30)
-        elif provider_name == "openai":
-            # OpenAI TTS should handle multilingual text automatically
-            audio_bytes = generator._generate_audio(transcript, case, language=detected_language)
-        else:
-            # ElevenLabs uses multilingual model by default
-            audio_bytes = generator._generate_audio(transcript, language=detected_language)
-
-        with open(audio_path, "wb") as f:
-            f.write(audio_bytes)
+        # Generate audio with ElevenLabs
+        try:
+            audio_bytes = generator._generate_audio(transcript, language=language_code)
             
-        # Store the audio path in the case
-        if isinstance(case.get("question", ""), str):
-            case["audio_path"] = audio_path
-        else:
-            if isinstance(case["question"][turn_idx], list):
-                case["question"][turn_idx][utter_idx]["audio_path"] = audio_path
+            with open(audio_path, "wb") as f:
+                f.write(audio_bytes)
+                
+            # Store the audio path in the case
+            if isinstance(case.get("question", ""), str):
+                case["audio_path"] = audio_path
             else:
-                case["question"][turn_idx]["audio_path"] = audio_path
+                if isinstance(case["question"][turn_idx], list):
+                    case["question"][turn_idx][utter_idx]["audio_path"] = audio_path
+                else:
+                    case["question"][turn_idx]["audio_path"] = audio_path
 
-        print(f"Processed multilingual turn -> case={data[case_idx]['id']} turn={turn_idx} language={detected_language} provider={provider_name} path={audio_path}")
+            print(f"Processed multilingual turn -> case={data[case_idx]['id']} turn={turn_idx} language={detected_language} provider=elevenlabs path={audio_path}")
+        except Exception as e:
+            print(f"[ElevenLabs ERROR] {data[case_idx]['id']} turn {turn_idx}: {e}")
+            continue
 
         # Save after each turn to preserve progress
         save_json(data, output_file)
