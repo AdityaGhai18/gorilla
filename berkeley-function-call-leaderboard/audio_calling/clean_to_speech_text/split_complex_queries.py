@@ -6,27 +6,11 @@ Use:
 """
 
 import json
-import re
 import argparse
 import os
-from typing import Dict, List, Any, Optional, Tuple
-from pathlib import Path
+from typing import Dict, List, Any, Optional
 from dotenv import load_dotenv
 import openai
-
-# Try to import spaCy for NER, fallback to regex-based NER
-try:
-    import spacy
-    SPACY_AVAILABLE = True
-    # Load English language model
-    try:
-        nlp = spacy.load("en_core_web_sm")
-    except OSError:
-        print("Warning: spaCy model 'en_core_web_sm' not found. Install with: python -m spacy download en_core_web_sm")
-        SPACY_AVAILABLE = False
-except ImportError:
-    print("Warning: spaCy not available. Using regex-based NER fallback.")
-    SPACY_AVAILABLE = False
 
 # Load environment variables
 load_dotenv()
@@ -40,359 +24,416 @@ class ComplexQuerySplitter:
     
     def __init__(self):
         self.client = openai.OpenAI(api_key=OPENAI_API_KEY)
-        
-    def extract_named_entities(self, query: str) -> Dict[str, List[str]]:
-        """Extract named entities from the query using classical NER techniques."""
-        
-        if SPACY_AVAILABLE:
-            return self._extract_entities_spacy(query)
-        else:
-            return self._extract_entities_regex(query)
-    
-    def _extract_entities_spacy(self, query: str) -> Dict[str, List[str]]:
-        """Extract named entities using spaCy NER."""
-        doc = nlp(query)
-        
-        entities = {
-            "people": [],
-            "places": [],
-            "organizations": [],
-            "dates": [],
-            "numbers": [],
-            "files": [],
-            "other": []
-        }
-        
-        for ent in doc.ents:
-            entity_text = ent.text.strip()
-            if not entity_text:
-                continue
-                
-            if ent.label_ in ["PERSON"]:
-                entities["people"].append(entity_text)
-            elif ent.label_ in ["GPE", "LOC", "FAC"]:
-                entities["places"].append(entity_text)
-            elif ent.label_ in ["ORG"]:
-                entities["organizations"].append(entity_text)
-            elif ent.label_ in ["DATE", "TIME"]:
-                entities["dates"].append(entity_text)
-            elif ent.label_ in ["CARDINAL", "QUANTITY", "MONEY", "PERCENT"]:
-                entities["numbers"].append(entity_text)
-            else:
-                entities["other"].append(entity_text)
-        
-        # Also extract file-like patterns
-        file_patterns = re.findall(r'\b[\w\-_]+\.(?:txt|pdf|doc|docx|json|csv|py|js|html|css|md|xml|yaml|yml|sh|sql|log|out|err|tmp|temp|bak|backup)\b', query, re.IGNORECASE)
-        entities["files"].extend(file_patterns)
-        
-        # Extract numbers (IDs, codes, etc.)
-        number_patterns = re.findall(r'\b\d{3,}\b', query)  # 3+ digit numbers
-        entities["numbers"].extend(number_patterns)
-        
-        # Remove duplicates
-        for key in entities:
-            entities[key] = list(set(entities[key]))
-        
-        return entities
-    
-    def _extract_entities_regex(self, query: str) -> Dict[str, List[str]]:
-        """Extract named entities using regex patterns (fallback when spaCy is not available)."""
-        
-        entities = {
-            "people": [],
-            "places": [],
-            "organizations": [],
-            "dates": [],
-            "numbers": [],
-            "files": [],
-            "other": []
-        }
-        
-        # Extract file names
-        file_patterns = re.findall(r'\b[\w\-_]+\.(?:txt|pdf|doc|docx|json|csv|py|js|html|css|md|xml|yaml|yml|sh|sql|log|out|err|tmp|temp|bak|backup)\b', query, re.IGNORECASE)
-        entities["files"].extend(file_patterns)
-        
-        # Extract numbers (IDs, codes, etc.)
-        number_patterns = re.findall(r'\b\d{3,}\b', query)  # 3+ digit numbers
-        entities["numbers"].extend(number_patterns)
-        
-        # Extract dates (simple patterns)
-        date_patterns = re.findall(r'\b\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4}\b|\b\d{4}-\d{2}-\d{2}\b|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* \d{1,2},? \d{4}\b', query, re.IGNORECASE)
-        entities["dates"].extend(date_patterns)
-        
-        # Extract potential people names (capitalized words)
-        people_patterns = re.findall(r'\b[A-Z][a-z]+ [A-Z][a-z]+\b', query)
-        entities["people"].extend(people_patterns)
-        
-        # Extract potential organizations (words with common org suffixes)
-        org_patterns = re.findall(r'\b[A-Z][a-zA-Z\s&]+(?:Inc|Corp|LLC|Ltd|Company|Organization|University|Institute|School|Hospital)\b', query, re.IGNORECASE)
-        entities["organizations"].extend(org_patterns)
-        
-        # Extract potential places (common place indicators)
-        place_patterns = re.findall(r'\b[A-Z][a-zA-Z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|City|Town|State|Country|County)\b', query)
-        entities["places"].extend(place_patterns)
-        
-        # Remove duplicates
-        for key in entities:
-            entities[key] = list(set(entities[key]))
-        
-        return entities
     
     def is_complex_query(self, query: str, function_docs: List[Dict[str, Any]], test_case: Dict[str, Any] = None) -> bool:
         """Determine if a query is complex enough to warrant splitting into multiple turns."""
         
-        # Get existing clarifications to see what's already provided
-        existing_clarifications = {}
-        if test_case and "question" in test_case and test_case["question"]:
-            if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
-                first_turn = test_case["question"][0]
-                if isinstance(first_turn, list) and len(first_turn) > 0:
-                    existing_clarifications = first_turn[0].get("clarifications", {})
-        
-        # Count required arguments and how many are missing
-        total_required = 0
-        missing_required = 0
-        
-        for func in function_docs:
-            if "parameters" in func and "required" in func["parameters"]:
-                required_args = func["parameters"]["required"]
-                total_required += len(required_args)
-                
-                for arg in required_args:
-                    # Check if argument is already provided in clarifications
-                    if arg in existing_clarifications:
-                        continue
-                    
-                    # Check if argument is mentioned in the query (more flexible matching)
-                    arg_lower = arg.lower()
-                    query_lower = query.lower()
-                    
-                    # Check for exact matches or word variations
-                    if (arg_lower in query_lower or 
-                        arg_lower.replace("_", " ") in query_lower or
-                        any(word in query_lower for word in arg_lower.split('_')) or
-                        arg_lower.replace("_", "") in query_lower):
-                        continue
-                    
-                    missing_required += 1
-        
-        # Consider it complex if there are missing required arguments
-        if missing_required > 0:
-            return True
-        
-        # Also consider it complex if there are multiple required arguments and less than 70% are provided
-        if total_required > 1 and (total_required - missing_required) / total_required < 0.7:
-            return True
-        
-        return False
-    
-    def extract_entities_and_arguments(self, query: str, function_docs: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Extract named entities and function arguments from the query using rule-based approach."""
-        
-        # Extract named entities first
-        named_entities = self.extract_named_entities(query)
-        
-        # Analyze function arguments using rule-based approach
-        mentioned_arguments = {}
-        missing_arguments = {}
-        
-        for func in function_docs:
-            func_name = func.get("name", "")
-            if not func_name:
-                continue
-                
-            mentioned_arguments[func_name] = {}
-            missing_arguments[func_name] = []
-            
-            if "parameters" in func and "properties" in func["parameters"]:
-                properties = func["parameters"]["properties"]
-                required = func["parameters"].get("required", [])
-                
-                for param_name, param_info in properties.items():
-                    param_type = param_info.get("type", "")
-                    param_desc = param_info.get("description", "")
-                    
-                    # Check if this parameter is mentioned in the query
-                    found_value = self._find_argument_value(query, param_name, param_type, named_entities)
-                    
-                    if found_value:
-                        mentioned_arguments[func_name][param_name] = found_value
-                    elif param_name in required:
-                        missing_arguments[func_name].append(param_name)
-        
-        return {
-            "named_entities": named_entities,
-            "mentioned_arguments": mentioned_arguments,
-            "missing_arguments": missing_arguments
-        }
-    
-    def _find_argument_value(self, query: str, param_name: str, param_type: str, named_entities: Dict[str, List[str]]) -> Optional[str]:
-        """Find the value of a parameter in the query using rule-based matching."""
-        
-        query_lower = query.lower()
-        param_name_lower = param_name.lower()
-        
-        # Check for exact parameter name matches
-        if param_name_lower in query_lower:
-            # Look for values after the parameter name
-            pattern = rf'{re.escape(param_name)}\s*[=:]\s*["\']?([^"\'\s,]+)["\']?'
-            match = re.search(pattern, query, re.IGNORECASE)
-            if match:
-                return match.group(1)
-        
-        # Check for parameter name variations
-        param_variations = [
-            param_name,
-            param_name.replace("_", " "),
-            param_name.replace("_", "-"),
-            param_name.title(),
-            param_name.upper()
-        ]
-        
-        for variation in param_variations:
-            if variation.lower() in query_lower:
-                # Look for values near the parameter name
-                pattern = rf'{re.escape(variation)}\s*[=:]\s*["\']?([^"\'\s,]+)["\']?'
-                match = re.search(pattern, query, re.IGNORECASE)
-                if match:
-                    return match.group(1)
-        
-        # Check named entities for potential matches
-        if param_type in ["string", "integer", "float"]:
-            # Look for numbers if parameter type is numeric
-            if param_type in ["integer", "float"] and named_entities["numbers"]:
-                return named_entities["numbers"][0]
-            
-            # Look for files if parameter name suggests file
-            if "file" in param_name.lower() and named_entities["files"]:
-                return named_entities["files"][0]
-            
-            # Look for people if parameter name suggests person
-            if any(word in param_name.lower() for word in ["user", "person", "name", "author"]) and named_entities["people"]:
-                return named_entities["people"][0]
-            
-            # Look for places if parameter name suggests location
-            if any(word in param_name.lower() for word in ["location", "place", "address", "city", "country"]) and named_entities["places"]:
-                return named_entities["places"][0]
-        
-        return None
-    
-    def generate_clarification_questions(self, analysis: Dict[str, Any], function_docs: List[Dict[str, Any]], test_case: Dict[str, Any] = None) -> List[Dict[str, Any]]:
-        """Generate clarification questions for missing arguments using LLM."""
-        
-        missing_args = analysis.get("missing_arguments", {})
-        if not missing_args:
-            return []
-        
-        # Get existing clarifications from the test case
-        existing_clarifications = {}
-        if test_case and "question" in test_case and test_case["question"]:
-            if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
-                first_turn = test_case["question"][0]
-                if isinstance(first_turn, list) and len(first_turn) > 0:
-                    existing_clarifications = first_turn[0].get("clarifications", {})
-        
-        # Format the analysis for the LLM
-        analysis_text = json.dumps(analysis, indent=2)
-        function_docs_text = self._format_function_docs(function_docs)
-        clarifications_text = json.dumps(existing_clarifications, indent=2)
-        
+        # Use LLM to determine if splitting makes conversational sense
         prompt = f"""
-Based on the following analysis of a user query, generate natural language clarification questions for missing required arguments.
+Analyze this user query and determine if it should be split into multiple conversational turns.
 
-**IMPORTANT RULES:**
-1. ONLY ask for information that is ACTUALLY missing from the original query
-2. DO NOT ask for information that is already provided in the existing clarifications
-3. DO NOT add new information that wasn't mentioned in the original query
-4. Make questions sound natural and conversational
-5. Use existing clarifications as guidance for what information is already available
+**QUERY TO ANALYZE:**
+"{query}"
 
-Analysis:
-{analysis_text}
+**FUNCTION DOCUMENTATION:**
+{self._format_function_docs(function_docs)}
 
-Function Documentation:
-{function_docs_text}
+**EXISTING CLARIFICATIONS (if any):**
+{self._get_existing_clarifications_text(test_case)}
 
-Existing Clarifications (already provided):
-{clarifications_text}
+**DEEP ANALYSIS REQUIRED:**
 
-Here are examples of good multi-turn conversations to follow:
+**1. FUNCTION REQUIREMENT ANALYSIS:**
+- Check each required parameter in the function documentation
+- Identify which parameters are missing from the user query
+- Consider if missing parameters would naturally be asked for in conversation
 
-**Example 1: Weather Request (Temperature Unit Clarification)**
-Original: "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?"
-Multi-turn:
-- User: "What's the weather like in Tel Aviv right now?"
-- Assistant: "What temperature unit would you prefer for the weather report - Celsius or Fahrenheit?"
-- User: "Fahrenheit"
+**2. SPEECH AMBIGUITY DETECTION:**
+- Look for names, IDs, or terms that might be unclear when spoken
+- Check for ambiguous references that need clarification
+- Identify potential misheard or unclear information
 
-**Example 2: Uber Ride Request (Missing Location)**
-Original: "I need a Comfort Uber ride and I can wait up to 600 seconds for it."
-Multi-turn:
-- User: "I need a Comfort Uber ride and I can wait for 10 minutes"
-- Assistant: "What is your pickup location? Please provide it in the format 'Street Address, City, State, Country'."
-- User: "2020 Addison Street, Berkeley, CA, USA"
+**3. CONTEXT PRESERVATION ASSESSMENT:**
+- Determine what information is obvious and should NOT be removed
+- Identify what can be reasonably asked for without breaking conversation flow
+- Assess if splitting would feel natural or forced
 
-**Example 3: Food Order with Restaurant**
-Original: "I want to order five 'burgers' and six 'chicken wings' from uber pitada"
-Multi-turn:
-- User: "I want to order some food for delivery"
-- Assistant: "Which restaurant would you like to order from?"
-- User: "uber pitada"
-- Assistant: "What food items would you like to include in your order?"
-- User: "5 burgers, 6 chicken wings"
+**RULES FOR SPLITTING:**
 
-**Example 4: Bot Export List Request**
-Original: "Could you help me retrieve the list of exports for my bot using the identifier 'my-bot-id' and focusing on version 'v2' sort in ascending? I want max 50 results"
-Multi-turn:
-- User: "I need to retrieve the list of exports for my bot"
-- Assistant: "What is the unique identifier for your bot?"
-- User: "my-bot-id"
-- Assistant: "What is the specific version of the bot you are interested in listing exports for?"
-- User: "v2"
+**✅ SPLIT WHEN:**
+- **Multiple Required Parameters**: Function requires 2+ parameters and only 1 is provided
+- **Speech Ambiguity**: Names, IDs, or terms that are unclear when spoken (like complex serial numbers)
+- **Complex Requirements**: Query has 3+ specific requirements that could be clarified step-by-step
+- **Missing Critical Info**: Function cannot execute without additional information
 
-**Example 5: Air Conditioner Control**
-Original: "I want to set the airconditioner to dry mode please"
-Multi-turn:
-- User: "I want to set the airconditioner to dry mode please"
-- Assistant: "Sure, could you also please provide the wind strength that you would like?"
-- User: "medium wind thank you"
+**❌ DO NOT SPLIT WHEN:**
+- Query is simple and complete (like "What's the weather in Toronto?")
+- Function has only 1 required parameter and it's provided
+- Breaking it down would feel forced or artificial
+- All necessary information is already clear and complete
+- Query is straightforward with no ambiguity
+- Function can execute successfully with current information
+- **Single parameter functions** where the parameter is clearly provided or can be inferred
+- **Simple requests** that don't have multiple complex requirements
 
-**Example 6: Food Item Change**
-Original: "I've changed my mind, can I get a greens instead of what I previously ordered?"
-Multi-turn:
-- User: "I want to change my food order"
-- Assistant: "What food item would you like to change to?"
-- User: "salad"
+**DETAILED EXAMPLES:**
 
-**CRITICAL: Only generate clarifications for information that is ACTUALLY missing and would naturally be asked for in a real conversation.**
+**Example 1: Weather Request (GOOD SPLIT)**
+Query: "What's the weather in Toronto in Celsius?"
+Analysis: Location is clear (Toronto), but temperature unit is specified
+Split: Yes - asking for unit preference is natural
+Reason: Unit clarification is common and doesn't remove obvious location info
 
-Generate clarification questions for each missing argument. Return a JSON array with this structure:
-[
-    {{
-        "function_name": "name of the function",
-        "argument_name": "name of the missing argument", 
-        "question": "natural language question asking for the missing information",
-        "description": "description of what this argument is for"
-    }}
-]
+**Example 2: Ride Request (GOOD SPLIT)**
+Query: "I need a ride to the airport"
+Analysis: Destination clear (airport), but missing ride type and pickup location
+Split: Yes - these are naturally asked for in ride services
+Reason: Missing critical information that would be asked for anyway
 
-Make the questions sound natural and conversational. Focus on what specific information is needed. Don't be overly specific about format requirements - keep it natural.
+**Example 3: Name Ambiguity (GOOD SPLIT)**
+Query: "Can you help me with Shishir Patel's account?"
+Analysis: Name might be unclear when spoken, could be misheard
+Split: Yes - asking for spelling clarification is natural
+Reason: Names are commonly clarified in speech interactions
+
+**Example 4: Complex Email Request (GOOD SPLIT)**
+Query: "Draft an email to Andy at andy@gorilla.ai with subject 'Sales Forecast Request' and message 'where is the latest sales forecast spreadsheet?'"
+Analysis: Multiple pieces of information (recipient, subject, message) that could be asked for naturally
+Split: Yes - breaking down email components feels natural
+Reason: Email composition is commonly done step-by-step
+
+**Example 5: Complex Sensor Query (GOOD SPLIT)**
+Query: "Get today's alerts for sensor Q3CC-CRT3-SZ2G, showing max 10 alerts per page"
+Analysis: Complex serial number and pagination details that could be clarified
+Split: Yes - asking for sensor ID and pagination separately feels natural
+Reason: Technical details are commonly clarified in conversation
+
+**Example 6: Complex Housekeeper Request (GOOD SPLIT)**
+Query: "Help find a housekeeper who provides ironing services in Chonburi Province, with review score 4.5+ stars, available 12/03/2024 16:00-18:00, no late history"
+Analysis: Multiple specific requirements that could be asked for step-by-step
+Split: Yes - breaking down requirements feels natural
+Reason: Complex requests are commonly clarified in conversation
+
+**Example 7: Complete Request (NO SPLIT)**
+Query: "What's the weather in Toronto?"
+Analysis: Location and request are both clear
+Split: No - complete request, no missing information
+Reason: Splitting would create artificial turns
+
+**Example 8: Simple Service Request (NO SPLIT)**
+Query: "Help me find service provider who provide cleaning service"
+Analysis: Function requires 'service_id', user clearly wants cleaning service (which maps to service_id=1)
+Split: No - function can execute with inferred service_id=1 for cleaning
+Reason: All necessary information is provided, splitting would create artificial turns
+
+**Example 9: Single Parameter Request (NO SPLIT)**
+Query: "Help me find service provider who provide cleaning service"
+Analysis: Function requires only 'service_id', user specifies "cleaning service" which maps to service_id=1
+Split: No - function has all required information, no need for clarification
+Reason: Single required parameter is provided, splitting creates unnecessary conversation turns
+
+**Example 9: Obvious Context (NO SPLIT)**
+Query: "I need a pizza from Pizza Palace"
+Analysis: Restaurant and food type are both specified
+Split: No - complete request, removing either would feel unnatural
+Reason: Both pieces of info are obvious and shouldn't be asked for separately
+
+**RESPONSE FORMAT:**
+Return only "SPLIT" or "NO_SPLIT" followed by a detailed explanation.
+
+Example: "SPLIT - Missing ride type (UberX/Comfort) and pickup location, both would naturally be asked for in ride booking"
+Example: "NO_SPLIT - Complete request with clear location and food type, no missing information that would be naturally asked for"
 """
         
         try:
+            print(f"    - Sending prompt to LLM for complexity check...")
+            response = self.client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+                max_tokens=100
+            )
+            
+            content = response.choices[0].message.content.strip()
+            print(f"    - LLM response: {content}")
+            
+            # Check if response contains "SPLIT" (handle quotes and extra text)
+            if "SPLIT" in content:
+                print(f"    - Decision: SPLIT")
+                return True
+            else:
+                print(f"    - Decision: NO_SPLIT")
+                return False
+                
+        except Exception as e:
+            print(f"    - Error determining if query should be split: {e}")
+            # Fallback: don't split if we can't determine
+            return False
+    
+    def _get_existing_clarifications_text(self, test_case: Dict[str, Any]) -> str:
+        """Get existing clarifications as formatted text."""
+        if not test_case or "question" not in test_case or not test_case["question"]:
+            return "None"
+        
+        if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
+            first_turn = test_case["question"][0]
+            if isinstance(first_turn, list) and len(first_turn) > 0:
+                clarifications = first_turn[0].get("clarifications", {})
+                if clarifications:
+                    return json.dumps(clarifications, indent=2)
+        
+        return "None"
+    
+    def _get_transcript_text(self, test_case: Dict[str, Any]) -> str:
+        """Get transcript text from test case."""
+        if not test_case or "question" not in test_case or not test_case["question"]:
+            return "None"
+        
+        if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
+            first_turn = test_case["question"][0]
+            if isinstance(first_turn, list) and len(first_turn) > 0:
+                transcript = first_turn[0].get("transcript", "")
+                if transcript:
+                    return transcript
+        
+        return "None"
+    
+    def split_into_conversation_turns(self, query: str, function_docs: List[Dict[str, Any]], test_case: Dict[str, Any] = None) -> List[List[Dict[str, Any]]]:
+        """Create new multi-turn conversations that simulate clarification process."""
+        
+        # Use LLM to create natural conversation flow
+        prompt = f"""
+Create a natural multi-turn conversation from this single user query. The goal is to simulate how a real conversation would flow when the system needs to clarify information.
+
+**ORIGINAL USER QUERY:**
+"{query}"
+
+**ORIGINAL TRANSCRIPT (what was spoken):**
+{self._get_transcript_text(test_case)}
+
+**FUNCTION DOCUMENTATION:**
+{self._format_function_docs(function_docs)}
+
+**EXISTING CLARIFICATIONS (if any):**
+{self._get_existing_clarifications_text(test_case)}
+
+**TWO TYPES OF CONVERSATION SPLITS:**
+
+**TYPE 1: INFORMATION REMOVAL + ADDITION**
+- **Remove some information** from Turn 1 to create natural conversation flow
+- **Ask for it back** in Turn 2 (system question)
+- **User provides it** in Turn 3
+- **Goal**: Break down complex requests into natural steps
+
+**TYPE 2: SPEECH AMBIGUITY CLARIFICATION**
+- **Keep the information** but it's unclear when spoken
+- **Ask for clarification** in Turn 2 (exact spelling, format, etc.)
+- **User clarifies** in Turn 3
+- **Goal**: Handle speech-to-text issues and unclear references
+
+**CONVERSATION STRATEGY:**
+
+**1. TURN 1 (User Request):**
+- Keep the main intent and obvious context
+- Remove specific details that could be asked for naturally
+- **PRESERVE SPEECH DISFLUENCIES**: Keep "uh", "um", "you know", etc. from transcript
+- Make it sound like a natural first request with realistic speech patterns
+
+**2. TURN 2 (System Question):**
+- Ask for the removed information OR clarify ambiguous information
+- Group related questions together when natural
+- Sound conversational, not robotic
+- Use natural language that matches the user's speech style
+
+**3. TURN 3 (User Response):**
+- User provides the missing information OR clarifies the ambiguous information
+- **MAINTAIN SPEECH REALISM**: Include natural disfluencies like "um", "uh", "like"
+- Should feel like a natural continuation of the conversation
+- Don't make it sound too polished or written
+
+**DETAILED CONVERSATION PATTERNS:**
+
+**TYPE 1: INFORMATION REMOVAL + ADDITION**
+
+**PATTERN 1: Complex Email Request**
+**Original**: "Draft an email to Andy at andy@gorilla.ai with subject 'Sales Forecast Request' and message 'where is the latest sales forecast spreadsheet?'"
+**Strategy**: Remove recipient, subject, and message details
+- Turn 1: "I'd like to draft an email"
+- Turn 2: "Who should I send it to, what's the subject, and what message would you like to include?"
+- Turn 3: "To Andy at andy@gorilla.ai, subject 'Sales Forecast Request', and message 'where is the latest sales forecast spreadsheet?'"
+**Why This Works**: Breaks down complex email into natural conversation steps
+
+**PATTERN 1A: Preserving Speech Disfluencies**
+**Original Transcript**: "Uh, can you help me find a cleaning service provider?"
+**Strategy**: Keep the "Uh" and natural speech patterns
+- Turn 1: "Uh, can you help me find a cleaning service provider?"
+- Turn 2: "Sure, what type of cleaning service do you need?"
+- Turn 3: "Um, I need regular home cleaning"
+**Why This Works**: Maintains realistic speech patterns, doesn't sound too polished
+
+**PATTERN 1B: Speech Realism Examples**
+**❌ TOO POLISHED (BAD)**: "I would like to request assistance in locating a cleaning service provider"
+**✅ REALISTIC SPEECH (GOOD)**: "Uh, can you help me find a cleaning service provider?"
+
+**❌ TOO POLISHED (BAD)**: "I require a regular home cleaning service"
+**✅ REALISTIC SPEECH (GOOD)**: "Um, I need regular home cleaning"
+
+**PATTERN 2: Complex Sensor Query**
+**Original**: "Get today's alerts for sensor Q3CC-CRT3-SZ2G, showing max 10 alerts per page"
+**Strategy**: Remove specific sensor ID and pagination details
+- Turn 1: "I need to get today's sensor alerts"
+- Turn 2: "Which sensor would you like alerts for, and how many alerts per page?"
+- Turn 3: "Sensor Q3CC-CRT3-SZ2G, and show up to 10 alerts per page"
+**Why This Works**: Breaks down technical details into natural questions
+
+**PATTERN 3: Complex Housekeeper Request**
+**Original**: "Help find a housekeeper who provides ironing services in Chonburi Province, with review score 4.5+ stars, available 12/03/2024 16:00-18:00, no late history"
+**Strategy**: Remove specific requirements to create conversation
+- Turn 1: "I need help finding a housekeeper in Chonburi Province"
+- Turn 2: "What services do you need, what rating, when are you available, and any other requirements?"
+- Turn 3: "Ironing services, 4.5+ stars, available Dec 3rd 4-6 PM, and no history of being late"
+**Why This Works**: Breaks down multiple requirements into natural conversation
+
+**TYPE 2: SPEECH AMBIGUITY CLARIFICATION**
+
+**PATTERN 4: Name/ID Ambiguity**
+**Original**: "Can you help me with Shishir Patel's account?"
+**Strategy**: Keep the name but ask for exact spelling
+- Turn 1: "Can you help me with Shishir Patel's account?"
+- Turn 2: "Could you please help me spell that name? Is it S-H-I-S-H-I-R P-A-T-E-L, or was there a different spelling?"
+- Turn 3: "Yes, that's correct: S-H-I-S-H-I-R P-A-T-E-L"
+**Why This Works**: Handles speech ambiguity, provides spelling suggestions
+
+**PATTERN 5: Complex Serial Number**
+**Original**: "Get alerts for sensor Q3CC-CRT3-SZ2G"
+**Strategy**: Keep the request but ask for exact serial number
+- Turn 1: "I need to get sensor alerts"
+- Turn 2: "What's the exact serial number? Is it Q-3-C-C dash C-R-T-3 dash S-Z-2-G?"
+- Turn 3: "Yes, that's correct: Q3CC-CRT3-SZ2G"
+**Why This Works**: Clarifies complex technical identifiers that might be misheard
+
+**CRITICAL RULES - NEVER VIOLATE:**
+
+1. **ONLY USE INFORMATION FROM TRANSCRIPT**: Never introduce new information that wasn't in the original transcript
+2. **NO MADE-UP DETAILS**: Don't add locations, names, or details that don't exist in the transcript
+3. **STRICT TRANSCRIPT ADHERENCE**: Every piece of information in the conversation must come from the transcript
+4. **NO CREATIVE ADDITIONS**: Don't embellish or expand beyond what was actually said
+5. **PRESERVE SPEECH DISFLUENCIES**: Keep natural speech features like "uh", "um", "you know", "like", etc. from the transcript
+6. **MAINTAIN SPEECH REALISM**: Don't make the conversation sound too polished or written - keep it conversational
+
+**USE TRANSCRIPT, FUNCTION DOCS, AND CLARIFICATIONS TO GUIDE YOUR DECISION:**
+
+1. **Transcript Analysis**: Look at what was actually spoken vs. written - are there speech-to-text issues?
+2. **Function Requirements**: What parameters does the function need? Use clarifications to see what's already provided.
+3. **Natural Flow**: Would breaking this down feel like a real conversation or forced?
+
+**DECISION PROCESS:**
+- **If complex with multiple details** → Use TYPE 1 (remove info, ask for it back)
+- **If speech ambiguity exists** → Use TYPE 2 (keep info, ask for clarification)
+- **If simple and clear** → Don't split (would feel artificial)
+
+**RESPONSE FORMAT:**
+Return a JSON array with this exact structure:
+[
+    [
+        {{
+            "role": "user",
+            "content": "First user turn (simplified but complete)"
+        }}
+    ],
+    [
+        {{
+            "role": "assistant", 
+            "content": "System asking for missing/ambiguous information"
+        }}
+    ],
+    [
+        {{
+            "role": "user",
+            "content": "User providing the missing information"
+        }}
+    ]
+]
+
+**IMPORTANT:**
+- Only create turns if it makes conversational sense
+- Use the transcript to identify speech ambiguity
+- Use function docs to understand what information is needed
+- Use existing clarifications to guide what might be missing
+- Make the conversation feel natural, not robotic
+- **PRESERVE SPEECH DISFLUENCIES**: Keep "uh", "um", "you know", "like" from transcript
+- **MAINTAIN SPEECH REALISM**: Don't make it sound too polished or written
+
+**RESPONSE FORMAT:**
+Return a JSON array with this exact structure:
+[
+    [
+        {{
+            "role": "user",
+            "content": "First user turn (simplified but complete)"
+        }}
+    ],
+    [
+        {{
+            "role": "assistant", 
+            "content": "System asking for missing/ambiguous information"
+        }}
+    ],
+    [
+        {{
+            "role": "user",
+            "content": "User providing the missing information"
+        }}
+    ]
+]
+
+**SPECIFIC SPEECH AMBIGUITY HANDLING:**
+
+**1. NAMES AND IDENTIFIERS:**
+- **Difficult Names**: "Could you spell that? Is it S-H-I-S-H-I-R P-A-T-E-L?"
+- **User IDs**: "What's your exact username? Is it 'john_doe' or 'johndoe'?"
+- **Bot IDs**: "What's the exact bot identifier? Is it 'my-bot-123' or 'mybot123'?"
+
+**2. NUMBERS AND FORMATS:**
+- **Time**: "What time exactly? 3 PM, 3:00 PM, or 15:00?"
+- **Dates**: "Which date? Tomorrow, March 15th, or 03/15?"
+- **Quantities**: "How many? 5, five, or 5.0?"
+
+**3. TECHNICAL TERMS:**
+- **API Versions**: "Which version? v1, v2, or version 2?"
+- **File Formats**: "What format? JSON, CSV, or text?"
+- **Units**: "What unit? Celsius, Fahrenheit, or Kelvin?"
+
+**4. LOCATION AND ADDRESSES:**
+- **Street Names**: "What's the exact street name? Is it 'Main Street' or 'Main St'?"
+- **City Names**: "Which city? Is it 'San Francisco' or 'SF'?"
+- **Postal Codes**: "What's the zip code? 94102 or 94102-1234?"
+
+**IMPORTANT GUIDELINES:**
+- Only create turns if information is genuinely missing or ambiguous
+- Don't remove obvious information just to create more turns
+- Make the system questions sound natural and conversational
+- Group related clarifications when possible
+- Use existing clarifications to guide what's missing
+- **SPEECH AMBIGUITY**: If names, IDs, or specific terms might be unclear in speech, ask for clarification
+- **NATURAL FLOW**: The conversation should feel like what a real person would naturally ask for
+- **CONTEXT PRESERVATION**: Always preserve the main intent and obvious context
+"""
+        
+        try:
+            print(f"    - Sending prompt to LLM for conversation creation...")
             response = self.client.chat.completions.create(
                 model=MODEL_NAME,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
-                max_tokens=1000
+                max_tokens=800
             )
             
             content = response.choices[0].message.content.strip()
-            if not content:
-                print(f"Warning: Empty response from OpenAI for clarification generation")
-                return self._generate_fallback_clarifications(analysis, function_docs)
+            print(f"    - LLM response length: {len(content)} characters")
+            print(f"    - LLM response preview: {content[:200]}...")
             
-            # Try to parse JSON, handle common issues
+            # Parse JSON response
             try:
                 # Remove markdown code blocks if present
                 if content.startswith("```json"):
@@ -401,238 +442,27 @@ Make the questions sound natural and conversational. Focus on what specific info
                     content = content[:-3]
                 
                 result = json.loads(content.strip())
-                if isinstance(result, list):
+                if isinstance(result, list) and len(result) >= 2:
+                    print(f"    - Successfully parsed {len(result)} conversation turns")
                     return result
                 else:
-                    print(f"Warning: Expected list but got {type(result)}")
-                    return self._generate_fallback_clarifications(analysis, function_docs)
+                    print(f"    - Warning: Invalid response format, using fallback")
+                    return self._create_fallback_conversation(query, function_docs, test_case)
                     
             except json.JSONDecodeError as e:
-                print(f"Warning: Invalid JSON response from OpenAI for clarification generation: {content[:100]}...")
-                return self._generate_fallback_clarifications(analysis, function_docs)
+                print(f"    - Warning: Invalid JSON response, using fallback: {content[:100]}...")
+                return self._create_fallback_conversation(query, function_docs, test_case)
             
         except Exception as e:
-            print(f"Error generating clarification questions: {e}")
-            return self._generate_fallback_clarifications(analysis, function_docs)
+            print(f"    - Error creating conversation turns: {e}")
+            return self._create_fallback_conversation(query, function_docs, test_case)
     
-    def _generate_fallback_clarifications(self, analysis: Dict[str, Any], function_docs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Generate fallback clarification questions when LLM fails."""
-        
-        clarification_questions = []
-        
-        for function_name, missing_args in analysis.get("missing_arguments", {}).items():
-            func_doc = next((f for f in function_docs if f.get("name") == function_name), None)
-            if not func_doc:
-                continue
-                
-            for arg_name in missing_args:
-                arg_desc = ""
-                if "parameters" in func_doc and "properties" in func_doc["parameters"]:
-                    arg_info = func_doc["parameters"]["properties"].get(arg_name, {})
-                    arg_desc = arg_info.get("description", "")
-                
-                question = self._generate_clarification_question(arg_name, arg_desc)
-                clarification_questions.append({
-                    "function_name": function_name,
-                    "argument_name": arg_name,
-                    "question": question,
-                    "description": arg_desc
-                })
-        
-        return clarification_questions
-    
-    def _generate_clarification_question(self, arg_name: str, arg_desc: str) -> str:
-        """Generate a natural language clarification question for a missing argument."""
-        readable_name = arg_name.replace("_", " ").title()
-        
-        if arg_desc:
-            return f"What {readable_name.lower()} would you like to use? ({arg_desc})"
-        else:
-            return f"What {readable_name.lower()} would you like to use?"
-    
-    def split_into_conversation_turns(self, query: str, function_docs: List[Dict[str, Any]], test_case: Dict[str, Any] = None) -> List[List[Dict[str, Any]]]:
-        """Create new multi-turn conversations that simulate clarification process."""
-        
-        analysis = self.extract_entities_and_arguments(query, function_docs)
-        clarification_questions = self.generate_clarification_questions(analysis, function_docs, test_case)
-        
-        # Limit to maximum 6 clarification rounds (7 turns total)
-        max_additional_turns = 6
-        clarification_questions = clarification_questions[:max_additional_turns]
-        
-        if not clarification_questions:
-            return []
-        
-        # Create a simplified version of the original query (removing some details)
-        simplified_query = self._create_simplified_query(query, analysis)
-        
-        # Build the multi-turn conversation
-        conversation_turns = []
-        
-        # Turn 1: Simplified user query
-        conversation_turns.append([{
-            "role": "user",
-            "content": simplified_query
-        }])
-        
-        # Generate clarification turns using LLM-generated questions
-        for i, clarification in enumerate(clarification_questions):
-            # Assistant asks for clarification using LLM-generated question
-            assistant_turn = [{
-                "role": "assistant",
-                "content": clarification["question"]
-            }]
-            
-            # User provides the missing information
-            user_turn = [{
-                "role": "user", 
-                "content": self._generate_user_response(clarification, analysis, test_case)
-            }]
-            
-            conversation_turns.append(assistant_turn)
-            conversation_turns.append(user_turn)
-        
-        return conversation_turns
-    
-    def _create_simplified_query(self, original_query: str, analysis: Dict[str, Any]) -> str:
-        """Create a simplified version of the original query for the multi-turn conversation."""
-        
-        # Use LLM to create a simplified version
-        prompt = f"""
-Create a simplified version of this user query that removes some specific details but keeps the main intent:
-
-Original query: "{original_query}"
-
-Analysis of what was found:
-{json.dumps(analysis.get('mentioned_arguments', {}), indent=2)}
-
-Create a simplified version that:
-1. Keeps the main intent/request
-2. Removes some specific details (like exact addresses, times, etc.) but NOT information that would naturally be asked for
-3. Sounds natural and conversational
-4. Is shorter than the original
-5. DO NOT remove information that is essential to the request
-
-**Examples:**
-- "I need a Comfort Uber ride from 2020 Addison Street, Berkeley, CA, USA, and I can wait up to 600 seconds for it." → "I need a Comfort Uber ride and I can wait for 10 minutes"
-- "What are the current weather conditions in Tel Aviv, and could you provide that in Fahrenheit, please?" → "What's the weather like in Tel Aviv right now?"
-- "I want to see the star history of ShishirPatil/gorilla and gorilla-llm/gorilla-cli" → "I want to see the star history of some GitHub repositories"
-
-Return just the simplified query, nothing else.
-"""
-        
-        try:
-            response = self.client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0.3,
-                max_tokens=200
-            )
-            
-            content = response.choices[0].message.content.strip()
-            if content and not content.startswith("```"):
-                return content
-            else:
-                # Fallback: just return a basic version
-                return self._create_fallback_simplified_query(original_query)
-                
-        except Exception as e:
-            print(f"Error creating simplified query: {e}")
-            return self._create_fallback_simplified_query(original_query)
-    
-    def _create_fallback_simplified_query(self, original_query: str) -> str:
-        """Create a basic simplified version when LLM fails."""
-        # Remove specific details like addresses, times, etc.
-        simplified = original_query
-        
-        # Remove specific addresses
-        simplified = re.sub(r'\d+\s+[A-Za-z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Lane|Ln|Place|Pl|Court|Ct|Way|Terrace|Ter|Circle|Cir|Square|Sq|Highway|Hwy|Freeway|Fwy|Interstate|I-\d+)[,\s]*[A-Za-z\s]*[A-Z]{2}\s*\d{5}?', '[LOCATION]', simplified)
-        
-        # Remove specific times
-        simplified = re.sub(r'\d+\s*(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)', '[TIME]', simplified)
-        
-        # Remove specific numbers that might be IDs
-        simplified = re.sub(r'\b\d{4,}\b', '[NUMBER]', simplified)
-        
-        return simplified
-    
-    def _generate_user_response(self, clarification: Dict[str, Any], analysis: Dict[str, Any], test_case: Dict[str, Any] = None) -> str:
-        """Generate a user response for the missing argument using existing clarifications or simple extraction."""
-        
-        argument_name = clarification["argument_name"]
-        
-        # First, check if there are existing clarifications in the test case
-        if test_case and "question" in test_case and test_case["question"]:
-            if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
-                first_turn = test_case["question"][0]
-                if isinstance(first_turn, list) and len(first_turn) > 0:
-                    existing_clarifications = first_turn[0].get("clarifications", {})
-                    if existing_clarifications and argument_name in existing_clarifications:
-                        return str(existing_clarifications[argument_name])
-        
-        # Second, try to extract from transcript using simple patterns
-        if test_case and "question" in test_case and test_case["question"]:
-            if isinstance(test_case["question"], list) and len(test_case["question"]) > 0:
-                first_turn = test_case["question"][0]
-                if isinstance(first_turn, list) and len(first_turn) > 0:
-                    transcript = first_turn[0].get("transcript", "")
-                    content = first_turn[0].get("content", "")
-                    
-                    # Simple pattern matching for common cases
-                    if "unit" in argument_name.lower() or "temperature" in argument_name.lower():
-                        if "fahrenheit" in content.lower() or "fahr" in content.lower():
-                            return "Fahrenheit"
-                        elif "celsius" in content.lower():
-                            return "Celsius"
-                    
-                    elif "location" in argument_name.lower() or "address" in argument_name.lower() or "pickup" in argument_name.lower():
-                        # Look for location patterns in transcript
-                        location_patterns = [
-                            r'\d+\s+[A-Za-z\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Drive|Dr|Lane|Ln|Place|Pl|Court|Ct|Way|Terrace|Ter|Circle|Cir|Square|Sq|Highway|Hwy|Freeway|Fwy|Interstate|I-\d+)',
-                            r'[A-Za-z\s]+,\s*[A-Za-z\s]+(?:,\s*[A-Z]{2})?'
-                        ]
-                        
-                        for pattern in location_patterns:
-                            matches = re.findall(pattern, transcript, re.IGNORECASE)
-                            if matches:
-                                return matches[0].strip()
-                    
-                    elif "time" in argument_name.lower() or "duration" in argument_name.lower() or "wait" in argument_name.lower():
-                        # Look for time patterns
-                        time_patterns = [
-                            r'\d+\s*(?:seconds?|minutes?|hours?|days?|weeks?|months?|years?)',
-                            r'\d+\s*(?:sec|min|hr|day|week|month|year)'
-                        ]
-                        
-                        for pattern in time_patterns:
-                            matches = re.findall(pattern, transcript, re.IGNORECASE)
-                            if matches:
-                                return matches[0].strip()
-                    
-                    elif "type" in argument_name.lower():
-                        # Look for ride types
-                        if "comfort" in content.lower():
-                            return "Comfort"
-                        elif "plus" in content.lower():
-                            return "Plus"
-                        elif "black" in content.lower():
-                            return "Black"
-                    
-                    elif "id" in argument_name.lower():
-                        # Look for IDs
-                        id_patterns = [
-                            r'[A-Z]\d+',
-                            r'\d+',
-                            r'[a-z-]+-?[a-z-]+'
-                        ]
-                        
-                        for pattern in id_patterns:
-                            matches = re.findall(pattern, transcript)
-                            if matches:
-                                return matches[0].strip()
-        
-        # Fallback to simple placeholder
-        return f"[USER PROVIDES: {argument_name}]"
+    def _create_fallback_conversation(self, query: str, function_docs: List[Dict[str, Any]], test_case: Dict[str, Any] = None) -> List[List[Dict[str, Any]]]:
+        """Create a simple fallback conversation when LLM fails."""
+        # Just return the original query as a single turn
+        return [
+            [{"role": "user", "content": query}]
+        ]
     
     def _format_function_docs(self, function_docs: List[Dict[str, Any]]) -> str:
         """Format function documentation for the prompt."""
@@ -675,15 +505,22 @@ Return just the simplified query, nothing else.
             return test_case
         
         # Check if query is complex enough to split
+        print(f"  - Checking if query is complex enough to split...")
+        print(f"  - Query: {user_query[:100]}...")
+        print(f"  - Function docs: {len(function_docs)} functions")
+        
         if not self.is_complex_query(user_query, function_docs, test_case):
+            print(f"  - Query deemed too simple, keeping as single turn")
             return test_case
+        
+        print(f"  - Query deemed complex enough, proceeding to split...")
         
         # Create multi-turn conversations
         try:
             print(f"  - Creating multi-turn conversation for: {user_query[:100]}...")
             conversation_turns = self.split_into_conversation_turns(user_query, function_docs, test_case)
             
-            if conversation_turns:
+            if conversation_turns and len(conversation_turns) > 1:
                 # Keep the original test case intact, but add the new multi-turn conversations
                 test_case["multi_turn_conversations"] = conversation_turns
                 test_case["split_from_single_turn"] = True
@@ -773,7 +610,8 @@ def main():
         else:
             # Randomly sample without replacement
             import random
-            random.seed(42)  # For reproducible results
+            import time
+            random.seed(int(time.time()))  # Use current timestamp for different results each run
             selected_cases = random.sample(data, args.limit)
             print(f"Randomly selected {len(selected_cases)} test cases from {len(data)} available")
     else:

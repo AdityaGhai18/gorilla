@@ -1,0 +1,2516 @@
+{
+  "source_file": "final_results/BFCL_v3_live_simple.json",
+  "total_cases_analyzed": 243,
+  "cases_with_asr_issues": 45,
+  "batch_size_used": 15,
+  "filtered_cases": [
+    {
+      "id": "live_simple_22-5-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I need Whopper also known old folks as the burger.",
+            "transcript": "Hey, could you grab me a Whopper, you know, the burger everyone talks about?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_22-5-0_openai.mp3",
+            "asr_output_openai": "Hey, could you grab me a Whopper? You know, the burger everyone talks about?",
+            "asr_output_elevenlabs": "Hey, could you grab me a Whopper? You know the burger everyone talks about?",
+            "asr_output_deepgram": "Hey. Could you grab me a Whopper? You know, the burger everyone talks about.",
+            "clarifications": {
+              "food_name": "Whopper"
+            },
+            "asr_issue_explanation": "The ASR outputs capture \"Whopper\" correctly, but the function requires the food name in uppercase. The LLM might not infer that \"Whopper\" should be converted to a valid enum value like \"BURGER\" without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "ChaFod",
+          "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "TheFod"
+            ],
+            "properties": {
+              "TheFod": {
+                "type": "string",
+                "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+                "enum": [
+                  "PIZZA",
+                  "BURGER",
+                  "SALAD",
+                  "SOUP",
+                  "STEAK"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_23-5-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Order me pizza",
+            "transcript": "Hey, can you order a pizza for me?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_23-5-1_openai.mp3",
+            "asr_output_openai": "Hey, can you order a pizza for me?",
+            "asr_output_elevenlabs": "Hey, can you order a pizza for me?",
+            "asr_output_deepgram": "Hey. Can you order a pizza for me?",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs capture \"pizza\" correctly, but the function requires the food name in uppercase. The LLM might not infer that \"pizza\" should be converted to \"PIZZA\" without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "ChaFod",
+          "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "TheFod"
+            ],
+            "properties": {
+              "TheFod": {
+                "type": "string",
+                "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+                "enum": [
+                  "PIZZA",
+                  "BURGER",
+                  "SALAD",
+                  "SOUP",
+                  "STEAK"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_24-5-2",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I would like to switch my order from pizza to a BURGER.",
+            "transcript": "Can you change my order to a burger from pizza, right?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_24-5-2_openai.mp3",
+            "asr_output_openai": "Can you change my order to a burger from pizza, right?",
+            "asr_output_elevenlabs": "Can you change my order to a burger from pizza, right?",
+            "asr_output_deepgram": "Can you change my order to a burger from pizza? Right?",
+            "clarifications": {
+              "food_name": "BURGER"
+            },
+            "asr_issue_explanation": "The ASR outputs capture \"burger\" and \"pizza\" correctly, but the function requires the food name in uppercase. The LLM might not infer that these should be converted to \"BURGER\" and \"PIZZA\" without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "ChaFod",
+          "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "TheFod"
+            ],
+            "properties": {
+              "TheFod": {
+                "type": "string",
+                "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+                "enum": [
+                  "PIZZA",
+                  "BURGER",
+                  "SALAD",
+                  "SOUP",
+                  "STEAK"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_25-5-3",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I've changed my mind, can I get a greens instead of what I previously ordered?",
+            "transcript": "Hey, uh, Ive changed my mind. Right, can I get greens instead of what I ordered before?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_25-5-3_openai.mp3",
+            "asr_output_openai": "Hey, I've changed my mind, right? Can I get greens instead of what I ordered before?",
+            "asr_output_elevenlabs": "Hey, uh, I've changed my mind. Right? Can I get greens instead of what I ordered before?",
+            "asr_output_deepgram": "Hey, I've changed my mind. Right? Can I get greens instead of what I ordered before?",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs capture \"greens\" correctly, but the function requires the food name in uppercase. The LLM might not infer that \"greens\" should be converted to a valid enum value like \"SALAD\" without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "ChaFod",
+          "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "TheFod"
+            ],
+            "properties": {
+              "TheFod": {
+                "type": "string",
+                "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+                "enum": [
+                  "PIZZA",
+                  "BURGER",
+                  "SALAD",
+                  "SOUP",
+                  "STEAK"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_27-7-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I want to order five 'burgers' and six 'chicken wings' from uber pitada",
+            "transcript": "Order five burgers and, uh, six chicken wings from Uber Pitada, thats U-B-E-R P-I-T-A-D-A, Uber Pitada.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_27-7-0_openai.mp3",
+            "asr_output_openai": "Order five burgers and six chicken wings from Uber Pitada. That's U-B-E-R P-I-T-A-D-A. Uber Pitada.",
+            "asr_output_elevenlabs": "Order five burgers and, uh, six chicken wings from Uber Pitada. That's U-B-E-R P-I-T-A-D-A, Uber Pitada.",
+            "asr_output_deepgram": "Order five burgers and, six chicken wings from Uberpitada. That's u b e r p I t a d a. Uberpitada.",
+            "clarifications": {
+              "restaurant_name": "uber pitada"
+            },
+            "asr_issue_explanation": "The ASR outputs capture \"Uber Pitada\" correctly in some variations, but one variation has \"Uberpitada\" without spacing, which could lead to incorrect restaurant identification. Additionally, the function requires exact restaurant names, and the LLM might not infer the correct format without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "uber.eat.order",
+          "description": "Place an order for food delivery on Uber Eats by specifying the restaurant and the items with their respective quantities.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "restaurant",
+              "items",
+              "quantities"
+            ],
+            "properties": {
+              "restaurant": {
+                "type": "string",
+                "description": "The name of the restaurant from which to order food."
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "A list of food item names selected for the order."
+              },
+              "quantities": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "description": "A list of quantities for each food item, corresponding by index to the items array."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_30-8-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you help me retrieve the list of exports for my bot using the identifier 'my-bot-id' and focusing on version 'v2' sort in ascending? I want max 50 results",
+            "transcript": "Uh, help me get the export list for my bot using my-bot-id and version v two. I need it sorted, um, ascending with a max of fifty results, right?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_30-8-0_openai.mp3",
+            "asr_output_openai": "Help me get the export list for my bot using myBotID and version v2. I need it sorted ascending with a max of 50 results, right?",
+            "asr_output_elevenlabs": "Uh, help me get the export list for my bot using my bot ID and version V2. I need it sorted, um, ascending with a max of 50 results. Right?",
+            "asr_output_deepgram": "Help me get the export list from my bot using my bot ID and version v two. I need it sorted, ascending with a max of fifty results. Right?",
+            "clarifications": {
+              "bot_identifier": "my-bot-id",
+              "bot_version": "v2",
+              "max_results": "50"
+            },
+            "asr_issue_explanation": "The ASR outputs capture \"my-bot-id\" as \"myBotID\" or \"my bot ID\", losing the hyphen, which changes the meaning. The LLM might not infer the correct bot ID format without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "aws.lexv2_models.list_exports",
+          "description": "Lists the exports for a bot, bot locale, or custom vocabulary within Amazon Lex. This data is retained for a duration of 7 days.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "botId",
+              "botVersion"
+            ],
+            "properties": {
+              "botId": {
+                "type": "string",
+                "description": "The unique identifier for the bot as assigned by Amazon Lex."
+              },
+              "botVersion": {
+                "type": "string",
+                "description": "The specific version of the bot for which to list the exports."
+              },
+              "sortBy": {
+                "type": "string",
+                "description": "Determines the field to sort the list of exports by. Can be sorted by 'LastUpdatedDateTime' in ascending or descending order.",
+                "enum": [
+                  "ASC",
+                  "DESC"
+                ],
+                "default": "ASC"
+              },
+              "filterName": {
+                "type": "string",
+                "description": "The name of the field to filter the exports by. Possible values are 'Bot', 'BotLocale', or 'CustomVocabulary'.",
+                "default": null
+              },
+              "filterOperator": {
+                "type": "string",
+                "description": "The operator to use for filtering. Use 'EQ' for equality or 'CO' for containing the specified value.",
+                "enum": [
+                  "EQ",
+                  "CO"
+                ],
+                "default": "EQ"
+              },
+              "filterValue": {
+                "type": "string",
+                "description": "The value to use for filtering the exports based on the filterName.",
+                "default": null
+              },
+              "maxResults": {
+                "type": "integer",
+                "description": "The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.",
+                "default": 50
+              },
+              "nextToken": {
+                "type": "string",
+                "description": "A token to retrieve the next page of results if the response from the ListExports operation contains more results than specified in the maxResults parameter.",
+                "default": null
+              },
+              "localeId": {
+                "type": "string",
+                "description": "Specifies the locale of the resources that should be exported. If not specified, both bot locales and custom vocabularies are exported.",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_31-8-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you retrieve the list of exports for my bot with ID 'B12345' and for version 'v1'? I'm interested in seeing them in descending order by the last updated date.",
+            "transcript": "Uh, get the export list for my bot with ID B one two three four five, version v1, and, um, right, sort em by last updated date, going down.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_31-8-1_openai.mp3",
+            "asr_output_openai": "Uh, get the export list for my bot with ID B12345, version V1, and um, right, sort them by last updated date, going down.",
+            "asr_output_elevenlabs": "Uh, get the export list for my bot with ID B12345, version V1. And, um, right. Sort them by last updated date going down.",
+            "asr_output_deepgram": "Get the export list for my bot with ID b one two three four five version v one, and, right, sort them by last updated date going down.",
+            "clarifications": {
+              "bot_id": "B12345",
+              "bot_version": "v1",
+              "sort_order": "descending"
+            },
+            "asr_issue_explanation": "The ASR outputs capture \"B one two three four five\" as \"B12345\", losing the spacing, which changes the format. The LLM might not infer the correct bot ID format without explicit guidance."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "aws.lexv2_models.list_exports",
+          "description": "Lists the exports for a bot, bot locale, or custom vocabulary within Amazon Lex. This data is retained for a duration of 7 days.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "botId",
+              "botVersion"
+            ],
+            "properties": {
+              "botId": {
+                "type": "string",
+                "description": "The unique identifier for the bot as assigned by Amazon Lex."
+              },
+              "botVersion": {
+                "type": "string",
+                "description": "The specific version of the bot for which to list the exports."
+              },
+              "sortBy": {
+                "type": "string",
+                "description": "Determines the field to sort the list of exports by. Can be sorted by 'LastUpdatedDateTime' in ascending or descending order.",
+                "enum": [
+                  "ASC",
+                  "DESC"
+                ],
+                "default": "ASC"
+              },
+              "filterName": {
+                "type": "string",
+                "description": "The name of the field to filter the exports by. Possible values are 'Bot', 'BotLocale', or 'CustomVocabulary'.",
+                "default": null
+              },
+              "filterOperator": {
+                "type": "string",
+                "description": "The operator to use for filtering. Use 'EQ' for equality or 'CO' for containing the specified value.",
+                "enum": [
+                  "EQ",
+                  "CO"
+                ],
+                "default": "EQ"
+              },
+              "filterValue": {
+                "type": "string",
+                "description": "The value to use for filtering the exports based on the filterName.",
+                "default": null
+              },
+              "maxResults": {
+                "type": "integer",
+                "description": "The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.",
+                "default": 50
+              },
+              "nextToken": {
+                "type": "string",
+                "description": "A token to retrieve the next page of results if the response from the ListExports operation contains more results than specified in the maxResults parameter.",
+                "default": null
+              },
+              "localeId": {
+                "type": "string",
+                "description": "Specifies the locale of the resources that should be exported. If not specified, both bot locales and custom vocabularies are exported.",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_40-17-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I'd like to start the air purifying function in my living room, please set the air conditioner to 'AIR_CLEAN' mode with strongest wind strength, with monitoring.",
+            "transcript": "Hey, uh, start the air purifier in the living room? Oh, set the AC to AIR_CLEAN mode with the strongest wind and, um, keep it monitored.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_40-17-0_openai.mp3",
+            "asr_output_openai": "Hey, start the air purifier in the living room? Oh, set the AC to air clean mode with the strongest wind and keep it monitored.",
+            "asr_output_elevenlabs": "Hey, uh, start the air purifier in the living room. Oh, set the AC to Air Clean mode with the strongest wind and, um, keep it monitored.",
+            "asr_output_deepgram": "Hey. Start the air purifier in the living room. Oh, set the AC to air clean mode with the strongest wind and, keep it monitored.",
+            "clarifications": {
+              "operation_mode": "AIR_CLEAN"
+            },
+            "asr_issue_explanation": "The ASR outputs transcribe \"AIR_CLEAN\" as \"air clean,\" which could lead to incorrect parameter values since the function requires specific enum values for \"airConJobMode.\""
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "ThinQ_Connect",
+          "description": "Send a command to control an LG ThinQ appliance, such as an air conditioner, by setting various operation modes and target settings.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "body"
+            ],
+            "properties": {
+              "body": {
+                "type": "dict",
+                "description": "A dictionary containing the settings and modes to control the LG ThinQ appliance.",
+                "properties": {
+                  "airConJobMode": {
+                    "type": "string",
+                    "description": "The current job mode of the air conditioner.",
+                    "enum": [
+                      "AIR_CLEAN",
+                      "COOL",
+                      "AIR_DRY"
+                    ],
+                    "default": "COOL"
+                  },
+                  "windStrength": {
+                    "type": "string",
+                    "description": "The strength of the air flow.",
+                    "enum": [
+                      "LOW",
+                      "HIGH",
+                      "MID"
+                    ],
+                    "default": "MID"
+                  },
+                  "monitoringEnabled": {
+                    "type": "boolean",
+                    "description": "Flag to enable or disable air quality monitoring.",
+                    "default": false
+                  },
+                  "airCleanOperationMode": {
+                    "type": "string",
+                    "description": "The operation mode for air cleaning.",
+                    "enum": [
+                      "POWER_ON",
+                      "POWER_OFF"
+                    ],
+                    "default": "POWER_OFF"
+                  },
+                  "powerSaveEnabled": {
+                    "type": "boolean",
+                    "description": "Flag to enable or disable power-saving mode.",
+                    "default": false
+                  },
+                  "coolTargetTemperature": {
+                    "type": "integer",
+                    "description": "The target temperature for cooling in degrees Celsius. Valid values range from 18 to 30.",
+                    "default": 24
+                  },
+                  "targetTemperature": {
+                    "type": "integer",
+                    "description": "The general target temperature in degrees Celsius. Valid values range from 18 to 30.",
+                    "default": 22
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_49-21-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Do you have any porters in stock? with a rich, chocolatey aroma and a slightly bitter taste. It should be dark in color, preferably from Creek brewery. All other preferences are the standard ones. Any recommendations?",
+            "transcript": "Hey, um, dyou have any porters that, uh, ve rich chocolate aroma and bit of bitterness? Im searchin for somethin dark, ideally from Creek Brewery. Oh, rest can be standard. Any suggestions?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_49-21-1_openai.mp3",
+            "asr_output_openai": "Hey, um, do you have any porters that, uh, ve a rich chocolate aroma and bit of bitterness? Im searchin for something dark, ideally from Kreek Brewery. Oh, rest can be standard. Any suggestions?",
+            "asr_output_elevenlabs": "Hey, um, do you have any porters that, uh, via rich chocolate aroma and bit of bitterness? I'm searching for something dark, ideally from Creek Brewery. Oh, rest can be standard. Any suggestions?",
+            "asr_output_deepgram": "Hey. Do you have any porters that, via rich chocolate aroma and bit of bitterness, am searching for something dark, ideally from Creek Brewery? Oh, rest can be standard. Any suggestions?",
+            "clarifications": {
+              "brewery_name": "Creek brewery",
+              "aroma_profile": "chocolatey",
+              "taste_profile": "bitter",
+              "color_preference": "dark"
+            },
+            "asr_issue_explanation": "The ASR outputs transcribe \"Creek Brewery\" as \"Kreek Brewery,\" which could lead to incorrect parameter values since the function requires the correct brewery name."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "find_beer",
+          "description": "Recommend a beer based on specified attributes such as brewery, taste, aroma, color, style, and more.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "brewery",
+              "taste",
+              "aroma",
+              "color",
+              "style"
+            ],
+            "properties": {
+              "brewery": {
+                "type": "string",
+                "description": "The brewery name to find similar beers."
+              },
+              "taste": {
+                "type": "string",
+                "description": "The desired taste profile in the beer, such as 'bitter', 'sweet', 'sour'."
+              },
+              "aroma": {
+                "type": "string",
+                "description": "The desired aroma profile in the beer, such as 'fruity', 'hoppy', 'malty'."
+              },
+              "color": {
+                "type": "string",
+                "description": "The desired color of the beer, such as 'pale', 'amber', 'dark'."
+              },
+              "style": {
+                "type": "string",
+                "description": "The style of beer being searched for, such as 'IPA', 'stout', 'lager'."
+              },
+              "abv_min": {
+                "type": "float",
+                "description": "The minimum alcohol by volume (ABV) percentage, typically a value under 12.5%.",
+                "default": 0.0
+              },
+              "abv_max": {
+                "type": "float",
+                "description": "The maximum alcohol by volume (ABV) percentage, a value logically above 0%.",
+                "default": 12.5
+              },
+              "ibu_min": {
+                "type": "integer",
+                "description": "The minimum International Bitterness Units (IBU) score, typically a value under 120.",
+                "default": 0
+              },
+              "ibu_max": {
+                "type": "integer",
+                "description": "The maximum International Bitterness Units (IBU) score, logically above 0.",
+                "default": 120
+              },
+              "pairings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "A list of food items to pair with the beer, such as 'burger', 'cheese', 'chocolate'.",
+                "default": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_60-29-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I've completed the task 'Submit monthly financial report'. Mark it as completed on my to-do list?",
+            "transcript": "Okay, mark Submit monthly financial report as completed on my task list.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_60-29-0_openai.mp3",
+            "asr_output_openai": "OK, mark \"Submit Monthly Financing Report\" as completed on my task list.",
+            "asr_output_elevenlabs": "Okay, mark submit monthly financial report as completed on my task list.",
+            "asr_output_deepgram": "Okay. Mark, submit monthly financing report as completed on my task list.",
+            "clarifications": {
+              "task_description": "Submit monthly financial report"
+            },
+            "asr_issue_explanation": "The ASR outputs contain a critical error where \"Submit monthly financial report\" is misheard as \"Submit Monthly Financing Report.\" This mishearing changes the meaning of the task, and the LLM cannot reasonably infer the correct task content from the ASR outputs."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "todo",
+          "description": "Manages a todo list by allowing the user to add, delete, or mark tasks as completed.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of action to be performed on the todo list. 'add' to add a new task, 'delete' to remove an existing task, or 'complete' to mark a task as completed.",
+                "enum": [
+                  "add",
+                  "delete",
+                  "complete"
+                ]
+              },
+              "content": {
+                "type": "string",
+                "description": "The content or description of the task for the specified action."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_69-33-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I need to review the sequence of events for a vulnerability in our system. Can you retrieve the analysis for project with UUID SUPERFANCY, component AB1010CD, and vulnerability ef903ac-893-f00?",
+            "transcript": "Uh, can you get me the analysis for the project with U-U-I-D S-U-P-E-R-F-A-N-C-Y, Superfancy, component A-B-1-0-1-0-C-D, and vulnerability E-F-9-0-3-A-C dash eight nine three dash F-zero-zero? I need to look over, um, right, the event sequence for this vulnerability in our system.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_69-33-0_openai.mp3",
+            "asr_output_openai": "Can you get me the analysis for the project with UUID, SUPERFANCY component AB1010CD, and vulnerability EF903AC-893-F00? I need to look over, um, right, the event sequence for this vulnerability in our system.",
+            "asr_output_elevenlabs": "Uh, can you get me the analysis for the project with UUID S-U-P-E-R F-A-N-C-Y, super fancy, component AB1010CD and vulnerability EF903AC-893-F00? I need to look over, um, right, the event sequence for this vulnerability in our system.",
+            "asr_output_deepgram": "Can you get me the analysis for the project with UUID s u p e r f a n c y, super fancy component, a b one zero one zero c d, and vulnerability e f nine zero three a c dash eight nine three dash f zero zero. I need to look over, right, the event sequence for this vulnerability in our system.",
+            "clarifications": {
+              "project_uuid": "SUPERFANCY",
+              "component_uuid": "AB1010CD",
+              "vulnerability_uuid": "ef903ac-893-f00"
+            },
+            "asr_issue_explanation": "The ASR outputs have inconsistencies in the transcription of the UUID \"S-U-P-E-R-F-A-N-C-Y\" as \"SUPERFANCY\" and \"super fancy,\" which could lead to incorrect parameter values. Additionally, the component and vulnerability UUIDs are transcribed with different spacing and hyphenation, which could affect the function call."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "analysis_api.AnalysisApi.retrieve_analysis",
+          "description": "Retrieves the trail of analysis for a given project, component, and vulnerability based on their respective UUIDs.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "project",
+              "component",
+              "vulnerability"
+            ],
+            "properties": {
+              "project": {
+                "type": "string",
+                "description": "The unique identifier (UUID) of the project."
+              },
+              "component": {
+                "type": "string",
+                "description": "The unique identifier (UUID) of the component within the project."
+              },
+              "vulnerability": {
+                "type": "string",
+                "description": "The unique identifier (UUID) of the vulnerability associated with the component."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_86-47-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I need the numbers [1, 54, 3, 1, 76, 2343, 21] arranged from the smallest to the largest.",
+            "transcript": "Um, can you sort these numbers for me from smallest to largest: [one, fifty-four, three, one, seventy-six, two thousand three hundred forty-three, twenty-one]?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_86-47-0_openai.mp3",
+            "asr_output_openai": "Um, can you sort these numbers for me from smallest to largest? 1, 54, 3, 1, 76, 2,343, 21?",
+            "asr_output_elevenlabs": "Um, can you sort these numbers for me from smallest to largest? 1, 54, 3, 1, 76, 2,343, 21.",
+            "asr_output_deepgram": "Can you sort these numbers for me from smallest to largest? One fifty four three one seventy six two thousand three hundred forty three twenty one.",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs introduce a comma in \"2,343\" instead of \"two thousand three hundred forty-three,\" which could lead to an incorrect interpretation of the number as \"2\" and \"343\" separately. This would cause the LLM to generate an incorrect function call."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "sort_array",
+          "description": "Sorts an array of integers in ascending order.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "array"
+            ],
+            "properties": {
+              "array": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "description": "The array of integers to be sorted."
+              },
+              "reverse": {
+                "type": "boolean",
+                "description": "Determines if the array should be sorted in descending order. Defaults to false indicating ascending order.",
+                "default": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_92-53-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I want to listen to music by Käärijä, can you start playing it?",
+            "transcript": "Hey, uh, could you play some music by Käärijä, thats K-A-A-R-I-J-A, Käärijä, for me?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_92-53-0_cartesia.mp3",
+            "asr_output_openai": "Hey, could you play some music by Kaariija that's K-A-A-R-I-J-A Kaariija for me?",
+            "asr_output_elevenlabs": "Hey, uh, could you play some music by Kaarija, that's K-A-A-R-I-J-A, Kaarija for me?",
+            "asr_output_deepgram": "Hey. Could you play some music by Karijia? That's k a a r I j at Karijia for me.",
+            "clarifications": {
+              "artist_name": "Käärijä"
+            },
+            "asr_issue_explanation": "The ASR outputs mishear the artist's name \"Käärijä\" as \"Kaariija\" and \"Karijia,\" which could lead to an incorrect function call with the wrong artist name."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "play_artist",
+          "description": "Initiates playback of the specified artist's music on the user's default music player.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "artist_name"
+            ],
+            "properties": {
+              "artist_name": {
+                "type": "string",
+                "description": "The name of the artist whose music is to be played."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_93-54-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I'd like to listen to all tracks by Käärijä.",
+            "transcript": "Lemme see... right, play all songs by Käärijä, thats K-A with two dots over it, A-R-I-J-A, Käärijä.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_93-54-0_cartesia.mp3",
+            "asr_output_openai": "lemme see... right, play all songs by Kariijee, that's k-a with two dots over it, a-r-i-j-a-a, Kariijee",
+            "asr_output_elevenlabs": "Let me see. Right, play all songs by Ka..arijaa. That's K-A with two dots over it, A-R-I-J-A-A, Kaarijaa .",
+            "asr_output_deepgram": "Let me see. Write play all songs by Kiirriye, that's k a with two dots over it, a r I j a a Kiirriye.",
+            "clarifications": {
+              "artist_name": "Käärijä"
+            },
+            "asr_issue_explanation": "The ASR outputs mishear the artist's name \"Käärijä\" as \"Kariijee,\" \"Kaarijaa,\" and \"Kiirriye,\" which could lead to an incorrect function call with the wrong artist name."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "play_artist",
+          "description": "Initiate playback of all tracks associated with the specified artist.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "artist_name"
+            ],
+            "properties": {
+              "artist_name": {
+                "type": "string",
+                "description": "The name of the artist whose tracks are to be played."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_97-57-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you tell me the current weather conditions in El Gastor, Andalusia?",
+            "transcript": "Um, whats the weather like in El Gastor, Andalusia right now?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_97-57-1_cartesia.mp3",
+            "asr_output_openai": "Um, what's the weather like in El Gastor, Andalusia right now?",
+            "asr_output_elevenlabs": "Um, what's the weather like in El Gastor, Andalucia right now?",
+            "asr_output_deepgram": "What's the weather like in Algastor andalusia right now?",
+            "clarifications": {
+              "location": "El Gastor, Andalusia"
+            },
+            "asr_issue_explanation": "The ASR outputs introduce ambiguity with \"El Gastor, Andalusia\" vs. \"Algastor andalusia,\" which could lead to an incorrect function call with the wrong location."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "get_current_weather",
+          "description": "Retrieve the current weather conditions for a specified location. If using state, then use short form like CA.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "location"
+            ],
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The location for which to get the weather, in the format of 'City, State (abbr)' or 'City, Location', such as 'San Francisco, CA', or 'New York, NY'."
+              },
+              "unit": {
+                "type": "string",
+                "description": "The temperature unit for the weather report.",
+                "enum": [
+                  "celsius",
+                  "fahrenheit"
+                ],
+                "default": "fahrenheit"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_119-75-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you tell me the names of the current prime ministers of Australia, Canada, and India?",
+            "transcript": "Whore the current prime ministers of Australia, Canada, and India?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_119-75-0_cartesia.mp3",
+            "asr_output_openai": "Wore the current prime ministers of Australia, Canada, and India?",
+            "asr_output_elevenlabs": "Who are the current prime ministers of Australia, Canada and India?",
+            "asr_output_deepgram": "War the current prime ministers of Australia, Canada, and India?",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs have variations like \"Wore\" and \"War\" instead of \"Who are,\" which could lead to incorrect interpretation. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "GetPrimeMinisters",
+          "description": "Retrieves the current prime ministers' names for a list of specified countries.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "countries"
+            ],
+            "properties": {
+              "countries": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of country names for which to retrieve the current prime ministers' names. Each country name should be in the format of its common English full name, such as 'Australia', 'New Zealand', and 'India'."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_120-76-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you tell me what the weather will be like in Paris, France from April 3rd to April 5th 2023. For temperature use Celsius?",
+            "transcript": "Could you give me the weather forecast in Celsius for P-A-R-I-S, France, from April third to fifth, twenty-twenty-three?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_120-76-0_cartesia.mp3",
+            "asr_output_openai": "Could you give me the weather forecast in Celsius for Paris, France from April 3rd to 5th, 2023?",
+            "asr_output_elevenlabs": "Could you give me the weather forecast in Celsius for P-A-R-I-S, France from April 3rd to 5th, 2023?",
+            "asr_output_deepgram": "Could you give me the weather forecast in Celsius for PAR, I as France from April third to fifth twenty twenty three?",
+            "clarifications": {
+              "location": "Paris, France",
+              "start_date": "April 3rd, 2023",
+              "end_date": "April 5th, 2023",
+              "temperature_unit": "Celsius"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"PAR, I as France,\" which could lead to incorrect interpretation of the location. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "weather.forecast",
+          "description": "Provides a weather forecast for a specified location and date range including temperature, precipitation, and wind speed.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "location",
+              "start_date",
+              "end_date"
+            ],
+            "properties": {
+              "location": {
+                "type": "string",
+                "description": "The location for the forecast, in the format of 'City, State (abbr)' or 'City, Country', such as 'San Francisco, CA' or 'Tokyo, Japan'."
+              },
+              "start_date": {
+                "type": "string",
+                "description": "The start date of the forecast period in the format of 'YYYY-MM-DD', such as '2023-04-01'."
+              },
+              "end_date": {
+                "type": "string",
+                "description": "The end date of the forecast period in the format of 'YYYY-MM-DD', such as '2023-04-07'."
+              },
+              "temperature_unit": {
+                "type": "string",
+                "description": "The unit of measurement for temperature, either Celsius or Fahrenheit.",
+                "enum": [
+                  "Celsius",
+                  "Fahrenheit"
+                ],
+                "default": "Celsius"
+              },
+              "include_precipitation": {
+                "type": "boolean",
+                "description": "A flag indicating whether to include precipitation information in the forecast.",
+                "default": true
+              },
+              "include_wind": {
+                "type": "boolean",
+                "description": "A flag indicating whether to include wind speed information in the forecast.",
+                "default": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_122-78-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I would like to easily be able to extract any informaton from an 'image.png' based on a 'question' using the vision language model vikhyatk/moondream2. The question is \"generate with technically complex attention to detail a description of what you see\"\n",
+            "transcript": "Hey, can I use the vision language model V-I-K-H-Y-A-T-K slash M-O-O-N-D-R-E-A-M-2, vikhyatk slash moondream2, to extract detailed info from image.png based on the question: Generate a technically complex description of what you see? Alright?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_122-78-0_cartesia.mp3",
+            "asr_output_openai": "Hey, can I use the vision-language model VIKHYATK/MOONDR EAM2VICAK/MOONDREAM2 to extract detailed info from Image.p and g based on the question, generate a technically complex description of what you see? Alright?",
+            "asr_output_elevenlabs": "Hey, can I use the vision language model V-I-K-H-Y-A-T-K/M-O-O-N-D-R-E-A-M 2 Vikak/MoonDream2 to extract detailed info from image dot PNG based on the question, generate a technically complex description of what you see? All right.",
+            "asr_output_deepgram": "Hey. Can I use the vision language model v I k h y a t k slash m o o n d r e a m two vacaque slash moondream two to extract detailed info from image dot p and g based on the question, generate a technically complex description of what you see? Alright?",
+            "clarifications": {
+              "image_path": "image.png",
+              "question": "generate with technically complex attention to detail a description of what you see",
+              "model_name": "vikhyatk/moondream2"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"VIKHYATK/MOONDR EAM2VICAK/MOONDREAM2\" and \"Image.p and g,\" which could lead to incorrect interpretation of the model and image path. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "process_data",
+          "description": "Processes an image and a question to provide an answer using a pre-trained question-answering model from the Hugging Face Transformers library.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "image_path",
+              "question",
+              "model"
+            ],
+            "properties": {
+              "image_path": {
+                "type": "string",
+                "description": "The file path to the image on which the question is based, in the format of 'folder/subfolder/image.png'."
+              },
+              "question": {
+                "type": "string",
+                "description": "The question to be answered, related to the content of the provided image."
+              },
+              "model": {
+                "type": "any",
+                "description": "The pre-loaded question-answering model from the Hugging Face Transformers library used to answer the question."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_123-79-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you analyze the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/Home-Interior-Design-Hd-Wallpaper-Hd-Background-With-Simple-Staircase-And-Plasma-TV-Also-Nice-Laminate-Flooring-Ideas-With-Modern-Furniture-Interior-Minimalist-Design.jpg and provide a detailed description based on the question, 'How does the arrangement of furniture contribute to the minimalist design of the interior?'",
+            "transcript": "Can you take a look at the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/Home-Interior-Design-Hd-Wallpaper-Hd-Background-With-Simple-Staircase-And-Plasma-TV-Also-Nice-Laminate-Flooring-Ideas-With-Modern-Furniture-Interior-Minimalist-Design.jpg? And after that, give me, oh, a detailed description of how the furniture setup supports a minimalist design?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_123-79-0_cartesia.mp3",
+            "asr_output_openai": "Can you take a look at the image at http://www.thewowstyle.com/wp-content/uploads/2015/01/home-interior-design-hd-wallpaper-hd-background-with-simple-staircase-and-plasma-tv-also-nice-laminate-flooring-ideas-with-modern-furniture-interior-minimalist-design.jpg? And after that, give me a detailed description of how the furniture setup supports a minimalist design.",
+            "asr_output_elevenlabs": "Can you take a look at the image at http://www.thewowstyle.com/bupcontent/uploads/2015/01/home-interior-design-hd-wallpaper-hd-background-with-simple-staircase-and-plasma-tv-also-nice-laminate-flooring-ideas-with-modern-furniture-interior-minimalist-design.jpg? And after that give me a detailed description of how the furniture set-up supports a minimalist design .",
+            "asr_output_deepgram": "Can you take a look at the image at h t t p colon slash slash w w w dot the wow style dot com slash b u p content slash upload slash two zero one five slash zero one slash home interior design HD wallpaper HD background with simple staircase and plasma TV also nice laminate flooring ideas with modern furniture interior minimalist design dot j p g. And after that, give me a detailed description of how the furniture setup supports a minimalist design.",
+            "clarifications": {
+              "image_url": "http://www.thewowstyle.com/wp-content/uploads/2015/01/Home-Interior-Design-Hd-Wallpaper-Hd-Background-With-Simple-Staircase-And-Plasma-TV-Also-Nice-Laminate-Flooring-Ideas-With-Modern-Furniture-Interior-Minimalist-Design.jpg",
+              "question_template": "How does the arrangement of furniture contribute to the minimalist design of the interior?"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"bupcontent\" instead of \"wp-content,\" which could lead to incorrect interpretation of the URL. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "pipeline",
+          "description": "Processes an image at the given path and generates a descriptive caption based on a provided complex question template.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "image_path",
+              "question"
+            ],
+            "properties": {
+              "image_path": {
+                "type": "string",
+                "description": "The file path to the image to be processed. The path should be absolute or relative to the working directory."
+              },
+              "question": {
+                "type": "string",
+                "description": "A template question that guides the generation of the image description. The question should be detailed and complex."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_127-82-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Can you retrieve the status information for an ethernet interface in the fabric named 'test-de', on node 5, pod 1?",
+            "transcript": "Hey, um, can you get the status info for the ethernet interface on node five, pod one in the fabric called test-de?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_127-82-1_cartesia.mp3",
+            "asr_output_openai": "Hey um, can you get the status info for the ethernet interface on node five, pod one in the fabric called testy?",
+            "asr_output_elevenlabs": "Hey, um, can you get the status info for the Ethernet interface on Node 5, Pod 1 in the fabric called Testi?",
+            "asr_output_deepgram": "Hey, can you get the status info for the Ethernet interface on node five, pod one in the fabric called testy?",
+            "clarifications": {
+              "fabric_name": "test-de",
+              "node_id": "5",
+              "pod_id": "1",
+              "interface_type": "ethernet"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"testy\" instead of \"test-de,\" which could lead to incorrect interpretation of the fabric name. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "telemetry.flowrules.interfaceInfo.get",
+          "description": "Retrieves specified telemetry information for a network interface within a given fabric, node, and pod, filtered by the interface and information types.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "fabricName",
+              "nodeId",
+              "podId",
+              "interfaceType",
+              "infoType"
+            ],
+            "properties": {
+              "fabricName": {
+                "type": "string",
+                "description": "The name of the fabric to limit the nodes pertaining to the given fabric name."
+              },
+              "nodeId": {
+                "type": "integer",
+                "description": "The identifier of the node to limit the results pertaining to the given node ID."
+              },
+              "podId": {
+                "type": "integer",
+                "description": "The identifier of the pod to limit the results pertaining to the given pod ID."
+              },
+              "interfaceType": {
+                "type": "string",
+                "description": "The type of the interface to limit the results pertaining to the given interface type.",
+                "enum": [
+                  "svi",
+                  "ethernet",
+                  "loopback",
+                  "port-channel"
+                ]
+              },
+              "infoType": {
+                "type": "string",
+                "description": "The type of information to retrieve about the interface.",
+                "enum": [
+                  "interfaces",
+                  "status",
+                  "statistics",
+                  "errors"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_128-83-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "How to generate a RESTful API request on Cisco Nexus Dashboard?\nversion:3.1.0\nIP:192.168.11.33\nAPI name: get nodes list\nParameter_fabricName:PEK-ACI",
+            "transcript": "Let me see... right, how do I make a RESTful API request on the Cisco Nexus Dashboard, version three point one point oh? The IP is one ninety-two dot one sixty-eight dot eleven dot thirty-three, and I need to use the API called get nodes list with the parameter fabricName set to PEK-ACI.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_128-83-0_cartesia.mp3",
+            "asr_output_openai": "Let me see. Right. How do I make a RESTful API request on the Cisco Nexus Dashboard version 3.1.0? The IP is 192.168.11.33, and I need to use the API called getNodesList with the parameter fabricName set to pekaci.",
+            "asr_output_elevenlabs": "Let me see. Right. How do I make a RESTful API request on the Cisco Nexus Dashboard, version 3.1.0? The IP is 192.168.11.33, and I need to use the API called Get Nodes List with the parameter fabric name set to PEKACI.",
+            "asr_output_deepgram": "Let me see. Right. How do I make a restful API request on the Cisco Nexus dashboard version three point one point o? The IP is one ninety two dot one sixty eight dot eleven dot thirty three, and I need to use the API called get nodes list with the parameter fabric name set to p e k a c I.",
+            "clarifications": {
+              "api_name": "get nodes list",
+              "fabric_name": "PEK-ACI",
+              "ip_address": "192.168.11.33"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"pekaci\" instead of \"PEK-ACI,\" which could lead to incorrect interpretation of the fabric name. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "requests.get",
+          "description": "Sends an HTTP GET request to retrieve a list of nodes associated with a specified fabric in a network.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "fabricName"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL to send the GET request to. The URL should include the target IP, API endpoint, and the fabricName query parameter placeholder https://<ip>/sedgeapi/v1/cisco-nir/api/api/telemetry/flowrules/nodes?fabricName={fabricName}.",
+                "default": "https://<ip>/sedgeapi/v1/cisco-nir/api/api/telemetry/flowrules/nodes?fabricName={fabricName}"
+              },
+              "fabricName": {
+                "type": "string",
+                "description": "The name of the fabric whose nodes are to be listed. This value is used to replace the {fabricName} placeholder in the URL."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_129-83-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "get list of nodes for fabric fab-ed and ip is 3.321.3232.2",
+            "transcript": "Um, can you get the list of nodes for the fabric, uh, fab-ed with IP address three dot three two one dot three two three two dot two?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_129-83-1_cartesia.mp3",
+            "asr_output_openai": "Um, can you get the list of nodes for the fabric? A fab-ed with IP address 3.32.1.3232.2?",
+            "asr_output_elevenlabs": "Um, can you get the list of nodes for the fabric, uh, fab_ed with IP address 3.321.3232.2?",
+            "asr_output_deepgram": "Can you get the list of nodes for the fabric? Fab Ed with IP address three dot three two one dot three two three two dot two.",
+            "clarifications": {
+              "fabric_name": "fab-ed",
+              "ip_address": "3.321.3232.2"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations like \"fab-ed\" and \"fab_ed\" instead of \"fab-ed,\" which could lead to incorrect interpretation of the fabric name. The LLM might not infer the correct function call due to these errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "requests.get",
+          "description": "Sends an HTTP GET request to retrieve a list of nodes associated with a specified fabric in a network.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "fabricName"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL to send the GET request to. The URL should include the target IP, API endpoint, and the fabricName query parameter placeholder in https://<ip>/sedgeapi/v1/cisco-nir/api/api/telemetry/flowrules/nodes?fabricName={fabricName}.",
+                "default": "https://<ip>/sedgeapi/v1/cisco-nir/api/api/telemetry/flowrules/nodes?fabricName={fabricName}"
+              },
+              "fabricName": {
+                "type": "string",
+                "description": "The name of the fabric whose nodes are to be listed. This value is used to replace the {fabricName} placeholder in the URL."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_132-85-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "information on the device connector versions from https://example.com/device-connector-versions.json?",
+            "transcript": "Hey, could you, um, get the details on the device connector versions from h t t p s colon slash slash example dot com slash device dash connector dash versions dot json?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_132-85-0_cartesia.mp3",
+            "asr_output_openai": "Hey, could you get the details on the device connector versions from https://example.com/device-connector-versions.john?",
+            "asr_output_elevenlabs": "Hey, could you, um, get the details on the device connector versions from https colon slash slash example dot com slash device dash connector dash versions dot john?",
+            "asr_output_deepgram": "Hey. Could you, get the details on the device connector versions from h t t p s colon slash slash example dot com slash device dash connector dash versions dot john?",
+            "clarifications": {
+              "url": "https://example.com/device-connector-versions.json"
+            },
+            "asr_issue_explanation": "The ASR outputs transcribe the file extension as \"john\" instead of \"json,\" which changes the meaning and could lead to an incorrect function call. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "requests.get",
+          "description": "Sends an HTTP GET request to retrieve Device Connector Versions information from a specified URL.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "url"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL to which the GET request is sent. The URL points to a JSON file containing Device Connector Versions information."
+              },
+              "params": {
+                "type": "dict",
+                "description": "Optional query parameters to include in the GET request as key-value pairs.",
+                "properties": {},
+                "default": {}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_133-86-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you retrieve the recommendation details for the advisory with the identifier 'dac' from the following URL: 'https://api.example.com/recommendations'?",
+            "transcript": "Uh, yeah, can you get recommendation details for advisory dac from this U-R-L colon slash slash api dot example dot com slash recommendations?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_133-86-0_cartesia.mp3",
+            "asr_output_openai": "Ah yeah, can you get recommendation details for advisory DAC from this URL://appy.example.com/recommendations",
+            "asr_output_elevenlabs": "Uh, yeah. Can you get recommendation details for advisory DAC from this URL colon slash slash appy dot example dot com slash recommendations?",
+            "asr_output_deepgram": "Yeah. Can you get recommendation details for advisory DAC from this URL colon slash slash appy dot example dot com slash recommendations?",
+            "clarifications": {
+              "advisory_identifier": "dac",
+              "url_endpoint": "https://api.example.com/recommendations"
+            },
+            "asr_issue_explanation": "The ASR outputs mishear \"api\" as \"appy,\" which changes the URL and could lead to an incorrect function call. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "requests.get",
+          "description": "Sends a GET request to a specified URL to retrieve recommendation details for an advisory.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "url",
+              "params"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL endpoint to send the GET request to. This should include the path to the recommendations resource and be in the format 'https://{hostname}/path'."
+              },
+              "params": {
+                "type": "dict",
+                "properties": {
+                  "advisoryId": {
+                    "type": "string",
+                    "description": "Unique identifier for the advisory for which recommendations are being requested."
+                  },
+                  "ip": {
+                    "type": "string",
+                    "description": "The IP address or hostname of the API server. This will be used to construct the URL if it is not provided explicitly in the 'url' parameter."
+                  }
+                },
+                "description": "Query parameters to be sent with the GET request. Include 'advisoryId' for the specific advisory's recommendations and 'ip' for the API server."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_137-90-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Reschedule event 'Alice-One-one-One' to November 1, 2023 at 10pm CEST",
+            "transcript": "Hey, can you reschedule the event named Alice-One-one-One to November first, twenty-twenty-three, at ten PM C-E-S-T?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_137-90-0_cartesia.mp3",
+            "asr_output_openai": "Hey, can you reschedule the event named Alice111 to November 1, 2023, at 10 p.m. C, EST?",
+            "asr_output_elevenlabs": "Hey, can you reschedule the event named Alice 111 to November 1st, 2023 at 10 PM CET?",
+            "asr_output_deepgram": "Hey. Can you reschedule the event named Alice one one one to November first twenty twenty three at ten PMC EST?",
+            "clarifications": {
+              "event_identifier": "Alice-One-one-One",
+              "new_date": "November 1, 2023",
+              "new_time": "10pm",
+              "timezone": "CEST"
+            },
+            "asr_issue_explanation": "The ASR outputs misinterpret \"C-E-S-T\" as \"C, EST\" or \"CET,\" which could lead to incorrect timezone handling. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "reschedule",
+          "description": "Moves an event to a new specified time, adjusting for time zones.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "identifier",
+              "dateOrTime",
+              "timezone"
+            ],
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "description": "The unique identifier for the event to be rescheduled."
+              },
+              "dateOrTime": {
+                "type": "string",
+                "description": "The new date and time for the event, in ISO-8601 format (e.g., 'YYYY-MM-DDTHH:MM:SS'). Does not include a timezone offset."
+              },
+              "timezone": {
+                "type": "string",
+                "description": "The Olson timezone identifier representing the timezone for the new event time, such as 'Asia/Tokyo'.",
+                "enum": [
+                  "Asia/Tokyo",
+                  "America/New_York",
+                  "Europe/London",
+                  "UTC"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_138-91-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Reschedule event 'Bob-123' to November 1, 2023 at 6pm CEST",
+            "transcript": "Okay, move the event called Bob-123, uh, to November first, twenty-twenty-three, at six PM CEST.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_138-91-0_cartesia.mp3",
+            "asr_output_openai": "Okay move the event called Bob 123 to November 1, 2023 at 6 p.m. CST.",
+            "asr_output_elevenlabs": "Okay, move the event called Bob 123, uh, to November 1st, 2023 at 6 p.m. CEST.",
+            "asr_output_deepgram": "Okay. Move the event called Bob one hundred twenty three, to November first twenty twenty three at six PM CEST.",
+            "clarifications": {
+              "event_identifier": "Bob-123",
+              "new_date": "November 1, 2023",
+              "new_time": "6pm",
+              "timezone": "CEST"
+            },
+            "asr_issue_explanation": "The ASR outputs misinterpret \"C-E-S-T\" as \"CST,\" which could lead to incorrect timezone handling. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "reschedule",
+          "description": "Moves an event to a new specified time, adjusting for the provided timezone.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "identifier",
+              "dateOrTime"
+            ],
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "description": "A unique identifier for the event to be rescheduled."
+              },
+              "dateOrTime": {
+                "type": "string",
+                "description": "The new date and time to which the event should be moved, in ISO-8601 format (e.g., 'YYYY-MM-DDTHH:MM:SSZ'). Timezone is not included and should be specified separately."
+              },
+              "timezone": {
+                "type": "string",
+                "description": "The Olson timezone identifier for the new event time, such as 'Asia/Tokyo'.",
+                "default": "UTC",
+                "enum": [
+                  "UTC",
+                  "Asia/Tokyo",
+                  "America/New_York",
+                  "Europe/London"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_139-92-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you retrieve a summary of anomalies for the fabric named 'network222' using the URL formatted as 'https://{ip}/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary', where {ip} is the IP address '192.168.1.1'?",
+            "transcript": "Can you give me an overview of anomalies for the fabric network222 from the URL https://192.168.1.1/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_139-92-0_cartesia.mp3",
+            "asr_output_openai": "Can you give me an overview of anomalies for the fabric network 222 from the URL https://192.168.1.111/sedgeap/v1/cisconurse/ap/ap/v1/anomalies/summary?",
+            "asr_output_elevenlabs": "Can you give me an overview of anomalies for the fabric network 222 from the URL https colon slash slash one nine two dot one six eight dot one one one slash SGE-AP slash V1 slash Cisco NERS slash AP slash AP slash V1 slash Anomalies slash Summary?",
+            "asr_output_deepgram": "Can you give me an overview of anomalies for the fabric network two hundred and twenty two from the URL h t t p s colon slash slash one nine two dot one six eight dot one one one slash sedge AP slash v one slash Cisco nurse slash AP slash AP slash v one slash anomaly slash summary.",
+            "clarifications": {
+              "fabric_name": "network222",
+              "formatted_url": "https://{ip}/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary",
+              "ip_address": "192.168.1.1"
+            },
+            "asr_issue_explanation": "The ASR outputs mishear parts of the URL, such as \"sedgeapi\" as \"sedgeap\" and \"cisco-nir\" as \"cisconurse,\" which could lead to an incorrect function call. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "requests.get",
+          "description": "Sends a GET request to a specified URL to retrieve a summary of anomalies, based on the provided insights group or fabric.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "url"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL to which the GET request is sent. It should follow the format 'https://{ip}/sedgeapi/v1/cisco-nir/api/api/v1/anomalies/summary', where {ip} is the actual IP address."
+              },
+              "params": {
+                "type": "dict",
+                "description": "Optional parameters for the GET request as key-value pairs. This includes the insights group and fabric names.",
+                "properties": {
+                  "insightsGroup": {
+                    "type": "string",
+                    "description": "The name of the insights group for which the anomalies summary is requested. For example, 'network_performance'.",
+                    "default": "defaultInsightsGroup"
+                  },
+                  "fabric": {
+                    "type": "string",
+                    "description": "The name of the fabric for which the anomalies summary is requested. For example, 'fabric1'.",
+                    "default": "defaultFabric"
+                  }
+                },
+                "default": {}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_142-94-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "list file in desktop using dir Desktop",
+            "transcript": "Hey, uh, can you show files on the desktop using dir Desktop?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_142-94-1_cartesia.mp3",
+            "asr_output_openai": "Heya, can you show files on the desktop using DearDesktop?",
+            "asr_output_elevenlabs": "Heya, can you show files on the desktop using Dear Desktop?",
+            "asr_output_deepgram": "Hey, can you show files on the desktop using your desktop?",
+            "clarifications": {
+              "command": "dir Desktop"
+            },
+            "asr_issue_explanation": "The ASR outputs mishear \"dir Desktop\" as \"DearDesktop\" or \"Dear Desktop,\" which changes the command and could lead to an incorrect function call. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "cmd_controller.execute",
+          "description": "Executes a specified command in the Windows operating system using the os.system() function.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "command"
+            ],
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "The command line instruction to be passed to os.system() for execution, formatted as a Windows command prompt statement."
+              },
+              "unit": {
+                "type": "string",
+                "description": "The unit of measurement for the command execution time, such as 'seconds' or 'milliseconds'",
+                "enum": [
+                  "seconds",
+                  "milliseconds"
+                ],
+                "default": "N/A"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_143-95-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "is docker running, please use docker ps to find out",
+            "transcript": "Hey, can ya see if Dockers running? Use docker ps to find out.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_143-95-0_cartesia.mp3",
+            "asr_output_openai": "Hey can ya see if Docker's running? Use docker ps to find out.",
+            "asr_output_elevenlabs": "Hey, can you see if Docker's running? Use docker pause to find out.",
+            "asr_output_deepgram": "Hey. Can you ask see if Docker's running? Use Docker pause to find out.",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs mishear \"docker ps\" as \"docker pause,\" which changes the command and could lead to an incorrect function call. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "cmd_controller.execute",
+          "description": "Executes a system-level command using os.system() on Windows operating systems. It can execute single or multiple commands chained with '&&'.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "command"
+            ],
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "The system command to be executed. To execute multiple commands, separate them with '&&'. For example, 'dir && echo done'."
+              },
+              "unit": {
+                "type": "string",
+                "description": "The unit of measurement for the command execution time, such as 'seconds' or 'milliseconds'",
+                "enum": [
+                  "seconds",
+                  "milliseconds"
+                ],
+                "default": "N/A"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_165-98-0",
+      "question": [
+        [
+          {
+            "role": "system",
+            "content": "You are a top-tier algorithm for extracting information from text. Only extract information that is relevant to the provided text. If no information is relevant, use the schema and output an empty list where appropriate.\n\nUse information about the person from the given user input."
+          },
+          {
+            "role": "user",
+            "content": "Could you help me extract the names and ages from this text? Here it is: ```\n我叫李雷，今年18，我姐姐比我大三岁，叫李丽\n```",
+            "transcript": "Um, can you get the names and ages from this text? It says: 我叫李雷，今年18，我姐姐比我大三岁，叫李丽.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_165-98-0_cartesia.mp3",
+            "asr_output_openai": "Can you get the names and ages from this text? It says: 我叫李蕾，今年18，我姐姐比我大三岁，叫李莉。",
+            "asr_output_elevenlabs": "Um, can you get the names and ages from this text? It says, 我叫李雷，今年18。我姐姐比我大三岁，叫李丽。",
+            "asr_output_deepgram": "Can you get the names and ages from this text? It says eighteen.",
+            "clarifications": {
+              "text_content": "我叫李雷，今年18，我姐姐比我大三岁，叫李丽"
+            },
+            "asr_issue_explanation": "The ASR outputs contain variations in the names \"李雷\" and \"李丽\" which are critical for extracting the correct names and ages. The LLM might not be able to infer the correct names due to these transcription errors."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "extractor.extract_information",
+          "description": "Extracts structured information from a dataset matching the specified schema, focusing on the 'name' and 'age' of individuals.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "data"
+            ],
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "dict"
+                },
+                "description": "A list of dictionaries, each representing an individual's record with required 'name' and 'age' fields."
+              },
+              "schema": {
+                "type": "string",
+                "description": "The schema identifier that specifies the format and fields of the information to be extracted. Examples might include 'personal_info' or 'employment_record'.",
+                "enum": [
+                  "personal_info",
+                  "employment_record",
+                  "educational_background"
+                ],
+                "default": "personal_info"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_167-99-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "is vs code running, using the command tasklist /FI \"IMAGENAME eq Code.exe\"",
+            "transcript": "Hey, um, can you check if V S Code is running with the command tasklist slash F I IMAGENAME eq Code dot exe?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_167-99-1_cartesia.mp3",
+            "asr_output_openai": "Hey, um, can you check if bs code is running with the command tasklist /fi \"IMAGENAME eq code.exe\"?",
+            "asr_output_elevenlabs": "Hey, um, can you check if VS Code is running with the command tasklist/fii-magename eqcode.exe?",
+            "asr_output_deepgram": "Hey. Can you check if Versus Code is running with the command task list slash f I I m a g e n a m e e q code dot x?",
+            "clarifications": {
+              "command": "tasklist /FI \"IMAGENAME eq Code.exe\""
+            },
+            "asr_issue_explanation": "The ASR outputs contain variations and errors in the command \"tasklist /fi IMAGENAME eq Code.exe\", such as \"bs code\" and \"Versus Code\", which could lead to incorrect command execution. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "cmd_controller.execute",
+          "description": "Executes a given command using the os.system() function specifically for Windows operating systems. For multiple commands, separate them with '&&'. For complex tasks, create and run a .bat file.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "command"
+            ],
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "The Windows command line instruction(s) to be executed. Use '&&' between commands for multiple instructions. For complex sequences, encapsulate the logic within a .bat file and provide the execution command here."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_169-99-3",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Run the Python script located at d:/playground/pc_contoller/test.py using the Python interpreter in the virtual environment at d:/playground/pc_contoller/env/Scripts/python.exe?",
+            "transcript": "Hey, um, can you run the Python script at d colon slash playground slash pc underscore controller slash test dot py using the interpreter from the Scripts folder inside env, inside pc_controller, inside playground on the D drive, the file python dot exe, right?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_169-99-3_cartesia.mp3",
+            "asr_output_openai": "Hey, can you run the Python script at D:/playground/pc_controller/test.py using the interpreter from the scripts folder inside env inside pc_controller inside playground on the D drive? The file python.x, right?",
+            "asr_output_elevenlabs": "Hey, um, can you run the Python script at the colon/playground/pc_controller/test.py using the interpreter from the scripts folder inside nv, inside pc_controller, inside playground on the D drive? The file python.exe, right?",
+            "asr_output_deepgram": "Hey. Can you run the Python script at the colon slash playground slash p c underscore controller slash test dot py using the interpreter from the scripts folder inside env, inside p c underscore controller, inside playground on the d drive, the file Python dot x. Right?",
+            "clarifications": {
+              "script_path": "d:/playground/pc_contoller/test.py",
+              "interpreter_path": "d:/playground/pc_contoller/env/Scripts/python.exe"
+            },
+            "asr_issue_explanation": "The ASR outputs contain errors in the file path and command, such as \"python.x\" instead of \"python.exe\", which could lead to incorrect command execution. Clarification is needed."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "cmd_controller.execute",
+          "description": "Executes a given command using the os.system() function specifically for Windows operating systems. For multiple commands, separate them with '&&'. For complex tasks, create and run a .bat file.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "command"
+            ],
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "The Windows command line instruction(s) to be executed. Use '&&' between commands for multiple instructions. For complex sequences, encapsulate the logic within a .bat file and provide the execution command here."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_181-106-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Help find a housekeeper who provides ironing services in Bangkok, Chatuchak District, with a review score of 4.5 stars or more.",
+            "transcript": "Uh, can you look for a housekeeper offering ironing services in Bangkoks Chatuchak District, with at least a 4.5-star rating, right?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_181-106-0_elevenlabs.mp3",
+            "asr_output_openai": "Can you look for a housekeeper offering ironing services in Bangkok's Chatuchak District, with at least a 4.5-star rating, right?",
+            "asr_output_elevenlabs": "Uh, can you look for a housekeeper offering ironing services in Bangkok's Chatuchak district with at least a 4.5-star rating, right?",
+            "asr_output_deepgram": "Can you look for a housekeeper offering ironing services in Bangkok's Chatuchak district with at least a four point half star rating. Right?",
+            "clarifications": {
+              "district_name": "Chatuchak District",
+              "province_name": "Bangkok",
+              "service_type": "ironing service",
+              "review_score": "4.5 stars"
+            },
+            "asr_issue_explanation": "The ASR outputs introduce ambiguity with \"four point half star rating,\" which could confuse the LLM in determining the correct rating parameter. Clarification is needed to ensure the correct rating value of 4.5."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "get_service_id",
+          "description": "Retrieve the unique identifier for a specific service within a given province based on the service type and location.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "service_id"
+            ],
+            "properties": {
+              "service_id": {
+                "type": "integer",
+                "description": "The unique identifier of the service. For example, '1' represents a cleaning service, '2' for an ironing service, and '3' for a comprehensive cleaning service."
+              },
+              "province_id": {
+                "type": "integer",
+                "description": "The unique identifier of the province. For instance, '1' for Bangkok, '2' for Chiang Mai, and '3' for Chonburi.",
+                "default": 1
+              },
+              "district_name": {
+                "type": "string",
+                "description": "The name of the district where the service is located, such as 'Watthana' or 'Thon Buri'.",
+                "default": "Not Specified"
+              },
+              "rating": {
+                "type": "float",
+                "description": "The average rating of the service provider's review score, from 0.0 to 5.0, where '4.5' represents a very good rating.",
+                "default": 0.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_182-107-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Help find a housekeeper who provides ironing services in Bangkok, Khlong Sam Wa District, Sai Kong Subdistrict, with a review score of 4.5 stars or more.",
+            "transcript": "Um, can you help me find a housekeeper who, like, does ironing in Bangkok, uh, Khlong Sam Wa, Sai Kong, with at least a four and a half star rating, okay?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_182-107-0_elevenlabs.mp3",
+            "asr_output_openai": "Um, can you help me find a housekeeper who, like, does ironing in Bangkok, Khlong Sam Wa, Sai Kong, with at least a four and a half star rating, okay?",
+            "asr_output_elevenlabs": "Um, can you help me find a housekeeper who, like, does ironing in Bangkok, uh, Khlong Sam Wa, Sai Kung, with at least a four-and-a-half-star rating? Okay?",
+            "asr_output_deepgram": "Can you help me find a housekeeper who, like, does ironing in Bangkok, Klong Sam Wah, Saikong, with at least a four and a half star rating. Okay?",
+            "clarifications": {
+              "district_name": "Khlong Sam Wa District",
+              "sub_district_name": "Sai Kong Subdistrict",
+              "rating": "4.5"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations in the transcription of \"Sai Kong\" and \"Sai Kung,\" which could lead to ambiguity in determining the correct sub-district name. Clarification is needed to ensure the correct sub-district is identified."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "get_service_providers",
+          "description": "Retrieve a list of service providers based on the given service type and location criteria.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "service_id"
+            ],
+            "properties": {
+              "service_id": {
+                "type": "integer",
+                "description": "Unique identifier for the service type. For example, 1 represents cleaning service, 2 for ironing service, and 3 for a comprehensive cleaning service."
+              },
+              "province_id": {
+                "type": "integer",
+                "description": "Unique identifier for the province. For example, 1 corresponds to Bangkok, 2 to Chiang Mai, and 3 to Chonburi.",
+                "default": null
+              },
+              "district_name": {
+                "type": "string",
+                "description": "The name of the district where the service is required, such as 'Downtown'.",
+                "default": null
+              },
+              "sub_district_name": {
+                "type": "string",
+                "description": "The name of the sub-district within the district, like 'Old Town'.",
+                "default": null
+              },
+              "rating": {
+                "type": "float",
+                "description": "The minimum average rating to filter service providers, on a scale from 1.0 to 5.0 with decimals representing fractional ratings.",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_188-113-0",
+      "question": [
+        [
+          {
+            "role": "system",
+            "content": "Please act like the current date is 2024/02/21"
+          },
+          {
+            "role": "user",
+            "content": "Help find a housewife who provides ironing services in Chiang Mai, Sankampang District, Ton Pao Subdistrict, with a review of 4.5 stars",
+            "transcript": "Uh, can you look for a housewife for ironing services in Chiang Mai, Sankampang District, Ton Pao Subdistrict, with at least a four point five-star review?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_188-113-0_elevenlabs.mp3",
+            "asr_output_openai": "Ah, can you look for a housewife for ironing services in Chiang Mai, San Kamphaeng District, Ton Pao Sub-district, with at least a 4.5-star review?",
+            "asr_output_elevenlabs": "Uh, can you look for a housewife for ironing services in Chiang Mai, San Kamphaeng District, Ton Pao Subdistrict, with at least a 4.5-star review?",
+            "asr_output_deepgram": "Can you look for a housewife for ironing services in Chiang Mai, San Kampang District, Tonpao Subdistrict with at least a four point five star review?",
+            "clarifications": {
+              "province_id": "Chiang Mai",
+              "district_name": "Sankampang District",
+              "sub_district_name": "Ton Pao Subdistrict",
+              "rating": "4.5"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations in the transcription of \"San Kamphaeng\" and \"San Kampang,\" which could lead to ambiguity in determining the correct district name. Clarification is needed to ensure the correct district is identified."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "getDataForProfessional",
+          "description": "Retrieve a list of professional workers who meet specified criteria, such as service type, location, availability, and rating.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "service_id",
+              "province_id"
+            ],
+            "properties": {
+              "service_id": {
+                "type": "integer",
+                "description": "Unique identifier for the type of service. For example, 1 represents cleaning service, 2 represents ironing service, 3 represents big cleaning service.",
+                "enum": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "province_id": {
+                "type": "integer",
+                "description": "Unique identifier for the province. For example, 1 for Bangkok, 2 for Chiang Mai, 3 for Chonburi.",
+                "enum": [
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "district_name": {
+                "type": "string",
+                "description": "The name of the district where the service is required.",
+                "default": null
+              },
+              "sub_district_name": {
+                "type": "string",
+                "description": "The name of the sub-district where the service is required.",
+                "default": null
+              },
+              "start_available_date": {
+                "type": "string",
+                "description": "The start date from which the service provider is available, in the format 'YYYY-MM-DD HH:mm:ss'.",
+                "default": null
+              },
+              "end_available_date": {
+                "type": "string",
+                "description": "The end date until which the service provider is available, in the format 'YYYY-MM-DD HH:mm:ss'.",
+                "default": null
+              },
+              "has_late_check_in": {
+                "type": "boolean",
+                "description": "Indicator of whether the service provider has a record of late check-in.",
+                "default": false
+              },
+              "rating": {
+                "type": "float",
+                "description": "The average rating of the service provider's review score. Ratings are expected to be between 0.0 and 5.0.",
+                "default": null
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_196-116-4",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Could you provide the forecast for Alameda on the upcoming Wednesday, today is Monday April 25th 2023?",
+            "transcript": "Um, whats the weather forecast for Alameda on Wednesday? Oh, todays Monday, April twenty-fifth, twenty-twenty-three.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_196-116-4_elevenlabs.mp3",
+            "asr_output_openai": "Um, what's the weather forecast for Alameda on Wednesday? Oh, today's Monday, April 25th, 2023.",
+            "asr_output_elevenlabs": "Um, what's the weather forecast for Alameda on Wednesday? Oh, today's Monday, April 25th, 2023.",
+            "asr_output_deepgram": "What's the weather forecast for Alameda on Wednesday? Oh, today's Monday, April twenty fifth twenty twenty three.",
+            "clarifications": {
+              "city": "Alameda",
+              "forecast_date": "upcoming Wednesday"
+            },
+            "asr_issue_explanation": "The ASR outputs correctly capture the city name \"Alameda\" and the date \"April 25th, 2023\". However, the request is for the weather on \"Wednesday\", and the transcript provides context that today is \"Monday, April 25th, 2023\". The LLM needs to infer the date for \"Wednesday\" based on this context, which could lead to ambiguity without explicit clarification."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Weather_1_GetWeather",
+          "description": "Retrieves the weather forecast for a specified city on a particular date.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "city"
+            ],
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "The name of the city for which weather information is requested."
+              },
+              "date": {
+                "type": "string",
+                "description": "The date for which weather information is requested, in the format of 'YYYY-MM-DD'. If not provided, the current date is used.",
+                "default": "2019-03-01"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_205-116-13",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "What's the weather forecast for Berkeley on the upcoming Saturday? Today is Tuesday April 25th 2023",
+            "transcript": "Um, hey, can you tell me weather forecast for Berkeley this Saturday? Its Tuesday, April twenty-fifth, twenty twenty-three, today.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_205-116-13_elevenlabs.mp3",
+            "asr_output_openai": "Hey, can you tell me weather forecast for Berkeley this Saturday?",
+            "asr_output_elevenlabs": "Um, hey, can you tell me weather forecast for Berkeley this Saturday? It's Tuesday, April 25th, 2023, today.",
+            "asr_output_deepgram": "Hey. Can you tell me weather forecast for Berkeley this Saturday? It's Tuesday, April twenty fifth twenty twenty three, today.",
+            "clarifications": {
+              "city": "Berkeley",
+              "forecast_date": "upcoming Saturday"
+            },
+            "asr_issue_explanation": "The ASR outputs correctly capture the city name \"Berkeley\" and the context that today is \"Tuesday, April 25th, 2023\". However, the request is for the weather on \"this Saturday\", which requires the LLM to infer the date for \"Saturday\" based on the current date, potentially leading to ambiguity without explicit clarification."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Weather_1_GetWeather",
+          "description": "Retrieves the weather forecast for a specified city on a particular date.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "city"
+            ],
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "The name of the city for which weather information is requested."
+              },
+              "date": {
+                "type": "string",
+                "description": "The date for which weather information is requested, in the format of 'YYYY-MM-DD'. If not provided, the current date is used.",
+                "default": "2019-03-01"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_208-117-0",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I want to find a good film to watch with Duane Whitaker and I want something directed by Quentin Tarantino.",
+            "transcript": "Hey, um, get me a good movie with Duane Whitaker, thats D-U-A-N-E W-H-I-T-A-K-E-R, Duane Whitaker, thats directed by Quentin Tarantino, yeah.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_208-117-0_elevenlabs.mp3",
+            "asr_output_openai": "Hey, um get me a good movie with Duane Whitaker, that's D-U-A-N-E W-H-I-T-A-K-E-R, Duane Whitaker, that's directed by Quentin Tarantino, yeah.",
+            "asr_output_elevenlabs": "Hey. Um, get me a good movie with Dwayne Whitaker, that's D-U-N-E W-H-I-T-A-K-E-R, Dwayne Whitaker, that's directed by Quentin Tarantino. Yeah.",
+            "asr_output_deepgram": "Hey. Get me a good movie with Duane Whittaker. That's d u a n e w h I t a k e r. Duane Whittaker. That's directed by Quentin Tarantino. Yeah.",
+            "clarifications": {
+              "cast_member": "Duane Whitaker",
+              "director_name": "Quentin Tarantino"
+            },
+            "asr_issue_explanation": "The ASR outputs contain variations in the spelling of the name \"Duane Whitaker\", with one output incorrectly spelling it as \"Dwayne Whitaker\" and another as \"Duane Whittaker\". This could lead to incorrect parameter values for the \"cast\" field, requiring clarification."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_209-117-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I wish to see the movie which is directed by David Leitch and acted by Lori Pelenise Tuisano.",
+            "transcript": "Um, could you show me movie directed by David Leitch, thats L-E-I-T-C-H, Leitch, featuring... Lori Pelenise Tuisano, thats T-U-I-S-A-N-O, Tuisano?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_209-117-1_elevenlabs.mp3",
+            "asr_output_openai": "Could you show me movie directed by David Leitch, that's L-E-I-T-C-H, Leitch, featuring Lori Pelenise Tuisano, that's T-U-I-S-A-N-O, Tuisano?",
+            "asr_output_elevenlabs": "Um, could you show me movie directed by David Leitch, that's L-E-I-T-C-H, Leitch, featuring Lori Pelanis Tuissano, that's T-U-I-S-A-N-O, Tuissano?",
+            "asr_output_deepgram": "Could you show me movie directed by David Leitch? That's l e I t c h, Leitch, featuring Lori Pelonis Tuisano. That's t u I s a n o, Tuisano.",
+            "clarifications": {
+              "director_name": "David Leitch",
+              "actor_name": "Lori Pelenise Tuisano"
+            },
+            "asr_issue_explanation": "The ASR outputs have variations in the spelling of \"Lori Pelenise Tuisano,\" which could lead to incorrect parameter values for the cast. The LLM might not be able to infer the correct spelling due to these discrepancies."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_211-117-3",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I would like to choose a movie to watch. Can you help me find a movie in the Comic genre with James Corden in it?",
+            "transcript": "Im, uh, looking for movie to watch. Can you find, um, oh, one in the comic genre with James Corden?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_211-117-3_elevenlabs.mp3",
+            "asr_output_openai": "I'm looking for movie to watch. Can you find, um, oh, one in the comic genre with James Corden?",
+            "asr_output_elevenlabs": "I'm, uh, looking for movie to watch. Can you find, um, oh, one in the comic genre with James Corden?",
+            "asr_output_deepgram": "I'm, looking for movie to watch. Can you find, oh, one in the comic genre with James Corden?",
+            "clarifications": {
+              "genre": "Comic",
+              "cast_member": "James Corden"
+            },
+            "asr_issue_explanation": "The ASR outputs transcribe \"comic genre\" instead of \"comedy,\" which is not a valid genre according to the function documentation. This could lead to an incorrect parameter value for the genre."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user or genre is not specified by user",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres.",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_216-117-8",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Find me action movies that have David Leitch as the director and include Alex King in the cast?",
+            "transcript": "Can you, uh, find action movies directed by David Leitch, with Alex King, thats A-L-E-X K-I-N-G, Alex King, in the cast?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_216-117-8_elevenlabs.mp3",
+            "asr_output_openai": "Can you find action movies directed by David Leitch with Alex King (that's A-L-E-X K-I-N-G) in the cast?",
+            "asr_output_elevenlabs": "Can you, uh, find action movies directed by David Leitch with Alex King, that's A-L-E-X K-I-N-G, Alex King, in the cast?",
+            "asr_output_deepgram": "Can you, find action movies directed by David Leach with Alex King? That's a l e x k I n g, Alex King in the cast.",
+            "clarifications": {
+              "director_name": "David Leitch",
+              "cast_member": "Alex King"
+            },
+            "asr_issue_explanation": "One of the ASR outputs transcribes \"David Leach\" instead of \"David Leitch,\" which could lead to an incorrect parameter value for the director."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_218-117-10",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I'm at home alone and it is awfully quiet, so it's the perfect time to sit back and watch a movie. Can you find me a movie with Michaela Watkins starring in it and preferably directed by Paul Downs Colaizzo?",
+            "transcript": "Hey, home alone, and, uh, its really quiet, so itd be great to watch a movie. Can you find one with Michaela Watkins in it, um, ideally directed by Paul Downs Colaizzo, thats C-O-L-A-I-Z-Z-O, Colaizzo? Thanks.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_218-117-10_elevenlabs.mp3",
+            "asr_output_openai": "Hey, home alone, and it's really quiet, so it'd be great to watch a movie. Can you find one with Michaela Watkins in it, ideally directed by Paul Downs Colaizzo? Thanks.",
+            "asr_output_elevenlabs": "Hey, home alone and uh it's really quiet so it'd be great to watch a movie. Can you find one with Michaela Watkins in it? Um, ideally directed by Paul Downs Colaizzo, that's C-O-L-A-I-Z-Z-O, Colaizzo. Thanks.",
+            "asr_output_deepgram": "Hey. Home alone. And, it's really quiet, so it'd be great to watch a movie. Can you find one with Mikaela Watkins in it? Ideally directed by Paul Downs Colaizo. That's c o l a I z zed o, Colaizo. Thanks.",
+            "clarifications": {
+              "actor_name": "Michaela Watkins",
+              "director_name": "Paul Downs Colaizzo"
+            },
+            "asr_issue_explanation": "One of the ASR outputs transcribes \"Mikaela Watkins\" instead of \"Michaela Watkins,\" which could lead to an incorrect parameter value for the cast."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_222-117-14",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I like to watch a movie. will you find me a movie which has sterling K. Brown as a actor and it should be directed by Thurop Van Orman",
+            "transcript": "Uh, get me a movie with Sterling K. Brown, thats B-R-O-W-N, Brown, directed by Thurop Van Orman, thats T-H-U-R-O-P V-A-N O-R-M-A-N, Thurop Van Orman.",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_222-117-14_elevenlabs.mp3",
+            "asr_output_openai": "Get me a movie with Sterling K. Brown, that's B-R-O-W-N. Brown directed by Thurop Van Orman, that's T-H-U-R-O-P, V-A-N O-R-M-A-N, Thurop Van Orman.",
+            "asr_output_elevenlabs": "Uh, get me a movie with Sterling K. Brown, that's B-R-O-W-N, Brown, directed by Thorop Van Orman, that's T-H-U-R-O-P V-A-N O-R-M-A-N, Thorop Van Orman.",
+            "asr_output_deepgram": "Get Me a Movie with Sterling K. Brown. That's b r o w n. Brown directed by Thorop van Oormann. That's t h u r o p v a n o r m a n. Thorop van Oormann.",
+            "clarifications": {
+              "actor_name": "Sterling K. Brown",
+              "director_name": "Thurop Van Orman"
+            },
+            "asr_issue_explanation": "One of the ASR outputs transcribes \"Thorop Van Orman\" instead of \"Thurop Van Orman,\" which could lead to an incorrect parameter value for the director."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_223-117-15",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "I would like to find a movie to watch in the Imaginative fiction genre, as I have started to watch a lot of fantasy-type movies lately, you know!!!!!!",
+            "transcript": "Hey, uh, can you find me a movie in imaginative fiction genre? You know, Ive been watchin, like, a ton of fantasy movies lately!",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_223-117-15_elevenlabs.mp3",
+            "asr_output_openai": "Hey, uh, can you find me a movie in imaginative fiction genre? You know, I've been watching like a ton of fantasy movies lately.",
+            "asr_output_elevenlabs": "Hey, uh, can you find me a movie in imaginative fiction genre? You know, I've been watching like a ton of fantasy movies lately.",
+            "asr_output_deepgram": "Hey. Can you find me a movie in imaginative fiction genre? You know, I've been watching, like, a ton of fantasy movies lately.",
+            "clarifications": {},
+            "asr_issue_explanation": "The ASR outputs transcribe \"imaginative fiction genre,\" which is not a valid genre according to the function documentation. This could lead to an incorrect parameter value for the genre."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "Movies_3_FindMovies",
+          "description": "Retrieves a list of movies based on the director, genre, and cast specified by the user.",
+          "parameters": {
+            "type": "dict",
+            "required": [],
+            "properties": {
+              "directed_by": {
+                "type": "string",
+                "description": "Director of the movie. Use 'dontcare' if the director is not a specific search criterion.",
+                "default": "dontcare"
+              },
+              "genre": {
+                "type": "string",
+                "description": "Genre of the movie. Use 'dontcare' to include all genres or genre is not specified by user",
+                "enum": [
+                  "Offbeat",
+                  "Fantasy",
+                  "World",
+                  "Mystery",
+                  "Thriller",
+                  "Comedy",
+                  "Comedy-drama",
+                  "Horror",
+                  "Animation",
+                  "Sci-fi",
+                  "Cult",
+                  "Drama",
+                  "Anime",
+                  "Family",
+                  "Action",
+                  "dontcare"
+                ],
+                "default": "dontcare"
+              },
+              "cast": {
+                "type": "string",
+                "description": "Names of leading actors or actresses in the movie. Use 'dontcare' if the cast is not a specific search criterion.",
+                "default": "dontcare"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_255-136-1",
+      "question": [
+        [
+          {
+            "role": "user",
+            "content": "Get the list of active mandates for the user with ID U123456?",
+            "transcript": "Can you get the active mandates for user I-D U twelve three forty-five six?",
+            "audio_path": "audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_live_simple/live_simple_255-136-1_elevenlabs.mp3",
+            "asr_output_openai": "Can you get the active mandates for user IDU123456?",
+            "asr_output_elevenlabs": "Can you get the active mandates for user ID U123456?",
+            "asr_output_deepgram": "Can you get the active mandates for user IDU twelve three forty five six?",
+            "clarifications": {
+              "user_id": "U123456"
+            },
+            "asr_issue_explanation": "The ASR outputs present ambiguity in the transcription of the user ID. The original transcript \"I-D U twelve three forty-five six\" could be interpreted as \"IDU123456\" or \"ID U123456\" or \"IDU 123456\". The LLM might not be able to determine the correct format of the user ID due to the variations in spacing and number representation, which could lead to an incorrect function call."
+          }
+        ]
+      ],
+      "function": [
+        {
+          "name": "user.mandates",
+          "description": "Fetches a list of mandates for a user given the user's ID and the status of the mandates. The user ID is a required parameter, while the status is optional and can be used to filter the mandates by their current status.",
+          "parameters": {
+            "type": "dict",
+            "required": [
+              "user_id"
+            ],
+            "properties": {
+              "user_id": {
+                "type": "string",
+                "description": "The unique identifier of the user for whom the mandates need to be fetched."
+              },
+              "status": {
+                "type": "string",
+                "description": "The current status of the mandates to fetch. If not specified, mandates with all statuses are fetched.",
+                "enum": [
+                  "active",
+                  "pending",
+                  "inactive"
+                ],
+                "default": "active"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
