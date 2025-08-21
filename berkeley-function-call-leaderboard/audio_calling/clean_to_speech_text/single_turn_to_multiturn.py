@@ -9,11 +9,6 @@ Usage:
     python single_turn_to_multiturn.py --input BFCL_v3_live_simple.json --output multiturn_simple.json
     python single_turn_to_multiturn.py --input data.json --output output.json --start_idx 0 --end_idx 100
 
-Features:
-- Focuses on key ambiguous entities: times, locations, quantities, items, actions
-- Generates natural clarification questions for ambiguous references
-- Supports multithreading for large datasets
-- Handles various ambiguity patterns (timezone, units, specificity, context)
 """
 
 import json

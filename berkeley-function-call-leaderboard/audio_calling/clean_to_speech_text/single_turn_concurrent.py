@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """
 Concurrent Single-Turn to Multi-Turn Query Converter
-
-High-performance, bulletproof conversion of single-turn queries to multi-turn conversations
-with maximum concurrency, robust error handling, and checkpointing.
-
 Usage:
     python single_turn_concurrent.py --input BFCL_v3_live_simple.json --output multiturn_simple.json
     python single_turn_concurrent.py --input data.json --output output.json --test
@@ -170,6 +166,28 @@ class SingleTurnConverter:
                     r'\b(get|find|search|look for)\b',
                     r'\b(set|put|place|move)\b'
                 ]
+            },
+            'technical_details': {
+                'patterns': [
+                    # Repository names (username/repo-name format)
+                    r'\b([a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+)\b',
+                    # File paths and extensions
+                    r'\b([a-zA-Z0-9_.-]+\.[a-zA-Z]{2,4})\b',
+                    # Command names and technical terms
+                    r'\b(npm|pip|git|docker|kubectl|python|node|java)\s+([a-zA-Z0-9_-]+)\b',
+                    # Version numbers
+                    r'\bv?(\d+\.\d+(?:\.\d+)?(?:-[a-zA-Z0-9]+)?)\b',
+                    # URLs and domains
+                    r'\b([a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:/[a-zA-Z0-9._~:/?#[\]@!$&\'()*+,;=-]*)?)\b',
+                    # API endpoints and technical identifiers
+                    r'\b(api|endpoint|service|database|db|server)\s+([a-zA-Z0-9_.-]+)\b',
+                    # Configuration keys and technical parameters
+                    r'\b([A-Z_]+=[a-zA-Z0-9_.-]+)\b',
+                    # Branch names and technical references
+                    r'\b(main|master|develop|staging|prod|production)\b',
+                    # Package/module names with special characters
+                    r'\b([a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)+)\b'
+                ]
             }
         }
     
@@ -181,7 +199,8 @@ class SingleTurnConverter:
             'location': [],
             'quantity': [],
             'item_specificity': [],
-            'action_ambiguity': []
+            'action_ambiguity': [],
+            'technical_details': []
         }
         
         for category, config in self.ambiguity_patterns.items():
@@ -219,8 +238,32 @@ class SingleTurnConverter:
         
         category = entity['category']
         text = entity['text']
-        
-        prompt = f"""
+            
+        # Special handling for technical details
+        if category == 'technical_details':
+            prompt = f"""
+Generate a specific technical clarification question for this entity in a user query.
+
+Original query: "{query}"
+Technical entity: "{text}" (category: {category})
+
+Guidelines:
+1. Ask for confirmation of exact spelling/naming
+2. Verify technical accuracy and completeness
+3. Request missing technical details if needed
+4. Sound professional but conversational
+
+Examples:
+- "ShishirPatil/gorilla" → "Can you confirm the exact repository name is 'ShishirPatil/gorilla'?"
+- "config.json" → "Is 'config.json' the correct filename and location?"
+- "v1.2.3" → "Are you referring to version 1.2.3 specifically?"
+- "main branch" → "Do you mean the 'main' branch or another branch name?"
+- "api endpoint" → "Which specific API endpoint are you referring to?"
+
+Generate only the clarification question, nothing else:
+"""
+        else:
+            prompt = f"""
 Generate a natural clarification question for this ambiguous reference in a user query.
 
 Original query: "{query}"
@@ -270,7 +313,8 @@ Generate only the clarification question, nothing else:
             'location': f"Could you provide the full address for {text}?",
             'quantity': f"How many exactly do you mean by {text}?",
             'item_specificity': f"Which specific type of {text} would you like?",
-            'action_ambiguity': f"What specifically would you like to {text}?"
+            'action_ambiguity': f"What specifically would you like to {text}?",
+            'technical_details': self._get_technical_template(text)
         }
         
         return {
@@ -280,6 +324,73 @@ Generate only the clarification question, nothing else:
             'position': entity['start']
         }
     
+    def _get_technical_template(self, text: str) -> str:
+        """Generate specific technical clarification templates based on the entity type."""
+        
+        # Repository name pattern
+        if '/' in text and len(text.split('/')) == 2:
+            return f"Can you confirm the exact repository name is '{text}'?"
+        
+        # File extension pattern
+        if '.' in text and len(text.split('.')[-1]) <= 4:
+            return f"Is '{text}' the correct filename and path?"
+        
+        # Version number pattern
+        if text.startswith('v') or any(char.isdigit() for char in text.split('.')[0] if '.' in text):
+            return f"Are you referring to version {text} specifically?"
+        
+        # Branch/environment names
+        if text.lower() in ['main', 'master', 'develop', 'staging', 'prod', 'production']:
+            return f"Do you mean the '{text}' branch specifically?"
+        
+        # Command or technical term
+        return f"Could you provide more details about '{text}' or confirm its exact spelling?"
+    
+    def _generate_user_response(self, clarification: Dict[str, Any], original_query: str) -> str:
+        """Generate user response to clarification question."""
+        
+        entity = clarification['entity']
+        category = clarification['category']
+        
+        # Extract the clarified information from original query context
+        if category == 'time':
+            if 'am' in entity.lower() or 'pm' in entity.lower():
+                return f"{entity} PST"
+            return f"{entity} in my local timezone"
+        elif category == 'location':
+            # Look for address patterns in the query
+            address_match = re.search(r'\d+\s+[A-Za-z\s]+(?:Street|St|Ave|Avenue|Rd|Road|Blvd|Boulevard),?\s*[A-Za-z\s]+,?\s*[A-Z]{2}', original_query)
+            if address_match:
+                return address_match.group(0)
+            return "123 Main Street, Berkeley, CA, USA"
+        elif category == 'quantity':
+            # Look for numbers in the query
+            number_match = re.search(r'\b(\d+)\b', original_query)
+            if number_match:
+                return number_match.group(1)
+            return "5"
+        elif category == 'item_specificity':
+            # Look for specific item mentions
+            specific_items = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b', original_query)
+            if specific_items:
+                return specific_items[0]
+            return f"regular {entity}"
+        elif category == 'action_ambiguity':
+            return f"I want to {entity} my settings"
+        elif category == 'technical_details':
+            if '/' in entity and len(entity.split('/')) == 2:
+                return f"Yes, I mean the repository {entity}"
+            elif '.' in entity and len(entity.split('.')[-1]) <= 4:
+                return f"Yes, the file is named {entity}"
+            elif entity.startswith('v') or any(char.isdigit() for char in entity.split('.')[0] if '.' in entity):
+                return f"Yes, I am referring to version {entity}"
+            elif entity.lower() in ['main', 'master', 'develop', 'staging', 'prod', 'production']:
+                return f"Yes, I mean the {entity} branch"
+            else:
+                return f"Yes, I mean {entity}"
+        
+        return entity
+
     def create_multiturn_conversation(self, original_query: str, clarifications: List[Dict[str, Any]]) -> List[List[Dict[str, Any]]]:
         """Create a multi-turn conversation from single-turn query."""
         
@@ -335,7 +446,8 @@ Generate only the clarification question, nothing else:
                 'location': 'there',
                 'quantity': 'some',
                 'item_specificity': 'something',
-                'action_ambiguity': 'help with'
+                'action_ambiguity': 'help with',
+                'technical_details': 'specific details'
             }
             
             replacement = replacements.get(category, '')
@@ -343,40 +455,6 @@ Generate only the clarification question, nothing else:
                 simplified = simplified.replace(entity, replacement, 1)
         
         return simplified.strip()
-    
-    def _generate_user_response(self, clarification: Dict[str, Any], original_query: str) -> str:
-        """Generate user response to clarification question."""
-        
-        entity = clarification['entity']
-        category = clarification['category']
-        
-        # Extract the clarified information from original query context
-        if category == 'time':
-            if 'am' in entity.lower() or 'pm' in entity.lower():
-                return f"{entity} PST"
-            return f"{entity} in my local timezone"
-        elif category == 'location':
-            # Look for address patterns in the query
-            address_match = re.search(r'\d+\s+[A-Za-z\s]+(?:Street|St|Ave|Avenue|Rd|Road|Blvd|Boulevard),?\s*[A-Za-z\s]+,?\s*[A-Z]{2}', original_query)
-            if address_match:
-                return address_match.group(0)
-            return "123 Main Street, Berkeley, CA, USA"
-        elif category == 'quantity':
-            # Look for numbers in the query
-            number_match = re.search(r'\b(\d+)\b', original_query)
-            if number_match:
-                return number_match.group(1)
-            return "5"
-        elif category == 'item_specificity':
-            # Look for specific item mentions
-            specific_items = re.findall(r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b', original_query)
-            if specific_items:
-                return specific_items[0]
-            return f"regular {entity}"
-        elif category == 'action_ambiguity':
-            return f"I want to {entity} my settings"
-        
-        return entity
 
 def process_single_case_robust(case_data):
     """Process a single case with BULLETPROOF error handling and retries."""
@@ -411,7 +489,7 @@ def process_single_case_robust(case_data):
         
         # Generate clarifications with retry logic
         clarifications = []
-        priority_order = ['time', 'location', 'quantity', 'item_specificity', 'action_ambiguity']
+        priority_order = ['time', 'location', 'quantity', 'item_specificity', 'action_ambiguity', 'technical_details']
         
         for category in priority_order:
             entities = ambiguous_entities.get(category, [])
@@ -457,6 +535,30 @@ def main(input_file, output_file_path, test_mode=False, max_workers=None):
     """Main processing function with bulletproof concurrency."""
     
     global processed_cases, failed_cases, start_time, checkpoint_file, output_file, data_to_process
+    
+    # Generate timestamped filename if not provided or if default name
+    if output_file_path == 'multiturn_simple.json' or not output_file_path:
+        # Extract dataset type from input filename
+        input_filename = os.path.basename(input_file)
+        dataset_type = 'unknown'
+        
+        if 'live' in input_filename.lower():
+            dataset_type = 'live'
+        elif 'simple' in input_filename.lower():
+            dataset_type = 'simple'
+        elif 'complex' in input_filename.lower():
+            dataset_type = 'complex'
+        elif 'parallel' in input_filename.lower():
+            dataset_type = 'parallel'
+        elif 'multiple' in input_filename.lower():
+            dataset_type = 'multiple'
+        
+        # Generate timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # Create new filename
+        output_file_path = f"single_to_multi_{timestamp}_{dataset_type}.json"
+        logger.info(f"Generated output filename: {output_file_path}")
     
     # Setup
     start_time = datetime.now()
