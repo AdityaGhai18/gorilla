@@ -31,8 +31,15 @@ echo "Max workers: $MAX_WORKERS"
 TOTAL_CASES=$(python3 -c "
 import json
 with open('$INPUT_FILE', 'r') as f:
-    data = json.load(f)
-print(len(data))
+    content = f.read().strip()
+    if content.startswith('['):
+        # JSON array format
+        data = json.loads(content)
+        print(len(data))
+    else:
+        # JSONL format - count lines
+        lines = [line.strip() for line in content.split('\n') if line.strip()]
+        print(len(lines))
 ")
 
 echo "Total cases to process: $TOTAL_CASES"
