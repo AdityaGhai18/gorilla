@@ -5,37 +5,41 @@ from pathlib import Path
 import random
 
 class BackgroundNoiseProcessor:
-    def __init__(self, noise_dir=None):
+    def __init__(self, noise_dir="background_noise"):
         """
         Initialize the background noise processor.
         
         Args:
-            noise_dir (str): Directory containing background noise audio files (optional)
+            noise_dir (str): Base directory containing the 'noise' subdirectory with noise files
         """
-        self.noise_dir = noise_dir if noise_dir else os.path.join(
-            os.path.dirname(__file__), "background_noise"
-        )
+        self.noise_dir = noise_dir
         self._ensure_noise_directory()
         self.noise_files = self._load_noise_files()
 
     def _ensure_noise_directory(self):
-        """Create the background noise directory if it doesn't exist."""
+        """Create the necessary directories if they don't exist."""
+        # Ensure main directory exists
         Path(self.noise_dir).mkdir(parents=True, exist_ok=True)
+        # Ensure noise directory exists
+        Path(os.path.join(self.noise_dir, "noise")).mkdir(parents=True, exist_ok=True)
+        # Ensure noisy_audio directory exists
+        Path(os.path.join(self.noise_dir, "noisy_audio")).mkdir(parents=True, exist_ok=True)
 
     def _load_noise_files(self):
-        """Load all noise files from the noise directory and its subdirectories."""
-        supported_formats = {".wav", ".mp3", ".ogg", ".webm"}
+        """Load noise files from the noise directory."""
+        noise_dir = os.path.join(self.noise_dir, "noise")
         noise_files = []
         
-        # Search in main directory and all subdirectories
-        for file in Path(self.noise_dir).rglob("*"):
-            if file.suffix.lower() in supported_formats:
-                noise_files.append(str(file))
+        # Only look for .webm files in the noise directory
+        webm_files = list(Path(noise_dir).glob("sample-*.webm"))
+        if webm_files:
+            noise_files.extend([str(f) for f in webm_files])
+            print(f"Found {len(webm_files)} .webm noise files")
         
         if not noise_files:
-            print(f"Warning: No supported noise files found in {self.noise_dir} or its subdirectories")
-        else:
-            print(f"Found {len(noise_files)} noise files")
+            print(f"Warning: No noise files found in {noise_dir}")
+            
+        return noise_files
                 
         return noise_files
 
@@ -58,6 +62,7 @@ class BackgroundNoiseProcessor:
         audio = AudioSegment.from_file(audio_path)
         
         # Randomly select a noise file
+        random.seed(20)
         noise_file = random.choice(self.noise_files)
         noise = AudioSegment.from_file(noise_file)
         
@@ -79,8 +84,14 @@ class BackgroundNoiseProcessor:
         
         # Generate output path if not provided
         if output_path is None:
-            base_path = os.path.splitext(audio_path)[0]
-            output_path = f"{base_path}_with_noise.wav"
+            # Create noisy_audio directory inside background_noise
+            noisy_dir = os.path.join(self.noise_dir, "noisy_audio")
+            Path(noisy_dir).mkdir(parents=True, exist_ok=True)
+            
+            # Use just the filename without full path
+            audio_filename = os.path.basename(audio_path)
+            base_filename = os.path.splitext(audio_filename)[0]
+            output_path = os.path.join(noisy_dir, f"{base_filename}_with_noise.wav")
         
         # Export the result
         combined.export(output_path, format="wav")
@@ -98,17 +109,43 @@ class BackgroundNoiseProcessor:
         Returns:
             list: Paths to all processed audio files
         """
+        # If no output directory specified, use noisy_audio in background_noise directory
         if output_dir is None:
-            output_dir = os.path.join(audio_dir, "with_noise")
+            output_dir = os.path.join(self.noise_dir, "noisy_audio")
         
+        # Create output directory
         Path(output_dir).mkdir(parents=True, exist_ok=True)
         processed_files = []
         
-        for audio_file in Path(audio_dir).glob("*.wav"):
-            output_path = os.path.join(output_dir, f"{audio_file.stem}_with_noise.wav")
-            processed_file = self.add_background_noise(
-                str(audio_file), output_path, noise_level
-            )
-            processed_files.append(processed_file)
+        # Get all wav files from input directory and its subdirectories
+        audio_files = list(Path(audio_dir).rglob("*.wav"))
+        total_files = len(audio_files)
+        
+        if total_files == 0:
+            print(f"No .wav files found in {audio_dir}")
+            return processed_files
+        
+        print(f"Processing {total_files} audio files...")
+        
+        # Process each audio file
+        for i, audio_file in enumerate(audio_files, 1):
+            # Preserve directory structure
+            rel_path = audio_file.relative_to(Path(audio_dir))
+            output_subdir = os.path.join(output_dir, os.path.dirname(str(rel_path)))
+            Path(output_subdir).mkdir(parents=True, exist_ok=True)
             
+            # Create output path
+            output_path = os.path.join(output_subdir, f"{audio_file.stem}_with_noise.wav")
+            
+            try:
+                processed_file = self.add_background_noise(
+                    str(audio_file), output_path, noise_level
+                )
+                processed_files.append(processed_file)
+                print(f"Processed {i}/{total_files}: {rel_path}")
+            except Exception as e:
+                print(f"Error processing {rel_path}: {str(e)}")
+                continue
+            
+        print(f"\nCompleted processing {len(processed_files)} files")
         return processed_files
