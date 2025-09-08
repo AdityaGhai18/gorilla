@@ -41,3 +41,9 @@ berkeley-function-call-leaderboard/bfcl_eval/scripts/ground_truth_conversation/
 
 # Ignore the wandb cache:
 **/wandb/
+
+# Ignore the virtual environment
+venv/
+
+xlam_function_calling_60k.json
+xlam_split_output_merged.json
