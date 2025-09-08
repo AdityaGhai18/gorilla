@@ -23,13 +23,19 @@ class BackgroundNoiseProcessor:
         Path(self.noise_dir).mkdir(parents=True, exist_ok=True)
 
     def _load_noise_files(self):
-        """Load all noise files from the noise directory."""
-        supported_formats = {".wav", ".mp3", ".ogg"}
+        """Load all noise files from the noise directory and its subdirectories."""
+        supported_formats = {".wav", ".mp3", ".ogg", ".webm"}
         noise_files = []
         
-        for file in Path(self.noise_dir).glob("*"):
+        # Search in main directory and all subdirectories
+        for file in Path(self.noise_dir).rglob("*"):
             if file.suffix.lower() in supported_formats:
                 noise_files.append(str(file))
+        
+        if not noise_files:
+            print(f"Warning: No supported noise files found in {self.noise_dir} or its subdirectories")
+        else:
+            print(f"Found {len(noise_files)} noise files")
                 
         return noise_files
 
