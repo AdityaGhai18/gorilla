@@ -26,19 +26,18 @@ class BackgroundNoiseProcessor:
         Path(os.path.join(self.noise_dir, "noisy_audio")).mkdir(parents=True, exist_ok=True)
 
     def _load_noise_files(self):
-        """Load noise files from the noise directory."""
+        """Load .wav, .webm, and .mp3 noise files from the noise directory."""
         noise_dir = os.path.join(self.noise_dir, "noise")
         noise_files = []
-        
-        # Only look for .webm files in the noise directory
-        webm_files = list(Path(noise_dir).glob("sample-*.webm"))
-        if webm_files:
-            noise_files.extend([str(f) for f in webm_files])
-            print(f"Found {len(webm_files)} .webm noise files")
-        
-        if not noise_files:
+        # Look for .wav, .webm, and .mp3 files in the noise directory
+        for ext in ("*.wav", "*.webm", "*.mp3"):
+            found = list(Path(noise_dir).glob(ext))
+            if found:
+                noise_files.extend([str(f) for f in found])
+        if noise_files:
+            print(f"Found {len(noise_files)} noise files (.wav, .webm, .mp3)")
+        else:
             print(f"Warning: No noise files found in {noise_dir}")
-            
         return noise_files
                 
         return noise_files
@@ -149,3 +148,42 @@ class BackgroundNoiseProcessor:
             
         print(f"\nCompleted processing {len(processed_files)} files")
         return processed_files
+
+def overlay_audio_with_noise(speech_path, noise_path, output_path=None, noise_level_db=-20):
+    """
+    Overlay a speech audio file with another audio file as noise.
+    
+    Args:
+        speech_path (str): Path to the speech audio file
+        noise_path (str): Path to the noise audio file
+        output_path (str): Path to save the output file (optional)
+        noise_level_db (int): dB to reduce noise audio (default: -20)
+        
+    Returns:
+        str: Path to the output file
+    """
+    # Load audio files
+    speech = AudioSegment.from_file(speech_path)
+    noise = AudioSegment.from_file(noise_path)
+
+    # Loop or trim noise to match speech duration
+    target_duration = len(speech)
+    if len(noise) < target_duration:
+        loops_needed = int(target_duration / len(noise)) + 1
+        noise = noise * loops_needed
+    noise = noise[:target_duration]
+
+    # Adjust noise volume
+    noise = noise + noise_level_db
+
+    # Overlay
+    combined = speech.overlay(noise)
+
+    # Output path
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(speech_path))[0]
+        noise_base = os.path.splitext(os.path.basename(noise_path))[0]
+        output_path = f"{base}_with_{noise_base}_noise.wav"
+
+    combined.export(output_path, format="wav")
+    return output_path

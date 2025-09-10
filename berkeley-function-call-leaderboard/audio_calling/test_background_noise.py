@@ -80,7 +80,50 @@ def test_batch_processing():
         else:
             print("No files were processed")
 
+def test_noise_comparison():
+    """
+    Overlay a single speech file with every available noise file (wav, webm, mp3)
+    and save each result for comparison at multiple noise levels.
+    """
+    noise_dir = os.path.join(os.path.dirname(__file__), "background_noise")
+    processor = BackgroundNoiseProcessor(noise_dir=noise_dir)
+    
+    # Use a test speech file
+    test_file = "/Users/imradawoodani/gorilla/berkeley-function-call-leaderboard/audio_calling/TTS/single_test_output/openai_prompted_text_function_context/simple/live_simple_106-63-0.wav"
+    
+    # Output directory for comparison
+    output_dir = os.path.join(noise_dir, "noisy_audio", "noise_comparison")
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Get all noise files (wav, webm, mp3)
+    noise_path = os.path.join(noise_dir, "noise")
+    noise_files = []
+    for ext in ("*.wav", "*.webm", "*.mp3"):
+        noise_files.extend(list(Path(noise_path).glob(ext)))
+    
+    if not noise_files:
+        print("No noise files found for comparison!")
+        return
+    
+    noise_levels = [-5, -10, -20, -30]  # dB: loudest to softest
+    print(f"\nTesting noise comparison with {len(noise_files)} noise files and levels {noise_levels}...")
+    for noise_file in noise_files:
+        # Temporarily set this as the only noise file
+        processor.noise_files = [str(noise_file)]
+        noise_name = noise_file.stem
+        for noise_level in noise_levels:
+            output_path = os.path.join(output_dir, f"speech_with_{noise_name}_at_{abs(noise_level)}db.wav")
+            try:
+                processed_file = processor.add_background_noise(
+                    test_file,
+                    output_path=output_path,
+                    noise_level=noise_level
+                )
+                print(f"Created: {os.path.basename(processed_file)} (noise level: {noise_level}dB)")
+            except Exception as e:
+                print(f"Error processing with {noise_file.name} at {noise_level}dB: {e}")
+    print(f"\nAll comparison files saved in: {output_dir}")
+
 if __name__ == "__main__":
-    test_background_noise()
-    test_with_kaggle_noise()
     test_batch_processing()
+    test_noise_comparison()
