@@ -127,3 +127,14 @@ def test_noise_comparison():
 if __name__ == "__main__":
     test_batch_processing()
     test_noise_comparison()
+    from background import fluctuate_audio_volume
+
+    fluctuate_audio_volume(
+        audio_path="/Users/imradawoodani/gorilla/berkeley-function-call-leaderboard/audio_calling/background_noise/noisy_audio/noise_comparison/speech_with_restaurant-ambience-24720_at_10db.wav",
+        output_path="berkeley-function-call-leaderboard/audio_calling/background_noise/fluctuations/fluctuated_sample.wav",
+        min_db_change=-15,  # softest dip
+        max_db_change=10,   # loudest boost
+        min_duration_ms=500,
+        max_duration_ms=3000,
+        n_fluctuations=5
+    )

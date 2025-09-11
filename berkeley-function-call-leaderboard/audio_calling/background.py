@@ -187,3 +187,54 @@ def overlay_audio_with_noise(speech_path, noise_path, output_path=None, noise_le
 
     combined.export(output_path, format="wav")
     return output_path
+
+def fluctuate_audio_volume(
+    audio_path,
+    output_path=None,
+    min_db_change=-15,
+    max_db_change=10,
+    min_duration_ms=500,
+    max_duration_ms=3000,
+    n_fluctuations=5
+):
+    """
+    Randomly fluctuate the volume of an audio clip, lowering and raising it at random intervals.
+    
+    Args:
+        audio_path (str): Path to the input audio file
+        output_path (str): Path to save the output audio file (optional)
+        min_db_change (int): Minimum dB change (negative for lowering)
+        max_db_change (int): Maximum dB change (positive for increasing)
+        min_duration_ms (int): Minimum duration of a fluctuation in ms
+        max_duration_ms (int): Maximum duration of a fluctuation in ms
+        n_fluctuations (int): Number of fluctuations to apply
+            
+    Returns:
+        str: Path to the output audio file
+    """
+    audio = AudioSegment.from_file(audio_path)
+    length = len(audio)
+    segments = []
+    last_pos = 0
+    flucts = []
+    for _ in range(n_fluctuations):
+        start = random.randint(0, length - min_duration_ms)
+        dur = random.randint(min_duration_ms, min(max_duration_ms, length - start))
+        db_change = random.uniform(min_db_change, max_db_change)
+        flucts.append((start, start+dur, db_change))
+    flucts.sort()  # sort by start time
+    for start, end, db_change in flucts:
+        if last_pos < start:
+            segments.append(audio[last_pos:start])
+        fluct_segment = audio[start:end] + db_change
+        segments.append(fluct_segment)
+        last_pos = end
+    if last_pos < length:
+        segments.append(audio[last_pos:])
+    fluctuated = sum(segments)
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_fluctuated.wav"
+    fluctuated.export(output_path, format="wav")
+    print(f"Created fluctuated audio: {output_path}")
+    return output_path
