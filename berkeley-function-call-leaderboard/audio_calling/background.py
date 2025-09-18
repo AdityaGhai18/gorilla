@@ -1,5 +1,6 @@
 import numpy as np
 from pydub import AudioSegment
+from pydub.generators import Sine
 import os
 from pathlib import Path
 import random
@@ -340,5 +341,112 @@ def apply_gradual_audio_fade(
         base = os.path.splitext(os.path.basename(speech_path))[0]
         output_path = f"{base}_walkaway.wav"
     fluctuated.export(output_path, format="wav")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_network_cut_effect(
+    audio_path,
+    output_path=None,
+    min_cut_ms=100,
+    max_cut_ms=600,
+    n_cuts=8
+):
+    """
+    Simulate a network cut effect by muting random short segments in the audio.
+    
+    Args:
+        audio_path (str): Path to the input audio file
+        output_path (str): Path to save the output audio file (optional)
+        min_cut_ms (int): Minimum duration of a cut in ms
+        max_cut_ms (int): Maximum duration of a cut in ms
+        n_cuts (int): Number of cuts to apply
+            
+    Returns:
+        str: Path to the output audio file
+    """
+    from pydub import AudioSegment
+    import random
+    import os
+    
+    audio = AudioSegment.from_file(audio_path)
+    length = len(audio)
+    cuts = []
+    for _ in range(n_cuts):
+        start = random.randint(0, max(0, length - min_cut_ms))
+        dur = random.randint(min_cut_ms, min(max_cut_ms, length - start))
+        cuts.append((start, start+dur))
+    cuts.sort()  # sort by start time
+    segments = []
+    last_pos = 0
+    for start, end in cuts:
+        if last_pos < start:
+            segments.append(audio[last_pos:start])
+        # Insert silence for the cut
+        segments.append(AudioSegment.silent(duration=end-start, frame_rate=audio.frame_rate))
+        last_pos = end
+    if last_pos < length:
+        segments.append(audio[last_pos:])
+    glitched = sum(segments)
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_networkcut.wav"
+    glitched.export(output_path, format="wav")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_network_beep_effect(
+    audio_path,
+    output_path=None,
+    min_beep_ms=100,
+    max_beep_ms=600,
+    n_beeps=8,
+    beep_freq=1000,
+    beep_db=-10
+):
+    """
+    Simulate a network cut effect by inserting beeps (instead of silence) at random short segments in the audio.
+    
+    Args:
+        audio_path (str): Path to the input audio file
+        output_path (str): Path to save the output audio file (optional)
+        min_beep_ms (int): Minimum duration of a beep in ms
+        max_beep_ms (int): Maximum duration of a beep in ms
+        n_beeps (int): Number of beeps to insert
+        beep_freq (int): Frequency of the beep in Hz
+        beep_db (int): Volume of the beep in dB
+            
+    Returns:
+        str: Path to the output audio file
+    """
+    from pydub import AudioSegment
+    from pydub.generators import Sine
+    import random
+    import os
+    
+    audio = AudioSegment.from_file(audio_path)
+    length = len(audio)
+    beeps = []
+    for _ in range(n_beeps):
+        start = random.randint(0, max(0, length - min_beep_ms))
+        dur = random.randint(min_beep_ms, min(max_beep_ms, length - start))
+        beeps.append((start, start+dur))
+    beeps.sort()  # sort by start time
+    segments = []
+    last_pos = 0
+    for start, end in beeps:
+        if last_pos < start:
+            segments.append(audio[last_pos:start])
+        # Insert beep for the cut
+        beep = Sine(beep_freq).to_audio_segment(duration=end-start).apply_gain(beep_db)
+        beep = beep.set_frame_rate(audio.frame_rate).set_channels(audio.channels)
+        segments.append(beep)
+        last_pos = end
+    if last_pos < length:
+        segments.append(audio[last_pos:])
+    glitched = sum(segments)
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_networkbeep.wav"
+    glitched.export(output_path, format="wav")
     print(f"Created: {output_path}")
     return output_path
