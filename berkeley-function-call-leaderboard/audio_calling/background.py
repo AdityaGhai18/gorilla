@@ -212,6 +212,7 @@ def fluctuate_audio_volume(
     Returns:
         str: Path to the output audio file
     """
+    random.seed(11)
     audio = AudioSegment.from_file(audio_path)
     length = len(audio)
     segments = []
@@ -237,4 +238,107 @@ def fluctuate_audio_volume(
         output_path = f"{base}_fluctuated.wav"
     fluctuated.export(output_path, format="wav")
     print(f"Created fluctuated audio: {output_path}")
+    return output_path
+
+def apply_gradual_noise_fade(
+    speech_path,
+    noise_path,
+    output_path=None,
+    min_db=-30,
+    max_db=0
+):
+    """
+    Overlay noise on a speech file with a gradual fade out and in,
+    simulating someone walking away from and then back to a phone.
+    
+    Args:
+        speech_path (str): Path to the speech audio file
+        noise_path (str): Path to the noise audio file
+        output_path (str): Path to save the output file (optional)
+        min_db (int): Minimum dB for noise (farthest point)
+        max_db (int): Maximum dB for noise (closest point)
+        
+    Returns:
+        str: Path to the output file
+    """
+    from pydub import AudioSegment
+    import numpy as np
+    import os
+    
+    speech = AudioSegment.from_file(speech_path)
+    noise = AudioSegment.from_file(noise_path)
+    duration = len(speech)
+    # Loop or trim noise to match speech duration
+    if len(noise) < duration:
+        loops_needed = int(np.ceil(duration / len(noise)))
+        noise = noise * loops_needed
+    noise = noise[:duration]
+    # Create a fade-out and fade-in envelope
+    half = duration // 2
+    envelope = np.concatenate([
+        np.linspace(max_db, min_db, half),  # fade out
+        np.linspace(min_db, max_db, duration - half)  # fade in
+    ])
+    # Apply envelope in chunks
+    chunk_ms = 100  # 0.1s
+    chunks = []
+    for i in range(0, duration, chunk_ms):
+        db = envelope[i] if i < len(envelope) else envelope[-1]
+        chunk = noise[i:i+chunk_ms] + db
+        chunks.append(chunk)
+    faded_noise = sum(chunks)
+    # Overlay
+    combined = speech.overlay(faded_noise)
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(speech_path))[0]
+        noise_base = os.path.splitext(os.path.basename(noise_path))[0]
+        output_path = f"{base}_with_{noise_base}_walkaway.wav"
+    combined.export(output_path, format="wav")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_gradual_audio_fade(
+    speech_path,
+    output_path=None,
+    min_db=-30,
+    max_db=0
+):
+    """
+    Gradually decrease and then increase the volume of the main audio (not the noise),
+    simulating someone walking away from and then back to a phone.
+    
+    Args:
+        speech_path (str): Path to the speech audio file
+        output_path (str): Path to save the output file (optional)
+        min_db (int): Minimum dB for audio (farthest point)
+        max_db (int): Maximum dB for audio (closest point)
+        
+    Returns:
+        str: Path to the output file
+    """
+    from pydub import AudioSegment
+    import numpy as np
+    import os
+    
+    speech = AudioSegment.from_file(speech_path)
+    duration = len(speech)
+    # Create a fade-out and fade-in envelope
+    half = duration // 2
+    envelope = np.concatenate([
+        np.linspace(max_db, min_db, half),  # fade out
+        np.linspace(min_db, max_db, duration - half)  # fade in
+    ])
+    # Apply envelope in chunks
+    chunk_ms = 100  # 0.1s
+    segments = []
+    for i in range(0, duration, chunk_ms):
+        db = envelope[i] if i < len(envelope) else envelope[-1]
+        chunk = speech[i:i+chunk_ms] + db
+        segments.append(chunk)
+    fluctuated = sum(segments)
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(speech_path))[0]
+        output_path = f"{base}_walkaway.wav"
+    fluctuated.export(output_path, format="wav")
+    print(f"Created: {output_path}")
     return output_path
