@@ -43,7 +43,7 @@ class BackgroundNoiseProcessor:
                 
         return noise_files
 
-    def add_background_noise(self, audio_path, output_path=None, noise_level=-20):
+    def add_background_noise(self, audio_path, noise_file, output_path=None, noise_level=-20):
         """
         Add background noise to an audio file.
         
@@ -55,15 +55,16 @@ class BackgroundNoiseProcessor:
         Returns:
             str: Path to the output audio file
         """
-        if not self.noise_files:
-            raise ValueError("No background noise files found in the noise directory")
-
+        # if not self.noise_files:
+        #     raise ValueError("No background noise files found in the noise directory")
+        if not os.path.exists(noise_file):
+            raise FileNotFoundError(f"Noise file not found: {noise_file}")
         # Load the main audio
         audio = AudioSegment.from_file(audio_path)
         
-        # Randomly select a noise file
-        random.seed(20)
-        noise_file = random.choice(self.noise_files)
+        # # Randomly select a noise file
+        # random.seed(16)
+        # noise_file = random.choice(self.noise_files)
         noise = AudioSegment.from_file(noise_file)
         
         # Loop or trim noise to match speech duration
@@ -213,7 +214,6 @@ def fluctuate_audio_volume(
     Returns:
         str: Path to the output audio file
     """
-    random.seed(11)
     audio = AudioSegment.from_file(audio_path)
     length = len(audio)
     segments = []
@@ -448,5 +448,63 @@ def apply_network_beep_effect(
         base = os.path.splitext(os.path.basename(audio_path))[0]
         output_path = f"{base}_networkbeep.wav"
     glitched.export(output_path, format="wav")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_mic_rubbing_effect(audio_path, output_path=None):
+    """
+    Simulate a mic rubbing effect by overlaying a low-frequency rumble sound.
+    
+    Args:
+        audio_path (str): Path to the input audio file
+        output_path (str): Path to save the output audio file (optional)
+    Returns:
+        str: Path to the output audio file
+    """
+    from pydub import AudioSegment
+    import os
+    
+    audio = AudioSegment.from_file(audio_path)
+    duration = len(audio)
+    
+    # Generate a low-frequency rumble (e.g., 50 Hz sine wave)
+    rumble_freq = 50  # Hz
+    rumble = Sine(rumble_freq).to_audio_segment(duration=duration).apply_gain(-20)
+    rumble = rumble.set_frame_rate(audio.frame_rate).set_channels(audio.channels)
+    
+    # Overlay rumble on the original audio
+    combined = audio.overlay(rumble)
+    
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_micrubbing.wav"
+    
+    combined.export(output_path, format="wav")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_audio_mumbling_effect(audio_path, output_path=None):
+    """
+    Simulate a mumbling effect by applying a low-pass filter to the audio.
+    
+    Args:
+        audio_path (str): Path to the input audio file
+        output_path (str): Path to save the output audio file (optional)
+    Returns:
+        str: Path to the output audio file
+    """
+    from pydub import AudioSegment
+    import os
+    
+    audio = AudioSegment.from_file(audio_path)
+    
+    # Apply a low-pass filter to simulate mumbling
+    mumble = audio.low_pass_filter(300)  # Cutoff frequency at 300 Hz
+    
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_mumbling.wav"
+    
+    mumble.export(output_path, format="wav")
     print(f"Created: {output_path}")
     return output_path

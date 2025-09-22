@@ -5,9 +5,12 @@ from background import (
     fluctuate_audio_volume,
     apply_gradual_audio_fade,
     apply_network_cut_effect,
-    apply_network_beep_effect
+    apply_audio_mumbling_effect,
+    apply_mic_rubbing_effect
 )
 from pathlib import Path
+import random
+random.seed(16)
 
 def get_all_noise_files(noise_dir):
     noise_files = []
@@ -19,19 +22,24 @@ def apply_effects_chain(audio_path, output_path, effects_chain):
     current_path = audio_path
     temp_files = []
     noise_processor = None
-    import random
-    random.seed(16)
     for effect in effects_chain:
         if effect['type'] == 'background_noise':
             noise_file = effect['noise_file']
             temp_out = output_path.replace('.wav', f'_noise_{Path(noise_file).stem}.wav')
             if noise_processor is None:
                 noise_processor = BackgroundNoiseProcessor(noise_dir=str(Path(noise_file).parent.parent))
-            # Temporarily override noise_files to use only the selected noise_file
-            original_noise_files = noise_processor.noise_files
-            noise_processor.noise_files = [noise_file]
-            noise_processor.add_background_noise(current_path, output_path=temp_out, noise_level=effect.get('noise_level', -20))
-            noise_processor.noise_files = original_noise_files
+            noise_processor.add_background_noise(
+                current_path,
+                noise_file=noise_file, # Pass the specific noise file
+                output_path=temp_out,
+                noise_level=effect.get('noise_level', -20)
+            )
+
+            # # Temporarily override noise_files to use only the selected noise_file
+            # original_noise_files = noise_processor.noise_files
+            # noise_processor.noise_files = [noise_file]
+            # noise_processor.add_background_noise(current_path, output_path=temp_out, noise_level=effect.get('noise_level', -20))
+            # noise_processor.noise_files = original_noise_files
             current_path = temp_out
             temp_files.append(temp_out)
         elif effect['type'] == 'audio_fade':
@@ -47,20 +55,27 @@ def apply_effects_chain(audio_path, output_path, effects_chain):
                 apply_network_cut_effect(current_path, output_path=temp_out, n_cuts=n_cuts)
                 current_path = temp_out
                 temp_files.append(temp_out)
-        elif effect['type'] == 'network_beep':
-            prob = effect.get('probability', 1.0)
-            n_beeps = effect.get('n_beeps', 8)
-            if random.random() < prob:
-                temp_out = output_path.replace('.wav', '_networkbeep.wav')
-                apply_network_beep_effect(current_path, output_path=temp_out, n_beeps=n_beeps)
-                current_path = temp_out
-                temp_files.append(temp_out)
         elif effect['type'] == 'fluctuate':
             temp_out = output_path.replace('.wav', '_fluctuate.wav')
             fluctuate_audio_volume(current_path, output_path=temp_out)
             current_path = temp_out
             temp_files.append(temp_out)
         # Add more effects here as needed
+        elif effect['type'] == 'mic_rubbing':
+            prob = effect.get('probability', 1.0)
+            if random.random() < prob:
+                temp_out = output_path.replace('.wav', '_micrubbing.wav')
+                apply_mic_rubbing_effect(current_path, output_path=temp_out)
+                current_path = temp_out
+                temp_files.append(temp_out)
+        
+        elif effect['type'] == 'audio_mumbling':
+            prob = effect.get('probability', 1.0)
+            if random.random() < prob:
+                temp_out = output_path.replace('.wav', '_mumbling.wav')
+                apply_audio_mumbling_effect(current_path, output_path=temp_out)
+                current_path = temp_out
+                temp_files.append(temp_out)
     # Final output
     os.rename(current_path, output_path)
     # Clean up temp files except the final output
@@ -72,13 +87,22 @@ def apply_effects_chain(audio_path, output_path, effects_chain):
 
 def generate_feature_combinations(noise_files, features):
     # Each feature is a dict with 'type' and optional params
-    # For background noise, create a sub-feature for each noise file
+    # For background noise, create sub-features for each noise file and dB level combination
     feature_variants = []
     for f in features:
         if f['type'] == 'background_noise':
+            db_levels = [-30, -25, -20, -15]  # Different decibel levels
             for noise_file in noise_files:
+                for db_level in db_levels:
+                    variant = f.copy()
+                    variant['noise_file'] = str(noise_file)
+                    variant['noise_level'] = db_level
+                    feature_variants.append(variant)
+        elif f['type'] == 'network_cut':
+            cut_counts = [2, 4, 5, 7, 10]  # Your desired sub-features
+            for count in cut_counts:
                 variant = f.copy()
-                variant['noise_file'] = str(noise_file)
+                variant['n_cuts'] = count
                 feature_variants.append(variant)
         else:
             feature_variants.append(f)
@@ -88,47 +112,65 @@ def generate_feature_combinations(noise_files, features):
         for combo in itertools.combinations(feature_variants, r):
             # Only one background noise per combo
             noise_count = sum(1 for e in combo if e['type'] == 'background_noise')
-            if noise_count <= 1:
+            # Prevent multiple network_cut variants in the same combo
+            cut_count = sum(1 for e in combo if e['type'] == 'network_cut')
+            if noise_count <= 1 and cut_count <= 1:
                 all_combos.append(combo)
     return all_combos
+
+def get_all_audio_files(input_dir):
+    audio_files = []
+    for ext in ("*.wav", "*.mp3"):
+        for file in Path(input_dir).rglob(ext):
+            audio_files.append(file)
+    return audio_files
 
 def process_all_speechified(input_dir, output_dir, noise_dir):
     os.makedirs(output_dir, exist_ok=True)
     noise_files = get_all_noise_files(noise_dir)
     features = [
-        {'type': 'background_noise', 'noise_level': -20},
+        #removed ntwork beep
+        {'type': 'background_noise'},  # noise_level will be added in combinations
         {'type': 'audio_fade'},
-        {'type': 'network_cut', 'probability': 0.3, 'n_cuts': 4},
-        {'type': 'network_beep', 'probability': 0.2, 'n_beeps': 2},
-        {'type': 'fluctuate'}
-        # Add more features here (mic rubbing, mumbles, volume level)
+        {'type': 'network_cut', 'probability': 0.3},
+        {'type': 'fluctuate'},
+        # Add the mic rumbling and audio mumbling effects here too
+        {'type': 'mic_rubbing', 'probability': 0.1},
+        {'type': 'audio_mumbling', 'probability': 0.1}
     ]
     combos = generate_feature_combinations(noise_files, features)
     print(f"Total combinations: {len(combos)}")
-    speech_files = list(Path(input_dir).glob('*.mp3'))
-    # Assign each permutation to a different audio file (one-to-one mapping)
-    min_len = min(len(speech_files), len(combos))
-    for i in range(min_len):
-        speech_file = speech_files[i]
-        combo = combos[i]
-        base = Path(speech_file).stem
-        combo_names = '_'.join([e['type'] + (('_' + Path(e['noise_file']).stem) if e['type']=='background_noise' else '') for e in combo])
+    
+    # Get all audio files recursively
+    speech_files = get_all_audio_files(input_dir)
+    print(f"Total audio files found: {len(speech_files)}")
+    
+    # Process each audio file with a combination
+    for i, speech_file in enumerate(speech_files):
+        # Use modulo to loop over combinations
+        combo = combos[i % len(combos)]
+        
+        # Preserve directory structure in output
+        rel_path = speech_file.relative_to(Path(input_dir))
+        out_dir = Path(output_dir) / rel_path.parent
+        out_dir.mkdir(parents=True, exist_ok=True)
+        
+        base = speech_file.stem
+        combo_names = '_'.join([
+            e['type'] + 
+            (('_' + Path(e['noise_file']).stem + f'_db{e["noise_level"]}') if e['type']=='background_noise' else '') 
+            for e in combo
+        ])
         out_name = f"{base}_{combo_names}.wav"
-        out_path = os.path.join(output_dir, out_name)
+        out_path = str(out_dir / out_name)
+        
         print(f"Processing {speech_file} with {combo_names}")
         apply_effects_chain(str(speech_file), out_path, combo)
-    if len(combos) > len(speech_files):
-        print(f"Warning: {len(combos) - len(speech_files)} permutations were not used due to insufficient audio files.")
-    elif len(speech_files) > len(combos):
-        print(f"Warning: {len(speech_files) - len(combos)} audio files were not used due to insufficient permutations.")
 
 
-# when all permutations of features are done, loppover them for the rest of the audio files in the directory
-# e.g. if there are 10 permutations and 25 audio files, the first 10 audio files get unique permutations, the next 10 get the same as the first 10
-# and the last 5 get the first 5 permutations again
-
+# Update the input directory to process all audio files
 process_all_speechified(
-    input_dir="berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multi_turn_base",           # directory with your speechified .wav files
-    output_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/final",       # where to save all processed files
-    noise_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/noise" # directory with your noise files
+    input_dir="berkeley-function-call-leaderboard/audio_calling/audio",
+    output_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/noisy_FINAL",
+    noise_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/noise"
 )
