@@ -20,6 +20,7 @@ def apply_effects_chain(audio_path, output_path, effects_chain):
     temp_files = []
     noise_processor = None
     import random
+    random.seed(16)
     for effect in effects_chain:
         if effect['type'] == 'background_noise':
             noise_file = effect['noise_file']
@@ -121,6 +122,10 @@ def process_all_speechified(input_dir, output_dir, noise_dir):
     elif len(speech_files) > len(combos):
         print(f"Warning: {len(speech_files) - len(combos)} audio files were not used due to insufficient permutations.")
 
+
+# when all permutations of features are done, loppover them for the rest of the audio files in the directory
+# e.g. if there are 10 permutations and 25 audio files, the first 10 audio files get unique permutations, the next 10 get the same as the first 10
+# and the last 5 get the first 5 permutations again
 
 process_all_speechified(
     input_dir="berkeley-function-call-leaderboard/audio_calling/clean_to_speech_text/final_results/audio/BFCL_v3_multi_turn_base",           # directory with your speechified .wav files
