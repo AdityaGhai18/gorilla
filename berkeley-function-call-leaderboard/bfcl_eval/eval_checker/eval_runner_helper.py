@@ -5,11 +5,11 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from bfcl_eval.constants.category_mapping import TEST_FILE_MAPPING
+from bfcl_eval.constants.category_mapping import VERSION_PREFIX
 from bfcl_eval.constants.column_headers import *
 from bfcl_eval.constants.eval_config import *
 from bfcl_eval.constants.model_config import MODEL_CONFIG_MAPPING
-from bfcl_eval.utils import extract_test_category, load_file
+from bfcl_eval.utils import *
 
 
 def calculate_weighted_accuracy(accuracy_dict_list, display_na_if_category_missing=True):
@@ -53,6 +53,59 @@ def calculate_unweighted_accuracy(accuracy_dict_list, display_na_if_category_mis
         "accuracy": total_accuracy / len(accuracy_dict_list),
         "total_count": total_count,
     }
+
+    if has_na and display_na_if_category_missing:
+        result["display_accuracy"] = "N/A"
+    else:
+        result["display_accuracy"] = result["accuracy"]
+
+    return result
+
+
+def calculate_percentage_weighted_accuracy(
+    accuracy_dict_list, weights, display_na_if_category_missing=True
+):
+    """
+    Calculate accuracy using a fixed list of weights that sum to 1.0.
+
+    Parameters
+    ----------
+    accuracy_dict_list : list[dict]
+        Each element is a dict containing at least the keys ``accuracy``, ``total_count`` and ``display_accuracy``.
+    weights : list[float]
+        The weight for each corresponding accuracy entry. Can sum to any positive value – they will be normalised internally.
+    display_na_if_category_missing : bool, default True
+        If True and any of the input categories has ``display_accuracy`` equal to "N/A", the returned ``display_accuracy`` will also be "N/A".
+
+    Returns
+    -------
+    dict
+        A dict with the same schema as other helper functions in this module (``accuracy``, ``total_count``, ``display_accuracy``).
+    """
+    assert len(accuracy_dict_list) == len(
+        weights
+    ), "Weights length must match accuracy list"
+
+    has_na = False
+    total_count = 0
+    total_accuracy = 0.0
+    weight_sum = sum(weights)
+    if weight_sum == 0:
+        raise ValueError("Sum of weights must be greater than 0")
+
+    # Normalise weights so that they sum to 1.0
+    weights_norm = [w / weight_sum for w in weights]
+
+    for accuracy_dict, weight in zip(accuracy_dict_list, weights_norm):
+        accuracy = accuracy_dict["accuracy"]
+        count = accuracy_dict["total_count"]
+        if accuracy_dict["display_accuracy"] == "N/A":
+            has_na = True
+
+        total_count += count
+        total_accuracy += accuracy * weight
+
+    result = {"accuracy": total_accuracy, "total_count": total_count}
 
     if has_na and display_na_if_category_missing:
         result["display_accuracy"] = "N/A"
@@ -108,6 +161,29 @@ def record_cost_latency(leaderboard_table, model_name, model_output_data):
     leaderboard_table[model_name]["latency"]["data"].extend(latency)
 
 
+def save_eval_results(
+    result, correct_count, model_result, test_category, model_name, score_dir
+) -> tuple[float, int]:
+    """
+    Compute accuracy, finalize evaluation results and write them to disk.
+    Return the accuracy and the total number of test cases.
+    """
+    accuracy = correct_count / len(model_result)
+    result.insert(
+        0,
+        {
+            "accuracy": accuracy,
+            "correct_count": correct_count,
+            "total_count": len(model_result),
+        },
+    )
+    output_file_name = f"{VERSION_PREFIX}_{test_category}_score.json"
+    output_file_dir = score_dir / model_name / get_general_category(test_category)
+    write_list_of_dicts_to_file(output_file_name, result, output_file_dir)
+
+    return accuracy, len(model_result)
+
+
 def get_cost_latency_info(model_name, cost_data, latency_data):
     cost, mean_latency, std_latency, percentile_95_latency = "N/A", "N/A", "N/A", "N/A"
     model_config = MODEL_CONFIG_MAPPING[model_name]
@@ -151,8 +227,11 @@ def get_category_score(score_dict: dict, test_category: str) -> dict:
         score["display_accuracy"] = score["accuracy"]
         return score
     else:
-        test_file_path = TEST_FILE_MAPPING[test_category]
-        num_entry = len(load_file(PROMPT_PATH / test_file_path))
+        num_entry = len(
+            load_dataset_entry(
+                test_category, include_prereq=False, include_language_specific_hint=False
+            )
+        )
         # If a category is not being evaluated, it needs to be distinguished from the situation where the evaluation score is 0
         # It will still be considered 0 in the overall score calculation though
         # We use `display_accuracy` to special handle
@@ -197,6 +276,7 @@ def generate_leaderboard_csv(
     data_non_live = []
     data_live = []
     data_multi_turn = []
+    data_agentic = []
     data_combined = []
     for model_name, value in leaderboard_table.items():
         model_name_escaped = model_name.replace("_", "/")
@@ -421,14 +501,6 @@ def generate_leaderboard_csv(
         no_conversion_numeric_column_index=[4, 5, 6, 7],
     )
 
-    # TODO: Update and optimize the logic
-    # Check if all categories are present and evaluated for all models
-    # if eval_models:
-    #     category_status = check_model_category_status(score_path=output_path)
-    #     check_all_category_present(
-    #         category_status, eval_models=eval_models, eval_categories=eval_categories
-    #     )
-
     wandb_project = os.getenv("WANDB_BFCL_PROJECT")
     if wandb_project and wandb_project != "ENTITY:PROJECT":
         import wandb
@@ -438,7 +510,7 @@ def generate_leaderboard_csv(
             # wandb_project is 'entity:project'
             entity=wandb_project.split(":")[0],
             project=wandb_project.split(":")[1],
-            name=f"BFCL-v3-{datetime.now().strftime('%Y%m%d-%H%M%S')}",
+            name=f"BFCL-v4-{datetime.now().strftime('%Y%m%d-%H%M%S')}",
         )
 
         # Log CSV files to WandB
@@ -496,8 +568,9 @@ def update_leaderboard_table_with_local_score_file(
     # Traverse each subdirectory
     for subdir in subdirs:
         model_name = subdir.relative_to(score_path).name
-        # Find and process all JSON files in the subdirectory
-        for model_score_json in subdir.glob("*.json"):
+        # Find and process all score JSON files recursively in the subdirectory
+        pattern = f"{VERSION_PREFIX}_*_score.json"
+        for model_score_json in subdir.rglob(pattern):
             metadata = load_file(model_score_json)[0]
             accuracy, total_count = metadata["accuracy"], metadata["total_count"]
             test_category = extract_test_category(model_score_json)

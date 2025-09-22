@@ -2,9 +2,10 @@ import os
 import subprocess
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor
-from typing import Optional
 import traceback
+from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+from typing import Any, Optional
 
 import requests
 from bfcl_eval.constants.eval_config import RESULT_PATH, VLLM_PORT
@@ -13,9 +14,9 @@ from bfcl_eval.model_handler.model_style import ModelStyle
 from bfcl_eval.model_handler.utils import (
     default_decode_ast_prompting,
     default_decode_execute_prompting,
-    func_doc_language_specific_pre_processing,
     system_prompt_pre_processing_chat_model,
 )
+from bfcl_eval.utils import is_agentic, is_multi_turn
 from openai import OpenAI
 from overrides import EnforceOverrides, final, override
 from tqdm import tqdm
@@ -71,7 +72,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         include_input_log: bool,
         exclude_state_log: bool,
         update_mode: bool,
-        result_dir=RESULT_PATH,
+        result_dir: Path = RESULT_PATH,
     ):
         """
         Batch inference for OSS models.
@@ -219,6 +220,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
 
             # Once the server is ready, make the completion requests
             futures = []
+            events = {test_case["id"]: threading.Event() for test_case in test_entries}
             with ThreadPoolExecutor(max_workers=100) as executor:
                 with tqdm(
                     total=len(test_entries),
@@ -229,6 +231,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
                         future = executor.submit(
                             self._multi_threaded_inference,
                             test_case,
+                            events,
                             include_input_log,
                             exclude_state_log,
                         )
@@ -263,35 +266,48 @@ class OSSHandler(BaseHandler, EnforceOverrides):
 
     @final
     def _multi_threaded_inference(
-        self, test_case, include_input_log: bool, exclude_state_log: bool
+        self, test_case, events, include_input_log: bool, exclude_state_log: bool
     ):
         """
         This is a wrapper function to make sure that, if an error occurs during inference, the process does not stop.
         """
         assert type(test_case["function"]) is list
 
+        # Wait for all dependencies to complete
+        for dependency_id in test_case.get("depends_on", []):
+            events[dependency_id].wait()  # Wait until the dependent task sets its event
+
         try:
-            if "multi_turn" in test_case["id"]:
-                model_responses, metadata = self.inference_multi_turn_prompting(
-                    test_case, include_input_log, exclude_state_log
-                )
-            else:
-                model_responses, metadata = self.inference_single_turn_prompting(
-                    test_case, include_input_log
-                )
-        except Exception as e:
-            print("-" * 100)
-            print(
-                "❗️❗️ Error occurred during inference. Maximum reties reached for rate limit or other error. Continuing to next test case."
+            # FIXME @HuanzhiMao
+            # assert "FC" in self.model_name or self.is_fc_model, "Model is not a FC model"
+            model_responses, metadata = self.inference_multi_turn_prompting(
+                test_case, include_input_log, exclude_state_log
             )
-            print(f"❗️❗️ Test case ID: {test_case['id']}, Error: {str(e)}")
-            traceback.print_exc(limit=10)
-            print("-" * 100)
+            # if is_multi_turn(test_case["id"]) or is_agentic(test_case["id"]):
+            #     model_responses, metadata = self.inference_multi_turn_prompting(
+            #         test_case, include_input_log, exclude_state_log
+            #     )
+            # else:
+            #     model_responses, metadata = self.inference_single_turn_prompting(
+            #         test_case, include_input_log
+            #     )
+        except Exception as e:
+            error_block = (
+                "-" * 100
+                + "\n❗️❗️ Error occurred during inference. Continuing to next test case.\n"
+                + f"❗️❗️ Test case ID: {test_case['id']}, Error: {str(e)}\n"
+                + traceback.format_exc(limit=10)
+                + "-" * 100
+            )
+            print(error_block)
 
             model_responses = f"Error during inference: {str(e)}"
             metadata = {
                 "traceback": traceback.format_exc(),
             }
+
+        # Signal that the current task is complete
+        events[test_case["id"]].set()
 
         result_to_write = {
             "id": test_case["id"],
@@ -340,6 +356,9 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         if hasattr(self, "skip_special_tokens"):
             extra_body["skip_special_tokens"] = self.skip_special_tokens
 
+        if "epoch" in self.model_name:
+            extra_body["lora_request"] = {"lora_name": "default"}
+
         start_time = time.time()
         if len(extra_body) > 0:
             api_response = self.client.completions.create(
@@ -367,8 +386,6 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         functions: list = test_entry["function"]
         test_category: str = test_entry["id"].rsplit("_", 1)[0]
 
-        functions = func_doc_language_specific_pre_processing(functions, test_category)
-
         test_entry["question"][0] = system_prompt_pre_processing_chat_model(
             test_entry["question"][0], functions, test_category
         )
@@ -376,7 +393,7 @@ class OSSHandler(BaseHandler, EnforceOverrides):
         return {"message": [], "function": functions}
 
     @override
-    def _parse_query_response_prompting(self, api_response: any) -> dict:
+    def _parse_query_response_prompting(self, api_response: Any) -> dict:
         return {
             "model_responses": api_response.choices[0].text,
             "input_token": api_response.usage.prompt_tokens,

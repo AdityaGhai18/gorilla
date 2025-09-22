@@ -12,18 +12,29 @@ from bfcl_eval.model_handler.utils import (
     default_decode_ast_prompting,
     default_decode_execute_prompting,
     format_execution_results_prompting,
-    func_doc_language_specific_pre_processing,
     retry_with_backoff,
     system_prompt_pre_processing_chat_model,
 )
+from bfcl_eval.utils import contain_audio_input, is_audio, audio_to_base64
 from openai import OpenAI, RateLimitError
+import base64
 
 
 class OpenAICompletionsHandler(BaseHandler):
+    """
+    This class can handle the audio input for FC models.
+    """
+
     def __init__(self, model_name, temperature) -> None:
         super().__init__(model_name, temperature)
         self.model_style = ModelStyle.OpenAI_Completions
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    # @staticmethod
+    # def _save_audio_response(message: dict, audio_path: str):
+    #     wav_bytes = base64.b64decode(message.audio.data)
+    #     with open(audio_path, "wb") as f:
+    #         f.write(wav_bytes)
 
     def decode_ast(self, result, language="Python"):
         if "FC" in self.model_name or self.is_fc_model:
@@ -45,7 +56,9 @@ class OpenAICompletionsHandler(BaseHandler):
     @retry_with_backoff(error_type=RateLimitError)
     def generate_with_backoff(self, **kwargs):
         start_time = time.time()
+
         api_response = self.client.chat.completions.create(**kwargs)
+
         end_time = time.time()
 
         return api_response, end_time - start_time
@@ -54,38 +67,56 @@ class OpenAICompletionsHandler(BaseHandler):
 
     def _query_FC(self, inference_data: dict):
         message: list[dict] = inference_data["message"]
+        # print(message)
         tools = inference_data["tools"]
-        inference_data["inference_input_log"] = {"message": repr(message), "tools": tools}
+        inference_data["inference_input_log"] = {
+            "message": "not shown due to json size limit",
+            "tools": tools,
+        }
 
         kwargs = {
             "messages": message,
-            "model": self.model_name.replace("-FC", ""),
+            "model": self.model_name.replace("-FC", "").replace("audio:", ""),
             "temperature": self.temperature,
             "store": False,
+            "timeout": 120,
         }
 
         if len(tools) > 0:
             kwargs["tools"] = tools
 
+        if inference_data["audio_input"]:
+            kwargs["modalities"] = ["text", "audio"]
+            # TODO: Choose which voice to use
+            kwargs["audio"] = {"voice": "alloy", "format": "mp3"}
+
         return self.generate_with_backoff(**kwargs)
 
     def _pre_query_processing_FC(self, inference_data: dict, test_entry: dict) -> dict:
         inference_data["message"] = []
+        if is_audio(test_entry["id"]) and self.supports_audio_input:
+            inference_data["audio_input"] = True
+        else:
+            inference_data["audio_input"] = False
+
         return inference_data
 
     def _compile_tools(self, inference_data: dict, test_entry: dict) -> dict:
         functions: list = test_entry["function"]
-        test_category: str = test_entry["id"].rsplit("_", 1)[0]
 
-        functions = func_doc_language_specific_pre_processing(functions, test_category)
         tools = convert_to_tool(functions, GORILLA_TO_OPENAPI, self.model_style)
 
         inference_data["tools"] = tools
 
         return inference_data
 
-    def _parse_query_response_FC(self, api_response: any) -> dict:
-        try:
+    def _parse_query_response_FC(self, api_response: Any) -> dict:
+        message = api_response.choices[0].message
+        model_responses = []
+        tool_call_ids = []
+
+        if message.tool_calls:
+            # Handle tool calls
             model_responses = [
                 {func_call.function.name: func_call.function.arguments}
                 for func_call in api_response.choices[0].message.tool_calls
@@ -93,11 +124,25 @@ class OpenAICompletionsHandler(BaseHandler):
             tool_call_ids = [
                 func_call.id for func_call in api_response.choices[0].message.tool_calls
             ]
-        except:
-            model_responses = api_response.choices[0].message.content
-            tool_call_ids = []
+        elif message.content:
+            # Handle normal text response
+            model_responses = message.content
+        elif message.audio:
+            # Handle audio response
+            model_responses = message.audio.transcript
 
-        model_responses_message_for_chat_history = api_response.choices[0].message
+            # TODO: Save audio response to a file with meaningful name
+            # self._save_audio_response(message, "audio_response.wav")
+        else:
+            raise ValueError("Unexpected message type")
+
+        # These fields are not supported in the chat history, so we must remove them before adding to the chat history
+        if message.audio:
+            del message.audio.data
+            del message.audio.transcript
+            del message.audio.expires_at
+
+        model_responses_message_for_chat_history = message
 
         return {
             "model_responses": model_responses,
@@ -110,14 +155,31 @@ class OpenAICompletionsHandler(BaseHandler):
     def add_first_turn_message_FC(
         self, inference_data: dict, first_turn_message: list[dict]
     ) -> dict:
-        inference_data["message"].extend(first_turn_message)
+        for message in first_turn_message:
+            if contain_audio_input(message):
+                inference_data["message"].append(
+                    {
+                        "role": message["role"],
+                        "content": [
+                            {
+                                "type": "input_audio",
+                                "input_audio": {
+                                    "data": audio_to_base64(message["audio_content"]),
+                                    "format": "mp3",
+                                },
+                            }
+                        ],
+                    }
+                )
+            else:
+                inference_data["message"].append(message)
         return inference_data
 
     def _add_next_turn_user_message_FC(
         self, inference_data: dict, user_message: list[dict]
     ) -> dict:
-        inference_data["message"].extend(user_message)
-        return inference_data
+        # Same handling logic as add_first_turn_message_FC
+        return self.add_first_turn_message_FC(inference_data, user_message)
 
     def _add_assistant_message_FC(
         self, inference_data: dict, model_response_data: dict
@@ -207,15 +269,13 @@ class OpenAICompletionsHandler(BaseHandler):
         functions: list = test_entry["function"]
         test_category: str = test_entry["id"].rsplit("_", 1)[0]
 
-        functions = func_doc_language_specific_pre_processing(functions, test_category)
-
         test_entry["question"][0] = system_prompt_pre_processing_chat_model(
             test_entry["question"][0], functions, test_category
         )
 
         return {"message": []}
 
-    def _parse_query_response_prompting(self, api_response: any) -> dict:
+    def _parse_query_response_prompting(self, api_response: Any) -> dict:
         return {
             "model_responses": api_response.choices[0].message.content,
             "model_responses_message_for_chat_history": api_response.choices[0].message,

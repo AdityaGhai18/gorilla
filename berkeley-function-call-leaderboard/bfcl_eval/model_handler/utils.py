@@ -5,9 +5,9 @@ import json
 import operator
 import re
 from functools import reduce
-from typing import Callable, List, Optional, Type, Union
+from typing import TYPE_CHECKING, Callable, List, Optional, Type, Union
 
-from bfcl_eval.constants.default_prompts import DEFAULT_SYSTEM_PROMPT
+from bfcl_eval.constants.default_prompts import *
 from bfcl_eval.constants.type_mappings import GORILLA_TO_OPENAPI
 from bfcl_eval.model_handler.model_style import ModelStyle
 from bfcl_eval.model_handler.parser.java_parser import parse_java_function_call
@@ -18,6 +18,11 @@ from tenacity import (
     retry_if_exception_type,
     wait_random_exponential,
 )
+
+if TYPE_CHECKING:
+    from bfcl_eval.eval_checker.multi_turn_eval.func_source_code.memory_api_metaclass import (
+        MemoryAPI,
+    )
 
 
 def _cast_to_openai_type(properties, mapping):
@@ -175,13 +180,15 @@ def convert_to_tool(functions, mapping, model_style):
             ModelStyle.OSSMODEL,
         ]:
             oai_tool.append(item)
-        elif model_style in [
-            ModelStyle.OpenAI_Responses
-        ]:
-            oai_tool.append({"type": "function", 
-                             "name": item["name"], 
-                             "description": item["description"], 
-                             "parameters": item["parameters"]})
+        elif model_style in [ModelStyle.OpenAI_Responses]:
+            oai_tool.append(
+                {
+                    "type": "function",
+                    "name": item["name"],
+                    "description": item["description"],
+                    "parameters": item["parameters"],
+                }
+            )
         elif model_style in [
             ModelStyle.COHERE,
             ModelStyle.OpenAI_Completions,
@@ -238,7 +245,7 @@ def convert_value(value, type_str):
         return value
 
 
-def ast_parse(input_str: str, language: str="Python") -> list[dict]:
+def ast_parse(input_str: str, language: str = "Python") -> list[dict]:
     if language == "Python":
         cleaned_input = input_str.strip("[]'")
         parsed = ast.parse(cleaned_input, mode="eval")
@@ -323,13 +330,17 @@ def resolve_ast_by_type(value):
     return output
 
 
-def system_prompt_pre_processing_chat_model(prompts, function_docs, test_category):
+# TODO: consider moving this step to pipeline instead of in each model handler
+def system_prompt_pre_processing_chat_model(
+    prompts: list[dict], function_docs: list[dict], test_category: str
+) -> list[dict]:
     """
     Add a system prompt to the chat model to instruct the model on the available functions and the expected response format.
     If the prompts list already contains a system prompt, append the additional system prompt content to the existing system prompt.
     """
     assert type(prompts) == list
 
+    # TODO: unfinished @HuanzhiMao
     system_prompt_template = DEFAULT_SYSTEM_PROMPT
 
     system_prompt = system_prompt_template.format(functions=function_docs)
@@ -377,284 +388,6 @@ def combine_consecutive_user_prompts(prompts: list[dict]) -> list[dict]:
     return combined_prompts
 
 
-def _get_language_specific_hint(test_category):
-    if test_category == "java":
-        return " Note that the provided function is in Java 8 SDK syntax."
-    elif test_category == "javascript":
-        return " Note that the provided function is in JavaScript syntax."
-    else:
-        return " Note that the provided function is in Python 3 syntax."
-
-
-def func_doc_language_specific_pre_processing(function, test_category):
-    if len(function) == 0:
-        return function
-
-    assert type(function) == list
-    for item in function:
-        # Add language specific hints to the function description
-        func_description = item["description"]
-        item["description"] = item["description"] + _get_language_specific_hint(
-            test_category
-        )
-        # Process the parameters
-        properties = item["parameters"]["properties"]
-        if test_category == "java":
-            for key, value in properties.items():
-                if value["type"] == "any":
-                    properties[key][
-                        "description"
-                    ] += " This parameter can be of any type of Java object in string representation."
-                else:
-                    value[
-                        "description"
-                    ] += f" This is Java {value['type']} type parameter in string representation."
-                if value["type"] == "ArrayList" or value["type"] == "Array":
-                    value[
-                        "description"
-                    ] += f" The list elements are of type {value['items']['type']}; they are not in string representation."
-                    del value["items"]
-
-                value["type"] = "string"
-
-        elif test_category == "javascript":
-            for key, value in properties.items():
-                if value["type"] == "any":
-                    properties[key][
-                        "description"
-                    ] += " This parameter can be of any type of JavaScript object in string representation."
-                else:
-                    value[
-                        "description"
-                    ] += f" This is JavaScript {value['type']} type parameter in string representation."
-                if value["type"] == "array":
-                    value[
-                        "description"
-                    ] += f" The list elements are of type {value['items']['type']}; they are not in string representation."
-                    del value["items"]
-
-                if value["type"] == "dict":
-                    if "properties" in value:  # not every dict has properties
-                        value[
-                            "description"
-                        ] += f" The dictionary entries have the following schema; they are not in string representation. {json.dumps(value['properties'])}"
-                        del value["properties"]
-
-                value["type"] = "string"
-
-    return function
-
-
-def construct_tool_use_system_prompt(tools):
-    tool_use_system_prompt = (
-        "In this environment you have access to a set of tools you can use to answer the user's question.\n"
-        "\n"
-        "You may call them like this:\n"
-        "<function_calls>\n"
-        "<invoke>\n"
-        "<tool_name>$TOOL_NAME</tool_name>\n"
-        "<parameters>\n"
-        "<$PARAMETER_NAME>$PARAMETER_VALUE</$PARAMETER_NAME>\n"
-        "...\n"
-        "</parameters>\n"
-        "</invoke>\n"
-        "</function_calls>\n"
-        "\n"
-        "Here are the tools available:\n"
-        "<tools>\n"
-        + "\n".join(
-            [
-                construct_format_tool_for_claude_prompt(
-                    tool["name"], tool["description"], tool["parameters"]["properties"]
-                )
-                for tool in tools
-            ]
-        )
-        + "\n</tools>"
-    )
-
-    return tool_use_system_prompt
-
-
-def construct_format_tool_for_claude_prompt(name, description, parameters):
-    constructed_prompt = (
-        "<tool_description>\n"
-        f"<tool_name>{name}</tool_name>\n"
-        "<description>\n"
-        f"{description}\n"
-        "</description>\n"
-        "<parameters>\n"
-        f"{construct_format_parameters_prompt(parameters)}\n"
-        "</parameters>\n"
-        "</tool_description>"
-    )
-
-    return constructed_prompt
-
-
-def construct_format_parameters_prompt(parameters):
-    constructed_prompt = ""
-    for parameter_name, parameter in parameters.items():
-        if parameter_name == "required":
-            continue
-        if "description" in parameter:
-            description_string = parameter["description"]
-        else:
-            description_string = ""
-        if "default" in parameter:
-            description_string += f"\nDefault value: {parameter['default']}"
-        elif "items" in parameter:
-            description_string += f"\n List element type: {str(parameter['items'])}"
-        elif "properties" in parameter:
-            description_string += (
-                f"\n Dictionaries properties: {str(parameter['properties'])}"
-            )
-        if "description" in parameter:
-            constructed_prompt += f"<parameter>\n<name>{parameter_name}</name>\n<type>{parameter['type']}</type>\n<description>{description_string}</description>\n</parameter>\n"
-        else:
-            constructed_prompt += f"<parameter>\n<name>{parameter_name}</name>\n<type>{parameter['type']}</type>\n</parameter>\n"
-    constructed_prompt = constructed_prompt[:-1]
-    return constructed_prompt
-
-
-def _function_calls_valid_format_and_invoke_extraction(last_completion):
-    """Check if the function call follows a valid format and extract the attempted function calls if so. Does not check if the tools actually exist or if they are called with the requisite params."""
-
-    # Check if there are any of the relevant XML tags present that would indicate an attempted function call.
-    function_call_tags = re.findall(
-        r"<function_calls>|</function_calls>|<invoke>|</invoke>|<tool_name>|</tool_name>|<parameters>|</parameters>",
-        last_completion,
-        re.DOTALL,
-    )
-    if not function_call_tags:
-        return {"status": True, "invokes": []}
-
-    # Extract content between <function_calls> tags. If there are multiple we will only parse the first and ignore the rest, regardless of their correctness.
-    match = re.search(r"<function_calls>(.*)</function_calls>", last_completion, re.DOTALL)
-    if not match:
-        return {
-            "status": False,
-            "reason": "No valid <function_calls></function_calls> tags present in your query.",
-        }
-
-    func_calls = match.group(1)
-
-    prefix_match = re.search(r"^(.*?)<function_calls>", last_completion, re.DOTALL)
-    if prefix_match:
-        func_call_prefix_content = prefix_match.group(1)
-
-    # Check for invoke tags
-    invoke_regex = r"<invoke>.*?</invoke>"
-    if not re.search(invoke_regex, func_calls, re.DOTALL):
-        return {
-            "status": False,
-            "reason": "Missing <invoke></invoke> tags inside of <function_calls></function_calls> tags.",
-        }
-
-    # Check each invoke contains tool name and parameters
-    invoke_strings = re.findall(invoke_regex, func_calls, re.DOTALL)
-    invokes = []
-    for invoke_string in invoke_strings:
-        tool_name = re.findall(r"<tool_name>.*?</tool_name>", invoke_string, re.DOTALL)
-        if not tool_name:
-            return {
-                "status": False,
-                "reason": "Missing <tool_name></tool_name> tags inside of <invoke></invoke> tags.",
-            }
-        if len(tool_name) > 1:
-            return {
-                "status": False,
-                "reason": "More than one tool_name specified inside single set of <invoke></invoke> tags.",
-            }
-
-        parameters = re.findall(r"<parameters>.*?</parameters>", invoke_string, re.DOTALL)
-        if not parameters:
-            return {
-                "status": False,
-                "reason": "Missing <parameters></paraeters> tags inside of <invoke></invoke> tags.",
-            }
-        if len(parameters) > 1:
-            return {
-                "status": False,
-                "reason": "More than one set of <parameters></parameters> tags specified inside single set of <invoke></invoke> tags.",
-            }
-
-        # Check for balanced tags inside parameters
-        tags = re.findall(
-            r"<.*?>",
-            parameters[0].replace("<parameters>", "").replace("</parameters>", ""),
-            re.DOTALL,
-        )
-        if len(tags) % 2 != 0:
-            return {
-                "status": False,
-                "reason": "Imbalanced tags inside <parameters></parameters> tags.",
-            }
-
-        # Loop through the tags and check if each even-indexed tag matches the tag in the position after it (with the / of course). If valid store their content for later use.
-        parameters_with_values = []
-        for i in range(0, len(tags), 2):
-            opening_tag = tags[i]
-            closing_tag = tags[i + 1]
-            closing_tag_without_second_char = closing_tag[:1] + closing_tag[2:]
-            if closing_tag[1] != "/" or opening_tag != closing_tag_without_second_char:
-                return {
-                    "status": False,
-                    "reason": "Non-matching opening and closing tags inside <parameters></parameters> tags.",
-                }
-
-            parameters_with_values.append(
-                (
-                    opening_tag[1:-1],
-                    re.search(
-                        rf"{opening_tag}(.*?){closing_tag}", parameters[0], re.DOTALL
-                    ).group(1),
-                )
-            )
-
-        # Parse out the full function call
-        invokes.append(
-            {
-                "tool_name": tool_name[0]
-                .replace("<tool_name>", "")
-                .replace("</tool_name>", ""),
-                "parameters_with_values": parameters_with_values,
-            }
-        )
-
-    return {
-        "status": True,
-        "invokes": invokes,
-        "prefix_content": func_call_prefix_content,
-    }
-
-
-def _convert_value(value, type_str):
-    """Convert a string value into its appropriate Python data type based on the provided type string.
-
-    Arg:
-        value: the value to convert
-        type_str: the type to convert the value to
-
-    Returns:
-        The value converted into the requested type or the original value
-        if the conversion failed.
-    """
-
-    if type_str in ("list", "dict"):
-        try:
-            return ast.literal_eval(value)
-        except:
-            return value
-    if type_str == "string":
-        type_str = "str"
-    type_class = getattr(builtins, type_str)
-    try:
-        return type_class(value)
-    except ValueError:
-        return value
-
-
 # TODO: Re-organize this file to make it more readable and maintainable
 def extract_system_prompt(prompts: list[dict]) -> str:
     for i, prompt in enumerate(prompts):
@@ -692,7 +425,7 @@ def format_execution_results_prompting(
     return repr(tool_results)
 
 
-def default_decode_ast_prompting(result: str, language: str="Python") -> list[dict]:
+def default_decode_ast_prompting(result: str, language: str = "Python") -> list[dict]:
     result = result.strip("`\n ")
     if not result.startswith("["):
         result = "[" + result
@@ -819,3 +552,388 @@ def retry_with_backoff(
         return wrapped
 
     return decorator
+
+
+#### utils for memory category ####
+
+
+def add_memory_instruction_system_prompt(
+    prompts: list[list[dict]],
+    test_category: str,
+    scenario: str,
+    memory_backend_instance: "MemoryAPI",
+) -> list[list[dict]]:
+    """
+    Memory categories requires a system prompt that instructs the model on how to use the memory backend, and also provides the content in core memory (if applicable).
+    The input for prompts is a list of list of dictionaries, where each outer list item represents a conversation turn, and each inner list item represents a message in that turn.
+    System prompt are added as the first message in the first turn of the conversation.
+    """
+    assert len(prompts) >= 1
+
+    scenario_setting = MEMORY_AGENT_SETTINGS[scenario]
+
+    memory_content = memory_backend_instance._dump_core_memory_to_context()
+
+    if "rec_sum" in test_category:
+        system_prompt_template = MEMORY_BACKEND_INSTRUCTION_UNIFIED
+    else:
+        system_prompt_template = MEMORY_BACKEND_INSTRUCTION_CORE_ARCHIVAL
+
+    system_prompt = system_prompt_template.format(
+        scenario_setting=scenario_setting, memory_content=memory_content
+    )
+
+    # System prompt must be in the first position
+    # If the question comes with a system prompt, append its content at the end of the chat template.
+    first_turn_prompts = prompts[0]
+    if first_turn_prompts[0]["role"] == "system":
+        first_turn_prompts[0]["content"] = (
+            system_prompt + "\n\n" + first_turn_prompts[0]["content"]
+        )
+    # Otherwise, use the system prompt template to create a new system prompt.
+    else:
+        first_turn_prompts.insert(
+            0,
+            {"role": "system", "content": system_prompt},
+        )
+
+    return prompts
+
+
+# FIXME
+# Utils for Format Sensitivity
+
+
+# FIXME: unfinished @HuanzhiMao
+def formulate_default_system_prompt(
+    format_sensitivity_config: str, functions: list[dict]
+) -> str:
+    """
+    Formulate the default system prompt based on the provided parameters.
+    """
+    (
+        return_format,
+        has_tool_call_tag,
+        function_doc_format,
+        prompt_format,
+        prompt_style,
+    ) = parse_prompt_variation_params(format_sensitivity_config)
+
+    if prompt_format == "plaintext":
+        default_prompt = (
+            "{persona}{task}\n\n{tool_call}\n\n{multiturn}\n\n{available_tools}"
+        )
+    elif prompt_format == "markdown":
+        default_prompt = "{persona}\n\n## Task\n{task}\n\n## Tool Call Format\n{tool_call}\n\n## Multi-turn Behavior\n{multiturn}\n\n## Available Tools\n{available_tools}"
+    else:
+        raise ValueError(f"Invalid prompt format: {prompt_format}")
+
+    tool_call_key = "tool_call_with_tag" if has_tool_call_tag else "tool_call_no_tag"
+
+    default_prompt = default_prompt.format(
+        persona=PROMPT_STYLE_MAPPING[prompt_style]["persona"],
+        task=PROMPT_STYLE_MAPPING[prompt_style]["task"],
+        tool_call=PROMPT_STYLE_MAPPING[prompt_style][tool_call_key].format(
+            output_format=OUTPUT_FORMAT_MAPPING[return_format],
+            param_types=PARAM_TYPE_MAPPING[return_format],
+        ),
+        multiturn=PROMPT_STYLE_MAPPING[prompt_style]["multiturn"],
+        available_tools=PROMPT_STYLE_MAPPING[prompt_style]["available_tools"].format(
+            format=function_doc_format,
+            functions=format_function_doc(functions, function_doc_format),
+        ),
+    )
+
+    # print(f"Default system prompt:\n{default_prompt}")
+    return default_prompt
+
+
+# FIXME: unfinished  @HuanzhiMao
+def format_function_doc(functions, function_doc_format):
+    """
+    Format the function documentation based on the specified format.
+    """
+
+    if function_doc_format == "xml":
+
+        functions = _generate_function_doc_xml(functions)
+
+    elif function_doc_format == "python":
+        functions = _generate_function_doc_python(functions)
+    else:
+        functions = json.dumps(functions, indent=4)
+
+    return f"\n{functions}\n"
+
+
+def _generate_function_doc_xml(functions: list[dict]) -> str:
+    """
+    Generate the function documentation in XML format.
+    """
+    xml_blocks = []
+    for fn in functions:
+        name = fn["name"]
+        desc = fn.get("description", "")
+        props = fn["parameters"]["properties"]
+        required = set(fn["parameters"].get("required", []))
+
+        xml = f'<function name="{name}">\n'
+        xml += f"  <desc>{desc}</desc>\n"
+        xml += f"  <params>\n"
+        for param_name, meta in props.items():
+            param_type = meta.get("type", "string")
+            param_desc = meta.get("description", "")
+            is_required = "true" if param_name in required else "false"
+            xml += f'    <param name="{param_name}" type="{param_type}" required="{is_required}">\n'
+            xml += f"      <desc>{param_desc}</desc>\n"
+            xml += f"    </param>\n"
+        xml += f"  </params>\n"
+        xml += f"</function>\n"
+        xml_blocks.append(xml)
+    return "\n".join(xml_blocks)
+
+
+def _generate_function_doc_python(functions: list[dict]) -> str:
+    """
+    Generate the function documentation in JSON format.
+    """
+    docs = []
+    for fn in functions:
+        full_name = fn["name"]
+        desc = fn.get("description", "")
+        params = fn["parameters"]["properties"]
+
+        doc = f"# Function: {full_name}\n"
+        doc += f'    """\n'
+        doc += f"    {desc}\n\n"
+
+        if params:
+            doc += f"    Args:\n"
+            for name, meta in params.items():
+                typ = meta.get("type", "string")
+                py_type = (
+                    typ.replace("string", "str")
+                    .replace("number", "float")
+                    .replace("integer", "int")
+                    .replace("object", "dict")
+                    .replace("array", "list")
+                    .replace("boolean", "bool")
+                )
+                docstring_desc = meta.get("description", "").strip()
+                default = meta.get("default")
+                default_note = f", default={repr(default)}" if default is not None else ""
+                doc += f"        {name} ({py_type}{default_note}): {docstring_desc}\n"
+
+        doc += f'    """\n'
+        docs.append(doc)
+
+    functions = "\n\n".join(docs)
+    return functions
+
+
+def parse_prompt_variation_params(input_str: str) -> tuple[str, bool, str, str, str]:
+    """
+    Parse a query string of the form:
+      ret_fmt=…&tool_call_tag=…&func_doc_fmt=…&prompt_fmt=…&style=…
+
+    Returns a 5-tuple containing, **in order**:
+        1. return_format (str)
+        2. has_tool_call_tag (bool)
+        3. function_doc_format (str)
+        4. prompt_format (str)
+        5. prompt_style (str)
+
+    Raises:
+        ValueError: If the input string does not conform to the expected format.
+    """
+    _PATTERN = re.compile(
+        r"^"
+        r"ret_fmt=(?P<return_format>python|json|verbose_xml|concise_xml)"
+        r"&tool_call_tag=(?P<has_tool_call_tag>True|False)"
+        r"&func_doc_fmt=(?P<function_doc_format>python|xml|json)"
+        r"&prompt_fmt=(?P<prompt_format>plaintext|markdown)"
+        r"&style=(?P<prompt_style>classic|experimental)"
+        r"$"
+    )
+
+    match = _PATTERN.match(input_str)
+    if not match:
+        raise ValueError(f"Invalid query format: {input_str!r}")
+
+    # Extract named groups
+    return_format = match.group("return_format")
+    has_tool_call_tag = match.group("has_tool_call_tag") == "True"
+    function_doc_format = match.group("function_doc_format")
+    prompt_format = match.group("prompt_format")
+    prompt_style = match.group("prompt_style")
+
+    return (
+        return_format,
+        has_tool_call_tag,
+        function_doc_format,
+        prompt_format,
+        prompt_style,
+    )
+
+
+from openai import OpenAI
+import os
+import json
+
+
+def check_for_clarification(
+    model_response: str,
+    allowed_clarifications: dict[str, str],
+    original_user_request: str,
+    asr_output: str,
+) -> tuple[bool, str]:
+    if not original_user_request or not asr_output:
+        return False, ""
+
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    user_prompt = """
+You are a judge for an audio-chat scenario where a user speaks and an ASR system transcribes their speech for the assistant. The assistant only sees text (the ASR transcript), which is likely to contain transcription errors.
+
+You are given:
+- intended_request: the user's original, ground-truth intent.
+- asr_text: the ASR-transcribed text the assistant saw.
+- allowed_clarifications: a set of fields with canonical spellings/values the user can confirm (e.g., names, IDs, emails, dates, numbers).
+- assistant_message: the assistant's latest message.
+
+Your job: decide whether assistant_message is a clarifying question specifically about spelling/verification of intent or exact strings/values that could plausibly be misheard (e.g., names, organizations, emails, serials/IDs, numbers, dates, addresses, SKUs). Do not allow general follow-ups (preference, steps to proceed, etc.).
+
+Decision rules:
+1. Classify the message as a spelling confirmation only if it explicitly asks to verify the exact spelling/format/value of one or more items (e.g., “Is it Mikaela or Michaela?”, “Can you spell the email?”, “Is the order number A1B-52?”).
+2. The request must be reasonable given the ASR risk (i.e., the item is a proper noun, key value, or easily misheard token relevant to the task).
+3. To approve (allowed=true), all the topics the assistant asks to confirm must be present in allowed_clarifications. If any requested item is absent or ambiguous, set allowed=false.
+4. Output only a JSON object with two fields:
+- allowed: boolean
+- message: string (a concise simulated user reply only when allowed=true; otherwise empty "").
+5. When allowed=true, compose message by supplying only the requested values with correct spelling/format from allowed_clarifications. Keep it brief (one short sentence or a compact list). Do not include extra commentary, JSON, or fields the assistant didn't request.
+6. If the assistant's message is not a confirmation request, touches topics outside spelling/format/intent verification, or requests values not available in allowed_clarifications, return allowed=false with message="".
+
+Edge cases:
+- If the assistant mixes spelling confirmation with unrelated questions, treat it as not allowed unless the spelling part stands alone and you can fully answer it from allowed_clarifications.
+- Treat homophones and near-matches as spelling checks (e.g., “Brian/Bryan”, “Steven/Stephen”, letters vs. digits).
+- Normalize case/diacritics but preserve canonical spelling in the final answer.
+- Never reveal intended_request verbatim; only return the specific confirmed values.\n\n\n\n
+    """
+
+    # print(f"model_response: {model_response}")
+    if not type(model_response) == str:
+        model_response = str(model_response)
+
+    user_prompt += (
+        "The user's original intended request is:\n"
+        + original_user_request
+        + "\n\n"
+        + "The ASR-transcribed output is:\n"
+        + asr_output
+        + "\n\n"
+        + "assistant_message:\n"
+        + model_response
+        + "\n\n"
+        + "allowed_clarifications (topic -> answer):\n"
+        + json.dumps(allowed_clarifications, indent=4)
+    )
+
+    response = client.chat.completions.create(
+        # model="o4-mini-2025-04-16",
+        model="o3-2025-04-16",
+        messages=[
+            {"role": "user", "content": user_prompt},
+        ],
+        response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "clarification_decision",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "properties": {
+                        "allowed": {"type": "boolean"},
+                        "message": {"type": "string"}
+                    },
+                    "required": ["allowed", "message"]
+                },
+            },
+        },
+        # temperature=0,
+    )
+
+    content = response.choices[0].message.content.strip()
+
+    try:
+        payload = json.loads(content)
+        is_allowed = bool(payload.get("allowed", False))
+        simulated_message = payload.get("message", "")
+    except:
+        print("Error parsing the response from the model.", content)
+        # If the assistant returns malformed output, treat as not allowed.
+        is_allowed = False
+        simulated_message = ""
+
+    if not is_allowed:
+        print("-" * 100)
+        print(f"original_user_request: {original_user_request}")
+        print(f"asr_output: {asr_output}")
+        print(f"allowed_clarifications: {allowed_clarifications}")
+        print(f"❌ model_response: {model_response}")
+    else:
+        print("-" * 100)
+        print(f"original_user_request: {original_user_request}")
+        print(f"asr_output: {asr_output}")
+        print(f"allowed_clarifications: {allowed_clarifications}")
+        print(f"✅ model_response: {model_response}")
+        print(f"simulated_message: {simulated_message}")
+
+    return is_allowed, simulated_message
+
+
+def simulate_clarification(
+    model_response: str,
+    allowed_clarifications: dict[str, str],
+) -> str:
+    """Generate a simulated *user* reply that answers the assistant’s clarifying
+    questions *assuming every topic is permitted*.
+
+    Args:
+        model_response: The assistant message containing the clarifying questions.
+        allowed_clarifications: Mapping from topic → answer with the data the user is
+            willing to share.
+        model: OpenAI chat model to use (defaults to ``"gpt-4o-mini"``).
+
+    Returns:
+        The **plain text** user message answering the clarification.
+    """
+
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+    system_prompt = (
+        "You are the user. Craft a concise reply that directly answers the assistant's "
+        "clarifying question(s) using only the information supplied in "
+        "*allowed_clarifications*. Do NOT reveal any additional data or mention the "
+        "topics list itself. Provide a single natural-language message—no JSON, no "
+        "formatting instructions—just the reply text. Answer only the question that the assistant is asking for. You should not supply everything in the allowed_clarifications, if the assistant did not ask for it."
+    )
+
+    user_prompt = (
+        "assistant_message:\n"
+        + model_response
+        + "\n\n"
+        + "allowed_clarifications (topic -> answer):\n"
+        + json.dumps(allowed_clarifications, indent=2)
+    )
+
+    response = client.chat.completions.create(
+        model="o4-mini-2025-04-16",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        # temperature=0.001,
+    )
+
+    return response.choices[0].message.content.strip()

@@ -30,25 +30,20 @@ from bfcl_eval.model_handler.api_inference.qwen import (
     QwenAPIHandler,
 )
 from bfcl_eval.model_handler.api_inference.writer import WriterHandler
-from bfcl_eval.model_handler.api_inference.yi import YiHandler
 from bfcl_eval.model_handler.local_inference.arch import ArchHandler
 from bfcl_eval.model_handler.local_inference.bielik import BielikHandler
 from bfcl_eval.model_handler.local_inference.bitagent import BitAgentHandler
-from bfcl_eval.model_handler.local_inference.deepseek import DeepseekHandler
-from bfcl_eval.model_handler.local_inference.deepseek_coder import DeepseekCoderHandler
 from bfcl_eval.model_handler.local_inference.deepseek_reasoning import (
     DeepseekReasoningHandler,
 )
 from bfcl_eval.model_handler.local_inference.falcon_fc import Falcon3FCHandler
 from bfcl_eval.model_handler.local_inference.gemma import GemmaHandler
-from bfcl_eval.model_handler.local_inference.glaive import GlaiveHandler
 from bfcl_eval.model_handler.local_inference.glm import GLMHandler
 from bfcl_eval.model_handler.local_inference.granite import (
     GraniteFunctionCallingHandler,
 )
 from bfcl_eval.model_handler.local_inference.granite_3 import Granite3FCHandler
 from bfcl_eval.model_handler.local_inference.hammer import HammerHandler
-from bfcl_eval.model_handler.local_inference.hermes import HermesHandler
 from bfcl_eval.model_handler.local_inference.llama import LlamaHandler
 from bfcl_eval.model_handler.local_inference.llama_3_1 import LlamaHandler_3_1
 from bfcl_eval.model_handler.local_inference.minicpm import MiniCPMHandler
@@ -68,6 +63,7 @@ from bfcl_eval.model_handler.local_inference.salesforce_qwen import (
     SalesforceQwenHandler,
 )
 from bfcl_eval.model_handler.local_inference.think_agent import ThinkAgentHandler
+from bfcl_eval.model_handler.local_inference.qwen25_fc import Qwen25FCHandler
 
 # -----------------------------------------------------------------------------
 # A mapping of model identifiers to their respective model configurations.
@@ -93,6 +89,7 @@ class ModelConfig:
         output_price (Optional[float]): USD per million output tokens (None for open source models).
         is_fc_model (bool): True if this model is used in Function-Calling mode, otherwise False for Prompt-based mode.
         underscore_to_dot (bool): True if model does not support '.' in function names, in which case we will replace '.' with '_'. Currently this only matters for checker.  TODO: We should let the tool compilation step also take this into account.
+        supports_audio_input (bool): True if the model supports native audio input.
 
     """
 
@@ -113,6 +110,9 @@ class ModelConfig:
 
     # True if this model does not allow '.' in function names
     underscore_to_dot: bool = False
+
+    # True if the model supports native audio input.
+    supports_audio_input: bool = False
 
 
 # Inference through API calls
@@ -162,30 +162,6 @@ api_inference_model_map = {
         model_handler=DeepSeekAPIHandler,
         input_price=None,
         output_price=None,
-        is_fc_model=True,
-        underscore_to_dot=True,
-    ),
-    "gpt-4.5-preview-2025-02-27": ModelConfig(
-        model_name="gpt-4.5-preview-2025-02-27",
-        display_name="GPT-4.5-Preview-2025-02-27 (Prompt)",
-        url="https://openai.com/index/introducing-gpt-4-5/",
-        org="OpenAI",
-        license="Proprietary",
-        model_handler=OpenAIResponsesHandler,
-        input_price=75,
-        output_price=150,
-        is_fc_model=False,
-        underscore_to_dot=False,
-    ),
-    "gpt-4.5-preview-2025-02-27-FC": ModelConfig(
-        model_name="gpt-4.5-preview-2025-02-27-FC",
-        display_name="GPT-4.5-Preview-2025-02-27 (FC)",
-        url="https://openai.com/index/introducing-gpt-4-5/",
-        org="OpenAI",
-        license="Proprietary",
-        model_handler=OpenAIResponsesHandler,
-        input_price=75,
-        output_price=150,
         is_fc_model=True,
         underscore_to_dot=True,
     ),
@@ -438,7 +414,7 @@ api_inference_model_map = {
         model_handler=NovaHandler,
         input_price=0.8,
         output_price=3.2,
-        is_fc_model=False,
+        is_fc_model=True,
         underscore_to_dot=True,
     ),
     "nova-lite-v1.0": ModelConfig(
@@ -848,18 +824,6 @@ api_inference_model_map = {
         output_price=None,
         is_fc_model=True,
         underscore_to_dot=True,
-    ),
-    "phronetic-ai/RZN-T": ModelConfig(
-        model_name="phronetic-ai/RZN-T",
-        display_name="RZN-T (Prompt)",
-        url="https://huggingface.co/phronetic-ai/RZN-T",
-        org="Phronetic AI",
-        license="apache-2.0",
-        model_handler=QwenHandler,
-        input_price=None,
-        output_price=None,
-        is_fc_model=False,
-        underscore_to_dot=False,
     ),
     "qwen3-0.6b": ModelConfig(
         model_name="qwen3-0.6b",
@@ -1849,6 +1813,54 @@ local_inference_model_map = {
         is_fc_model=False,
         underscore_to_dot=False,
     ),
+    "katanemo/Arch-Agent-1.5B": ModelConfig(
+        model_name="katanemo/Arch-Agent-1.5B",
+        display_name="Arch-Agent-1.5B",
+        url="https://huggingface.co/katanemo/Arch-Agent-1.5B",
+        org="katanemo",
+        license="katanemo-research",
+        model_handler=ArchHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    "katanemo/Arch-Agent-3B": ModelConfig(
+        model_name="katanemo/Arch-Agent-3B",
+        display_name="Arch-Agent-3B",
+        url="https://huggingface.co/katanemo/Arch-Agent-3B",
+        org="katanemo",
+        license="katanemo-research",
+        model_handler=ArchHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    "katanemo/Arch-Agent-7B": ModelConfig(
+        model_name="katanemo/Arch-Agent-7B",
+        display_name="Arch-Agent-7B",
+        url="https://huggingface.co/katanemo/Arch-Agent-7B",
+        org="katanemo",
+        license="katanemo-research",
+        model_handler=ArchHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    "katanemo/Arch-Agent-32B": ModelConfig(
+        model_name="katanemo/Arch-Agent-32B",
+        display_name="Arch-Agent-32B",
+        url="https://huggingface.co/katanemo/Arch-Agent-32B",
+        org="katanemo",
+        license="katanemo-research",
+        model_handler=ArchHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
     "BitAgent/BitAgent-8B": ModelConfig(
         model_name="BitAgent/BitAgent-8B",
         display_name="BitAgent-8B",
@@ -1885,11 +1897,23 @@ local_inference_model_map = {
         is_fc_model=False,
         underscore_to_dot=False,
     ),
+    "phronetic-ai/RZN-T": ModelConfig(
+        model_name="phronetic-ai/RZN-T",
+        display_name="RZN-T (Prompt)",
+        url="https://huggingface.co/phronetic-ai/RZN-T",
+        org="Phronetic AI",
+        license="apache-2.0",
+        model_handler=QwenHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=False,
+        underscore_to_dot=False,
+    ),
 }
 
 # Inference through third-party inference platforms for open-source models
 third_party_inference_model_map = {
-    # Novita AI
+    # Via Novita AI Endpoint
     "meta-llama/llama-4-maverick-17b-128e-instruct-fp8-novita": ModelConfig(
         model_name="meta-llama/llama-4-maverick-17b-128e-instruct-fp8-novita",
         display_name="Llama-4-Maverick-17B-128E-Instruct-FP8 (Prompt) (Novita)",
@@ -1962,6 +1986,7 @@ third_party_inference_model_map = {
         is_fc_model=False,
         underscore_to_dot=False,
     ),
+    # Via Qwen Agent Framework
     "qwen3-4b-think-FC": ModelConfig(
         model_name="qwen3-4b-think-FC",
         display_name="Qwen3-4B-Think (FC)",
@@ -1986,49 +2011,159 @@ third_party_inference_model_map = {
         is_fc_model=True,
         underscore_to_dot=True,
     ),
-    "katanemo/Arch-Agent-1.5B": ModelConfig(
-        model_name="katanemo/Arch-Agent-1.5B",
-        display_name="Arch-Agent-1.5B",
-        url="https://huggingface.co/katanemo/Arch-Agent-1.5B",
-        org="katanemo",
-        license="katanemo-research",
-        model_handler=ArchHandler,
+}
+
+
+audio_input_model_map = {
+    "audio-text:gpt-4o-audio-preview-2025-06-03-FC": ModelConfig(
+        model_name="gpt-4o-audio-preview-2025-06-03",
+        display_name="GPT-4o-audio-preview-2025-06-03 (Audio Text FC)",
+        url="https://openai.com/index/gpt-4-1/",
+        org="OpenAI",
+        license="Proprietary",
+        model_handler=OpenAICompletionsHandler,
+        input_price=2,
+        output_price=8,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    "audio:gpt-4o-audio-preview-2025-06-03-FC": ModelConfig(
+        model_name="gpt-4o-audio-preview-2025-06-03",
+        display_name="GPT-4o-audio-preview-2025-06-03 (Audio FC)",
+        url="https://openai.com/index/gpt-4-1/",
+        org="OpenAI",
+        license="Proprietary",
+        model_handler=OpenAICompletionsHandler,
+        input_price=2,
+        output_price=8,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    "audio:gpt-4o-mini-audio-preview-2024-12-17-FC": ModelConfig(
+        model_name="gpt-4o-mini-audio-preview-2024-12-17",
+        display_name="GPT-4o-mini-audio-preview-2024-12-17 (Audio FC)",
+        url="https://openai.com/index/gpt-4-1/",
+        org="OpenAI",
+        license="Proprietary",
+        model_handler=OpenAICompletionsHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    # Duplicate model name for audio input
+    "audio-text:gemini-2.5-pro-FC": ModelConfig(
+        model_name="gemini-2.5-pro-FC",
+        display_name="Gemini-2.5-Pro (Audio Text FC)",
+        url="https://deepmind.google/technologies/gemini/pro/",
+        org="Google",
+        license="Proprietary",
+        model_handler=GeminiHandler,
+        input_price=1.5,
+        output_price=10,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    "audio:gemini-2.5-pro-FC": ModelConfig(
+        model_name="gemini-2.5-pro-FC",
+        display_name="Gemini-2.5-Pro (Audio FC)",
+        url="https://deepmind.google/technologies/gemini/pro/",
+        org="Google",
+        license="Proprietary",
+        model_handler=GeminiHandler,
+        input_price=1.5,
+        output_price=10,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    "audio:gemini-2.5-flash-lite-preview-06-17-FC": ModelConfig(
+        model_name="gemini-2.5-flash-lite-preview-06-17-FC",
+        display_name="Gemini-2.5-Flash-Lite-Preview-06-17 (Audio FC)",
+        url="https://deepmind.google/technologies/gemini/flash-lite/",
+        org="Google",
+        license="Proprietary",
+        model_handler=GeminiHandler,
+        input_price=0.1,
+        output_price=0.4,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    "audio:gemini-2.5-flash-FC": ModelConfig(
+        model_name="gemini-2.5-flash-FC",
+        display_name="Gemini-2.5-Flash (Audio FC)",
+        url="https://deepmind.google/technologies/gemini/flash/",
+        org="Google",
+        license="Proprietary",
+        model_handler=GeminiHandler,
+        input_price=0.3,
+        output_price=2.5,
+        is_fc_model=True,
+        underscore_to_dot=True,
+        supports_audio_input=True,
+    ),
+    
+    "Qwen/Qwen2.5-7B-Instruct-FC": ModelConfig(
+        model_name="Qwen/Qwen2.5-7B-Instruct-FC",
+        display_name="Qwen2.5-7B-Instruct (FC)",
+        url="https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=Qwen25FCHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
         underscore_to_dot=False,
     ),
-    "katanemo/Arch-Agent-3B": ModelConfig(
-        model_name="katanemo/Arch-Agent-3B",
-        display_name="Arch-Agent-3B",
-        url="https://huggingface.co/katanemo/Arch-Agent-3B",
-        org="katanemo",
-        license="katanemo-research",
-        model_handler=ArchHandler,
+    
+    "Qwen/Qwen2.5-14B-Instruct-FC": ModelConfig(
+        model_name="Qwen/Qwen2.5-14B-Instruct-FC",
+        display_name="Qwen2.5-14B-Instruct (FC)",
+        url="https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=Qwen25FCHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
         underscore_to_dot=False,
     ),
-    "katanemo/Arch-Agent-7B": ModelConfig(
-        model_name="katanemo/Arch-Agent-7B",
-        display_name="Arch-Agent-7B",
-        url="https://huggingface.co/katanemo/Arch-Agent-7B",
-        org="katanemo",
-        license="katanemo-research",
-        model_handler=ArchHandler,
+    "Qwen/Qwen2.5-14B-Instruct-FC-original": ModelConfig(
+        model_name="Qwen/Qwen2.5-14B-Instruct-FC",
+        display_name="Qwen2.5-14B-Instruct (Original)",
+        url="https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=Qwen25FCHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
         underscore_to_dot=False,
     ),
-    "katanemo/Arch-Agent-32B": ModelConfig(
-        model_name="katanemo/Arch-Agent-32B",
-        display_name="Arch-Agent-32B",
-        url="https://huggingface.co/katanemo/Arch-Agent-32B",
-        org="katanemo",
-        license="katanemo-research",
-        model_handler=ArchHandler,
+    "Qwen/Qwen2.5-14B-Instruct-FC-original-no-system-prompt": ModelConfig(
+        model_name="Qwen/Qwen2.5-14B-Instruct-FC",
+        display_name="Qwen2.5-14B-Instruct (Original No System Prompt)",
+        url="https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=Qwen25FCHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=False,
+    ),
+    "Qwen/Qwen2.5-14B-Instruct-FC-08-09-00-31-epoch-9": ModelConfig(
+        model_name="Qwen/Qwen2.5-14B-Instruct-FC",
+        display_name="Qwen2.5-14B-Instruct (08-09_00-31/epoch_9)",
+        url="https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+        org="Qwen",
+        license="apache-2.0",
+        model_handler=Qwen25FCHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
@@ -2036,9 +2171,9 @@ third_party_inference_model_map = {
     ),
 }
 
-
 MODEL_CONFIG_MAPPING = {
     **api_inference_model_map,
     **local_inference_model_map,
     **third_party_inference_model_map,
+    **audio_input_model_map,
 }
