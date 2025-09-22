@@ -92,10 +92,10 @@ class BackgroundNoiseProcessor:
             # Use just the filename without full path
             audio_filename = os.path.basename(audio_path)
             base_filename = os.path.splitext(audio_filename)[0]
-            output_path = os.path.join(noisy_dir, f"{base_filename}_with_noise.wav")
+            output_path = os.path.join(noisy_dir, f"{base_filename}_with_noise.mp3")
         
         # Export the result
-        combined.export(output_path, format="wav")
+        combined.export(output_path, format="mp3")
         return output_path
 
     def add_background_noise_batch(self, audio_dir, output_dir=None, noise_level=-20):
@@ -185,9 +185,9 @@ def overlay_audio_with_noise(speech_path, noise_path, output_path=None, noise_le
     if output_path is None:
         base = os.path.splitext(os.path.basename(speech_path))[0]
         noise_base = os.path.splitext(os.path.basename(noise_path))[0]
-        output_path = f"{base}_with_{noise_base}_noise.wav"
+        output_path = f"{base}_with_{noise_base}_noise.mp3"
 
-    combined.export(output_path, format="wav")
+    combined.export(output_path, format="mp3")
     return output_path
 
 def fluctuate_audio_volume(
@@ -236,8 +236,8 @@ def fluctuate_audio_volume(
     fluctuated = sum(segments)
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
-        output_path = f"{base}_fluctuated.wav"
-    fluctuated.export(output_path, format="wav")
+        output_path = f"{base}_fluctuated.mp3"
+    fluctuated.export(output_path, format="mp3")
     print(f"Created fluctuated audio: {output_path}")
     return output_path
 
@@ -293,8 +293,8 @@ def apply_gradual_noise_fade(
     if output_path is None:
         base = os.path.splitext(os.path.basename(speech_path))[0]
         noise_base = os.path.splitext(os.path.basename(noise_path))[0]
-        output_path = f"{base}_with_{noise_base}_walkaway.wav"
-    combined.export(output_path, format="wav")
+        output_path = f"{base}_with_{noise_base}_walkaway.mp3"
+    combined.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
 
@@ -339,8 +339,8 @@ def apply_gradual_audio_fade(
     fluctuated = sum(segments)
     if output_path is None:
         base = os.path.splitext(os.path.basename(speech_path))[0]
-        output_path = f"{base}_walkaway.wav"
-    fluctuated.export(output_path, format="wav")
+        output_path = f"{base}_walkaway.mp3"
+    fluctuated.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
 
@@ -389,8 +389,8 @@ def apply_network_cut_effect(
     glitched = sum(segments)
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
-        output_path = f"{base}_networkcut.wav"
-    glitched.export(output_path, format="wav")
+        output_path = f"{base}_networkcut.mp3"
+    glitched.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
 
@@ -446,8 +446,8 @@ def apply_network_beep_effect(
     glitched = sum(segments)
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
-        output_path = f"{base}_networkbeep.wav"
-    glitched.export(output_path, format="wav")
+        output_path = f"{base}_networkbeep.mp3"
+    glitched.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
 
@@ -477,9 +477,9 @@ def apply_mic_rubbing_effect(audio_path, output_path=None):
     
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
-        output_path = f"{base}_micrubbing.wav"
-    
-    combined.export(output_path, format="wav")
+        output_path = f"{base}_micrubbing.mp3"
+
+    combined.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
 
@@ -503,8 +503,79 @@ def apply_audio_mumbling_effect(audio_path, output_path=None):
     
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
-        output_path = f"{base}_mumbling.wav"
+        output_path = f"{base}_mumbling.mp3"
     
-    mumble.export(output_path, format="wav")
+    mumble.export(output_path, format="mp3")
+    print(f"Created: {output_path}")
+    return output_path
+
+def apply_heavy_wind_effect(
+    audio_path,
+    wind_noise_path,
+    output_path=None,
+    noise_level_db=+5,
+    n_hits=5,
+    hit_min_freq=30,
+    hit_max_freq=60,
+    hit_min_duration_ms=80,
+    hit_max_duration_ms=250,
+    hit_db=+10
+):
+    """
+    Simulates a heavy wind effect with background noise and mic buffeting.
+    
+    Args:
+        audio_path (str): Path to the input audio file.
+        wind_noise_path (str): Path to the wind noise audio file.
+        output_path (str): Path to save the output file.
+        noise_level_db (int): Volume of the constant wind noise.
+        n_hits (int): Number of random mic hits to generate.
+        hit_min_freq (int): Minimum frequency of a mic hit.
+        hit_max_freq (int): Maximum frequency of a mic hit.
+        hit_min_duration_ms (int): Minimum duration of a mic hit.
+        hit_max_duration_ms (int): Maximum duration of a mic hit.
+        hit_db (int): Volume of the mic hits relative to the audio.
+    """
+    from pydub import AudioSegment
+    from pydub.generators import Sine
+    import random
+    import numpy as np
+
+    # 1. Load audio and overlay the constant wind noise
+    speech = AudioSegment.from_file(audio_path)
+    wind_noise = AudioSegment.from_file(wind_noise_path)
+    duration = len(speech)
+
+    # Loop or trim wind noise to match speech duration
+    if len(wind_noise) < duration:
+        loops = int(np.ceil(duration / len(wind_noise)))
+        wind_noise = wind_noise * loops
+    wind_noise = wind_noise[:duration]
+
+    # Combine speech with the base wind noise
+    combined = speech.overlay(wind_noise + noise_level_db)
+
+    # 2. Generate and overlay random mic hits (thumps)
+    for _ in range(n_hits):
+        # Create a short, low-frequency thump
+        hit_freq = random.randint(hit_min_freq, hit_max_freq)
+        hit_duration = random.randint(hit_min_duration_ms, hit_max_duration_ms)
+        
+        # Shape the hit to sound percussive (quick attack, slightly longer decay)
+        thump = Sine(hit_freq).to_audio_segment(
+            duration=hit_duration
+        ).apply_gain(hit_db).fade_in(5).fade_out(hit_duration // 2)
+
+        # Place the thump at a random position
+        start_pos = random.randint(0, max(0, duration - hit_duration))
+        
+        # Overlay the thump onto the already noisy audio
+        combined = combined.overlay(thump, position=start_pos)
+
+    if output_path is None:
+        base = Path(audio_path).stem
+        output_path = f"{base}_wind.mp3"
+    
+    combined.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path

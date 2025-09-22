@@ -6,7 +6,8 @@ from background import (
     apply_gradual_audio_fade,
     apply_network_cut_effect,
     apply_audio_mumbling_effect,
-    apply_mic_rubbing_effect
+    apply_mic_rubbing_effect,
+    apply_heavy_wind_effect
 )
 from pathlib import Path
 import random
@@ -18,67 +19,133 @@ def get_all_noise_files(noise_dir):
         noise_files.extend(list(Path(noise_dir).glob(ext)))
     return noise_files
 
+# def apply_effects_chain(audio_path, output_path, effects_chain):
+#     current_path = audio_path
+#     temp_files = []
+#     noise_processor = None
+#     for effect in effects_chain:
+#         if effect['type'] == 'background_noise':
+#             noise_file = effect['noise_file']
+#             temp_out = output_path.replace('.wav', f'_noise_{Path(noise_file).stem}.wav')
+#             if noise_processor is None:
+#                 noise_processor = BackgroundNoiseProcessor(noise_dir=str(Path(noise_file).parent.parent))
+#             noise_processor.add_background_noise(
+#                 current_path,
+#                 noise_file=noise_file, # Pass the specific noise file
+#                 output_path=temp_out,
+#                 noise_level=effect.get('noise_level', -20)
+#             )
+
+#             # # Temporarily override noise_files to use only the selected noise_file
+#             # original_noise_files = noise_processor.noise_files
+#             # noise_processor.noise_files = [noise_file]
+#             # noise_processor.add_background_noise(current_path, output_path=temp_out, noise_level=effect.get('noise_level', -20))
+#             # noise_processor.noise_files = original_noise_files
+#             current_path = temp_out
+#             temp_files.append(temp_out)
+#         elif effect['type'] == 'audio_fade':
+#             temp_out = output_path.replace('.wav', '_fade.wav')
+#             apply_gradual_audio_fade(current_path, output_path=temp_out)
+#             current_path = temp_out
+#             temp_files.append(temp_out)
+#         elif effect['type'] == 'network_cut':
+#             prob = effect.get('probability', 1.0)
+#             n_cuts = effect.get('n_cuts', 8)
+#             if random.random() < prob:
+#                 temp_out = output_path.replace('.wav', '_networkcut.wav')
+#                 apply_network_cut_effect(current_path, output_path=temp_out, n_cuts=n_cuts)
+#                 current_path = temp_out
+#                 temp_files.append(temp_out)
+#         elif effect['type'] == 'fluctuate':
+#             temp_out = output_path.replace('.wav', '_fluctuate.wav')
+#             fluctuate_audio_volume(current_path, output_path=temp_out)
+#             current_path = temp_out
+#             temp_files.append(temp_out)
+#         # Add more effects here as needed
+#         elif effect['type'] == 'mic_rubbing':
+#             prob = effect.get('probability', 1.0)
+#             if random.random() < prob:
+#                 temp_out = output_path.replace('.wav', '_micrubbing.wav')
+#                 apply_mic_rubbing_effect(current_path, output_path=temp_out)
+#                 current_path = temp_out
+#                 temp_files.append(temp_out)
+        
+#         elif effect['type'] == 'audio_mumbling':
+#             prob = effect.get('probability', 1.0)
+#             if random.random() < prob:
+#                 temp_out = output_path.replace('.wav', '_mumbling.wav')
+#                 apply_audio_mumbling_effect(current_path, output_path=temp_out)
+#                 current_path = temp_out
+#                 temp_files.append(temp_out)
+#         elif effect['type'] == 'heavy_wind':
+#             wind_file = effect['wind_file']
+#             temp_out = output_path.replace('.wav', '_heavywind.wav')
+#             apply_heavy_wind_effect(
+#                 current_path,
+#                 wind_noise_path=wind_file,
+#                 output_path=temp_out
+#             )
+#             current_path = temp_out
+#             temp_files.append(temp_out)
+#     # Final output
+#     os.rename(current_path, output_path)
+#     # Clean up temp files except the final output
+#     for f in temp_files:
+#         if f != output_path and os.path.exists(f):
+#             os.remove(f)
+#     print(f"Created: {output_path}")
+#     return output_path
+
 def apply_effects_chain(audio_path, output_path, effects_chain):
     current_path = audio_path
     temp_files = []
     noise_processor = None
-    for effect in effects_chain:
-        if effect['type'] == 'background_noise':
-            noise_file = effect['noise_file']
-            temp_out = output_path.replace('.wav', f'_noise_{Path(noise_file).stem}.wav')
-            if noise_processor is None:
-                noise_processor = BackgroundNoiseProcessor(noise_dir=str(Path(noise_file).parent.parent))
-            noise_processor.add_background_noise(
-                current_path,
-                noise_file=noise_file, # Pass the specific noise file
-                output_path=temp_out,
-                noise_level=effect.get('noise_level', -20)
-            )
+    
+    # Use pathlib for robust path manipulation
+    p = Path(output_path)
+    stem = p.stem
+    suffix = p.suffix  # This will now be '.mp3'
 
-            # # Temporarily override noise_files to use only the selected noise_file
-            # original_noise_files = noise_processor.noise_files
-            # noise_processor.noise_files = [noise_file]
-            # noise_processor.add_background_noise(current_path, output_path=temp_out, noise_level=effect.get('noise_level', -20))
-            # noise_processor.noise_files = original_noise_files
-            current_path = temp_out
-            temp_files.append(temp_out)
-        elif effect['type'] == 'audio_fade':
-            temp_out = output_path.replace('.wav', '_fade.wav')
-            apply_gradual_audio_fade(current_path, output_path=temp_out)
-            current_path = temp_out
-            temp_files.append(temp_out)
-        elif effect['type'] == 'network_cut':
-            prob = effect.get('probability', 1.0)
-            n_cuts = effect.get('n_cuts', 8)
-            if random.random() < prob:
-                temp_out = output_path.replace('.wav', '_networkcut.wav')
-                apply_network_cut_effect(current_path, output_path=temp_out, n_cuts=n_cuts)
-                current_path = temp_out
-                temp_files.append(temp_out)
-        elif effect['type'] == 'fluctuate':
-            temp_out = output_path.replace('.wav', '_fluctuate.wav')
-            fluctuate_audio_volume(current_path, output_path=temp_out)
-            current_path = temp_out
-            temp_files.append(temp_out)
-        # Add more effects here as needed
-        elif effect['type'] == 'mic_rubbing':
-            prob = effect.get('probability', 1.0)
-            if random.random() < prob:
-                temp_out = output_path.replace('.wav', '_micrubbing.wav')
-                apply_mic_rubbing_effect(current_path, output_path=temp_out)
-                current_path = temp_out
-                temp_files.append(temp_out)
+    for effect in effects_chain:
+        effect_type = effect['type']
         
-        elif effect['type'] == 'audio_mumbling':
-            prob = effect.get('probability', 1.0)
-            if random.random() < prob:
-                temp_out = output_path.replace('.wav', '_mumbling.wav')
-                apply_audio_mumbling_effect(current_path, output_path=temp_out)
-                current_path = temp_out
-                temp_files.append(temp_out)
-    # Final output
+        # This new logic creates temp names like 'original_stem_effect.mp3'
+        if effect_type == 'background_noise':
+            noise_file = effect['noise_file']
+            temp_name = f"{stem}_noise_{Path(noise_file).stem}{suffix}"
+            temp_out = str(p.with_name(temp_name))
+            if noise_processor is None:
+                # Assuming noise_dir is the parent of the 'noise' folder
+                noise_processor = BackgroundNoiseProcessor(noise_dir=str(Path(noise_file).parent.parent))
+            noise_processor.add_background_noise(current_path, noise_file=noise_file, output_path=temp_out, noise_level=effect.get('noise_level', -20))
+        else:
+            temp_name = f"{stem}_{effect_type}{suffix}"
+            temp_out = str(p.with_name(temp_name))
+
+            if effect_type == 'audio_fade':
+                apply_gradual_audio_fade(current_path, output_path=temp_out)
+            elif effect_type == 'network_cut':
+                if random.random() < effect.get('probability', 1.0):
+                    apply_network_cut_effect(current_path, output_path=temp_out, n_cuts=effect.get('n_cuts'))
+                else: continue # Skip to next effect if probability check fails
+            elif effect_type == 'fluctuate':
+                fluctuate_audio_volume(current_path, output_path=temp_out)
+            elif effect_type == 'mic_rubbing':
+                if random.random() < effect.get('probability', 1.0):
+                    apply_mic_rubbing_effect(current_path, output_path=temp_out)
+                else: continue
+            elif effect_type == 'audio_mumbling':
+                if random.random() < effect.get('probability', 1.0):
+                    apply_audio_mumbling_effect(current_path, output_path=temp_out)
+                else: continue
+            elif effect_type == 'heavy_wind':
+                 apply_heavy_wind_effect(current_path, wind_noise_path=effect['wind_file'], output_path=temp_out)
+
+        current_path = temp_out
+        temp_files.append(temp_out)
+
+    # Final output and cleanup
     os.rename(current_path, output_path)
-    # Clean up temp files except the final output
     for f in temp_files:
         if f != output_path and os.path.exists(f):
             os.remove(f)
@@ -136,7 +203,8 @@ def process_all_speechified(input_dir, output_dir, noise_dir):
         {'type': 'fluctuate'},
         # Add the mic rumbling and audio mumbling effects here too
         {'type': 'mic_rubbing', 'probability': 0.1},
-        {'type': 'audio_mumbling', 'probability': 0.1}
+        {'type': 'audio_mumbling', 'probability': 0.1},
+        {'type': 'heavy_wind', 'wind_file': 'berkeley-function-call-leaderboard/audio_calling/background_noise/noise/wind_in_mic.wav'} # Example wind noise file
     ]
     combos = generate_feature_combinations(noise_files, features)
     print(f"Total combinations: {len(combos)}")
@@ -161,7 +229,7 @@ def process_all_speechified(input_dir, output_dir, noise_dir):
             (('_' + Path(e['noise_file']).stem + f'_db{e["noise_level"]}') if e['type']=='background_noise' else '') 
             for e in combo
         ])
-        out_name = f"{base}_{combo_names}.wav"
+        out_name = f"{base}_{combo_names}.mp3"
         out_path = str(out_dir / out_name)
         
         print(f"Processing {speech_file} with {combo_names}")
@@ -170,7 +238,7 @@ def process_all_speechified(input_dir, output_dir, noise_dir):
 
 # Update the input directory to process all audio files
 process_all_speechified(
-    input_dir="berkeley-function-call-leaderboard/audio_calling/audio",
-    output_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/noisy_FINAL",
-    noise_dir="berkeley-function-call-leaderboard/audio_calling/background_noise/noise"
+    input_dir="audio",
+    output_dir="background_noise/noisy_FINAL",
+    noise_dir="background_noise/noise"
 )
