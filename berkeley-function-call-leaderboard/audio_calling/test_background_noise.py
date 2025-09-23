@@ -1,4 +1,4 @@
-from background import BackgroundNoiseProcessor
+from background import BackgroundNoiseProcessor, overlay_audio_with_noise
 import os
 from pathlib import Path
 
@@ -125,16 +125,37 @@ def test_noise_comparison():
     print(f"\nAll comparison files saved in: {output_dir}")
 
 if __name__ == "__main__":
-    test_batch_processing()
-    test_noise_comparison()
-    from background import fluctuate_audio_volume
+    # test_batch_processing()
+    # test_noise_comparison()
+    # from background import fluctuate_audio_volume
 
-    fluctuate_audio_volume(
-        audio_path="/Users/imradawoodani/gorilla/berkeley-function-call-leaderboard/audio_calling/background_noise/noisy_audio/noise_comparison/speech_with_restaurant-ambience-24720_at_10db.wav",
-        output_path="berkeley-function-call-leaderboard/audio_calling/background_noise/fluctuations/fluctuated_sample.wav",
-        min_db_change=-15,  # softest dip
-        max_db_change=10,   # loudest boost
-        min_duration_ms=500,
-        max_duration_ms=3000,
-        n_fluctuations=5
-    )
+    # fluctuate_audio_volume(
+    #     audio_path="/Users/imradawoodani/gorilla/berkeley-function-call-leaderboard/audio_calling/background_noise/noisy_audio/noise_comparison/speech_with_restaurant-ambience-24720_at_10db.wav",
+    #     output_path="berkeley-function-call-leaderboard/audio_calling/background_noise/fluctuations/fluctuated_sample.wav",
+    #     min_db_change=-15,  # softest dip
+    #     max_db_change=10,   # loudest boost
+    #     min_duration_ms=500,
+    #     max_duration_ms=3000,
+    #     n_fluctuations=5
+    # )
+
+    output_dir = Path("background_noise/noisy_FINAL/audio_overlay")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Output directory '{output_dir}' is ready.")
+
+    base_path = Path("audio/BFCL_v3_live_parallel")
+    noise_file_path = Path("audio/BFCL_v3_irrelevance/irrelevance_0_openai.mp3")
+
+    print("Starting overlay process...")
+    for base_file in base_path.glob("*.mp3"):
+        output_path = output_dir / f"double_overlay_{base_file.name}"
+        
+        print(f"  -> Processing {base_file.name}...")
+        overlay_audio_with_noise(
+            speech_path=str(base_file), 
+            noise_path=str(noise_file_path), 
+            output_path=str(output_path), 
+            noise_level_db=-10
+        )
+
+    print("Done.")

@@ -19,11 +19,8 @@ class BackgroundNoiseProcessor:
 
     def _ensure_noise_directory(self):
         """Create the necessary directories if they don't exist."""
-        # Ensure main directory exists
         Path(self.noise_dir).mkdir(parents=True, exist_ok=True)
-        # Ensure noise directory exists
         Path(os.path.join(self.noise_dir, "noise")).mkdir(parents=True, exist_ok=True)
-        # Ensure noisy_audio directory exists
         Path(os.path.join(self.noise_dir, "noisy_audio")).mkdir(parents=True, exist_ok=True)
 
     def _load_noise_files(self):
@@ -40,9 +37,7 @@ class BackgroundNoiseProcessor:
         else:
             print(f"Warning: No noise files found in {noise_dir}")
         return noise_files
-                
-        return noise_files
-
+    
     def add_background_noise(self, audio_path, noise_file, output_path=None, noise_level=-20):
         """
         Add background noise to an audio file.
@@ -76,14 +71,9 @@ class BackgroundNoiseProcessor:
         
         # Trim to exact length
         noise = noise[:target_duration]
-        
-        # Adjust noise volume
         noise = noise + noise_level
-        
-        # Overlay noise with speech
         combined = audio.overlay(noise)
         
-        # Generate output path if not provided
         if output_path is None:
             # Create noisy_audio directory inside background_noise
             noisy_dir = os.path.join(self.noise_dir, "noisy_audio")
@@ -94,62 +84,61 @@ class BackgroundNoiseProcessor:
             base_filename = os.path.splitext(audio_filename)[0]
             output_path = os.path.join(noisy_dir, f"{base_filename}_with_noise.mp3")
         
-        # Export the result
         combined.export(output_path, format="mp3")
         return output_path
 
-    def add_background_noise_batch(self, audio_dir, output_dir=None, noise_level=-20):
-        """
-        Process multiple audio files in a directory.
+    # def add_background_noise_batch(self, audio_dir, output_dir=None, noise_level=-20):
+    #     """
+    #     Process multiple audio files in a directory.
         
-        Args:
-            audio_dir (str): Directory containing input audio files
-            output_dir (str): Directory to save processed files (optional)
-            noise_level (int): Volume of background noise in dB (default: -20)
+    #     Args:
+    #         audio_dir (str): Directory containing input audio files
+    #         output_dir (str): Directory to save processed files (optional)
+    #         noise_level (int): Volume of background noise in dB (default: -20)
             
-        Returns:
-            list: Paths to all processed audio files
-        """
-        # If no output directory specified, use noisy_audio in background_noise directory
-        if output_dir is None:
-            output_dir = os.path.join(self.noise_dir, "noisy_audio")
+    #     Returns:
+    #         list: Paths to all processed audio files
+    #     """
+    #     # If no output directory specified, use noisy_audio in background_noise directory
+    #     if output_dir is None:
+    #         output_dir = os.path.join(self.noise_dir, "noisy_audio")
         
-        # Create output directory
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
-        processed_files = []
+    #     # Create output directory
+    #     Path(output_dir).mkdir(parents=True, exist_ok=True)
+    #     processed_files = []
         
-        # Get all wav files from input directory and its subdirectories
-        audio_files = list(Path(audio_dir).rglob("*.wav"))
-        total_files = len(audio_files)
+    #     # Get all wav files from input directory and its subdirectories
+    #     audio_files = list(Path(audio_dir).rglob("*.wav"))
+    #     total_files = len(audio_files)
         
-        if total_files == 0:
-            print(f"No .wav files found in {audio_dir}")
-            return processed_files
+    #     if total_files == 0:
+    #         print(f"No .wav files found in {audio_dir}")
+    #         return processed_files
         
-        print(f"Processing {total_files} audio files...")
+    #     print(f"Processing {total_files} audio files...")
         
-        # Process each audio file
-        for i, audio_file in enumerate(audio_files, 1):
-            # Preserve directory structure
-            rel_path = audio_file.relative_to(Path(audio_dir))
-            output_subdir = os.path.join(output_dir, os.path.dirname(str(rel_path)))
-            Path(output_subdir).mkdir(parents=True, exist_ok=True)
+    #     # Process each audio file
+    #     for i, audio_file in enumerate(audio_files, 1):
+    #         # Preserve directory structure
+    #         rel_path = audio_file.relative_to(Path(audio_dir))
+    #         output_subdir = os.path.join(output_dir, os.path.dirname(str(rel_path)))
+    #         Path(output_subdir).mkdir(parents=True, exist_ok=True)
             
-            # Create output path
-            output_path = os.path.join(output_subdir, f"{audio_file.stem}_with_noise.wav")
+    #         # Create output path
+    #         output_path = os.path.join(output_subdir, f"{audio_file.stem}_with_noise.wav")
             
-            try:
-                processed_file = self.add_background_noise(
-                    str(audio_file), output_path, noise_level
-                )
-                processed_files.append(processed_file)
-                print(f"Processed {i}/{total_files}: {rel_path}")
-            except Exception as e:
-                print(f"Error processing {rel_path}: {str(e)}")
-                continue
+    #         try:
+    #             processed_file = self.add_background_noise(
+    #                 str(audio_file), output_path, noise_level
+    #             )
+    #             processed_files.append(processed_file)
+    #             print(f"Processed {i}/{total_files}: {rel_path}")
+    #         except Exception as e:
+    #             print(f"Error processing {rel_path}: {str(e)}")
+    #             continue
             
-        print(f"\nCompleted processing {len(processed_files)} files")
-        return processed_files
+    #     print(f"\nCompleted processing {len(processed_files)} files")
+    #     return processed_files
 
 def overlay_audio_with_noise(speech_path, noise_path, output_path=None, noise_level_db=-20):
     """
@@ -241,62 +230,62 @@ def fluctuate_audio_volume(
     print(f"Created fluctuated audio: {output_path}")
     return output_path
 
-def apply_gradual_noise_fade(
-    speech_path,
-    noise_path,
-    output_path=None,
-    min_db=-30,
-    max_db=0
-):
-    """
-    Overlay noise on a speech file with a gradual fade out and in,
-    simulating someone walking away from and then back to a phone.
+# def apply_gradual_noise_fade(
+#     speech_path,
+#     noise_path,
+#     output_path=None,
+#     min_db=-30,
+#     max_db=0
+# ):
+#     """
+#     Overlay noise on a speech file with a gradual fade out and in,
+#     simulating someone walking away from and then back to a phone.
     
-    Args:
-        speech_path (str): Path to the speech audio file
-        noise_path (str): Path to the noise audio file
-        output_path (str): Path to save the output file (optional)
-        min_db (int): Minimum dB for noise (farthest point)
-        max_db (int): Maximum dB for noise (closest point)
+#     Args:
+#         speech_path (str): Path to the speech audio file
+#         noise_path (str): Path to the noise audio file
+#         output_path (str): Path to save the output file (optional)
+#         min_db (int): Minimum dB for noise (farthest point)
+#         max_db (int): Maximum dB for noise (closest point)
         
-    Returns:
-        str: Path to the output file
-    """
-    from pydub import AudioSegment
-    import numpy as np
-    import os
+#     Returns:
+#         str: Path to the output file
+#     """
+#     from pydub import AudioSegment
+#     import numpy as np
+#     import os
     
-    speech = AudioSegment.from_file(speech_path)
-    noise = AudioSegment.from_file(noise_path)
-    duration = len(speech)
-    # Loop or trim noise to match speech duration
-    if len(noise) < duration:
-        loops_needed = int(np.ceil(duration / len(noise)))
-        noise = noise * loops_needed
-    noise = noise[:duration]
-    # Create a fade-out and fade-in envelope
-    half = duration // 2
-    envelope = np.concatenate([
-        np.linspace(max_db, min_db, half),  # fade out
-        np.linspace(min_db, max_db, duration - half)  # fade in
-    ])
-    # Apply envelope in chunks
-    chunk_ms = 100  # 0.1s
-    chunks = []
-    for i in range(0, duration, chunk_ms):
-        db = envelope[i] if i < len(envelope) else envelope[-1]
-        chunk = noise[i:i+chunk_ms] + db
-        chunks.append(chunk)
-    faded_noise = sum(chunks)
-    # Overlay
-    combined = speech.overlay(faded_noise)
-    if output_path is None:
-        base = os.path.splitext(os.path.basename(speech_path))[0]
-        noise_base = os.path.splitext(os.path.basename(noise_path))[0]
-        output_path = f"{base}_with_{noise_base}_walkaway.mp3"
-    combined.export(output_path, format="mp3")
-    print(f"Created: {output_path}")
-    return output_path
+#     speech = AudioSegment.from_file(speech_path)
+#     noise = AudioSegment.from_file(noise_path)
+#     duration = len(speech)
+#     # Loop or trim noise to match speech duration
+#     if len(noise) < duration:
+#         loops_needed = int(np.ceil(duration / len(noise)))
+#         noise = noise * loops_needed
+#     noise = noise[:duration]
+#     # Create a fade-out and fade-in 
+#     half = duration // 2
+#     envelope = np.concatenate([
+#         np.linspace(max_db, min_db, half),  # fade out
+#         np.linspace(min_db, max_db, duration - half)  # fade in
+#     ])
+#     # Apply envelope in chunks
+#     chunk_ms = 100  # 0.1s
+#     chunks = []
+#     for i in range(0, duration, chunk_ms):
+#         db = envelope[i] if i < len(envelope) else envelope[-1]
+#         chunk = noise[i:i+chunk_ms] + db
+#         chunks.append(chunk)
+#     faded_noise = sum(chunks)
+#     # Overlay
+#     combined = speech.overlay(faded_noise)
+#     if output_path is None:
+#         base = os.path.splitext(os.path.basename(speech_path))[0]
+#         noise_base = os.path.splitext(os.path.basename(noise_path))[0]
+#         output_path = f"{base}_with_{noise_base}_walkaway.mp3"
+#     combined.export(output_path, format="mp3")
+#     print(f"Created: {output_path}")
+#     return output_path
 
 def apply_gradual_audio_fade(
     speech_path,
@@ -323,7 +312,7 @@ def apply_gradual_audio_fade(
     
     speech = AudioSegment.from_file(speech_path)
     duration = len(speech)
-    # Create a fade-out and fade-in envelope
+    # Create a fade-out and fade-in
     half = duration // 2
     envelope = np.concatenate([
         np.linspace(max_db, min_db, half),  # fade out
@@ -467,7 +456,7 @@ def apply_mic_rubbing_effect(audio_path, output_path=None):
     audio = AudioSegment.from_file(audio_path)
     duration = len(audio)
     
-    # Generate a low-frequency rumble (e.g., 50 Hz sine wave)
+    #low-frequency rumble
     rumble_freq = 50  # Hz
     rumble = Sine(rumble_freq).to_audio_segment(duration=duration).apply_gain(-20)
     rumble = rumble.set_frame_rate(audio.frame_rate).set_channels(audio.channels)
@@ -498,8 +487,8 @@ def apply_audio_mumbling_effect(audio_path, output_path=None):
     
     audio = AudioSegment.from_file(audio_path)
     
-    # Apply a low-pass filter to simulate mumbling
-    mumble = audio.low_pass_filter(300)  # Cutoff frequency at 300 Hz
+    #low-pass filter to simulate mumbling
+    mumble = audio.low_pass_filter(300)
     
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
@@ -560,8 +549,8 @@ def apply_heavy_wind_effect(
         # Create a short, low-frequency thump
         hit_freq = random.randint(hit_min_freq, hit_max_freq)
         hit_duration = random.randint(hit_min_duration_ms, hit_max_duration_ms)
-        
-        # Shape the hit to sound percussive (quick attack, slightly longer decay)
+
+        # quick attack, slightly longer decay
         thump = Sine(hit_freq).to_audio_segment(
             duration=hit_duration
         ).apply_gain(hit_db).fade_in(5).fade_out(hit_duration // 2)
