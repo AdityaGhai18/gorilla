@@ -568,3 +568,237 @@ def apply_heavy_wind_effect(
     combined.export(output_path, format="mp3")
     print(f"Created: {output_path}")
     return output_path
+
+def apply_reverb(
+    audio_path,
+    output_path=None,
+    mode="cave",
+    # echo params
+    echo_delay_ms=120,
+    echo_decay=0.6,
+    echo_n=3,
+    # cave params
+    n_reflections=40,
+    max_reflection_delay_ms=120,
+    decay_mean=0.6,
+    decay_std=0.12,
+    lowpass_freq=3500,
+    # convolution params
+    ir_path=None
+):
+    """
+    Unified reverb function.
+    mode: "convolution" (requires ir_path), "echo", or "cave" (synthetic dense reverb).
+    For "echo" mode uses echo_delay_ms, echo_decay, echo_n.
+    For "cave" mode uses n_reflections, max_reflection_delay_ms, decay_mean, decay_std, lowpass_freq.
+    For "convolution" mode provide ir_path.
+    """
+    import numpy as _np
+    import random as _random
+    import os as _os
+    from pydub import AudioSegment
+
+    audio = AudioSegment.from_file(audio_path)
+
+    if mode == "echo":
+        combined = audio[:]  # copy
+        for i in range(1, echo_n + 1):
+            scale = echo_decay ** i
+            gain_db = (-120.0 if scale <= 0 else 20.0 * _np.log10(scale))
+            delayed_pos = int(echo_delay_ms * i)
+            echo = (audio + gain_db)
+            combined = combined.overlay(echo, position=delayed_pos)
+        out = combined
+
+    elif mode == "cave":
+        duration = len(audio)
+        max_tail = duration + max_reflection_delay_ms * 3
+        reverb_container = AudioSegment.silent(duration=max_tail, frame_rate=audio.frame_rate)
+
+        # early reflections
+        for _ in range(n_reflections):
+            delay = int(_random.random() ** 1.5 * max_reflection_delay_ms)
+            decay = max(0.01, _np.random.normal(decay_mean, decay_std))
+            gain_db = (-120.0 if decay <= 0 else 20.0 * _np.log10(decay))
+            refl = (audio + gain_db)
+            reverb_container = reverb_container.overlay(refl, position=delay)
+
+        # long tail by appending fragments
+        tail_fragment_len = 120
+        n_tail_frags = int((max_tail - duration) / tail_fragment_len)
+        for j in range(n_tail_frags):
+            frag_start = int(_random.randint(0, max(0, duration - tail_fragment_len)))
+            frag = audio[frag_start:frag_start + tail_fragment_len]
+            frac = (j + 1) / max(1, n_tail_frags)
+            this_decay = max(0.02, decay_mean * (1.0 - frac) ** 1.5)
+            gain_db = (-120.0 if this_decay <= 0 else 20.0 * _np.log10(this_decay))
+            pos = duration + j * tail_fragment_len
+            reverb_container = reverb_container.overlay(frag + gain_db, position=pos)
+
+        try:
+            reverb_container = reverb_container.low_pass_filter(lowpass_freq)
+        except Exception:
+            pass
+
+        wet_level_db = -3
+        wet = reverb_container[:len(audio) + max_reflection_delay_ms]
+        out = audio.overlay(wet + wet_level_db)
+
+    elif mode == "convolution":
+        if not ir_path:
+            raise ValueError("ir_path is required for convolution mode")
+        # convert to mono and match sample rate
+        speech = audio.set_channels(1)
+        ir = AudioSegment.from_file(ir_path).set_channels(1)
+        if ir.frame_rate != speech.frame_rate:
+            ir = ir.set_frame_rate(speech.frame_rate)
+        sr = speech.frame_rate
+        sw = speech.sample_width
+
+        s_arr = _np.array(speech.get_array_of_samples()).astype(_np.float32)
+        ir_arr = _np.array(ir.get_array_of_samples()).astype(_np.float32)
+        if s_arr.size == 0 or ir_arr.size == 0:
+            raise ValueError("Empty audio or IR file.")
+
+        conv = _np.convolve(s_arr, ir_arr)
+        max_abs = _np.max(_np.abs(conv))
+        if max_abs == 0:
+            max_abs = 1.0
+        max_int = float(2 ** (8 * sw - 1) - 1)
+        conv_norm = (conv / max_abs) * (0.9 * max_int)
+
+        if sw == 2:
+            conv_int = conv_norm.astype(_np.int16)
+        elif sw == 4:
+            conv_int = conv_norm.astype(_np.int32)
+        else:
+            conv_int = conv_norm.astype(_np.int16)
+
+        out = AudioSegment(
+            conv_int.tobytes(),
+            frame_rate=sr,
+            sample_width=sw,
+            channels=1
+        )
+
+    else:
+        raise ValueError(f"Unknown reverb mode: {mode}")
+
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_reverb_{mode}.mp3" if mode != "convolution" else f"{base}_reverb_conv.mp3"
+    out.export(output_path, format="mp3")
+    print(f"Created reverb ({mode}): {output_path}")
+    return output_path
+
+def apply_clipping_distortion(audio_path, output_path=None, clip_threshold=0.8, drive_db=0.0):
+    """
+    Simulate microphone overload: apply gain (drive_db) then non-linear clipping at clip_threshold (0..1 scale).
+    clip_threshold close to 1.0 is mild, lower values produce heavy clipping.
+    """
+    import numpy as _np
+    import os as _os
+    from pydub import AudioSegment
+
+    seg = AudioSegment.from_file(audio_path)
+    sr = seg.frame_rate
+    sw = seg.sample_width
+    channels = seg.channels
+
+    # apply drive
+    seg = seg.apply_gain(drive_db)
+
+    arr = _np.array(seg.get_array_of_samples()).astype(_np.float32)
+    # interleaved if stereo; normalize by max int based on sample width
+    max_int = float(2 ** (8 * sw - 1) - 1)
+    arr = arr / max_int  # now in [-1,1]
+
+    # apply soft clipping (tanh) followed by hard clip to threshold
+    soft = _np.tanh(arr * 3.0)  # pre-emphasize harmonics
+    clipped = _np.clip(soft, -clip_threshold, clip_threshold)
+
+    # scale back
+    out_arr = (clipped * max_int * 0.98).astype(_np.int16 if sw == 2 else _np.int32)
+
+    out_seg = AudioSegment(out_arr.tobytes(), frame_rate=sr, sample_width=sw, channels=channels)
+    if output_path is None:
+        base = _os.path.splitext(_os.path.basename(audio_path))[0]
+        output_path = f"{base}_clipped.mp3"
+    out_seg.export(output_path, format="mp3")
+    print(f"Created clipped/distorted audio: {output_path}")
+    return output_path
+
+def apply_gain_variation(
+    audio_path,
+    output_path=None,
+    min_gain_db=-12,
+    max_gain_db=6,
+    segment_ms=400
+):
+    """
+    Randomly vary input gain over time to simulate moving mic distance or user loudness changes.
+    """
+    import random as _random
+    import os as _os
+    from pydub import AudioSegment
+
+    seg = AudioSegment.from_file(audio_path)
+    duration = len(seg)
+    out_segments = []
+    for pos in range(0, duration, segment_ms):
+        chunk = seg[pos:pos + segment_ms]
+        gain = _random.uniform(min_gain_db, max_gain_db)
+        out_segments.append(chunk.apply_gain(gain))
+    out = sum(out_segments)
+    if output_path is None:
+        base = _os.path.splitext(_os.path.basename(audio_path))[0]
+        output_path = f"{base}_gainvar.mp3"
+    out.export(output_path, format="mp3")
+    print(f"Created gain-varied audio: {output_path}")
+    return output_path
+
+def apply_mechanical_interference(
+    audio_path,
+    output_path=None,
+    n_rubs=3,
+    rub_freq_range=(40, 120),
+    rub_db=-6,
+    n_clicks=8,
+    click_db=0
+):
+    """
+    Overlay mechanical noises: low-frequency rubbing/thumps and short clicks/squeaks.
+    """
+    from pydub import AudioSegment
+    from pydub.generators import Sine
+    import random
+    import os
+
+    audio = AudioSegment.from_file(audio_path)
+    duration = len(audio)
+    combined = audio[:]  # base
+
+    # low-frequency rubs/thumps
+    for _ in range(n_rubs):
+        freq = random.randint(rub_freq_range[0], rub_freq_range[1])
+        dur = random.randint(150, 700)
+        start = random.randint(0, max(0, duration - dur))
+        rumble = Sine(freq).to_audio_segment(duration=dur).apply_gain(rub_db).fade_in(20).fade_out(100)
+        rumble = rumble.set_frame_rate(audio.frame_rate).set_channels(audio.channels)
+        combined = combined.overlay(rumble, position=start)
+
+    # clicks/squeaks: very short high-gain narrow pulses
+    for _ in range(n_clicks):
+        click_dur = random.randint(6, 30)
+        freq = random.choice([800, 1600, 2400, 3200])
+        pos = random.randint(0, max(0, duration - click_dur))
+        click = Sine(freq).to_audio_segment(duration=click_dur).apply_gain(click_db).fade_out(10)
+        click = click.set_frame_rate(audio.frame_rate).set_channels(audio.channels)
+        combined = combined.overlay(click, position=pos)
+
+    if output_path is None:
+        base = os.path.splitext(os.path.basename(audio_path))[0]
+        output_path = f"{base}_mechint.mp3"
+    combined.export(output_path, format="mp3")
+    print(f"Created mechanical interference audio: {output_path}")
+    return output_path
