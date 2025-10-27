@@ -327,3 +327,158 @@ def generate_dataset_for_llm(
         result["zip"] = f"{zip_path}.zip"
 
     return result
+
+def example_llm_judge_wrapper(variant_audio_path: str, original_query_text: str, metadata: Dict[str, Any]) -> Dict[str, Any]:
+	"""
+	Small adapter so example_llm_analysis_fn can be used as a simple judge.
+	Replace this wrapper with a function that calls your LLM and returns a dict:
+	{
+	  "error_types": ["high_wer", "misheard_entity"],
+	  "transcript": "...",
+	  "notes": "optional free text"
+	}
+	"""
+	# use example_llm_analysis_fn (which returns wer/labels) as a fallback judge
+	analysis = example_llm_analysis_fn(variant_audio_path, original_query_text, metadata)
+	labels = analysis.get("error_labels", [])
+	# map generic labels to error_types expected by the experiment
+	error_types = []
+	if "high_wer" in labels or "medium_wer" in labels:
+		error_types.append("transcription_error")
+	if "noisy_effect" in labels:
+		error_types.append("background_confusion")
+	# include raw transcript if present
+	return {"error_types": error_types or ["no_error"], "transcript": analysis.get("transcript"), "raw": analysis}
+
+def run_full_experiment(
+	audio_dir: str,
+	queries_map: Dict[str, str],
+	effects_spec: Dict[str, Dict],
+	llm_judge_fn: Callable[[str, str, Dict[str, Any]], Dict[str, Any]] = None,
+	transcribe_fn: Callable[[str], str] = None,
+	output_root: str = "pipeline_outputs",
+	results_dir: str = "pipeline_results",
+	audio_glob: str = "*.wav"
+) -> str:
+	"""
+	High-level experiment runner:
+	1) Finds original audio files under audio_dir matching audio_glob.
+	2) Generates controlled noisy variants using effects_spec (calls generate_dataset_for_llm).
+	3) Runs llm_judge_fn on each generated variant to obtain error labels/types.
+	4) Aggregates correlations between effect_key and error types and saves results.
+
+	llm_judge_fn signature: (variant_audio_path, original_query_text, metadata) -> dict
+	  Expected dict keys: "error_types" (list of strings) and optional "transcript"/"notes".
+	If llm_judge_fn is None, example_llm_judge_wrapper is used (which in turn uses example_llm_analysis_fn
+	and requires transcribe_audio to be defined in the runtime).
+	"""
+	from pathlib import Path
+	import csv as _csv
+
+	# 1) find audio files
+	root = Path(audio_dir)
+	if not root.exists():
+		raise FileNotFoundError(f"audio_dir not found: {audio_dir}")
+	audio_paths = [str(p) for p in root.rglob(audio_glob)]
+
+	if len(audio_paths) == 0:
+		# try common alternatives
+		audio_paths = []
+		for ext in ("*.wav", "*.mp3", "*.flac"):
+			audio_paths.extend([str(p) for p in root.rglob(ext)])
+	if len(audio_paths) == 0:
+		raise RuntimeError(f"No audio files found under {audio_dir} (tried {audio_glob} and common extensions)")
+
+	# 2) generate variants & manifest
+	gen_res = generate_dataset_for_llm(audio_paths, queries_map, effects_spec, output_root=output_root)
+	manifest_path = Path(gen_res["manifest_json"])
+	manifest = json.loads(manifest_path.read_text())
+
+	# 3) choose judge fn
+	# judge_fn = llm_judge_fn or example_llm_judge_wrapper
+	judge_fn = llm_judge_fn
+
+	# 4) iterate and call judge, collect raw judgments
+	results = []
+	for rec in manifest:
+		variant_path = rec["variant_path"]
+		orig_query = rec.get("original_query_text", "")
+		metadata = {"effect_key": rec.get("effect_key"), "params": rec.get("params"), "variant_idx": rec.get("variant_idx"), "audio_base": rec.get("audio_base")}
+		try:
+			judg = judge_fn(variant_path, orig_query, metadata)
+		except Exception as e:
+			judg = {"error": True, "error_types": ["judge_failed"], "notes": str(e)}
+		entry = dict(rec)
+		entry["judgment"] = judg
+		results.append(entry)
+
+	# 5) save raw results
+	out_dir = Path(results_dir)
+	out_dir.mkdir(parents=True, exist_ok=True)
+	(Path(out_dir) / "full_judgments.json").write_text(json.dumps(results, indent=2))
+
+	# 6) create flat CSV for review
+	csv_path = Path(out_dir) / "flat_judgments.csv"
+	with open(csv_path, "w", newline="", encoding="utf-8") as fh:
+		writer = _csv.writer(fh)
+		writer.writerow(["audio_base", "effect_key", "variant_idx", "variant_path", "original_query_text", "error_types", "transcript", "notes"])
+		for r in results:
+			j = r.get("judgment", {})
+			errs = j.get("error_types", []) if isinstance(j, dict) else []
+			writer.writerow([r.get("audio_base"), r.get("effect_key"), r.get("variant_idx"), r.get("variant_path"), r.get("original_query_text"), ";".join(errs), j.get("transcript") if isinstance(j, dict) else None, json.dumps(j)])
+
+	# 7) aggregate correlations: effect_key -> error_type counts and reverse
+	summary = {"by_effect": {}, "by_error_type": {}}
+	for r in results:
+		effect = r.get("effect_key")
+		j = r.get("judgment", {}) or {}
+		err_list = j.get("error_types", ["no_error"]) if isinstance(j, dict) else ["no_judgment"]
+		summary["by_effect"].setdefault(effect, {"total": 0, "error_counts": {}})
+		summary["by_effect"][effect]["total"] += 1
+		for e in err_list:
+			summary["by_effect"][effect]["error_counts"].setdefault(e, 0)
+			summary["by_effect"][effect]["error_counts"][e] += 1
+
+			summary["by_error_type"].setdefault(e, {"total": 0, "effects": {}})
+			summary["by_error_type"][e]["total"] += 1
+			summary["by_error_type"][e]["effects"].setdefault(effect, 0)
+			summary["by_error_type"][e]["effects"][effect] += 1
+
+	# 8) save summary
+	(Path(out_dir) / "experiment_summary.json").write_text(json.dumps(summary, indent=2))
+
+	# 9) Return path to summary for easy consumption
+	return str(Path(out_dir) / "experiment_summary.json")
+
+if __name__ == "__main__":
+	# Example usage of run_full_experiment
+	audio_directory = "berkeley-function-call-leaderboard/audio_calling/audio/BFCL_v3_live_simple"
+	# Example queries map: audio_base -> original query text
+	queries = {
+		"audio1": "What is the weather today?",
+		"audio2": "Play some music.",
+		# ...
+	}
+	# Example effects specification
+	import judge
+	judge_fn = judge.create_llm_judge_function()
+	effects = {
+		"reverb": {
+			"fn": "apply_reverb",
+			"variants": [{"mode": "cave"}, {"mode": "hall"}]
+		},
+		"background_noise": {
+			"fn": "add_background_noise",
+			"variants": [{"noise_level": 0.2}, {"noise_level": 0.5}]
+		}
+	}
+	summary_path = run_full_experiment(
+		audio_dir=audio_directory,
+		queries_map=queries,
+		effects_spec=effects,
+		llm_judge_fn=judge_fn,
+		output_root="pipeline_outputs",
+		results_dir="pipeline_results",
+		audio_glob="*.mp3"
+	)
+	print(f"Experiment summary saved to: {summary_path}")
