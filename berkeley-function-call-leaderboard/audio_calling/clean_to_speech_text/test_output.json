@@ -1,7 +1,0 @@
-{
-  "source_file": "final_results/BFCL_v3_live_simple.json",
-  "total_cases_analyzed": 30,
-  "cases_with_asr_issues": 0,
-  "batch_size_used": 10,
-  "filtered_cases": []
-}

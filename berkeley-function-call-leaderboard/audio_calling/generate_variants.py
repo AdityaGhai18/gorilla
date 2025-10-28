@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 from typing import Dict, List, Any
 import random
+random.seed(42)
 
 # Import your existing background functions
 try:
@@ -57,36 +58,161 @@ def generate_variants(audio_paths: List[str], effects_spec: Dict[str, Dict], out
     Returns:
         List of variant records with metadata
     """
-    
     if not BACKGROUND_FUNCTIONS_AVAILABLE:
         raise RuntimeError("Background functions not available. Check background.py import.")
-    
+
     variant_records = []
     output_root = Path(output_root)
-    
+
     # Initialize noise processor for background noise effects
     noise_processor = BackgroundNoiseProcessor()
-    
+    # Get all noise files for background noise effects
+    noise_files = noise_processor.noise_files
+
+    # Only use a random 1/3rd subset of the audio files for all effects
+    if len(audio_paths) > 3:
+        random.seed(42)
+        audio_paths = random.sample(audio_paths, max(1, len(audio_paths) // 3))
+
     print(f"🎛️  Generating variants for {len(audio_paths)} audio files...")
-    
+
     for audio_path in audio_paths:
         audio_base = Path(audio_path).stem
         print(f"   Processing: {audio_base}")
-        
+
         for effect_key, spec in effects_spec.items():
             fn_name = spec.get("fn")
             variants = spec.get("variants", [{}])
-            
+
+            # Special handling for background noise and heavy wind effects
+            if fn_name in ("apply_background_noise"):
+                # For each noise file and each dB level, create a variant
+                db_levels = [-15, -5, 0]
+                for noise_file in noise_files:
+                    for db in db_levels:
+                        subdir = output_root / audio_base / effect_key
+                        subdir.mkdir(parents=True, exist_ok=True)
+                        noise_name = Path(noise_file).stem
+                        variant_fname = f"{audio_base}_{effect_key}_{noise_name}_db{db}.mp3"
+                        variant_path = subdir / variant_fname
+                        params = {"noise_level": db, "noise_file": noise_file}
+                        try:
+                            success = apply_effect_by_name(
+                                fn_name=fn_name,
+                                audio_path=audio_path,
+                                output_path=str(variant_path),
+                                params=params,
+                                noise_processor=noise_processor
+                            )
+                            if success:
+                                record = {
+                                    "audio_path": audio_path,
+                                    "audio_base": audio_base,
+                                    "effect_key": effect_key,
+                                    "variant_idx": f"{noise_name}_db{db}",
+                                    "variant_path": str(variant_path),
+                                    "params": params,
+                                    "function_name": fn_name
+                                }
+                                variant_records.append(record)
+                                print(f"      ✅ {effect_key}_{noise_name}_db{db}")
+                            else:
+                                print(f"      ❌ Failed: {effect_key}_{noise_name}_db{db}")
+                        except Exception as e:
+                            print(f"      ❌ Error {effect_key}_{noise_name}_db{db}: {str(e)}")
+                            continue
+                continue  # skip normal variant loop for this effect
+
+            if fn_name == "apply_heavy_wind_effect":
+                # For each noise file and each dB level, create a variant
+                db_levels = [-15, -5, 0]
+                for noise_file in noise_files:
+                    for db in db_levels:
+                        subdir = output_root / audio_base / effect_key
+                        subdir.mkdir(parents=True, exist_ok=True)
+                        noise_name = Path(noise_file).stem
+                        variant_fname = f"{audio_base}_{effect_key}_{noise_name}_db{db}.mp3"
+                        variant_path = subdir / variant_fname
+                        params = dict(spec.get("base_params", {}))
+                        params.update({"wind_noise_path": noise_file, "noise_level_db": db})
+                        try:
+                            # Call the actual background.py function directly
+                            apply_heavy_wind_effect(
+                                audio_path=audio_path,
+                                wind_noise_path=noise_file,
+                                output_path=str(variant_path),
+                                noise_level_db=db,
+                                n_hits=params.get("n_hits", 5),
+                                hit_min_freq=params.get("hit_min_freq", 30),
+                                hit_max_freq=params.get("hit_max_freq", 60),
+                                hit_min_duration_ms=params.get("hit_min_duration_ms", 80),
+                                hit_max_duration_ms=params.get("hit_max_duration_ms", 250),
+                                hit_db=params.get("hit_db", 10)
+                            )
+                            record = {
+                                "audio_path": audio_path,
+                                "audio_base": audio_base,
+                                "effect_key": effect_key,
+                                "variant_idx": f"{noise_name}_db{db}",
+                                "variant_path": str(variant_path),
+                                "params": params,
+                                "function_name": fn_name
+                            }
+                            variant_records.append(record)
+                            print(f"      ✅ {effect_key}_{noise_name}_db{db}")
+                        except Exception as e:
+                            print(f"      ❌ Error {effect_key}_{noise_name}_db{db}: {str(e)}")
+                            continue
+                continue  # skip normal variant loop for this effect
+
+            # Double overlay: competing speech (always use fixed file)
+            if fn_name == "competing_speech_overlay":
+                db_levels = spec.get("db_levels", [-15, -5, 0])
+                competing_noise_file = "./audio/BFCL_v3_java/java_0_openai.mp3"
+                if not os.path.exists(competing_noise_file):
+                    print(f"⚠️  Competing speech file not found: {competing_noise_file}")
+                    continue
+                # Never same as audio_path (by definition)
+                noise_name = Path(competing_noise_file).stem
+                for db in db_levels:
+                    subdir = output_root / audio_base / effect_key
+                    subdir.mkdir(parents=True, exist_ok=True)
+                    variant_fname = f"{audio_base}_{effect_key}_{noise_name}_db{db}.mp3"
+                    variant_path = subdir / variant_fname
+                    params = {"noise_file": competing_noise_file, "noise_level": db}
+                    try:
+                        success = apply_effect_by_name(
+                            fn_name=fn_name,
+                            audio_path=audio_path,
+                            output_path=str(variant_path),
+                            params=params
+                        )
+                        if success:
+                            record = {
+                                "audio_path": audio_path,
+                                "audio_base": audio_base,
+                                "effect_key": effect_key,
+                                "variant_idx": f"{noise_name}_db{db}",
+                                "variant_path": str(variant_path),
+                                "params": params,
+                                "function_name": fn_name
+                            }
+                            variant_records.append(record)
+                            print(f"      ✅ {effect_key}_{noise_name}_db{db}")
+                        else:
+                            print(f"      ❌ Failed: {effect_key}_{noise_name}_db{db}")
+                    except Exception as e:
+                        print(f"      ❌ Error {effect_key}_{noise_name}_db{db}: {str(e)}")
+                        continue
+                continue  # skip normal variant loop for this effect
+
+            # Normal effect handling
             for i, params in enumerate(variants):
-                # Create output directory
                 subdir = output_root / audio_base / effect_key
                 subdir.mkdir(parents=True, exist_ok=True)
-                
                 variant_fname = f"{audio_base}_{effect_key}_v{i}.mp3"
                 variant_path = subdir / variant_fname
-                
                 try:
-                    # Map function names to your actual functions
                     success = apply_effect_by_name(
                         fn_name=fn_name,
                         audio_path=audio_path,
@@ -94,7 +220,6 @@ def generate_variants(audio_paths: List[str], effects_spec: Dict[str, Dict], out
                         params=params,
                         noise_processor=noise_processor
                     )
-                    
                     if success:
                         record = {
                             "audio_path": audio_path,
@@ -109,11 +234,10 @@ def generate_variants(audio_paths: List[str], effects_spec: Dict[str, Dict], out
                         print(f"      ✅ {effect_key}_v{i}")
                     else:
                         print(f"      ❌ Failed: {effect_key}_v{i}")
-                        
                 except Exception as e:
                     print(f"      ❌ Error {effect_key}_v{i}: {str(e)}")
                     continue
-    
+
     print(f"✅ Generated {len(variant_records)} audio variants")
     return variant_records
 
@@ -134,17 +258,28 @@ def apply_effect_by_name(fn_name: str, audio_path: str, output_path: str, params
     """
     
     try:
-        if fn_name == "apply_white_noise":
-            # Use your background noise system with white noise
-            return apply_background_noise_effect(
-                audio_path, output_path, params, noise_processor, noise_type="white"
+        # Remove apply_white_noise, not needed
+        # if fn_name == "apply_white_noise":
+        #     return apply_background_noise_effect(
+        #         audio_path, output_path, params, noise_processor, noise_type="white"
+        #     )
+        if fn_name == "apply_background_noise":
+            # Use the specific noise file from params (no indirection)
+            noise_file = params.get("noise_file")
+            noise_level = params.get("noise_level", -20)
+            if not noise_file:
+                print(f"⚠️  No noise_file specified in params for background noise")
+                return False
+            if not os.path.exists(noise_file):
+                print(f"⚠️  Noise file not found: {noise_file}")
+                return False
+            noise_processor.add_background_noise(
+                audio_path=audio_path,
+                noise_file=noise_file,
+                output_path=output_path,
+                noise_level=noise_level
             )
-            
-        elif fn_name == "apply_background_noise":
-            # Use your BackgroundNoiseProcessor
-            return apply_background_noise_effect(
-                audio_path, output_path, params, noise_processor
-            )
+            return True
             
         elif fn_name == "apply_audio_overlay":
             # Use your overlay_audio_with_noise function
@@ -318,6 +453,40 @@ def apply_effect_by_name(fn_name: str, audio_path: str, output_path: str, params
             )
             return True
             
+        elif fn_name == "apply_gradual_audio_fade":
+            # Directly call the background function
+            apply_gradual_audio_fade(
+                speech_path=audio_path,
+                output_path=output_path,
+                min_db=params.get("min_db", -30),
+                max_db=params.get("max_db", 0)
+            )
+            return True
+
+        elif fn_name == "apply_mic_rubbing_effect":
+            apply_mic_rubbing_effect(
+                audio_path=audio_path,
+                output_path=output_path
+            )
+            return True
+
+        elif fn_name == "apply_audio_mumbling_effect":
+            apply_audio_mumbling_effect(
+                audio_path=audio_path,
+                output_path=output_path
+            )
+            return True
+            
+        elif fn_name == "competing_speech_overlay":
+            # Overlay another clean audio file as noise
+            noise_file = params.get("noise_file")
+            noise_level = params.get("noise_level", -20)
+            if not noise_file or not os.path.exists(noise_file):
+                print(f"⚠️  Competing speech noise file not found: {noise_file}")
+                return False
+            overlay_audio_with_noise(audio_path, noise_file, output_path, noise_level)
+            return True
+            
         else:
             print(f"⚠️  Unknown effect function: {fn_name}")
             return False
@@ -411,7 +580,7 @@ if __name__ == "__main__":
         
         # Show available functions
         available_functions = [
-            "apply_background_noise", "apply_white_noise", "apply_audio_overlay",
+            "apply_background_noise", "apply_audio_overlay",
             "apply_volume_fluctuation", "apply_reverb", "apply_gradual_audio_fade",
             "apply_network_cuts", "apply_mic_rubbing_effect", "apply_audio_mumbling_effect",
             # Compatibility mappings

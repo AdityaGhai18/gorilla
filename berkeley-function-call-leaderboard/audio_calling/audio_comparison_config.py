@@ -51,34 +51,18 @@ AUDIO_EXTENSIONS = [".wav", ".mp3", ".flac", ".m4a"]
 # These map to functions that actually exist in your background.py file
 
 EFFECTS_SPEC = {
-    # Background Noise Effects (using your BackgroundNoiseProcessor)
-    "background_noise_light": {
+    # Background Noise: apply all 22 noise files at 3 dB levels (handled in generate_variants.py)
+    "background_noise_all": {
         "fn": "apply_background_noise",
-        "variants": [
-            {"noise_level": -30},  # Very quiet background
-            {"noise_level": -25},  # Light background
-            {"noise_level": -20}   # Moderate background
-        ]
+        "db_levels": [-15, -5, 0],
+        "variants": [{}]  # variants is ignored for this effect, handled in generate_variants
     },
-    "background_noise_heavy": {
-        "fn": "apply_background_noise", 
-        "variants": [
-            {"noise_level": -15},  # Heavy background
-            {"noise_level": -10},  # Very heavy background
-            {"noise_level": -5}    # Competing audio level
-        ]
-    },
-    
-    # White Noise (using your background noise system)
-    "white_noise_light": {
-        "fn": "apply_white_noise",
-        "variants": [
-            {"noise_level": -30},
-            {"noise_level": -25},
-            {"noise_level": -20}
-        ]
-    },
-    
+    # (Optional) White Noise: handled similarly if you have multiple white noise files
+    # "white_noise_all": {
+    #     "fn": "apply_white_noise",
+    #     "db_levels": [-25, -15, -5],
+    #     "variants": [{}]
+    # },
     # Volume Fluctuations (using your fluctuate_audio_volume)
     "volume_fluctuation_mild": {
         "fn": "apply_volume_fluctuation",
@@ -168,6 +152,13 @@ EFFECTS_SPEC = {
     "mumbling_effect": {
         "fn": "apply_audio_mumbling_effect", 
         "variants": [{}]  # No parameters needed
+    },
+    # Competing Speech Overlay (double overlay, using fixed file)
+    "competing_speech": {
+        "fn": "competing_speech_overlay",
+        "db_levels": [-15, -5, 0],
+        "n_competitors": 1,  # always uses the fixed file, so only one
+        "variants": [{}]  # variants is ignored for this effect
     }
 }
 

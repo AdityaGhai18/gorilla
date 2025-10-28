@@ -18,6 +18,13 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 from collections import defaultdict, Counter
+import concurrent.futures
+
+try:
+    import requests
+    HAS_DEEPGRAM = True
+except ImportError:
+    HAS_DEEPGRAM = False
 
 # Import your existing pipeline components
 try:
@@ -113,30 +120,66 @@ Error types to consider:
 class AudioComparisonEvaluator:
     """Main class for audio-to-audio transcription comparison."""
     
-    def __init__(self, config: AudioComparisonConfig):
+    def __init__(self, config: AudioComparisonConfig, use_deepgram: bool = False, deepgram_api_key: str = None):
         self.config = config
+        self.use_deepgram = use_deepgram
+        self.deepgram_api_key = deepgram_api_key
         self.transcription_service = self._setup_transcription_service()
         self.analysis_service = self._setup_analysis_service()
         self.intent_analyzer = IntentAnalyzer(self.analysis_service)
-        
+
     def _setup_transcription_service(self):
-        """Setup OpenAI Whisper transcription service."""
-        class OpenAITranscriptionService:
-            def __init__(self, api_key: str, model: str = "whisper-1"):
-                self.client = openai.OpenAI(api_key=api_key)
-                self.model = model
+        """Setup transcription service (OpenAI Whisper or Deepgram)."""
+        if self.use_deepgram:
+            if not HAS_DEEPGRAM:
+                raise ImportError("requests package not installed (required for Deepgram).")
+            if not self.deepgram_api_key:
+                raise ValueError("Deepgram API key required for Deepgram transcription.")
+            class DeepgramTranscriptionService:
+                def __init__(self, api_key: str):
+                    self.api_key = api_key
+                    self.url = "https://api.deepgram.com/v1/listen"
+                def transcribe_audio(self, audio_path: str) -> str:
+                    try:
+                        with open(audio_path, "rb") as audio_file:
+                            headers = {
+                                "Authorization": f"Token {self.api_key}",
+                                "Content-Type": "audio/mp3" if audio_path.endswith(".mp3") else "application/octet-stream"
+                            }
+                            params = {
+                                "punctuate": "true",
+                                "model": "general"
+                            }
+                            response = requests.post(
+                                self.url,
+                                headers=headers,
+                                params=params,
+                                data=audio_file
+                            )
+                        if response.status_code != 200:
+                            return f"[DEEPGRAM_TRANSCRIPTION_ERROR: HTTP {response.status_code} {response.text}]"
+                        dg_json = response.json()
+                        return dg_json['results']['channels'][0]['alternatives'][0].get('transcript', '')
+                    except Exception as e:
+                        return f"[DEEPGRAM_TRANSCRIPTION_ERROR: {str(e)}]"
+            return DeepgramTranscriptionService(self.deepgram_api_key)
+        else:
+            class OpenAITranscriptionService:
+                def __init__(self, api_key: str, model: str = "whisper-1"):
+                    self.client = openai.OpenAI(api_key=api_key)
+                    self.model = model
                 
-            def transcribe_audio(self, audio_path: str) -> str:
-                try:
-                    with open(audio_path, "rb") as audio_file:
-                        transcript = self.client.audio.transcriptions.create(
-                            model=self.model,
-                            file=audio_file,
-                            response_format="text"
-                        )
-                    return transcript.strip()
-                except Exception as e:
-                    return f"[TRANSCRIPTION_ERROR: {str(e)}]"
+                def transcribe_audio(self, audio_path: str) -> str:
+                    try:
+                        with open(audio_path, "rb") as audio_file:
+                            transcript = self.client.audio.transcriptions.create(
+                                model=self.model,
+                                file=audio_file,
+                                response_format="text"
+                            )
+                        return transcript.strip()
+                    except Exception as e:
+                        return f"[TRANSCRIPTION_ERROR: {str(e)}]"
         
         return OpenAITranscriptionService(self.config.openai_api_key, self.config.transcription_model)
     
@@ -181,20 +224,22 @@ class AudioComparisonEvaluator:
         return [str(f) for f in audio_files]
     
     def transcribe_original_audio(self, audio_files: List[str]) -> Dict[str, str]:
-        """Transcribe all original audio files to get baseline transcriptions."""
+        """Transcribe all original audio files to get baseline transcriptions (parallelized)."""
         print("🎤 Transcribing original audio files...")
-        
-        original_transcripts = {}
-        for i, audio_path in enumerate(audio_files):
-            print(f"   Progress: {i+1}/{len(audio_files)} - {Path(audio_path).name}")
-            
+
+        def transcribe_one(audio_path):
             audio_base = Path(audio_path).stem
             transcript = self.transcription_service.transcribe_audio(audio_path)
-            original_transcripts[audio_base] = transcript
-            
-            # Rate limiting
-            time.sleep(0.1)
-        
+            return audio_base, transcript
+
+        original_transcripts = {}
+        with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count() or 4) as executor:
+            futures = {executor.submit(transcribe_one, audio_path): audio_path for audio_path in audio_files}
+            for i, future in enumerate(concurrent.futures.as_completed(futures), 1):
+                audio_base, transcript = future.result()
+                original_transcripts[audio_base] = transcript
+                print(f"   Progress: {i}/{len(audio_files)} - {audio_base}")
+
         return original_transcripts
     
     def run_audio_comparison_evaluation(self) -> Dict[str, Any]:
@@ -302,42 +347,27 @@ class AudioComparisonEvaluator:
     
     def _compare_transcriptions(self, variant_records: List[Dict[str, Any]], 
                                original_transcripts: Dict[str, str]) -> List[Dict[str, Any]]:
-        """Compare transcriptions between original and noisy audio."""
-        
+        """Compare transcriptions between original and noisy audio (parallelized)."""
         results = []
         total_variants = len(variant_records)
-        
-        for i, record in enumerate(variant_records):
-            if i % 10 == 0:
-                print(f"   Progress: {i}/{total_variants}")
-            
+
+        def process_variant(record):
             audio_base = record["audio_base"]
             variant_path = record["variant_path"]
-            
-            # Get original transcript
             original_transcript = original_transcripts.get(audio_base, "")
-            
-            # Transcribe noisy variant
             noisy_transcript = self.transcription_service.transcribe_audio(variant_path)
-            
-            # Calculate basic similarity metrics
             similarity_metrics = self._calculate_similarity_metrics(original_transcript, noisy_transcript)
-            
-            # Analyze intent preservation
             noise_metadata = {
                 "effect_key": record["effect_key"],
                 "params": record["params"],
                 "variant_idx": record["variant_idx"]
             }
-            
             try:
                 intent_analysis = self.intent_analyzer.analyze_intent_preservation(
                     original_transcript, noisy_transcript, noise_metadata
                 )
             except Exception as e:
                 intent_analysis = {"error": f"Intent analysis failed: {str(e)}"}
-            
-            # Compile result
             result = {
                 **record,
                 "original_transcript": original_transcript,
@@ -345,12 +375,16 @@ class AudioComparisonEvaluator:
                 "similarity_metrics": similarity_metrics,
                 "intent_analysis": intent_analysis
             }
-            
-            results.append(result)
-            
-            # Rate limiting
-            time.sleep(0.1)
-        
+            return result
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count() or 4) as executor:
+            futures = {executor.submit(process_variant, record): idx for idx, record in enumerate(variant_records)}
+            for i, future in enumerate(concurrent.futures.as_completed(futures), 1):
+                result = future.result()
+                results.append(result)
+                if i % 10 == 0 or i == total_variants:
+                    print(f"   Progress: {i}/{total_variants}")
+
         return results
     
     def _calculate_similarity_metrics(self, original: str, noisy: str) -> Dict[str, float]:
@@ -1100,7 +1134,9 @@ def run_audio_comparison_evaluation(
     effects_spec: Dict[str, Dict],
     openai_api_key: str = None,
     output_root: str = "audio_comparison_outputs",
-    results_dir: str = "audio_comparison_results"
+    results_dir: str = "audio_comparison_results",
+    use_deepgram: bool = False,
+    deepgram_api_key: str = None
 ) -> Dict[str, Any]:
     """
     Run complete audio-to-audio transcription comparison evaluation.
@@ -1115,28 +1151,36 @@ def run_audio_comparison_evaluation(
     Returns:
         Dictionary with paths to all generated results
     """
-    
     # Load API key from .env if not provided
+    def load_env_file(env_path=".env"):
+        """Load environment variables from .env file."""
+        env_vars = {}
+        try:
+            with open(env_path, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, value = line.split('=', 1)
+                        env_vars[key.strip()] = value.strip()
+        except FileNotFoundError:
+            pass
+        return env_vars
+
+    # Always load .env for both OpenAI and Deepgram keys if not provided
+    env_vars = load_env_file()
     if openai_api_key is None:
-        def load_env_file(env_path=".env"):
-            """Load environment variables from .env file."""
-            env_vars = {}
-            try:
-                with open(env_path, 'r') as f:
-                    for line in f:
-                        line = line.strip()
-                        if line and not line.startswith('#') and '=' in line:
-                            key, value = line.split('=', 1)
-                            env_vars[key.strip()] = value.strip()
-            except FileNotFoundError:
-                raise FileNotFoundError(f"{env_path} file not found. Please create one with OPENAI_API_KEY=your-key")
-            return env_vars
-        
-        env_vars = load_env_file()
-        openai_api_key = env_vars.get("OPENAI_API_KEY")
+        openai_api_key = env_vars.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
         if not openai_api_key:
-            raise ValueError("OPENAI_API_KEY not found in .env file")
-    
+            raise ValueError("OPENAI_API_KEY not found in .env file or environment.")
+
+    if use_deepgram:
+        if not deepgram_api_key:
+            deepgram_api_key = env_vars.get("DEEPGRAM_API_KEY") or os.getenv("DEEPGRAM_API_KEY")
+        if not deepgram_api_key:
+            raise ValueError("DEEPGRAM_API_KEY not found in .env file, environment, or arguments.")
+        output_root = output_root + "_deepgram"
+        results_dir = results_dir + "_deepgram"
+
     config = AudioComparisonConfig(
         openai_api_key=openai_api_key,
         audio_dir=audio_dir,
@@ -1144,13 +1188,17 @@ def run_audio_comparison_evaluation(
         output_root=output_root,
         results_dir=results_dir
     )
-    
-    evaluator = AudioComparisonEvaluator(config)
+    evaluator = AudioComparisonEvaluator(config, use_deepgram=use_deepgram, deepgram_api_key=deepgram_api_key)
     return evaluator.run_audio_comparison_evaluation()
 
-
 if __name__ == "__main__":
-    # Use canonical config for audio_dir and effects_spec
+    # ...existing code...
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--use_deepgram", action="store_true", help="Use Deepgram for transcription instead of OpenAI Whisper")
+    parser.add_argument("--deepgram_api_key", type=str, default=None, help="Deepgram API key (or set DEEPGRAM_API_KEY env var)")
+    args = parser.parse_args()
+
     try:
         from audio_comparison_config import EFFECTS_SPEC, AUDIO_DIRECTORY
     except ImportError:
@@ -1164,7 +1212,9 @@ if __name__ == "__main__":
         try:
             results = run_audio_comparison_evaluation(
                 audio_dir=AUDIO_DIRECTORY,
-                effects_spec=EFFECTS_SPEC
+                effects_spec=EFFECTS_SPEC,
+                use_deepgram=args.use_deepgram,
+                deepgram_api_key=args.deepgram_api_key
             )
             print(f"Results: {results}")
         except FileNotFoundError as e:
