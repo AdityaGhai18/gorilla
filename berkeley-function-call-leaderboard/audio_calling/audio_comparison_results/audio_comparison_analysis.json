@@ -1,0 +1,316 @@
+{
+  "effect_statistics": {
+    "background_noise_all": {
+      "total_samples": 5346,
+      "avg_wer": 0.1473576666033316,
+      "median_wer": 0.05,
+      "intent_preservation_rate": 0.897119341563786,
+      "avg_intent_confidence": 0.9217845117845117,
+      "error_type_distribution": {
+        "no_significant_impact": 3676,
+        "transcription_degradation": 208,
+        "word_substitution": 1269,
+        "entity_confusion": 753,
+        "command_confusion": 339,
+        "semantic_drift": 363,
+        "word_deletion": 99,
+        "partial_loss": 86,
+        "word_insertion": 271,
+        "complete_failure": 63,
+        "background_confusion": 22,
+        "phonetic_confusion": 114,
+        "volume_distortion": 1
+      },
+      "severity_distribution": {
+        "low": 4779,
+        "high": 353,
+        "medium": 208,
+        "unknown": 6
+      },
+      "wer_distribution": {
+        "low_impact": 4017,
+        "medium_impact": 898,
+        "high_impact": 431
+      }
+    },
+    "volume_fluctuation_mild": {
+      "total_samples": 162,
+      "avg_wer": 0.20522294723214654,
+      "median_wer": 0.125,
+      "intent_preservation_rate": 0.9753086419753086,
+      "avg_intent_confidence": 0.9658024691358025,
+      "error_type_distribution": {
+        "no_significant_impact": 77,
+        "word_insertion": 63,
+        "transcription_degradation": 20,
+        "word_substitution": 22,
+        "entity_confusion": 10,
+        "phonetic_confusion": 7,
+        "volume_distortion": 9,
+        "word_deletion": 1,
+        "command_confusion": 1
+      },
+      "severity_distribution": {
+        "low": 159,
+        "medium": 2,
+        "high": 1
+      },
+      "wer_distribution": {
+        "low_impact": 102,
+        "medium_impact": 41,
+        "high_impact": 19
+      }
+    },
+    "reverb_cave": {
+      "total_samples": 81,
+      "avg_wer": 0.09702785736659716,
+      "median_wer": 0.0625,
+      "intent_preservation_rate": 0.9753086419753086,
+      "avg_intent_confidence": 0.9791358024691358,
+      "error_type_distribution": {
+        "no_significant_impact": 50,
+        "word_insertion": 7,
+        "word_substitution": 21,
+        "reverb_distortion": 7,
+        "entity_confusion": 8,
+        "word_deletion": 2,
+        "phonetic_confusion": 1
+      },
+      "severity_distribution": {
+        "low": 79,
+        "medium": 2
+      },
+      "wer_distribution": {
+        "low_impact": 66,
+        "medium_impact": 15,
+        "high_impact": 0
+      }
+    },
+    "reverb_echo": {
+      "total_samples": 162,
+      "avg_wer": 0.1481592771473928,
+      "median_wer": 0.09090909090909091,
+      "intent_preservation_rate": 0.8580246913580247,
+      "avg_intent_confidence": 0.9141358024691358,
+      "error_type_distribution": {
+        "no_significant_impact": 87,
+        "word_substitution": 50,
+        "entity_confusion": 34,
+        "reverb_distortion": 24,
+        "phonetic_confusion": 9,
+        "word_insertion": 11,
+        "transcription_degradation": 8,
+        "partial_loss": 7,
+        "semantic_drift": 5,
+        "word_deletion": 8,
+        "command_confusion": 10
+      },
+      "severity_distribution": {
+        "low": 135,
+        "high": 6,
+        "medium": 20,
+        "unknown": 1
+      },
+      "wer_distribution": {
+        "low_impact": 115,
+        "medium_impact": 39,
+        "high_impact": 8
+      }
+    },
+    "network_cuts": {
+      "total_samples": 162,
+      "avg_wer": 0.39558134001750683,
+      "median_wer": 0.3333333333333333,
+      "intent_preservation_rate": 0.5555555555555556,
+      "avg_intent_confidence": 0.6939506172839506,
+      "error_type_distribution": {
+        "no_significant_impact": 19,
+        "word_deletion": 76,
+        "partial_loss": 74,
+        "transcription_degradation": 42,
+        "word_substitution": 72,
+        "entity_confusion": 61,
+        "command_confusion": 26,
+        "phonetic_confusion": 3,
+        "word_insertion": 8,
+        "semantic_drift": 24,
+        "complete_failure": 5
+      },
+      "severity_distribution": {
+        "low": 73,
+        "medium": 46,
+        "high": 43
+      },
+      "wer_distribution": {
+        "low_impact": 51,
+        "medium_impact": 56,
+        "high_impact": 55
+      }
+    },
+    "audio_fade": {
+      "total_samples": 162,
+      "avg_wer": 0.06982148812180265,
+      "median_wer": 0.03571428571428571,
+      "intent_preservation_rate": 1.0,
+      "avg_intent_confidence": 0.9947530864197531,
+      "error_type_distribution": {
+        "no_significant_impact": 136,
+        "word_substitution": 14,
+        "entity_confusion": 5,
+        "word_insertion": 9,
+        "partial_loss": 1,
+        "phonetic_confusion": 2
+      },
+      "severity_distribution": {
+        "low": 162
+      },
+      "wer_distribution": {
+        "low_impact": 141,
+        "medium_impact": 21,
+        "high_impact": 0
+      }
+    },
+    "mic_rubbing": {
+      "total_samples": 81,
+      "avg_wer": 0.06044559164521871,
+      "median_wer": 0.0,
+      "intent_preservation_rate": 1.0,
+      "avg_intent_confidence": 0.9953086419753087,
+      "error_type_distribution": {
+        "no_significant_impact": 70,
+        "word_insertion": 3,
+        "entity_confusion": 2,
+        "word_substitution": 6,
+        "phonetic_confusion": 1
+      },
+      "severity_distribution": {
+        "low": 81
+      },
+      "wer_distribution": {
+        "low_impact": 73,
+        "medium_impact": 7,
+        "high_impact": 1
+      }
+    },
+    "competing_speech": {
+      "total_samples": 243,
+      "avg_wer": 0.2638769480753715,
+      "median_wer": 0.09090909090909091,
+      "intent_preservation_rate": 0.7860082304526749,
+      "avg_intent_confidence": 0.8233333333333333,
+      "error_type_distribution": {
+        "no_significant_impact": 145,
+        "word_insertion": 11,
+        "word_substitution": 82,
+        "entity_confusion": 61,
+        "command_confusion": 42,
+        "semantic_drift": 42,
+        "partial_loss": 4,
+        "transcription_degradation": 16,
+        "word_deletion": 4,
+        "phonetic_confusion": 2,
+        "complete_failure": 2
+      },
+      "severity_distribution": {
+        "low": 190,
+        "high": 40,
+        "medium": 13
+      },
+      "wer_distribution": {
+        "low_impact": 165,
+        "medium_impact": 36,
+        "high_impact": 42
+      }
+    },
+    "mumbling_effect": {
+      "total_samples": 81,
+      "avg_wer": 0.05765511603406565,
+      "median_wer": 0.0,
+      "intent_preservation_rate": 1.0,
+      "avg_intent_confidence": 0.9939506172839507,
+      "error_type_distribution": {
+        "no_significant_impact": 68,
+        "word_insertion": 3,
+        "word_substitution": 6,
+        "transcription_degradation": 1,
+        "word_deletion": 2,
+        "phonetic_confusion": 2,
+        "entity_confusion": 2
+      },
+      "severity_distribution": {
+        "low": 81
+      },
+      "wer_distribution": {
+        "low_impact": 75,
+        "medium_impact": 5,
+        "high_impact": 1
+      }
+    }
+  },
+  "intent_category_statistics": {
+    "question": {
+      "total_samples": 2504,
+      "intent_preservation_rate": 0.8993610223642172,
+      "avg_wer": 0.10869557631186394,
+      "effect_performance": {
+        "background_noise_all": 0.9078630004823927,
+        "volume_fluctuation_mild": 0.9830508474576272,
+        "reverb_cave": 0.9666666666666667,
+        "reverb_echo": 0.8412698412698413,
+        "network_cuts": 0.4918032786885246,
+        "audio_fade": 1.0,
+        "mic_rubbing": 1.0,
+        "competing_speech": 0.8085106382978723,
+        "mumbling_effect": 1.0
+      }
+    },
+    "command": {
+      "total_samples": 3783,
+      "intent_preservation_rate": 0.8902987047316944,
+      "avg_wer": 0.18300247670615094,
+      "effect_performance": {
+        "background_noise_all": 0.8937259923175416,
+        "volume_fluctuation_mild": 0.9690721649484536,
+        "reverb_echo": 0.8723404255319149,
+        "reverb_cave": 0.9787234042553191,
+        "network_cuts": 0.5684210526315789,
+        "audio_fade": 1.0,
+        "mic_rubbing": 1.0,
+        "competing_speech": 0.8102189781021898,
+        "mumbling_effect": 1.0
+      }
+    },
+    "dictation": {
+      "total_samples": 181,
+      "intent_preservation_rate": 0.850828729281768,
+      "avg_wer": 0.17785453946685173,
+      "effect_performance": {
+        "background_noise_all": 0.8531468531468531,
+        "network_cuts": 1.0,
+        "competing_speech": 0.4,
+        "volume_fluctuation_mild": 1.0,
+        "reverb_cave": 1.0,
+        "audio_fade": 1.0,
+        "mic_rubbing": 1.0,
+        "reverb_echo": 1.0,
+        "mumbling_effect": 1.0
+      }
+    },
+    "navigation": {
+      "total_samples": 5,
+      "intent_preservation_rate": 0.6,
+      "avg_wer": 0.7664390243902439,
+      "effect_performance": {
+        "reverb_cave": 1.0,
+        "mumbling_effect": 1.0,
+        "competing_speech": 0.0,
+        "volume_fluctuation_mild": 1.0
+      }
+    }
+  },
+  "overall_statistics": {
+    "total_comparisons": 6480,
+    "overall_intent_preservation_rate": 0.8915123456790124,
+    "overall_avg_wer": 0.15462419387661974
+  }
+}

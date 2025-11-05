@@ -1,0 +1,27 @@
+{
+  "experiment_type": "audio_to_audio_comparison",
+  "total_comparisons": 6480,
+  "effects_tested": 9,
+  "original_audio_files": 243,
+  "results": {
+    "raw_results": "audio_comparison_results/raw_comparison_results.json",
+    "pattern_analysis": "audio_comparison_results/audio_comparison_analysis.json",
+    "original_transcripts": "audio_comparison_results/original_transcripts.json",
+    "markdown_report": "audio_comparison_results/audio_comparison_report.md",
+    "detailed_csv": "audio_comparison_results/detailed_comparison_results.csv"
+  },
+  "visualizations": {
+    "wer_by_effect": "audio_comparison_results/visualizations/wer_by_effect.png",
+    "intent_preservation": "audio_comparison_results/visualizations/intent_preservation_rates.png",
+    "error_type_heatmap": "audio_comparison_results/visualizations/error_type_heatmap.png",
+    "severity_distribution": "audio_comparison_results/visualizations/severity_distribution.png",
+    "intent_category_performance": "audio_comparison_results/visualizations/intent_category_performance.png",
+    "wer_distribution": "audio_comparison_results/visualizations/wer_distribution_boxplot.png",
+    "correlation_matrix": "audio_comparison_results/visualizations/metrics_correlation_matrix.png"
+  },
+  "summary_stats": {
+    "total_comparisons": 6480,
+    "overall_intent_preservation_rate": 0.8915123456790124,
+    "overall_avg_wer": 0.15462419387661974
+  }
+}
