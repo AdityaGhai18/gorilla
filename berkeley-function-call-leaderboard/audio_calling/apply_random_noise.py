@@ -1,0 +1,577 @@
+"""
+Simple Audio Noise Injection Script
+
+Takes audio files from input directory, applies random noise/effects,
+outputs to a new directory with same filenames.
+
+Usage:
+    python apply_random_noise.py --input_dir ./audio/my_files --output_dir ./noisy_output
+    python apply_random_noise.py --input_dir ./audio/my_files --output_dir ./noisy_output --workers 4
+    python apply_random_noise.py --input_file single.mp3 --output_dir ./noisy_output
+"""
+
+import os
+import random
+import argparse
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import List, Dict, Any, Optional
+from tqdm import tqdm
+
+# Import effect functions from background.py
+from background import (
+    overlay_audio_with_noise,
+    fluctuate_audio_volume,
+    apply_gradual_audio_fade,
+    apply_network_cut_effect,
+    apply_network_beep_effect,
+    apply_mic_rubbing_effect,
+    apply_audio_mumbling_effect,
+    apply_reverb,
+    apply_clipping_distortion,
+    apply_gain_variation,
+    apply_mechanical_interference,
+    BackgroundNoiseProcessor
+)
+
+# ============================================================================
+# EFFECT DEFINITIONS - Each returns a callable that takes (input_path, output_path)
+# ============================================================================
+
+def get_noise_files() -> List[str]:
+    """Get available noise files from background_noise/noise directory."""
+    noise_dir = Path(__file__).parent / "background_noise" / "noise"
+    noise_files = []
+    for ext in ("*.wav", "*.mp3", "*.webm"):
+        noise_files.extend([str(f) for f in noise_dir.glob(ext)])
+    return noise_files
+
+NOISE_FILES = None  # Lazy loaded
+
+def _get_noise_files():
+    global NOISE_FILES
+    if NOISE_FILES is None:
+        NOISE_FILES = get_noise_files()
+    return NOISE_FILES
+
+
+# Intensity levels for random selection
+INTENSITY_LEVELS = {
+    "light": 0,
+    "medium": 1, 
+    "heavy": 2
+}
+
+def random_intensity():
+    """Return random intensity: light, medium, or heavy."""
+    return random.choice(["light", "medium", "heavy"])
+
+
+# Define effect generators - each returns random params with random intensity
+EFFECT_CONFIGS = {
+    "background_noise": {
+        "weight": 3,  # Higher weight = more likely to be selected as additional
+        "params_fn": lambda: {
+            "noise_file": random.choice(_get_noise_files()) if _get_noise_files() else None,
+            # Intensity affects noise level: light=-20 to -15, medium=-15 to -5, heavy=-5 to +5
+            "noise_level_db": {
+                "light": random.randint(-20, -15),
+                "medium": random.randint(-15, -5),
+                "heavy": random.randint(-5, 5)
+            }[random_intensity()],
+            "_intensity": random_intensity()
+        }
+    },
+    "reverb_echo": {
+        "weight": 2,
+        "params_fn": lambda: {
+            "mode": "echo",
+            # Intensity affects delay and decay
+            **{
+                "light": {"echo_delay_ms": random.randint(50, 100), "echo_decay": random.uniform(0.2, 0.4), "echo_n": 2},
+                "medium": {"echo_delay_ms": random.randint(100, 150), "echo_decay": random.uniform(0.4, 0.6), "echo_n": 3},
+                "heavy": {"echo_delay_ms": random.randint(150, 250), "echo_decay": random.uniform(0.6, 0.8), "echo_n": 4}
+            }[random_intensity()]
+        }
+    },
+    "reverb_cave": {
+        "weight": 2,
+        "params_fn": lambda: {
+            "mode": "cave",
+            **{
+                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(60, 90), "decay_mean": random.uniform(0.3, 0.5)},
+                "medium": {"n_reflections": random.randint(25, 40), "max_reflection_delay_ms": random.randint(90, 130), "decay_mean": random.uniform(0.5, 0.65)},
+                "heavy": {"n_reflections": random.randint(40, 60), "max_reflection_delay_ms": random.randint(130, 180), "decay_mean": random.uniform(0.65, 0.8)}
+            }[random_intensity()]
+        }
+    },
+    "volume_fluctuation": {
+        "weight": 2,
+        "params_fn": lambda: {
+            **{
+                "light": {"min_db_change": random.randint(-10, -5), "max_db_change": random.randint(3, 6), "n_fluctuations": random.randint(2, 4)},
+                "medium": {"min_db_change": random.randint(-15, -10), "max_db_change": random.randint(6, 10), "n_fluctuations": random.randint(4, 6)},
+                "heavy": {"min_db_change": random.randint(-25, -15), "max_db_change": random.randint(10, 18), "n_fluctuations": random.randint(6, 10)}
+            }[random_intensity()]
+        }
+    },
+    "network_cuts": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"n_cuts": random.randint(2, 4), "min_cut_ms": random.randint(30, 80), "max_cut_ms": random.randint(150, 300)},
+                "medium": {"n_cuts": random.randint(4, 7), "min_cut_ms": random.randint(80, 150), "max_cut_ms": random.randint(300, 500)},
+                "heavy": {"n_cuts": random.randint(7, 12), "min_cut_ms": random.randint(150, 250), "max_cut_ms": random.randint(500, 900)}
+            }[random_intensity()]
+        }
+    },
+    "network_beeps": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"n_beeps": random.randint(1, 3), "beep_freq": random.choice([800, 1000]), "beep_db": random.randint(-18, -12)},
+                "medium": {"n_beeps": random.randint(3, 5), "beep_freq": random.choice([1000, 1200]), "beep_db": random.randint(-12, -6)},
+                "heavy": {"n_beeps": random.randint(5, 8), "beep_freq": random.choice([1200, 1500]), "beep_db": random.randint(-6, 0)}
+            }[random_intensity()]
+        }
+    },
+    "mic_rubbing": {
+        "weight": 1,
+        "params_fn": lambda: {}  # No params, fixed effect
+    },
+    "mumbling": {
+        "weight": 1,
+        "params_fn": lambda: {}  # No params, fixed effect (low-pass filter)
+    },
+    "walkaway_fade": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"min_db": random.randint(-20, -15), "max_db": 0},
+                "medium": {"min_db": random.randint(-30, -20), "max_db": 0},
+                "heavy": {"min_db": random.randint(-45, -30), "max_db": 0}
+            }[random_intensity()]
+        }
+    },
+    "clipping": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"clip_threshold": random.uniform(0.85, 0.95), "drive_db": random.uniform(0, 2)},
+                "medium": {"clip_threshold": random.uniform(0.7, 0.85), "drive_db": random.uniform(2, 5)},
+                "heavy": {"clip_threshold": random.uniform(0.5, 0.7), "drive_db": random.uniform(5, 10)}
+            }[random_intensity()]
+        }
+    },
+    "gain_variation": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"min_gain_db": random.randint(-8, -4), "max_gain_db": random.randint(2, 5), "segment_ms": random.randint(400, 600)},
+                "medium": {"min_gain_db": random.randint(-12, -8), "max_gain_db": random.randint(5, 8), "segment_ms": random.randint(300, 500)},
+                "heavy": {"min_gain_db": random.randint(-18, -12), "max_gain_db": random.randint(8, 12), "segment_ms": random.randint(200, 400)}
+            }[random_intensity()]
+        }
+    },
+    "mechanical": {
+        "weight": 1,
+        "params_fn": lambda: {
+            **{
+                "light": {"n_rubs": random.randint(1, 2), "n_clicks": random.randint(2, 5)},
+                "medium": {"n_rubs": random.randint(2, 4), "n_clicks": random.randint(5, 10)},
+                "heavy": {"n_rubs": random.randint(4, 6), "n_clicks": random.randint(10, 18)}
+            }[random_intensity()]
+        }
+    }
+}
+
+
+def apply_effect(effect_name: str, input_path: str, output_path: str, params: Dict[str, Any]) -> bool:
+    """Apply a single effect to an audio file."""
+    try:
+        if effect_name == "background_noise":
+            if not params.get("noise_file"):
+                print(f"  ⚠️  No noise files available, skipping background_noise")
+                return False
+            overlay_audio_with_noise(
+                speech_path=input_path,
+                noise_path=params["noise_file"],
+                output_path=output_path,
+                noise_level_db=params["noise_level_db"]
+            )
+        elif effect_name == "reverb_echo":
+            apply_reverb(input_path, output_path, mode="echo", 
+                        echo_delay_ms=params["echo_delay_ms"],
+                        echo_decay=params["echo_decay"],
+                        echo_n=params["echo_n"])
+        elif effect_name == "reverb_cave":
+            apply_reverb(input_path, output_path, mode="cave",
+                        n_reflections=params["n_reflections"],
+                        max_reflection_delay_ms=params["max_reflection_delay_ms"],
+                        decay_mean=params["decay_mean"])
+        elif effect_name == "volume_fluctuation":
+            fluctuate_audio_volume(input_path, output_path,
+                                   min_db_change=params["min_db_change"],
+                                   max_db_change=params["max_db_change"],
+                                   n_fluctuations=params["n_fluctuations"])
+        elif effect_name == "network_cuts":
+            apply_network_cut_effect(input_path, output_path,
+                                     n_cuts=params["n_cuts"],
+                                     min_cut_ms=params["min_cut_ms"],
+                                     max_cut_ms=params["max_cut_ms"])
+        elif effect_name == "network_beeps":
+            apply_network_beep_effect(input_path, output_path,
+                                      n_beeps=params["n_beeps"],
+                                      beep_freq=params["beep_freq"],
+                                      beep_db=params["beep_db"])
+        elif effect_name == "mic_rubbing":
+            apply_mic_rubbing_effect(input_path, output_path)
+        elif effect_name == "mumbling":
+            apply_audio_mumbling_effect(input_path, output_path)
+        elif effect_name == "walkaway_fade":
+            apply_gradual_audio_fade(input_path, output_path,
+                                     min_db=params["min_db"],
+                                     max_db=params["max_db"])
+        elif effect_name == "clipping":
+            apply_clipping_distortion(input_path, output_path,
+                                      clip_threshold=params["clip_threshold"],
+                                      drive_db=params["drive_db"])
+        elif effect_name == "gain_variation":
+            apply_gain_variation(input_path, output_path,
+                                min_gain_db=params["min_gain_db"],
+                                max_gain_db=params["max_gain_db"],
+                                segment_ms=params["segment_ms"])
+        elif effect_name == "mechanical":
+            apply_mechanical_interference(input_path, output_path,
+                                          n_rubs=params["n_rubs"],
+                                          n_clicks=params["n_clicks"])
+        else:
+            print(f"  ⚠️  Unknown effect: {effect_name}")
+            return False
+        return True
+    except Exception as e:
+        print(f"  ❌ Error applying {effect_name}: {e}")
+        return False
+
+
+def select_random_effects(n_additional: int = None) -> List[str]:
+    """
+    Select random effects.
+    
+    ALWAYS includes background_noise first, then adds 0-2 random additional effects.
+    """
+    # Always start with background noise
+    selected = ["background_noise"]
+    
+    # Determine how many additional effects (0-2)
+    if n_additional is None:
+        n_additional = random.randint(0, 2)
+    
+    # Build weighted list for additional effects (exclude background_noise)
+    weighted_effects = []
+    for name, config in EFFECT_CONFIGS.items():
+        if name != "background_noise":
+            weighted_effects.extend([name] * config["weight"])
+    
+    # Sample additional effects without replacement
+    available = [name for name in EFFECT_CONFIGS.keys() if name != "background_noise"]
+    for _ in range(min(n_additional, len(available))):
+        if not weighted_effects:
+            break
+        choice = random.choice([e for e in weighted_effects if e in available])
+        selected.append(choice)
+        available.remove(choice)
+        weighted_effects = [e for e in weighted_effects if e != choice]
+    
+    return selected
+
+
+def process_single_file(
+    input_path: str,
+    output_dir: str,
+    effect_sequence: List[str] = None,
+    preserve_name: bool = True
+) -> Dict[str, Any]:
+    """
+    Process a single audio file with random effects.
+    
+    Returns dict with results and metadata.
+    """
+    input_path = Path(input_path)
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Determine output filename - preserves original filename, just in new directory
+    # Example: input_dir/file.mp3 -> output_dir/file.mp3 (same name, different location)
+    if preserve_name:
+        output_path = output_dir / input_path.name  # Same filename, different directory
+    else:
+        output_path = output_dir / f"{input_path.stem}_noisy{input_path.suffix}"
+    
+    # Select effects if not provided
+    if effect_sequence is None:
+        effect_sequence = select_random_effects()
+    
+    result = {
+        "input": str(input_path),
+        "output": str(output_path),
+        "effects": [],
+        "success": False
+    }
+    
+    # Apply effects in chain
+    current_input = str(input_path)
+    temp_files = []
+    
+    for i, effect_name in enumerate(effect_sequence):
+        # Get random params for this effect
+        params = EFFECT_CONFIGS[effect_name]["params_fn"]()
+        
+        # Determine output for this step
+        if i == len(effect_sequence) - 1:
+            # Last effect - output to final path
+            step_output = str(output_path)
+        else:
+            # Intermediate - use temp file
+            temp_path = output_dir / f".temp_{input_path.stem}_{i}{input_path.suffix}"
+            step_output = str(temp_path)
+            temp_files.append(step_output)
+        
+        success = apply_effect(effect_name, current_input, step_output, params)
+        
+        if success:
+            result["effects"].append({
+                "name": effect_name,
+                "params": params
+            })
+            current_input = step_output
+        else:
+            # If effect fails, skip to next
+            continue
+    
+    # Clean up temp files
+    for temp_file in temp_files:
+        try:
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+        except:
+            pass
+    
+    # If no effects were applied successfully, copy original
+    if not result["effects"]:
+        import shutil
+        shutil.copy(str(input_path), str(output_path))
+        result["effects"] = [{"name": "none", "params": {}}]
+    
+    result["success"] = os.path.exists(str(output_path))
+    return result
+
+
+def get_audio_files(input_dir: str) -> List[str]:
+    """Get all audio files from directory."""
+    input_dir = Path(input_dir)
+    audio_files = []
+    for ext in ("*.mp3", "*.wav", "*.flac", "*.m4a", "*.ogg"):
+        audio_files.extend([str(f) for f in input_dir.glob(ext)])
+    return sorted(audio_files)
+
+
+def process_directory(
+    input_dir: str,
+    output_dir: str,
+    workers: int = 1,
+    max_additional_effects: int = 2,
+    seed: int = None
+) -> List[Dict[str, Any]]:
+    """
+    Process all audio files in a directory.
+    
+    Each file gets:
+    - ALWAYS: background_noise (with random intensity)
+    - PLUS: 0-2 additional random effects (with random intensity)
+    
+    Args:
+        input_dir: Directory with input audio files
+        output_dir: Directory for output files
+        workers: Number of parallel workers (1 = sequential)
+        max_additional_effects: Max additional effects on top of background_noise (default: 2)
+        seed: Random seed for reproducibility
+    """
+    # Safety check: prevent overwriting input directory
+    input_dir_path = Path(input_dir).resolve()
+    output_dir_path = Path(output_dir).resolve()
+    
+    if input_dir_path == output_dir_path:
+        raise ValueError(
+            f"❌ ERROR: Input and output directories are the same!\n"
+            f"   Input:  {input_dir_path}\n"
+            f"   Output: {output_dir_path}\n"
+            f"   This would overwrite your original files. Please use a different output directory."
+        )
+    
+    if seed is not None:
+        random.seed(seed)
+    
+    audio_files = get_audio_files(input_dir)
+    
+    if not audio_files:
+        print(f"❌ No audio files found in {input_dir}")
+        return []
+    
+    print(f"🎵 Found {len(audio_files)} audio files")
+    print(f"📂 Output directory: {output_dir}")
+    print(f"⚙️  Workers: {workers}")
+    print(f"🎛️  Effects: background_noise (always) + 0-{max_additional_effects} random effects")
+    print(f"🎲 Intensity: randomly sampled (light/medium/heavy) per effect")
+    print()
+    
+    # Pre-generate effect sequences - each file gets random selection
+    # ALWAYS background_noise + 0-2 random additional effects
+    effect_sequences = []
+    for _ in audio_files:
+        n_additional = random.randint(0, max_additional_effects)
+        sequence = select_random_effects(n_additional)
+        effect_sequences.append(sequence)
+    
+    results = []
+    
+    if workers == 1:
+        # Sequential processing with progress bar
+        for audio_file, effects in tqdm(zip(audio_files, effect_sequences), 
+                                         total=len(audio_files), 
+                                         desc="Processing"):
+            result = process_single_file(audio_file, output_dir, effects)
+            results.append(result)
+            if result["success"]:
+                effect_names = [e["name"] for e in result["effects"]]
+                tqdm.write(f"  ✅ {Path(audio_file).name} → {effect_names}")
+    else:
+        # Parallel processing
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(process_single_file, audio_file, output_dir, effects): audio_file
+                for audio_file, effects in zip(audio_files, effect_sequences)
+            }
+            
+            for future in tqdm(as_completed(futures), total=len(futures), desc="Processing"):
+                audio_file = futures[future]
+                try:
+                    result = future.result()
+                    results.append(result)
+                    if result["success"]:
+                        effect_names = [e["name"] for e in result["effects"]]
+                        tqdm.write(f"  ✅ {Path(audio_file).name} → {effect_names}")
+                except Exception as e:
+                    tqdm.write(f"  ❌ {Path(audio_file).name}: {e}")
+                    results.append({
+                        "input": audio_file,
+                        "output": None,
+                        "effects": [],
+                        "success": False,
+                        "error": str(e)
+                    })
+    
+    # Summary
+    successful = sum(1 for r in results if r["success"])
+    print(f"\n✅ Processed {successful}/{len(audio_files)} files successfully")
+    
+    return results
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Apply random noise/effects to audio files",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  # Process entire directory
+  python apply_random_noise.py --input_dir ./audio/clean --output_dir ./audio/noisy
+
+  # Process with 4 parallel workers
+  python apply_random_noise.py --input_dir ./audio/clean --output_dir ./audio/noisy --workers 4
+
+  # Process single file
+  python apply_random_noise.py --input_file ./audio/test.mp3 --output_dir ./audio/noisy
+
+  # Reproducible with seed
+  python apply_random_noise.py --input_dir ./audio/clean --output_dir ./audio/noisy --seed 42
+
+How it works:
+  - ALWAYS applies background_noise (random intensity: light/medium/heavy)
+  - PLUS 0-2 additional random effects (also random intensity each)
+  - Total effects per file: 1-3
+
+Available additional effects:
+  - reverb_echo: Echo effect (light/medium/heavy delay & decay)
+  - reverb_cave: Cave-like reverb (light/medium/heavy reflections)
+  - volume_fluctuation: Random volume dips/spikes
+  - network_cuts: Silence dropouts (light=few short, heavy=many long)
+  - network_beeps: Beep dropouts  
+  - mic_rubbing: Low-frequency rumble
+  - mumbling: Low-pass filter (muffled sound)
+  - walkaway_fade: Volume fade out/in
+  - clipping: Distortion/overload (light=subtle, heavy=harsh)
+  - gain_variation: Segment-wise gain changes
+  - mechanical: Clicks and thumps
+
+Intensity levels (randomly sampled per effect):
+  - light: Subtle, barely noticeable
+  - medium: Noticeable but not overwhelming  
+  - heavy: Strong effect, clearly audible
+        """
+    )
+    
+    parser.add_argument("--input_dir", type=str, help="Directory with input audio files")
+    parser.add_argument("--input_file", type=str, help="Single input audio file")
+    parser.add_argument("--output_dir", type=str, required=True, help="Output directory")
+    parser.add_argument("--workers", type=int, default=1, help="Number of parallel workers (default: 1)")
+    parser.add_argument("--max_additional", type=int, default=2, help="Max additional effects beyond background_noise (default: 2, so 1-3 total)")
+    parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
+    
+    args = parser.parse_args()
+    
+    if not args.input_dir and not args.input_file:
+        parser.error("Must specify either --input_dir or --input_file")
+    
+    if args.input_file:
+        # Single file mode
+        # Safety check: prevent overwriting input file
+        input_file_path = Path(args.input_file).resolve()
+        output_dir_path = Path(args.output_dir).resolve()
+        output_file_path = output_dir_path / input_file_path.name
+        
+        if input_file_path == output_file_path:
+            parser.error(
+                f"❌ ERROR: Output file would overwrite input file!\n"
+                f"   Input:  {input_file_path}\n"
+                f"   Output: {output_file_path}\n"
+                f"   Please use a different output directory."
+            )
+        
+        if args.seed:
+            random.seed(args.seed)
+        result = process_single_file(args.input_file, args.output_dir)
+        if result["success"]:
+            effect_names = [e["name"] for e in result["effects"]]
+            print(f"✅ {Path(args.input_file).name} → {effect_names}")
+            print(f"   Output: {result['output']}")
+            # Show intensity info
+            for eff in result["effects"]:
+                intensity = eff["params"].get("_intensity", "n/a")
+                print(f"   • {eff['name']}: intensity={intensity}")
+        else:
+            print(f"❌ Failed to process {args.input_file}")
+    else:
+        # Directory mode
+        process_directory(
+            input_dir=args.input_dir,
+            output_dir=args.output_dir,
+            workers=args.workers,
+            max_additional_effects=args.max_additional,
+            seed=args.seed
+        )
+
+
+if __name__ == "__main__":
+    main()
+
