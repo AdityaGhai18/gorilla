@@ -73,11 +73,12 @@ EFFECT_CONFIGS = {
         "weight": 3,  # Higher weight = more likely to be selected as additional
         "params_fn": lambda: {
             "noise_file": random.choice(_get_noise_files()) if _get_noise_files() else None,
-            # Intensity affects noise level: light=-20 to -15, medium=-15 to -5, heavy=-5 to +5
+            # CENTERED AROUND DEFAULT: -20 dB (background.py default)
+            # Tests used: -30, -20, -10 dB
             "noise_level_db": {
-                "light": random.randint(-20, -15),
-                "medium": random.randint(-15, -5),
-                "heavy": random.randint(-5, 5)
+                "light": random.randint(-30, -20),   # Quieter than default
+                "medium": random.randint(-25, -15),  # Around default (-20)
+                "heavy": random.randint(-15, -5)     # Louder than default
             }[random_intensity()],
             "_intensity": random_intensity()
         }
@@ -86,11 +87,11 @@ EFFECT_CONFIGS = {
         "weight": 2,
         "params_fn": lambda: {
             "mode": "echo",
-            # Intensity affects delay and decay
+            # CENTERED AROUND DEFAULT: 120ms delay, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.randint(50, 100), "echo_decay": random.uniform(0.2, 0.4), "echo_n": 2},
-                "medium": {"echo_delay_ms": random.randint(100, 150), "echo_decay": random.uniform(0.4, 0.6), "echo_n": 3},
-                "heavy": {"echo_delay_ms": random.randint(150, 250), "echo_decay": random.uniform(0.6, 0.8), "echo_n": 4}
+                "light": {"echo_delay_ms": random.randint(60, 100), "echo_decay": random.uniform(0.3, 0.5), "echo_n": 2},      # Less than default
+                "medium": {"echo_delay_ms": random.randint(100, 140), "echo_decay": random.uniform(0.5, 0.7), "echo_n": 3},    # Around default (120ms, 0.6)
+                "heavy": {"echo_delay_ms": random.randint(140, 200), "echo_decay": random.uniform(0.65, 0.8), "echo_n": 4}     # More than default
             }[random_intensity()]
         }
     },
@@ -98,40 +99,44 @@ EFFECT_CONFIGS = {
         "weight": 2,
         "params_fn": lambda: {
             "mode": "cave",
+            # CENTERED AROUND MODERATE VALUES (no specific default in background.py)
             **{
-                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(60, 90), "decay_mean": random.uniform(0.3, 0.5)},
-                "medium": {"n_reflections": random.randint(25, 40), "max_reflection_delay_ms": random.randint(90, 130), "decay_mean": random.uniform(0.5, 0.65)},
-                "heavy": {"n_reflections": random.randint(40, 60), "max_reflection_delay_ms": random.randint(130, 180), "decay_mean": random.uniform(0.65, 0.8)}
+                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(60, 90), "decay_mean": random.uniform(0.3, 0.45)},     # Subtle
+                "medium": {"n_reflections": random.randint(25, 35), "max_reflection_delay_ms": random.randint(90, 130), "decay_mean": random.uniform(0.45, 0.6)},    # Moderate
+                "heavy": {"n_reflections": random.randint(35, 50), "max_reflection_delay_ms": random.randint(130, 180), "decay_mean": random.uniform(0.6, 0.75)}     # Strong
             }[random_intensity()]
         }
     },
     "volume_fluctuation": {
         "weight": 2,
         "params_fn": lambda: {
+            # CENTERED AROUND MODERATE VALUES (no specific default)
             **{
-                "light": {"min_db_change": random.randint(-10, -5), "max_db_change": random.randint(3, 6), "n_fluctuations": random.randint(2, 4)},
-                "medium": {"min_db_change": random.randint(-15, -10), "max_db_change": random.randint(6, 10), "n_fluctuations": random.randint(4, 6)},
-                "heavy": {"min_db_change": random.randint(-25, -15), "max_db_change": random.randint(10, 18), "n_fluctuations": random.randint(6, 10)}
+                "light": {"min_db_change": random.randint(-8, -4), "max_db_change": random.randint(2, 5), "n_fluctuations": random.randint(2, 4)},      # Subtle changes
+                "medium": {"min_db_change": random.randint(-12, -8), "max_db_change": random.randint(5, 8), "n_fluctuations": random.randint(3, 6)},    # Moderate changes
+                "heavy": {"min_db_change": random.randint(-18, -12), "max_db_change": random.randint(8, 12), "n_fluctuations": random.randint(5, 8)}   # Strong changes
             }[random_intensity()]
         }
     },
     "network_cuts": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND DEFAULT: 8 cuts (from background.py)
             **{
-                "light": {"n_cuts": random.randint(2, 4), "min_cut_ms": random.randint(30, 80), "max_cut_ms": random.randint(150, 300)},
-                "medium": {"n_cuts": random.randint(4, 7), "min_cut_ms": random.randint(80, 150), "max_cut_ms": random.randint(300, 500)},
-                "heavy": {"n_cuts": random.randint(7, 12), "min_cut_ms": random.randint(150, 250), "max_cut_ms": random.randint(500, 900)}
+                "light": {"n_cuts": random.randint(3, 6), "min_cut_ms": random.randint(50, 100), "max_cut_ms": random.randint(150, 300)},     # Less than default
+                "medium": {"n_cuts": random.randint(6, 10), "min_cut_ms": random.randint(100, 200), "max_cut_ms": random.randint(300, 600)},   # Around default (8)
+                "heavy": {"n_cuts": random.randint(10, 15), "min_cut_ms": random.randint(150, 300), "max_cut_ms": random.randint(500, 900)}   # More than default
             }[random_intensity()]
         }
     },
     "network_beeps": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND DEFAULT: 8 beeps at -10 dB
             **{
-                "light": {"n_beeps": random.randint(1, 3), "beep_freq": random.choice([800, 1000]), "beep_db": random.randint(-18, -12)},
-                "medium": {"n_beeps": random.randint(3, 5), "beep_freq": random.choice([1000, 1200]), "beep_db": random.randint(-12, -6)},
-                "heavy": {"n_beeps": random.randint(5, 8), "beep_freq": random.choice([1200, 1500]), "beep_db": random.randint(-6, 0)}
+                "light": {"n_beeps": random.randint(3, 6), "beep_freq": random.choice([800, 1000]), "beep_db": random.randint(-20, -12)},     # Less/quieter than default
+                "medium": {"n_beeps": random.randint(6, 10), "beep_freq": random.choice([1000, 1200]), "beep_db": random.randint(-15, -8)},   # Around default (8 beeps, -10 dB)
+                "heavy": {"n_beeps": random.randint(10, 15), "beep_freq": random.choice([1200, 1500]), "beep_db": random.randint(-10, -3)}    # More/louder than default
             }[random_intensity()]
         }
     },
@@ -146,40 +151,44 @@ EFFECT_CONFIGS = {
     "walkaway_fade": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND MODERATE VALUES (no specific default)
             **{
-                "light": {"min_db": random.randint(-20, -15), "max_db": 0},
-                "medium": {"min_db": random.randint(-30, -20), "max_db": 0},
-                "heavy": {"min_db": random.randint(-45, -30), "max_db": 0}
+                "light": {"min_db": random.randint(-15, -10), "max_db": 0},      # Subtle fade
+                "medium": {"min_db": random.randint(-25, -15), "max_db": 0},     # Moderate fade
+                "heavy": {"min_db": random.randint(-40, -25), "max_db": 0}       # Strong fade
             }[random_intensity()]
         }
     },
     "clipping": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND DEFAULT: 0.8 threshold, 0 drive (from background.py)
             **{
-                "light": {"clip_threshold": random.uniform(0.85, 0.95), "drive_db": random.uniform(0, 2)},
-                "medium": {"clip_threshold": random.uniform(0.7, 0.85), "drive_db": random.uniform(2, 5)},
-                "heavy": {"clip_threshold": random.uniform(0.5, 0.7), "drive_db": random.uniform(5, 10)}
+                "light": {"clip_threshold": random.uniform(0.85, 0.95), "drive_db": random.uniform(0, 2)},       # Less clipping than default
+                "medium": {"clip_threshold": random.uniform(0.75, 0.85), "drive_db": random.uniform(1, 4)},      # Around default (0.8, ~0-2)
+                "heavy": {"clip_threshold": random.uniform(0.6, 0.75), "drive_db": random.uniform(3, 7)}         # More clipping than default
             }[random_intensity()]
         }
     },
     "gain_variation": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND MODERATE VALUES (no specific default)
             **{
-                "light": {"min_gain_db": random.randint(-8, -4), "max_gain_db": random.randint(2, 5), "segment_ms": random.randint(400, 600)},
-                "medium": {"min_gain_db": random.randint(-12, -8), "max_gain_db": random.randint(5, 8), "segment_ms": random.randint(300, 500)},
-                "heavy": {"min_gain_db": random.randint(-18, -12), "max_gain_db": random.randint(8, 12), "segment_ms": random.randint(200, 400)}
+                "light": {"min_gain_db": random.randint(-6, -3), "max_gain_db": random.randint(2, 4), "segment_ms": random.randint(400, 600)},     # Subtle gain changes
+                "medium": {"min_gain_db": random.randint(-10, -6), "max_gain_db": random.randint(4, 7), "segment_ms": random.randint(300, 500)},   # Moderate gain changes
+                "heavy": {"min_gain_db": random.randint(-15, -10), "max_gain_db": random.randint(7, 10), "segment_ms": random.randint(200, 400)}   # Strong gain changes
             }[random_intensity()]
         }
     },
     "mechanical": {
         "weight": 1,
         "params_fn": lambda: {
+            # CENTERED AROUND MODERATE VALUES (no specific default)
             **{
-                "light": {"n_rubs": random.randint(1, 2), "n_clicks": random.randint(2, 5)},
-                "medium": {"n_rubs": random.randint(2, 4), "n_clicks": random.randint(5, 10)},
-                "heavy": {"n_rubs": random.randint(4, 6), "n_clicks": random.randint(10, 18)}
+                "light": {"n_rubs": random.randint(1, 2), "n_clicks": random.randint(2, 4)},       # Few artifacts
+                "medium": {"n_rubs": random.randint(2, 3), "n_clicks": random.randint(4, 7)},      # Moderate artifacts
+                "heavy": {"n_rubs": random.randint(3, 5), "n_clicks": random.randint(7, 12)}       # Many artifacts
             }[random_intensity()]
         }
     }
