@@ -73,12 +73,12 @@ EFFECT_CONFIGS = {
         "weight": 3,  # Higher weight = more likely to be selected as additional
         "params_fn": lambda: {
             "noise_file": random.choice(_get_noise_files()) if _get_noise_files() else None,
-            # CENTERED AROUND DEFAULT: -20 dB (background.py default)
+            # ADJUSTED: Light and medium stronger, heavy unchanged
             # Tests used: -30, -20, -10 dB
             "noise_level_db": {
-                "light": random.randint(-30, -20),   # Quieter than default
-                "medium": random.randint(-25, -15),  # Around default (-20)
-                "heavy": random.randint(-15, -5)     # Louder than default
+                "light": random.randint(-25, -15),   # Was: -30 to -20 (now louder)
+                "medium": random.randint(-20, -10),  # Was: -25 to -15 (now louder)
+                "heavy": random.randint(-15, -5)     # Unchanged
             }[random_intensity()],
             "_intensity": random_intensity()
         }
@@ -87,11 +87,11 @@ EFFECT_CONFIGS = {
         "weight": 2,
         "params_fn": lambda: {
             "mode": "echo",
-            # CENTERED AROUND DEFAULT: 120ms delay, 0.6 decay, 3 echoes
+            # SLIGHTLY LESS than default: 120ms delay, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.randint(60, 100), "echo_decay": random.uniform(0.3, 0.5), "echo_n": 2},      # Less than default
-                "medium": {"echo_delay_ms": random.randint(100, 140), "echo_decay": random.uniform(0.5, 0.7), "echo_n": 3},    # Around default (120ms, 0.6)
-                "heavy": {"echo_delay_ms": random.randint(140, 200), "echo_decay": random.uniform(0.65, 0.8), "echo_n": 4}     # More than default
+                "light": {"echo_delay_ms": random.randint(90, 110), "echo_decay": random.uniform(0.4, 0.5), "echo_n": 2},      # Subtle
+                "medium": {"echo_delay_ms": random.randint(100, 130), "echo_decay": random.uniform(0.45, 0.55), "echo_n": 2},  # Moderate
+                "heavy": {"echo_delay_ms": random.randint(110, 140), "echo_decay": random.uniform(0.5, 0.6), "echo_n": 3}      # Still below original default
             }[random_intensity()]
         }
     },
@@ -99,11 +99,11 @@ EFFECT_CONFIGS = {
         "weight": 2,
         "params_fn": lambda: {
             "mode": "cave",
-            # CENTERED AROUND MODERATE VALUES (no specific default in background.py)
+            # SLIGHTLY LESS than moderate defaults (not too much variation)
             **{
-                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(60, 90), "decay_mean": random.uniform(0.3, 0.45)},     # Subtle
-                "medium": {"n_reflections": random.randint(25, 35), "max_reflection_delay_ms": random.randint(90, 130), "decay_mean": random.uniform(0.45, 0.6)},    # Moderate
-                "heavy": {"n_reflections": random.randint(35, 50), "max_reflection_delay_ms": random.randint(130, 180), "decay_mean": random.uniform(0.6, 0.75)}     # Strong
+                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(70, 90), "decay_mean": random.uniform(0.35, 0.45)},     # Subtle
+                "medium": {"n_reflections": random.randint(20, 30), "max_reflection_delay_ms": random.randint(85, 110), "decay_mean": random.uniform(0.4, 0.5)},     # Moderate
+                "heavy": {"n_reflections": random.randint(25, 35), "max_reflection_delay_ms": random.randint(100, 120), "decay_mean": random.uniform(0.45, 0.55)}    # Slightly stronger
             }[random_intensity()]
         }
     },
@@ -184,11 +184,11 @@ EFFECT_CONFIGS = {
     "mechanical": {
         "weight": 1,
         "params_fn": lambda: {
-            # CENTERED AROUND MODERATE VALUES (no specific default)
+            # INCREASED CLICKS: Make door/click sounds more noticeable
             **{
-                "light": {"n_rubs": random.randint(1, 2), "n_clicks": random.randint(2, 4)},       # Few artifacts
-                "medium": {"n_rubs": random.randint(2, 3), "n_clicks": random.randint(4, 7)},      # Moderate artifacts
-                "heavy": {"n_rubs": random.randint(3, 5), "n_clicks": random.randint(7, 12)}       # Many artifacts
+                "light": {"n_rubs": random.randint(1, 3), "n_clicks": random.randint(4, 7)},       # Was: 1-2 rubs, 2-4 clicks
+                "medium": {"n_rubs": random.randint(2, 4), "n_clicks": random.randint(7, 11)},     # Was: 2-3 rubs, 4-7 clicks
+                "heavy": {"n_rubs": random.randint(3, 5), "n_clicks": random.randint(11, 16)}      # Was: 3-5 rubs, 7-12 clicks
             }[random_intensity()]
         }
     }
