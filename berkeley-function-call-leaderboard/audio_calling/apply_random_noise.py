@@ -89,9 +89,9 @@ EFFECT_CONFIGS = {
             "mode": "echo",
             # SLIGHTLY LESS than default: 120ms delay, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.randint(90, 110), "echo_decay": random.uniform(0.4, 0.5), "echo_n": 2},      # Subtle
-                "medium": {"echo_delay_ms": random.randint(100, 130), "echo_decay": random.uniform(0.45, 0.55), "echo_n": 2},  # Moderate
-                "heavy": {"echo_delay_ms": random.randint(110, 140), "echo_decay": random.uniform(0.5, 0.6), "echo_n": 3}      # Still below original default
+                "light": {"echo_delay_ms": random.randint(100, 115), "echo_decay": random.uniform(0.45, 0.55), "echo_n": 2},    # Just below default
+                "medium": {"echo_delay_ms": random.randint(110, 125), "echo_decay": random.uniform(0.5, 0.58), "echo_n": 2},    # Close to default
+                "heavy": {"echo_delay_ms": random.randint(115, 130), "echo_decay": random.uniform(0.55, 0.6), "echo_n": 2}      # At default decay, max 2 echoes
             }[random_intensity()]
         }
     },
@@ -99,11 +99,11 @@ EFFECT_CONFIGS = {
         "weight": 2,
         "params_fn": lambda: {
             "mode": "cave",
-            # SLIGHTLY LESS than moderate defaults (not too much variation)
+            # SLIGHTLY LESS than moderate, tight ranges around sensible values
             **{
-                "light": {"n_reflections": random.randint(15, 25), "max_reflection_delay_ms": random.randint(70, 90), "decay_mean": random.uniform(0.35, 0.45)},     # Subtle
-                "medium": {"n_reflections": random.randint(20, 30), "max_reflection_delay_ms": random.randint(85, 110), "decay_mean": random.uniform(0.4, 0.5)},     # Moderate
-                "heavy": {"n_reflections": random.randint(25, 35), "max_reflection_delay_ms": random.randint(100, 120), "decay_mean": random.uniform(0.45, 0.55)}    # Slightly stronger
+                "light": {"n_reflections": random.randint(20, 28), "max_reflection_delay_ms": random.randint(85, 105), "decay_mean": random.uniform(0.45, 0.52)},    # Subtle
+                "medium": {"n_reflections": random.randint(25, 32), "max_reflection_delay_ms": random.randint(95, 115), "decay_mean": random.uniform(0.5, 0.56)},    # Moderate
+                "heavy": {"n_reflections": random.randint(28, 35), "max_reflection_delay_ms": random.randint(105, 125), "decay_mean": random.uniform(0.54, 0.6)}     # Slightly stronger
             }[random_intensity()]
         }
     },
@@ -112,9 +112,9 @@ EFFECT_CONFIGS = {
         "params_fn": lambda: {
             # CENTERED AROUND MODERATE VALUES (no specific default)
             **{
-                "light": {"min_db_change": random.randint(-8, -4), "max_db_change": random.randint(2, 5), "n_fluctuations": random.randint(2, 4)},      # Subtle changes
-                "medium": {"min_db_change": random.randint(-12, -8), "max_db_change": random.randint(5, 8), "n_fluctuations": random.randint(3, 6)},    # Moderate changes
-                "heavy": {"min_db_change": random.randint(-18, -12), "max_db_change": random.randint(8, 12), "n_fluctuations": random.randint(5, 8)}   # Strong changes
+                "light": {"min_db_change": random.randint(-8, -4), "max_db_change": random.randint(2, 5), "n_fluctuations": random.randint(1, 3)},      # Subtle changes
+                "medium": {"min_db_change": random.randint(-12, -8), "max_db_change": random.randint(5, 8), "n_fluctuations": random.randint(2, 4)},    # Moderate changes
+                "heavy": {"min_db_change": random.randint(-18, -12), "max_db_change": random.randint(8, 12), "n_fluctuations": random.randint(3, 6)}   # Strong changes
             }[random_intensity()]
         }
     },
@@ -123,20 +123,20 @@ EFFECT_CONFIGS = {
         "params_fn": lambda: {
             # CENTERED AROUND DEFAULT: 8 cuts (from background.py)
             **{
-                "light": {"n_cuts": random.randint(3, 6), "min_cut_ms": random.randint(50, 100), "max_cut_ms": random.randint(150, 300)},     # Less than default
-                "medium": {"n_cuts": random.randint(6, 10), "min_cut_ms": random.randint(100, 200), "max_cut_ms": random.randint(300, 600)},   # Around default (8)
-                "heavy": {"n_cuts": random.randint(10, 15), "min_cut_ms": random.randint(150, 300), "max_cut_ms": random.randint(500, 900)}   # More than default
+                "light": {"n_cuts": random.randint(2, 4), "min_cut_ms": random.randint(50, 100), "max_cut_ms": random.randint(150, 300)},     # Less than default
+                "medium": {"n_cuts": random.randint(5, 8), "min_cut_ms": random.randint(100, 200), "max_cut_ms": random.randint(300, 600)},   # Around default (8)
+                "heavy": {"n_cuts": random.randint(6, 9), "min_cut_ms": random.randint(150, 300), "max_cut_ms": random.randint(500, 900)}   # More than default
             }[random_intensity()]
         }
     },
     "network_beeps": {
         "weight": 1,
         "params_fn": lambda: {
-            # CENTERED AROUND DEFAULT: 8 beeps at -10 dB
+            # REDUCED: Fewer beeps, less frequent
             **{
-                "light": {"n_beeps": random.randint(3, 6), "beep_freq": random.choice([800, 1000]), "beep_db": random.randint(-20, -12)},     # Less/quieter than default
-                "medium": {"n_beeps": random.randint(6, 10), "beep_freq": random.choice([1000, 1200]), "beep_db": random.randint(-15, -8)},   # Around default (8 beeps, -10 dB)
-                "heavy": {"n_beeps": random.randint(10, 15), "beep_freq": random.choice([1200, 1500]), "beep_db": random.randint(-10, -3)}    # More/louder than default
+                "light": {"n_beeps": random.randint(1, 3), "beep_freq": random.choice([800, 1000]), "beep_db": random.randint(-20, -12)},     # Very few
+                "medium": {"n_beeps": random.randint(2, 4), "beep_freq": random.choice([1000, 1200]), "beep_db": random.randint(-15, -8)},    # Few beeps
+                "heavy": {"n_beeps": random.randint(3, 6), "beep_freq": random.choice([1200, 1500]), "beep_db": random.randint(-10, -3)}      # Moderate amount
             }[random_intensity()]
         }
     },
