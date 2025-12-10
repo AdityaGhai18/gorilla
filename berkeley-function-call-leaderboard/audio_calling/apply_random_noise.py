@@ -19,10 +19,12 @@ Usage:
 import os
 import random
 import argparse
+import json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Dict, Any, Optional
 from tqdm import tqdm
+import threading
 
 # Import effect functions from background.py
 from background import (
@@ -401,6 +403,33 @@ def get_audio_files(input_dir: str) -> List[str]:
     return sorted(audio_files)
 
 
+def read_jsonl(jsonl_path: str, audio_path_field: str = "audio_path") -> List[Dict[str, Any]]:
+    """Read JSONL file and extract records with audio paths."""
+    records = []
+    with open(jsonl_path, 'r', encoding='utf-8') as f:
+        for line_num, line in enumerate(f, 1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+                records.append(record)
+            except json.JSONDecodeError as e:
+                print(f"⚠️  Warning: Skipping invalid JSON at line {line_num}: {e}")
+    return records
+
+
+def write_jsonl_record(jsonl_path: str, record: Dict[str, Any], lock: threading.Lock = None):
+    """Append a single record to JSONL file (thread-safe with lock)."""
+    if lock:
+        with lock:
+            with open(jsonl_path, 'a', encoding='utf-8') as f:
+                f.write(json.dumps(record, ensure_ascii=False) + '\n')
+    else:
+        with open(jsonl_path, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(record, ensure_ascii=False) + '\n')
+
+
 def process_directory(
     input_dir: str,
     output_dir: str,
@@ -503,6 +532,145 @@ def process_directory(
     return results
 
 
+def process_jsonl(
+    input_jsonl: str,
+    output_jsonl: str,
+    output_audio_dir: str,
+    audio_path_field: str = "audio_path",
+    workers: int = 1,
+    max_additional_effects: int = 2,
+    seed: int = None
+) -> int:
+    """
+    Process audio files from JSONL, update paths, save incrementally.
+    
+    Args:
+        input_jsonl: Path to input JSONL file
+        output_jsonl: Path to output JSONL file (will be created/appended)
+        output_audio_dir: Directory for output audio files
+        audio_path_field: Field name containing audio path in JSONL records
+        workers: Number of parallel workers
+        max_additional_effects: Max additional effects beyond background_noise
+        seed: Random seed for reproducibility
+        
+    Returns:
+        Number of successfully processed records
+    """
+    # Safety checks
+    input_jsonl_path = Path(input_jsonl).resolve()
+    output_jsonl_path = Path(output_jsonl).resolve()
+    
+    if input_jsonl_path == output_jsonl_path:
+        raise ValueError(
+            f"❌ ERROR: Input and output JSONL paths are the same!\n"
+            f"   Input:  {input_jsonl_path}\n"
+            f"   Output: {output_jsonl_path}\n"
+            f"   This would overwrite your original file. Please use a different output path."
+        )
+    
+    # Read input JSONL
+    print(f"📄 Reading JSONL from: {input_jsonl}")
+    records = read_jsonl(input_jsonl, audio_path_field)
+    
+    if not records:
+        print(f"❌ No records found in {input_jsonl}")
+        return 0
+    
+    print(f"🎵 Found {len(records)} records")
+    print(f"📂 Output audio directory: {output_audio_dir}")
+    print(f"📄 Output JSONL: {output_jsonl}")
+    print(f"⚙️  Workers: {workers}")
+    print(f"🎛️  Effects: background_noise (always) + 0-{max_additional_effects} random effects")
+    print(f"💾 Saving incrementally after each file")
+    print()
+    
+    # Create output audio directory
+    Path(output_audio_dir).mkdir(parents=True, exist_ok=True)
+    
+    # Create/clear output JSONL file
+    with open(output_jsonl, 'w', encoding='utf-8') as f:
+        pass  # Just create empty file
+    
+    # Set seed
+    if seed is not None:
+        random.seed(seed)
+    
+    # Pre-generate effect sequences
+    effect_sequences = []
+    for _ in records:
+        n_additional = random.randint(0, max_additional_effects)
+        sequence = select_random_effects(n_additional)
+        effect_sequences.append(sequence)
+    
+    # Thread-safe file writing lock
+    write_lock = threading.Lock()
+    successful = 0
+    
+    def process_and_save_record(record, effects):
+        """Process a single record and save to JSONL immediately."""
+        nonlocal successful
+        
+        # Get original audio path
+        audio_path = record.get(audio_path_field)
+        if not audio_path or not os.path.exists(audio_path):
+            print(f"  ⚠️  Skipping record: audio file not found at '{audio_path}'")
+            return
+        
+        # Process audio file
+        result = process_single_file(audio_path, output_audio_dir, effects)
+        
+        # Update record with new audio path and processing info
+        updated_record = record.copy()
+        if result["success"]:
+            updated_record[f"{audio_path_field}_noisy"] = result["output"]
+            updated_record["noise_effects_applied"] = [
+                {
+                    "name": e["name"],
+                    "intensity": e["params"].get("_intensity", "n/a")
+                }
+                for e in result["effects"]
+            ]
+            updated_record["noise_processing_success"] = True
+            successful += 1
+            
+            effect_names = [e["name"] for e in result["effects"]]
+            tqdm.write(f"  ✅ {Path(audio_path).name} → {effect_names}")
+        else:
+            updated_record["noise_processing_success"] = False
+            updated_record["noise_processing_error"] = result.get("error", "Unknown error")
+            tqdm.write(f"  ❌ {Path(audio_path).name}: {result.get('error', 'Failed')}")
+        
+        # Write to JSONL immediately (incremental save)
+        write_jsonl_record(output_jsonl, updated_record, lock=write_lock)
+    
+    if workers == 1:
+        # Sequential processing
+        for record, effects in tqdm(zip(records, effect_sequences), 
+                                    total=len(records), 
+                                    desc="Processing"):
+            process_and_save_record(record, effects)
+    else:
+        # Parallel processing
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {
+                executor.submit(process_and_save_record, record, effects): record
+                for record, effects in zip(records, effect_sequences)
+            }
+            
+            for future in tqdm(as_completed(futures), total=len(futures), desc="Processing"):
+                try:
+                    future.result()
+                except Exception as e:
+                    record = futures[future]
+                    audio_path = record.get(audio_path_field, "unknown")
+                    tqdm.write(f"  ❌ {Path(audio_path).name}: {e}")
+    
+    print(f"\n✅ Processed {successful}/{len(records)} records successfully")
+    print(f"📄 Results saved to: {output_jsonl}")
+    
+    return successful
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Apply random noise/effects to audio files",
@@ -520,6 +688,12 @@ Examples:
 
   # Reproducible with seed
   python apply_random_noise.py --input_dir ./audio/clean --output_dir ./audio/noisy --seed 42
+
+  # Process from JSONL (reads audio paths from JSONL, saves incrementally)
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy
+  
+  # JSONL with custom audio path field and parallel processing
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy --audio_path_field "file_path" --workers 4
 
 How it works:
   - ALWAYS applies background_noise (random intensity: light/medium/heavy)
@@ -548,17 +722,44 @@ Intensity levels (randomly sampled per effect):
     
     parser.add_argument("--input_dir", type=str, help="Directory with input audio files")
     parser.add_argument("--input_file", type=str, help="Single input audio file")
-    parser.add_argument("--output_dir", type=str, required=True, help="Output directory")
+    parser.add_argument("--input_jsonl", type=str, help="Input JSONL file (each line has audio path)")
+    parser.add_argument("--output_dir", type=str, required=True, help="Output directory for audio files")
+    parser.add_argument("--output_jsonl", type=str, help="Output JSONL file (updated with new audio paths, saved incrementally)")
+    parser.add_argument("--audio_path_field", type=str, default="audio_path", help="Field name in JSONL containing audio path (default: audio_path)")
     parser.add_argument("--workers", type=int, default=1, help="Number of parallel workers (default: 1)")
     parser.add_argument("--max_additional", type=int, default=2, help="Max additional effects beyond background_noise (default: 2, so 1-3 total)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
     
     args = parser.parse_args()
     
-    if not args.input_dir and not args.input_file:
-        parser.error("Must specify either --input_dir or --input_file")
+    # Validate input arguments
+    input_sources = sum([
+        args.input_dir is not None,
+        args.input_file is not None,
+        args.input_jsonl is not None
+    ])
     
-    if args.input_file:
+    if input_sources == 0:
+        parser.error("Must specify one of: --input_dir, --input_file, or --input_jsonl")
+    elif input_sources > 1:
+        parser.error("Cannot specify multiple input sources (choose one: --input_dir, --input_file, or --input_jsonl)")
+    
+    # JSONL mode requires output_jsonl
+    if args.input_jsonl and not args.output_jsonl:
+        parser.error("--input_jsonl requires --output_jsonl to be specified")
+    
+    if args.input_jsonl:
+        # JSONL mode
+        process_jsonl(
+            input_jsonl=args.input_jsonl,
+            output_jsonl=args.output_jsonl,
+            output_audio_dir=args.output_dir,
+            audio_path_field=args.audio_path_field,
+            workers=args.workers,
+            max_additional_effects=args.max_additional,
+            seed=args.seed
+        )
+    elif args.input_file:
         # Single file mode
         # Safety check: prevent overwriting input file
         input_file_path = Path(args.input_file).resolve()
