@@ -395,11 +395,19 @@ def process_single_file(
 
 
 
-def read_jsonl(jsonl_path: str, audio_path_field: str = "audio_path") -> List[Dict[str, Any]]:
-    """Read JSONL file and extract records with audio paths."""
-    records = []
-    with open(jsonl_path, 'r', encoding='utf-8') as f:
-        for line_num, line in enumerate(f, 1):
+def read_json_or_jsonl(json_path: str) -> Any:
+    """Read JSON file (either JSON array/object or JSONL format)."""
+    with open(json_path, 'r', encoding='utf-8') as f:
+        content = f.read().strip()
+        
+    # Try to parse as single JSON object/array first
+    try:
+        data = json.loads(content)
+        return data
+    except json.JSONDecodeError:
+        # If that fails, try JSONL format (one JSON per line)
+        records = []
+        for line_num, line in enumerate(content.split('\n'), 1):
             line = line.strip()
             if not line:
                 continue
@@ -408,7 +416,7 @@ def read_jsonl(jsonl_path: str, audio_path_field: str = "audio_path") -> List[Di
                 records.append(record)
             except json.JSONDecodeError as e:
                 print(f"⚠️  Warning: Skipping invalid JSON at line {line_num}: {e}")
-    return records
+        return records
 
 
 def write_jsonl_record(jsonl_path: str, record: Dict[str, Any], lock: threading.Lock = None):
@@ -429,18 +437,20 @@ def process_jsonl(
     output_jsonl: str,
     output_audio_dir: str,
     audio_path_field: str = "audio_path",
+    base_dir: str = None,
     workers: int = 1,
     max_additional_effects: int = 2,
     seed: int = None
 ) -> int:
     """
-    Process audio files from JSONL, update paths, save incrementally.
+    Process audio files from JSON (handles nested structures with messages arrays).
     
     Args:
-        input_jsonl: Path to input JSONL file
-        output_jsonl: Path to output JSONL file (will be created/appended)
+        input_jsonl: Path to input JSON file
+        output_jsonl: Path to output JSON file
         output_audio_dir: Directory for output audio files
-        audio_path_field: Field name containing audio path in JSONL records
+        audio_path_field: Field name containing audio path
+        base_dir: Base directory for resolving relative paths (default: JSON file's directory)
         workers: Number of parallel workers
         max_additional_effects: Max additional effects beyond background_noise
         seed: Random seed for reproducibility
@@ -454,21 +464,61 @@ def process_jsonl(
     
     if input_jsonl_path == output_jsonl_path:
         raise ValueError(
-            f"❌ ERROR: Input and output JSONL paths are the same!\n"
+            f"❌ ERROR: Input and output JSON paths are the same!\n"
             f"   Input:  {input_jsonl_path}\n"
             f"   Output: {output_jsonl_path}\n"
             f"   This would overwrite your original file. Please use a different output path."
         )
     
-    # Read input JSONL
-    print(f"📄 Reading JSONL from: {input_jsonl}")
-    records = read_jsonl(input_jsonl, audio_path_field)
+    # Read input JSON
+    print(f"📄 Reading JSON from: {input_jsonl}")
+    data = read_json_or_jsonl(input_jsonl)
     
-    if not records:
-        print(f"❌ No records found in {input_jsonl}")
+    # Extract records with audio_path (flatten nested structures)
+    records_to_process = []
+    
+    if isinstance(data, list):
+        # List of task records
+        for task_record in data:
+            if isinstance(task_record, dict):
+                # Check for trajectory.messages structure
+                if "trajectory" in task_record and "messages" in task_record["trajectory"]:
+                    for msg in task_record["trajectory"]["messages"]:
+                        if audio_path_field in msg:
+                            # Flatten: include task info + message
+                            flat_record = msg.copy()
+                            flat_record["task_idx"] = task_record.get("task_idx")
+                            records_to_process.append(flat_record)
+                # Or direct messages array
+                elif "messages" in task_record:
+                    for msg in task_record["messages"]:
+                        if audio_path_field in msg:
+                            flat_record = msg.copy()
+                            records_to_process.append(flat_record)
+                # Or flat with audio_path at top level
+                elif audio_path_field in task_record:
+                    records_to_process.append(task_record.copy())
+    elif isinstance(data, dict):
+        # Single record
+        if "trajectory" in data and "messages" in data["trajectory"]:
+            for msg in data["trajectory"]["messages"]:
+                if audio_path_field in msg:
+                    flat_record = msg.copy()
+                    flat_record["task_idx"] = data.get("task_idx")
+                    records_to_process.append(flat_record)
+        elif "messages" in data:
+            for msg in data["messages"]:
+                if audio_path_field in msg:
+                    flat_record = msg.copy()
+                    records_to_process.append(flat_record)
+        elif audio_path_field in data:
+            records_to_process.append(data.copy())
+    
+    if not records_to_process:
+        print(f"❌ No records with '{audio_path_field}' field found in {input_jsonl}")
         return 0
     
-    print(f"🎵 Found {len(records)} records")
+    print(f"🎵 Found {len(records_to_process)} audio files to process")
     print(f"📂 Output audio directory: {output_audio_dir}")
     print(f"📄 Output JSONL: {output_jsonl}")
     print(f"⚙️  Workers: {workers}")
@@ -489,75 +539,83 @@ def process_jsonl(
     
     # Pre-generate effect sequences
     effect_sequences = []
-    for _ in records:
+    for _ in records_to_process:
         n_additional = random.randint(0, max_additional_effects)
         sequence = select_random_effects(n_additional)
         effect_sequences.append(sequence)
     
-    # Thread-safe file writing lock
-    write_lock = threading.Lock()
     successful = 0
+    write_lock = threading.Lock()
     
-    def process_and_save_record(record, effects):
-        """Process a single record and save to JSONL immediately."""
+    def process_and_save(record, effects):
+        """Process audio and save to output JSONL immediately."""
         nonlocal successful
         
         # Get original audio path
         audio_path = record.get(audio_path_field)
-        if not audio_path or not os.path.exists(audio_path):
-            print(f"  ⚠️  Skipping record: audio file not found at '{audio_path}'")
+        if not audio_path:
+            return
+        
+        # Resolve relative paths
+        if not os.path.isabs(audio_path):
+            if base_dir:
+                resolve_base = Path(base_dir)
+            else:
+                resolve_base = Path(input_jsonl).parent
+            audio_path_resolved = (resolve_base / audio_path).resolve()
+            if not os.path.exists(audio_path_resolved):
+                tqdm.write(f"  ⚠️  File not found: '{audio_path}'")
+                return
+            audio_path = str(audio_path_resolved)
+        elif not os.path.exists(audio_path):
+            tqdm.write(f"  ⚠️  File not found: '{audio_path}'")
             return
         
         # Process audio file
         result = process_single_file(audio_path, output_audio_dir, effects)
         
-        # Update record with new audio path and processing info
-        updated_record = record.copy()
+        # Create output record (copy of input + new fields)
+        output_record = record.copy()
         if result["success"]:
-            updated_record[f"{audio_path_field}_noisy"] = result["output"]
-            updated_record["noise_effects_applied"] = [
-                {
-                    "name": e["name"],
-                    "intensity": e["params"].get("_intensity", "n/a")
-                }
+            output_record[f"{audio_path_field}_noisy"] = result["output"]
+            output_record["noise_effects_applied"] = [
+                {"name": e["name"], "intensity": e["params"].get("_intensity", "n/a")}
                 for e in result["effects"]
             ]
-            updated_record["noise_processing_success"] = True
+            output_record["noise_processing_success"] = True
             successful += 1
             
             effect_names = [e["name"] for e in result["effects"]]
             tqdm.write(f"  ✅ {Path(audio_path).name} → {effect_names}")
         else:
-            updated_record["noise_processing_success"] = False
-            updated_record["noise_processing_error"] = result.get("error", "Unknown error")
+            output_record["noise_processing_success"] = False
+            output_record["noise_processing_error"] = result.get("error", "Unknown error")
             tqdm.write(f"  ❌ {Path(audio_path).name}: {result.get('error', 'Failed')}")
         
-        # Write to JSONL immediately (incremental save)
-        write_jsonl_record(output_jsonl, updated_record, lock=write_lock)
+        # Write to output JSONL immediately (incremental save)
+        write_jsonl_record(output_jsonl, output_record, lock=write_lock)
     
     if workers == 1:
         # Sequential processing
-        for record, effects in tqdm(zip(records, effect_sequences), 
-                                    total=len(records), 
+        for record, effects in tqdm(zip(records_to_process, effect_sequences), 
+                                    total=len(records_to_process), 
                                     desc="Processing"):
-            process_and_save_record(record, effects)
+            process_and_save(record, effects)
     else:
         # Parallel processing
         with ThreadPoolExecutor(max_workers=workers) as executor:
             futures = {
-                executor.submit(process_and_save_record, record, effects): record
-                for record, effects in zip(records, effect_sequences)
+                executor.submit(process_and_save, record, effects): record
+                for record, effects in zip(records_to_process, effect_sequences)
             }
             
             for future in tqdm(as_completed(futures), total=len(futures), desc="Processing"):
                 try:
                     future.result()
                 except Exception as e:
-                    record = futures[future]
-                    audio_path = record.get(audio_path_field, "unknown")
-                    tqdm.write(f"  ❌ {Path(audio_path).name}: {e}")
+                    tqdm.write(f"  ❌ Error: {e}")
     
-    print(f"\n✅ Processed {successful}/{len(records)} records successfully")
+    print(f"\n✅ Processed {successful}/{len(records_to_process)} files successfully")
     print(f"📄 Results saved to: {output_jsonl}")
     
     return successful
@@ -610,6 +668,7 @@ Intensity levels (randomly sampled per effect):
     parser.add_argument("--output_jsonl", type=str, required=True, help="Output JSONL file (updated with new audio paths, saved incrementally)")
     parser.add_argument("--output_dir", type=str, required=True, help="Output directory for noisy audio files")
     parser.add_argument("--audio_path_field", type=str, default="audio_path", help="Field name in JSONL containing audio path (default: audio_path)")
+    parser.add_argument("--base_dir", type=str, default=None, help="Base directory for resolving relative audio paths (default: JSONL file's directory)")
     parser.add_argument("--workers", type=int, default=1, help="Number of parallel workers (default: 1)")
     parser.add_argument("--max_additional", type=int, default=2, help="Max additional effects beyond background_noise (default: 2, so 1-3 total)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
@@ -622,6 +681,7 @@ Intensity levels (randomly sampled per effect):
         output_jsonl=args.output_jsonl,
         output_audio_dir=args.output_dir,
         audio_path_field=args.audio_path_field,
+        base_dir=args.base_dir,
         workers=args.workers,
         max_additional_effects=args.max_additional,
         seed=args.seed
