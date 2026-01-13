@@ -435,12 +435,13 @@ def write_jsonl_record(jsonl_path: str, record: Dict[str, Any], lock: threading.
 def process_jsonl(
     input_jsonl: str,
     output_jsonl: str,
-    output_audio_dir: str,
+    output_dir_name: str,
     audio_path_field: str = "audio_path",
     base_dir: str = None,
     workers: int = 1,
     max_additional_effects: int = 2,
-    seed: int = None
+    seed: int = None,
+    save_relative_paths: bool = True
 ) -> int:
     """
     Process audio files from JSON (handles nested structures with messages arrays).
@@ -448,12 +449,13 @@ def process_jsonl(
     Args:
         input_jsonl: Path to input JSON file
         output_jsonl: Path to output JSON file
-        output_audio_dir: Directory for output audio files
+        output_dir_name: Simple directory name (no slashes) for output audio files (created under base_dir)
         audio_path_field: Field name containing audio path
         base_dir: Base directory for resolving relative paths (default: JSON file's directory)
         workers: Number of parallel workers
         max_additional_effects: Max additional effects beyond background_noise
         seed: Random seed for reproducibility
+        save_relative_paths: If True, save paths as output_dir_name/file.mp3 instead of absolute paths
         
     Returns:
         Number of successfully processed records
@@ -469,6 +471,23 @@ def process_jsonl(
             f"   Output: {output_jsonl_path}\n"
             f"   This would overwrite your original file. Please use a different output path."
         )
+    
+    # Validate output_dir_name is a simple directory name (no slashes)
+    if '/' in output_dir_name or '\\' in output_dir_name:
+        raise ValueError(
+            f"❌ ERROR: output_dir_name must be a simple directory name without slashes!\n"
+            f"   Got: '{output_dir_name}'\n"
+            f"   Use a simple name like 'noisy_audio' instead of 'path/to/noisy_audio'"
+        )
+    
+    # Determine base directory for path resolution
+    if base_dir:
+        resolve_base = Path(base_dir).resolve()
+    else:
+        resolve_base = Path(input_jsonl).parent.resolve()
+    
+    # Create output audio directory under base_dir
+    output_audio_dir_absolute = (resolve_base / output_dir_name).resolve()
     
     # Read input JSON
     print(f"📄 Reading JSON from: {input_jsonl}")
@@ -491,15 +510,18 @@ def process_jsonl(
         return 0
     
     print(f"🎵 Found {total_audio_files} audio files to process across {len(data)} tasks")
-    print(f"📂 Output audio directory: {output_audio_dir}")
+    print(f"📂 Base directory: {resolve_base}")
+    print(f"📂 Output audio directory: {output_audio_dir_absolute}")
     print(f"📄 Output JSONL: {output_jsonl}")
     print(f"⚙️  Workers: {workers}")
     print(f"🎛️  Effects: background_noise (always) + 0-{max_additional_effects} random effects")
     print(f"💾 Saving incrementally after each task record")
+    if save_relative_paths:
+        print(f"💾 Paths saved as: {output_dir_name}/filename (relative to base_dir)")
     print()
     
     # Create output audio directory
-    Path(output_audio_dir).mkdir(parents=True, exist_ok=True)
+    output_audio_dir_absolute.mkdir(parents=True, exist_ok=True)
     
     # Create/clear output JSONL file
     with open(output_jsonl, 'w', encoding='utf-8') as f:
@@ -538,13 +560,9 @@ def process_jsonl(
             
             # Resolve relative paths
             if not os.path.isabs(audio_path):
-                if base_dir:
-                    resolve_base = Path(base_dir)
-                else:
-                    resolve_base = Path(input_jsonl).parent
                 audio_path_resolved = (resolve_base / audio_path).resolve()
                 if not os.path.exists(audio_path_resolved):
-                    tqdm.write(f"  ⚠️  File not found: '{audio_path}'")
+                    tqdm.write(f"  ⚠️  File not found: '{audio_path}' (resolved to {audio_path_resolved})")
                     continue
                 audio_path = str(audio_path_resolved)
             elif not os.path.exists(audio_path):
@@ -556,11 +574,16 @@ def process_jsonl(
             effects = select_random_effects(n_additional)
             
             # Process audio file
-            result = process_single_file(audio_path, output_audio_dir, effects)
+            result = process_single_file(audio_path, str(output_audio_dir_absolute), effects)
             
             # Update message with new fields
             if result["success"]:
-                msg[f"{audio_path_field}_noisy"] = result["output"]
+                # Save relative path if requested
+                if save_relative_paths:
+                    output_relative = os.path.join(output_dir_name, Path(result["output"]).name)
+                    msg[f"{audio_path_field}_noisy"] = output_relative
+                else:
+                    msg[f"{audio_path_field}_noisy"] = result["output"]
                 msg["noise_effects_applied"] = [
                     {"name": e["name"], "intensity": e["params"].get("_intensity", "n/a")}
                     for e in result["effects"]
@@ -609,16 +632,16 @@ def main():
         epilog="""
 Examples:
   # Basic JSONL processing (reads audio paths from JSONL, saves incrementally)
-  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir_name noisy_audio --base_dir /path/to/base
   
   # With parallel processing (recommended for large datasets)
-  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy --workers 45
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir_name noisy_audio --base_dir /path/to/base --workers 45
   
   # With custom audio path field in JSONL
-  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy --audio_path_field "file_path" --workers 4
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir_name noisy_audio --audio_path_field "file_path" --workers 4
 
   # Reproducible with seed
-  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir ./audio/noisy --seed 42
+  python apply_random_noise.py --input_jsonl ./data.jsonl --output_jsonl ./data_noisy.jsonl --output_dir_name noisy_audio --seed 42
 
 How it works:
   - ALWAYS applies background_noise (random intensity: light/medium/heavy)
@@ -647,12 +670,13 @@ Intensity levels (randomly sampled per effect):
     
     parser.add_argument("--input_jsonl", type=str, required=True, help="Input JSONL file (each line has audio path)")
     parser.add_argument("--output_jsonl", type=str, required=True, help="Output JSONL file (updated with new audio paths, saved incrementally)")
-    parser.add_argument("--output_dir", type=str, required=True, help="Output directory for noisy audio files")
+    parser.add_argument("--output_dir_name", type=str, required=True, help="Simple directory name (no slashes) for output audio files, created under base_dir (e.g., 'noisy_audio')")
     parser.add_argument("--audio_path_field", type=str, default="audio_path", help="Field name in JSONL containing audio path (default: audio_path)")
     parser.add_argument("--base_dir", type=str, default=None, help="Base directory for resolving relative audio paths (default: JSONL file's directory)")
     parser.add_argument("--workers", type=int, default=1, help="Number of parallel workers (default: 1)")
     parser.add_argument("--max_additional", type=int, default=2, help="Max additional effects beyond background_noise (default: 2, so 1-3 total)")
     parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
+    parser.add_argument("--absolute_paths", action="store_true", help="Save absolute paths in output JSONL instead of relative paths")
     
     args = parser.parse_args()
     
@@ -660,12 +684,13 @@ Intensity levels (randomly sampled per effect):
     process_jsonl(
         input_jsonl=args.input_jsonl,
         output_jsonl=args.output_jsonl,
-        output_audio_dir=args.output_dir,
+        output_dir_name=args.output_dir_name,
         audio_path_field=args.audio_path_field,
         base_dir=args.base_dir,
         workers=args.workers,
         max_additional_effects=args.max_additional,
-        seed=args.seed
+        seed=args.seed,
+        save_relative_paths=not args.absolute_paths
     )
 
 
