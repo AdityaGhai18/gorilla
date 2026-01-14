@@ -488,7 +488,7 @@ def apply_audio_mumbling_effect(audio_path, output_path=None):
     audio = AudioSegment.from_file(audio_path)
     
     #low-pass filter to simulate mumbling
-    mumble = audio.low_pass_filter(300)
+    mumble = audio.low_pass_filter(1000)
     
     if output_path is None:
         base = os.path.splitext(os.path.basename(audio_path))[0]
