@@ -83,9 +83,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL VALUES: generate_variants.py uses exactly [-15, -5, 0]
             # Tight ranges around these 3 experimental values
             "noise_level_db": {
-                "light": random.choice([-17, -15, -13]),      # Tight around -15
-                "medium": random.choice([-7, -5, -3]),        # Tight around -5
-                "heavy": random.choice([-2, 0, 2])            # Tight around 0
+                "light": random.choice([-23, -20, -17]),      # Tight around -15
+                "medium": random.choice([-17, -15, -12]),        # Tight around -5
+                "heavy": random.choice([-12, -10, -7])            # Tight around 0
             }[random_intensity()],
             "_intensity": random_intensity()
         }
@@ -98,9 +98,9 @@ EFFECT_CONFIGS = {
             # background.py default: 120ms, 0.6 decay, 3 echoes
             # Tight ranges around 120-150ms, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.choice([110, 120, 130]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
-                "medium": {"echo_delay_ms": random.choice([140, 150, 160]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 3},  # Tight around 150ms, 0.6, 3 echoes
-                "heavy": {"echo_delay_ms": random.choice([150, 160, 170]), "echo_decay": random.choice([0.6, 0.65, 0.7]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
+                "light": {"echo_delay_ms": random.choice([100, 110, 120]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
+                "medium": {"echo_delay_ms": random.choice([110, 120, 130]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 2},  # Tight around 150ms, 0.6, 3 echoes
+                "heavy": {"echo_delay_ms": random.choice([120, 130, 140]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
             }[random_intensity()]
         }
     },
@@ -124,8 +124,8 @@ EFFECT_CONFIGS = {
             # Very tight ranges around these single defaults
             **{
                 "light": {"min_db_change": random.choice([-12, -10, -8]), "max_db_change": random.choice([7, 8, 9]), "n_fluctuations": random.choice([3, 4, 5])},       # Just above default
-                "medium": {"min_db_change": random.choice([-17, -15, -13]), "max_db_change": random.choice([9, 10, 11]), "n_fluctuations": random.choice([4, 5, 6])},    # Tight around default (-15, +10, 5)
-                "heavy": {"min_db_change": random.choice([-18, -16, -15]), "max_db_change": random.choice([10, 12, 14]), "n_fluctuations": random.choice([5, 6, 7])}     # Just below default
+                "medium": {"min_db_change": random.choice([-15, -12, -11]), "max_db_change": random.choice([9, 10, 11]), "n_fluctuations": random.choice([4, 5, 5])},    # Tight around default (-15, +10, 5)
+                "heavy": {"min_db_change": random.choice([-18, -16, -15]), "max_db_change": random.choice([10, 12, 12]), "n_fluctuations": random.choice([5, 6, 6])}     # Just below default
             }[random_intensity()]
         }
     },
@@ -135,9 +135,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL: background.py default n_cuts=8, min=100, max=600
             # Tight around single default values
             **{
-                "light": {"n_cuts": random.choice([6, 7, 8]), "min_cut_ms": random.choice([90, 100, 110]), "max_cut_ms": random.choice([500, 550, 600])},      # Just below default
-                "medium": {"n_cuts": random.choice([7, 8, 9]), "min_cut_ms": random.choice([95, 100, 105]), "max_cut_ms": random.choice([580, 600, 620])},     # Tight around default (8, 100, 600)
-                "heavy": {"n_cuts": random.choice([8, 9, 10]), "min_cut_ms": random.choice([100, 110, 120]), "max_cut_ms": random.choice([600, 650, 700])}     # Just above default
+                "light": {"n_cuts": random.choice([2, 3]), "min_cut_ms": random.choice([90, 100, 110]), "max_cut_ms": random.choice([450, 475, 500])},      # Just below default
+                "medium": {"n_cuts": random.choice([3, 4, 5]), "min_cut_ms": random.choice([95, 100, 105]), "max_cut_ms": random.choice([500, 525, 550])},     # Tight around default (8, 100, 600)
+                "heavy": {"n_cuts": random.choice([5, 6]), "min_cut_ms": random.choice([100, 110, 120]), "max_cut_ms": random.choice([550, 575, 600])}     # Just above default
             }[random_intensity()]
         }
     },
@@ -147,9 +147,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL: background.py default n_beeps=8, freq=1000, db=-10
             # Very tight around single defaults
             **{
-                "light": {"n_beeps": random.choice([6, 7, 8]), "beep_freq": random.choice([950, 1000, 1050]), "beep_db": random.choice([-12, -11, -10])},     # Just below default
-                "medium": {"n_beeps": random.choice([7, 8, 9]), "beep_freq": random.choice([980, 1000, 1020]), "beep_db": random.choice([-11, -10, -9])},     # Tight around default (8, 1000, -10)
-                "heavy": {"n_beeps": random.choice([8, 9, 10]), "beep_freq": random.choice([1000, 1050, 1100]), "beep_db": random.choice([-10, -9, -8])}      # Just above default
+                "light": {"n_beeps": random.choice([2, 3, 4]), "beep_freq": random.choice([950, 1000, 1050]), "beep_db": random.choice([-12, -11, -10])},     # Just below default
+                "medium": {"n_beeps": random.choice([4, 5, 6]), "beep_freq": random.choice([980, 1000, 1020]), "beep_db": random.choice([-11, -10, -9])},     # Tight around default (8, 1000, -10)
+                "heavy": {"n_beeps": random.choice([5, 6, 7]), "beep_freq": random.choice([1000, 1050, 1100]), "beep_db": random.choice([-10, -9, -8])}      # Just above default
             }[random_intensity()]
         }
     },
