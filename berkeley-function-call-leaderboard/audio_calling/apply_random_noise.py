@@ -77,55 +77,55 @@ def random_intensity():
 # Define effect generators - each returns random params with random intensity
 EFFECT_CONFIGS = {
     "background_noise": {
-        "weight": 3,  # Higher weight = more likely to be selected as additional
+        "weight": 1,  # Higher weight = more likely to be selected as additional
         "params_fn": lambda: {
             "noise_file": random.choice(_get_noise_files()) if _get_noise_files() else None,
             # EXPERIMENTAL VALUES: generate_variants.py uses exactly [-15, -5, 0]
             # Tight ranges around these 3 experimental values
             "noise_level_db": {
-                "light": random.choice([-17, -15, -13]),      # Tight around -15
-                "medium": random.choice([-7, -5, -3]),        # Tight around -5
-                "heavy": random.choice([-2, 0, 2])            # Tight around 0
+                "light": random.choice([-17, -15, -14]),      # Tight around -15
+                "medium": random.choice([-8, -7, -5]),        # Tight around -5
+                "heavy": random.choice([-3, -2, 0])            # Tight around 0
             }[random_intensity()],
             "_intensity": random_intensity()
         }
     },
     "reverb_echo": {
-        "weight": 2,
+        "weight": 1,
         "params_fn": lambda: {
             "mode": "echo",
             # EXPERIMENTAL: generate_variants uses 150ms, 0.6 decay, 3 echoes (via defaults)
             # background.py default: 120ms, 0.6 decay, 3 echoes
             # Tight ranges around 120-150ms, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.choice([110, 120, 130]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
-                "medium": {"echo_delay_ms": random.choice([140, 150, 160]), "echo_decay": random.choice([0.55, 0.6, 0.65]), "echo_n": 3},  # Tight around 150ms, 0.6, 3 echoes
-                "heavy": {"echo_delay_ms": random.choice([150, 160, 170]), "echo_decay": random.choice([0.6, 0.65, 0.7]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
+                "light": {"echo_delay_ms": random.choice([120]), "echo_decay": random.choice([0.5]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
+                "medium": {"echo_delay_ms": random.choice([135]), "echo_decay": random.choice([0.55]), "echo_n": 3},  # Tight around 150ms, 0.6, 3 echoes
+                "heavy": {"echo_delay_ms": random.choice([150]), "echo_decay": random.choice([0.6]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
             }[random_intensity()]
         }
     },
     "reverb_cave": {
-        "weight": 2,
+        "weight": 1,
         "params_fn": lambda: {
             "mode": "cave",
             # EXPERIMENTAL: background.py default n_reflections=40, max_delay=120, decay=0.6
             # Very tight ranges around these defaults
             **{
-                "light": {"n_reflections": random.choice([35, 38, 40]), "max_reflection_delay_ms": random.choice([110, 120, 130]), "decay_mean": random.choice([0.55, 0.6, 0.65])},    # Just below default
-                "medium": {"n_reflections": random.choice([38, 40, 42]), "max_reflection_delay_ms": random.choice([115, 120, 125]), "decay_mean": random.choice([0.58, 0.6, 0.62])},   # Tight around default (40, 120, 0.6)
-                "heavy": {"n_reflections": random.choice([40, 42, 45]), "max_reflection_delay_ms": random.choice([120, 125, 130]), "decay_mean": random.choice([0.6, 0.62, 0.65])}     # Just above default
+                "light": {"n_reflections": random.choice([20]), "max_reflection_delay_ms": random.choice([110, 120, 130]), "decay_mean": random.choice([0.5])},    # Just below default
+                "medium": {"n_reflections": random.choice([26]), "max_reflection_delay_ms": random.choice([115, 120, 125]), "decay_mean": random.choice([0.525])},   # Tight around default (40, 120, 0.6)
+                "heavy": {"n_reflections": random.choice([32]), "max_reflection_delay_ms": random.choice([120, 125, 130]), "decay_mean": random.choice([0.55])}     # Just above default
             }[random_intensity()]
         }
     },
     "volume_fluctuation": {
-        "weight": 2,
+        "weight": 1,
         "params_fn": lambda: {
             # EXPERIMENTAL: background.py default min=-15, max=+10, n=5
             # Very tight ranges around these single defaults
             **{
-                "light": {"min_db_change": random.choice([-12, -10, -8]), "max_db_change": random.choice([7, 8, 9]), "n_fluctuations": random.choice([3, 4, 5])},       # Just above default
-                "medium": {"min_db_change": random.choice([-17, -15, -13]), "max_db_change": random.choice([9, 10, 11]), "n_fluctuations": random.choice([4, 5, 6])},    # Tight around default (-15, +10, 5)
-                "heavy": {"min_db_change": random.choice([-18, -16, -15]), "max_db_change": random.choice([10, 12, 14]), "n_fluctuations": random.choice([5, 6, 7])}     # Just below default
+                "light": {"min_db_change": random.choice([-11]), "max_db_change": random.choice([7]), "n_fluctuations": random.choice([2])},       # Just above default
+                "medium": {"min_db_change": random.choice([-12]), "max_db_change": random.choice([8]), "n_fluctuations": random.choice([3])},    # Tight around default (-15, +10, 5)
+                "heavy": {"min_db_change": random.choice([-15]), "max_db_change": random.choice([10]), "n_fluctuations": random.choice([4])}     # Just below default
             }[random_intensity()]
         }
     },
@@ -135,9 +135,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL: background.py default n_cuts=8, min=100, max=600
             # Tight around single default values
             **{
-                "light": {"n_cuts": random.choice([6, 7, 8]), "min_cut_ms": random.choice([90, 100, 110]), "max_cut_ms": random.choice([500, 550, 600])},      # Just below default
-                "medium": {"n_cuts": random.choice([7, 8, 9]), "min_cut_ms": random.choice([95, 100, 105]), "max_cut_ms": random.choice([580, 600, 620])},     # Tight around default (8, 100, 600)
-                "heavy": {"n_cuts": random.choice([8, 9, 10]), "min_cut_ms": random.choice([100, 110, 120]), "max_cut_ms": random.choice([600, 650, 700])}     # Just above default
+                "light": {"n_cuts": random.choice([2, 3, 4]), "min_cut_ms": random.choice([90, 100, 110]), "max_cut_ms": random.choice([250])},      # Just below default
+                "medium": {"n_cuts": random.choice([4, 5]), "min_cut_ms": random.choice([95, 100, 105]), "max_cut_ms": random.choice([325])},     # Tight around default (8, 100, 600)
+                "heavy": {"n_cuts": random.choice([6, 7]), "min_cut_ms": random.choice([100, 110, 120]), "max_cut_ms": random.choice([400])}     # Just above default
             }[random_intensity()]
         }
     },
@@ -147,9 +147,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL: background.py default n_beeps=8, freq=1000, db=-10
             # Very tight around single defaults
             **{
-                "light": {"n_beeps": random.choice([6, 7, 8]), "beep_freq": random.choice([950, 1000, 1050]), "beep_db": random.choice([-12, -11, -10])},     # Just below default
-                "medium": {"n_beeps": random.choice([7, 8, 9]), "beep_freq": random.choice([980, 1000, 1020]), "beep_db": random.choice([-11, -10, -9])},     # Tight around default (8, 1000, -10)
-                "heavy": {"n_beeps": random.choice([8, 9, 10]), "beep_freq": random.choice([1000, 1050, 1100]), "beep_db": random.choice([-10, -9, -8])}      # Just above default
+                "light": {"n_beeps": random.choice([4]), "beep_freq": random.choice([950, 1000, 1050]), "beep_db": random.choice([-10])},     # Just below default
+                "medium": {"n_beeps": random.choice([5, 6]), "beep_freq": random.choice([980, 1000, 1020]), "beep_db": random.choice([-10])},     # Tight around default (8, 1000, -10)
+                "heavy": {"n_beeps": random.choice([7]), "beep_freq": random.choice([1000, 1050, 1100]), "beep_db": random.choice([-10])}      # Just above default
             }[random_intensity()]
         }
     },
