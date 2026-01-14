@@ -98,9 +98,9 @@ EFFECT_CONFIGS = {
             # background.py default: 120ms, 0.6 decay, 3 echoes
             # Tight ranges around 120-150ms, 0.6 decay, 3 echoes
             **{
-                "light": {"echo_delay_ms": random.choice([120]), "echo_decay": random.choice([0.5]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
-                "medium": {"echo_delay_ms": random.choice([135]), "echo_decay": random.choice([0.55]), "echo_n": 3},  # Tight around 150ms, 0.6, 3 echoes
-                "heavy": {"echo_delay_ms": random.choice([150]), "echo_decay": random.choice([0.6]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
+                "light": {"echo_delay_ms": random.choice([120]), "echo_decay": random.choice([0.52]), "echo_n": 2},   # Tight around 120ms, 0.6, fewer echoes
+                "medium": {"echo_delay_ms": random.choice([135]), "echo_decay": random.choice([0.56]), "echo_n": 3},  # Tight around 150ms, 0.6, 3 echoes
+                "heavy": {"echo_delay_ms": random.choice([150]), "echo_decay": random.choice([0.62]), "echo_n": 3}     # Tight above 150ms, 0.6-0.7
             }[random_intensity()]
         }
     },
@@ -111,9 +111,9 @@ EFFECT_CONFIGS = {
             # EXPERIMENTAL: background.py default n_reflections=40, max_delay=120, decay=0.6
             # Very tight ranges around these defaults
             **{
-                "light": {"n_reflections": random.choice([20]), "max_reflection_delay_ms": random.choice([110, 120, 130]), "decay_mean": random.choice([0.5])},    # Just below default
-                "medium": {"n_reflections": random.choice([26]), "max_reflection_delay_ms": random.choice([115, 120, 125]), "decay_mean": random.choice([0.525])},   # Tight around default (40, 120, 0.6)
-                "heavy": {"n_reflections": random.choice([32]), "max_reflection_delay_ms": random.choice([120, 125, 130]), "decay_mean": random.choice([0.55])}     # Just above default
+                "light": {"n_reflections": random.choice([22]), "max_reflection_delay_ms": random.choice([110, 120, 130]), "decay_mean": random.choice([0.52])},    # Just below default
+                "medium": {"n_reflections": random.choice([28]), "max_reflection_delay_ms": random.choice([115, 120, 125]), "decay_mean": random.choice([0.54])},   # Tight around default (40, 120, 0.6)
+                "heavy": {"n_reflections": random.choice([34]), "max_reflection_delay_ms": random.choice([120, 125, 130]), "decay_mean": random.choice([0.56])}     # Just above default
             }[random_intensity()]
         }
     },
